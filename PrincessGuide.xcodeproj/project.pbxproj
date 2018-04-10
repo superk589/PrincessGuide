@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1221CDB9207B92FC008F30AA /* master.db in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDB8207B92FB008F30AA /* master.db */; };
+		1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDBF207B9541008F30AA /* Assets.xcassets */; };
+		1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC1207B96FA008F30AA /* CardTableViewController.swift */; };
+		1221CDC5207B9718008F30AA /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC4207B9718008F30AA /* CardViewController.swift */; };
+		1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC7207B973B008F30AA /* CardTableViewCell.swift */; };
+		1221CDCB207B9864008F30AA /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDCA207B9864008F30AA /* Master.swift */; };
+		1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1221CDCC207C4197008F30AA /* libsqlite3.tbd */; };
+		1221CDD4207C4AA8008F30AA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDD3207C4AA8008F30AA /* Card.swift */; };
+		1221CDD6207C67E5008F30AA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDD5207C67E5008F30AA /* CardView.swift */; };
+		1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDD7207C6BC8008F30AA /* Equipment.swift */; };
+		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
+		12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E07205F5DB100A8B9A2 /* ViewController.swift */; };
+		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
+		12659E10205F5DB100A8B9A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E0E205F5DB100A8B9A2 /* LaunchScreen.storyboard */; };
+		7EAB06793468F4C4766121CB /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5230F9ADE5D1BC9A3C43E0FC /* Pods_PrincessGuide.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02724E45632B119A9B34326D /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
+		1221CDB8207B92FB008F30AA /* master.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = master.db; sourceTree = "<group>"; };
+		1221CDBF207B9541008F30AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1221CDC1207B96FA008F30AA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
+		1221CDC4207B9718008F30AA /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		1221CDC7207B973B008F30AA /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		1221CDCA207B9864008F30AA /* Master.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
+		1221CDCC207C4197008F30AA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1221CDCE207C41C7008F30AA /* PrincessGuide-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrincessGuide-Bridging-Header.h"; sourceTree = "<group>"; };
+		1221CDD3207C4AA8008F30AA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		1221CDD5207C67E5008F30AA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		1221CDD7207C6BC8008F30AA /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		12659E07205F5DB100A8B9A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		12659E0A205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		12659E0F205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		12659E11205F5DB100A8B9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5230F9ADE5D1BC9A3C43E0FC /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF708E06B6239202096BFF9B /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12659DFF205F5DB100A8B9A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */,
+				7EAB06793468F4C4766121CB /* Pods_PrincessGuide.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1221CDBA207B9310008F30AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDB8207B92FB008F30AA /* master.db */,
+				1221CDCA207B9864008F30AA /* Master.swift */,
+				1221CDD7207C6BC8008F30AA /* Equipment.swift */,
+				1221CDD3207C4AA8008F30AA /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1221CDBB207B9342008F30AA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				12659E07205F5DB100A8B9A2 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1221CDBC207B9373008F30AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1221CDC3207B96FF008F30AA /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDC6207B9727008F30AA /* ViewController */,
+				1221CDC9207B973F008F30AA /* View */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		1221CDC6207B9727008F30AA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDC1207B96FA008F30AA /* CardTableViewController.swift */,
+				1221CDC4207B9718008F30AA /* CardViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1221CDC9207B973F008F30AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDC7207B973B008F30AA /* CardTableViewCell.swift */,
+				1221CDD5207C67E5008F30AA /* CardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12659DF9205F5DB100A8B9A2 = {
+			isa = PBXGroup;
+			children = (
+				12659E04205F5DB100A8B9A2 /* PrincessGuide */,
+				12659E03205F5DB100A8B9A2 /* Products */,
+				305CE2A496B9481B403CDB1C /* Pods */,
+				C4EE8380F1630D9BF0C1B7E0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		12659E03205F5DB100A8B9A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12659E02205F5DB100A8B9A2 /* PrincessGuide.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12659E04205F5DB100A8B9A2 /* PrincessGuide */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDBA207B9310008F30AA /* Model */,
+				1221CDBC207B9373008F30AA /* View */,
+				1221CDBB207B9342008F30AA /* ViewController */,
+				1221CDC3207B96FF008F30AA /* Card */,
+				12659E05205F5DB100A8B9A2 /* AppDelegate.swift */,
+				12659E09205F5DB100A8B9A2 /* Main.storyboard */,
+				1221CDBF207B9541008F30AA /* Assets.xcassets */,
+				12659E0E205F5DB100A8B9A2 /* LaunchScreen.storyboard */,
+				1221CDCE207C41C7008F30AA /* PrincessGuide-Bridging-Header.h */,
+				12659E11205F5DB100A8B9A2 /* Info.plist */,
+			);
+			path = PrincessGuide;
+			sourceTree = "<group>";
+		};
+		305CE2A496B9481B403CDB1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02724E45632B119A9B34326D /* Pods-PrincessGuide.debug.xcconfig */,
+				DF708E06B6239202096BFF9B /* Pods-PrincessGuide.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C4EE8380F1630D9BF0C1B7E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDCC207C4197008F30AA /* libsqlite3.tbd */,
+				5230F9ADE5D1BC9A3C43E0FC /* Pods_PrincessGuide.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12659E01205F5DB100A8B9A2 /* PrincessGuide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12659E14205F5DB100A8B9A2 /* Build configuration list for PBXNativeTarget "PrincessGuide" */;
+			buildPhases = (
+				5648769842017383A88B8554 /* [CP] Check Pods Manifest.lock */,
+				12659DFE205F5DB100A8B9A2 /* Sources */,
+				12659DFF205F5DB100A8B9A2 /* Frameworks */,
+				12659E00205F5DB100A8B9A2 /* Resources */,
+				9B006D5132E4C9E012C2FE23 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrincessGuide;
+			productName = PrincessGuide;
+			productReference = 12659E02205F5DB100A8B9A2 /* PrincessGuide.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12659DFA205F5DB100A8B9A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = zzk;
+				TargetAttributes = {
+					12659E01205F5DB100A8B9A2 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 12659DFD205F5DB100A8B9A2 /* Build configuration list for PBXProject "PrincessGuide" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 12659DF9205F5DB100A8B9A2;
+			productRefGroup = 12659E03205F5DB100A8B9A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12659E01205F5DB100A8B9A2 /* PrincessGuide */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12659E00205F5DB100A8B9A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12659E10205F5DB100A8B9A2 /* LaunchScreen.storyboard in Resources */,
+				1221CDB9207B92FC008F30AA /* master.db in Resources */,
+				1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */,
+				12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5648769842017383A88B8554 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrincessGuide-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B006D5132E4C9E012C2FE23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12659DFE205F5DB100A8B9A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
+				1221CDC5207B9718008F30AA /* CardViewController.swift in Sources */,
+				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
+				12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */,
+				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
+				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
+				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
+				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
+				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		12659E09205F5DB100A8B9A2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12659E0A205F5DB100A8B9A2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		12659E0E205F5DB100A8B9A2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12659E0F205F5DB100A8B9A2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12659E12205F5DB100A8B9A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		12659E13205F5DB100A8B9A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12659E15205F5DB100A8B9A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02724E45632B119A9B34326D /* Pods-PrincessGuide.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MXJJEEMF3U;
+				INFOPLIST_FILE = PrincessGuide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/PrincessGuide/PrincessGuide-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12659E16205F5DB100A8B9A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF708E06B6239202096BFF9B /* Pods-PrincessGuide.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MXJJEEMF3U;
+				INFOPLIST_FILE = PrincessGuide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/PrincessGuide/PrincessGuide-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12659DFD205F5DB100A8B9A2 /* Build configuration list for PBXProject "PrincessGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12659E12205F5DB100A8B9A2 /* Debug */,
+				12659E13205F5DB100A8B9A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12659E14205F5DB100A8B9A2 /* Build configuration list for PBXNativeTarget "PrincessGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12659E15205F5DB100A8B9A2 /* Debug */,
+				12659E16205F5DB100A8B9A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12659DFA205F5DB100A8B9A2 /* Project object */;
+}
