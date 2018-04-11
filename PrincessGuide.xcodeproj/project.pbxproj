@@ -10,7 +10,6 @@
 		1221CDB9207B92FC008F30AA /* master.db in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDB8207B92FB008F30AA /* master.db */; };
 		1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDBF207B9541008F30AA /* Assets.xcassets */; };
 		1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC1207B96FA008F30AA /* CardTableViewController.swift */; };
-		1221CDC5207B9718008F30AA /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC4207B9718008F30AA /* CardViewController.swift */; };
 		1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC7207B973B008F30AA /* CardTableViewCell.swift */; };
 		1221CDCB207B9864008F30AA /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDCA207B9864008F30AA /* Master.swift */; };
 		1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1221CDCC207C4197008F30AA /* libsqlite3.tbd */; };
@@ -24,6 +23,10 @@
 		1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE2207DB076008F30AA /* LoadingHUD.swift */; };
 		1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */; };
 		1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE6207DB350008F30AA /* Debouncer.swift */; };
+		1221CDF1207DEED9008F30AA /* CardDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDF0207DEED9008F30AA /* CardDetailTableViewController.swift */; };
+		1221CDF5207DEF32008F30AA /* CDStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDF4207DEF32008F30AA /* CDStatusTableViewCell.swift */; };
+		1221CDF8207DEFAB008F30AA /* CDRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDF7207DEFAB008F30AA /* CDRankTableViewCell.swift */; };
+		1221CDFA207DF046008F30AA /* CDProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDF9207DF046008F30AA /* CDProfileTableViewCell.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E07205F5DB100A8B9A2 /* ViewController.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
@@ -36,7 +39,6 @@
 		1221CDB8207B92FB008F30AA /* master.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = master.db; sourceTree = "<group>"; };
 		1221CDBF207B9541008F30AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1221CDC1207B96FA008F30AA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
-		1221CDC4207B9718008F30AA /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		1221CDC7207B973B008F30AA /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		1221CDCA207B9864008F30AA /* Master.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
 		1221CDCC207C4197008F30AA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -51,6 +53,10 @@
 		1221CDE2207DB076008F30AA /* LoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
 		1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 		1221CDE6207DB350008F30AA /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		1221CDF0207DEED9008F30AA /* CardDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailTableViewController.swift; sourceTree = "<group>"; };
+		1221CDF4207DEF32008F30AA /* CDStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStatusTableViewCell.swift; sourceTree = "<group>"; };
+		1221CDF7207DEFAB008F30AA /* CDRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDRankTableViewCell.swift; sourceTree = "<group>"; };
+		1221CDF9207DF046008F30AA /* CDProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewCell.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12659E07205F5DB100A8B9A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 		1221CDC3207B96FF008F30AA /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				1221CDF2207DEEEF008F30AA /* CardDetail */,
 				1221CDC6207B9727008F30AA /* ViewController */,
 				1221CDC9207B973F008F30AA /* View */,
 			);
@@ -115,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				1221CDC1207B96FA008F30AA /* CardTableViewController.swift */,
-				1221CDC4207B9718008F30AA /* CardViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -139,6 +145,33 @@
 				1221CDE6207DB350008F30AA /* Debouncer.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		1221CDF2207DEEEF008F30AA /* CardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDF3207DEF01008F30AA /* ViewController */,
+				1221CDF6207DEF36008F30AA /* View */,
+			);
+			path = CardDetail;
+			sourceTree = "<group>";
+		};
+		1221CDF3207DEF01008F30AA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDF0207DEED9008F30AA /* CardDetailTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1221CDF6207DEF36008F30AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDF4207DEF32008F30AA /* CDStatusTableViewCell.swift */,
+				1221CDF9207DF046008F30AA /* CDProfileTableViewCell.swift */,
+				1221CDF7207DEFAB008F30AA /* CDRankTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		12659DF9205F5DB100A8B9A2 = {
@@ -318,11 +351,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1221CDF8207DEFAB008F30AA /* CDRankTableViewCell.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
+				1221CDF5207DEF32008F30AA /* CDStatusTableViewCell.swift in Sources */,
+				1221CDF1207DEED9008F30AA /* CardDetailTableViewController.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
-				1221CDC5207B9718008F30AA /* CardViewController.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
 				1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */,
 				1221CDDC207CC39E008F30AA /* Config.swift in Sources */,
@@ -331,6 +366,7 @@
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
+				1221CDFA207DF046008F30AA /* CDProfileTableViewCell.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,

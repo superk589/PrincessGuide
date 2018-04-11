@@ -22,7 +22,12 @@ class CardView: UIView {
         addSubview(rarityView)
         
         nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(10)
+            make.left.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
+        rarityView.snp.makeConstraints { (make) in
+            make.right.equalToSuperview()
             make.centerY.equalToSuperview()
         }
         
@@ -31,6 +36,7 @@ class CardView: UIView {
     
     func configure(for card: Card) {
         nameLabel.text = card.base.unitName
+        rarityView.setup(stars: card.base.rarity)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -18,7 +18,7 @@ class CardTableViewCell: UITableViewCell {
         
         contentView.addSubview(cardView)
         cardView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(readableContentGuide)
         }
     }
     

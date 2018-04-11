@@ -25,25 +25,6 @@
             </objects>
             <point key="canvasLocation" x="-52" y="471"/>
         </scene>
-        <!--Card Table View Controller-->
-        <scene sceneID="50y-xl-cBH">
-            <objects>
-                <tableViewController id="we9-Du-Z5V" customClass="CardTableViewController" customModule="PrincessGuide" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RKB-VT-UFB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="we9-Du-Z5V" id="9jk-fv-Wgq"/>
-                            <outlet property="delegate" destination="we9-Du-Z5V" id="Jut-SI-XrO"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="cFm-Uc-klv"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ci-E7-a4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="738" y="-196"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2dT-XF-6jH">
             <objects>
@@ -74,12 +55,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="we9-Du-Z5V" kind="relationship" relationship="rootViewController" id="rVr-qe-bA2"/>
+                        <segue destination="G07-3Z-ET0" kind="relationship" relationship="rootViewController" id="04H-l2-rQt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puc-lw-64B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-52" y="-195.6521739130435"/>
+        </scene>
+        <!--Card Table View Controller-->
+        <scene sceneID="4PW-UN-pL1">
+            <objects>
+                <tableViewController id="G07-3Z-ET0" customClass="CardTableViewController" customModule="PrincessGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SMF-Sq-dgr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="G07-3Z-ET0" id="8oN-7s-l4i"/>
+                            <outlet property="delegate" destination="G07-3Z-ET0" id="85U-pf-W9f"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HMm-Js-kwP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgA-wr-WL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="-196"/>
         </scene>
     </scenes>
     <resources>

@@ -19,27 +19,33 @@ class RarityView: UIView {
             let view = UIImageView()
             view.tintColor = .rarityStar
             starViews.append(view)
+            view.snp.makeConstraints { (make) in
+                make.height.equalTo(view.snp.width)
+            }
         }
         
         let stackView = UIStackView(arrangedSubviews: starViews)
         stackView.spacing = 0
         stackView.axis = .horizontal
+        stackView.alignment = .trailing
         
         addSubview(stackView)
         
         stackView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
+            make.height.equalTo(14)
         }
-    }
-    
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 18, height: 90)
+        
+        transform = CGAffineTransform(scaleX: -1, y: 1)
     }
     
     func setup(stars: Int) {
         assert(0..<5 ~= stars)
         starViews[0..<stars].forEach {
-            $0.image = #imageLiteral(resourceName: "726-star").withRenderingMode(.alwaysTemplate)
+            $0.image = #imageLiteral(resourceName: "726-star-selected").withRenderingMode(.alwaysTemplate)
+        }
+        starViews[stars..<5].forEach {
+            $0.image = nil
         }
     }
     

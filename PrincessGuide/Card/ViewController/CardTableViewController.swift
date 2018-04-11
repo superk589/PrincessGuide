@@ -20,6 +20,8 @@ class CardTableViewController: UITableViewController {
         tableView.rowHeight = 44
         tableView.tableFooterView = UIView()
         
+        navigationItem.title = NSLocalizedString("Cards", comment: "")
+        
         loadData()
     }
     
@@ -49,4 +51,10 @@ class CardTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = CardDetailTableViewController()
+        vc.card = cards[indexPath.row]
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
