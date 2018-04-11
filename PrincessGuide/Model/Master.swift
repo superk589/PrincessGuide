@@ -80,6 +80,9 @@ class Master: FMDatabaseQueue {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
+                let id = json["unit_id"].intValue
+                if id > 400000 { continue }
+                
                 let promotionSql = """
                 SELECT
                     *

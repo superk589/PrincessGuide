@@ -4,4 +4,6 @@ target 'PrincessGuide' do
   pod 'SnapKit'
   pod 'FMDB'
   pod 'SwiftyJSON'
+  pod 'DynamicColor'
+  pod 'Kingfisher'
 end

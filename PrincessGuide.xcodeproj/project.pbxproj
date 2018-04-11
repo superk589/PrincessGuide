@@ -17,6 +17,13 @@
 		1221CDD4207C4AA8008F30AA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDD3207C4AA8008F30AA /* Card.swift */; };
 		1221CDD6207C67E5008F30AA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDD5207C67E5008F30AA /* CardView.swift */; };
 		1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDD7207C6BC8008F30AA /* Equipment.swift */; };
+		1221CDDA207CC116008F30AA /* RarityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDD9207CC116008F30AA /* RarityView.swift */; };
+		1221CDDC207CC39E008F30AA /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDDB207CC39E008F30AA /* Config.swift */; };
+		1221CDDF207CC4A7008F30AA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDDE207CC4A7008F30AA /* Color.swift */; };
+		1221CDE1207D9709008F30AA /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE0207D9709008F30AA /* Font.swift */; };
+		1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE2207DB076008F30AA /* LoadingHUD.swift */; };
+		1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */; };
+		1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE6207DB350008F30AA /* Debouncer.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E07205F5DB100A8B9A2 /* ViewController.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
@@ -37,6 +44,13 @@
 		1221CDD3207C4AA8008F30AA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		1221CDD5207C67E5008F30AA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1221CDD7207C6BC8008F30AA /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		1221CDD9207CC116008F30AA /* RarityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RarityView.swift; sourceTree = "<group>"; };
+		1221CDDB207CC39E008F30AA /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		1221CDDE207CC4A7008F30AA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		1221CDE0207D9709008F30AA /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		1221CDE2207DB076008F30AA /* LoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
+		1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
+		1221CDE6207DB350008F30AA /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12659E07205F5DB100A8B9A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +96,8 @@
 		1221CDBC207B9373008F30AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1221CDE2207DB076008F30AA /* LoadingHUD.swift */,
+				1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,8 +125,20 @@
 			children = (
 				1221CDC7207B973B008F30AA /* CardTableViewCell.swift */,
 				1221CDD5207C67E5008F30AA /* CardView.swift */,
+				1221CDD9207CC116008F30AA /* RarityView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1221CDDD207CC3A3008F30AA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1221CDDB207CC39E008F30AA /* Config.swift */,
+				1221CDDE207CC4A7008F30AA /* Color.swift */,
+				1221CDE0207D9709008F30AA /* Font.swift */,
+				1221CDE6207DB350008F30AA /* Debouncer.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		12659DF9205F5DB100A8B9A2 = {
@@ -134,6 +162,7 @@
 		12659E04205F5DB100A8B9A2 /* PrincessGuide */ = {
 			isa = PBXGroup;
 			children = (
+				1221CDDD207CC3A3008F30AA /* Common */,
 				1221CDBA207B9310008F30AA /* Model */,
 				1221CDBC207B9373008F30AA /* View */,
 				1221CDBB207B9342008F30AA /* ViewController */,
@@ -263,13 +292,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -285,10 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
+				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
+				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
 				1221CDC5207B9718008F30AA /* CardViewController.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
+				1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */,
+				1221CDDC207CC39E008F30AA /* Config.swift in Sources */,
+				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
 				12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */,
+				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
@@ -369,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -422,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -439,7 +479,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -459,7 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";

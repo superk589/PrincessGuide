@@ -22,9 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootTabBarController
         window?.makeKeyAndVisible()
         
-        Master.shared.getCards { (cards) in
-            print(cards)
-        }
         // Override point for customization after application launch.
         return true
     }
