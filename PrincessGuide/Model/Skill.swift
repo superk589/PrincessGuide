@@ -8,12 +8,27 @@
 
 import Foundation
 
-enum SkillCategory: String, Hashable {
+enum SkillCategory: String, Hashable, CustomStringConvertible {
     case unionBurst
     case main
     case ex
     case exEvolution
     case sp
+    
+    var description: String {
+        switch self {
+        case .unionBurst:
+            return NSLocalizedString("Union Burst", comment: "")
+        case .main:
+            return NSLocalizedString("Main", comment: "")
+        case .ex:
+            return NSLocalizedString("EX", comment: "")
+        case .exEvolution:
+            return NSLocalizedString("EX Evolution", comment: "")
+        case .sp:
+            return NSLocalizedString("SP", comment: "")
+        }
+    }
 }
 
 class Skill: Codable {
@@ -38,7 +53,7 @@ class Skill: Codable {
         let iconType: Int
         let name: String
         let skillAreaWidth: Int
-        let skillCastTime: Double
+        let skillCastTime: String
         let skillId: Int
         let skillType: Int
     }
@@ -50,13 +65,13 @@ class Skill: Codable {
         let actionDetail3: Int
         let actionId: Int
         let actionType: Int
-        let actionValue1: Double
-        let actionValue2: Double
-        let actionValue3: Double
-        let actionValue4: Double
-        let actionValue5: Double
-        let actionValue6: Double
-        let actionValue7: Double
+        let actionValue1: String
+        let actionValue2: String
+        let actionValue3: String
+        let actionValue4: String
+        let actionValue5: String
+        let actionValue6: String
+        let actionValue7: String
         let classId: Int
         let description: String
         let levelUpDisp: String
@@ -69,4 +84,105 @@ class Skill: Codable {
         
     }
     
+}
+
+enum ActionKey: String, CustomStringConvertible {
+    case atk
+    case magicStr
+    case skillLevel
+    case initialValue
+    
+    var description: String {
+        switch self {
+        case .atk:
+            return NSLocalizedString("ATK Coefficient", comment: "")
+        case .magicStr:
+            return NSLocalizedString("Magic STR Coefficient", comment: "")
+        case .skillLevel:
+            return NSLocalizedString("Increased Per Skill Level", comment: "")
+        case .initialValue:
+            return NSLocalizedString("Initial Value", comment: "")
+        }
+    }
+}
+
+struct ActionValue {
+    let key: ActionKey
+    let value: String
+}
+
+enum ActionType: Int, CustomStringConvertible {
+    case unknown = 0
+    case damage = 1
+    case heal = 4
+
+    var description: String {
+        switch self {
+        case .damage:
+            return NSLocalizedString("Damage", comment: "")
+        case .heal:
+            return NSLocalizedString("Heal", comment: "")
+        case .unknown:
+            return NSLocalizedString("Unknown", comment: "")
+        }
+    }
+}
+
+enum ActionDamageClass: Int, CustomStringConvertible {
+    case unknown = 0
+    case physical = 1
+    case magical = 2
+    
+    var description: String {
+        switch self {
+        case .magical:
+            return NSLocalizedString("Magical", comment: "")
+        case .physical:
+            return NSLocalizedString("Physical", comment: "")
+        case .unknown:
+            return NSLocalizedString("Unknown", comment: "")
+        }
+    }
+}
+
+extension Skill.Action {
+    
+    var type: ActionType {
+        return ActionType(rawValue: actionType) ?? .unknown
+    }
+    
+    var damageClass: ActionDamageClass {
+        return ActionDamageClass(rawValue: actionDetail1) ?? .unknown
+    }
+    
+    var values: [ActionValue] {
+        switch (type, damageClass) {
+        case (.damage, .magical):
+            return [
+                ActionValue(key: .initialValue, value: actionValue1),
+                ActionValue(key: .skillLevel, value: actionValue2),
+                ActionValue(key: .magicStr, value: actionValue3)
+            ]
+        case (.damage, .physical):
+            return [
+                ActionValue(key: .initialValue, value: actionValue1),
+                ActionValue(key: .skillLevel, value: actionValue2),
+                ActionValue(key: .atk, value: actionValue3)
+            ]
+        case (.heal, .magical):
+            return [
+                ActionValue(key: .initialValue, value: actionValue1),
+                ActionValue(key: .skillLevel, value: actionValue2),
+                ActionValue(key: .magicStr, value: actionValue3)
+            ]
+        case (.heal, .physical):
+            return [
+                ActionValue(key: .initialValue, value: actionValue1),
+                ActionValue(key: .skillLevel, value: actionValue2),
+                ActionValue(key: .atk, value: actionValue3)
+            ]
+        default:
+            return []
+        }
+    }
 }

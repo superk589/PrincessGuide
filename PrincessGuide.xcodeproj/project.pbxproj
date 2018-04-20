@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */; };
+		12124F462089C9E1001C1A6F /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F452089C9E1001C1A6F /* Property.swift */; };
+		12124F4A2089D6F4001C1A6F /* SkillActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F492089D6F4001C1A6F /* SkillActionView.swift */; };
+		12124F4C2089DBCC001C1A6F /* SkillActionValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4B2089DBCC001C1A6F /* SkillActionValueView.swift */; };
 		1221CDB9207B92FC008F30AA /* master.db in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDB8207B92FB008F30AA /* master.db */; };
 		1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDBF207B9541008F30AA /* Assets.xcassets */; };
 		1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC1207B96FA008F30AA /* CardTableViewController.swift */; };
@@ -30,7 +34,7 @@
 		12B85D2B2089840A0088F5FB /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D2A2089840A0088F5FB /* Skill.swift */; };
 		12B85D31208993470088F5FB /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D30208993470088F5FB /* Coefficients.swift */; };
 		12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D32208996FF0088F5FB /* DispatchExtension.swift */; };
-		12B85D3B2089B1DB0088F5FB /* CDProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D362089B1DB0088F5FB /* CDProfileTableViewCell.swift */; };
+		12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D362089B1DB0088F5FB /* CDBasicTableViewCell.swift */; };
 		12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */; };
 		12B85D3D2089B1DB0088F5FB /* CDRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */; };
 		12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */; };
@@ -39,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		02724E45632B119A9B34326D /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
+		12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSkillTableViewCell.swift; sourceTree = "<group>"; };
+		12124F452089C9E1001C1A6F /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		12124F492089D6F4001C1A6F /* SkillActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillActionView.swift; sourceTree = "<group>"; };
+		12124F4B2089DBCC001C1A6F /* SkillActionValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillActionValueView.swift; sourceTree = "<group>"; };
 		1221CDB8207B92FB008F30AA /* master.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = master.db; sourceTree = "<group>"; };
 		1221CDBF207B9541008F30AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1221CDC1207B96FA008F30AA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +73,7 @@
 		12B85D2A2089840A0088F5FB /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		12B85D30208993470088F5FB /* Coefficients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
 		12B85D32208996FF0088F5FB /* DispatchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchExtension.swift; sourceTree = "<group>"; };
-		12B85D362089B1DB0088F5FB /* CDProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewCell.swift; sourceTree = "<group>"; };
+		12B85D362089B1DB0088F5FB /* CDBasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDBasicTableViewCell.swift; sourceTree = "<group>"; };
 		12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStatusTableViewCell.swift; sourceTree = "<group>"; };
 		12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDRankTableViewCell.swift; sourceTree = "<group>"; };
 		12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +103,7 @@
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
 				12B85D2A2089840A0088F5FB /* Skill.swift */,
 				12B85D30208993470088F5FB /* Coefficients.swift */,
+				12124F452089C9E1001C1A6F /* Property.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,9 +213,12 @@
 		12B85D352089B1DB0088F5FB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				12B85D362089B1DB0088F5FB /* CDProfileTableViewCell.swift */,
+				12B85D362089B1DB0088F5FB /* CDBasicTableViewCell.swift */,
 				12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */,
 				12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */,
+				12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */,
+				12124F492089D6F4001C1A6F /* SkillActionView.swift */,
+				12124F4B2089DBCC001C1A6F /* SkillActionValueView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,10 +372,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12124F462089C9E1001C1A6F /* Property.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficients.swift in Sources */,
+				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
@@ -372,16 +386,18 @@
 				12B85D3D2089B1DB0088F5FB /* CDRankTableViewCell.swift in Sources */,
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
 				12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */,
+				12124F4C2089DBCC001C1A6F /* SkillActionValueView.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
-				12B85D3B2089B1DB0088F5FB /* CDProfileTableViewCell.swift in Sources */,
+				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
+				12124F4A2089D6F4001C1A6F /* SkillActionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

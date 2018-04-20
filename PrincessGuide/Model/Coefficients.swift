@@ -35,7 +35,7 @@ struct Coefficients: Codable {
             "exskill_evolution_coefficient": "15",
             "overall_coefficient": "1.0"
         }
-"""
+        """
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let result = try! decoder.decode(Coefficients.self, from: json.data(using: .utf8)!)
