@@ -171,4 +171,60 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getSkill(skillID: Int, callback: @escaping FMDBCallBackClosure<Skill?>) {
+        var result: Skill?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                skill_data
+            WHERE
+                skill_id = \(skillID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                var actionIDs = [Int]()
+                for i in 1..<7 {
+                    let field = "action_\(i)"
+                    let id = json[field].intValue
+                    if id != 0 {
+                        actionIDs.append(id)
+                    }
+                }
+                
+                var actions = [Skill.Action]()
+                
+                let actionSql = """
+                SELECT
+                    *
+                FROM
+                    skill_action
+                WHERE
+                    action_id IN (\(actionIDs.map(String.init).joined(separator: ","))
+                """
+                
+                let subSet = try db.executeQuery(actionSql, values: nil)
+                while subSet.next() {
+                    let json = JSON(set.resultDictionary ?? [:])
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    if let action = try? decoder.decode(Skill.Action.self, from: json.rawData()) {
+                        actions.append(action)
+                    }
+                }
+                if let base = try? decoder.decode(Skill.Base.self, from: json.rawData()) {
+                    let skill = Skill(actions: actions, base: base)
+                    result = skill
+                }
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
 }

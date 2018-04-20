@@ -8,12 +8,12 @@
 
 import UIKit
 
-class Equipment: Codable {
+struct Equipment: Codable {
     
     let atk: Int
     let craftFlg: Int
     let def: Int
-    let descriptionField: Int
+    let description: String
     let dodge: Int
     let enableDonation: Int
     let energyRecoveryRate: Int

@@ -23,14 +23,17 @@
 		1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE2207DB076008F30AA /* LoadingHUD.swift */; };
 		1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */; };
 		1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE6207DB350008F30AA /* Debouncer.swift */; };
-		1221CDF1207DEED9008F30AA /* CardDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDF0207DEED9008F30AA /* CardDetailTableViewController.swift */; };
-		1221CDF5207DEF32008F30AA /* CDStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDF4207DEF32008F30AA /* CDStatusTableViewCell.swift */; };
-		1221CDF8207DEFAB008F30AA /* CDRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDF7207DEFAB008F30AA /* CDRankTableViewCell.swift */; };
-		1221CDFA207DF046008F30AA /* CDProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDF9207DF046008F30AA /* CDProfileTableViewCell.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E07205F5DB100A8B9A2 /* ViewController.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
 		12659E10205F5DB100A8B9A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E0E205F5DB100A8B9A2 /* LaunchScreen.storyboard */; };
+		12B85D2B2089840A0088F5FB /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D2A2089840A0088F5FB /* Skill.swift */; };
+		12B85D31208993470088F5FB /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D30208993470088F5FB /* Coefficients.swift */; };
+		12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D32208996FF0088F5FB /* DispatchExtension.swift */; };
+		12B85D3B2089B1DB0088F5FB /* CDProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D362089B1DB0088F5FB /* CDProfileTableViewCell.swift */; };
+		12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */; };
+		12B85D3D2089B1DB0088F5FB /* CDRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */; };
+		12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */; };
 		7EAB06793468F4C4766121CB /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5230F9ADE5D1BC9A3C43E0FC /* Pods_PrincessGuide.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,16 +56,19 @@
 		1221CDE2207DB076008F30AA /* LoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
 		1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 		1221CDE6207DB350008F30AA /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
-		1221CDF0207DEED9008F30AA /* CardDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailTableViewController.swift; sourceTree = "<group>"; };
-		1221CDF4207DEF32008F30AA /* CDStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStatusTableViewCell.swift; sourceTree = "<group>"; };
-		1221CDF7207DEFAB008F30AA /* CDRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDRankTableViewCell.swift; sourceTree = "<group>"; };
-		1221CDF9207DF046008F30AA /* CDProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewCell.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12659E07205F5DB100A8B9A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		12659E0A205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12659E0F205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12659E11205F5DB100A8B9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12B85D2A2089840A0088F5FB /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		12B85D30208993470088F5FB /* Coefficients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
+		12B85D32208996FF0088F5FB /* DispatchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchExtension.swift; sourceTree = "<group>"; };
+		12B85D362089B1DB0088F5FB /* CDProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewCell.swift; sourceTree = "<group>"; };
+		12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStatusTableViewCell.swift; sourceTree = "<group>"; };
+		12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDRankTableViewCell.swift; sourceTree = "<group>"; };
+		12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
 		5230F9ADE5D1BC9A3C43E0FC /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF708E06B6239202096BFF9B /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +93,8 @@
 				1221CDCA207B9864008F30AA /* Master.swift */,
 				1221CDD7207C6BC8008F30AA /* Equipment.swift */,
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
+				12B85D2A2089840A0088F5FB /* Skill.swift */,
+				12B85D30208993470088F5FB /* Coefficients.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,7 +119,7 @@
 		1221CDC3207B96FF008F30AA /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				1221CDF2207DEEEF008F30AA /* CardDetail */,
+				12B85D342089B1DB0088F5FB /* Detail */,
 				1221CDC6207B9727008F30AA /* ViewController */,
 				1221CDC9207B973F008F30AA /* View */,
 			);
@@ -143,35 +151,9 @@
 				1221CDDE207CC4A7008F30AA /* Color.swift */,
 				1221CDE0207D9709008F30AA /* Font.swift */,
 				1221CDE6207DB350008F30AA /* Debouncer.swift */,
+				12B85D32208996FF0088F5FB /* DispatchExtension.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		1221CDF2207DEEEF008F30AA /* CardDetail */ = {
-			isa = PBXGroup;
-			children = (
-				1221CDF3207DEF01008F30AA /* ViewController */,
-				1221CDF6207DEF36008F30AA /* View */,
-			);
-			path = CardDetail;
-			sourceTree = "<group>";
-		};
-		1221CDF3207DEF01008F30AA /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				1221CDF0207DEED9008F30AA /* CardDetailTableViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		1221CDF6207DEF36008F30AA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				1221CDF4207DEF32008F30AA /* CDStatusTableViewCell.swift */,
-				1221CDF9207DF046008F30AA /* CDProfileTableViewCell.swift */,
-				1221CDF7207DEFAB008F30AA /* CDRankTableViewCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		12659DF9205F5DB100A8B9A2 = {
@@ -208,6 +190,33 @@
 				12659E11205F5DB100A8B9A2 /* Info.plist */,
 			);
 			path = PrincessGuide;
+			sourceTree = "<group>";
+		};
+		12B85D342089B1DB0088F5FB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				12B85D352089B1DB0088F5FB /* View */,
+				12B85D392089B1DB0088F5FB /* ViewController */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		12B85D352089B1DB0088F5FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12B85D362089B1DB0088F5FB /* CDProfileTableViewCell.swift */,
+				12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */,
+				12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12B85D392089B1DB0088F5FB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		305CE2A496B9481B403CDB1C /* Pods */ = {
@@ -351,24 +360,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1221CDF8207DEFAB008F30AA /* CDRankTableViewCell.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
-				1221CDF5207DEF32008F30AA /* CDStatusTableViewCell.swift in Sources */,
-				1221CDF1207DEED9008F30AA /* CardDetailTableViewController.swift in Sources */,
+				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
+				12B85D31208993470088F5FB /* Coefficients.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
 				1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */,
 				1221CDDC207CC39E008F30AA /* Config.swift in Sources */,
+				12B85D3D2089B1DB0088F5FB /* CDRankTableViewCell.swift in Sources */,
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
 				12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
+				12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
-				1221CDFA207DF046008F30AA /* CDProfileTableViewCell.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
+				12B85D3B2089B1DB0088F5FB /* CDProfileTableViewCell.swift in Sources */,
+				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
+				12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

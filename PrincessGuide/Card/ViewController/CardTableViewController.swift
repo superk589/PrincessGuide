@@ -52,7 +52,7 @@ class CardTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CardDetailTableViewController()
+        let vc = CDTableViewController()
         vc.card = cards[indexPath.row]
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)

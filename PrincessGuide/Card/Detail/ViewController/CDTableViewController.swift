@@ -1,5 +1,5 @@
 //
-//  CardDetailTableViewController.swift
+//  CDTableViewController.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/4/11.
@@ -8,12 +8,15 @@
 
 import UIKit
 
-class CardDetailTableViewController: UITableViewController {
+class CDTableViewController: UITableViewController {
+    
+    struct Row {
+        
+    }
     
     var card: Card? {
         didSet {
             tableView.reloadData()
-            
         }
     }
     
@@ -21,6 +24,5 @@ class CardDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         
     }
-    
     
 }

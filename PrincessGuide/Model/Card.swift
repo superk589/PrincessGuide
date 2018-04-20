@@ -10,11 +10,11 @@ import Foundation
 
 class Card: Codable {
     
-    var promotions: [Promotion]
+    let promotions: [Promotion]
     
-    var rarities: [Rarity]
+    let rarities: [Rarity]
     
-    var promotionStatuses: [PromotionStatus]
+    let promotionStatuses: [PromotionStatus]
 
     let base: Base
     
@@ -144,5 +144,38 @@ class Card: Codable {
         let waveHpRecovery: Int
     }
     
+}
+
+extension Card {
+
+    var exSkill1: Skill? {
+        return DispatchSemaphore.sync({ closure in
+            Master.shared.getSkill(skillID: base.exSkill1, callback: closure)
+        })
+    }
+    
+    var exSkillEvolution1: Skill? {
+        return DispatchSemaphore.sync({ closure in
+            Master.shared.getSkill(skillID: base.exSkillEvolution1, callback: closure)
+        })
+    }
+    
+    var mainSkill1: Skill? {
+        return DispatchSemaphore.sync({ closure in
+            Master.shared.getSkill(skillID: base.mainSkill1, callback: closure)
+        })
+    }
+    
+    var mainSkill2: Skill? {
+        return DispatchSemaphore.sync({ closure in
+            Master.shared.getSkill(skillID: base.mainSkill2, callback: closure)
+        })
+    }
+    
+    var unionBurst: Skill? {
+        return DispatchSemaphore.sync({ closure in
+            Master.shared.getSkill(skillID: base.unionBurst, callback: closure)
+        })
+    }
     
 }
