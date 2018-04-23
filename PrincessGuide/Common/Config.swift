@@ -8,6 +8,6 @@
 
 import UIKit
 
-class Config: NSObject {
-
+struct Config {
+    static let maxPlayerLevel = 88
 }

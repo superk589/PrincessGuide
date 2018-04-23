@@ -10,7 +10,6 @@
 		12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */; };
 		12124F462089C9E1001C1A6F /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F452089C9E1001C1A6F /* Property.swift */; };
 		12124F4A2089D6F4001C1A6F /* SkillActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F492089D6F4001C1A6F /* SkillActionView.swift */; };
-		12124F4C2089DBCC001C1A6F /* SkillActionValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4B2089DBCC001C1A6F /* SkillActionValueView.swift */; };
 		1221CDB9207B92FC008F30AA /* master.db in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDB8207B92FB008F30AA /* master.db */; };
 		1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDBF207B9541008F30AA /* Assets.xcassets */; };
 		1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC1207B96FA008F30AA /* CardTableViewController.swift */; };
@@ -46,7 +45,6 @@
 		12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSkillTableViewCell.swift; sourceTree = "<group>"; };
 		12124F452089C9E1001C1A6F /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		12124F492089D6F4001C1A6F /* SkillActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillActionView.swift; sourceTree = "<group>"; };
-		12124F4B2089DBCC001C1A6F /* SkillActionValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillActionValueView.swift; sourceTree = "<group>"; };
 		1221CDB8207B92FB008F30AA /* master.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = master.db; sourceTree = "<group>"; };
 		1221CDBF207B9541008F30AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1221CDC1207B96FA008F30AA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 				12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */,
 				12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */,
 				12124F492089D6F4001C1A6F /* SkillActionView.swift */,
-				12124F4B2089DBCC001C1A6F /* SkillActionValueView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,7 +383,6 @@
 				12B85D3D2089B1DB0088F5FB /* CDRankTableViewCell.swift in Sources */,
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
 				12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */,
-				12124F4C2089DBCC001C1A6F /* SkillActionValueView.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,

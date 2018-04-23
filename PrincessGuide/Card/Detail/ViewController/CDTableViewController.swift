@@ -10,18 +10,18 @@ import UIKit
 
 class CDTableViewController: UITableViewController {
     
-    enum Data {
-        case skill(Skill, SkillCategory)
-        case card(Card.Base)
-    }
-    
     struct Row {
+        enum Data {
+            case skill(Skill, SkillCategory)
+            case card(Card.Base)
+        }
         var type: UITableViewCell.Type
         var data: Data
     }
     
     var card: Card? {
         didSet {
+            navigationItem.title = card?.base.unitName
             if let card = card {
                 prepareRows(for: card)
                 tableView.reloadData()
@@ -61,5 +61,20 @@ class CDTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rows.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = rows[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! CardDetailConfigurable
+        cell.configure(for: model.data)
+        return cell as! UITableViewCell
     }
 }

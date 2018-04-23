@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CDSkillTableViewCell: UITableViewCell {
+class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     let nameLabel = UILabel()
     
@@ -18,15 +18,17 @@ class CDSkillTableViewCell: UITableViewCell {
     
     let descLabel = UILabel()
     
-    let actionView = SkillActionView()
+    let stackView = UIStackView()
     
+    var actionViews = [SkillActionView]()
+        
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         nameLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(10)
+            make.left.equalTo(readableContentGuide)
             make.top.equalTo(10)
         }
         
@@ -34,16 +36,18 @@ class CDSkillTableViewCell: UITableViewCell {
         categoryLabel.textColor = .gray
         contentView.addSubview(categoryLabel)
         categoryLabel.snp.makeConstraints { (make) in
-            make.right.equalTo(-10)
+            make.right.equalTo(readableContentGuide)
             make.top.equalTo(nameLabel)
         }
         
         descLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         descLabel.textColor = .darkGray
+        descLabel.numberOfLines = 0
         contentView.addSubview(descLabel)
         descLabel.snp.makeConstraints { (make) in
             make.left.equalTo(nameLabel)
             make.top.equalTo(nameLabel.snp.bottom).offset(5)
+            make.right.equalTo(readableContentGuide)
         }
         
         let subTitleLabel = createSubTitleLabel(title: NSLocalizedString("Cast Time", comment: ""))
@@ -68,11 +72,15 @@ class CDSkillTableViewCell: UITableViewCell {
             make.top.equalTo(castTimeLabel.snp.bottom).offset(5)
         }
         
-        contentView.addSubview(actionView)
-        actionView.snp.makeConstraints { (make) in
+        stackView.axis = .vertical
+        stackView.spacing = 5
+        stackView.distribution = .equalSpacing
+        contentView.addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
             make.left.equalTo(nameLabel)
             make.top.equalTo(subTitleLabel2.snp.bottom).offset(5)
             make.bottom.equalTo(-10)
+            make.right.equalTo(readableContentGuide)
         }
         
     }
@@ -87,8 +95,25 @@ class CDSkillTableViewCell: UITableViewCell {
     func configure(for skill: Skill, category: SkillCategory) {
         nameLabel.text = skill.base.name
         categoryLabel.text = category.description
-        castTimeLabel.text = skill.base.skillCastTime
+        castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
+        
+        actionViews.forEach {
+            $0.removeFromSuperview()
+        }
+        actionViews.removeAll()
+        
+        for action in skill.actions {
+            let actionView = SkillActionView()
+            actionView.configure(for: action)
+            actionViews.append(actionView)
+            stackView.addArrangedSubview(actionView)
+        }
+    }
+    
+    func configure(for item: CardDetailItem) {
+        guard case .skill(let skill, let category) = item else { return }
+        configure(for: skill, category: category)
     }
     
     required init?(coder aDecoder: NSCoder) {

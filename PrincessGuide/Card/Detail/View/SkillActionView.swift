@@ -10,44 +10,22 @@ import UIKit
 
 class SkillActionView: UIView {
     
-    let typeLabel = UILabel()
-    
-    var actionValueViews = [SkillActionValueView]()
-    
-    let stackView = UIStackView()
+    let valueLabel = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        typeLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
-        addSubview(typeLabel)
-        typeLabel.snp.makeConstraints { (make) in
-            make.left.top.equalToSuperview()
-        }
-        
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        
-        addSubview(typeLabel)
-        stackView.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(typeLabel.snp.bottom)
+        valueLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
+        valueLabel.textColor = .darkGray
+        addSubview(valueLabel)
+        valueLabel.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
         
     }
     
     func configure(for action: Skill.Action) {
-        actionValueViews.forEach {
-            stackView.removeArrangedSubview($0)
-        }
-        actionValueViews.removeAll()
-        
-        for info in action.values {
-            let actionValueView = SkillActionValueView()
-            actionValueView.configure(title: info.key.description, value: info.value)
-            actionValueViews.append(actionValueView)
-            stackView.addArrangedSubview(actionValueView)
-        }
+        valueLabel.text = action.longDescription
     }
     
     required init?(coder aDecoder: NSCoder) {

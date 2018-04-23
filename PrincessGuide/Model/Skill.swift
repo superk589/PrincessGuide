@@ -53,7 +53,7 @@ class Skill: Codable {
         let iconType: Int
         let name: String
         let skillAreaWidth: Int
-        let skillCastTime: String
+        let skillCastTime: Double
         let skillId: Int
         let skillType: Int
     }
@@ -65,13 +65,13 @@ class Skill: Codable {
         let actionDetail3: Int
         let actionId: Int
         let actionType: Int
-        let actionValue1: String
-        let actionValue2: String
-        let actionValue3: String
-        let actionValue4: String
-        let actionValue5: String
-        let actionValue6: String
-        let actionValue7: String
+        let actionValue1: Double
+        let actionValue2: Double
+        let actionValue3: Double
+        let actionValue4: Double
+        let actionValue5: Double
+        let actionValue6: Double
+        let actionValue7: Double
         let classId: Int
         let description: String
         let levelUpDisp: String
@@ -91,6 +91,7 @@ enum ActionKey: String, CustomStringConvertible {
     case magicStr
     case skillLevel
     case initialValue
+    case duration
     
     var description: String {
         switch self {
@@ -102,6 +103,8 @@ enum ActionKey: String, CustomStringConvertible {
             return NSLocalizedString("Increased Per Skill Level", comment: "")
         case .initialValue:
             return NSLocalizedString("Initial Value", comment: "")
+        case .duration:
+            return NSLocalizedString("Duration", comment: "")
         }
     }
 }
@@ -115,6 +118,8 @@ enum ActionType: Int, CustomStringConvertible {
     case unknown = 0
     case damage = 1
     case heal = 4
+    case stun = 8
+    case ex = 90
 
     var description: String {
         switch self {
@@ -124,11 +129,15 @@ enum ActionType: Int, CustomStringConvertible {
             return NSLocalizedString("Heal", comment: "")
         case .unknown:
             return NSLocalizedString("Unknown", comment: "")
+        case .stun:
+            return NSLocalizedString("Stun", comment: "")
+        case .ex:
+            return NSLocalizedString("EX", comment: "")
         }
     }
 }
 
-enum ActionDamageClass: Int, CustomStringConvertible {
+enum ActionClass: Int, CustomStringConvertible {
     case unknown = 0
     case physical = 1
     case magical = 2
@@ -145,44 +154,128 @@ enum ActionDamageClass: Int, CustomStringConvertible {
     }
 }
 
+extension Property {
+    init?(_ value: Int) {
+        switch value {
+        case 1:
+            self = .hp
+        case 2:
+            self = .atk
+        case 3:
+            self = .def
+        case 4:
+            self = .magicStr
+        case 5:
+            self = .magicDef
+        default:
+            return nil
+        }
+    }
+}
+
 extension Skill.Action {
     
     var type: ActionType {
         return ActionType(rawValue: actionType) ?? .unknown
     }
     
-    var damageClass: ActionDamageClass {
-        return ActionDamageClass(rawValue: actionDetail1) ?? .unknown
+    var `class`: ActionClass {
+        return ActionClass(rawValue: actionDetail1) ?? .unknown
     }
     
     var values: [ActionValue] {
-        switch (type, damageClass) {
+        switch (type, `class`) {
         case (.damage, .magical):
             return [
-                ActionValue(key: .initialValue, value: actionValue1),
-                ActionValue(key: .skillLevel, value: actionValue2),
-                ActionValue(key: .magicStr, value: actionValue3)
+                ActionValue(key: .initialValue, value: String(actionValue1)),
+                ActionValue(key: .skillLevel, value: String(actionValue2)),
+                ActionValue(key: .magicStr, value: String(actionValue3))
             ]
         case (.damage, .physical):
             return [
-                ActionValue(key: .initialValue, value: actionValue1),
-                ActionValue(key: .skillLevel, value: actionValue2),
-                ActionValue(key: .atk, value: actionValue3)
+                ActionValue(key: .initialValue, value: String(actionValue1)),
+                ActionValue(key: .skillLevel, value: String(actionValue2)),
+                ActionValue(key: .atk, value: String(actionValue3))
             ]
         case (.heal, .magical):
             return [
-                ActionValue(key: .initialValue, value: actionValue1),
-                ActionValue(key: .skillLevel, value: actionValue2),
-                ActionValue(key: .magicStr, value: actionValue3)
+                ActionValue(key: .initialValue, value: String(actionValue1)),
+                ActionValue(key: .skillLevel, value: String(actionValue2)),
+                ActionValue(key: .magicStr, value: String(actionValue3))
             ]
         case (.heal, .physical):
             return [
-                ActionValue(key: .initialValue, value: actionValue1),
-                ActionValue(key: .skillLevel, value: actionValue2),
-                ActionValue(key: .atk, value: actionValue3)
+                ActionValue(key: .initialValue, value: String(actionValue1)),
+                ActionValue(key: .skillLevel, value: String(actionValue2)),
+                ActionValue(key: .atk, value: String(actionValue3))
+            ]
+        case (.ex, _):
+            return [
+                ActionValue(key: .initialValue, value: String(actionValue2)),
+                ActionValue(key: .skillLevel, value: String(actionValue3)),
+            ]
+        case (.stun, _):
+            return [
+                ActionValue(key: .initialValue, value: String(actionValue1)),
+                ActionValue(key: .skillLevel, value: String(actionValue2)),
+                ActionValue(key: .duration, value: String(actionValue3))
             ]
         default:
             return []
         }
+    }
+    
+    private func buildActionDescription() -> String {
+        switch type {
+        case .heal:
+            return NSLocalizedString("Restore [%@] HP", comment: "")
+        case .damage:
+            return NSLocalizedString("Deal [%@] \(`class`) Damage", comment: "")
+        case .ex:
+            return NSLocalizedString("Raise [%@] \(Property(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
+        case .stun:
+            return NSLocalizedString("Stun for [%@]s", comment: "")
+        default:
+            return NSLocalizedString("Unknwon", comment: "")
+        }
+    }
+    
+    private func buildValueDescription() -> String {
+        var result = ""
+        var fixedValue = 0.0
+        for value in values {
+            switch value.key {
+            case .atk:
+                result += "\(value.value) * \(Property.atk)"
+            case .magicStr:
+                result += "\(value.value) * \(Property.magicStr)"
+            case .skillLevel:
+                fixedValue += Double(Config.maxPlayerLevel - 1) * (Double(value.value) ?? 0)
+            case .initialValue:
+                fixedValue += Double(value.value) ?? 0
+            case .duration:
+                fixedValue = Double(value.value) ?? 0
+            }
+        }
+        
+        var valueString = ""
+        switch type {
+        case .damage, .heal, .ex:
+            valueString = String(Int(floor(fixedValue)))
+        default:
+            valueString = String(fixedValue)
+        }
+        
+        if result != "" {
+            return "\(result) + \(valueString)@\(Config.maxPlayerLevel)"
+        } else {
+            return "\(valueString)@\(Config.maxPlayerLevel)"
+        }
+    }
+    
+    var longDescription: String {
+        let actionDescription = buildActionDescription()
+        let valueDescription = buildValueDescription()
+        return String(format: actionDescription, valueDescription)
     }
 }
