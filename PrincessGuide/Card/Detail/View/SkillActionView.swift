@@ -17,6 +17,7 @@ class SkillActionView: UIView {
         
         valueLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         valueLabel.textColor = .darkGray
+        valueLabel.numberOfLines = 0
         addSubview(valueLabel)
         valueLabel.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -25,7 +26,7 @@ class SkillActionView: UIView {
     }
     
     func configure(for action: Skill.Action) {
-        valueLabel.text = action.longDescription
+        valueLabel.text = "- \(action.longDescription)"
     }
     
     required init?(coder aDecoder: NSCoder) {

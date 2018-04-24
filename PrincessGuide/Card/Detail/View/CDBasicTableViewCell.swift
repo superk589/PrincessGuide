@@ -37,6 +37,7 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
         commentLabel.snp.makeConstraints { (make) in
             make.top.equalTo(nameLabel.snp.bottom).offset(10)
             make.left.equalTo(nameLabel)
+            make.right.equalTo(readableContentGuide)
             make.bottom.equalTo(-10)
         }
         

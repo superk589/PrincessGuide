@@ -61,6 +61,7 @@ class CDTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.allowsSelection = false
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
