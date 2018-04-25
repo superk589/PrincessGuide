@@ -17,6 +17,8 @@ protocol CardDetailConfigurable {
 
 class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
     
+    let cardIcon = CardIconImageView()
+    
     let nameLabel = UILabel()
     
     let commentLabel = UILabel()
@@ -24,18 +26,26 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        contentView.addSubview(cardIcon)
+        cardIcon.snp.makeConstraints { (make) in
+            make.left.equalTo(readableContentGuide)
+            make.top.equalTo(10)
+            make.height.width.equalTo(64)
+        }
+        
         nameLabel.font = UIFont.scaledFont(forTextStyle: .title1, ofSize: 16)
         contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(readableContentGuide)
+            make.left.equalTo(cardIcon.snp.right).offset(10)
             make.top.equalTo(10)
         }
         
         commentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         commentLabel.numberOfLines = 0
+        commentLabel.textColor = .darkGray
         contentView.addSubview(commentLabel)
         commentLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(nameLabel.snp.bottom).offset(10)
+            make.top.equalTo(nameLabel.snp.bottom).offset(5)
             make.left.equalTo(nameLabel)
             make.right.equalTo(readableContentGuide)
             make.bottom.equalTo(-10)
@@ -50,6 +60,7 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
     func configure(for base: Card.Base) {
         nameLabel.text = base.unitName
         commentLabel.text = base.comment.replacingOccurrences(of: "\\n", with: "\n")
+        cardIcon.cardID = base.unitId
     }
     
     func configure(for item: CardDetailItem) {

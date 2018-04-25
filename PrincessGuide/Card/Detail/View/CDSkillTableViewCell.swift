@@ -10,6 +10,8 @@ import UIKit
 
 class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
     
+    let skillIcon = SkillIconImageView()
+    
     let nameLabel = UILabel()
     
     let categoryLabel = UILabel()
@@ -25,10 +27,17 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        contentView.addSubview(skillIcon)
+        skillIcon.snp.makeConstraints { (make) in
+            make.left.equalTo(readableContentGuide)
+            make.height.width.equalTo(64)
+            make.top.equalTo(10)
+        }
+        
         nameLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(readableContentGuide)
+            make.left.equalTo(skillIcon.snp.right).offset(10)
             make.top.equalTo(10)
         }
         
@@ -53,32 +62,33 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         let subTitleLabel = createSubTitleLabel(title: NSLocalizedString("Cast Time", comment: ""))
         contentView.addSubview(subTitleLabel)
         subTitleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(nameLabel)
-            make.top.equalTo(descLabel.snp.bottom).offset(5)
+            make.left.equalTo(readableContentGuide)
+            make.top.greaterThanOrEqualTo(descLabel.snp.bottom).offset(5)
+            make.top.greaterThanOrEqualTo(skillIcon.snp.bottom).offset(5)
         }
         
         castTimeLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         castTimeLabel.textColor = .darkGray
         contentView.addSubview(castTimeLabel)
         castTimeLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(nameLabel)
+            make.left.equalTo(readableContentGuide)
             make.top.equalTo(subTitleLabel.snp.bottom)
         }
         
         let subTitleLabel2 = createSubTitleLabel(title: NSLocalizedString("Skill Detail", comment: ""))
         contentView.addSubview(subTitleLabel2)
         subTitleLabel2.snp.makeConstraints { (make) in
-            make.left.equalTo(nameLabel)
+            make.left.equalTo(readableContentGuide)
             make.top.equalTo(castTimeLabel.snp.bottom).offset(5)
         }
         
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 0
         stackView.distribution = .equalSpacing
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
-            make.left.equalTo(nameLabel)
-            make.top.equalTo(subTitleLabel2.snp.bottom).offset(5)
+            make.left.equalTo(readableContentGuide)
+            make.top.equalTo(subTitleLabel2.snp.bottom)
             make.bottom.equalTo(-10)
             make.right.equalTo(readableContentGuide)
         }
@@ -97,6 +107,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         categoryLabel.text = category.description
         castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
+        skillIcon.iconID = skill.base.iconType
         
         actionViews.forEach {
             $0.removeFromSuperview()

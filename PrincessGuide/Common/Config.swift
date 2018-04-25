@@ -11,3 +11,7 @@ import UIKit
 struct Config {
     static let maxPlayerLevel = 88
 }
+
+extension URL {
+    static let image = URL(string: "https://redive.estertion.win")!
+}

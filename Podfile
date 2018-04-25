@@ -6,4 +6,5 @@ target 'PrincessGuide' do
   pod 'SwiftyJSON'
   pod 'DynamicColor'
   pod 'Kingfisher'
+  pod 'KingfisherWebP'
 end

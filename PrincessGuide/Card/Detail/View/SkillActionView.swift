@@ -26,7 +26,7 @@ class SkillActionView: UIView {
     }
     
     func configure(for action: Skill.Action) {
-        valueLabel.text = "- \(action.longDescription)"
+        valueLabel.text = "- \(action.detail)"
     }
     
     required init?(coder aDecoder: NSCoder) {

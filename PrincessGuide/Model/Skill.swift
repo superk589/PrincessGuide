@@ -251,6 +251,10 @@ extension Property {
 
 extension Skill.Action {
     
+    private var arguments: [Double] {
+        return [actionValue1, actionValue2, actionValue3, actionValue4, actionValue5, actionValue6, actionValue7]
+    }
+    
     var type: ActionType {
         return ActionType(rawValue: actionType) ?? .unknown
     }
@@ -393,7 +397,7 @@ extension Skill.Action {
         case (_, .action):
             return "\(Ailment(.action, Int(actionDetail1)) ?? .unknown)"
         case (_, .dot):
-            return "\(Ailment(.dot, Int(actionDetail1)) ?? .unknown) with [%@] damage"
+            return "\(Ailment(.dot, Int(actionDetail1)) ?? .unknown) target and deal [%@] damage"
         case (_, let ailment) where [.dark, .charm, .silent].contains(ailment):
             return "\(Ailment(ailment, Int(actionDetail1)) ?? .unknown) with [%@]%% chance"
         case (.aura, _):
@@ -415,7 +419,7 @@ extension Skill.Action {
         case (.cursingPool, _):
             return NSLocalizedString("Summon a pool to reduce [%@] DEF", comment: "")
         default:
-            return NSLocalizedString("Special effect", comment: "")
+            return NSLocalizedString("Unknown effect with arguments [\(arguments.filter { $0 != 0 }.map(String.init).joined(separator: ", "))]", comment: "")
         }
     }
     
@@ -442,13 +446,7 @@ extension Skill.Action {
             }
         }
         
-        var valueString = ""
-        switch type {
-        case .damage, .guard, .heal, .ex, .aura, .additionalDamage, .tp, .healingPool:
-            valueString = String(Int(floor(fixedValue)))
-        default:
-            valueString = String(fixedValue)
-        }
+        let valueString = String(Int(floor(fixedValue)))
         
         if result != "" {
             return "\(result) + \(valueString)@\(Config.maxPlayerLevel)"
@@ -459,7 +457,9 @@ extension Skill.Action {
     
     private func buildDurationDescription() -> String {
         switch (type, ailmentType) {
-        case (_, let ailment) where ailment != .unknown && ailment != .instantDeath:
+        case (_, .dot):
+            return NSLocalizedString(" over [%@]s", comment: "")
+        case (_, let ailment) where ![.unknown, .instantDeath, .dot].contains(ailment):
             return NSLocalizedString(" for [%@]s", comment: "")
         case (.aura, _), (.taunt, _), (.healingPool, _), (.guard, _):
             return NSLocalizedString(" for [%@]s", comment: "")
@@ -509,7 +509,7 @@ extension Skill.Action {
         return "\(valueString)@\(Config.maxPlayerLevel)"
     }
     
-    var longDescription: String {
+    var detail: String {
         return String(format: buildActionDescription(), actionValue()) + String(format: buildStackDescription(), stackValue()) + String(format: buildDurationDescription(), durationValue())
     }
 }

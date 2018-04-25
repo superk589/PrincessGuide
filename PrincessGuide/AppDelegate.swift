@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Kingfisher
+import KingfisherWebP
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootTabBarController
         window?.makeKeyAndVisible()
         
-        // Override point for customization after application launch.
+        KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
+
         return true
     }
 

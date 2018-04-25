@@ -8,10 +8,11 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class CardView: UIView {
     
-    let icon = UIImageView()
+    let icon = CardIconImageView()
     let nameLabel = UILabel()
     let rarityView = RarityView()
     
@@ -20,15 +21,21 @@ class CardView: UIView {
         
         addSubview(nameLabel)
         addSubview(rarityView)
+        addSubview(icon)
+        
+        icon.snp.makeConstraints { (make) in
+            make.height.equalTo(64)
+            make.width.equalTo(64)
+            make.left.top.equalToSuperview()
+        }
         
         nameLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview()
             make.centerY.equalToSuperview()
+            make.left.equalTo(icon.snp.right).offset(10)
         }
         
         rarityView.snp.makeConstraints { (make) in
-            make.right.equalToSuperview()
-            make.centerY.equalToSuperview()
+            make.right.centerY.equalToSuperview()
         }
         
         nameLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
@@ -37,6 +44,11 @@ class CardView: UIView {
     func configure(for card: Card) {
         nameLabel.text = card.base.unitName
         rarityView.setup(stars: card.base.rarity)
+        icon.cardID = card.base.unitId
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIViewNoIntrinsicMetric, height: 64)
     }
     
     required init?(coder aDecoder: NSCoder) {

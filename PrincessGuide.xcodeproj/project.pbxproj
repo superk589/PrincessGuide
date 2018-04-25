@@ -38,11 +38,13 @@
 		12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */; };
 		12B85D3D2089B1DB0088F5FB /* CDRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */; };
 		12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */; };
-		7EAB06793468F4C4766121CB /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5230F9ADE5D1BC9A3C43E0FC /* Pods_PrincessGuide.framework */; };
+		12C878D6208F44F900255503 /* CardPlateImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C878D5208F44F900255503 /* CardPlateImageView.swift */; };
+		12C878D8208F489A00255503 /* CardIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C878D7208F489A00255503 /* CardIconImageView.swift */; };
+		12C878DA208F49ED00255503 /* SkillIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C878D9208F49ED00255503 /* SkillIconImageView.swift */; };
+		BD1F9CD415774DF7E9F1F065 /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02724E45632B119A9B34326D /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
 		12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSkillTableViewCell.swift; sourceTree = "<group>"; };
 		12124F452089C9E1001C1A6F /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		12124F492089D6F4001C1A6F /* SkillActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillActionView.swift; sourceTree = "<group>"; };
@@ -77,8 +79,12 @@
 		12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStatusTableViewCell.swift; sourceTree = "<group>"; };
 		12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDRankTableViewCell.swift; sourceTree = "<group>"; };
 		12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
-		5230F9ADE5D1BC9A3C43E0FC /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF708E06B6239202096BFF9B /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
+		12C878D5208F44F900255503 /* CardPlateImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlateImageView.swift; sourceTree = "<group>"; };
+		12C878D7208F489A00255503 /* CardIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardIconImageView.swift; sourceTree = "<group>"; };
+		12C878D9208F49ED00255503 /* SkillIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillIconImageView.swift; sourceTree = "<group>"; };
+		137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3A7397A654F34C82BBE460F /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
+		E65954633AC8DECE65F7AA7C /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +93,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */,
-				7EAB06793468F4C4766121CB /* Pods_PrincessGuide.framework in Frameworks */,
+				BD1F9CD415774DF7E9F1F065 /* Pods_PrincessGuide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D71BF996E029DA9A96945C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E65954633AC8DECE65F7AA7C /* Pods-PrincessGuide.debug.xcconfig */,
+				C3A7397A654F34C82BBE460F /* Pods-PrincessGuide.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1221CDBA207B9310008F30AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +137,9 @@
 			children = (
 				1221CDE2207DB076008F30AA /* LoadingHUD.swift */,
 				1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */,
+				12C878D5208F44F900255503 /* CardPlateImageView.swift */,
+				12C878D7208F489A00255503 /* CardIconImageView.swift */,
+				12C878D9208F49ED00255503 /* SkillIconImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,8 +189,8 @@
 			children = (
 				12659E04205F5DB100A8B9A2 /* PrincessGuide */,
 				12659E03205F5DB100A8B9A2 /* Products */,
-				305CE2A496B9481B403CDB1C /* Pods */,
 				C4EE8380F1630D9BF0C1B7E0 /* Frameworks */,
+				0D71BF996E029DA9A96945C3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,20 +249,11 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		305CE2A496B9481B403CDB1C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				02724E45632B119A9B34326D /* Pods-PrincessGuide.debug.xcconfig */,
-				DF708E06B6239202096BFF9B /* Pods-PrincessGuide.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		C4EE8380F1630D9BF0C1B7E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1221CDCC207C4197008F30AA /* libsqlite3.tbd */,
-				5230F9ADE5D1BC9A3C43E0FC /* Pods_PrincessGuide.framework */,
+				137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,11 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12659E14205F5DB100A8B9A2 /* Build configuration list for PBXNativeTarget "PrincessGuide" */;
 			buildPhases = (
-				5648769842017383A88B8554 /* [CP] Check Pods Manifest.lock */,
+				E33A6E1957CA050A1154FD96 /* [CP] Check Pods Manifest.lock */,
 				12659DFE205F5DB100A8B9A2 /* Sources */,
 				12659DFF205F5DB100A8B9A2 /* Frameworks */,
 				12659E00205F5DB100A8B9A2 /* Resources */,
-				9B006D5132E4C9E012C2FE23 /* [CP] Embed Pods Frameworks */,
+				3FA05502439574FBFD9F5B2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,7 +330,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5648769842017383A88B8554 /* [CP] Check Pods Manifest.lock */ = {
+		3FA05502439574FBFD9F5B2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/KingfisherWebP/KingfisherWebP.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KingfisherWebP.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E33A6E1957CA050A1154FD96 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -339,32 +378,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9B006D5132E4C9E012C2FE23 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
-				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -375,6 +388,7 @@
 				12124F462089C9E1001C1A6F /* Property.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
+				12C878D8208F489A00255503 /* CardIconImageView.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficients.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
@@ -389,10 +403,12 @@
 				12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */,
+				12C878DA208F49ED00255503 /* SkillIconImageView.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
+				12C878D6208F44F900255503 /* CardPlateImageView.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */,
@@ -536,7 +552,7 @@
 		};
 		12659E15205F5DB100A8B9A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02724E45632B119A9B34326D /* Pods-PrincessGuide.debug.xcconfig */;
+			baseConfigurationReference = E65954633AC8DECE65F7AA7C /* Pods-PrincessGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -556,7 +572,7 @@
 		};
 		12659E16205F5DB100A8B9A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF708E06B6239202096BFF9B /* Pods-PrincessGuide.release.xcconfig */;
+			baseConfigurationReference = C3A7397A654F34C82BBE460F /* Pods-PrincessGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -4,6 +4,33 @@ PODS:
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
   - Kingfisher (4.7.0)
+  - KingfisherWebP (0.3.1):
+    - Kingfisher (~> 4.0)
+    - libwebp
+  - libwebp (0.6.1):
+    - libwebp/core (= 0.6.1)
+    - libwebp/dec (= 0.6.1)
+    - libwebp/demux (= 0.6.1)
+    - libwebp/dsp (= 0.6.1)
+    - libwebp/enc (= 0.6.1)
+    - libwebp/mux (= 0.6.1)
+    - libwebp/utils (= 0.6.1)
+    - libwebp/webp (= 0.6.1)
+  - libwebp/core (0.6.1):
+    - libwebp/webp
+  - libwebp/dec (0.6.1):
+    - libwebp/core
+  - libwebp/demux (0.6.1):
+    - libwebp/core
+  - libwebp/dsp (0.6.1):
+    - libwebp/core
+  - libwebp/enc (0.6.1):
+    - libwebp/core
+  - libwebp/mux (0.6.1):
+    - libwebp/core
+  - libwebp/utils (0.6.1):
+    - libwebp/core
+  - libwebp/webp (0.6.1)
   - SnapKit (4.0.0)
   - SwiftyJSON (4.0.0)
 
@@ -11,6 +38,7 @@ DEPENDENCIES:
   - DynamicColor
   - FMDB
   - Kingfisher
+  - KingfisherWebP
   - SnapKit
   - SwiftyJSON
 
@@ -19,6 +47,8 @@ SPEC REPOS:
     - DynamicColor
     - FMDB
     - Kingfisher
+    - KingfisherWebP
+    - libwebp
     - SnapKit
     - SwiftyJSON
 
@@ -26,9 +56,11 @@ SPEC CHECKSUMS:
   DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  KingfisherWebP: 1d80d4f9541e37df02cf050a3c8a7902d3e1b940
+  libwebp: 0f01098c6c17175391af621b2f14150f3ca16e16
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 25a318a9533c77d6520f16f4e9bb935fc5a6c4b8
+PODFILE CHECKSUM: d046a901b6b7b774a4e8f0316d44ea4fb5debe5c
 
 COCOAPODS: 1.5.0

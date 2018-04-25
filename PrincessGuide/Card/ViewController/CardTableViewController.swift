@@ -17,7 +17,8 @@ class CardTableViewController: UITableViewController {
 
         tableView.keyboardDismissMode = .onDrag
         tableView.register(CardTableViewCell.self, forCellReuseIdentifier: CardTableViewCell.description())
-        tableView.rowHeight = 44
+        tableView.estimatedRowHeight = 84
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.tableFooterView = UIView()
         
         navigationItem.title = NSLocalizedString("Cards", comment: "")
