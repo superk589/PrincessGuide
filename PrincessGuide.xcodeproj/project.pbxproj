@@ -31,6 +31,11 @@
 		12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E07205F5DB100A8B9A2 /* ViewController.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
 		12659E10205F5DB100A8B9A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E0E205F5DB100A8B9A2 /* LaunchScreen.storyboard */; };
+		1299401D209055F500677720 /* CDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299401C209055F500677720 /* CDPatternTableViewCell.swift */; };
+		1299401F2090574D00677720 /* AttackPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299401E2090574D00677720 /* AttackPattern.swift */; };
+		1299402120905E9D00677720 /* AttackPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299402020905E9D00677720 /* AttackPatternView.swift */; };
+		1299402320905F4B00677720 /* PatternCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299402220905F4B00677720 /* PatternCollectionViewCell.swift */; };
+		1299402920906E7600677720 /* IconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1299402820906E7600677720 /* IconImageView.swift */; };
 		12B85D2B2089840A0088F5FB /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D2A2089840A0088F5FB /* Skill.swift */; };
 		12B85D31208993470088F5FB /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D30208993470088F5FB /* Coefficients.swift */; };
 		12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D32208996FF0088F5FB /* DispatchExtension.swift */; };
@@ -72,6 +77,11 @@
 		12659E0A205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12659E0F205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12659E11205F5DB100A8B9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1299401C209055F500677720 /* CDPatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPatternTableViewCell.swift; sourceTree = "<group>"; };
+		1299401E2090574D00677720 /* AttackPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackPattern.swift; sourceTree = "<group>"; };
+		1299402020905E9D00677720 /* AttackPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackPatternView.swift; sourceTree = "<group>"; };
+		1299402220905F4B00677720 /* PatternCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternCollectionViewCell.swift; sourceTree = "<group>"; };
+		1299402820906E7600677720 /* IconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
 		12B85D2A2089840A0088F5FB /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		12B85D30208993470088F5FB /* Coefficients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
 		12B85D32208996FF0088F5FB /* DispatchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchExtension.swift; sourceTree = "<group>"; };
@@ -117,6 +127,7 @@
 				1221CDD7207C6BC8008F30AA /* Equipment.swift */,
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
 				12B85D2A2089840A0088F5FB /* Skill.swift */,
+				1299401E2090574D00677720 /* AttackPattern.swift */,
 				12B85D30208993470088F5FB /* Coefficients.swift */,
 				12124F452089C9E1001C1A6F /* Property.swift */,
 				12124F4D208EC1A4001C1A6F /* Ailment.swift */,
@@ -140,6 +151,7 @@
 				12C878D5208F44F900255503 /* CardPlateImageView.swift */,
 				12C878D7208F489A00255503 /* CardIconImageView.swift */,
 				12C878D9208F49ED00255503 /* SkillIconImageView.swift */,
+				1299402820906E7600677720 /* IconImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,7 +248,10 @@
 				12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */,
 				12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */,
 				12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */,
+				1299401C209055F500677720 /* CDPatternTableViewCell.swift */,
 				12124F492089D6F4001C1A6F /* SkillActionView.swift */,
+				1299402020905E9D00677720 /* AttackPatternView.swift */,
+				1299402220905F4B00677720 /* PatternCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,14 +403,17 @@
 				12124F462089C9E1001C1A6F /* Property.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
+				1299402120905E9D00677720 /* AttackPatternView.swift in Sources */,
 				12C878D8208F489A00255503 /* CardIconImageView.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficients.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
+				1299401F2090574D00677720 /* AttackPattern.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
+				1299402920906E7600677720 /* IconImageView.swift in Sources */,
 				1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */,
 				1221CDDC207CC39E008F30AA /* Config.swift in Sources */,
 				12B85D3D2089B1DB0088F5FB /* CDRankTableViewCell.swift in Sources */,
@@ -404,11 +422,13 @@
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */,
 				12C878DA208F49ED00255503 /* SkillIconImageView.swift in Sources */,
+				1299401D209055F500677720 /* CDPatternTableViewCell.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
 				12C878D6208F44F900255503 /* CardPlateImageView.swift in Sources */,
+				1299402320905F4B00677720 /* PatternCollectionViewCell.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */,

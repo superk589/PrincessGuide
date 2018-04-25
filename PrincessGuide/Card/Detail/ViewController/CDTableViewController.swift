@@ -11,12 +11,13 @@ import UIKit
 class CDTableViewController: UITableViewController {
     
     struct Row {
-        enum Data {
+        enum Model {
             case skill(Skill, SkillCategory)
             case card(Card.Base)
+            case pattern(AttackPattern, Card)
         }
         var type: UITableViewCell.Type
-        var data: Data
+        var data: Model
     }
     
     var card: Card? {
@@ -35,6 +36,10 @@ class CDTableViewController: UITableViewController {
         rows.removeAll()
         
         rows.append(Row(type: CDBasicTableViewCell.self, data: .card(card.base)))
+        
+        card.patterns?.forEach {
+            rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0, card)))
+        }
         
         if let unionBurst = card.unionBurst {
             rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst)))

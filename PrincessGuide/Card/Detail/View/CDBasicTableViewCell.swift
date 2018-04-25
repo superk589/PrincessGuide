@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-typealias CardDetailItem = CDTableViewController.Row.Data
+typealias CardDetailItem = CDTableViewController.Row.Model
 
 protocol CardDetailConfigurable {
     func configure(for item: CardDetailItem)

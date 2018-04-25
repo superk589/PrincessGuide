@@ -147,6 +147,40 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getAttackPatterns(unitID: Int, callback: @escaping FMDBCallBackClosure<[AttackPattern]>) {
+        var results = [AttackPattern]()
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                *
+            FROM
+                unit_attack_pattern
+            WHERE
+                unit_id = \(unitID)
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+
+                let loopEnd = json["loop_end"].intValue
+                let loopStart = json["loop_start"].intValue
+                let patternID = json["pattern_id"].intValue
+                
+                var items = [Int]()
+                for i in 1...20 {
+                    let pattern = json["atk_pattern_\(i)"].intValue
+                    items.append(pattern)
+                }
+                
+                results.append(AttackPattern(items: items, loopEnd: loopEnd, loopStart: loopStart, patternID: patternID))
+            }
+        }) {
+            callback(results)
+        }
+    }
+    
     func getEquipments(callback: @escaping FMDBCallBackClosure<[Int: Equipment]>) {
         var dict = [Int: Equipment]()
         execute({ (db) in

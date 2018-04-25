@@ -172,9 +172,21 @@ extension Card {
         })
     }
     
+    var mainSkill3: Skill? {
+        return DispatchSemaphore.sync({ closure in
+            Master.shared.getSkill(skillID: base.mainSkill3, callback: closure)
+        })
+    }
+    
     var unionBurst: Skill? {
         return DispatchSemaphore.sync({ closure in
             Master.shared.getSkill(skillID: base.unionBurst, callback: closure)
+        })
+    }
+    
+    var patterns: [AttackPattern]? {
+        return DispatchSemaphore.sync({ closure in
+            Master.shared.getAttackPatterns(unitID: base.unitId, callback: closure)
         })
     }
     

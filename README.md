@@ -8,6 +8,7 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**. Under devel
 - [ ] Card Viewer
     - [ ] Card Properties
     - [x] Skill Effect Analysis
+    - [x] Attack Patterns
     - [ ] Damage or Healing Simulation
 - [ ] Area and Quest
     - [ ] Eqiupments Drop Rate
