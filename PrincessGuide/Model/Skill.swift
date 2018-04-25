@@ -267,6 +267,10 @@ extension Skill.Action {
         return AilmentType(rawValue: actionType) ?? .unknown
     }
     
+    var ailment: Ailment {
+        return Ailment(ailmentType, actionDetail1) ?? .unknown
+    }
+    
     var modifer: ActionModifier {
         return ActionModifier(actionDetail1)
     }
@@ -395,11 +399,16 @@ extension Skill.Action {
         case (.ex, _):
             return NSLocalizedString("Raise [%@] \(Property(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
         case (_, .action):
-            return "\(Ailment(.action, Int(actionDetail1)) ?? .unknown)"
+            switch ailment {
+            case .haste, .slow:
+                return "\(ailment) [%@]"
+            default:
+                return "\(ailment)"
+            }
         case (_, .dot):
-            return "\(Ailment(.dot, Int(actionDetail1)) ?? .unknown) target and deal [%@] damage"
+            return "\(ailment) target and deal [%@] damage"
         case (_, let ailment) where [.dark, .charm, .silent].contains(ailment):
-            return "\(Ailment(ailment, Int(actionDetail1)) ?? .unknown) with [%@]%% chance"
+            return "\(ailment) with [%@]%% chance"
         case (.aura, _):
             return NSLocalizedString("\(modifer) [%@]\(unitModifier) \(Property(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
         case (.position, _):
@@ -446,7 +455,13 @@ extension Skill.Action {
             }
         }
         
-        let valueString = String(Int(floor(fixedValue)))
+        var valueString = ""
+        switch (type, ailmentType) {
+        case (.invulnerable, _), (_, .action):
+            valueString = String(fixedValue)
+        default:
+            valueString = String(Int(floor(fixedValue)))
+        }
         
         if result != "" {
             return "\(result) + \(valueString)@\(Config.maxPlayerLevel)"

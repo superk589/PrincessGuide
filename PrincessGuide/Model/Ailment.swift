@@ -51,13 +51,13 @@ enum Ailment: Int, CustomStringConvertible {
         case .detain:
             return NSLocalizedString("Detain", comment: "")
         case .detained:
-            return NSLocalizedString("Detained", comment: "")
+            return NSLocalizedString("Detain", comment: "")
         case .poisoned:
-            return NSLocalizedString("Poisoned", comment: "")
+            return NSLocalizedString("Poison", comment: "")
         case .burned:
-            return NSLocalizedString("Burned", comment: "")
+            return NSLocalizedString("Burn", comment: "")
         case .cursed:
-            return NSLocalizedString("Cursed", comment: "")
+            return NSLocalizedString("Curse", comment: "")
         case .charm:
             return NSLocalizedString("Charm", comment: "")
         case .silent:
