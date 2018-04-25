@@ -2,7 +2,7 @@
 An unofficial iOS app for **プリンセスコネクト！Re:Dive**. Under development, not sure for the release time.
 
 ## Features (ToDo)
-- [ ] Image Server -- need help
+- [x] Image Server -- <https://redive.estertion.win>
 - [ ] Api Client  -- need help
 - [ ] Auto Sync Data
 - [ ] Card Viewer
