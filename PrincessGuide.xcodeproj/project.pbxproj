@@ -36,9 +36,14 @@
 		12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7F209158EA006AC352 /* QuestAreaTableViewCell.swift */; };
 		12398E83209158EB006AC352 /* QuestAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E81209158EA006AC352 /* QuestAreaTableViewController.swift */; };
 		12398E85209164AC006AC352 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E84209164AC006AC352 /* Quest.swift */; };
-		12398E8720916876006AC352 /* DropReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E8620916876006AC352 /* DropReward.swift */; };
+		12398E8720916876006AC352 /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E8620916876006AC352 /* Drop.swift */; };
 		12398E89209168A2006AC352 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E88209168A2006AC352 /* Wave.swift */; };
 		12398E8B20917554006AC352 /* QuestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E8A20917554006AC352 /* QuestTableViewController.swift */; };
+		12398E8D20917C1F006AC352 /* QuestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E8C20917C1F006AC352 /* QuestTableViewCell.swift */; };
+		12398E8F20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12398E8E20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist */; };
+		12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9020917EC2006AC352 /* SettingsTableViewController.swift */; };
+		12398E9720918572006AC352 /* VersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9620918572006AC352 /* VersionManager.swift */; };
+		12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E982091A1CB006AC352 /* DropRewardView.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E07205F5DB100A8B9A2 /* ViewController.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
@@ -87,9 +92,14 @@
 		12398E7F209158EA006AC352 /* QuestAreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestAreaTableViewCell.swift; sourceTree = "<group>"; };
 		12398E81209158EA006AC352 /* QuestAreaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestAreaTableViewController.swift; sourceTree = "<group>"; };
 		12398E84209164AC006AC352 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
-		12398E8620916876006AC352 /* DropReward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropReward.swift; sourceTree = "<group>"; };
+		12398E8620916876006AC352 /* Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
 		12398E88209168A2006AC352 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		12398E8A20917554006AC352 /* QuestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTableViewController.swift; sourceTree = "<group>"; };
+		12398E8C20917C1F006AC352 /* QuestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTableViewCell.swift; sourceTree = "<group>"; };
+		12398E8E20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-PrincessGuide-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		12398E9020917EC2006AC352 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		12398E9620918572006AC352 /* VersionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionManager.swift; sourceTree = "<group>"; };
+		12398E982091A1CB006AC352 /* DropRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropRewardView.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12659E07205F5DB100A8B9A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +158,7 @@
 				12398E732091573C006AC352 /* Area.swift */,
 				12398E84209164AC006AC352 /* Quest.swift */,
 				12398E88209168A2006AC352 /* Wave.swift */,
-				12398E8620916876006AC352 /* DropReward.swift */,
+				12398E8620916876006AC352 /* Drop.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +220,7 @@
 				1221CDE0207D9709008F30AA /* Font.swift */,
 				1221CDE6207DB350008F30AA /* Debouncer.swift */,
 				12B85D32208996FF0088F5FB /* DispatchExtension.swift */,
+				12398E9620918572006AC352 /* VersionManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -227,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				12398E7F209158EA006AC352 /* QuestAreaTableViewCell.swift */,
+				12398E8C20917C1F006AC352 /* QuestTableViewCell.swift */,
+				12398E982091A1CB006AC352 /* DropRewardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,6 +249,22 @@
 			children = (
 				12398E81209158EA006AC352 /* QuestAreaTableViewController.swift */,
 				12398E8A20917554006AC352 /* QuestTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		12398E9220917ECA006AC352 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				12398E9320917EE0006AC352 /* ViewController */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		12398E9320917EE0006AC352 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				12398E9020917EC2006AC352 /* SettingsTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -268,11 +297,13 @@
 				1221CDC3207B96FF008F30AA /* Card */,
 				12398E7D209158EA006AC352 /* Quest */,
 				12659E05205F5DB100A8B9A2 /* AppDelegate.swift */,
+				12398E9220917ECA006AC352 /* Settings */,
 				12659E09205F5DB100A8B9A2 /* Main.storyboard */,
 				1221CDBF207B9541008F30AA /* Assets.xcassets */,
 				12659E0E205F5DB100A8B9A2 /* LaunchScreen.storyboard */,
 				1221CDCE207C41C7008F30AA /* PrincessGuide-Bridging-Header.h */,
 				12659E11205F5DB100A8B9A2 /* Info.plist */,
+				12398E8E20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist */,
 			);
 			path = PrincessGuide;
 			sourceTree = "<group>";
@@ -384,6 +415,7 @@
 				1221CDB9207B92FC008F30AA /* master.db in Resources */,
 				1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */,
 				12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */,
+				12398E8F20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,22 +429,26 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/KingfisherWebP/KingfisherWebP.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KingfisherWebP.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,20 +502,24 @@
 				1221CDDC207CC39E008F30AA /* Config.swift in Sources */,
 				12B85D3D2089B1DB0088F5FB /* CDRankTableViewCell.swift in Sources */,
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
+				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
 				12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */,
 				12398E83209158EB006AC352 /* QuestAreaTableViewController.swift in Sources */,
 				12398E8B20917554006AC352 /* QuestTableViewController.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */,
 				12C878DA208F49ED00255503 /* SkillIconImageView.swift in Sources */,
+				12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
+				12398E8D20917C1F006AC352 /* QuestTableViewCell.swift in Sources */,
 				12C878D6208F44F900255503 /* CardPlateImageView.swift in Sources */,
+				12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */,
 				12398E7220915737006AC352 /* AttackPattern.swift in Sources */,
-				12398E8720916876006AC352 /* DropReward.swift in Sources */,
+				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */,

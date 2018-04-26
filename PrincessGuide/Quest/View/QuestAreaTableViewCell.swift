@@ -26,7 +26,7 @@ class QuestAreaTableViewCell: UITableViewCell {
         
         typeLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         contentView.addSubview(typeLabel)
-        typeLabel.textColor = .darkGray
+        typeLabel.textColor = .lightGray
         typeLabel.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
             make.right.equalTo(readableContentGuide)

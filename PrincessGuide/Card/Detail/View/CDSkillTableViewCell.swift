@@ -42,7 +42,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         }
         
         categoryLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
-        categoryLabel.textColor = .gray
+        categoryLabel.textColor = .lightGray
         contentView.addSubview(categoryLabel)
         categoryLabel.snp.makeConstraints { (make) in
             make.right.equalTo(readableContentGuide)

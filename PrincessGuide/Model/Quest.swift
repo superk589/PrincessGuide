@@ -73,3 +73,10 @@ class Quest: Codable {
     }
     
 }
+
+extension Quest {
+
+    var allRewards: [Drop.Reward] {
+        return waves.flatMap { $0.drops.flatMap { $0.rewards } }
+    }
+}

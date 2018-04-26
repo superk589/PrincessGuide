@@ -11,11 +11,11 @@ import Foundation
 struct Wave: Codable {
     
     let base: Base
-    let dropRewards: [DropReward]
+    let drops: [Drop]
     
-    init(base: Base, dropRewards: [DropReward]) {
+    init(base: Base, drops: [Drop]) {
         self.base = base
-        self.dropRewards = dropRewards
+        self.drops = drops
     }
     
     struct Base: Codable {

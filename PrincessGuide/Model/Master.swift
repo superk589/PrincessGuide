@@ -340,19 +340,28 @@ class Master: FMDatabaseQueue {
                         drop_reward_id IN (\(dropRewardIDs.map(String.init).joined(separator: ",")))
                     """
                     let dropRewardSet = try db.executeQuery(dropRewardSql, values: nil)
-                    var dropRewards = [DropReward]()
+                    var drops = [Drop]()
                     while dropRewardSet.next() {
                         let json = JSON(dropRewardSet.resultDictionary ?? [:])
-                        let decoder = JSONDecoder()
-                        decoder.keyDecodingStrategy = .convertFromSnakeCase
-                        
-                        if let dropReward = try? decoder.decode(DropReward.self, from: json.rawData()) {
-                            dropRewards.append(dropReward)
+                       
+                        var rewards = [Drop.Reward]()
+                        for i in 1...5 {
+                            let odds = json["odds_\(i)"].intValue
+                            let rewardID = json["reward_id_\(i)"].intValue
+                            let rewardType = json["reward_type_\(i)"].intValue
+                            let rewardNum = json["reward_num_\(i)"].intValue
+                            if rewardID != 0 {
+                                rewards.append(Drop.Reward(odds: odds, rewardID: rewardID, rewardNum: rewardNum, rewardType: rewardType))
+                            }
                         }
+                        let dropCount = json["drop_count"].intValue
+                        let dropRewardID = json["drop_reward_id"].intValue
+                        let drop = Drop(dropCount: dropCount, dropRewardId: dropRewardID, rewards: rewards)
+                        drops.append(drop)
                     }
                     
                     if let base = try? decoder.decode(Wave.Base.self, from: json.rawData()) {
-                        let wave = Wave(base: base, dropRewards: dropRewards)
+                        let wave = Wave(base: base, drops: drops)
                         waves.append(wave)
                     }
                 }

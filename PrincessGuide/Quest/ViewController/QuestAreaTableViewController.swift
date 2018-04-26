@@ -14,12 +14,11 @@ class QuestAreaTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = NSLocalizedString("Quest", comment: "")
+        navigationItem.title = NSLocalizedString("Quests", comment: "")
         
         tableView.keyboardDismissMode = .onDrag
         tableView.register(QuestAreaTableViewCell.self, forCellReuseIdentifier: QuestAreaTableViewCell.description())
-        tableView.estimatedRowHeight = 84
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = 66
         tableView.tableFooterView = UIView()
         
         loadData()
@@ -56,7 +55,8 @@ class QuestAreaTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let area = areas[indexPath.row]
         let vc = QuestTableViewController()
-        vc.quest = area.quests
+        vc.quests = area.quests
+        vc.navigationItem.title = area.areaName
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

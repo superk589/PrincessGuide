@@ -19,6 +19,14 @@ class IconImageView: UIImageView {
         }
     }
     
+    var itemID: Int? {
+        didSet {
+            if let id = itemID {
+                kf.setImage(with: URL.image.appendingPathComponent("/icon/item/\(id).webp"))
+            }
+        }
+    }
+    
     var equipmentID: Int? {
         didSet {
             if let id = equipmentID {

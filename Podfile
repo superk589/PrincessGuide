@@ -7,4 +7,6 @@ target 'PrincessGuide' do
   pod 'DynamicColor'
   pod 'Kingfisher'
   pod 'KingfisherWebP'
+  pod 'TTGTagCollectionView'
+  pod 'AcknowList'
 end
