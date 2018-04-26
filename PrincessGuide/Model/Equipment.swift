@@ -20,7 +20,7 @@ struct Equipment: Codable {
     let energyReduceRate: Int
     let equipmentEnhancePoint: Int
     let equipmentId: Int
-    let equipmentName: Int
+    let equipmentName: String
     let hp: Int
     let hpRecoveryRate: Int
     let lifeSteal: Int

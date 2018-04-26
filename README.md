@@ -13,7 +13,7 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**. Under devel
     - [ ] Equipments
     - [ ] Chara Information
 - [ ] Area and Quest
-    - [ ] Eqiupments Drop Rate
+    - [x] Equipments Drop Rate
 - [ ] Enemy and Boss
     - [ ] Enemy and Boss Properties
     - [ ] Boss Skill Effect Analysis

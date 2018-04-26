@@ -16,6 +16,12 @@ class QuestTableViewController: UITableViewController {
         }
     }
     
+    var focusedItemID: Int? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +48,7 @@ class QuestTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuestTableViewCell.description(), for: indexPath) as! QuestTableViewCell
-        cell.configure(for: quests[indexPath.row])
+        cell.configure(for: quests[indexPath.row], focusedID: focusedItemID)
         return cell
     }
     

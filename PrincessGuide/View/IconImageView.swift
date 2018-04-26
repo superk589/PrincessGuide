@@ -22,7 +22,7 @@ class IconImageView: UIImageView {
     var itemID: Int? {
         didSet {
             if let id = itemID {
-                kf.setImage(with: URL.image.appendingPathComponent("/icon/item/\(id).webp"))
+                kf.setImage(with: URL.image.appendingPathComponent("/icon/item/\(id).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder"))
             }
         }
     }
@@ -30,7 +30,7 @@ class IconImageView: UIImageView {
     var equipmentID: Int? {
         didSet {
             if let id = equipmentID {
-                kf.setImage(with: URL.image.appendingPathComponent("/icon/equipment/\(id).webp"))
+                kf.setImage(with: URL.image.appendingPathComponent("/icon/equipment/\(id).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder"))
             }
         }
     }

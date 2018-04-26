@@ -12,6 +12,8 @@ import TTGTagCollectionView
 class QuestTableViewCell: UITableViewCell {
 
     let titleLabel = UILabel()
+    
+    let typeLabel = UILabel()
 
     let collectionView = TTGTagCollectionView()
     
@@ -25,6 +27,14 @@ class QuestTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(10)
             make.left.equalTo(readableContentGuide)
+        }
+        
+        typeLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
+        contentView.addSubview(typeLabel)
+        typeLabel.textColor = .lightGray
+        typeLabel.snp.makeConstraints { (make) in
+            make.centerY.equalTo(titleLabel)
+            make.right.equalTo(readableContentGuide)
         }
         
         contentView.addSubview(collectionView)
@@ -52,9 +62,12 @@ class QuestTableViewCell: UITableViewCell {
     }
     
     private var rewards = [Drop.Reward]()
-    func configure(for quest: Quest) {
+    private var focusedID: Int?
+    func configure(for quest: Quest, focusedID: Int? = nil) {
         rewards = quest.allRewards.sorted { $0.odds > $1.odds }
+        self.focusedID = focusedID
         titleLabel.text = quest.base.questName
+        typeLabel.text = quest.areaType.description
         collectionView.reload()
     }
 }
@@ -77,7 +90,8 @@ extension QuestTableViewCell: TTGTagCollectionViewDelegate, TTGTagCollectionView
     
     func tagCollectionView(_ tagCollectionView: TTGTagCollectionView!, tagViewFor index: UInt) -> UIView! {
         let view = dequeueTagView(for: Int(index)) as! DropRewardView
-        view.configure(for: rewards[Int(index)])
+        let reward = rewards[Int(index)]
+        view.configure(for: rewards[Int(index)], isFocused: reward.rewardID == focusedID)
         return view
     }
     

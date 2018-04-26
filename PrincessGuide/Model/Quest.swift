@@ -79,4 +79,17 @@ extension Quest {
     var allRewards: [Drop.Reward] {
         return waves.flatMap { $0.drops.flatMap { $0.rewards } }
     }
+    
+    var areaType: AreaType {
+        switch base.areaId {
+        case 11000..<12000:
+            return .normal
+        case 12000..<13000:
+            return .hard
+        case 21000..<22000:
+            return .exploration
+        default:
+            return .unknown
+        }
+    }
 }

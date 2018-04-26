@@ -32,7 +32,7 @@ class DropRewardView: UIView {
         }
     }
     
-    func configure(for reward: Drop.Reward) {
+    func configure(for reward: Drop.Reward, isFocused: Bool = false) {
         rateLabel.text = "\(reward.odds)%"
         invalidateIntrinsicContentSize()
         if reward.rewardType == 4 {
@@ -40,8 +40,25 @@ class DropRewardView: UIView {
         } else {
             itemIcon.itemID = reward.rewardID
         }
+        setHighlighted(isFocused)
     }
     
+    private(set) var isHighlighted: Bool = false
+    
+    private func setHighlighted(_ isHighlighted: Bool) {
+        self.isHighlighted = isHighlighted
+        if isHighlighted {
+            itemIcon.layer.borderColor = UIColor.red.cgColor
+            itemIcon.layer.borderWidth = 2
+            itemIcon.layer.cornerRadius = 6
+            itemIcon.layer.masksToBounds = true
+            rateLabel.textColor = .red
+        } else {
+            itemIcon.layer.borderWidth = 0
+            rateLabel.textColor = .darkGray
+        }
+    }
+        
     override var intrinsicContentSize: CGSize {
         let rateLabelSize = rateLabel.intrinsicContentSize
         return CGSize(width: 64, height: 64 + rateLabelSize.height)

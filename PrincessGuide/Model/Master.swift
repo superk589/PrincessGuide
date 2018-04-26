@@ -181,8 +181,8 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getEquipments(callback: @escaping FMDBCallBackClosure<[Int: Equipment]>) {
-        var dict = [Int: Equipment]()
+    func getEquipments(callback: @escaping FMDBCallBackClosure<[Equipment]>) {
+        var equipments = [Equipment]()
         execute({ (db) in
             let selectSql = """
             SELECT
@@ -196,12 +196,11 @@ class Master: FMDatabaseQueue {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 if let equipment = try? decoder.decode(Equipment.self, from: json.rawData()) {
-                    dict[equipment.equipmentId] = equipment
-                    
+                    equipments.append(equipment)
                 }
             }
         }) {
-            callback(dict)
+            callback(equipments)
         }
     }
     
@@ -269,6 +268,8 @@ class Master: FMDatabaseQueue {
                 *
             FROM
                 quest_area_data
+            WHERE
+                area_id < 20000
             """
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
@@ -284,17 +285,18 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getQuests(areaID: Int, callback: @escaping FMDBCallBackClosure<[Quest]>) {
+    func getQuests(areaID: Int? = nil, containsEquipment equipmentID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Quest]>) {
         var quests = [Quest]()
         execute({ (db) in
-            let sql = """
+            var sql = """
             SELECT
                 *
             FROM
                 quest_data
-            WHERE
-                area_id = \(areaID)
             """
+            if let areaID = areaID {
+                sql.append(" WHERE area_id = \(areaID)")
+            }
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
                 let json = JSON(set.resultDictionary ?? [:])
@@ -367,12 +369,16 @@ class Master: FMDatabaseQueue {
                 }
                 if let base = try? decoder.decode(Quest.Base.self, from: json.rawData()) {
                     let quest = Quest(base: base, waves: waves)
-                    quests.append(quest)
+                    if equipmentID == nil {
+                        quests.append(quest)
+                    } else if quest.allRewards.contains(where: { $0.rewardID == equipmentID! }) {
+                        quests.append(quest)
+                    }
                 }
             }
         }) {
             callback(quests)
         }
     }
-    
+
 }
