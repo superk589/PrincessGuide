@@ -45,7 +45,7 @@ class PatternCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(for pattern: AttackPattern, index: Int, unit: Card) {
-        let item = pattern.varlidItems[index]
+        let item = pattern.validItems[index]
         switch item {
         case 1:
             skillIcon.equipmentID = 101011

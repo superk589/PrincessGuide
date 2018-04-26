@@ -25,7 +25,7 @@ struct AttackPattern: Codable {
 
 extension AttackPattern {
     
-    var varlidItems: [Int] {
+    var validItems: [Int] {
         return items.filter { $0 != 0 }
     }
 }

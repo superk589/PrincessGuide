@@ -261,4 +261,109 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getAreas(callback: @escaping FMDBCallBackClosure<[Area]>) {
+        var areas = [Area]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                quest_area_data
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let area = try? decoder.decode(Area.self, from: json.rawData()) {
+                    areas.append(area)
+                }
+            }
+        }) {
+            callback(areas)
+        }
+    }
+    
+    func getQuests(areaID: Int, callback: @escaping FMDBCallBackClosure<[Quest]>) {
+        var quests = [Quest]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                quest_data
+            WHERE
+                area_id = \(areaID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                var waveIDs = [Int]()
+                for i in 1...3 {
+                    let field = "wave_group_id_\(i)"
+                    let id = json[field].intValue
+                    if id != 0 {
+                        waveIDs.append(id)
+                    }
+                }
+                let waveSql = """
+                SELECT
+                    *
+                FROM
+                    wave_group_data
+                WHERE
+                    wave_group_id IN (\(waveIDs.map(String.init).joined(separator: ",")))
+                """
+                var waves = [Wave]()
+                let waveSet = try db.executeQuery(waveSql, values: nil)
+                while waveSet.next() {
+                    let json = JSON(waveSet.resultDictionary ?? [:])
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    
+                    var dropRewardIDs = [Int]()
+                    for i in 1...5 {
+                        let field = "drop_reward_id_\(i)"
+                        let id = json[field].intValue
+                        if id != 0 {
+                            dropRewardIDs.append(id)
+                        }
+                    }
+                    let dropRewardSql = """
+                    SELECT
+                        *
+                    FROM
+                        enemy_reward_data
+                    WHERE
+                        drop_reward_id IN (\(dropRewardIDs.map(String.init).joined(separator: ",")))
+                    """
+                    let dropRewardSet = try db.executeQuery(dropRewardSql, values: nil)
+                    var dropRewards = [DropReward]()
+                    while dropRewardSet.next() {
+                        let json = JSON(dropRewardSet.resultDictionary ?? [:])
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        
+                        if let dropReward = try? decoder.decode(DropReward.self, from: json.rawData()) {
+                            dropRewards.append(dropReward)
+                        }
+                    }
+                    
+                    if let base = try? decoder.decode(Wave.Base.self, from: json.rawData()) {
+                        let wave = Wave(base: base, dropRewards: dropRewards)
+                        waves.append(wave)
+                    }
+                }
+                if let base = try? decoder.decode(Quest.Base.self, from: json.rawData()) {
+                    let quest = Quest(base: base, waves: waves)
+                    quests.append(quest)
+                }
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
 }

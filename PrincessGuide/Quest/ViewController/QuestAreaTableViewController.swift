@@ -1,27 +1,26 @@
 //
-//  CardTableViewController.swift
+//  QuestAreaTableViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/4/9.
+//  Created by zzk on 2018/4/25.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 
-class CardTableViewController: UITableViewController {
+class QuestAreaTableViewController: UITableViewController {
     
-    var cards = [Card]()
-
+    private var areas = [Area]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = NSLocalizedString("Quest", comment: "")
+        
         tableView.keyboardDismissMode = .onDrag
-        tableView.register(CardTableViewCell.self, forCellReuseIdentifier: CardTableViewCell.description())
+        tableView.register(QuestAreaTableViewCell.self, forCellReuseIdentifier: QuestAreaTableViewCell.description())
         tableView.estimatedRowHeight = 84
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.tableFooterView = UIView()
-        
-        navigationItem.title = NSLocalizedString("Cards", comment: "")
         
         loadData()
     }
@@ -29,33 +28,35 @@ class CardTableViewController: UITableViewController {
     private func loadData() {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getCards(callback: { (cards) in
+            Master.shared.getAreas(callback: { (areas) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
-                    self?.cards = cards
+                    self?.areas = areas
                     self?.tableView.reloadData()
                 }
             })
         }
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cards.count
+        return areas.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.description(), for: indexPath) as! CardTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: QuestAreaTableViewCell.description(), for: indexPath) as! QuestAreaTableViewCell
         
-        let card = cards[indexPath.row]
-        cell.configure(for: card)
-        
+        cell.configure(for: areas[indexPath.row])
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CDTableViewController()
-        vc.card = cards[indexPath.row]
-        print("card id: \(cards[indexPath.row].base.unitId)")
+        let area = areas[indexPath.row]
+        let vc = QuestTableViewController()
+        vc.quest = area.quests
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
