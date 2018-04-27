@@ -12,7 +12,7 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**. Under devel
     - [ ] Damage or Healing Simulation
     - [ ] Equipments
     - [ ] Chara Information
-- [ ] Area and Quest
+- [x] Area and Quest
     - [x] Equipments Drop Rate
 - [ ] Enemy and Boss
     - [ ] Enemy and Boss Properties

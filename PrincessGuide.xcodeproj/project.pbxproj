@@ -45,6 +45,7 @@
 		12398E9720918572006AC352 /* VersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9620918572006AC352 /* VersionManager.swift */; };
 		12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E982091A1CB006AC352 /* DropRewardView.swift */; };
 		12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9C2092A923006AC352 /* EquipmentCollectionViewCell.swift */; };
+		12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9E2092D174006AC352 /* DeviceInfo.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E07205F5DB100A8B9A2 /* ViewController.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
@@ -103,6 +104,7 @@
 		12398E9620918572006AC352 /* VersionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionManager.swift; sourceTree = "<group>"; };
 		12398E982091A1CB006AC352 /* DropRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropRewardView.swift; sourceTree = "<group>"; };
 		12398E9C2092A923006AC352 /* EquipmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		12398E9E2092D174006AC352 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12659E07205F5DB100A8B9A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				1221CDE6207DB350008F30AA /* Debouncer.swift */,
 				12B85D32208996FF0088F5FB /* DispatchExtension.swift */,
 				12398E9620918572006AC352 /* VersionManager.swift */,
+				12398E9E2092D174006AC352 /* DeviceInfo.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/KingfisherWebP/KingfisherWebP.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
@@ -476,6 +480,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KingfisherWebP.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
@@ -518,6 +523,7 @@
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
 				12C878D8208F489A00255503 /* CardIconImageView.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
+				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
 				12398E7A20915781006AC352 /* AttackPatternView.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */,

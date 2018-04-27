@@ -9,4 +9,5 @@ target 'PrincessGuide' do
   pod 'KingfisherWebP'
   pod 'TTGTagCollectionView'
   pod 'AcknowList'
+  pod 'ReachabilitySwift'
 end

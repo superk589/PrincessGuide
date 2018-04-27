@@ -10,6 +10,8 @@ import UIKit
 
 struct Config {
     static let maxPlayerLevel = 88
+    static let appID = 1377498032
+    static let appName = "PrincessGuide"
 }
 
 extension URL {
