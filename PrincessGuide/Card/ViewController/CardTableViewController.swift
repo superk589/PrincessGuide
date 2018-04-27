@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import MJRefresh
 
-class CardTableViewController: UITableViewController {
+class CardTableViewController: UITableViewController, DataChecking {
     
     var cards = [Card]()
 
+    let refresher = RefreshHeader()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
+        
+        tableView.mj_header = refresher
+        refresher.refreshingBlock = { [weak self] in self?.check() }
+        
         tableView.keyboardDismissMode = .onDrag
         tableView.register(CardTableViewCell.self, forCellReuseIdentifier: CardTableViewCell.description())
         tableView.estimatedRowHeight = 84
@@ -24,6 +32,11 @@ class CardTableViewController: UITableViewController {
         navigationItem.title = NSLocalizedString("Cards", comment: "")
         
         loadData()
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func loadData() {
@@ -37,6 +50,10 @@ class CardTableViewController: UITableViewController {
                 }
             })
         }
+    }
+    
+    @objc private func handleUpdateEnd(_ notification: Notification) {
+        loadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -11,7 +11,6 @@
 		12124F462089C9E1001C1A6F /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F452089C9E1001C1A6F /* Property.swift */; };
 		12124F4A2089D6F4001C1A6F /* SkillActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F492089D6F4001C1A6F /* SkillActionView.swift */; };
 		12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4D208EC1A4001C1A6F /* Ailment.swift */; };
-		1221CDB9207B92FC008F30AA /* master.db in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDB8207B92FB008F30AA /* master.db */; };
 		1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDBF207B9541008F30AA /* Assets.xcassets */; };
 		1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC1207B96FA008F30AA /* CardTableViewController.swift */; };
 		1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC7207B973B008F30AA /* CardTableViewCell.swift */; };
@@ -27,6 +26,13 @@
 		1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE2207DB076008F30AA /* LoadingHUD.swift */; };
 		1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */; };
 		1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE6207DB350008F30AA /* Debouncer.swift */; };
+		123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E02093105D003E7D11 /* LZ4Decompressor.swift */; };
+		123608E32093200A003E7D11 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E22093200A003E7D11 /* Defaults.swift */; };
+		123608E7209322EB003E7D11 /* DataChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E6209322EB003E7D11 /* DataChecking.swift */; };
+		123608E92093234F003E7D11 /* RefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E82093234F003E7D11 /* RefreshHeader.swift */; };
+		123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608EC20932590003E7D11 /* UpdatingHUD.swift */; };
+		12360921209940B2003E7D11 /* Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12360920209940B2003E7D11 /* Binary.swift */; };
+		123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123609222099410E003E7D11 /* UnityFSUnpacker.swift */; };
 		12398E7220915737006AC352 /* AttackPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7120915737006AC352 /* AttackPattern.swift */; };
 		12398E742091573D006AC352 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E732091573C006AC352 /* Area.swift */; };
 		12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7520915765006AC352 /* PatternCollectionViewCell.swift */; };
@@ -46,8 +52,9 @@
 		12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E982091A1CB006AC352 /* DropRewardView.swift */; };
 		12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9C2092A923006AC352 /* EquipmentCollectionViewCell.swift */; };
 		12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9E2092D174006AC352 /* DeviceInfo.swift */; };
+		12398EA12092D78C006AC352 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA02092D78C006AC352 /* Updater.swift */; };
+		12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA22092F7D4006AC352 /* StringExtension.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
-		12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E07205F5DB100A8B9A2 /* ViewController.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
 		12659E10205F5DB100A8B9A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E0E205F5DB100A8B9A2 /* LaunchScreen.storyboard */; };
 		12B85D2B2089840A0088F5FB /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D2A2089840A0088F5FB /* Skill.swift */; };
@@ -61,6 +68,7 @@
 		12C878D8208F489A00255503 /* CardIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C878D7208F489A00255503 /* CardIconImageView.swift */; };
 		12C878DA208F49ED00255503 /* SkillIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C878D9208F49ED00255503 /* SkillIconImageView.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
+		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
 		BD1F9CD415774DF7E9F1F065 /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +77,6 @@
 		12124F452089C9E1001C1A6F /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		12124F492089D6F4001C1A6F /* SkillActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillActionView.swift; sourceTree = "<group>"; };
 		12124F4D208EC1A4001C1A6F /* Ailment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ailment.swift; sourceTree = "<group>"; };
-		1221CDB8207B92FB008F30AA /* master.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = master.db; sourceTree = "<group>"; };
 		1221CDBF207B9541008F30AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1221CDC1207B96FA008F30AA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
 		1221CDC7207B973B008F30AA /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
@@ -86,6 +93,13 @@
 		1221CDE2207DB076008F30AA /* LoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
 		1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 		1221CDE6207DB350008F30AA /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		123608E02093105D003E7D11 /* LZ4Decompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZ4Decompressor.swift; sourceTree = "<group>"; };
+		123608E22093200A003E7D11 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		123608E6209322EB003E7D11 /* DataChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChecking.swift; sourceTree = "<group>"; };
+		123608E82093234F003E7D11 /* RefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshHeader.swift; sourceTree = "<group>"; };
+		123608EC20932590003E7D11 /* UpdatingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatingHUD.swift; sourceTree = "<group>"; };
+		12360920209940B2003E7D11 /* Binary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binary.swift; sourceTree = "<group>"; };
+		123609222099410E003E7D11 /* UnityFSUnpacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityFSUnpacker.swift; sourceTree = "<group>"; };
 		12398E7120915737006AC352 /* AttackPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackPattern.swift; sourceTree = "<group>"; };
 		12398E732091573C006AC352 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		12398E7520915765006AC352 /* PatternCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -105,9 +119,10 @@
 		12398E982091A1CB006AC352 /* DropRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropRewardView.swift; sourceTree = "<group>"; };
 		12398E9C2092A923006AC352 /* EquipmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		12398E9E2092D174006AC352 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		12398EA02092D78C006AC352 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
+		12398EA22092F7D4006AC352 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		12659E07205F5DB100A8B9A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		12659E0A205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12659E0F205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12659E11205F5DB100A8B9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,6 +137,7 @@
 		12C878D7208F489A00255503 /* CardIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardIconImageView.swift; sourceTree = "<group>"; };
 		12C878D9208F49ED00255503 /* SkillIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillIconImageView.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
+		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
 		137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A7397A654F34C82BBE460F /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
 		E65954633AC8DECE65F7AA7C /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,7 +168,6 @@
 		1221CDBA207B9310008F30AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1221CDB8207B92FB008F30AA /* master.db */,
 				1221CDCA207B9864008F30AA /* Master.swift */,
 				1221CDD7207C6BC8008F30AA /* Equipment.swift */,
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
@@ -169,12 +184,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1221CDBB207B9342008F30AA /* ViewController */ = {
+		1221CDBB207B9342008F30AA /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				12659E07205F5DB100A8B9A2 /* ViewController.swift */,
+				123608E6209322EB003E7D11 /* DataChecking.swift */,
 			);
-			path = ViewController;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		1221CDBC207B9373008F30AA /* View */ = {
@@ -182,10 +197,12 @@
 			children = (
 				12398E7B209157B1006AC352 /* IconImageView.swift */,
 				1221CDE2207DB076008F30AA /* LoadingHUD.swift */,
+				123608EC20932590003E7D11 /* UpdatingHUD.swift */,
 				1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */,
 				12C878D5208F44F900255503 /* CardPlateImageView.swift */,
 				12C878D7208F489A00255503 /* CardIconImageView.swift */,
 				12C878D9208F49ED00255503 /* SkillIconImageView.swift */,
+				123608E82093234F003E7D11 /* RefreshHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				1221CDC1207B96FA008F30AA /* CardTableViewController.swift */,
+				12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -226,8 +244,14 @@
 				1221CDE0207D9709008F30AA /* Font.swift */,
 				1221CDE6207DB350008F30AA /* Debouncer.swift */,
 				12B85D32208996FF0088F5FB /* DispatchExtension.swift */,
+				12398EA22092F7D4006AC352 /* StringExtension.swift */,
 				12398E9620918572006AC352 /* VersionManager.swift */,
 				12398E9E2092D174006AC352 /* DeviceInfo.swift */,
+				12398EA02092D78C006AC352 /* Updater.swift */,
+				123608E02093105D003E7D11 /* LZ4Decompressor.swift */,
+				123608E22093200A003E7D11 /* Defaults.swift */,
+				12360920209940B2003E7D11 /* Binary.swift */,
+				123609222099410E003E7D11 /* UnityFSUnpacker.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -300,7 +324,7 @@
 				1221CDDD207CC3A3008F30AA /* Common */,
 				1221CDBA207B9310008F30AA /* Model */,
 				1221CDBC207B9373008F30AA /* View */,
-				1221CDBB207B9342008F30AA /* ViewController */,
+				1221CDBB207B9342008F30AA /* Protocol */,
 				1221CDC3207B96FF008F30AA /* Card */,
 				12398E7D209158EA006AC352 /* Quest */,
 				12398E9220917ECA006AC352 /* Settings */,
@@ -445,7 +469,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				12659E10205F5DB100A8B9A2 /* LaunchScreen.storyboard in Resources */,
-				1221CDB9207B92FC008F30AA /* master.db in Resources */,
 				1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */,
 				12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */,
 				12398E8F20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist in Resources */,
@@ -463,28 +486,34 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/KingfisherWebP/KingfisherWebP.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
+				"${BUILT_PRODUCTS_DIR}/lz4/lz4.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KingfisherWebP.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/lz4.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -517,14 +546,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				12124F462089C9E1001C1A6F /* Property.swift in Sources */,
+				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
+				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				12C878D8208F489A00255503 /* CardIconImageView.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
 				12398E7A20915781006AC352 /* AttackPatternView.swift in Sources */,
+				123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */,
+				123608E7209322EB003E7D11 /* DataChecking.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficients.swift in Sources */,
@@ -532,6 +565,7 @@
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
+				123608E92093234F003E7D11 /* RefreshHeader.swift in Sources */,
 				12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
 				12398E89209168A2006AC352 /* Wave.swift in Sources */,
@@ -541,28 +575,32 @@
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
 				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
 				12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */,
-				12659E08205F5DB100A8B9A2 /* ViewController.swift in Sources */,
 				12398E83209158EB006AC352 /* QuestAreaTableViewController.swift in Sources */,
 				12398E8B20917554006AC352 /* QuestTableViewController.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
+				12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */,
 				12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */,
 				12C878DA208F49ED00255503 /* SkillIconImageView.swift in Sources */,
 				12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */,
+				12360921209940B2003E7D11 /* Binary.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
 				12398E8D20917C1F006AC352 /* QuestTableViewCell.swift in Sources */,
+				12398EA12092D78C006AC352 /* Updater.swift in Sources */,
 				12C878D6208F44F900255503 /* CardPlateImageView.swift in Sources */,
 				12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */,
 				12398E7220915737006AC352 /* AttackPattern.swift in Sources */,
+				12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */,
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
 				12124F4A2089D6F4001C1A6F /* SkillActionView.swift in Sources */,
+				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
 				12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,7 +34,19 @@ extension FMDatabaseQueue {
 
 class Master: FMDatabaseQueue {
     
-    static let shared = Master(path: Bundle.main.path(forResource: "master", ofType: "db"))
+    static let url = URL(fileURLWithPath: Path.cache).appendingPathComponent("/master.db")
+    
+    static let shared = Master(path: url.absoluteString)
+    
+    static func checkDatabaseFile() -> Bool {
+        if FileManager.default.fileExists(atPath: url.absoluteString) {
+            if let resourceValues = try? url.resourceValues(forKeys: [.fileSizeKey]) {
+                let fileSize = resourceValues.fileSize!
+                return fileSize > 0
+            }
+        }
+        return false
+    }
     
     func getCards(callback: @escaping FMDBCallBackClosure<[Card]>) {
         var cards = [Card]()

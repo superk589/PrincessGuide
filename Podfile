@@ -10,4 +10,7 @@ target 'PrincessGuide' do
   pod 'TTGTagCollectionView'
   pod 'AcknowList'
   pod 'ReachabilitySwift'
+  pod 'Alamofire'
+  pod 'lz4'
+  pod 'MJRefresh'
 end

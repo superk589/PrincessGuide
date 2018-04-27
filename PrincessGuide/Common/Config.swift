@@ -6,7 +6,7 @@
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct Config {
     static let maxPlayerLevel = 88
@@ -16,4 +16,14 @@ struct Config {
 
 extension URL {
     static let image = URL(string: "https://redive.estertion.win")!
+}
+
+struct Path {
+    static let cache = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
+    static let document = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+    static let library = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first!
+    static let home = NSHomeDirectory()
+    
+    // include the last "/"
+    static let temporary = NSTemporaryDirectory()
 }

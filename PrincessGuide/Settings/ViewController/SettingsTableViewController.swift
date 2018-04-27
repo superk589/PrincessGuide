@@ -29,6 +29,17 @@ class SettingsTableViewController: UITableViewController {
     private var sections = [Section]()
     
     private func prepareCellData() {
+        
+        var settingRows = [Row]()
+        
+        let downloadAtStartSwitch = UISwitch()
+        downloadAtStartSwitch.isOn = Defaults.downloadAtStart
+        downloadAtStartSwitch.addTarget(self, action: #selector(downloadAtStartHandler(_:)), for: .valueChanged)
+        
+        settingRows.append(Row(title: NSLocalizedString("Check for Updates at Launch", comment: ""), detail: nil, hasDisclosure: false, accessoryView: downloadAtStartSwitch, selector: nil))
+        
+        sections.append(Section(rows: settingRows, title: NSLocalizedString("Data", comment: "")))
+        
         var feedbackRows = [Row]()
         feedbackRows.append(Row(title: NSLocalizedString("Email", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(sendEmail)))
         feedbackRows.append(Row(title: NSLocalizedString("Review at App Store", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(postReview)))
@@ -37,7 +48,8 @@ class SettingsTableViewController: UITableViewController {
         
         var aboutRows = [Row]()
         aboutRows.append(Row(title: NSLocalizedString("Third-Party Libraries", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
-        aboutRows.append(Row(title: NSLocalizedString("Current Version", comment: ""), detail: VersionManager.shared.appVersionString, hasDisclosure: false, accessoryView: nil, selector: nil))
+        aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: VersionManager.shared.appVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
+        aboutRows.append(Row(title: NSLocalizedString("Data Version", comment: ""), detail: VersionManager.shared.truthVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
         sections.append(Section(rows: aboutRows, title: NSLocalizedString("About", comment: "")))
     }
     
@@ -45,6 +57,10 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Settings", comment: "")
         prepareCellData()
+    }
+    
+    @objc private func downloadAtStartHandler(_ sender: UISwitch) {
+        Defaults.downloadAtStart = sender.isOn
     }
     
     @objc private func showAckListViewController() {
