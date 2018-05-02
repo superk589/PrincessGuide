@@ -46,10 +46,14 @@ class PatternCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(for pattern: AttackPattern, index: Int, unit: Card) {
-        let item = pattern.validItems[index]
+        let item = pattern.items[index]
         switch item {
         case 1:
-            skillIcon.equipmentID = 101011
+            if unit.base.atkType == 2 {
+                skillIcon.equipmentID = 101251
+            } else {
+                skillIcon.equipmentID = 101011                
+            }
             skillLabel.text = NSLocalizedString("Swing", comment: "")
         case 1001:
             skillIcon.skillIconID = unit.mainSkill1?.base.iconType

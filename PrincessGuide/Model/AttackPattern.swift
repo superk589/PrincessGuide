@@ -16,16 +16,10 @@ struct AttackPattern: Codable {
     let patternId: Int
 
     init(items: [Int], loopEnd: Int, loopStart: Int, patternID: Int) {
-        self.items = items
-        self.loopEnd = loopEnd
+        let validItems = Array(items.prefix { $0 != 0 })
+        self.items = validItems
+        self.loopEnd = min(validItems.count, loopEnd)
         self.loopStart = loopStart
         self.patternId = patternID
-    }
-}
-
-extension AttackPattern {
-    
-    var validItems: [Int] {
-        return items.filter { $0 != 0 }
     }
 }
