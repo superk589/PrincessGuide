@@ -9,7 +9,7 @@
 import Foundation
 
 struct Config {
-    static let maxPlayerLevel = 88
+    static let maxPlayerLevel = 90
     static let appID = 1377498032
     static let appName = "PrincessGuide"
 }
