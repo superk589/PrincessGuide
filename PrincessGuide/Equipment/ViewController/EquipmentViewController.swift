@@ -8,9 +8,11 @@
 
 import UIKit
 
-class EquipmentViewController: UIViewController {
+class EquipmentViewController: UIViewController, DataChecking {
     
     var equipments = [Equipment]()
+    
+    let refresher = RefreshHeader()
     
     private var collectionView: UICollectionView!
     
@@ -18,9 +20,11 @@ class EquipmentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
 
         navigationItem.title = NSLocalizedString("Equipments", comment: "")
-
+        
         layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
@@ -38,8 +42,21 @@ class EquipmentViewController: UIViewController {
         collectionView.backgroundColor = .white
         collectionView.register(EquipmentCollectionViewCell.self, forCellWithReuseIdentifier: EquipmentCollectionViewCell.description())
         
+        collectionView.mj_header = refresher
+        // fix a layout issue of mjrefresh
+        refresher.bounds.origin.y = collectionView.contentInset.top
+        refresher.refreshingBlock = { [weak self] in self?.check() }
+        
         loadData()
 
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func handleUpdateEnd(_ notification: Notification) {
+        loadData()
     }
     
     private func loadData() {

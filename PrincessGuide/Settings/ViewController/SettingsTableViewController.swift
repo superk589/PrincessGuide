@@ -57,6 +57,17 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Settings", comment: "")
         prepareCellData()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func handleUpdateEnd(_ notification: Notification) {
+        sections.removeAll()
+        prepareCellData()
+        tableView.reloadData()
     }
     
     @objc private func downloadAtStartHandler(_ sender: UISwitch) {

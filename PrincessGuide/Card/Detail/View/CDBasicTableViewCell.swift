@@ -17,7 +17,7 @@ protocol CardDetailConfigurable {
 
 class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
     
-    let cardIcon = CardIconImageView()
+    let cardIcon = IconImageView()
     
     let nameLabel = UILabel()
     

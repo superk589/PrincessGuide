@@ -33,7 +33,7 @@ class LoadingHUD: UIView {
         titleLabel.textAlignment = .center
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.baselineAdjustment = .alignCenters
-        titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 12)
+        titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 17)
         titleLabel.textColor = .white
         titleLabel.text = NSLocalizedString("Please wait", comment: "")
         
@@ -67,6 +67,11 @@ class LoadingHUDManager {
             window.addSubview(self.hud)
             self.hud.snp.makeConstraints { (make) in
                 make.edges.equalToSuperview()
+            }
+            for subview in window.subviews {
+                if subview is UpdatingHUD {
+                    window.bringSubview(toFront: subview)
+                }
             }
             self.hud.alpha = 1
         }

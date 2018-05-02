@@ -61,6 +61,7 @@ class Updater {
     }
     
     func getMaster(hash: String, progressHandler: @escaping Request.ProgressHandler, completion: @escaping (_ master: Data?, _ error: Error?) -> Void) {
+        isUpdating = true
         Alamofire.request(URL.master(hash: hash)).downloadProgress(closure: progressHandler).validate(statusCode: 200..<300).responseData { [unowned self] (response) in
             switch response.result {
             case .failure(let error):

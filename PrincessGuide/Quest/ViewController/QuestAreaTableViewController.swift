@@ -8,12 +8,20 @@
 
 import UIKit
 
-class QuestAreaTableViewController: UITableViewController {
+class QuestAreaTableViewController: UITableViewController, DataChecking {
     
     private var areas = [Area]()
     
+    let refresher = RefreshHeader()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
+        
+        tableView.mj_header = refresher
+        refresher.refreshingBlock = { [weak self] in self?.check() }
+        
         navigationItem.title = NSLocalizedString("Quests", comment: "")
         
         tableView.keyboardDismissMode = .onDrag
@@ -21,6 +29,14 @@ class QuestAreaTableViewController: UITableViewController {
         tableView.rowHeight = 66
         tableView.tableFooterView = UIView()
         
+        loadData()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func handleUpdateEnd(_ notification: NSNotification) {
         loadData()
     }
     

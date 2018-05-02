@@ -14,7 +14,7 @@ class IconImageView: UIImageView {
     var skillIconID: Int? {
         didSet {
             if let id = skillIconID {
-                kf.setImage(with: URL.image.appendingPathComponent("/icon/skill/\(id).webp"))
+                kf.setImage(with: URL.image.appendingPathComponent("icon/skill/\(id).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder"))
             }
         }
     }
@@ -22,7 +22,7 @@ class IconImageView: UIImageView {
     var itemID: Int? {
         didSet {
             if let id = itemID {
-                kf.setImage(with: URL.image.appendingPathComponent("/icon/item/\(id).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder"))
+                kf.setImage(with: URL.image.appendingPathComponent("icon/item/\(id).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder"))
             }
         }
     }
@@ -30,7 +30,7 @@ class IconImageView: UIImageView {
     var equipmentID: Int? {
         didSet {
             if let id = equipmentID {
-                kf.setImage(with: URL.image.appendingPathComponent("/icon/equipment/\(id).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder"))
+                kf.setImage(with: URL.image.appendingPathComponent("icon/equipment/\(id).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder"))
             }
         }
     }
@@ -38,12 +38,9 @@ class IconImageView: UIImageView {
     var cardID: Int? {
         didSet {
             if let id = cardID {
-                kf.setImage(with: URL.image.appendingPathComponent("/icon/unit/\(id + 10).webp"))
+                kf.setImage(with: URL.image.appendingPathComponent("icon/unit/\(id + 10).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder_2"))
             }
         }
     }
-    
-    func showPlaceholder() {
-        kf.setImage(with: URL.image.appendingPathComponent("/icon/unit/000000.webp"))
-    }
+
 }

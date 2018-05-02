@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PatternCollectionViewCell: UICollectionViewCell {
     
@@ -60,7 +61,7 @@ class PatternCollectionViewCell: UICollectionViewCell {
             skillIcon.skillIconID = unit.mainSkill3?.base.iconType
             skillLabel.text = NSLocalizedString("Main 3", comment: "")
         default:
-            skillIcon.showPlaceholder()
+            skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
             skillLabel.text = NSLocalizedString("Unknown", comment: "")
         }
         

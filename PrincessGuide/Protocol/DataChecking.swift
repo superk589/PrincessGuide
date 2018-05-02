@@ -28,11 +28,7 @@ extension DataChecking where Self: UIViewController {
         hudManager.setup(NSLocalizedString("Checking", comment: ""), animated: true)
      
         updater.checkTruthVersion { (truthVersion, hash, error) in
-            hudManager.hide(animated: true)
             if let version = truthVersion, let hash = hash, VersionManager.shared.truthVersion < version || !Master.checkDatabaseFile() {
-                DispatchQueue.main.async {
-                    hudManager.show()                    
-                }
                 updater.getMaster(hash: hash, progressHandler: { (progress) in
                     DispatchQueue.main.async {
                         hudManager.setup("\(Int(progress.fractionCompleted * 100))%", animated: true)
@@ -47,6 +43,11 @@ extension DataChecking where Self: UIViewController {
                         hudManager.hide(animated: true)
                     }
                 })
+            } else {
+                DispatchQueue.main.async {
+                    hudManager.setup(NSLocalizedString("Up to date!", comment: ""), animated: false)
+                    hudManager.hide(animated: true)
+                }
             }
         }
     }

@@ -39,11 +39,16 @@ class RefreshHeader: MJRefreshHeader {
         super.prepare()
         frame.size.height = 50
         addSubview(loadingView)
-        
         arrowImage.image = #imageLiteral(resourceName: "arrow-downward").withRenderingMode(.alwaysTemplate)
         addSubview(arrowImage)
-        
         arrowImage.tintColor = .gray
+    }
+    
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        if let scrollView = newSuperview as? UIScrollView {
+            frame.origin.x = -scrollView.contentInset.left
+        }
     }
     
     override func placeSubviews(){

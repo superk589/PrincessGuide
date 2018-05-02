@@ -12,7 +12,7 @@ import Kingfisher
 
 class CardView: UIView {
     
-    let icon = CardIconImageView()
+    let icon = IconImageView()
     let nameLabel = UILabel()
     let rarityView = RarityView()
     

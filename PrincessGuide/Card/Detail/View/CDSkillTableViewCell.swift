@@ -10,7 +10,7 @@ import UIKit
 
 class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
     
-    let skillIcon = SkillIconImageView()
+    let skillIcon = IconImageView()
     
     let nameLabel = UILabel()
     
@@ -107,7 +107,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         categoryLabel.text = category.description
         castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
-        skillIcon.iconID = skill.base.iconType
+        skillIcon.skillIconID = skill.base.iconType
         
         actionViews.forEach {
             $0.removeFromSuperview()

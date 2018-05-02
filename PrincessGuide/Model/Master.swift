@@ -34,12 +34,12 @@ extension FMDatabaseQueue {
 
 class Master: FMDatabaseQueue {
     
-    static let url = URL(fileURLWithPath: Path.cache).appendingPathComponent("/master.db")
+    static let url = URL(fileURLWithPath: Path.cache).appendingPathComponent("master.db")
     
-    static let shared = Master(path: url.absoluteString)
+    static let shared = Master(path: url.path)
     
     static func checkDatabaseFile() -> Bool {
-        if FileManager.default.fileExists(atPath: url.absoluteString) {
+        if FileManager.default.fileExists(atPath: url.path) {
             if let resourceValues = try? url.resourceValues(forKeys: [.fileSizeKey]) {
                 let fileSize = resourceValues.fileSize!
                 return fileSize > 0

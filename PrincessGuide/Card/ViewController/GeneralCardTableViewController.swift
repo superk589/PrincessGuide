@@ -12,7 +12,8 @@ class GeneralCardTableViewController: CardTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(NSHomeDirectory())
+        
         if Defaults.downloadAtStart {
             check()
         }
