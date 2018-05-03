@@ -11,7 +11,11 @@ import UIKit
 extension UIFont {
 
     static func scaledFont(forTextStyle textStyle: UIFontTextStyle, ofSize size: CGFloat) -> UIFont {
-        return UIFontMetrics(forTextStyle: textStyle).scaledFont(for: UIFont.preferredFont(forTextStyle: textStyle).withSize(size))
+        if #available(iOS 11.0, *) {
+            return UIFontMetrics(forTextStyle: textStyle).scaledFont(for: UIFont.preferredFont(forTextStyle: textStyle).withSize(size))
+        } else {
+            return UIFont.systemFont(ofSize: size)
+        }
     }
     
 }
