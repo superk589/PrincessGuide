@@ -12,4 +12,8 @@ import DynamicColor
 extension UIColor {
 
     static let rarityStar = UIColor(hexString: "#F0D052")
+    
+    static let hatsunePurple = UIColor(hexString: "#ED9BF5")
+    
+    static let hatsuneYellow = UIColor(hexString: "#FEFC8F")
 }

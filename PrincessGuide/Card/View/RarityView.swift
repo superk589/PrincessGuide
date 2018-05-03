@@ -42,7 +42,7 @@ class RarityView: UIView {
     func setup(stars: Int) {
         assert(0..<5 ~= stars)
         starViews[0..<stars].forEach {
-            $0.image = #imageLiteral(resourceName: "726-star-selected").withRenderingMode(.alwaysTemplate)
+            $0.image = #imageLiteral(resourceName: "loading_star").withRenderingMode(.alwaysTemplate)
         }
         starViews[stars..<5].forEach {
             $0.image = nil
