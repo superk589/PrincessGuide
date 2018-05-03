@@ -9,6 +9,23 @@
 import UIKit
 
 class QuestTableViewController: UITableViewController {
+    
+    static func configureAsync(equipment: Equipment, callback: @escaping (QuestTableViewController) -> Void) {
+        LoadingHUDManager.default.show()
+        DispatchQueue.global(qos: .userInitiated).async {
+            Master.shared.getQuests(containsEquipment: equipment.equipmentId) { quests in
+                DispatchQueue.main.async {
+                    let vc = QuestTableViewController()
+                    vc.navigationItem.title = equipment.equipmentName
+                    vc.quests = quests.sorted { $0.allRewards.first { $0.rewardID == equipment.equipmentId }!.odds > $1.allRewards.first { $0.rewardID == equipment.equipmentId }!.odds }
+                    vc.hidesBottomBarWhenPushed = true
+                    vc.focusedItemID = equipment.equipmentId
+                    LoadingHUDManager.default.hide()
+                    callback(vc)
+                }
+            }
+        }
+    }
 
     var quests = [Quest]() {
         didSet {

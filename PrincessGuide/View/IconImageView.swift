@@ -43,4 +43,7 @@ class IconImageView: UIImageView {
         }
     }
 
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 64, height: 64)
+    }
 }

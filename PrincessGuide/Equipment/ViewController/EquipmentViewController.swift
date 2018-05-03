@@ -65,7 +65,7 @@ class EquipmentViewController: UIViewController, DataChecking {
             Master.shared.getEquipments(callback: { (equipments) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
-                    self?.equipments = equipments.filter { $0.craftFlg == 0 }.sorted { $0.promotionLevel > $1.promotionLevel }
+                    self?.equipments = equipments.sorted { ($0.craftFlg, $1.promotionLevel) < ($1.craftFlg, $0.promotionLevel) }
                     self?.collectionView.reloadData()
                 }
             })
@@ -86,19 +86,17 @@ extension EquipmentViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let equipment = equipments[indexPath.item]
-        LoadingHUDManager.default.show()
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getQuests(containsEquipment: equipment.equipmentId) { quests in
-                DispatchQueue.main.async {
-                    let vc = QuestTableViewController()
-                    vc.navigationItem.title = equipment.equipmentName
-                    vc.quests = quests.sorted { $0.allRewards.first { $0.rewardID == equipment.equipmentId }!.odds > $1.allRewards.first { $0.rewardID == equipment.equipmentId }!.odds }
-                    vc.hidesBottomBarWhenPushed = true
-                    vc.focusedItemID = equipment.equipmentId
-                    LoadingHUDManager.default.hide()
-                    self?.navigationController?.pushViewController(vc, animated: true)
-                }
-            }
+        if equipment.craftFlg == 0 {
+            QuestTableViewController.configureAsync(equipment: equipment, callback: { [weak self] (vc) in
+                self?.navigationController?.pushViewController(vc, animated: true)
+            })
+        } else {
+            let vc = CraftTableViewController()
+            vc.navigationItem.title = equipment.equipmentName
+            vc.equipment = equipment
+            vc.hidesBottomBarWhenPushed = true
+            LoadingHUDManager.default.hide()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

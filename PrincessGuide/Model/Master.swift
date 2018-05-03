@@ -224,6 +224,45 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getCraft(equipmentID: Int, callback: @escaping FMDBCallBackClosure<Craft?>) {
+        var result: Craft?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                equipment_craft
+            WHERE
+                equipment_id = \(equipmentID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+
+                let equipmentID = json["equipment_id"].intValue
+                let craftedCost = json["craft_cost"].intValue
+                
+                var consumes = [Craft.Consume]()
+                
+                for i in 1...10 {
+                    let id = json["condition_equipment_id_\(i)"].intValue
+                    if id == 0 {
+                        continue
+                    }
+                    let consumeNum = json["consume_num_\(i)"].intValue
+                    let consume = Craft.Consume(equipmentID: id, consumeNum: consumeNum)
+                    consumes.append(consume)
+                }
+                
+                let craft = Craft(consumes: consumes, craftedCost: craftedCost, equipmentId: equipmentID)
+                result = craft
+                break
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
     func getSkill(skillID: Int, callback: @escaping FMDBCallBackClosure<Skill?>) {
         var result: Skill?
         execute({ (db) in
@@ -273,6 +312,7 @@ class Master: FMDatabaseQueue {
                 if let base = try? decoder.decode(Skill.Base.self, from: json.rawData()) {
                     let skill = Skill(actions: actions, base: base)
                     result = skill
+                    break
                 }
             }
         }) {

@@ -59,6 +59,11 @@
 		12659E10205F5DB100A8B9A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E0E205F5DB100A8B9A2 /* LaunchScreen.storyboard */; };
 		1281FA48209AB83300F2D567 /* PromotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA47209AB83300F2D567 /* PromotionView.swift */; };
 		1281FA4A209AB87800F2D567 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */; };
+		1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */; };
+		1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA4D209AE25700F2D567 /* CraftTableViewCell.swift */; };
+		1281FA52209AE3E900F2D567 /* Craft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA51209AE3E900F2D567 /* Craft.swift */; };
+		1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */; };
+		1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */; };
 		12B85D2B2089840A0088F5FB /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D2A2089840A0088F5FB /* Skill.swift */; };
 		12B85D31208993470088F5FB /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D30208993470088F5FB /* Coefficients.swift */; };
 		12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D32208996FF0088F5FB /* DispatchExtension.swift */; };
@@ -127,6 +132,11 @@
 		12659E11205F5DB100A8B9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1281FA47209AB83300F2D567 /* PromotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionView.swift; sourceTree = "<group>"; };
 		1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftTableViewController.swift; sourceTree = "<group>"; };
+		1281FA4D209AE25700F2D567 /* CraftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftTableViewCell.swift; sourceTree = "<group>"; };
+		1281FA51209AE3E900F2D567 /* Craft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Craft.swift; sourceTree = "<group>"; };
+		1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		12B85D2A2089840A0088F5FB /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		12B85D30208993470088F5FB /* Coefficients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
 		12B85D32208996FF0088F5FB /* DispatchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchExtension.swift; sourceTree = "<group>"; };
@@ -168,6 +178,7 @@
 			children = (
 				1221CDCA207B9864008F30AA /* Master.swift */,
 				1221CDD7207C6BC8008F30AA /* Equipment.swift */,
+				1281FA51209AE3E900F2D567 /* Craft.swift */,
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
 				12B85D2A2089840A0088F5FB /* Skill.swift */,
 				12B85D30208993470088F5FB /* Coefficients.swift */,
@@ -382,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */,
+				1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -390,6 +402,9 @@
 			isa = PBXGroup;
 			children = (
 				12398E9C2092A923006AC352 /* EquipmentCollectionViewCell.swift */,
+				1281FA4D209AE25700F2D567 /* CraftTableViewCell.swift */,
+				1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */,
+				1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -549,6 +564,7 @@
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
+				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
@@ -573,6 +589,7 @@
 				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
 				12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */,
 				12398E83209158EB006AC352 /* QuestAreaTableViewController.swift in Sources */,
+				1281FA52209AE3E900F2D567 /* Craft.swift in Sources */,
 				12398E8B20917554006AC352 /* QuestTableViewController.swift in Sources */,
 				1281FA48209AB83300F2D567 /* PromotionView.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
@@ -585,14 +602,17 @@
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
+				1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */,
 				12398E8D20917C1F006AC352 /* QuestTableViewCell.swift in Sources */,
 				12398EA12092D78C006AC352 /* Updater.swift in Sources */,
 				12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */,
 				12398E7220915737006AC352 /* AttackPattern.swift in Sources */,
 				12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */,
+				1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */,
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
+				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
 				12124F4A2089D6F4001C1A6F /* SkillActionView.swift in Sources */,
