@@ -15,6 +15,7 @@ class CDTableViewController: UITableViewController {
             case skill(Skill, SkillCategory)
             case card(Card.Base)
             case pattern(AttackPattern, Card)
+            case promotion(Card.Promotion)
         }
         var type: UITableViewCell.Type
         var data: Model
@@ -56,6 +57,8 @@ class CDTableViewController: UITableViewController {
         if let exSkillEvolution1 = card.exSkillEvolution1 {
             rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(exSkillEvolution1, .exEvolution)))
         }
+        
+        rows += card.promotions.map { Row(type: CDPromotionTableViewCell.self, data: .promotion($0)) }
         
         for row in rows {
             tableView.register(row.type.self, forCellReuseIdentifier: row.type.description())

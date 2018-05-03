@@ -434,7 +434,8 @@ extension Skill.Action {
         case (.taunt, _):
             return NSLocalizedString("Taunt target", comment: "")
         case (.summon, _):
-            return NSLocalizedString("Summon minion ID \(actionDetail2)", comment: "")
+            let format = NSLocalizedString("Summon minion ID %d", comment: "")
+            return String(format: format, actionDetail2)
         case (.healingPool, _):
             return NSLocalizedString("Summon a healing pool to heal [%@]", comment: "")
         case (.cursingPool, _):
@@ -444,9 +445,11 @@ extension Skill.Action {
         case (.chooseArea, _):
             return NSLocalizedString("Choose target area", comment: "")
         case (.knock, _):
-            return NSLocalizedString("Knock target away \(actionValue1) distance in \(actionValue3) speed", comment: "")
+            let format = NSLocalizedString("Knock target away %d distance in %d speed", comment: "")
+            return String(format: format, Int(actionValue1.rounded()), Int(actionValue3.rounded()))
         default:
-            return NSLocalizedString("Unknown effect \(actionType) with arguments \(arguments.filter { $0 != 0 }.map(String.init).joined(separator: ", "))", comment: "")
+            let format = NSLocalizedString("Unknown effect %d with arguments %@", comment: "")
+            return String(format: format, actionType, arguments.filter { $0 != 0 }.map(String.init).joined(separator: ", "))
         }
     }
     

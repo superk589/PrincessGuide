@@ -57,6 +57,8 @@
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
 		12659E10205F5DB100A8B9A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E0E205F5DB100A8B9A2 /* LaunchScreen.storyboard */; };
+		1281FA48209AB83300F2D567 /* PromotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA47209AB83300F2D567 /* PromotionView.swift */; };
+		1281FA4A209AB87800F2D567 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */; };
 		12B85D2B2089840A0088F5FB /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D2A2089840A0088F5FB /* Skill.swift */; };
 		12B85D31208993470088F5FB /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D30208993470088F5FB /* Coefficients.swift */; };
 		12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D32208996FF0088F5FB /* DispatchExtension.swift */; };
@@ -123,6 +125,8 @@
 		12659E0A205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12659E0F205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12659E11205F5DB100A8B9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1281FA47209AB83300F2D567 /* PromotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionView.swift; sourceTree = "<group>"; };
+		1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		12B85D2A2089840A0088F5FB /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		12B85D30208993470088F5FB /* Coefficients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
 		12B85D32208996FF0088F5FB /* DispatchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchExtension.swift; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 				12B85D362089B1DB0088F5FB /* CDBasicTableViewCell.swift */,
 				12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */,
 				12B85D382089B1DB0088F5FB /* CDRankTableViewCell.swift */,
+				1281FA47209AB83300F2D567 /* PromotionView.swift */,
+				1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */,
 				12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */,
 				12124F492089D6F4001C1A6F /* SkillActionView.swift */,
 				12398E7520915765006AC352 /* PatternCollectionViewCell.swift */,
@@ -538,6 +544,7 @@
 			files = (
 				12124F462089C9E1001C1A6F /* Property.swift in Sources */,
 				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
+				1281FA4A209AB87800F2D567 /* PromotionCollectionViewCell.swift in Sources */,
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
@@ -567,6 +574,7 @@
 				12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */,
 				12398E83209158EB006AC352 /* QuestAreaTableViewController.swift in Sources */,
 				12398E8B20917554006AC352 /* QuestTableViewController.swift in Sources */,
+				1281FA48209AB83300F2D567 /* PromotionView.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */,
 				12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */,

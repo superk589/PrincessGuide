@@ -108,9 +108,14 @@ class Master: FMDatabaseQueue {
                 var promotions = [Card.Promotion]()
                 while promotionSet.next() {
                     let json = JSON(promotionSet.resultDictionary ?? [:])
-                    if let promotion = try? decoder.decode(Card.Promotion.self, from: json.rawData()) {
-                        promotions.append(promotion)
+                    
+                    var slots = [Int]()
+                    for i in 1...6 {
+                        slots.append(json["equip_slot_\(i)"].intValue)
                     }
+                    let level = json["promotion_level"].intValue
+                    let promotion = Card.Promotion(equipSlots: slots, promotionLevel: level)
+                    promotions.append(promotion)
                 }
                 
                 let raritySql = """
@@ -193,15 +198,18 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getEquipments(callback: @escaping FMDBCallBackClosure<[Equipment]>) {
+    func getEquipments(equipmentID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Equipment]>) {
         var equipments = [Equipment]()
         execute({ (db) in
-            let selectSql = """
+            var selectSql = """
             SELECT
                 *
             FROM
                 equipment_data
             """
+            if let id = equipmentID {
+                selectSql += " WHERE equipment_id = \(id)"
+            }
             let set = try db.executeQuery(selectSql, values: nil)
             while set.next() {
                 let json = JSON(set.resultDictionary ?? [:])

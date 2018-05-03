@@ -72,15 +72,8 @@ class Card: Codable {
     }
     
     struct Promotion: Codable {
-        
-        let equipSlot1: Int
-        let equipSlot2: Int
-        let equipSlot3: Int
-        let equipSlot4: Int
-        let equipSlot5: Int
-        let equipSlot6: Int
+        let equipSlots: [Int]
         let promotionLevel: Int
-        
     }
     
     struct Rarity: Codable {
