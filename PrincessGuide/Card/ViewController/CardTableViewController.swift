@@ -45,7 +45,7 @@ class CardTableViewController: UITableViewController, DataChecking {
             Master.shared.getCards(callback: { (cards) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
-                    self?.cards = cards.sorted { $0.base.unitName < $1.base.unitName }
+                    self?.cards = cards // .sorted { $0.base.unitName < $1.base.unitName }
                     self?.tableView.reloadData()
                 }
             })

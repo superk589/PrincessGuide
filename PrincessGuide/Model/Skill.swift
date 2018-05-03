@@ -95,6 +95,8 @@ enum ActionKey: String, CustomStringConvertible {
     case duration
     case chance
     case stack
+    case distance
+    case speed
     
     var description: String {
         switch self {
@@ -114,6 +116,10 @@ enum ActionKey: String, CustomStringConvertible {
             return NSLocalizedString("Stack", comment: "")
         case .def:
             return NSLocalizedString("DEF", comment: "")
+        case .distance:
+            return NSLocalizedString("Distance", comment: "")
+        case .speed:
+            return NSLocalizedString("Speed", comment: "")
         }
     }
 }
@@ -127,15 +133,20 @@ enum ActionType: Int {
     case unknown = 0
     case damage
     case position
-
-    case heal = 4
+    case knock
+    case heal
+    
     case `guard` = 6
+    case chooseArea
+    
     case aura = 10
     case summon = 15
     case tp = 16
     
     case taunt = 20
     case invulnerable
+    
+    case instantDeath = 30
     case additionalDamage = 34
     case healingPool = 37
     case cursingPool = 38
@@ -263,12 +274,8 @@ extension Skill.Action {
         return ActionClass(rawValue: actionDetail1) ?? .unknown
     }
     
-    var ailmentType: AilmentType {
-        return AilmentType(rawValue: actionType) ?? .unknown
-    }
-    
     var ailment: Ailment {
-        return Ailment(ailmentType, actionDetail1) ?? .unknown
+        return Ailment(type: actionType, detail: actionDetail1)
     }
     
     var modifer: ActionModifier {
@@ -280,7 +287,7 @@ extension Skill.Action {
     }
     
     var values: [ActionValue] {
-        switch (type, `class`, ailmentType) {
+        switch (type, `class`, ailment.ailmentType) {
         case (.damage, .magical, _):
             return [
                 ActionValue(key: .initialValue, value: String(actionValue1)),
@@ -304,6 +311,11 @@ extension Skill.Action {
                 ActionValue(key: .initialValue, value: String(actionValue2)),
                 ActionValue(key: .skillLevel, value: String(actionValue3)),
                 ActionValue(key: .atk, value: String(actionValue4))
+            ]
+        case (.knock, _, _):
+            return [
+                ActionValue(key: .distance, value: String(actionValue1)),
+                ActionValue(key: .speed, value: String(actionValue3))
             ]
         case (.guard, _, _):
             return [
@@ -335,7 +347,7 @@ extension Skill.Action {
                 ActionValue(key: .skillLevel, value: String(actionValue2)),
                 ActionValue(key: .duration, value: String(actionValue3))
             ]
-        case (_, _, let ailment) where [.dark, .charm, .silent].contains(ailment):
+        case (_, _, let ailment) where [.darken, .charm, .silence].contains(ailment):
             return [
                 ActionValue(key: .chance, value: String(actionValue3)),
                 ActionValue(key: .duration, value: String(actionValue1))
@@ -378,7 +390,7 @@ extension Skill.Action {
     }
     
     private func buildActionDescription() -> String {
-        switch (type, ailmentType) {
+        switch (type, ailment.ailmentType) {
         case (.heal, _):
             return NSLocalizedString("Restore [%@]\(unitModifier) HP", comment: "")
         case (.guard, _):
@@ -399,16 +411,16 @@ extension Skill.Action {
         case (.ex, _):
             return NSLocalizedString("Raise [%@] \(Property(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
         case (_, .action):
-            switch ailment {
-            case .haste, .slow:
+            switch ailment.ailmentDetail {
+            case .some(.action(.haste)), .some(.action(.slow)):
                 return "\(ailment) [%@]"
             default:
-                return "\(ailment)"
+                return "\(ailment) target"
             }
         case (_, .dot):
             return "\(ailment) target and deal [%@] damage"
-        case (_, let ailment) where [.dark, .charm, .silent].contains(ailment):
-            return "\(ailment) with [%@]%% chance"
+        case (_, let type) where [.darken, .charm, .silence].contains(type):
+            return "\(ailment) target with [%@]%% chance"
         case (.aura, _):
             return NSLocalizedString("\(modifer) [%@]\(unitModifier) \(Property(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
         case (.position, _):
@@ -420,15 +432,21 @@ extension Skill.Action {
         case (.invulnerable, _):
             return NSLocalizedString("Become invulnerable for [%@]s", comment: "")
         case (.taunt, _):
-            return NSLocalizedString("Taunt", comment: "")
+            return NSLocalizedString("Taunt target", comment: "")
         case (.summon, _):
             return NSLocalizedString("Summon minion ID \(actionDetail2)", comment: "")
         case (.healingPool, _):
             return NSLocalizedString("Summon a healing pool to heal [%@]", comment: "")
         case (.cursingPool, _):
             return NSLocalizedString("Summon a pool to reduce [%@] DEF", comment: "")
+        case (.instantDeath, _):
+            return NSLocalizedString("Die instantly", comment: "")
+        case (.chooseArea, _):
+            return NSLocalizedString("Choose target area", comment: "")
+        case (.knock, _):
+            return NSLocalizedString("Knock target away \(actionValue1) distance in \(actionValue3) speed", comment: "")
         default:
-            return NSLocalizedString("Unknown effect with arguments [\(arguments.filter { $0 != 0 }.map(String.init).joined(separator: ", "))]", comment: "")
+            return NSLocalizedString("Unknown effect \(actionType) with arguments \(arguments.filter { $0 != 0 }.map(String.init).joined(separator: ", "))", comment: "")
         }
     }
     
@@ -456,7 +474,7 @@ extension Skill.Action {
         }
         
         var valueString = ""
-        switch (type, ailmentType) {
+        switch (type, ailment.ailmentType) {
         case (.invulnerable, _), (_, .action):
             valueString = String(fixedValue)
         default:
@@ -471,13 +489,13 @@ extension Skill.Action {
     }
     
     private func buildDurationDescription() -> String {
-        switch (type, ailmentType) {
+        switch (type, ailment.ailmentType) {
         case (_, .dot):
-            return NSLocalizedString(" over [%@]s", comment: "")
+            return NSLocalizedString(" over %@s", comment: "")
         case (_, let ailment) where ![.unknown, .instantDeath, .dot].contains(ailment):
-            return NSLocalizedString(" for [%@]s", comment: "")
+            return NSLocalizedString(" for %@s", comment: "")
         case (.aura, _), (.taunt, _), (.healingPool, _), (.guard, _):
-            return NSLocalizedString(" for [%@]s", comment: "")
+            return NSLocalizedString(" for %@s", comment: "")
         default:
             return ""
         }
@@ -496,13 +514,13 @@ extension Skill.Action {
         
         let valueString = String(fixedValue)
         
-        return "\(valueString)@\(Config.maxPlayerLevel)"
+        return "\(valueString)"
     }
     
     private func buildStackDescription() -> String {
         switch type {
         case .additionalDamage:
-            return NSLocalizedString(" with max stacks [%@]", comment: "")
+            return NSLocalizedString(" with max %@ stacks", comment: "")
         default:
             return ""
         }
@@ -521,10 +539,10 @@ extension Skill.Action {
         
         let valueString = String(Int(floor(fixedValue)))
         
-        return "\(valueString)@\(Config.maxPlayerLevel)"
+        return "\(valueString)"
     }
     
     var detail: String {
-        return String(format: buildActionDescription(), actionValue()) + String(format: buildStackDescription(), stackValue()) + String(format: buildDurationDescription(), durationValue())
+        return String(format: buildActionDescription(), actionValue()) + String(format: buildStackDescription(), stackValue()) + String(format: buildDurationDescription(), durationValue()) + NSLocalizedString(".", comment: "")
     }
 }

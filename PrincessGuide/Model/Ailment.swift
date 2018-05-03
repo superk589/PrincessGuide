@@ -8,7 +8,44 @@
 
 import Foundation
 
-enum Ailment: Int, CustomStringConvertible {
+enum AilmentDetail: CustomStringConvertible {
+    case dot(DotDetail)
+    case action(ActionDetail)
+    
+    var description: String {
+        switch self {
+        case .dot(let detail):
+            return detail.description
+        case .action(let detail):
+            return detail.description
+        }
+    }
+}
+
+enum DotDetail: Int, CustomStringConvertible {
+    case detain = 0
+    case poison
+    case burn
+    case curse
+    case unknown
+    
+    var description: String {
+        switch self {
+        case .detain:
+            return NSLocalizedString("Detain", comment: "")
+        case .poison:
+            return NSLocalizedString("Poison", comment: "")
+        case .burn:
+            return NSLocalizedString("Burn", comment: "")
+        case .curse:
+            return NSLocalizedString("Curse", comment: "")
+        default:
+            return NSLocalizedString("Unknown", comment: "")
+        }
+    }
+}
+
+enum ActionDetail: Int, CustomStringConvertible {
     case slow = 1
     case haste
     case paralyse
@@ -18,20 +55,10 @@ enum Ailment: Int, CustomStringConvertible {
     case stun
     case petrify
     case detain
-    case detained
-    case poisoned
-    case burned
-    case cursed
-    case charm
-    case dark
-    case silent
-    case instantDeath
     case unknown
     
     var description: String {
         switch self {
-        case .dark:
-            return NSLocalizedString("Dark", comment: "")
         case .slow:
             return NSLocalizedString("Slow", comment: "")
         case .haste:
@@ -50,20 +77,6 @@ enum Ailment: Int, CustomStringConvertible {
             return NSLocalizedString("Petrify", comment: "")
         case .detain:
             return NSLocalizedString("Detain", comment: "")
-        case .detained:
-            return NSLocalizedString("Detain", comment: "")
-        case .poisoned:
-            return NSLocalizedString("Poison", comment: "")
-        case .burned:
-            return NSLocalizedString("Burn", comment: "")
-        case .cursed:
-            return NSLocalizedString("Curse", comment: "")
-        case .charm:
-            return NSLocalizedString("Charm", comment: "")
-        case .silent:
-            return NSLocalizedString("Slient", comment: "")
-        case .instantDeath:
-            return NSLocalizedString("Instant Death", comment: "")
         case .unknown:
             return NSLocalizedString("Unknown", comment: "")
         }
@@ -76,8 +89,8 @@ enum AilmentType: Int, CustomStringConvertible {
     case action = 8
     case dot
     case charm = 11
-    case dark
-    case silent
+    case darken
+    case silence
     case instantDeath = 30
     case unknown
     
@@ -85,40 +98,43 @@ enum AilmentType: Int, CustomStringConvertible {
         switch self {
             
         case .action:
-            return NSLocalizedString("Action Affected", comment: "")
+            return NSLocalizedString("Action", comment: "")
         case .dot:
             return NSLocalizedString("Dot", comment: "")
         case .charm:
             return NSLocalizedString("Charm", comment: "")
-        case .dark:
-            return NSLocalizedString("Dark", comment: "")
-        case .silent:
-            return NSLocalizedString("Silent", comment: "")
+        case .darken:
+            return NSLocalizedString("Darken", comment: "")
+        case .silence:
+            return NSLocalizedString("Silence", comment: "")
         case .instantDeath:
             return NSLocalizedString("Instant Death", comment: "")
         case .unknown:
-            return NSLocalizedString("Unknown", comment: "")
+            return NSLocalizedString("Unknown Effect", comment: "")
         }
     }
 }
 
-extension Ailment {
-    init?(_ type: AilmentType, _ value: Int) {
-        switch (type, value) {
-        case (.action, _):
-            self.init(rawValue: value)
-        case (.dot, _):
-            self.init(rawValue: value + 10)
-        case (.charm, _):
-            self = .charm
-        case (.dark, _):
-            self = .dark
-        case (.silent, _):
-            self = .silent
-        case (.instantDeath, _):
-            self = .instantDeath
+struct Ailment: CustomStringConvertible {
+    let type: Int
+    let detail: Int
+    
+    var ailmentType: AilmentType {
+        return AilmentType(rawValue: type) ?? .unknown
+    }
+    
+    var ailmentDetail: AilmentDetail? {
+        switch ailmentType {
+        case .action:
+            return .action(ActionDetail(rawValue: detail) ?? .unknown)
+        case .dot:
+            return .dot(DotDetail(rawValue: detail) ?? .unknown)
         default:
-            self = .unknown
+            return nil
         }
+    }
+    
+    var description: String {
+        return ailmentDetail?.description ?? ailmentType.description
     }
 }
