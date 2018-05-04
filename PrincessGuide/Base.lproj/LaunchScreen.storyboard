@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jsU-T2-tah">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="o56-a2-Osp">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                <viewController id="jsU-T2-tah" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IcG-3v-vJU"/>
+                        <viewControllerLayoutGuide type="bottom" id="6IT-g9-6vD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Ea-wr-Nm8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="HMH-7F-Dcw">
-                                <rect key="frame" x="59" y="215.5" width="256" height="256"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky_background" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-L9-K7Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="X4r-gr-vdi">
+                                <rect key="frame" x="59.5" y="205" width="256" height="256"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="256" id="1nD-hG-wZt"/>
-                                    <constraint firstAttribute="height" constant="256" id="fif-l1-mGH"/>
+                                    <constraint firstAttribute="height" constant="256" id="5r5-w2-ZjE"/>
+                                    <constraint firstAttribute="width" constant="256" id="rNs-rS-neo"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HMH-7F-Dcw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eBA-o4-Qq6"/>
-                            <constraint firstItem="HMH-7F-Dcw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mv9-Wv-JAP"/>
+                            <constraint firstAttribute="trailing" secondItem="Ln0-L9-K7Z" secondAttribute="trailing" id="EoC-zm-jWA"/>
+                            <constraint firstItem="X4r-gr-vdi" firstAttribute="centerX" secondItem="Ln0-L9-K7Z" secondAttribute="centerX" id="MjZ-Zv-WvO"/>
+                            <constraint firstItem="Ln0-L9-K7Z" firstAttribute="top" secondItem="7Ea-wr-Nm8" secondAttribute="top" id="a06-mg-OeV"/>
+                            <constraint firstItem="Ln0-L9-K7Z" firstAttribute="leading" secondItem="7Ea-wr-Nm8" secondAttribute="leading" id="faw-qQ-1xf"/>
+                            <constraint firstAttribute="bottom" secondItem="Ln0-L9-K7Z" secondAttribute="bottom" id="wbH-5T-tRa"/>
+                            <constraint firstItem="X4r-gr-vdi" firstAttribute="centerY" secondItem="Ln0-L9-K7Z" secondAttribute="centerY" id="zbJ-6A-Pc4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWI-zz-jq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="164" y="125"/>
         </scene>
     </scenes>
     <resources>
         <image name="launch_image" width="256" height="256"/>
+        <image name="sky_background" width="375" height="667"/>
     </resources>
 </document>
