@@ -49,6 +49,7 @@ class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.scrollsToTop = false
     }
     
     required init?(coder aDecoder: NSCoder) {

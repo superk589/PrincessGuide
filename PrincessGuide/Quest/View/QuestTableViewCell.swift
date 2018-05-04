@@ -49,6 +49,7 @@ class QuestTableViewCell: UITableViewCell {
         collectionView.verticalSpacing = 10
         collectionView.horizontalSpacing = 10
         collectionView.contentInset = .zero
+        collectionView.scrollView.scrollsToTop = false
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -41,6 +41,8 @@ class PromotionView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.scrollsToTop = false
+
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

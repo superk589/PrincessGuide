@@ -21,11 +21,11 @@ class CraftTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.estimatedRowHeight = 84
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.register(CraftSummaryTableViewCell.self, forCellReuseIdentifier: CraftSummaryTableViewCell.description())
         tableView.register(CraftTableViewCell.self, forCellReuseIdentifier: CraftTableViewCell.description())
         tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = 84
-        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

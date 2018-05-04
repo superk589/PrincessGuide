@@ -37,7 +37,7 @@ PODS:
   - MJRefresh (3.1.15.3)
   - ReachabilitySwift (4.1.0)
   - SnapKit (4.0.0)
-  - SwiftyJSON (4.0.0)
+  - SwiftyJSON (4.1.0)
   - TTGTagCollectionView (1.9.0)
 
 DEPENDENCIES:
@@ -82,9 +82,9 @@ SPEC CHECKSUMS:
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
 
-PODFILE CHECKSUM: 5630073d8e081c06813893675c2aa4c8ef7522a1
+PODFILE CHECKSUM: 58d0efc153c4156ef57148b089a699152dd7681a
 
 COCOAPODS: 1.5.0
