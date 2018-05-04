@@ -28,6 +28,7 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
         tableView.register(QuestAreaTableViewCell.self, forCellReuseIdentifier: QuestAreaTableViewCell.description())
         tableView.rowHeight = 66
         tableView.tableFooterView = UIView()
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         
         loadData()
     }

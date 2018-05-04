@@ -78,6 +78,10 @@ class PatternCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 64, height: 64 + skillLabel.font.lineHeight + loopLabel.font.lineHeight + 30)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

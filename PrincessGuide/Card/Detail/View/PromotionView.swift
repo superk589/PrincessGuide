@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol PromotionViewDelegate: class {
+    func promotionView(_ promotionView: PromotionView, didSelectEquipmentID equipmentID: Int)
+}
+
 class PromotionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let layout: UICollectionViewFlowLayout
     let collectionView: UICollectionView
+    
+    weak var delegate: PromotionViewDelegate?
     
     override init(frame: CGRect) {
         
@@ -20,14 +26,14 @@ class PromotionView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         
         super.init(frame: frame)
         
-        layout.itemSize = CGSize(width: 64, height: 64)
+        layout.itemSize = CGSize(width: 48, height: 48)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 10
         
         addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-            make.height.equalTo(84)
+            make.height.equalTo(68)
         }
         
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
@@ -55,8 +61,8 @@ class PromotionView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let _ = promotion?.equipSlots[indexPath.item] {
-            // TODO: call delegation or closure here
+        if let id = promotion?.equipSlots[indexPath.item] {
+            delegate?.promotionView(self, didSelectEquipmentID: id)
         }
     }
     

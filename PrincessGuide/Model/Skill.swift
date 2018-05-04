@@ -466,7 +466,7 @@ extension Skill.Action {
             case .def:
                 result += "\(value.value) * \(Property.def)"
             case .skillLevel:
-                fixedValue += Double(Config.maxPlayerLevel - 1) * (Double(value.value) ?? 0)
+                fixedValue += Double(Constant.maxPlayerLevel - 1) * (Double(value.value) ?? 0)
             case .initialValue:
                 fixedValue += Double(value.value) ?? 0
             case .chance:
@@ -485,9 +485,9 @@ extension Skill.Action {
         }
         
         if result != "" {
-            return "\(result) + \(valueString)@\(Config.maxPlayerLevel)"
+            return "\(result) + \(valueString)@\(Constant.maxPlayerLevel)"
         } else {
-            return "\(valueString)@\(Config.maxPlayerLevel)"
+            return "\(valueString)@\(Constant.maxPlayerLevel)"
         }
     }
     

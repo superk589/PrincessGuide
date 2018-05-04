@@ -84,6 +84,38 @@ class CDTableViewController: UITableViewController {
         let model = rows[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! CardDetailConfigurable
         cell.configure(for: model.data)
+        
+        if let cell = cell as? CDPromotionTableViewCell {
+            cell.promotionView.delegate = self
+        }
+        
         return cell as! UITableViewCell
     }
+}
+
+extension CDTableViewController: PromotionViewDelegate {
+    
+    func promotionView(_ promotionView: PromotionView, didSelectEquipmentID equipmentID: Int) {
+        
+        let equipments = DispatchSemaphore.sync { (closure) in
+            Master.shared.getEquipments(equipmentID: equipmentID) { equipments in
+                closure(equipments)
+            }
+        }
+        guard let equipment = equipments?.first else {
+            return
+        }
+        if equipment.craftFlg == 0 {
+            QuestTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            let vc = CraftTableViewController()
+            vc.navigationItem.title = equipment.equipmentName
+            vc.equipment = equipment
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }

@@ -28,6 +28,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         tableView.estimatedRowHeight = 84
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.tableFooterView = UIView()
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         
         navigationItem.title = NSLocalizedString("Cards", comment: "")
         

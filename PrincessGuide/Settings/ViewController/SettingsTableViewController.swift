@@ -58,6 +58,7 @@ class SettingsTableViewController: UITableViewController {
         navigationItem.title = NSLocalizedString("Settings", comment: "")
         prepareCellData()
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
+        tableView.cellLayoutMarginsFollowReadableWidth = true
     }
     
     deinit {
@@ -82,14 +83,14 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @objc private func sendTweet() {
-        if let url = URL(string: "twitter://post?message=%23\(Config.appName)%0d"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "twitter://post?message=%23\(Constant.appNameHashtag)%0d"), UIApplication.shared.canOpenURL(url) {
             print("open twitter using url scheme")
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
                 UIApplication.shared.openURL(url)
             }
-        } else if let url = URL(string: "https://twitter.com/intent/tweet?text=%23\(Config.appName)%0d"), UIApplication.shared.canOpenURL(url) {
+        } else if let url = URL(string: "https://twitter.com/intent/tweet?text=%23\(Constant.appNameHashtag)%0d"), UIApplication.shared.canOpenURL(url) {
             print("open twitter by openURL")
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -104,7 +105,7 @@ class SettingsTableViewController: UITableViewController {
     @objc private func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let vc = MFMailComposeViewController()
-            vc.setSubject(NSLocalizedString("\(Config.appName) Feedback", comment: ""))
+            vc.setSubject(NSLocalizedString("\(Constant.appName) Feedback", comment: ""))
             vc.mailComposeDelegate = self
             vc.setToRecipients(["superk589@vip.qq.com"])
             vc.addAttachmentData(DeviceInfo.default.description.data(using: .utf8)!, mimeType: "text/plain", fileName: "device_information.txt")
@@ -117,7 +118,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @objc private func postReview() {
-        if let url = URL(string: "itms-apps://itunes.apple.com/app/id\(Config.appID)?action=write-review") {
+        if let url = URL(string: "itms-apps://itunes.apple.com/app/id\(Constant.appID)?action=write-review") {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {

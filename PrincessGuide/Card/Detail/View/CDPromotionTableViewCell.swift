@@ -30,6 +30,7 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.bottom.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom)
         }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

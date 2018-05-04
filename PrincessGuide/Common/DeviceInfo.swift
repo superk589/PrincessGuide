@@ -14,7 +14,7 @@ class DeviceInfo: CustomStringConvertible {
     
     static let `default` = DeviceInfo()
     
-    let appName = Config.appName
+    let appName = Constant.appName
     
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     

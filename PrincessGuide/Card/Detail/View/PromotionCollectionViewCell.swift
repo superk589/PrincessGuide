@@ -17,7 +17,7 @@ class PromotionCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(icon)
         icon.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
-            make.height.width.equalTo(64)
+            make.height.width.equalTo(48)
         }
     }
     
@@ -26,7 +26,7 @@ class PromotionCollectionViewCell: UICollectionViewCell {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 64, height: 64)
+        return CGSize(width: 48, height: 48)
     }
     
     func configure(for equipmentID: Int) {

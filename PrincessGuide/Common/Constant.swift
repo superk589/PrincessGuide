@@ -1,5 +1,5 @@
 //
-//  Config.swift
+//  Constant.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/4/10.
@@ -8,10 +8,11 @@
 
 import Foundation
 
-struct Config {
+struct Constant {
     static let maxPlayerLevel = 90
     static let appID = 1377498032
-    static let appName = "PrincessGuide"
+    static let appName = "Hatsune's Notes"
+    static let appNameHashtag = "HatsunesNotes"
 }
 
 extension URL {

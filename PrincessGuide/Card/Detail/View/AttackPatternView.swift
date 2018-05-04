@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -20,14 +21,15 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         
         super.init(frame: frame)
         
-        layout.itemSize = CGSize(width: 64, height: 120)
+        let height = PatternCollectionViewCell().intrinsicContentSize.height
+        layout.itemSize = CGSize(width: 64, height: height)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 10
         
         addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-            make.height.equalTo(120)
+            make.height.equalTo(height)
         }
         
         collectionView.register(PatternCollectionViewCell.self, forCellWithReuseIdentifier: PatternCollectionViewCell.description())
