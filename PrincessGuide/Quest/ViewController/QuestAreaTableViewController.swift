@@ -28,6 +28,7 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
             themable.backgroundImageView.image = theme.backgroundImage
             themable.refresher.arrowImage.tintColor = theme.color.indicator
             themable.refresher.loadingView.color = theme.color.indicator
+            themable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)

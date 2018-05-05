@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 protocol PromotionViewDelegate: class {
     func promotionView(_ promotionView: PromotionView, didSelectEquipmentID equipmentID: Int)
@@ -25,6 +26,10 @@ class PromotionView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         super.init(frame: frame)
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.collectionView.indicatorStyle = theme.indicatorStyle
+        }
         
         layout.itemSize = CGSize(width: 48, height: 48)
         layout.scrollDirection = .horizontal

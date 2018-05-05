@@ -28,15 +28,6 @@ class EquipmentViewController: UIViewController, DataChecking {
         backgroundImageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            let navigationBar = themable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themable.backgroundImageView.image = theme.backgroundImage
-            themable.refresher.arrowImage.tintColor = theme.color.indicator
-            themable.refresher.loadingView.color = theme.color.indicator
-        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
 
@@ -63,6 +54,16 @@ class EquipmentViewController: UIViewController, DataChecking {
         // fix a layout issue of mjrefresh
         refresher.bounds.origin.y = collectionView.contentInset.top
         refresher.refreshingBlock = { [weak self] in self?.check() }
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            let navigationBar = themable.navigationController?.navigationBar
+            navigationBar?.tintColor = theme.color.tint
+            navigationBar?.barStyle = theme.barStyle
+            themable.backgroundImageView.image = theme.backgroundImage
+            themable.refresher.arrowImage.tintColor = theme.color.indicator
+            themable.refresher.loadingView.color = theme.color.indicator
+            themable.collectionView.indicatorStyle = theme.indicatorStyle
+        }
         
         loadData()
 

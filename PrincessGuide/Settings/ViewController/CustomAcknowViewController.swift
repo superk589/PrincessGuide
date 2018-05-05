@@ -26,6 +26,7 @@ class CustomAcknowViewController: AcknowViewController {
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
             themable.textView?.textColor = theme.color.title
             themable.backgroundImageView.image = theme.backgroundImage
+            themable.textView?.indicatorStyle = theme.indicatorStyle
         }
     }
 

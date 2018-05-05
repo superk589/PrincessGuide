@@ -47,6 +47,7 @@ struct Theme: ThemeProtocol {
     let lightOpacity: Float
     let shadowOpacity: Float
     let backgroundImage: UIImage
+    let indicatorStyle: UIScrollViewIndicatorStyle
     
     static let light = Theme(
         color: ThemeColors(
@@ -75,7 +76,8 @@ struct Theme: ThemeProtocol {
         barStyle: .default,
         lightOpacity: 1.0,
         shadowOpacity: 0.0,
-        backgroundImage: UIImage()
+        backgroundImage: UIImage(),
+        indicatorStyle: .black
     )
     
     static let dark = Theme(
@@ -105,6 +107,7 @@ struct Theme: ThemeProtocol {
         barStyle: .black,
         lightOpacity: 0.0,
         shadowOpacity: 1.0,
-        backgroundImage: #imageLiteral(resourceName: "sky_background")
+        backgroundImage: #imageLiteral(resourceName: "sky_background"),
+        indicatorStyle: .white
     )
 }

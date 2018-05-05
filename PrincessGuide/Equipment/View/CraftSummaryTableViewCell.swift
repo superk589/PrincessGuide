@@ -32,6 +32,7 @@ class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
             themable.titleLabel.textColor = theme.color.title
             themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themable.backgroundColor = theme.color.tableViewCell.background
+            themable.collectionView.indicatorStyle = theme.indicatorStyle
         }
         
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)

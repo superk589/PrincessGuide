@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Gestalt
 
 class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -20,6 +21,10 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         super.init(frame: frame)
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.collectionView.indicatorStyle = theme.indicatorStyle
+        }
         
         let height = PatternCollectionViewCell().intrinsicContentSize.height
         layout.itemSize = CGSize(width: 64, height: height)

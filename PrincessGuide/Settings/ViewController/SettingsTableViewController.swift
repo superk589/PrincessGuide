@@ -75,6 +75,7 @@ class SettingsTableViewController: UITableViewController {
             navigationBar?.tintColor = theme.color.tint
             navigationBar?.barStyle = theme.barStyle
             themable.backgroundImageView.image = theme.backgroundImage
+            themable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
         navigationItem.title = NSLocalizedString("Settings", comment: "")
