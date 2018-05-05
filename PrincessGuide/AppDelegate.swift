@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import KingfisherWebP
+import Gestalt
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootTabBarController
         window?.makeKeyAndVisible()
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { themeable, theme in
+            let tabBar = rootTabBarController.tabBar
+            tabBar.tintColor = theme.color.tint
+            tabBar.barStyle = theme.barStyle
+        }
+        
+        ThemeManager.default.theme = Defaults.prefersDarkTheme ? Theme.dark : Theme.light
         
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
 

@@ -41,7 +41,6 @@ class RefreshHeader: MJRefreshHeader {
         addSubview(loadingView)
         arrowImage.image = #imageLiteral(resourceName: "arrow-downward").withRenderingMode(.alwaysTemplate)
         addSubview(arrowImage)
-        arrowImage.tintColor = .gray
     }
     
     override func willMove(toSuperview newSuperview: UIView?) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class EquipmentViewController: UIViewController, DataChecking {
     
@@ -14,12 +15,28 @@ class EquipmentViewController: UIViewController, DataChecking {
     
     let refresher = RefreshHeader()
     
+    let backgroundImageView = UIImageView()
+    
     private var collectionView: UICollectionView!
     
     private var layout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(backgroundImageView)
+        backgroundImageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            let navigationBar = themable.navigationController?.navigationBar
+            navigationBar?.tintColor = theme.color.tint
+            navigationBar?.barStyle = theme.barStyle
+            themable.backgroundImageView.image = theme.backgroundImage
+            themable.refresher.arrowImage.tintColor = theme.color.indicator
+            themable.refresher.loadingView.color = theme.color.indicator
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
 
@@ -39,7 +56,7 @@ class EquipmentViewController: UIViewController, DataChecking {
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         collectionView.register(EquipmentCollectionViewCell.self, forCellWithReuseIdentifier: EquipmentCollectionViewCell.description())
         
         collectionView.mj_header = refresher

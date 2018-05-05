@@ -8,6 +8,7 @@
 
 import UIKit
 import TTGTagCollectionView
+import Gestalt
 
 class QuestTableViewCell: UITableViewCell {
 
@@ -22,6 +23,15 @@ class QuestTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        selectedBackgroundView = UIView()
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.titleLabel.textColor = theme.color.title
+            themable.typeLabel.textColor = theme.color.lightText
+            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themable.backgroundColor = theme.color.tableViewCell.background
+        }
+        
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
@@ -31,7 +41,6 @@ class QuestTableViewCell: UITableViewCell {
         
         typeLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         contentView.addSubview(typeLabel)
-        typeLabel.textColor = .lightGray
         typeLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(titleLabel)
             make.right.equalTo(readableContentGuide)

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Gestalt
 
 struct Defaults {
 
@@ -16,6 +17,16 @@ struct Defaults {
         }
         get {
             return UserDefaults.standard.value(forKey: "download_at_start") as? Bool ?? true
+        }
+    }
+    
+    static var prefersDarkTheme: Bool {
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "prefers_dark_theme")
+            ThemeManager.default.theme = newValue ? Theme.dark : Theme.light
+        }
+        get {
+            return UserDefaults.standard.value(forKey: "prefers_dark_theme") as? Bool ?? true
         }
     }
 

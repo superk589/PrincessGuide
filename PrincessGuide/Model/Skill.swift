@@ -18,13 +18,13 @@ enum SkillCategory: String, Hashable, CustomStringConvertible {
     var description: String {
         switch self {
         case .unionBurst:
-            return NSLocalizedString("Union Burst", comment: "")
+            return NSLocalizedString("UB", comment: "")
         case .main:
             return NSLocalizedString("Main", comment: "")
         case .ex:
             return NSLocalizedString("EX", comment: "")
         case .exEvolution:
-            return NSLocalizedString("EX Evolution", comment: "")
+            return NSLocalizedString("EX+", comment: "")
         case .sp:
             return NSLocalizedString("SP", comment: "")
         }

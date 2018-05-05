@@ -10,6 +10,7 @@ import UIKit
 import MessageUI
 import Social
 import AcknowList
+import Gestalt
 
 class SettingsTableViewController: UITableViewController {
 
@@ -33,12 +34,23 @@ class SettingsTableViewController: UITableViewController {
         var settingRows = [Row]()
         
         let downloadAtStartSwitch = UISwitch()
+        ThemeManager.default.apply(theme: Theme.self, to: downloadAtStartSwitch) { (themable, theme) in
+            themable.onTintColor = theme.color.tint
+        }
         downloadAtStartSwitch.isOn = Defaults.downloadAtStart
-        downloadAtStartSwitch.addTarget(self, action: #selector(downloadAtStartHandler(_:)), for: .valueChanged)
+        downloadAtStartSwitch.addTarget(self, action: #selector(handleDownloadAtStartSwitch(_:)), for: .valueChanged)
+        
+        let darkThemeSwitch = UISwitch()
+        ThemeManager.default.apply(theme: Theme.self, to: darkThemeSwitch) { (themable, theme) in
+            themable.onTintColor = theme.color.tint
+        }
+        darkThemeSwitch.isOn = Defaults.prefersDarkTheme
+        darkThemeSwitch.addTarget(self, action: #selector(handleDarkThemeSwitch(_:)), for: .valueChanged)
         
         settingRows.append(Row(title: NSLocalizedString("Check for Updates at Launch", comment: ""), detail: nil, hasDisclosure: false, accessoryView: downloadAtStartSwitch, selector: nil))
+        settingRows.append(Row(title: NSLocalizedString("Use Dark Theme", comment: ""), detail: "", hasDisclosure: false, accessoryView: darkThemeSwitch, selector: nil))
         
-        sections.append(Section(rows: settingRows, title: NSLocalizedString("Data", comment: "")))
+        sections.append(Section(rows: settingRows, title: NSLocalizedString("Setting", comment: "")))
         
         var feedbackRows = [Row]()
         feedbackRows.append(Row(title: NSLocalizedString("Email", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(sendEmail)))
@@ -53,8 +65,18 @@ class SettingsTableViewController: UITableViewController {
         sections.append(Section(rows: aboutRows, title: NSLocalizedString("About", comment: "")))
     }
     
+    let backgroundImageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundView = backgroundImageView
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            let navigationBar = themable.navigationController?.navigationBar
+            navigationBar?.tintColor = theme.color.tint
+            navigationBar?.barStyle = theme.barStyle
+            themable.backgroundImageView.image = theme.backgroundImage
+        }
+        
         navigationItem.title = NSLocalizedString("Settings", comment: "")
         prepareCellData()
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
@@ -71,12 +93,16 @@ class SettingsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    @objc private func downloadAtStartHandler(_ sender: UISwitch) {
+    @objc private func handleDownloadAtStartSwitch(_ sender: UISwitch) {
         Defaults.downloadAtStart = sender.isOn
     }
     
+    @objc private func handleDarkThemeSwitch(_ sender: UISwitch) {
+        Defaults.prefersDarkTheme = sender.isOn
+    }
+    
     @objc private func showAckListViewController() {
-        let vc = AcknowListViewController()
+        let vc = ThirdPartyLibrariesViewController()
         vc.navigationItem.title = NSLocalizedString("Third-Party Libraries", comment: "")
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
@@ -152,6 +178,15 @@ class SettingsTableViewController: UITableViewController {
         cell.accessoryType = row.hasDisclosure ? .disclosureIndicator : .none
         cell.accessoryView = row.accessoryView
         cell.selectionStyle = .none
+        cell.selectedBackgroundView = UIView()
+        
+        ThemeManager.default.apply(theme: Theme.self, to: cell) { (themable, theme) in
+            themable.textLabel?.textColor = theme.color.title
+            themable.detailTextLabel?.textColor = theme.color.body
+            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themable.backgroundColor = theme.color.tableViewCell.background
+        }
+        
         return cell
     }
     

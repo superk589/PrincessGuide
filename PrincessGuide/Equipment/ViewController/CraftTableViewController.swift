@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class CraftTableViewController: UITableViewController {
     
@@ -18,8 +19,14 @@ class CraftTableViewController: UITableViewController {
         }
     }
     
+    let backgroundImageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundView = backgroundImageView
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.backgroundImageView.image = theme.backgroundImage
+        }
         
         tableView.estimatedRowHeight = 84
         tableView.rowHeight = UITableViewAutomaticDimension

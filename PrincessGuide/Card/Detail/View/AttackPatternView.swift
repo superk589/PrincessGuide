@@ -33,10 +33,10 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         }
         
         collectionView.register(PatternCollectionViewCell.self, forCellWithReuseIdentifier: PatternCollectionViewCell.description())
-        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.scrollsToTop = false
+        collectionView.backgroundColor = .clear
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

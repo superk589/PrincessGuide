@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Gestalt
 
 typealias CardDetailItem = CDTableViewController.Row.Model
 
@@ -26,6 +27,15 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        selectedBackgroundView = UIView()
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.nameLabel.textColor = theme.color.title
+            themable.commentLabel.textColor = theme.color.body
+            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themable.backgroundColor = theme.color.tableViewCell.background
+        }
+        
         contentView.addSubview(cardIcon)
         cardIcon.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
@@ -42,7 +52,6 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
         
         commentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         commentLabel.numberOfLines = 0
-        commentLabel.textColor = .darkGray
         contentView.addSubview(commentLabel)
         commentLabel.snp.makeConstraints { (make) in
             make.top.equalTo(nameLabel.snp.bottom).offset(5)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class CDTableViewController: UITableViewController {
     
@@ -65,8 +66,14 @@ class CDTableViewController: UITableViewController {
         }
     }
     
+    let backgroundImageView = UIImageView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundView = backgroundImageView
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.backgroundImageView.image = theme.backgroundImage
+        }
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false

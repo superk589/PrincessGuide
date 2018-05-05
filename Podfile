@@ -13,4 +13,5 @@ target 'PrincessGuide' do
   pod 'Alamofire'
   pod 'lz4'
   pod 'MJRefresh'
+  pod 'Gestalt'
 end

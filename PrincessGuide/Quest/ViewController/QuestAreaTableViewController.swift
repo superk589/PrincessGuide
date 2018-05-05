@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class QuestAreaTableViewController: UITableViewController, DataChecking {
     
@@ -14,8 +15,20 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
     
     let refresher = RefreshHeader()
     
+    let backgroundImageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundView = backgroundImageView
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            let navigationBar = themable.navigationController?.navigationBar
+            navigationBar?.tintColor = theme.color.tint
+            navigationBar?.barStyle = theme.barStyle
+            themable.backgroundImageView.image = theme.backgroundImage
+            themable.refresher.arrowImage.tintColor = theme.color.indicator
+            themable.refresher.loadingView.color = theme.color.indicator
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
         

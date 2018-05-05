@@ -8,19 +8,24 @@
 
 import UIKit
 import SnapKit
+import Gestalt
 
 class LoadingHUD: UIView {
     
     let imageView = LoadingImageView(frame: CGRect(x: 35, y: 20, width: 50, height: 50))
     let titleLabel = UILabel(frame: CGRect(x: 0, y: 75, width: 120, height: 25))
-    
+    let contentView = UIView()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.backgroundColor = theme.color.loadingHUD.background
+            themable.titleLabel.textColor = theme.color.loadingHUD.text
+            themable.contentView.backgroundColor = theme.color.loadingHUD.foreground
+        }
+        
         isUserInteractionEnabled = true
         
-        let contentView = UIView()
-        contentView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         contentView.layer.cornerRadius = 10
         contentView.layer.masksToBounds = true
         addSubview(contentView)
@@ -34,7 +39,6 @@ class LoadingHUD: UIView {
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.baselineAdjustment = .alignCenters
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 17)
-        titleLabel.textColor = .white
         titleLabel.text = NSLocalizedString("Please wait", comment: "")
         
         contentView.addSubview(imageView)
@@ -56,7 +60,7 @@ class LoadingHUDManager {
     static let `default` = LoadingHUDManager()
     let hud = LoadingHUD()
     
-    let debouncer = Debouncer(interval: 0.1)
+    let debouncer = Debouncer(interval: 0.2)
     
     private init () {
         

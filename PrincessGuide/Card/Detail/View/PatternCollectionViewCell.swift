@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Gestalt
 
 class PatternCollectionViewCell: UICollectionViewCell {
     
@@ -20,6 +21,11 @@ class PatternCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.skillLabel.textColor = theme.color.caption
+            themable.loopLabel.textColor = theme.color.caption
+        }
+        
         contentView.addSubview(skillIcon)
         skillIcon.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
@@ -28,7 +34,6 @@ class PatternCollectionViewCell: UICollectionViewCell {
         
         contentView.addSubview(skillLabel)
         skillLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
-        skillLabel.textColor = .darkGray
         skillLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(skillIcon.snp.bottom).offset(5)
@@ -42,7 +47,6 @@ class PatternCollectionViewCell: UICollectionViewCell {
             make.top.greaterThanOrEqualTo(10)
         }
         loopLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
-        loopLabel.textColor = .darkGray
     }
     
     func configure(for pattern: AttackPattern, index: Int, unit: Card) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class QuestTableViewController: UITableViewController {
     
@@ -39,8 +40,15 @@ class QuestTableViewController: UITableViewController {
         }
     }
     
+    let backgroundImageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundView = backgroundImageView
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.backgroundImageView.image = theme.backgroundImage
+        }
         
         tableView.allowsSelection = false
         tableView.estimatedRowHeight = 88

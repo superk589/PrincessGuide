@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
     
@@ -16,6 +17,14 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        selectedBackgroundView = UIView()
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.titleLabel.textColor = theme.color.title
+            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themable.backgroundColor = theme.color.tableViewCell.background
+        }
         
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in

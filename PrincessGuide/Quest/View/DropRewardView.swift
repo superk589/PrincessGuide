@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class DropRewardView: UIView {
     
@@ -17,6 +18,10 @@ class DropRewardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.rateLabel.textColor = theme.color.caption
+        }
+        
         addSubview(itemIcon)
         itemIcon.snp.makeConstraints { (make) in
             make.top.left.equalToSuperview()
@@ -24,7 +29,6 @@ class DropRewardView: UIView {
         }
         
         rateLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
-        rateLabel.textColor = .darkGray
         addSubview(rateLabel)
         rateLabel.snp.makeConstraints { (make) in
             make.top.equalTo(itemIcon.snp.bottom)
@@ -52,10 +56,15 @@ class DropRewardView: UIView {
             itemIcon.layer.borderWidth = 2
             itemIcon.layer.cornerRadius = 6
             itemIcon.layer.masksToBounds = true
-            rateLabel.textColor = .red
+            ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+                themable.itemIcon.layer.borderColor = UIColor.red.cgColor
+                themable.rateLabel.textColor = .red
+            }
         } else {
             itemIcon.layer.borderWidth = 0
-            rateLabel.textColor = .darkGray
+            ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+                themable.rateLabel.textColor = theme.color.caption
+            }
         }
     }
         

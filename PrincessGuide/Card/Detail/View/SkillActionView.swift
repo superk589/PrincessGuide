@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class SkillActionView: UIView {
     
@@ -15,8 +16,11 @@ class SkillActionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.valueLabel.textColor = theme.color.body
+        }
+        
         valueLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
-        valueLabel.textColor = .darkGray
         valueLabel.numberOfLines = 0
         addSubview(valueLabel)
         valueLabel.snp.makeConstraints { (make) in

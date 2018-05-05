@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class CraftTableViewCell: UITableViewCell {
     
@@ -18,6 +19,15 @@ class CraftTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        selectedBackgroundView = UIView()
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.nameLabel.textColor = theme.color.title
+            themable.consumeNumberLabel.textColor = theme.color.body
+            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themable.backgroundColor = theme.color.tableViewCell.background
+        }
         
         contentView.addSubview(icon)
         icon.snp.makeConstraints { (make) in
@@ -35,7 +45,6 @@ class CraftTableViewCell: UITableViewCell {
         
         contentView.addSubview(consumeNumberLabel)
         consumeNumberLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
-        consumeNumberLabel.textColor = .darkGray
         consumeNumberLabel.snp.makeConstraints { (make) in
             make.right.equalTo(readableContentGuide)
             make.centerY.equalToSuperview()

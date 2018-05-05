@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gestalt
 
 class CraftSummaryCollectionViewCell: UICollectionViewCell {
     
@@ -16,6 +17,11 @@ class CraftSummaryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
+            themable.numberLabel.textColor = theme.color.caption
+        }
+        
         contentView.addSubview(icon)
         icon.snp.makeConstraints { (make) in
             make.height.width.equalTo(64)
@@ -30,7 +36,6 @@ class CraftSummaryCollectionViewCell: UICollectionViewCell {
             make.bottom.equalToSuperview()
         }
         numberLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
-        numberLabel.textColor = .darkGray
     }
     
     func configure(for consume: Craft.Consume) {
