@@ -14,4 +14,5 @@ target 'PrincessGuide' do
   pod 'lz4'
   pod 'MJRefresh'
   pod 'Gestalt'
+  pod 'Tabman', :git => 'https://github.com/superk589/Tabman.git'
 end

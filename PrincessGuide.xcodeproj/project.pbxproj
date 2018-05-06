@@ -60,6 +60,12 @@
 		126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECDE209E0733004EC56A /* ThirdPartyLibrariesViewController.swift */; };
 		126DECE1209E0B2C004EC56A /* CustomAcknowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECE0209E0B2C004EC56A /* CustomAcknowViewController.swift */; };
 		126DECE5209EB45E004EC56A /* ConsoleVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECE4209EB45E004EC56A /* ConsoleVariables.swift */; };
+		126DECF2209EDC0E004EC56A /* QuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECF1209EDC0E004EC56A /* QuestTabViewController.swift */; };
+		126DECF6209EEEB4004EC56A /* CDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECF5209EEEB4004EC56A /* CDTabViewController.swift */; };
+		126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECF7209EF24D004EC56A /* CDPromotionTableViewController.swift */; };
+		126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */; };
+		126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFB209EF289004EC56A /* CDTableViewController.swift */; };
+		126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */; };
 		1281FA48209AB83300F2D567 /* PromotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA47209AB83300F2D567 /* PromotionView.swift */; };
 		1281FA4A209AB87800F2D567 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */; };
 		1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */; };
@@ -73,7 +79,7 @@
 		12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D362089B1DB0088F5FB /* CDBasicTableViewCell.swift */; };
 		12B85D3C2089B1DB0088F5FB /* CDStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */; };
 		12B85D3D2089B1DB0088F5FB /* CDPromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D382089B1DB0088F5FB /* CDPromotionTableViewCell.swift */; };
-		12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */; };
+		12B85D3E2089B1DB0088F5FB /* CDSkillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D3A2089B1DB0088F5FB /* CDSkillTableViewController.swift */; };
 		12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C44140209C92AF00016BDC /* LaunchScreen.storyboard */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
@@ -137,6 +143,12 @@
 		126DECDE209E0733004EC56A /* ThirdPartyLibrariesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyLibrariesViewController.swift; sourceTree = "<group>"; };
 		126DECE0209E0B2C004EC56A /* CustomAcknowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAcknowViewController.swift; sourceTree = "<group>"; };
 		126DECE4209EB45E004EC56A /* ConsoleVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleVariables.swift; sourceTree = "<group>"; };
+		126DECF1209EDC0E004EC56A /* QuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTabViewController.swift; sourceTree = "<group>"; };
+		126DECF5209EEEB4004EC56A /* CDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTabViewController.swift; sourceTree = "<group>"; };
+		126DECF7209EF24D004EC56A /* CDPromotionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPromotionTableViewController.swift; sourceTree = "<group>"; };
+		126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewController.swift; sourceTree = "<group>"; };
+		126DECFB209EF289004EC56A /* CDTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
+		126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTabViewController.swift; sourceTree = "<group>"; };
 		1281FA47209AB83300F2D567 /* PromotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionView.swift; sourceTree = "<group>"; };
 		1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftTableViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +162,7 @@
 		12B85D362089B1DB0088F5FB /* CDBasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDBasicTableViewCell.swift; sourceTree = "<group>"; };
 		12B85D372089B1DB0088F5FB /* CDStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStatusTableViewCell.swift; sourceTree = "<group>"; };
 		12B85D382089B1DB0088F5FB /* CDPromotionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPromotionTableViewCell.swift; sourceTree = "<group>"; };
-		12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
+		12B85D3A2089B1DB0088F5FB /* CDSkillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDSkillTableViewController.swift; sourceTree = "<group>"; };
 		12C4413F209C92AF00016BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +308,7 @@
 			children = (
 				12398E81209158EA006AC352 /* QuestAreaTableViewController.swift */,
 				12398E8A20917554006AC352 /* QuestTableViewController.swift */,
+				126DECF1209EDC0E004EC56A /* QuestTabViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -387,7 +400,11 @@
 		12B85D392089B1DB0088F5FB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				12B85D3A2089B1DB0088F5FB /* CDTableViewController.swift */,
+				126DECFB209EF289004EC56A /* CDTableViewController.swift */,
+				12B85D3A2089B1DB0088F5FB /* CDSkillTableViewController.swift */,
+				126DECF5209EEEB4004EC56A /* CDTabViewController.swift */,
+				126DECF7209EF24D004EC56A /* CDPromotionTableViewController.swift */,
+				126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -406,6 +423,7 @@
 			children = (
 				12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */,
 				1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */,
+				126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -511,16 +529,19 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Gestalt/Gestalt.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/KingfisherWebP/KingfisherWebP.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
+				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/lz4/lz4.framework",
 			);
@@ -528,16 +549,19 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gestalt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KingfisherWebP.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/lz4.framework",
 			);
@@ -575,7 +599,9 @@
 				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
 				1281FA4A209AB87800F2D567 /* PromotionCollectionViewCell.swift in Sources */,
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
+				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
+				126DECF6209EEEB4004EC56A /* CDTabViewController.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
@@ -586,6 +612,7 @@
 				12398E7A20915781006AC352 /* AttackPatternView.swift in Sources */,
 				123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */,
 				123608E7209322EB003E7D11 /* DataChecking.swift in Sources */,
+				126DECF2209EDC0E004EC56A /* QuestTabViewController.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficient.swift in Sources */,
@@ -596,10 +623,12 @@
 				123608E92093234F003E7D11 /* RefreshHeader.swift in Sources */,
 				12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
+				126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */,
 				12398E89209168A2006AC352 /* Wave.swift in Sources */,
 				1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */,
 				1221CDDC207CC39E008F30AA /* Constant.swift in Sources */,
 				12B85D3D2089B1DB0088F5FB /* CDPromotionTableViewCell.swift in Sources */,
+				126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */,
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
 				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
 				12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */,
@@ -629,9 +658,10 @@
 				1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */,
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
+				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
-				12B85D3E2089B1DB0088F5FB /* CDTableViewController.swift in Sources */,
+				12B85D3E2089B1DB0088F5FB /* CDSkillTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
 				12124F4A2089D6F4001C1A6F /* SkillActionView.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,

@@ -34,12 +34,12 @@ class QuestAreaTableViewCell: UITableViewCell {
             make.centerY.equalToSuperview()
         }
         
-        typeLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
-        contentView.addSubview(typeLabel)
-        typeLabel.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview()
-            make.right.equalTo(readableContentGuide)
-        }
+//        typeLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
+//        contentView.addSubview(typeLabel)
+//        typeLabel.snp.makeConstraints { (make) in
+//            make.centerY.equalToSuperview()
+//            make.right.equalTo(readableContentGuide)
+//        }
     }
     
     required init?(coder aDecoder: NSCoder) {

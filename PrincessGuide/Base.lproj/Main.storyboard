@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="-52" y="1164"/>
         </scene>
-        <!--Equipment View Controller-->
+        <!--Equipment Tab View Controller-->
         <scene sceneID="GDB-kk-d5j">
             <objects>
-                <viewController id="eA2-93-s9X" customClass="EquipmentViewController" customModule="PrincessGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eA2-93-s9X" customClass="EquipmentTabViewController" customModule="PrincessGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VWQ-tc-oQH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,50 +111,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="G07-3Z-ET0" kind="relationship" relationship="rootViewController" id="04H-l2-rQt"/>
+                        <segue destination="Y7N-i7-kVg" kind="relationship" relationship="rootViewController" id="stC-Z0-ZTX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puc-lw-64B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-52" y="-195.6521739130435"/>
         </scene>
-        <!--General Card Table View Controller-->
-        <scene sceneID="4PW-UN-pL1">
+        <!--Card Table View Controller-->
+        <scene sceneID="o1U-Mg-DN2">
             <objects>
-                <tableViewController id="G07-3Z-ET0" customClass="GeneralCardTableViewController" customModule="PrincessGuide" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SMF-Sq-dgr">
+                <tableViewController id="Y7N-i7-kVg" customClass="CardTableViewController" customModule="PrincessGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fiq-A5-jO6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
-                            <outlet property="dataSource" destination="G07-3Z-ET0" id="8oN-7s-l4i"/>
-                            <outlet property="delegate" destination="G07-3Z-ET0" id="85U-pf-W9f"/>
+                            <outlet property="dataSource" destination="Y7N-i7-kVg" id="1Ew-8G-qJp"/>
+                            <outlet property="delegate" destination="Y7N-i7-kVg" id="y1a-3D-QwI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="HMm-Js-kwP"/>
+                    <navigationItem key="navigationItem" id="91a-0f-qOS"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JgA-wr-WL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DeF-r8-0jx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="-196"/>
-        </scene>
-        <!--Quest Area Table View Controller-->
-        <scene sceneID="CaQ-QO-3HC">
-            <objects>
-                <tableViewController id="vQW-Jh-ORV" customClass="QuestAreaTableViewController" customModule="PrincessGuide" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Evc-fh-sGS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="vQW-Jh-ORV" id="1IO-7N-n0H"/>
-                            <outlet property="delegate" destination="vQW-Jh-ORV" id="96M-EU-0a1"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Gfc-sc-NmE"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aW1-6E-Qg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="636" y="481"/>
+            <point key="canvasLocation" x="663" y="-196"/>
         </scene>
         <!--Quests-->
         <scene sceneID="SKt-j9-TtX">
@@ -165,12 +147,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vQW-Jh-ORV" kind="relationship" relationship="rootViewController" id="WhL-Ou-WGw"/>
+                        <segue destination="jdL-d4-SN6" kind="relationship" relationship="rootViewController" id="tKz-dw-WzF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWG-nn-7Jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-52" y="481"/>
+        </scene>
+        <!--Quest Tab View Controller-->
+        <scene sceneID="Rg2-Hy-1Nc">
+            <objects>
+                <viewController id="jdL-d4-SN6" customClass="QuestTabViewController" customModule="PrincessGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GmE-4w-2vL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="69v-PM-gTs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hzd-wU-Qou"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJh-Xt-5NP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="478"/>
         </scene>
     </scenes>
     <resources>

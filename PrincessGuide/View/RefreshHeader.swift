@@ -43,12 +43,12 @@ class RefreshHeader: MJRefreshHeader {
         addSubview(arrowImage)
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
-        if let scrollView = newSuperview as? UIScrollView {
-            frame.origin.x = -scrollView.contentInset.left
-        }
-    }
+//    override func willMove(toSuperview newSuperview: UIView?) {
+//        super.willMove(toSuperview: newSuperview)
+//        if let scrollView = newSuperview as? UIScrollView {
+//            frame.origin.x = -scrollView.contentInset.left
+//        }
+//    }
     
     override func placeSubviews(){
         super.placeSubviews()

@@ -107,3 +107,17 @@ extension Equipment {
     }
     
 }
+
+enum EquipmentType: Int, CustomStringConvertible {
+    case dropped
+    case crafted
+    
+    var description: String {
+        switch self {
+        case .dropped:
+            return NSLocalizedString("Dropped", comment: "")
+        default:
+            return NSLocalizedString("Crafted", comment: "")
+        }
+    }
+}

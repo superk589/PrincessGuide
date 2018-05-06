@@ -48,6 +48,7 @@ struct Theme: ThemeProtocol {
     let shadowOpacity: Float
     let backgroundImage: UIImage
     let indicatorStyle: UIScrollViewIndicatorStyle
+    let blurEffectStyle: UIBlurEffectStyle
     
     static let light = Theme(
         color: ThemeColors(
@@ -60,7 +61,7 @@ struct Theme: ThemeProtocol {
             body: .darkGray,
             lightText: .lightGray,
             highlightedText: .red,
-            background: .lightGray,
+            background: .white,
             indicator: .gray,
             caption: .darkGray,
             tableViewCell: ThemeTableViewCell(
@@ -77,7 +78,8 @@ struct Theme: ThemeProtocol {
         lightOpacity: 1.0,
         shadowOpacity: 0.0,
         backgroundImage: UIImage(),
-        indicatorStyle: .black
+        indicatorStyle: .black,
+        blurEffectStyle: .extraLight
     )
     
     static let dark = Theme(
@@ -91,7 +93,7 @@ struct Theme: ThemeProtocol {
             body: .nearWhite,
             lightText: .gray,
             highlightedText: .hatsuneYellow,
-            background: .darkGray,
+            background: .black,
             indicator: .hatsunePurple,
             caption: .nearWhite,
             tableViewCell: ThemeTableViewCell(
@@ -108,6 +110,7 @@ struct Theme: ThemeProtocol {
         lightOpacity: 0.0,
         shadowOpacity: 1.0,
         backgroundImage: #imageLiteral(resourceName: "sky_background"),
-        indicatorStyle: .white
+        indicatorStyle: .white,
+        blurEffectStyle: .dark
     )
 }

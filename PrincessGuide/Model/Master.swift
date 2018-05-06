@@ -198,7 +198,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getEquipments(equipmentID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Equipment]>) {
+    func getEquipments(equipmentID: Int? = nil, equipmentType: EquipmentType? = nil, callback: @escaping FMDBCallBackClosure<[Equipment]>) {
         var equipments = [Equipment]()
         execute({ (db) in
             var selectSql = """
@@ -209,6 +209,8 @@ class Master: FMDatabaseQueue {
             """
             if let id = equipmentID {
                 selectSql += " WHERE equipment_id = \(id)"
+            } else if let equipmentType = equipmentType {
+                selectSql += " WHERE craft_flg = \(equipmentType.rawValue)"
             }
             let set = try db.executeQuery(selectSql, values: nil)
             while set.next() {
@@ -320,17 +322,25 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getAreas(callback: @escaping FMDBCallBackClosure<[Area]>) {
+    func getAreas(type: AreaType? = nil, callback: @escaping FMDBCallBackClosure<[Area]>) {
         var areas = [Area]()
         execute({ (db) in
-            let sql = """
+            var sql = """
             SELECT
                 *
             FROM
                 quest_area_data
-            WHERE
-                area_id < 20000
             """
+            if type != nil {
+                switch type! {
+                case .normal:
+                    sql.append(" WHERE area_id < 12000 and area_id > 11000")
+                case .hard:
+                    sql.append(" WHERE area_id > 12000 and area_id < 13000")
+                default:
+                    break
+                }
+            }
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
                 let json = JSON(set.resultDictionary ?? [:])

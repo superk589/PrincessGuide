@@ -21,6 +21,17 @@ class EquipmentViewController: UIViewController, DataChecking {
     
     private var layout: UICollectionViewFlowLayout!
     
+    let equipmentType: EquipmentType
+    
+    init(equipmentType: EquipmentType) {
+        self.equipmentType = equipmentType
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,12 +50,12 @@ class EquipmentViewController: UIViewController, DataChecking {
         layout.itemSize = CGSize(width: 64, height: 64)
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
-        
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+//        collectionView.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
@@ -52,7 +63,7 @@ class EquipmentViewController: UIViewController, DataChecking {
         
         collectionView.mj_header = refresher
         // fix a layout issue of mjrefresh
-        refresher.bounds.origin.y = collectionView.contentInset.top
+        // refresher.bounds.origin.y = collectionView.contentInset.top
         refresher.refreshingBlock = { [weak self] in self?.check() }
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
@@ -80,7 +91,7 @@ class EquipmentViewController: UIViewController, DataChecking {
     private func loadData() {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getEquipments(callback: { (equipments) in
+            Master.shared.getEquipments(equipmentType: self?.equipmentType, callback: { (equipments) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
                     self?.equipments = equipments.sorted { ($0.craftFlg, $1.promotionLevel) < ($1.craftFlg, $0.promotionLevel) }

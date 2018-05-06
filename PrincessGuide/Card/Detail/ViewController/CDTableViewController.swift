@@ -2,7 +2,7 @@
 //  CDTableViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/4/11.
+//  Created by zzk on 2018/5/6.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
@@ -27,6 +27,7 @@ class CDTableViewController: UITableViewController {
             navigationItem.title = card?.base.unitName
             if let card = card {
                 prepareRows(for: card)
+                registerRows()
                 tableView.reloadData()
             }
         }
@@ -34,7 +35,7 @@ class CDTableViewController: UITableViewController {
     
     var rows = [Row]()
     
-    private func prepareRows(for card: Card) {
+    func prepareRows(for card: Card) {
         rows.removeAll()
         
         rows.append(Row(type: CDBasicTableViewCell.self, data: .card(card.base)))
@@ -60,14 +61,16 @@ class CDTableViewController: UITableViewController {
         }
         
         rows += card.promotions.map { Row(type: CDPromotionTableViewCell.self, data: .promotion($0)) }
-        
+    }
+    
+    func registerRows() {
         for row in rows {
             tableView.register(row.type.self, forCellReuseIdentifier: row.type.description())
         }
     }
     
     let backgroundImageView = UIImageView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = backgroundImageView
@@ -78,6 +81,15 @@ class CDTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { [weak self] (context) in
+            self?.tableView.beginUpdates()
+            self?.tableView.endUpdates()
+            }, completion: nil)
+        super.viewWillTransition(to: size, with: coordinator)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

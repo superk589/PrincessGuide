@@ -16,6 +16,17 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
     let refresher = RefreshHeader()
     
     let backgroundImageView = UIImageView()
+
+    let areaType: AreaType
+    
+    init(areaType: AreaType) {
+        self.areaType = areaType
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +69,7 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
     private func loadData() {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getAreas(callback: { (areas) in
+            Master.shared.getAreas(type: self?.areaType, callback: { (areas) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
                     self?.areas = areas
