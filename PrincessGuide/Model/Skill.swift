@@ -418,7 +418,7 @@ extension Skill.Action {
                 return "\(ailment) target"
             }
         case (_, .dot):
-            return "\(ailment) target and deal [%@] damage"
+            return "\(ailment) target and deal [%@] damage per second"
         case (_, let type) where [.darken, .charm, .silence].contains(type):
             return "\(ailment) target with [%@]%% chance"
         case (.aura, _):
@@ -454,19 +454,19 @@ extension Skill.Action {
     }
     
     private func actionValue() -> String {
-        var result = ""
+        var expression = ""
         var fixedValue = 0.0
         for value in values {
-            if value.value == "0" { continue }
+            if let value = Double(value.value), value == 0 { continue }
             switch value.key {
             case .atk:
-                result += "\(value.value) * \(Property.atk)"
+                expression += "\(value.value) * \(Property.atk)"
             case .magicStr:
-                result += "\(value.value) * \(Property.magicStr)"
+                expression += "\(value.value) * \(Property.magicStr)"
             case .def:
-                result += "\(value.value) * \(Property.def)"
+                expression += "\(value.value) * \(Property.def)"
             case .skillLevel:
-                fixedValue += Double(Constant.maxPlayerLevel - 1) * (Double(value.value) ?? 0)
+                fixedValue += Double(ConsoleVariables.defualt.maxPlayerLevel) * (Double(value.value) ?? 0)
             case .initialValue:
                 fixedValue += Double(value.value) ?? 0
             case .chance:
@@ -484,10 +484,10 @@ extension Skill.Action {
             valueString = String(Int(floor(fixedValue)))
         }
         
-        if result != "" {
-            return "\(result) + \(valueString)@\(Constant.maxPlayerLevel)"
+        if expression != "" {
+            return "\(expression) + \(valueString)@\(ConsoleVariables.defualt.maxPlayerLevel)"
         } else {
-            return "\(valueString)@\(Constant.maxPlayerLevel)"
+            return "\(valueString)@\(ConsoleVariables.defualt.maxPlayerLevel)"
         }
     }
     

@@ -33,7 +33,7 @@ class CardTableViewController: UITableViewController, DataChecking {
             themable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
         
         tableView.mj_header = refresher
         refresher.refreshingBlock = { [weak self] in self?.check() }

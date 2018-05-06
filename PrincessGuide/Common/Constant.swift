@@ -9,7 +9,6 @@
 import Foundation
 
 struct Constant {
-    static let maxPlayerLevel = 90
     static let appID = 1377498032
     static let appName = "Hatsune's Notes"
     static let appNameHashtag = "HatsunesNotes"

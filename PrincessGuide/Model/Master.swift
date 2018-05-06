@@ -440,5 +440,44 @@ class Master: FMDatabaseQueue {
             callback(quests)
         }
     }
+    
+    func getMaxLevel(callback: @escaping FMDBCallBackClosure<Int?>) {
+        var result: Int?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                max(unit_level) max_unit_level
+            FROM
+                experience_unit
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                result = Int(set.int(forColumn: "max_unit_level")) - 1
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
+    func getCoefficient(callback: @escaping FMDBCallBackClosure<Coefficient?>) {
+        var result: Coefficient?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                unit_status_coefficient
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                result = try? decoder.decode(Coefficient.self, from: json.rawData())
+            }
+        }) {
+            callback(result)
+        }
+    }
 
 }

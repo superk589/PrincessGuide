@@ -75,7 +75,7 @@ class Updater {
                     }
                     let db = try extractAsset(data: asset.data)
                     try db.write(to: Master.url, options: .atomic)
-                    self.postUpdateEndNotification()
+                    ConsoleVariables.defualt.handleDataUpdatingEnd()
                     completion(db, nil)
                 } catch(let error) {
                     print(error)
