@@ -87,7 +87,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Tabman:
-    :commit: 3c2abfc681efd7fce17c3210d3f8df114ca67e67
+    :commit: a86cd38036bde0a9f4d96f3c684eb818308c8554
     :git: https://github.com/superk589/Tabman.git
 
 SPEC CHECKSUMS:

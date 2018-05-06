@@ -11,7 +11,7 @@ import UIKit
 class CDPromotionTableViewController: CDTableViewController {
 
     override func prepareRows(for card: Card) {
-        rows = card.promotions.map { Row(type: CDPromotionTableViewCell.self, data: .promotion($0)) }
+        rows = card.promotions.map { Row(type: CDPromotionTableViewCell.self, data: .promotion($0)) }.reversed()
     }
     
 }
