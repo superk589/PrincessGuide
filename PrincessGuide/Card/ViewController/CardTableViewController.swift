@@ -63,6 +63,14 @@ class CardTableViewController: UITableViewController, DataChecking {
                     LoadingHUDManager.default.hide()
                     self?.cards = cards // .sorted { $0.base.unitName < $1.base.unitName }
                     self?.tableView.reloadData()
+                    
+                    /* debug */
+                    /*let encoder = JSONEncoder()
+                    encoder.outputFormatting = .prettyPrinted
+                    if let data = try? encoder.encode(cards.map { [$0.base.unitName: $0.property()] }) {
+                        try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_property.json"))
+                    }
+                     */
                 }
             })
         }

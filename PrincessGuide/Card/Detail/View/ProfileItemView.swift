@@ -44,4 +44,9 @@ class ProfileItemView: UIView {
         titleLabel.text = item.key.description
         contentLabel.text = item.value
     }
+    
+    func configure(for item: Property.Item) {
+        titleLabel.text = item.key.description
+        contentLabel.text = String(Int(item.value))
+    }
 }

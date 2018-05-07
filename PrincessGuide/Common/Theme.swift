@@ -92,7 +92,7 @@ struct Theme: ThemeProtocol {
             title: .white,
             body: .nearWhite,
             lightText: .gray,
-            highlightedText: .hatsuneYellow,
+            highlightedText: .darkHighlighted,
             background: .black,
             indicator: .hatsunePurple,
             caption: .nearWhite,

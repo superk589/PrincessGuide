@@ -19,6 +19,7 @@ class CDTableViewController: UITableViewController {
             case pattern(AttackPattern, Card)
             case promotion(Card.Promotion)
             case profileItems([Card.Profile.Item])
+            case propertyItems([Property.Item])
             case comment(Card.Comment)
             case text(String, String)
         }

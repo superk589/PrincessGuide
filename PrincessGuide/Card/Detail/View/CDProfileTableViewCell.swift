@@ -57,10 +57,26 @@ class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
     func configure(for item: CardDetailItem) {
-        guard case .profileItems(let items) = item else {
+        if case .profileItems(let items) = item {
+            configure(for: items)
+        } else if case .propertyItems(let items) = item {
+            configure(for: items)
+        } else {
             fatalError()
         }
-        configure(for: items)
     }
 
+    func configure(for items: [Property.Item]) {
+        itemViews.forEach {
+            $0.removeFromSuperview()
+        }
+        itemViews.removeAll()
+        
+        for item in items {
+            let itemView = ProfileItemView()
+            itemView.configure(for: item)
+            itemViews.append(itemView)
+            stackView.addArrangedSubview(itemView)
+        }
+    }
 }

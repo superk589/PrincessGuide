@@ -9,7 +9,7 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**. Under devel
 - [ ] Api Client  -- need help
 - [x] Auto Data Sync
 - [ ] Card Viewer
-    - [ ] Card Properties
+    - [x] Card Properties
     - [x] Skill Effect Analysis
     - [x] Attack Patterns
     - [ ] Damage or Healing Simulation

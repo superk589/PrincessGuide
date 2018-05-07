@@ -57,8 +57,8 @@ class DropRewardView: UIView {
             itemIcon.layer.cornerRadius = 6
             itemIcon.layer.masksToBounds = true
             ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-                themable.itemIcon.layer.borderColor = UIColor.red.cgColor
-                themable.rateLabel.textColor = .red
+                themable.itemIcon.layer.borderColor = theme.color.highlightedText.cgColor
+                themable.rateLabel.textColor = theme.color.highlightedText
             }
         } else {
             itemIcon.layer.borderWidth = 0

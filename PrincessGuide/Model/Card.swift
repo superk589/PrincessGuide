@@ -295,6 +295,7 @@ class Card: Codable {
         Master.shared.getCharaStory(charaID: charaID, callback: closure)
     }
     
+    lazy var maxProperty: Property = property()
 }
 
 extension Card {
@@ -311,7 +312,6 @@ extension Card {
         }
         if let rarity = rarities.max(by: { $0.rarity < $1.rarity }) {
             property += rarity.property + rarity.propertyGrowth * Double(ConsoleVariables.defualt.maxPlayerLevel + ConsoleVariables.defualt.maxEquipmentRank)
-            property = property.rounded()
         }
         if let promotionStatus = promotionStatuses.max(by: { $0.promotionLevel < $1.promotionLevel }) {
             property += promotionStatus.property
@@ -321,7 +321,7 @@ extension Card {
                 property += equipment.property.ceiled()
             }
         }
-        return property
+        return property.rounded()
     }
     
 }

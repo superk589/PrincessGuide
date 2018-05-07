@@ -19,7 +19,7 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     init(card: Card) {
         self.card = card
-        viewControllers = [CDSkillTableViewController(), CDProfileTableViewController(), CDPromotionTableViewController()]
+        viewControllers = [CDSkillTableViewController(), CDProfileTableViewController(), CDPropertyViewController(), CDPromotionTableViewController()]
         viewControllers.forEach { $0.card = card }
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = card.base.unitName
@@ -36,6 +36,7 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         dataSource = self
         bar.items = [NSLocalizedString("Skill", comment: ""),
                      NSLocalizedString("Profile", comment: ""),
+                     NSLocalizedString("Status", comment: ""),
                      NSLocalizedString("Equipment", comment: "")].map { Item(title: $0) }
         bar.location = .bottom
 

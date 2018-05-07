@@ -66,6 +66,7 @@
 		126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */; };
 		126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFB209EF289004EC56A /* CDTableViewController.swift */; };
 		126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */; };
+		1280DE3320A09278008D9D72 /* CDPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE3220A09278008D9D72 /* CDPropertyViewController.swift */; };
 		1281FA48209AB83300F2D567 /* PromotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA47209AB83300F2D567 /* PromotionView.swift */; };
 		1281FA4A209AB87800F2D567 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */; };
 		1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */; };
@@ -166,6 +167,7 @@
 		126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewController.swift; sourceTree = "<group>"; };
 		126DECFB209EF289004EC56A /* CDTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
 		126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTabViewController.swift; sourceTree = "<group>"; };
+		1280DE3220A09278008D9D72 /* CDPropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPropertyViewController.swift; sourceTree = "<group>"; };
 		1281FA47209AB83300F2D567 /* PromotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionView.swift; sourceTree = "<group>"; };
 		1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftTableViewController.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				126DECF5209EEEB4004EC56A /* CDTabViewController.swift */,
 				126DECF7209EF24D004EC56A /* CDPromotionTableViewController.swift */,
 				126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */,
+				1280DE3220A09278008D9D72 /* CDPropertyViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficient.swift in Sources */,
+				1280DE3320A09278008D9D72 /* CDPropertyViewController.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,

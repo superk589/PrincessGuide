@@ -15,6 +15,8 @@ extension UIColor {
     
     static let hatsunePurple = UIColor(hexString: "#ED9BF5")
     
+    static let darkHighlighted = UIColor(hexString: "#F76445")
+    
     static let hatsuneYellow = UIColor(hexString: "#FEFC8F")
     
     static let nearWhite = UIColor(hue: 0.121, saturation: 0.1, brightness: 0.95, alpha: 1)
