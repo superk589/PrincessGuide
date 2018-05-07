@@ -43,6 +43,11 @@ extension DataChecking where Self: UIViewController {
                         hudManager.hide(animated: true)
                     }
                 })
+            } else if error != nil {
+                DispatchQueue.main.async {
+                    hudManager.setup(NSLocalizedString("Failed", comment: ""), animated: false)
+                    hudManager.hide(animated: true)
+                }
             } else {
                 DispatchQueue.main.async {
                     hudManager.setup(NSLocalizedString("Up to date!", comment: ""), animated: false)

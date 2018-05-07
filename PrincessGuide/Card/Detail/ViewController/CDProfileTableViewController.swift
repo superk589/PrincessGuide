@@ -13,7 +13,7 @@ class CDProfileTableViewController: CDTableViewController {
     override func prepareRows(for card: Card) {
         rows.removeAll()
         rows += [
-            Row(type: CDBasicTableViewCell.self, data: .profile(card.profile)),
+            Row(type: CDBasicTableViewCell.self, data: .base(card.base)),
             Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Catch Copy", comment: ""), card.profile.catchCopy)),
             Row(type: CDProfileTableViewCell.self, data: .profileItems([
                 card.profile.item(for: .height),

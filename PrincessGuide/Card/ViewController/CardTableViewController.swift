@@ -97,7 +97,6 @@ class CardTableViewController: UITableViewController, DataChecking {
         let card = cards[indexPath.row]
         let vc = CDTabViewController(card: card)
         print("card id: \(card.base.unitId)")
-        print(card.property())
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

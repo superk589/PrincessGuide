@@ -16,7 +16,7 @@ extension Notification.Name {
 
 class ConsoleVariables: Codable {
     
-    static let defualt = ConsoleVariables.load() ?? ConsoleVariables()
+    static let `default` = ConsoleVariables.load() ?? ConsoleVariables()
     
     static let url = URL(fileURLWithPath: Path.library).appendingPathComponent("console_variables.json")
     

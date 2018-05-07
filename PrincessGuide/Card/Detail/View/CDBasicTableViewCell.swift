@@ -41,23 +41,24 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.left.equalTo(readableContentGuide)
             make.top.equalTo(10)
             make.height.width.equalTo(64)
+            make.bottom.lessThanOrEqualTo(-10)
         }
         
         nameLabel.font = UIFont.scaledFont(forTextStyle: .title1, ofSize: 16)
-        contentView.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(cardIcon.snp.right).offset(10)
-            make.top.equalTo(10)
-        }
+//        contentView.addSubview(nameLabel)
+//        nameLabel.snp.makeConstraints { (make) in
+//            make.left.equalTo(cardIcon.snp.right).offset(10)
+//            make.top.equalTo(10)
+//        }
         
         commentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         commentLabel.numberOfLines = 0
         contentView.addSubview(commentLabel)
         commentLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(nameLabel.snp.bottom).offset(5)
-            make.left.equalTo(nameLabel)
+            make.top.equalTo(10)
+            make.left.equalTo(cardIcon.snp.right).offset(10)
             make.right.equalTo(readableContentGuide)
-            make.bottom.equalTo(-10)
+            make.bottom.lessThanOrEqualTo(-10)
         }
         
     }

@@ -12,15 +12,9 @@ import Alamofire
 
 extension URL {
     static let check = URL(string: "https://redive.estertion.win/last_version.json")!
-    static func master(hash: String) -> URL {
+    static func master(_ hash: String) -> URL {
         return URL(string: "https://priconne-redive.akamaized.net/dl/pool/AssetBundles/\(hash[0..<2])/\(hash)")!
     }
-}
-
-extension Notification.Name {
-    
-    static let updateEnd = Notification.Name("update_end")
-    
 }
 
 class Updater {
@@ -33,10 +27,6 @@ class Updater {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = self.isUpdating
             }
         }
-    }
-    
-    private func postUpdateEndNotification() {
-        NotificationCenter.default.post(name: .updateEnd, object: self)
     }
     
     private init() {
@@ -62,7 +52,7 @@ class Updater {
     
     func getMaster(hash: String, progressHandler: @escaping Request.ProgressHandler, completion: @escaping (_ master: Data?, _ error: Error?) -> Void) {
         isUpdating = true
-        Alamofire.request(URL.master(hash: hash)).downloadProgress(closure: progressHandler).validate(statusCode: 200..<300).responseData { [unowned self] (response) in
+        Alamofire.request(URL.master(hash)).downloadProgress(closure: progressHandler).validate(statusCode: 200..<300).responseData { [unowned self] (response) in
             switch response.result {
             case .failure(let error):
                 print(error)
@@ -75,7 +65,7 @@ class Updater {
                     }
                     let db = try extractAsset(data: asset.data)
                     try db.write(to: Master.url, options: .atomic)
-                    ConsoleVariables.defualt.handleDataUpdatingEnd()
+                    ConsoleVariables.default.handleDataUpdatingEnd()
                     completion(db, nil)
                 } catch(let error) {
                     print(error)

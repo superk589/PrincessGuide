@@ -47,6 +47,10 @@ class ProfileItemView: UIView {
     
     func configure(for item: Property.Item) {
         titleLabel.text = item.key.description
-        contentLabel.text = String(Int(item.value))
+        if let percent = item.percent, percent != 0 {
+            contentLabel.text = String(Int(item.value)) + " (+\(percent)%)"
+        } else {
+            contentLabel.text = String(Int(item.value))
+        }
     }
 }

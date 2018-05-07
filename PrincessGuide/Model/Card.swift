@@ -311,7 +311,7 @@ extension Card {
             property += item
         }
         if let rarity = rarities.max(by: { $0.rarity < $1.rarity }) {
-            property += rarity.property + rarity.propertyGrowth * Double(ConsoleVariables.defualt.maxPlayerLevel + ConsoleVariables.defualt.maxEquipmentRank)
+            property += rarity.property + rarity.propertyGrowth * Double(ConsoleVariables.default.maxPlayerLevel + ConsoleVariables.default.maxEquipmentRank)
         }
         if let promotionStatus = promotionStatuses.max(by: { $0.promotionLevel < $1.promotionLevel }) {
             property += promotionStatus.property

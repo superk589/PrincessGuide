@@ -63,4 +63,25 @@ struct Coefficient: Codable {
     let waveEnergyRecoveryCoefficient: Double
     let waveHpRecoveryCoefficient: Double
 
+    func value(for key: PropertyKey) -> Double {
+        switch key {
+        case .atk: return atkCoefficient
+        case .def: return defCoefficient
+        case .dodge: return dodgeCoefficient
+        case .energyRecoveryRate: return energyRecoveryRateCoefficient
+        case .energyReduceRate: return energyReduceRateCoefficient
+        case .hp: return hpCoefficient
+        case .hpRecoveryRate: return hpRecoveryRateCoefficient
+        case .lifeSteal: return lifeStealCoefficient
+        case .magicCritical: return magicCriticalCoefficient
+        case .magicDef: return magicDefCoefficient
+        case .magicPenetrate: return magicPenetrateCoefficient
+        case .magicStr: return magicStrCoefficient
+        case .physicalCritical: return physicalCriticalCoefficient
+        case .physicalPenetrate: return physicalPenetrateCoefficient
+        case .waveEnergyRecovery: return waveEnergyRecoveryCoefficient
+        case .waveHpRecovery: return waveHpRecoveryCoefficient
+        case .unknown: return 0
+        }
+    }
 }

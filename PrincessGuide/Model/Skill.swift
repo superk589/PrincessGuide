@@ -466,7 +466,7 @@ extension Skill.Action {
             case .def:
                 expression += "\(value.value) * \(PropertyKey.def)"
             case .skillLevel:
-                fixedValue += Double(ConsoleVariables.defualt.maxPlayerLevel) * (Double(value.value) ?? 0)
+                fixedValue += Double(ConsoleVariables.default.maxPlayerLevel) * (Double(value.value) ?? 0)
             case .initialValue:
                 fixedValue += Double(value.value) ?? 0
             case .chance:
@@ -485,9 +485,9 @@ extension Skill.Action {
         }
         
         if expression != "" {
-            return "\(expression) + \(valueString)@\(ConsoleVariables.defualt.maxPlayerLevel)"
+            return "\(expression) + \(valueString)@\(ConsoleVariables.default.maxPlayerLevel)"
         } else {
-            return "\(valueString)@\(ConsoleVariables.defualt.maxPlayerLevel)"
+            return "\(valueString)@\(ConsoleVariables.default.maxPlayerLevel)"
         }
     }
     

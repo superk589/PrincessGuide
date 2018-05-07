@@ -12,6 +12,8 @@ import Pageboy
 import Gestalt
 
 class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource {
+    
+    static var defaultTabIndex: Int = 1
 
     private var viewControllers: [CDTableViewController]
     
@@ -32,12 +34,14 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = card.base.unitName
-
-        dataSource = self
-        bar.items = [NSLocalizedString("Skill", comment: ""),
+        
+        let items = [NSLocalizedString("Skill", comment: ""),
                      NSLocalizedString("Profile", comment: ""),
                      NSLocalizedString("Status", comment: ""),
                      NSLocalizedString("Equipment", comment: "")].map { Item(title: $0) }
+ 
+        dataSource = self
+        bar.items = items
         bar.location = .bottom
 
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
@@ -68,6 +72,11 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: 1)
+        return .at(index: CDTabViewController.defaultTabIndex)
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
+        CDTabViewController.defaultTabIndex = index
     }
 }

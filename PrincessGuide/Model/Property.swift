@@ -26,9 +26,27 @@ struct Property: Codable, Equatable {
     var waveEnergyRecovery: Double
     var waveHpRecovery: Double
     
+    var effectivePhysicalHP: Double {
+        return hp * (1 + def / 100) / (1 - dodge * ConsoleVariables.default.coefficient.value(for: .dodge) / 1000)
+    }
+    
+    var effectiveMagicalHP: Double {
+        return hp * (1 + magicDef / 100)
+    }
+    
     struct Item {
         var key: PropertyKey
         var value: Double
+        var percent: Double? {
+            switch key {
+//            case .dodge, .magicCritical, .physicalCritical, .lifeSteal:
+//                return value * ConsoleVariables.default.coefficient.value(for: key) / 10
+//            case .hpRecoveryRate:
+//                return value * ConsoleVariables.default.coefficient.value(for: key)
+            default:
+                return nil
+            }
+        }
     }
     
     func keyPath(for key: PropertyKey) -> WritableKeyPath<Property, Double>? {
