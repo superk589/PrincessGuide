@@ -19,7 +19,7 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     init(card: Card) {
         self.card = card
-        viewControllers = [CDSkillTableViewController(), CDPromotionTableViewController(), CDProfileTableViewController()]
+        viewControllers = [CDSkillTableViewController(), CDProfileTableViewController(), CDPromotionTableViewController()]
         viewControllers.forEach { $0.card = card }
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = card.base.unitName
@@ -35,8 +35,8 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
 
         dataSource = self
         bar.items = [NSLocalizedString("Skill", comment: ""),
-                     NSLocalizedString("Equipment", comment: ""),
-                     NSLocalizedString("Profile", comment: "")].map { Item(title: $0) }
+                     NSLocalizedString("Profile", comment: ""),
+                     NSLocalizedString("Equipment", comment: "")].map { Item(title: $0) }
         bar.location = .bottom
 
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
@@ -67,6 +67,6 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return nil
+        return .at(index: 1)
     }
 }

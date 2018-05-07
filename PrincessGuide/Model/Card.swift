@@ -18,11 +18,14 @@ class Card: Codable {
 
     let base: Base
     
-    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus]) {
+    let profile: Profile
+    
+    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile) {
         self.base = base
         self.promotions = promotions
         self.promotionStatuses = promotionStatuses
         self.rarities = rarities
+        self.profile = profile
     }
     
     struct Base: Codable {
@@ -69,6 +72,87 @@ class Card: Codable {
         let unionBurst: Int
         let unitId: Int
         let unitName: String
+    }
+    
+    struct Profile: Codable {
+        let age: String
+        let birthDay: String
+        let birthMonth: String
+        let bloodType: String
+        let catchCopy: String
+        let favorite: String
+        let guild: String
+        let guildId: String
+        let height: String
+        let race: String
+        let selfText: String
+        let unitId: Int
+        let unitName: String
+        let voice: String
+        let voiceId: Int
+        let weight: String
+        
+        struct Item {
+            var key: ItemKey
+            var value: String
+        }
+        
+        enum ItemKey: CustomStringConvertible {
+            case height
+            case weight
+            case birthday
+            case blood
+            case race
+            case guild
+            case favorite
+            case voice
+            
+            var description: String {
+                switch self {
+                case .height:
+                    return NSLocalizedString("Height", comment: "")
+                case .weight:
+                    return NSLocalizedString("Weight", comment: "")
+                case .birthday:
+                    return NSLocalizedString("Birthday", comment: "")
+                case .blood:
+                    return NSLocalizedString("Blood Type", comment: "")
+                case .race:
+                    return NSLocalizedString("Race", comment: "")
+                case .guild:
+                    return NSLocalizedString("Guild", comment: "")
+                case .favorite:
+                    return NSLocalizedString("Favorite", comment: "")
+                case .voice:
+                    return NSLocalizedString("CV", comment: "")
+                }
+            }
+        }
+        
+        var birthdayString: String {
+            return String(format: NSLocalizedString("%@/%@", comment: ""), birthMonth, birthDay)
+        }
+        
+        func item(for key: ItemKey) -> Item {
+            switch key {
+            case .height:
+                return Item(key: key, value: height)
+            case .weight:
+                return Item(key: key, value: weight)
+            case .birthday:
+                return Item(key: key, value: birthdayString)
+            case .blood:
+                return Item(key: key, value: bloodType)
+            case .race:
+                return Item(key: key, value: race)
+            case .guild:
+                return Item(key: key, value: guild)
+            case .favorite:
+                return Item(key: key, value: favorite)
+            case .voice:
+                return Item(key: key, value: voice)
+            }
+        }
     }
     
     struct Promotion: Codable {

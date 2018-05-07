@@ -154,8 +154,24 @@ class Master: FMDatabaseQueue {
                     }
                 }
                 
-                if let base = try? decoder.decode(Card.Base.self, from: json.rawData()) {
-                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses)
+                let profileSql = """
+                SELECT
+                    *
+                FROM
+                    unit_profile
+                WHERE
+                    unit_id = \(json["unit_id"])
+                """
+                let profileSet = try db.executeQuery(profileSql, values: nil)
+                var profile: Card.Profile?
+                while profileSet.next() {
+                    let json = JSON(profileSet.resultDictionary ?? [:])
+                    profile = try? decoder.decode(Card.Profile.self, from: json.rawData())
+                }
+                
+                if let base = try? decoder.decode(Card.Base.self, from: json.rawData()),
+                    let profile = profile {
+                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile)
                     cards.append(card)
                 }
             }

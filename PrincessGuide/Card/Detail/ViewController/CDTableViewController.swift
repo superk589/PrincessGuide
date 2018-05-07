@@ -17,6 +17,7 @@ class CDTableViewController: UITableViewController {
             case card(Card.Base)
             case pattern(AttackPattern, Card)
             case promotion(Card.Promotion)
+            case profile([Card.Profile.Item])
         }
         var type: UITableViewCell.Type
         var data: Model
