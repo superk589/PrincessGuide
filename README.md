@@ -13,7 +13,7 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**. Under devel
     - [x] Skill Effect Analysis
     - [x] Attack Patterns
     - [ ] Damage or Healing Simulation
-    - [ ] Equipments
+    - [x] Equipments
     - [x] Chara Profile
 - [x] Area and Quest
     - [x] Equipments Drop Rate

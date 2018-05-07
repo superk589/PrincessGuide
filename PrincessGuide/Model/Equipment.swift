@@ -85,6 +85,58 @@ class Equipment: Codable {
         }
         return consumes
     }()
+    
+    lazy var enhance: Enhance? = DispatchSemaphore.sync { (closure) in
+        Master.shared.getEnhance(equipmentID: equipmentId, callback: closure)
+    }
+    
+    var property: Property {
+        var result = Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
+                        energyRecoveryRate: Double(energyRecoveryRate), energyReduceRate: Double(energyReduceRate),
+                        hp: Double(hp), hpRecoveryRate: Double(hpRecoveryRate), lifeSteal: Double(lifeSteal),
+                        magicCritical: Double(magicCritical), magicDef: Double(magicDef),
+                        magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
+                        physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
+                        waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery))
+        if let enhance = enhance {
+            result += enhance.property * enhance.maxEquipmentEnhanceLevel
+        }
+        return result
+    }
+    
+    struct Enhance: Codable {
+        let atk: Double
+        let def: Double
+        let description: String
+        let dodge: Double
+        let energyRecoveryRate: Double
+        let energyReduceRate: Double
+        let equipmentId: Int
+        let equipmentName: String
+        let hp: Double
+        let hpRecoveryRate: Double
+        let lifeSteal: Double
+        let magicCritical: Double
+        let magicDef: Double
+        let magicPenetrate: Double
+        let magicStr: Double
+        let maxEquipmentEnhanceLevel: Int
+        let physicalCritical: Double
+        let physicalPenetrate: Double
+        let promotionLevel: Int
+        let waveEnergyRecovery: Double
+        let waveHpRecovery: Double
+        
+        var property: Property {
+            return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
+                            energyRecoveryRate: Double(energyRecoveryRate), energyReduceRate: Double(energyReduceRate),
+                            hp: Double(hp), hpRecoveryRate: Double(hpRecoveryRate), lifeSteal: Double(lifeSteal),
+                            magicCritical: Double(magicCritical), magicDef: Double(magicDef),
+                            magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
+                            physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
+                            waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery))
+        }
+    }
 }
 
 extension Equipment {

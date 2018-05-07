@@ -12,6 +12,8 @@ struct Constant {
     static let appID = 1377498032
     static let appName = "Hatsune's Notes"
     static let appNameHashtag = "HatsunesNotes"
+    static let presetMaxRank = 8
+    static let presetMaxPlayerLevel = 90
 }
 
 extension URL {

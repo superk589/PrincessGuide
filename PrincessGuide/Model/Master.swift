@@ -154,6 +154,23 @@ class Master: FMDatabaseQueue {
                     }
                 }
                 
+                let commentSql = """
+                SELECT
+                    *
+                FROM
+                    unit_comments
+                WHERE
+                    unit_id = \(json["unit_id"])
+                """
+                let commentSet = try db.executeQuery(commentSql, values: nil)
+                var comments = [Card.Comment]()
+                while commentSet.next() {
+                    let json = JSON(commentSet.resultDictionary ?? [:])
+                    if let comment = try? decoder.decode(Card.Comment.self, from: json.rawData()) {
+                        comments.append(comment)
+                    }
+                }
+                
                 let profileSql = """
                 SELECT
                     *
@@ -171,7 +188,7 @@ class Master: FMDatabaseQueue {
                 
                 if let base = try? decoder.decode(Card.Base.self, from: json.rawData()),
                     let profile = profile {
-                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile)
+                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments)
                     cards.append(card)
                 }
             }
@@ -275,6 +292,36 @@ class Master: FMDatabaseQueue {
                 let craft = Craft(consumes: consumes, craftedCost: craftedCost, equipmentId: equipmentID)
                 result = craft
                 break
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
+    func getEnhance(equipmentID: Int, callback: @escaping FMDBCallBackClosure<Equipment.Enhance?>) {
+        var result: Equipment.Enhance?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*,
+                b.max_equipment_enhance_level
+            FROM
+                equipment_enhance_rate a,
+                ( SELECT promotion_level, max( equipment_enhance_level ) max_equipment_enhance_level FROM equipment_enhance_data GROUP BY promotion_level ) b
+            WHERE
+                a.promotion_level = b.promotion_level
+                AND a.equipment_id = \(equipmentID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                if let enhance = try? decoder.decode(Equipment.Enhance.self, from: json.rawData()) {
+                    result = enhance
+                    break
+                }
             }
         }) {
             callback(result)
@@ -485,6 +532,24 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getMaxRank(callback: @escaping FMDBCallBackClosure<Int?>) {
+        var result: Int?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                max(promotion_level) max_promotion_level
+            FROM
+                unit_promotion
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                result = Int(set.int(forColumn: "max_promotion"))
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
     func getCoefficient(callback: @escaping FMDBCallBackClosure<Coefficient?>) {
         var result: Coefficient?
         execute({ (db) in
@@ -506,4 +571,39 @@ class Master: FMDatabaseQueue {
         }
     }
 
+    func getCharaStory(charaID: Int, callback: @escaping FMDBCallBackClosure<[CharaStory]>) {
+        var results = [CharaStory]()
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                *
+            FROM
+                chara_story_status
+            WHERE
+                chara_id_1 = \(charaID)
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                
+                let storyID = json["story_id"].intValue
+                
+                var statuses = [CharaStory.Status]()
+                for i in 1...5 {
+                    let rate = json["status_rate_\(i)"].intValue
+                    let type = json["status_type_\(i)"].intValue
+                    if type != 0 {
+                        statuses.append(CharaStory.Status(type: type, rate: rate))
+                    }
+                }
+                
+                results.append(CharaStory(storyID: storyID, charaID: charaID, status: statuses))
+            }
+        }) {
+            callback(results)
+        }
+    }
+    
 }

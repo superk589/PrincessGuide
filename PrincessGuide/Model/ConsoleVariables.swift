@@ -22,6 +22,8 @@ class ConsoleVariables: Codable {
     
     var maxPlayerLevel = 90 { didSet { save() } }
     
+    var maxEquipmentRank = 8 { didSet { save() } }
+    
     var coefficient = Coefficient.default { didSet { save() } }
     
     func save() {
@@ -45,13 +47,19 @@ class ConsoleVariables: Codable {
         let group = DispatchGroup()
         DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
             Master.shared.getMaxLevel { (maxLevel) in
-                self?.maxPlayerLevel = maxLevel ?? 90
+                self?.maxPlayerLevel = maxLevel ?? Constant.presetMaxPlayerLevel
             }
         }
         
         DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
             Master.shared.getCoefficient(callback: { (coefficient) in
                 self?.coefficient = coefficient ?? Coefficient.default
+            })
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+            Master.shared.getMaxRank(callback: { (rank) in
+                self?.maxEquipmentRank = rank ?? Constant.presetMaxRank
             })
         }
         

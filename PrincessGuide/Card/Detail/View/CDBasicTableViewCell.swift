@@ -72,8 +72,19 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
         cardIcon.cardID = base.unitId
     }
     
+    func configure(for profile: Card.Profile) {
+        nameLabel.text = profile.unitName
+        commentLabel.text = profile.selfText.replacingOccurrences(of: "\\n", with: "\n")
+        cardIcon.cardID = profile.unitId
+    }
+    
     func configure(for item: CardDetailItem) {
-        guard case .card(let base) = item else { return }
-        configure(for: base)
+        if case .base(let base) = item {
+            configure(for: base)
+        } else if case .profile(let profile) = item {
+            configure(for: profile)
+        } else {
+            fatalError()
+        }
     }
 }

@@ -20,12 +20,15 @@ class Card: Codable {
     
     let profile: Profile
     
-    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile) {
+    let comments: [Comment]
+    
+    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment]) {
         self.base = base
         self.promotions = promotions
         self.promotionStatuses = promotionStatuses
         self.rarities = rarities
         self.profile = profile
+        self.comments = comments
     }
     
     struct Base: Codable {
@@ -155,9 +158,29 @@ class Card: Codable {
         }
     }
     
-    struct Promotion: Codable {
+    struct Comment: Codable {
+        let changeFace: Int
+        let changeTime: Int
+        let description: String
+        let faceId: Int
+        let id: Int
+        let unitId: Int
+        let useType: Int
+        let voiceId: Int
+    }
+    
+    class Promotion: Codable {
         let equipSlots: [Int]
         let promotionLevel: Int
+        init(equipSlots: [Int], promotionLevel: Int) {
+            self.equipSlots = equipSlots
+            self.promotionLevel = promotionLevel
+        }
+        lazy var equipments: [Equipment] = self.equipSlots.compactMap { id in
+            DispatchSemaphore.sync { (closure) in
+                Master.shared.getEquipments(equipmentID: id, callback: closure)
+            }?.first
+        }
     }
     
     struct Rarity: Codable {
@@ -198,7 +221,14 @@ class Card: Codable {
         let waveEnergyRecoveryGrowth: Double
         let waveHpRecovery: Double
         let waveHpRecoveryGrowth: Double
+
+        var property: Property {
+            return Property(atk: atk, def: def, dodge: dodge, energyRecoveryRate: energyRecoveryRate, energyReduceRate: energyReduceRate, hp: hp, hpRecoveryRate: hpRecoveryRate, lifeSteal: lifeSteal, magicCritical: magicCritical, magicDef: magicDef, magicPenetrate: magicPenetrate, magicStr: magicStr, physicalCritical: physicalCritical, physicalPenetrate: physicalPenetrate, waveEnergyRecovery: waveEnergyRecovery, waveHpRecovery: waveHpRecovery)
+        }
         
+        var propertyGrowth: Property {
+            return Property(atk: atkGrowth, def: defGrowth, dodge: dodgeGrowth, energyRecoveryRate: energyRecoveryRateGrowth, energyReduceRate: energyReduceRateGrowth, hp: hpGrowth, hpRecoveryRate: hpRecoveryRateGrowth, lifeSteal: lifeStealGrowth, magicCritical: magicCriticalGrowth, magicDef: magicDefGrowth, magicPenetrate: magicPenetrateGrowth, magicStr: magicStrGrowth, physicalCritical: physicalCriticalGrowth, physicalPenetrate: physicalPenetrateGrowth, waveEnergyRecovery: waveEnergyRecoveryGrowth, waveHpRecovery: waveHpRecoveryGrowth)
+        }
     }
     
     struct PromotionStatus: Codable {
@@ -219,52 +249,79 @@ class Card: Codable {
         let promotionLevel: Int
         let waveEnergyRecovery: Int
         let waveHpRecovery: Int
+        
+        var property: Property {
+            return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
+                            energyRecoveryRate: Double(energyRecoveryRate), energyReduceRate: Double(energyReduceRate),
+                            hp: Double(hp), hpRecoveryRate: Double(hpRecoveryRate), lifeSteal: Double(lifeSteal),
+                            magicCritical: Double(magicCritical), magicDef: Double(magicDef),
+                            magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
+                            physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
+                            waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery))
+        }
+    }
+    
+    // MARK: lazy vars
+    
+    lazy var exSkill1: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: self.base.exSkill1, callback: closure)
+    })
+    
+    lazy var exSkillEvolution1: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.exSkillEvolution1, callback: closure)
+    })
+    
+    lazy var mainSkill1: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill1, callback: closure)
+    })
+    
+    lazy var mainSkill2: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill2, callback: closure)
+    })
+    
+    lazy var mainSkill3: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill3, callback: closure)
+    })
+    
+    lazy var unionBurst: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.unionBurst, callback: closure)
+    })
+    
+    lazy var patterns: [AttackPattern]? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getAttackPatterns(unitID: base.unitId, callback: closure)
+    })
+    
+    lazy var charaStorys: [CharaStory]? = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getCharaStory(charaID: charaID, callback: closure)
     }
     
 }
 
 extension Card {
-
-    var exSkill1: Skill? {
-        return DispatchSemaphore.sync({ closure in
-            Master.shared.getSkill(skillID: base.exSkill1, callback: closure)
-        })
+    
+    var charaID: Int {
+        return base.unitId / 100
     }
     
-    var exSkillEvolution1: Skill? {
-        return DispatchSemaphore.sync({ closure in
-            Master.shared.getSkill(skillID: base.exSkillEvolution1, callback: closure)
-        })
-    }
-    
-    var mainSkill1: Skill? {
-        return DispatchSemaphore.sync({ closure in
-            Master.shared.getSkill(skillID: base.mainSkill1, callback: closure)
-        })
-    }
-    
-    var mainSkill2: Skill? {
-        return DispatchSemaphore.sync({ closure in
-            Master.shared.getSkill(skillID: base.mainSkill2, callback: closure)
-        })
-    }
-    
-    var mainSkill3: Skill? {
-        return DispatchSemaphore.sync({ closure in
-            Master.shared.getSkill(skillID: base.mainSkill3, callback: closure)
-        })
-    }
-    
-    var unionBurst: Skill? {
-        return DispatchSemaphore.sync({ closure in
-            Master.shared.getSkill(skillID: base.unionBurst, callback: closure)
-        })
-    }
-    
-    var patterns: [AttackPattern]? {
-        return DispatchSemaphore.sync({ closure in
-            Master.shared.getAttackPatterns(unitID: base.unitId, callback: closure)
-        })
+    func property() -> Property {
+        var property = Property()
+        let storyPropertyItems = charaStorys?.flatMap { $0.status.map { $0.property() } } ?? []
+        for item in storyPropertyItems {
+            property += item
+        }
+        if let rarity = rarities.max(by: { $0.rarity < $1.rarity }) {
+            property += rarity.property + rarity.propertyGrowth * Double(ConsoleVariables.defualt.maxPlayerLevel + ConsoleVariables.defualt.maxEquipmentRank)
+            property = property.rounded()
+        }
+        if let promotionStatus = promotionStatuses.max(by: { $0.promotionLevel < $1.promotionLevel }) {
+            property += promotionStatus.property
+        }
+        if let promotion = promotions.max(by: { $0.promotionLevel < $1.promotionLevel }) {
+            for equipment in promotion.equipments {
+                property += equipment.property.ceiled()
+            }
+        }
+        return property
     }
     
 }

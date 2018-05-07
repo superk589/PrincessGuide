@@ -86,8 +86,10 @@ class CardTableViewController: UITableViewController, DataChecking {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CDTabViewController(card: cards[indexPath.row])
-        print("card id: \(cards[indexPath.row].base.unitId)")
+        let card = cards[indexPath.row]
+        let vc = CDTabViewController(card: card)
+        print("card id: \(card.base.unitId)")
+        print(card.property())
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

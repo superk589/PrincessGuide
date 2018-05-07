@@ -239,7 +239,7 @@ enum ActionModifier: CustomStringConvertible {
     }
 }
 
-extension Property {
+extension PropertyKey {
     init?(_ value: Int) {
         switch value {
         case 1:
@@ -409,7 +409,7 @@ extension Skill.Action {
         case (.damage, _):
             return NSLocalizedString("Deal [%@] \(`class`)", comment: "")
         case (.ex, _):
-            return NSLocalizedString("Raise [%@] \(Property(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
+            return NSLocalizedString("Raise [%@] \(PropertyKey(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
         case (_, .action):
             switch ailment.ailmentDetail {
             case .some(.action(.haste)), .some(.action(.slow)):
@@ -422,7 +422,7 @@ extension Skill.Action {
         case (_, let type) where [.darken, .charm, .silence].contains(type):
             return "\(ailment) target with [%@]%% chance"
         case (.aura, _):
-            return NSLocalizedString("\(modifer) [%@]\(unitModifier) \(Property(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
+            return NSLocalizedString("\(modifer) [%@]\(unitModifier) \(PropertyKey(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
         case (.position, _):
             return NSLocalizedString("Change self position", comment: "")
         case (.tp, _):
@@ -460,11 +460,11 @@ extension Skill.Action {
             if let value = Double(value.value), value == 0 { continue }
             switch value.key {
             case .atk:
-                expression += "\(value.value) * \(Property.atk)"
+                expression += "\(value.value) * \(PropertyKey.atk)"
             case .magicStr:
-                expression += "\(value.value) * \(Property.magicStr)"
+                expression += "\(value.value) * \(PropertyKey.magicStr)"
             case .def:
-                expression += "\(value.value) * \(Property.def)"
+                expression += "\(value.value) * \(PropertyKey.def)"
             case .skillLevel:
                 fixedValue += Double(ConsoleVariables.defualt.maxPlayerLevel) * (Double(value.value) ?? 0)
             case .initialValue:

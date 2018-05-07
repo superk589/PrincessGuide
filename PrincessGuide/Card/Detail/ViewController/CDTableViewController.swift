@@ -14,10 +14,13 @@ class CDTableViewController: UITableViewController {
     struct Row {
         enum Model {
             case skill(Skill, SkillCategory)
-            case card(Card.Base)
+            case base(Card.Base)
+            case profile(Card.Profile)
             case pattern(AttackPattern, Card)
             case promotion(Card.Promotion)
-            case profile([Card.Profile.Item])
+            case profileItems([Card.Profile.Item])
+            case comment(Card.Comment)
+            case text(String, String)
         }
         var type: UITableViewCell.Type
         var data: Model
@@ -39,7 +42,7 @@ class CDTableViewController: UITableViewController {
     func prepareRows(for card: Card) {
         rows.removeAll()
         
-        rows.append(Row(type: CDBasicTableViewCell.self, data: .card(card.base)))
+        rows.append(Row(type: CDBasicTableViewCell.self, data: .profile(card.profile)))
         
         card.patterns?.forEach {
             rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0, card)))
