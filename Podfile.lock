@@ -3,6 +3,7 @@ PODS:
   - Alamofire (4.7.2)
   - AutoInsetter (1.2.3)
   - DynamicColor (4.0.2)
+  - Eureka (4.1.1)
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - AcknowList
   - Alamofire
   - DynamicColor
+  - Eureka (from `https://github.com/superk589/Eureka.git`, branch `picker-row-support-attributed-strings`)
   - FMDB
   - Gestalt
   - Kingfisher
@@ -82,10 +84,16 @@ SPEC REPOS:
     - TTGTagCollectionView
 
 EXTERNAL SOURCES:
+  Eureka:
+    :branch: picker-row-support-attributed-strings
+    :git: https://github.com/superk589/Eureka.git
   Tabman:
     :git: https://github.com/superk589/Tabman.git
 
 CHECKOUT OPTIONS:
+  Eureka:
+    :commit: 4c45476c71c59000a809cef2b73fc05139acafc2
+    :git: https://github.com/superk589/Eureka.git
   Tabman:
     :commit: 6c933f1bb6debbb58ceca73a7aa7e16c99794117
     :git: https://github.com/superk589/Tabman.git
@@ -95,6 +103,7 @@ SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AutoInsetter: 1a8f8ad5e7da8e993970b3809cfb8e8e330f4db1
   DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
+  Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   Gestalt: be239fdeee2de30b2468865cf5e24b7923f507c2
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
@@ -109,6 +118,6 @@ SPEC CHECKSUMS:
   Tabman: 69ce69b44cec1ad693b82c24cdbdf0c45915668c
   TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
 
-PODFILE CHECKSUM: 13e13543de669886cbe3b8c08d686a02f526f41b
+PODFILE CHECKSUM: 2d226be491e12ff486567a7b5b5e6a21616f9441
 
 COCOAPODS: 1.5.0

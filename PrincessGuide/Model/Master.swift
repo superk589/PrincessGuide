@@ -543,7 +543,7 @@ class Master: FMDatabaseQueue {
             """
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
-                result = Int(set.int(forColumn: "max_promotion"))
+                result = Int(set.int(forColumn: "max_promotion_level"))
             }
         }) {
             callback(result)

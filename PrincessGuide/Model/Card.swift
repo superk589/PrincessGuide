@@ -304,19 +304,22 @@ extension Card {
         return base.unitId / 100
     }
     
-    func property() -> Property {
+    func property(unitLevel: Int = ConsoleVariables.default.maxPlayerLevel,
+                  unitRank: Int = ConsoleVariables.default.maxEquipmentRank,
+                  loveRank: Int = Constant.presetMaxCharaLoveRank,
+                  unitRarity: Int = Constant.presetMaxRarity) -> Property {
         var property = Property()
-        let storyPropertyItems = charaStorys?.flatMap { $0.status.map { $0.property() } } ?? []
+        let storyPropertyItems = charaStorys?.filter { $0.storyID % 1000 <= loveRank }.flatMap { $0.status.map { $0.property() } } ?? []
         for item in storyPropertyItems {
             property += item
         }
-        if let rarity = rarities.max(by: { $0.rarity < $1.rarity }) {
-            property += rarity.property + rarity.propertyGrowth * Double(ConsoleVariables.default.maxPlayerLevel + ConsoleVariables.default.maxEquipmentRank)
+        if let rarity = rarities.first(where: { $0.rarity == unitRarity }) {
+            property += rarity.property + rarity.propertyGrowth * Double(unitLevel + unitRank)
         }
-        if let promotionStatus = promotionStatuses.max(by: { $0.promotionLevel < $1.promotionLevel }) {
+        if let promotionStatus = promotionStatuses.first(where: { $0.promotionLevel == unitRank }) {
             property += promotionStatus.property
         }
-        if let promotion = promotions.max(by: { $0.promotionLevel < $1.promotionLevel }) {
+        if let promotion = promotions.first(where: { $0.promotionLevel == unitRank }) {
             for equipment in promotion.equipments {
                 property += equipment.property.ceiled()
             }

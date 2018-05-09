@@ -34,6 +34,7 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = card.base.unitName
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
         
         let items = [NSLocalizedString("Skill", comment: ""),
                      NSLocalizedString("Profile", comment: ""),
@@ -61,6 +62,13 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
             })
         }
         
+    }
+    
+    @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
+        let vc = CDSettingsViewController()
+        let nc = UINavigationController(rootViewController: vc)
+        nc.modalPresentationStyle = .formSheet
+        present(nc, animated: true, completion: nil)
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {

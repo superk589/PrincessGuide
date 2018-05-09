@@ -50,7 +50,7 @@ class SettingsTableViewController: UITableViewController {
         settingRows.append(Row(title: NSLocalizedString("Check for Updates at Launch", comment: ""), detail: nil, hasDisclosure: false, accessoryView: downloadAtStartSwitch, selector: nil))
         settingRows.append(Row(title: NSLocalizedString("Use Dark Theme", comment: ""), detail: "", hasDisclosure: false, accessoryView: darkThemeSwitch, selector: nil))
         
-        sections.append(Section(rows: settingRows, title: NSLocalizedString("Setting", comment: "")))
+        sections.append(Section(rows: settingRows, title: NSLocalizedString("General", comment: "")))
         
         var feedbackRows = [Row]()
         feedbackRows.append(Row(title: NSLocalizedString("Email", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(sendEmail)))

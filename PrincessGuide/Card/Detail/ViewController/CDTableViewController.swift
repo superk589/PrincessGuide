@@ -29,12 +29,16 @@ class CDTableViewController: UITableViewController {
     
     var card: Card? {
         didSet {
-            navigationItem.title = card?.base.unitName
-            if let card = card {
-                prepareRows(for: card)
-                registerRows()
-                tableView.reloadData()
-            }
+            reloadAll()
+        }
+    }
+    
+    func reloadAll() {
+        navigationItem.title = card?.base.unitName
+        if let card = card {
+            prepareRows(for: card)
+            registerRows()
+            tableView.reloadData()
         }
     }
     

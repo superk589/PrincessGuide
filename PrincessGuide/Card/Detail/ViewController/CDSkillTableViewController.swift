@@ -11,6 +11,15 @@ import Gestalt
 
 class CDSkillTableViewController: CDTableViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSettingsChange(_:)), name: .cardDetailSettingsDidChange, object: nil)
+    }
+    
+    @objc private func handleSettingsChange(_ notification: Notification) {
+        reloadAll()
+    }
+    
     override func prepareRows(for card: Card) {
         
         rows.removeAll()

@@ -65,6 +65,7 @@ class ConsoleVariables: Codable {
         
         group.notify(queue: .main) {
             NotificationCenter.default.post(name: .updateConsoleVariblesEnd, object: nil)
+            CDSettingsViewController.Setting.default = CDSettingsViewController.Setting()
         }
         
     }

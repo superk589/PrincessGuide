@@ -454,6 +454,7 @@ extension Skill.Action {
     }
     
     private func actionValue() -> String {
+        let skillLevel = CDSettingsViewController.Setting.default.skillLevel
         var expression = ""
         var fixedValue = 0.0
         for value in values {
@@ -466,7 +467,7 @@ extension Skill.Action {
             case .def:
                 expression += "\(value.value) * \(PropertyKey.def)"
             case .skillLevel:
-                fixedValue += Double(ConsoleVariables.default.maxPlayerLevel) * (Double(value.value) ?? 0)
+                fixedValue += Double(skillLevel) * (Double(value.value) ?? 0)
             case .initialValue:
                 fixedValue += Double(value.value) ?? 0
             case .chance:
@@ -485,9 +486,9 @@ extension Skill.Action {
         }
         
         if expression != "" {
-            return "\(expression) + \(valueString)@\(ConsoleVariables.default.maxPlayerLevel)"
+            return "\(expression) + \(valueString)@\(skillLevel)"
         } else {
-            return "\(valueString)@\(ConsoleVariables.default.maxPlayerLevel)"
+            return "\(valueString)@\(skillLevel)"
         }
     }
     

@@ -15,4 +15,5 @@ target 'PrincessGuide' do
   pod 'MJRefresh'
   pod 'Gestalt'
   pod 'Tabman', :git => 'https://github.com/superk589/Tabman.git'
+  pod 'Eureka', :git => 'https://github.com/superk589/Eureka.git', :branch => 'picker-row-support-attributed-strings'
 end
