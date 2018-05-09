@@ -1,8 +1,8 @@
 //
-//  QuestTabViewController.swift
+//  QuestAreaTabViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/5/9.
+//  Created by zzk on 2018/5/6.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
@@ -11,43 +11,18 @@ import Tabman
 import Pageboy
 import Gestalt
 
-class QuestTabViewController: TabmanViewController, PageboyViewControllerDataSource {
+class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
     private var viewControllers = [UIViewController]()
-        
-    let quests: [Quest]
 
-    init(quests: [Quest]) {
-        self.quests = quests
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var vcs: [UIViewController] = [DropSummaryTableViewController(quests: quests)]
-        var items = [NSLocalizedString("Drops", comment: "")].map { Item(title: $0) }
-        
-        for i in 0... {
-            let lowerBound = i * 5
-            let upperBound = min((i + 1) * 5, quests.count)
-            let subQuests = quests[lowerBound..<upperBound]
-            let vc = QuestEnemyTableViewController(quests: Array(subQuests))
-            let title = "\(lowerBound + 1) - \(upperBound)"
-            items.append(Item(title: title))
-            vcs.append(vc)
-            if upperBound == quests.count { break }
-        }
-        
-        viewControllers = vcs
-        bar.items = items
+        navigationItem.title = NSLocalizedString("Quests", comment: "")
+        viewControllers = [QuestAreaTableViewController(areaType: .normal), QuestAreaTableViewController(areaType: .hard)]
         dataSource = self
+        bar.items = [AreaType.normal, .hard].map { Item(title: $0.description) }
         bar.location = .bottom
-        
+
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
             let navigationBar = themable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
@@ -65,7 +40,7 @@ class QuestTabViewController: TabmanViewController, PageboyViewControllerDataSou
         }
         
     }
-    
+
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return viewControllers.count
     }
@@ -75,6 +50,7 @@ class QuestTabViewController: TabmanViewController, PageboyViewControllerDataSou
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: 0)
+        return nil
     }
+    
 }

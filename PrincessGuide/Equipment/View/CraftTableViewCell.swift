@@ -9,7 +9,7 @@
 import UIKit
 import Gestalt
 
-class CraftTableViewCell: UITableViewCell {
+class CraftTableViewCell: UITableViewCell, CraftDetailConfigurable {
     
     let icon = IconImageView()
     
@@ -55,6 +55,13 @@ class CraftTableViewCell: UITableViewCell {
         nameLabel.text = consume.equipment?.equipmentName
         consumeNumberLabel.text = String(consume.consumeNum)
         icon.equipmentID = consume.equipmentID
+    }
+    
+    func configure(for item: CraftDetailItem) {
+        guard case .consume(let consume) = item else {
+            fatalError()
+        }
+        configure(for: consume)
     }
     
     required init?(coder aDecoder: NSCoder) {

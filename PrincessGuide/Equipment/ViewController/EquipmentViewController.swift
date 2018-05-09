@@ -116,7 +116,7 @@ extension EquipmentViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let equipment = equipments[indexPath.item]
         if equipment.craftFlg == 0 {
-            QuestTableViewController.configureAsync(equipment: equipment, callback: { [weak self] (vc) in
+            DropSummaryTableViewController.configureAsync(equipment: equipment, callback: { [weak self] (vc) in
                 self?.navigationController?.pushViewController(vc, animated: true)
             })
         } else {

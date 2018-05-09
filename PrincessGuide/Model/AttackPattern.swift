@@ -16,7 +16,7 @@ struct AttackPattern: Codable {
     let patternId: Int
 
     init(items: [Int], loopEnd: Int, loopStart: Int, patternID: Int) {
-        let validItems = Array(items.prefix { $0 != 0 })
+        let validItems = Array(items.prefix { $0 != 0 }.prefix(loopEnd))
         self.items = validItems
         self.loopEnd = min(validItems.count, loopEnd)
         self.loopStart = loopStart

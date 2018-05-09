@@ -11,12 +11,43 @@ import Gestalt
 
 class CraftTableViewController: UITableViewController {
     
+    struct Row {
+        enum Model {
+            case summary(Equipment)
+            case consume(Craft.Consume)
+            case properties([Property.Item])
+        }
+        var type: UITableViewCell.Type
+        var data: Model
+    }
+    
     var equipment: Equipment? {
         didSet {
             if let _ = equipment {
+                prepareRows()
+                registerRows()
                 tableView.reloadData()
             }
         }
+    }
+    
+    private var rows = [Row]()
+    
+    private func registerRows() {
+        rows.forEach {
+            tableView.register($0.type, forCellReuseIdentifier: $0.type.description())
+        }
+    }
+    
+    private func prepareRows() {
+        rows.removeAll()
+        guard let equipment = equipment, let craft = equipment.craft else {
+            return
+        }
+        rows = [Row(type: CraftSummaryTableViewCell.self, data: .summary(equipment))]
+        
+        rows += craft.consumes.map { Row(type: CraftTableViewCell.self, data: .consume($0)) }
+        rows += equipment.property.noneZeroProperties().map { Row(type: CraftPropertyTableViewCell.self, data: .properties([$0])) }
     }
     
     let backgroundImageView = UIImageView()
@@ -28,6 +59,7 @@ class CraftTableViewController: UITableViewController {
             themable.backgroundImageView.image = theme.backgroundImage
             themable.tableView.indicatorStyle = theme.indicatorStyle
         }
+        
         
         tableView.estimatedRowHeight = 84
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -41,44 +73,43 @@ class CraftTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = equipment?.craft?.consumes.count {
-            return count + 1
-        } else {
-            return 0
-        }
+        return rows.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let equipment = equipment?.craft?.consumes[indexPath.row - 1].equipment {
-            if equipment.craftFlg == 0 {
-                QuestTableViewController.configureAsync(equipment: equipment, callback: { [weak self] (vc) in
-                    self?.navigationController?.pushViewController(vc, animated: true)
-                })
-            } else {
-                let vc = CraftTableViewController()
-                vc.navigationItem.title = equipment.equipmentName
-                vc.equipment = equipment
-                vc.hidesBottomBarWhenPushed = true
-                LoadingHUDManager.default.hide()
-                self.navigationController?.pushViewController(vc, animated: true)
+        let row = rows[indexPath.row]
+        switch row.data {
+        case .consume(let consume):
+            if let equipment = consume.equipment {
+                if equipment.craftFlg == 0 {
+                    DropSummaryTableViewController.configureAsync(equipment: equipment, callback: { [weak self] (vc) in
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    })
+                } else {
+                    let vc = CraftTableViewController()
+                    vc.navigationItem.title = equipment.equipmentName
+                    vc.equipment = equipment
+                    vc.hidesBottomBarWhenPushed = true
+                    LoadingHUDManager.default.hide()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
+        default:
+            break
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let equipment = equipment, let craft = equipment.craft else {
-            fatalError()
-        }
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: CraftSummaryTableViewCell.description(), for: indexPath) as! CraftSummaryTableViewCell
-            cell.configure(for: equipment)
+        
+        let model = rows[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! CraftDetailConfigurable
+        cell.configure(for: model.data)
+        
+        if let cell = cell as? CraftSummaryTableViewCell {
             cell.delegate = self
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: CraftTableViewCell.description(), for: indexPath) as! CraftTableViewCell
-            cell.configure(for: craft.consumes[indexPath.row - 1])
-            return cell
         }
+        
+        return cell as! UITableViewCell
     }
     
 }
@@ -87,7 +118,7 @@ extension CraftTableViewController: CraftSummaryTableViewCellDelegate {
     
     func craftSummaryTableViewCell(_ craftSummaryTableViewCell: CraftSummaryTableViewCell, didSelect consume: Craft.Consume) {
         if let equipment = consume.equipment {
-            QuestTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
+            DropSummaryTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
         }

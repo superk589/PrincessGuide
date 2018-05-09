@@ -74,7 +74,11 @@ class PatternCollectionViewCell: UICollectionViewCell {
         }
         
         if pattern.loopStart == index + 1 {
-            loopLabel.text = NSLocalizedString("Loop start", comment: "")
+            if pattern.loopStart == pattern.loopEnd {
+                loopLabel.text = NSLocalizedString("Loop in place", comment: "")
+            } else {
+                loopLabel.text = NSLocalizedString("Loop start", comment: "")
+            }
         } else if pattern.loopEnd == index + 1 {
             loopLabel.text = NSLocalizedString("Loop end", comment: "")
         } else {

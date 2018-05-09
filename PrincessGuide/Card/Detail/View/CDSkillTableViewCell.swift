@@ -25,10 +25,8 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     lazy var subtitleLabel2 = self.createSubTitleLabel(title: NSLocalizedString("Skill Detail", comment: ""))
     
-    let stackView = UIStackView()
+    let actionLabel = UILabel()
     
-    var actionViews = [SkillActionView]()
-        
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -41,7 +39,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
             themable.descLabel.textColor = theme.color.body
             themable.subtitleLabel.textColor = theme.color.title
             themable.subtitleLabel2.textColor = theme.color.title
-            
+            themable.actionLabel.textColor = theme.color.body
             themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themable.backgroundColor = theme.color.tableViewCell.background
         }
@@ -96,17 +94,15 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.top.equalTo(castTimeLabel.snp.bottom).offset(5)
         }
         
-        stackView.axis = .vertical
-        stackView.spacing = 0
-        stackView.distribution = .equalSpacing
-        contentView.addSubview(stackView)
-        stackView.snp.makeConstraints { (make) in
+        contentView.addSubview(actionLabel)
+        actionLabel.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
+            make.right.equalTo(readableContentGuide)
             make.top.equalTo(subtitleLabel2.snp.bottom)
             make.bottom.equalTo(-10)
-            make.right.equalTo(readableContentGuide)
         }
-        
+        actionLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
+        actionLabel.numberOfLines = 0
     }
     
     private func createSubTitleLabel(title: String) -> UILabel {
@@ -122,18 +118,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
         skillIcon.skillIconID = skill.base.iconType
-        
-        actionViews.forEach {
-            $0.removeFromSuperview()
-        }
-        actionViews.removeAll()
-        
-        for action in skill.actions {
-            let actionView = SkillActionView()
-            actionView.configure(for: action)
-            actionViews.append(actionView)
-            stackView.addArrangedSubview(actionView)
-        }
+        actionLabel.text = skill.actions.map { "- \($0.detail())" }.joined(separator: "\n")
     }
     
     func configure(for item: CardDetailItem) {

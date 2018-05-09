@@ -43,6 +43,22 @@ class IconImageView: UIImageView {
         }
     }
 
+    var unitID: Int? {
+        didSet {
+            if let id = unitID {
+                kf.setImage(with: URL.image.appendingPathComponent("icon/unit/\(id).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder_2"))
+            }
+        }
+    }
+    
+    var shadowUnitID: Int? {
+        didSet {
+            if let id = shadowUnitID {
+                kf.setImage(with: URL.image.appendingPathComponent("icon/unit_shadow/\(id + 10).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder_2"))
+            }
+        }
+    }
+    
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 64, height: 64)
     }

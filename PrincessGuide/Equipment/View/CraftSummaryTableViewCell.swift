@@ -13,7 +13,13 @@ protocol CraftSummaryTableViewCellDelegate: class {
     func craftSummaryTableViewCell(_ craftSummaryTableViewCell: CraftSummaryTableViewCell, didSelect consume: Craft.Consume)
 }
 
-class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+typealias CraftDetailItem = CraftTableViewController.Row.Model
+
+protocol CraftDetailConfigurable {
+    func configure(for item: CraftDetailItem)
+}
+
+class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CraftDetailConfigurable {
     
     let titleLabel = UILabel()
     let layout: UICollectionViewFlowLayout
@@ -36,7 +42,7 @@ class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
         }
         
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
-        titleLabel.text = NSLocalizedString("Total Items", comment: "")
+        titleLabel.text = NSLocalizedString("Raw Materials", comment: "")
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
@@ -70,6 +76,13 @@ class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
     func configure(for equipment: Equipment) {
         consumes = equipment.recursiveConsumes
         collectionView.reloadData()
+    }
+    
+    func configure(for item: CraftDetailItem) {
+        guard case .summary(let equipment) = item else {
+            fatalError()
+        }
+        configure(for: equipment)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

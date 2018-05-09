@@ -65,18 +65,5 @@ class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
             fatalError()
         }
     }
-
-    func configure(for items: [Property.Item]) {
-        itemViews.forEach {
-            $0.removeFromSuperview()
-        }
-        itemViews.removeAll()
-        
-        for item in items {
-            let itemView = ProfileItemView()
-            itemView.configure(for: item)
-            itemViews.append(itemView)
-            stackView.addArrangedSubview(itemView)
-        }
-    }
+    
 }

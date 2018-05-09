@@ -92,4 +92,12 @@ extension Quest {
             return .unknown
         }
     }
+    
+    func preload() {
+        waves.forEach {
+            $0.enemies.forEach {
+                _ = $0.enemy
+            }
+        }
+    }
 }

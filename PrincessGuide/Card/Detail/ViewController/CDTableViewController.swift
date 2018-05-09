@@ -135,7 +135,7 @@ extension CDTableViewController: PromotionViewDelegate {
             return
         }
         if equipment.craftFlg == 0 {
-            QuestTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
+            DropSummaryTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
         } else {

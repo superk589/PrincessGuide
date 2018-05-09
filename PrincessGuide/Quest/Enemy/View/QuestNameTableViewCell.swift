@@ -1,16 +1,16 @@
 //
-//  QuestAreaTableViewCell.swift
+//  QuestNameTableViewCell.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/4/25.
+//  Created by zzk on 2018/5/11.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 import Gestalt
 
-class QuestAreaTableViewCell: UITableViewCell {
-    
+class QuestNameTableViewCell: UITableViewCell {
+
     let titleLabel = UILabel()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -30,13 +30,18 @@ class QuestAreaTableViewCell: UITableViewCell {
             make.left.equalTo(readableContentGuide)
             make.centerY.equalToSuperview()
         }
+        
+        contentView.snp.makeConstraints { (make) in
+            make.height.equalTo(66)
+        }
+    }
+    
+    func configure(for title: String) {
+        titleLabel.text = title
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for area: Area) {
-        titleLabel.text = area.areaName
-    }
 }

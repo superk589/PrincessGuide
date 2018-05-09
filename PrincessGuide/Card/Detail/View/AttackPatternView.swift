@@ -55,8 +55,12 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PatternCollectionViewCell.description(), for: indexPath) as! PatternCollectionViewCell
         
-        if let pattern = pattern, let unit = unit {
-            cell.configure(for: pattern, index: indexPath.item, unit: unit)
+        if let pattern = pattern {
+            if let unit = unit {
+                cell.configure(for: pattern, index: indexPath.item, unit: unit)
+            } else if let enemy = enemy {
+                cell.configure(for: pattern, index: indexPath.item, enemy: enemy)
+            }
         }
         return cell
     }
@@ -67,6 +71,7 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     
     private var pattern: AttackPattern?
     private var unit: Card?
+    private var enemy: Enemy?
     
     func configure(for pattern: AttackPattern, unit: Card) {
         self.pattern = pattern
@@ -74,4 +79,9 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         collectionView.reloadData()
     }
 
+    func configure(for pattern: AttackPattern, enemy: Enemy) {
+        self.pattern = pattern
+        self.enemy = enemy
+        collectionView.reloadData()
+    }
 }

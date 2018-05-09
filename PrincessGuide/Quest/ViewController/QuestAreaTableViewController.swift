@@ -72,7 +72,7 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
             Master.shared.getAreas(type: self?.areaType, callback: { (areas) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
-                    self?.areas = areas
+                    self?.areas = areas.sorted { $0.areaId > $1.areaId }
                     self?.tableView.reloadData()
                 }
             })
@@ -96,10 +96,16 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let area = areas[indexPath.row]
-        let vc = QuestTableViewController()
-        vc.quests = area.quests
-        vc.navigationItem.title = area.areaName
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        LoadingHUDManager.default.show()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            area.quests.forEach { $0.preload() }
+            DispatchQueue.main.async {
+                LoadingHUDManager.default.hide()
+                let vc = QuestTabViewController(quests: area.quests)
+                vc.navigationItem.title = area.areaName
+                vc.hidesBottomBarWhenPushed = true
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }

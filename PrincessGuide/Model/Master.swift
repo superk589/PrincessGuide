@@ -418,6 +418,71 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Enemy]>) {
+        var enemies = [Enemy]()
+        execute({ (db) in
+            var sql = """
+            SELECT
+                a.*,
+                b.union_burst,
+                b.main_skill_1,
+                b.main_skill_2,
+                b.main_skill_3,
+                b.main_skill_4,
+                b.main_skill_5,
+                b.main_skill_6,
+                b.main_skill_7,
+                b.main_skill_8,
+                b.main_skill_9,
+                b.main_skill_10,
+                b.ex_skill_1,
+                b.ex_skill_2,
+                b.ex_skill_3,
+                b.ex_skill_4,
+                b.ex_skill_5
+            FROM
+                unit_skill_data b,
+                enemy_parameter a
+            WHERE
+                a.unit_id = b.unit_id
+            """
+            if let id = enemyID {
+                sql.append(" AND a.enemy_id = \(id)")
+            }
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                let unitID = json["unit_id"].intValue
+                let unitSql = """
+                SELECT
+                    *
+                FROM
+                    unit_enemy_data
+                WHERE
+                    unit_id = \(unitID)
+                """
+                var unit: Enemy.Unit?
+                let unitSet = try db.executeQuery(unitSql, values: nil)
+                while unitSet.next() {
+                    let json = JSON(unitSet.resultDictionary ?? [:])
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    unit = try? decoder.decode(Enemy.Unit.self, from: json.rawData())
+                }
+                
+                if let base = try? decoder.decode(Enemy.Base.self, from: json.rawData()),
+                    let unit = unit {
+                    enemies.append(Enemy(base: base, unit: unit))
+                }
+            }
+        }) {
+            callback(enemies)
+        }
+    }
+    
     func getQuests(areaID: Int? = nil, containsEquipment equipmentID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Quest]>) {
         var quests = [Quest]()
         execute({ (db) in
@@ -458,6 +523,17 @@ class Master: FMDatabaseQueue {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     
+                    var enemyUnits = [Wave.EnemyUnit]()
+                    for i in 1...5 {
+                        let enemyID = json["enemy_id_\(i)"].intValue
+                        let dropGold = json["drop_gold_\(i)"].intValue
+                        let dropRewardID = json["drop_reward_id_\(i)"].intValue
+                        if enemyID != 0 {
+                            let enemyUnit = Wave.EnemyUnit(dropGold: dropGold, dropRewardID: dropRewardID, enemyID: enemyID)
+                            enemyUnits.append(enemyUnit)
+                        }
+                    }
+                    
                     var dropRewardIDs = [Int]()
                     for i in 1...5 {
                         let field = "drop_reward_id_\(i)"
@@ -495,10 +571,11 @@ class Master: FMDatabaseQueue {
                         drops.append(drop)
                     }
                     
-                    if let base = try? decoder.decode(Wave.Base.self, from: json.rawData()) {
-                        let wave = Wave(base: base, drops: drops)
-                        waves.append(wave)
-                    }
+                    let id = json["id"].intValue
+                    let odds = json["odds"].intValue
+                    let waveGroupID = json["wave_group_id"].intValue
+                    let base = Wave.Base(units: enemyUnits, id: id, odds: odds, waveGroupId: waveGroupID)
+                    waves.append(Wave(base: base, drops: drops))
                 }
                 if let base = try? decoder.decode(Quest.Base.self, from: json.rawData()) {
                     let quest = Quest(base: base, waves: waves)

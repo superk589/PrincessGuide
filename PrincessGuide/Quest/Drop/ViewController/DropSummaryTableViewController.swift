@@ -1,5 +1,5 @@
 //
-//  QuestTableViewController.swift
+//  DropSummaryTableViewController.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/4/26.
@@ -9,16 +9,16 @@
 import UIKit
 import Gestalt
 
-class QuestTableViewController: UITableViewController {
+class DropSummaryTableViewController: UITableViewController {
     
-    static func configureAsync(equipment: Equipment, callback: @escaping (QuestTableViewController) -> Void) {
+    static func configureAsync(equipment: Equipment, callback: @escaping (DropSummaryTableViewController) -> Void) {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async {
             Master.shared.getQuests(containsEquipment: equipment.equipmentId) { quests in
                 DispatchQueue.main.async {
-                    let vc = QuestTableViewController()
+                    let subQuests = quests.sorted { $0.allRewards.first { $0.rewardID == equipment.equipmentId }!.odds > $1.allRewards.first { $0.rewardID == equipment.equipmentId }!.odds }
+                    let vc = DropSummaryTableViewController(quests: subQuests)
                     vc.navigationItem.title = equipment.equipmentName
-                    vc.quests = quests.sorted { $0.allRewards.first { $0.rewardID == equipment.equipmentId }!.odds > $1.allRewards.first { $0.rewardID == equipment.equipmentId }!.odds }
                     vc.hidesBottomBarWhenPushed = true
                     vc.focusedItemID = equipment.equipmentId
                     LoadingHUDManager.default.hide()
@@ -28,10 +28,15 @@ class QuestTableViewController: UITableViewController {
         }
     }
 
-    var quests = [Quest]() {
-        didSet {
-            tableView.reloadData()
-        }
+    let quests: [Quest]
+    
+    init(quests: [Quest]) {
+        self.quests = quests
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     var focusedItemID: Int? {
@@ -55,12 +60,14 @@ class QuestTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 88
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        tableView.register(QuestTableViewCell.self, forCellReuseIdentifier: QuestTableViewCell.description())
+        tableView.register(DropSummaryTableViewCell.self, forCellReuseIdentifier: DropSummaryTableViewCell.description())
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        coordinator.animate(alongsideTransition: { [weak self] (context) in
+            self?.tableView.beginUpdates()
+            self?.tableView.endUpdates()
+        }, completion: nil)
         super.viewWillTransition(to: size, with: coordinator)
     }
     
@@ -73,7 +80,7 @@ class QuestTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: QuestTableViewCell.description(), for: indexPath) as! QuestTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DropSummaryTableViewCell.description(), for: indexPath) as! DropSummaryTableViewCell
         cell.configure(for: quests[indexPath.row], focusedID: focusedItemID)
         return cell
     }

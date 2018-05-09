@@ -1,8 +1,8 @@
 //
-//  QuestTabViewController.swift
+//  EDTabViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/5/9.
+//  Created by zzk on 2018/5/11.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
@@ -11,15 +11,19 @@ import Tabman
 import Pageboy
 import Gestalt
 
-class QuestTabViewController: TabmanViewController, PageboyViewControllerDataSource {
+class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
-    private var viewControllers = [UIViewController]()
-        
-    let quests: [Quest]
-
-    init(quests: [Quest]) {
-        self.quests = quests
+    static var defaultTabIndex: Int = 0
+    
+    private var viewControllers: [UIViewController]
+    
+    private var enemy: Enemy
+    
+    init(enemy: Enemy) {
+        self.enemy = enemy
+        viewControllers = [EDStatusTableViewController(enemy: enemy), EDSkillTableViewController(enemy: enemy)]
         super.init(nibName: nil, bundle: nil)
+        navigationItem.title = enemy.base.name
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,24 +32,12 @@ class QuestTabViewController: TabmanViewController, PageboyViewControllerDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var vcs: [UIViewController] = [DropSummaryTableViewController(quests: quests)]
-        var items = [NSLocalizedString("Drops", comment: "")].map { Item(title: $0) }
         
-        for i in 0... {
-            let lowerBound = i * 5
-            let upperBound = min((i + 1) * 5, quests.count)
-            let subQuests = quests[lowerBound..<upperBound]
-            let vc = QuestEnemyTableViewController(quests: Array(subQuests))
-            let title = "\(lowerBound + 1) - \(upperBound)"
-            items.append(Item(title: title))
-            vcs.append(vc)
-            if upperBound == quests.count { break }
-        }
+        let items = [NSLocalizedString("Status", comment: ""),
+                     NSLocalizedString("Skill", comment: "")].map { Item(title: $0) }
         
-        viewControllers = vcs
-        bar.items = items
         dataSource = self
+        bar.items = items
         bar.location = .bottom
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
@@ -61,6 +53,7 @@ class QuestTabViewController: TabmanViewController, PageboyViewControllerDataSou
                 appearance.layout.itemDistribution = .centered
                 appearance.style.background = .blur(style: theme.blurEffectStyle)
                 appearance.indicator.preferredStyle = .clear
+                appearance.layout.extendBackgroundEdgeInsets = true
             })
         }
         
@@ -75,6 +68,11 @@ class QuestTabViewController: TabmanViewController, PageboyViewControllerDataSou
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: 0)
+        return .at(index: EDTabViewController.defaultTabIndex)
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
+        EDTabViewController.defaultTabIndex = index
     }
 }

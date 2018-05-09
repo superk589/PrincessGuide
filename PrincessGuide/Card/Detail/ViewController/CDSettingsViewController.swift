@@ -72,6 +72,7 @@ class CDSettingsViewController: FormViewController {
             navigationBar?.barStyle = theme.barStyle
             themable.backgroundImageView.image = theme.backgroundImage
             themable.tableView.indicatorStyle = theme.indicatorStyle
+            themable.tableView.backgroundColor = theme.color.background
         }
         
         PickerInlineRow<Int>.defaultCellSetup = { (cell, row) in
@@ -188,7 +189,7 @@ class CDSettingsViewController: FormViewController {
                 
                 }.onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
-        
+
     }
     
     @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {

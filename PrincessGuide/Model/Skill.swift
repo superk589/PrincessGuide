@@ -453,8 +453,7 @@ extension Skill.Action {
         }
     }
     
-    private func actionValue() -> String {
-        let skillLevel = CDSettingsViewController.Setting.default.skillLevel
+    private func actionValue(of level: Int) -> String {
         var expression = ""
         var fixedValue = 0.0
         for value in values {
@@ -467,7 +466,7 @@ extension Skill.Action {
             case .def:
                 expression += "\(value.value) * \(PropertyKey.def)"
             case .skillLevel:
-                fixedValue += Double(skillLevel) * (Double(value.value) ?? 0)
+                fixedValue += Double(level) * (Double(value.value) ?? 0)
             case .initialValue:
                 fixedValue += Double(value.value) ?? 0
             case .chance:
@@ -486,9 +485,9 @@ extension Skill.Action {
         }
         
         if expression != "" {
-            return "\(expression) + \(valueString)@\(skillLevel)"
+            return "\(expression) + \(valueString)@\(level)"
         } else {
-            return "\(valueString)@\(skillLevel)"
+            return "\(valueString)@\(level)"
         }
     }
     
@@ -546,7 +545,7 @@ extension Skill.Action {
         return "\(valueString)"
     }
     
-    var detail: String {
-        return String(format: buildActionDescription(), actionValue()) + String(format: buildStackDescription(), stackValue()) + String(format: buildDurationDescription(), durationValue()) + NSLocalizedString(".", comment: "")
+    func detail(of level: Int = CDSettingsViewController.Setting.default.skillLevel) -> String {
+        return String(format: buildActionDescription(), actionValue(of: level)) + String(format: buildStackDescription(), stackValue()) + String(format: buildDurationDescription(), durationValue()) + NSLocalizedString(".", comment: "")
     }
 }
