@@ -112,9 +112,13 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         return label
     }
     
-    func configure(for skill: Skill, category: SkillCategory) {
+    func configure(for skill: Skill, category: SkillCategory, index: Int? = nil) {
         nameLabel.text = skill.base.name
-        categoryLabel.text = category.description
+        if let index = index {
+            categoryLabel.text = "\(category.description) \(index)"
+        } else {
+            categoryLabel.text = "\(category.description)"
+        }
         castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
         skillIcon.skillIconID = skill.base.iconType
@@ -122,8 +126,8 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
     func configure(for item: CardDetailItem) {
-        guard case .skill(let skill, let category) = item else { return }
-        configure(for: skill, category: category)
+        guard case .skill(let skill, let category, let index) = item else { return }
+        configure(for: skill, category: category, index: index)
     }
     
     required init?(coder aDecoder: NSCoder) {

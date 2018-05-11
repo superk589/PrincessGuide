@@ -1,32 +1,21 @@
 //
-//  QuestAreaTableViewController.swift
+//  ClanBattleTableViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/4/25.
+//  Created by zzk on 2018/5/11.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 import Gestalt
 
-class QuestAreaTableViewController: UITableViewController, DataChecking {
-    
-    private var areas = [Area]()
+class ClanBattleTableViewController: UITableViewController, DataChecking {
+
+    private var clanBattles = [ClanBattle]()
     
     let refresher = RefreshHeader()
     
     let backgroundImageView = UIImageView()
-
-    let areaType: AreaType
-    
-    init(areaType: AreaType) {
-        self.areaType = areaType
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +36,6 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
         tableView.mj_header = refresher
         refresher.refreshingBlock = { [weak self] in self?.check() }
         
-        navigationItem.title = NSLocalizedString("Quests", comment: "")
-        
         tableView.keyboardDismissMode = .onDrag
         tableView.register(QuestAreaTableViewCell.self, forCellReuseIdentifier: QuestAreaTableViewCell.description())
         tableView.rowHeight = 66
@@ -65,13 +52,13 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
     private func loadData() {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getAreas(type: self?.areaType, callback: { (areas) in
+            Master.shared.getClanBattles { (clanBattles) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
-                    self?.areas = areas.sorted { $0.areaId > $1.areaId }
+                    self?.clanBattles = clanBattles.sorted { $0.period.startTime > $1.period.startTime }
                     self?.tableView.reloadData()
                 }
-            })
+            }
         }
     }
     
@@ -80,28 +67,22 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return areas.count
+        return clanBattles.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuestAreaTableViewCell.description(), for: indexPath) as! QuestAreaTableViewCell
-        
-        cell.configure(for: areas[indexPath.row].areaName)
+        let clanBattle = clanBattles[indexPath.row]
+        cell.configure(for: clanBattle.name)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let area = areas[indexPath.row]
-        LoadingHUDManager.default.show()
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            area.quests.forEach { $0.preload() }
-            DispatchQueue.main.async {
-                LoadingHUDManager.default.hide()
-                let vc = QuestTabViewController(quests: area.quests)
-                vc.navigationItem.title = area.areaName
-                vc.hidesBottomBarWhenPushed = true
-                self?.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
+        let clanBattle = clanBattles[indexPath.row]
+        let vc = QuestEnemyTableViewController(clanBattle: clanBattle)
+        vc.hidesBottomBarWhenPushed = true
+        vc.navigationItem.title = clanBattle.name
+        navigationController?.pushViewController(vc, animated: true)
     }
+
 }

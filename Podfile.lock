@@ -45,6 +45,7 @@ PODS:
   - Tabman (1.8.2):
     - AutoInsetter (~> 1.2.0)
     - Pageboy (~> 2.5.0)
+  - Timepiece (1.3.1)
   - TTGTagCollectionView (1.9.0)
 
 DEPENDENCIES:
@@ -62,6 +63,7 @@ DEPENDENCIES:
   - SnapKit
   - SwiftyJSON
   - Tabman (from `https://github.com/superk589/Tabman.git`)
+  - Timepiece
   - TTGTagCollectionView
 
 SPEC REPOS:
@@ -81,6 +83,7 @@ SPEC REPOS:
     - ReachabilitySwift
     - SnapKit
     - SwiftyJSON
+    - Timepiece
     - TTGTagCollectionView
 
 EXTERNAL SOURCES:
@@ -116,8 +119,9 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   Tabman: 69ce69b44cec1ad693b82c24cdbdf0c45915668c
+  Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
 
-PODFILE CHECKSUM: 2d226be491e12ff486567a7b5b5e6a21616f9441
+PODFILE CHECKSUM: beeacd8563c9fe5a0bc2964a5c50ad3f1b9a366e
 
 COCOAPODS: 1.5.0

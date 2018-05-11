@@ -121,6 +121,34 @@ class Enemy: Codable {
         Master.shared.getSkill(skillID: base.mainSkill3, callback: closure)
     })
     
+    lazy var mainSkill4: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill4, callback: closure)
+    })
+    
+    lazy var mainSkill5: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill5, callback: closure)
+    })
+    
+    lazy var mainSkill6: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill6, callback: closure)
+    })
+    
+    lazy var mainSkill7: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill7, callback: closure)
+    })
+    
+    lazy var mainSkill8: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill8, callback: closure)
+    })
+    
+    lazy var mainSkill9: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill9, callback: closure)
+    })
+    
+    lazy var mainSkill10: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
+        Master.shared.getSkill(skillID: base.mainSkill10, callback: closure)
+    })
+    
     lazy var unionBurst: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
         Master.shared.getSkill(skillID: base.unionBurst, callback: closure)
     })

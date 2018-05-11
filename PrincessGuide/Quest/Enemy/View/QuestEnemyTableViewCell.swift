@@ -105,7 +105,6 @@ extension QuestEnemyTableViewCell: TTGTagCollectionViewDelegate, TTGTagCollectio
     
     func tagCollectionView(_ tagCollectionView: TTGTagCollectionView!, didSelectTag tagView: UIView!, at index: UInt) {
         let enemy = enemies[Int(index)]
-        let vc = EDTabViewController(enemy: enemy)
         delegate?.questEnemyTableViewCell(self, didSelect: enemy)
     }
     

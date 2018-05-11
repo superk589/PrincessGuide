@@ -15,7 +15,7 @@ class EDTableViewController: UITableViewController {
     
     struct Row {
         enum Model {
-            case skill(Skill, SkillCategory, Int)
+            case skill(Skill, SkillCategory, Int, Int?)
             case base(Enemy.Base)
             case profile(Enemy.Unit)
             case pattern(AttackPattern, Enemy)

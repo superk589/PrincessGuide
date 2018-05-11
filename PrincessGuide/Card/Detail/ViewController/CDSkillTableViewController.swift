@@ -29,19 +29,19 @@ class CDSkillTableViewController: CDTableViewController {
         }
         
         if let unionBurst = card.unionBurst {
-            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst)))
+            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, nil)))
         }
         if let mainSkill1 = card.mainSkill1 {
-            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(mainSkill1, .main)))
+            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(mainSkill1, .main, 1)))
         }
         if let mainSkill2 = card.mainSkill2 {
-            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(mainSkill2, .main)))
+            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(mainSkill2, .main, 2)))
         }
         if let exSkill1 = card.exSkill1 {
-            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(exSkill1, .ex)))
+            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(exSkill1, .ex, nil)))
         }
         if let exSkillEvolution1 = card.exSkillEvolution1 {
-            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(exSkillEvolution1, .exEvolution)))
+            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(exSkillEvolution1, .exEvolution, nil)))
         }
     }
     

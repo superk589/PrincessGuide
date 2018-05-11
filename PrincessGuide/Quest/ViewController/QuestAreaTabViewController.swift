@@ -18,9 +18,9 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Quests", comment: "")
-        viewControllers = [QuestAreaTableViewController(areaType: .normal), QuestAreaTableViewController(areaType: .hard)]
+        viewControllers = [ClanBattleTableViewController(), QuestAreaTableViewController(areaType: .normal), QuestAreaTableViewController(areaType: .hard)]
         dataSource = self
-        bar.items = [AreaType.normal, .hard].map { Item(title: $0.description) }
+        bar.items = [Item(title: NSLocalizedString("Clan Battle", comment: ""))] + [AreaType.normal, .hard].map { Item(title: $0.description) }
         bar.location = .bottom
 
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
@@ -50,7 +50,7 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return nil
+        return .at(index: 1)
     }
     
 }

@@ -8,7 +8,22 @@
 
 import Foundation
 
+extension TimeZone {
+    static let tokyo = TimeZone(identifier: "Asia/Tokyo")!
+}
+
 extension String {
+    
+    func toDate(format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = .tokyo) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        dateFormatter.timeZone = timeZone
+        
+        // If not set this, and in your phone settings select a region that defaults to a 24-hour time, for example "United Kingdom" or "France". Then, disable the "24 hour time" from the settings. Now if you create an NSDateFormatter without setting its locale, "HH" will not work.
+        // Reference from https://stackoverflow.com/questions/29374181/nsdateformatter-hh-returning-am-pm-on-ios-8-device
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        return dateFormatter.date(from: self) ?? Date(timeIntervalSince1970: 0)
+    }
     
     subscript(value: PartialRangeUpTo<Int>) -> Substring {
         get {

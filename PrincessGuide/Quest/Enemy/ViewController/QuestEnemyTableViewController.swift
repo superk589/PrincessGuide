@@ -31,6 +31,14 @@ class QuestEnemyTableViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    init(clanBattle: ClanBattle) {
+        self.rows = clanBattle.rounds.flatMap {
+            [Row(type: QuestNameTableViewCell.self, data: .quest($0.name))] +
+                $0.waves.enumerated().map{ Row(type: QuestEnemyTableViewCell.self, data: .wave($0.element, $0.offset)) }
+        }
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     let backgroundImageView = UIImageView()
     
     override func viewDidLoad() {

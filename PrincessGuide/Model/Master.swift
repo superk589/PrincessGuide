@@ -418,6 +418,124 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    private func getWaves(from db: FMDatabase, waveIDs: [Int]) throws -> [Wave] {
+        let waveSql = """
+        SELECT
+            *
+        FROM
+            wave_group_data
+        WHERE
+            wave_group_id IN (\(waveIDs.map(String.init).joined(separator: ",")))
+        """
+        var waves = [Wave]()
+        let waveSet = try db.executeQuery(waveSql, values: nil)
+        while waveSet.next() {
+            let json = JSON(waveSet.resultDictionary ?? [:])
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            
+            var enemyUnits = [Wave.EnemyUnit]()
+            for i in 1...5 {
+                let enemyID = json["enemy_id_\(i)"].intValue
+                let dropGold = json["drop_gold_\(i)"].intValue
+                let dropRewardID = json["drop_reward_id_\(i)"].intValue
+                if enemyID != 0 {
+                    let enemyUnit = Wave.EnemyUnit(dropGold: dropGold, dropRewardID: dropRewardID, enemyID: enemyID)
+                    enemyUnits.append(enemyUnit)
+                }
+            }
+            
+            var dropRewardIDs = [Int]()
+            for i in 1...5 {
+                let field = "drop_reward_id_\(i)"
+                let id = json[field].intValue
+                if id != 0 {
+                    dropRewardIDs.append(id)
+                }
+            }
+            let dropRewardSql = """
+            SELECT
+                *
+            FROM
+                enemy_reward_data
+            WHERE
+                drop_reward_id IN (\(dropRewardIDs.map(String.init).joined(separator: ",")))
+            """
+            let dropRewardSet = try db.executeQuery(dropRewardSql, values: nil)
+            var drops = [Drop]()
+            while dropRewardSet.next() {
+                let json = JSON(dropRewardSet.resultDictionary ?? [:])
+                
+                var rewards = [Drop.Reward]()
+                for i in 1...5 {
+                    let odds = json["odds_\(i)"].intValue
+                    let rewardID = json["reward_id_\(i)"].intValue
+                    let rewardType = json["reward_type_\(i)"].intValue
+                    let rewardNum = json["reward_num_\(i)"].intValue
+                    if rewardID != 0 {
+                        rewards.append(Drop.Reward(odds: odds, rewardID: rewardID, rewardNum: rewardNum, rewardType: rewardType))
+                    }
+                }
+                let dropCount = json["drop_count"].intValue
+                let dropRewardID = json["drop_reward_id"].intValue
+                let drop = Drop(dropCount: dropCount, dropRewardId: dropRewardID, rewards: rewards)
+                drops.append(drop)
+            }
+            
+            let id = json["id"].intValue
+            let odds = json["odds"].intValue
+            let waveGroupID = json["wave_group_id"].intValue
+            let base = Wave.Base(units: enemyUnits, id: id, odds: odds, waveGroupId: waveGroupID)
+            waves.append(Wave(base: base, drops: drops))
+        }
+        return waves
+    }
+    
+    func getClanBattles(callback: @escaping FMDBCallBackClosure<[ClanBattle]>) {
+        var clanBattles = [ClanBattle]()
+        execute({ [unowned self] (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                clan_battle_period
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let period = try? decoder.decode(ClanBattle.Period.self, from: json.rawData()) {
+                    let id = period.clanBattleId
+                    let groupSql = """
+                    SELECT
+                        *
+                    FROM
+                        clan_battle_boss_group
+                    WHERE
+                        clan_battle_boss_group_id LIKE '\(id)___'
+                    """
+                    var groups = [ClanBattle.Group]()
+                    let groupSet = try db.executeQuery(groupSql, values: nil)
+                    print(groupSql)
+                    while groupSet.next() {
+                        let json = JSON(groupSet.resultDictionary ?? [:])
+                        let groupId = json["clan_battle_boss_group_id"].intValue
+                        let waveId = json["wave_group_id"].intValue
+                        let orderNum = json["order_num"].intValue
+                        if let wave = try self.getWaves(from: db, waveIDs: [waveId]).first {
+                            groups.append(ClanBattle.Group(wave: wave, groupId: groupId, orderNum: orderNum))
+                        }
+                    }
+                    let clanBattle = ClanBattle(period: period, groups: groups)
+                    clanBattles.append(clanBattle)
+                }
+            }
+        }) {
+            callback(clanBattles)
+        }
+    }
+    
     func getEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Enemy]>) {
         var enemies = [Enemy]()
         execute({ (db) in
@@ -485,7 +603,7 @@ class Master: FMDatabaseQueue {
     
     func getQuests(areaID: Int? = nil, containsEquipment equipmentID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Quest]>) {
         var quests = [Quest]()
-        execute({ (db) in
+        execute({ [unowned self] (db) in
             var sql = """
             SELECT
                 *
@@ -508,75 +626,7 @@ class Master: FMDatabaseQueue {
                         waveIDs.append(id)
                     }
                 }
-                let waveSql = """
-                SELECT
-                    *
-                FROM
-                    wave_group_data
-                WHERE
-                    wave_group_id IN (\(waveIDs.map(String.init).joined(separator: ",")))
-                """
-                var waves = [Wave]()
-                let waveSet = try db.executeQuery(waveSql, values: nil)
-                while waveSet.next() {
-                    let json = JSON(waveSet.resultDictionary ?? [:])
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    
-                    var enemyUnits = [Wave.EnemyUnit]()
-                    for i in 1...5 {
-                        let enemyID = json["enemy_id_\(i)"].intValue
-                        let dropGold = json["drop_gold_\(i)"].intValue
-                        let dropRewardID = json["drop_reward_id_\(i)"].intValue
-                        if enemyID != 0 {
-                            let enemyUnit = Wave.EnemyUnit(dropGold: dropGold, dropRewardID: dropRewardID, enemyID: enemyID)
-                            enemyUnits.append(enemyUnit)
-                        }
-                    }
-                    
-                    var dropRewardIDs = [Int]()
-                    for i in 1...5 {
-                        let field = "drop_reward_id_\(i)"
-                        let id = json[field].intValue
-                        if id != 0 {
-                            dropRewardIDs.append(id)
-                        }
-                    }
-                    let dropRewardSql = """
-                    SELECT
-                        *
-                    FROM
-                        enemy_reward_data
-                    WHERE
-                        drop_reward_id IN (\(dropRewardIDs.map(String.init).joined(separator: ",")))
-                    """
-                    let dropRewardSet = try db.executeQuery(dropRewardSql, values: nil)
-                    var drops = [Drop]()
-                    while dropRewardSet.next() {
-                        let json = JSON(dropRewardSet.resultDictionary ?? [:])
-                       
-                        var rewards = [Drop.Reward]()
-                        for i in 1...5 {
-                            let odds = json["odds_\(i)"].intValue
-                            let rewardID = json["reward_id_\(i)"].intValue
-                            let rewardType = json["reward_type_\(i)"].intValue
-                            let rewardNum = json["reward_num_\(i)"].intValue
-                            if rewardID != 0 {
-                                rewards.append(Drop.Reward(odds: odds, rewardID: rewardID, rewardNum: rewardNum, rewardType: rewardType))
-                            }
-                        }
-                        let dropCount = json["drop_count"].intValue
-                        let dropRewardID = json["drop_reward_id"].intValue
-                        let drop = Drop(dropCount: dropCount, dropRewardId: dropRewardID, rewards: rewards)
-                        drops.append(drop)
-                    }
-                    
-                    let id = json["id"].intValue
-                    let odds = json["odds"].intValue
-                    let waveGroupID = json["wave_group_id"].intValue
-                    let base = Wave.Base(units: enemyUnits, id: id, odds: odds, waveGroupId: waveGroupID)
-                    waves.append(Wave(base: base, drops: drops))
-                }
+                let waves = try self.getWaves(from: db, waveIDs: waveIDs)
                 if let base = try? decoder.decode(Quest.Base.self, from: json.rawData()) {
                     let quest = Quest(base: base, waves: waves)
                     if equipmentID == nil {

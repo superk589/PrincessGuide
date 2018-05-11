@@ -12,9 +12,13 @@ typealias EDSkillTableViewCell = CDSkillTableViewCell
 
 extension EDSkillTableViewCell: EnemyDetailConfigurable {
     
-    func configure(for skill: Skill, category: SkillCategory, level: Int) {
+    func configure(for skill: Skill, category: SkillCategory, level: Int, index: Int? = nil) {
         nameLabel.text = skill.base.name
-        categoryLabel.text = category.description
+        if let index = index {
+            categoryLabel.text = "\(category.description) \(index)"
+        } else {
+            categoryLabel.text = category.description
+        }
         castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
         skillIcon.skillIconID = skill.base.iconType
@@ -22,9 +26,9 @@ extension EDSkillTableViewCell: EnemyDetailConfigurable {
     }
     
     func configure(for item: EnemyDetailItem) {
-        guard case .skill(let skill, let category, let level) = item else {
+        guard case .skill(let skill, let category, let level, let index) = item else {
             fatalError()
         }
-        configure(for: skill, category: category, level: level)
+        configure(for: skill, category: category, level: level, index: index)
     }
 }

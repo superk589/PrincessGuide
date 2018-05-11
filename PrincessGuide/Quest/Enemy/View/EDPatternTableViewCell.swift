@@ -30,6 +30,27 @@ extension PatternCollectionViewCell {
         case 1003:
             skillIcon.skillIconID = enemy.mainSkill3?.base.iconType
             skillLabel.text = NSLocalizedString("Main 3", comment: "")
+        case 1004:
+            skillIcon.skillIconID = enemy.mainSkill4?.base.iconType
+            skillLabel.text = NSLocalizedString("Main 4", comment: "")
+        case 1005:
+            skillIcon.skillIconID = enemy.mainSkill5?.base.iconType
+            skillLabel.text = NSLocalizedString("Main 5", comment: "")
+        case 1006:
+            skillIcon.skillIconID = enemy.mainSkill6?.base.iconType
+            skillLabel.text = NSLocalizedString("Main 6", comment: "")
+        case 1007:
+            skillIcon.skillIconID = enemy.mainSkill7?.base.iconType
+            skillLabel.text = NSLocalizedString("Main 7", comment: "")
+        case 1008:
+            skillIcon.skillIconID = enemy.mainSkill8?.base.iconType
+            skillLabel.text = NSLocalizedString("Main 8", comment: "")
+        case 1009:
+            skillIcon.skillIconID = enemy.mainSkill9?.base.iconType
+            skillLabel.text = NSLocalizedString("Main 9", comment: "")
+        case 1010:
+            skillIcon.skillIconID = enemy.mainSkill10?.base.iconType
+            skillLabel.text = NSLocalizedString("Main 10", comment: "")
         default:
             skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
             skillLabel.text = NSLocalizedString("Unknown", comment: "")

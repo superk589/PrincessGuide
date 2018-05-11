@@ -36,7 +36,7 @@ class QuestAreaTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for area: Area) {
-        titleLabel.text = area.areaName
+    func configure(for title: String) {
+        titleLabel.text = title
     }
 }
