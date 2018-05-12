@@ -417,24 +417,24 @@ extension Skill.Action {
                 return String(format: format, actionValue(of: level), durationValue())
             }
         case (.damage, _):
-            let format = NSLocalizedString("Deal [%@] %@.", comment: "")
+            let format = NSLocalizedString("Deal [%@] %@.", comment: "Deal [x] physical damage/magical damage.")
             return String(format: format, actionValue(of: level), `class`.description)
         case (.ex, _):
-            let format = NSLocalizedString("Raise [%@] %@.", comment: "")
+            let format = NSLocalizedString("Raise [%@] %@.", comment: "Raise [x] ATK.")
             return String(format: format, actionValue(of: level), propertyKey.description)
         case (_, .action):
             switch ailment.ailmentDetail {
             case .some(.action(.haste)):
-                let format = NSLocalizedString("Haste [%@] for %@s.", comment: "")
+                let format = NSLocalizedString("Haste [%@] for %@s.", comment: "Haste [1.5] for 10s.")
                 return String(format: format, actionValue(of: level), durationValue())
             case .some(.action(.slow)):
-                let format = NSLocalizedString("Slow [%@] for %@s.", comment: "")
+                let format = NSLocalizedString("Slow [%@] for %@s.", comment: "Slow [0.5] for 10s.")
                 return String(format: format, actionValue(of: level), durationValue())
             case .some(.action(.sleep)):
                 let format = NSLocalizedString("Make target fall asleep for %@s.", comment: "")
                 return String(format: format, durationValue())
             default:
-                let format = NSLocalizedString("%@ target for %@s.", comment: "")
+                let format = NSLocalizedString("%@ target for %@s.", comment: "Stun target for 5s.")
                 return String(format: format, ailment.description, durationValue())
             }
         case (_, .dot):
@@ -447,10 +447,10 @@ extension Skill.Action {
                 return String(format: format, ailment.description, actionValue(of: level), durationValue())
             }
         case (_, let type) where [.darken, .charm, .silence].contains(type):
-            let format = NSLocalizedString("%@ target with [%@]%% chance for %@s.", comment: "")
+            let format = NSLocalizedString("%@ target with [%@]%% chance for %@s.", comment: "Charm target with [90]% chance for 10s.")
             return String(format: format, ailment.description, actionValue(of: level), durationValue())
         case (.aura, _):
-            let format = NSLocalizedString("%@ [%@]%@ %@ for %@s.", comment: "")
+            let format = NSLocalizedString("%@ [%@]%@ %@ for %@s.", comment: "Raise [x]% ATK for 10s.")
             return String(format: format, auraModifier.description, actionValue(of: level), percentModifier.description, propertyKey.description, durationValue())
         case (.position, _):
             let format = NSLocalizedString("Change self position.", comment: "")
@@ -461,7 +461,7 @@ extension Skill.Action {
                 let format = NSLocalizedString("Make target lose [%@] TP.", comment: "")
                 return String(format: format, actionValue(of: level))
             default:
-                let format = NSLocalizedString("%@ [%@] TP.", comment: "")
+                let format = NSLocalizedString("%@ [%@] TP.", comment: "Restore [x] TP.")
                 return String(format: format, auraModifier.description, actionValue(of: level))
             }
         case (.additionalDamage, _):
@@ -487,7 +487,7 @@ extension Skill.Action {
         case (.chooseArea, _):
             return NSLocalizedString("Choose target area.", comment: "")
         case (.knock, _):
-            let format = NSLocalizedString("Knock target away %d at speed %d.", comment: "")
+            let format = NSLocalizedString("Knock target away %d at speed %d.", comment: "Knock target away 1000 at speed 500.")
             return String(format: format, Int(actionValue1.rounded()), Int(actionValue3.rounded()))
         default:
             let format = NSLocalizedString("Unknown effect %d with arguments %@.", comment: "")

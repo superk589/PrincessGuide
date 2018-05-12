@@ -161,7 +161,7 @@ class CDSettingsViewController: FormViewController {
                 }.onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             <<< PickerInlineRow<Int>("unit_rarity") { (row : PickerInlineRow<Int>) -> Void in
-                row.title = NSLocalizedString("Rarity", comment: "")
+                row.title = NSLocalizedString("Star Rank", comment: "")
                 row.displayValueFor = { (rowValue: Int?) in
                     return rowValue.flatMap { String($0) }
                 }

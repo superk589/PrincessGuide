@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3" build-num="9E145"/>
+    </header>
+    <body>
+      <trans-unit id="0Fw-sz-yKe.title">
+        <source>Cards</source>
+        <target>卡片</target>
+        <note>Class = "UITabBarItem"; title = "Cards"; ObjectID = "0Fw-sz-yKe";</note>
+      </trans-unit>
+      <trans-unit id="H57-OB-5Ns.title">
+        <source>Equipments</source>
+        <target>装备</target>
+        <note>Class = "UITabBarItem"; title = "Equipments"; ObjectID = "H57-OB-5Ns";</note>
+      </trans-unit>
+      <trans-unit id="Txl-8E-i4X.title">
+        <source>Settings</source>
+        <target>设置</target>
+        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "Txl-8E-i4X";</note>
+      </trans-unit>
+      <trans-unit id="YOs-2y-sHp.title">
+        <source>Quests</source>
+        <target>关卡</target>
+        <note>Class = "UITabBarItem"; title = "Quests"; ObjectID = "YOs-2y-sHp";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3" build-num="9E145"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>Hatsune's Notes</source>
+        <target>Hatsune's Notes</target>
+        <note>Bundle display name</note>
+      </trans-unit>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <target>$(PRODUCT_NAME)</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3" build-num="9E145"/>
+    </header>
+    <body>
+      <trans-unit id="%@ Feedback">
+        <source>%@ Feedback</source>
+        <target>%@ 反馈</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ [%@] TP.">
+        <source>%1$@ [%2$@] TP.</source>
+        <target>%1$@ [%2$@] TP。</target>
+        <note>Restore [x] TP.</note>
+      </trans-unit>
+      <trans-unit id="%@ [%@]%@ %@ for %@s.">
+        <source>%1$@ [%2$@]%3$@ %4$@ for %5$@s.</source>
+        <target>%1$@ [%2$@]%3$@ %4$@，持续 %5$@ 秒。</target>
+        <note>Raise [x]% ATK for 10s.</note>
+      </trans-unit>
+      <trans-unit id="%@ target and deal [%@] damage per second for %@s.">
+        <source>%1$@ target and deal [%2$@] damage per second for %3$@s.</source>
+        <target>%1$@目标并每秒造成 [%2$@] 伤害，持续 %3$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ target for %@s.">
+        <source>%1$@ target for %2$@s.</source>
+        <target>%1$@目标，持续 %2$@ 秒。</target>
+        <note>Stun target for 5s.</note>
+      </trans-unit>
+      <trans-unit id="%@ target with [%@]%% chance for %@s.">
+        <source>%1$@ target with [%2$@]%% chance for %3$@s.</source>
+        <target>[%2$@]%% 几率%1$@目标，持续 %3$@ 秒。</target>
+        <note>Charm target with [90]% chance for 10s.</note>
+      </trans-unit>
+      <trans-unit id="%@/%@">
+        <source>%1$@/%2$@</source>
+        <target>%1$@ 月 %2$@ 日</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="ATK">
+        <source>ATK</source>
+        <target>物理攻击力</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="ATK Coefficient">
+        <source>ATK Coefficient</source>
+        <target>ATK Coefficient</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="About">
+        <source>About</source>
+        <target>关于</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Absorb [%@] magical damage for %@s.">
+        <source>Absorb [%1$@] magical damage for %2$@s.</source>
+        <target>吸收 [%1$@] 魔法伤害，持续 %2$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Absorb [%@] physical and magical damage for %@s.">
+        <source>Absorb [%1$@] physical and magical damage for %2$@s.</source>
+        <target>吸收 [%1$@] 物理和魔法伤害，持续 %2$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Absorb [%@] physical damage for %@s.">
+        <source>Absorb [%1$@] physical damage for %2$@s.</source>
+        <target>吸收 [%1$@] 物理伤害，持续 %2$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Action">
+        <source>Action</source>
+        <target>Action</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add additional damage [%@] with max %@ stacks.">
+        <source>Add additional damage [%1$@] with max %2$@ stacks.</source>
+        <target>每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 %2$@ 层。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="App Version">
+        <source>App Version</source>
+        <target>程序版本</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Attack Pattern">
+        <source>Attack Pattern</source>
+        <target>攻击模式</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Become invulnerable for [%@]s.">
+        <source>Become invulnerable for [%@]s.</source>
+        <target>进入无敌状态，持续 [%@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Bind">
+        <source>Bind</source>
+        <target>束缚</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Birthday">
+        <source>Birthday</source>
+        <target>生日</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Blood Type">
+        <source>Blood Type</source>
+        <target>血型</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Burn">
+        <source>Burn</source>
+        <target>灼烧</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="CV">
+        <source>CV</source>
+        <target>声优</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cards">
+        <source>Cards</source>
+        <target>卡片</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast Time">
+        <source>Cast Time</source>
+        <target>释放时间</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Catch Copy">
+        <source>Catch Copy</source>
+        <target>简介</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Chance">
+        <source>Chance</source>
+        <target>Chance</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position.">
+        <source>Change self position.</source>
+        <target>改变自身位置。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Charm">
+        <source>Charm</source>
+        <target>魅惑</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Check for Updates at Launch">
+        <source>Check for Updates at Launch</source>
+        <target>启动时检查更新</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Checking">
+        <source>Checking</source>
+        <target>正在检查更新</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Choose target area.">
+        <source>Choose target area.</source>
+        <target>选择目标区域。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Clan Battle">
+        <source>Clan Battle</source>
+        <target>公会战</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Clan Battle %d-%d">
+        <source>Clan Battle %1$d-%2$d</source>
+        <target>公会战 %1$d 年 %2$d 月</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Crafted">
+        <source>Crafted</source>
+        <target>制作</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Curse">
+        <source>Curse</source>
+        <target>诅咒</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="DEF">
+        <source>DEF</source>
+        <target>物理防御力</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Darken">
+        <source>Darken</source>
+        <target>暗黑</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Data Version">
+        <source>Data Version</source>
+        <target>数据版本</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Deal [%@] %@.">
+        <source>Deal [%1$@] %2$@.</source>
+        <target>造成 [%1$@] %2$@。</target>
+        <note>Deal [x] physical damage/magical damage.</note>
+      </trans-unit>
+      <trans-unit id="Detain">
+        <source>Detain</source>
+        <target>拘留</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Die instantly.">
+        <source>Die instantly.</source>
+        <target>立即死亡。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Distance">
+        <source>Distance</source>
+        <target>Distance</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Dodge">
+        <source>Dodge</source>
+        <target>回避等级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Dot">
+        <source>Dot</source>
+        <target>Dot</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Dropped">
+        <source>Dropped</source>
+        <target>掉落</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Drops">
+        <source>Drops</source>
+        <target>掉落</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Duration">
+        <source>Duration</source>
+        <target>Duration</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="EX">
+        <source>EX</source>
+        <target>EX</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="EX+">
+        <source>EX+</source>
+        <target>EX+</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Email">
+        <source>Email</source>
+        <target>邮件</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Energy Recovery Rate">
+        <source>Energy Recovery Rate</source>
+        <target>TP 上升</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Energy Reduce Rate">
+        <source>Energy Reduce Rate</source>
+        <target>TP 消费轻减</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Equipment">
+        <source>Equipment</source>
+        <target>装备</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Equipments">
+        <source>Equipments</source>
+        <target>装备</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Exploration">
+        <source>Exploration</source>
+        <target>探索</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Failed">
+        <source>Failed</source>
+        <target>检查更新失败</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Feedback">
+        <source>Feedback</source>
+        <target>反馈</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Finished">
+        <source>Finished</source>
+        <target>更新完成</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Freeze">
+        <source>Freeze</source>
+        <target>冻结</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="General">
+        <source>General</source>
+        <target>通用</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Guild">
+        <source>Guild</source>
+        <target>公会</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="HP">
+        <source>HP</source>
+        <target>HP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="HP Recovery Rate">
+        <source>HP Recovery Rate</source>
+        <target>恢复量上升</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Hard">
+        <source>Hard</source>
+        <target>困难</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Haste">
+        <source>Haste</source>
+        <target>Haste</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Haste [%@] for %@s.">
+        <source>Haste [%1$@] for %2$@s.</source>
+        <target>提高速度 [%1$@]，持续 %2$@ 秒。</target>
+        <note>Haste [1.5] for 10s.</note>
+      </trans-unit>
+      <trans-unit id="Height">
+        <source>Height</source>
+        <target>身高</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Increased Per Skill Level">
+        <source>Increased Per Skill Level</source>
+        <target>Increased Per Skill Level</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Initial Value">
+        <source>Initial Value</source>
+        <target>Initial Value</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Instant Death">
+        <source>Instant Death</source>
+        <target>Instant Death</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Interest">
+        <source>Interest</source>
+        <target>兴趣</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Knock target away %d at speed %d.">
+        <source>Knock target away %1$d at speed %2$d.</source>
+        <target>击退目标 %1$d，速度 %2$d。</target>
+        <note>Knock target away 1000 at speed 500.</note>
+      </trans-unit>
+      <trans-unit id="Level">
+        <source>Level</source>
+        <target>等级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Life Steal">
+        <source>Life Steal</source>
+        <target>HP 吸收</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Loop end">
+        <source>Loop end</source>
+        <target>循环结束</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Loop in place">
+        <source>Loop in place</source>
+        <target>原地循环</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Loop start">
+        <source>Loop start</source>
+        <target>循环开始</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Love Rank">
+        <source>Love Rank</source>
+        <target>绊 Rank</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Magic Critical">
+        <source>Magic Critical</source>
+        <target>魔法暴击等级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Magic DEF">
+        <source>Magic DEF</source>
+        <target>魔法防御力</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Magic Penetrate">
+        <source>Magic Penetrate</source>
+        <target>魔法穿透</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Magic STR">
+        <source>Magic STR</source>
+        <target>魔法攻击力</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Magic STR Coefficient">
+        <source>Magic STR Coefficient</source>
+        <target>Magic STR Coefficient</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Main">
+        <source>Main</source>
+        <target>Main</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Main %d">
+        <source>Main %d</source>
+        <target>Main %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Make target fall asleep for %@s.">
+        <source>Make target fall asleep for %@s.</source>
+        <target>使目标入睡，持续 %@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Make target lose [%@] TP.">
+        <source>Make target lose [%@] TP.</source>
+        <target>使目标失去 [%@] TP。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Normal">
+        <source>Normal</source>
+        <target>普通</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Nullify [%@] %@ for %@s.">
+        <source>Nullify [%1$@] %2$@ for %3$@s.</source>
+        <target>无效 [%1$@] %2$@，持续 %3$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="OK">
+        <source>OK</source>
+        <target>确定</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Options">
+        <source>Options</source>
+        <target>选项</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Paralyse">
+        <source>Paralyse</source>
+        <target>麻痹</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Petrify">
+        <source>Petrify</source>
+        <target>石化</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Physical Critical">
+        <source>Physical Critical</source>
+        <target>物理暴击等级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Physical Penetrate">
+        <source>Physical Penetrate</source>
+        <target>物理穿透</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Please wait">
+        <source>Please wait</source>
+        <target>正在处理</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Poison">
+        <source>Poison</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Poison target and deal [%@] damage per second for %@s.">
+        <source>Poison target and deal [%1$@] damage per second for %2$@s.</source>
+        <target>使目标中毒并每秒造成 [%2$@] 伤害，持续 %3$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Position">
+        <source>Position</source>
+        <target>位置</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Profile">
+        <source>Profile</source>
+        <target>角色</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Quests">
+        <source>Quests</source>
+        <target>关卡</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Race">
+        <source>Race</source>
+        <target>种族</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Raise">
+        <source>Raise</source>
+        <target>提高</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Raise [%@] %@.">
+        <source>Raise [%1$@] %2$@.</source>
+        <target>提高 [%1$@] %2$@。</target>
+        <note>Raise [x] ATK.</note>
+      </trans-unit>
+      <trans-unit id="Rank">
+        <source>Rank</source>
+        <target>Rank</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Raw Materials">
+        <source>Raw Materials</source>
+        <target>原始材料</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reduce">
+        <source>Reduce</source>
+        <target>降低</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Restore">
+        <source>Restore</source>
+        <target>恢复</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Restore [%@]%@ HP.">
+        <source>Restore [%1$@]%2$@ HP.</source>
+        <target>恢复 [%1$@]%2$@ HP。 </target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Review at App Store">
+        <source>Review at App Store</source>
+        <target>App Store 评价</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Round %d">
+        <source>Round %d</source>
+        <target>第 %d 周目</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="SP">
+        <source>SP</source>
+        <target>SP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Settings">
+        <source>Settings</source>
+        <target>设置</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Silence">
+        <source>Silence</source>
+        <target>沉默</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Skill">
+        <source>Skill</source>
+        <target>技能</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Skill Detail">
+        <source>Skill Detail</source>
+        <target>技能详情</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Sleep">
+        <source>Sleep</source>
+        <target>睡眠</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Slow">
+        <source>Slow</source>
+        <target>Slow</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Slow [%@] for %@s.">
+        <source>Slow [%1$@] for %2$@s.</source>
+        <target>减速 [%1$@]，持续 %2$@ 秒。</target>
+        <note>Slow [0.5] for 10s.</note>
+      </trans-unit>
+      <trans-unit id="Speed">
+        <source>Speed</source>
+        <target>Speed</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Stack">
+        <source>Stack</source>
+        <target>Stack</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Star Rank">
+        <source>Star Rank</source>
+        <target>星级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Status">
+        <source>Status</source>
+        <target>属性</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Steal">
+        <source>Steal</source>
+        <target>偷取</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Stun">
+        <source>Stun</source>
+        <target>击晕</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon a healing pool to heal [%@] for %@s.">
+        <source>Summon a healing pool to heal [%1$@] for %2$@s.</source>
+        <target>召唤治疗池，治疗 [%1$@]，持续 %2$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon a pool to reduce [%@] DEF for %@s.">
+        <source>Summon a pool to reduce [%1$@] DEF for %2$@s.</source>
+        <target>展开一片区域，降低敌人 [%1$@] 物理防御，持续 %2$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon minion ID %d.">
+        <source>Summon minion ID %d.</source>
+        <target>召唤随从 ID %d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Swing">
+        <source>Swing</source>
+        <target>普通攻击</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Swing Time">
+        <source>Swing Time</source>
+        <target>普通攻击间隔</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Taunt targets for %@s.">
+        <source>Taunt targets for %@s.</source>
+        <target>嘲讽目标，持续 %@ 秒。 </target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="There aren't any Mail accounts">
+        <source>There aren't any Mail accounts</source>
+        <target>未设置邮件账户</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Third-Party Libraries">
+        <source>Third-Party Libraries</source>
+        <target>第三方库</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Twitter">
+        <source>Twitter</source>
+        <target>Twitter</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="UB">
+        <source>UB</source>
+        <target>UB</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unable to open Mail">
+        <source>Unable to open Mail</source>
+        <target>无法打开邮件</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unit">
+        <source>Unit</source>
+        <target>角色</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unknown">
+        <source>Unknown</source>
+        <target>未知</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unknown Effect">
+        <source>Unknown Effect</source>
+        <target>未知效果</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unknown effect %d with arguments %@.">
+        <source>Unknown effect %1$d with arguments %2$@.</source>
+        <target>未知效果 %1$d，参数 %2$@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unknown field %d for %@s.">
+        <source>Unknown field %1$d for %2$@s.</source>
+        <target>未知护盾类型 %1$d，持续 %2$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Up to date!">
+        <source>Up to date!</source>
+        <target>已经是最新版本</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Use Dark Theme">
+        <source>Use Dark Theme</source>
+        <target>使用深色主题</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Wave %d">
+        <source>Wave %d</source>
+        <target>Wave %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Wave Energy Recovery">
+        <source>Wave Energy Recovery</source>
+        <target>TP 自动恢复</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Wave HP Recovery">
+        <source>Wave HP Recovery</source>
+        <target>HP 自动恢复</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Weight">
+        <source>Weight</source>
+        <target>体重</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="magical absorb field">
+        <source>magical absorb field</source>
+        <target>magical absorb field</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="magical damage">
+        <source>magical damage</source>
+        <target>魔法伤害</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="physical absorb field">
+        <source>physical absorb field</source>
+        <target>physical absorb field</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="physical and magical absorb field">
+        <source>physical and magical absorb field</source>
+        <target>physical and magical absorb field</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="physical damage">
+        <source>physical damage</source>
+        <target>物理伤害</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="unknown">
+        <source>unknown</source>
+        <target>未知</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="PrincessGuideTests/en.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3" build-num="9E145"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <target>$(PRODUCT_NAME)</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
