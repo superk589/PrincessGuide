@@ -141,7 +141,7 @@ class Card: Codable {
                 case .guild:
                     return NSLocalizedString("Guild", comment: "")
                 case .favorite:
-                    return NSLocalizedString("Favorite", comment: "")
+                    return NSLocalizedString("Interest", comment: "")
                 case .voice:
                     return NSLocalizedString("CV", comment: "")
                 }

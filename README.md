@@ -2,7 +2,7 @@
 # PrincessGuide
 App Store Name: Hatsune's Notes
 
-An unofficial iOS app for **プリンセスコネクト！Re:Dive**. Under development, not sure for the release time.
+An unofficial iOS app for **プリンセスコネクト！Re:Dive**
 
 ## Features (ToDo)
 - [x] Image Server -- <https://redive.estertion.win>
@@ -21,4 +21,4 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**. Under devel
     - [x] Enemy and Boss Properties
     - [x] Boss Skill Effect Analysis
 - [ ] Gacha Simulation
-- [ ] Localization
+- [x] Localization(English and Chinese)

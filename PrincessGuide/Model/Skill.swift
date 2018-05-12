@@ -86,7 +86,7 @@ class Skill: Codable {
     
 }
 
-enum ActionKey: String, CustomStringConvertible {
+enum ActionKey: String {
     case atk
     case magicStr
     case def
@@ -98,30 +98,30 @@ enum ActionKey: String, CustomStringConvertible {
     case distance
     case speed
     
-    var description: String {
-        switch self {
-        case .atk:
-            return NSLocalizedString("ATK Coefficient", comment: "")
-        case .magicStr:
-            return NSLocalizedString("Magic STR Coefficient", comment: "")
-        case .skillLevel:
-            return NSLocalizedString("Increased Per Skill Level", comment: "")
-        case .initialValue:
-            return NSLocalizedString("Initial Value", comment: "")
-        case .duration:
-            return NSLocalizedString("Duration", comment: "")
-        case .chance:
-            return NSLocalizedString("Chance", comment: "")
-        case .stack:
-            return NSLocalizedString("Stack", comment: "")
-        case .def:
-            return NSLocalizedString("DEF", comment: "")
-        case .distance:
-            return NSLocalizedString("Distance", comment: "")
-        case .speed:
-            return NSLocalizedString("Speed", comment: "")
-        }
-    }
+//    var description: String {
+//        switch self {
+//        case .atk:
+//            return NSLocalizedString("ATK Coefficient", comment: "")
+//        case .magicStr:
+//            return NSLocalizedString("Magic STR Coefficient", comment: "")
+//        case .skillLevel:
+//            return NSLocalizedString("Increased Per Skill Level", comment: "")
+//        case .initialValue:
+//            return NSLocalizedString("Initial Value", comment: "")
+//        case .duration:
+//            return NSLocalizedString("Duration", comment: "")
+//        case .chance:
+//            return NSLocalizedString("Chance", comment: "")
+//        case .stack:
+//            return NSLocalizedString("Stack", comment: "")
+//        case .def:
+//            return NSLocalizedString("DEF", comment: "")
+//        case .distance:
+//            return NSLocalizedString("Distance", comment: "")
+//        case .speed:
+//            return NSLocalizedString("Speed", comment: "")
+//        }
+//    }
 }
 
 struct ActionValue {
@@ -430,13 +430,22 @@ extension Skill.Action {
             case .some(.action(.slow)):
                 let format = NSLocalizedString("Slow [%@] for %@s.", comment: "")
                 return String(format: format, actionValue(of: level), durationValue())
+            case .some(.action(.sleep)):
+                let format = NSLocalizedString("Make target fall asleep for %@s.", comment: "")
+                return String(format: format, durationValue())
             default:
                 let format = NSLocalizedString("%@ target for %@s.", comment: "")
                 return String(format: format, ailment.description, durationValue())
             }
         case (_, .dot):
-            let format = NSLocalizedString("%@ target and deal [%@] damage per second for %@s.", comment: "")
-            return String(format: format, ailment.description, actionValue(of: level), durationValue())
+            switch ailment.ailmentDetail {
+            case .some(.dot(.poison)):
+                let format = NSLocalizedString("Poison target and deal [%@] damage per second for %@s.", comment: "")
+                return String(format: format, actionValue(of: level), durationValue())
+            default:
+                let format = NSLocalizedString("%@ target and deal [%@] damage per second for %@s.", comment: "")
+                return String(format: format, ailment.description, actionValue(of: level), durationValue())
+            }
         case (_, let type) where [.darken, .charm, .silence].contains(type):
             let format = NSLocalizedString("%@ target with [%@]%% chance for %@s.", comment: "")
             return String(format: format, ailment.description, actionValue(of: level), durationValue())
@@ -447,8 +456,14 @@ extension Skill.Action {
             let format = NSLocalizedString("Change self position.", comment: "")
             return String(format: format)
         case (.tp, _):
-            let format = NSLocalizedString("%@ [%@] TP.", comment: "")
-            return String(format: format, auraModifier.description, actionValue(of: level))
+            switch auraModifier {
+            case .steal:
+                let format = NSLocalizedString("Make target lose [%@] TP.", comment: "")
+                return String(format: format, actionValue(of: level))
+            default:
+                let format = NSLocalizedString("%@ [%@] TP.", comment: "")
+                return String(format: format, auraModifier.description, actionValue(of: level))
+            }
         case (.additionalDamage, _):
             let format = NSLocalizedString("Add additional damage [%@] with max %@ stacks.", comment: "")
             return String(format: format, actionValue(of: level), stackValue())

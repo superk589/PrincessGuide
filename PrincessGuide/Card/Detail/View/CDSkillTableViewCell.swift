@@ -73,6 +73,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.top.equalTo(nameLabel.snp.bottom).offset(5)
             make.right.equalTo(readableContentGuide)
         }
+        descLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         
         contentView.addSubview(subtitleLabel)
         subtitleLabel.snp.makeConstraints { (make) in
@@ -103,6 +104,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         }
         actionLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         actionLabel.numberOfLines = 0
+        actionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
     }
     
     private func createSubTitleLabel(title: String) -> UILabel {

@@ -36,6 +36,8 @@ class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.bottom.equalTo(-10)
             make.right.equalTo(readableContentGuide)
         }
+        
+        selectionStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
