@@ -120,7 +120,7 @@ class CDSettingsViewController: FormViewController {
         form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
 
         form
-            +++ Section("Unit")
+            +++ Section(NSLocalizedString("Unit", comment: ""))
             
             <<< PickerInlineRow<Int>("unit_level") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Level", comment: "")
@@ -174,7 +174,7 @@ class CDSettingsViewController: FormViewController {
                 }.onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             
-            +++ Section("Skill")
+            +++ Section(NSLocalizedString("Skill", comment: ""))
             
             <<< PickerInlineRow<Int>("skill_level") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Level", comment: "")
