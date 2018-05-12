@@ -122,7 +122,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
         skillIcon.skillIconID = skill.base.iconType
-        actionLabel.text = skill.actions.map { "- \($0.detail())" }.joined(separator: "\n")
+        actionLabel.text = skill.actions.map { "- \($0.localizedDetail())" }.joined(separator: "\n")
     }
     
     func configure(for item: CardDetailItem) {

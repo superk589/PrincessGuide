@@ -132,7 +132,7 @@ class SettingsTableViewController: UITableViewController {
     @objc private func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let vc = MFMailComposeViewController()
-            vc.setSubject(NSLocalizedString("\(Constant.appName) Feedback", comment: ""))
+            vc.setSubject(String(format: NSLocalizedString("%@ Feedback", comment: ""), Constant.appName))
             vc.mailComposeDelegate = self
             vc.setToRecipients(["superk589@vip.qq.com"])
             vc.addAttachmentData(DeviceInfo.default.description.data(using: .utf8)!, mimeType: "text/plain", fileName: "device_information.txt")

@@ -149,7 +149,7 @@ enum ActionType: Int {
     case instantDeath = 30
     case additionalDamage = 34
     case healingPool = 37
-    case cursingPool = 38
+    case defDownPoll = 38
     
     case ex = 90
 }
@@ -159,7 +159,7 @@ enum ActionClass: Int, CustomStringConvertible {
     case physical
     case magical
     case physicalAbsorb
-    case magicAbsorb
+    case magicalAbsorb
     case physicalMagicAbsorb = 6
     
     var description: String {
@@ -172,7 +172,7 @@ enum ActionClass: Int, CustomStringConvertible {
             return NSLocalizedString("unknown", comment: "")
         case .physicalAbsorb:
             return NSLocalizedString("physical absorb field", comment: "")
-        case .magicAbsorb:
+        case .magicalAbsorb:
             return NSLocalizedString("magical absorb field", comment: "")
         case .physicalMagicAbsorb:
             return NSLocalizedString("physical and magical absorb field", comment: "")
@@ -181,14 +181,14 @@ enum ActionClass: Int, CustomStringConvertible {
     
 }
 
-enum UnitModifier: CustomStringConvertible {
+enum PercentModifier: CustomStringConvertible {
     case percent
     case number
     
     var description: String {
         switch self {
         case .percent:
-            return "%%"
+            return "%"
         case .number:
             return ""
         }
@@ -204,7 +204,7 @@ enum UnitModifier: CustomStringConvertible {
     }
 }
 
-enum ActionModifier: CustomStringConvertible {
+enum AuraModifier: CustomStringConvertible {
     
     case raise
     case reduce
@@ -278,12 +278,16 @@ extension Skill.Action {
         return Ailment(type: actionType, detail: actionDetail1)
     }
     
-    var modifer: ActionModifier {
-        return ActionModifier(actionDetail1)
+    var auraModifier: AuraModifier {
+        return AuraModifier(actionDetail1)
     }
     
-    var unitModifier: UnitModifier {
-        return UnitModifier(Int(actionValue1))
+    var propertyKey: PropertyKey {
+        return PropertyKey(actionDetail1) ?? .unknown
+    }
+    
+    var percentModifier: PercentModifier {
+        return PercentModifier(Int(actionValue1))
     }
     
     var values: [ActionValue] {
@@ -330,7 +334,7 @@ extension Skill.Action {
                 ActionValue(key: .atk, value: String(actionValue3)),
                 ActionValue(key: .duration, value: String(actionValue5))
             ]
-        case (.cursingPool, _, _):
+        case (.defDownPoll, _, _):
             return [
                 ActionValue(key: .initialValue, value: String(actionValue1)),
                 ActionValue(key: .skillLevel, value: String(actionValue2)),
@@ -389,68 +393,92 @@ extension Skill.Action {
         }
     }
     
-    private func buildActionDescription() -> String {
+    func localizedDetail(of level: Int = CDSettingsViewController.Setting.default.skillLevel) -> String {
         switch (type, ailment.ailmentType) {
         case (.heal, _):
-            return NSLocalizedString("Restore [%@]\(unitModifier) HP", comment: "")
+            let format = NSLocalizedString("Restore [%@]%@ HP.", comment: "")
+            return String(format: format, actionValue(of: level), percentModifier.description)
         case (.guard, _):
             switch `class` {
             case .unknown:
-                return NSLocalizedString("Unknown field", comment: "")
+                let format = NSLocalizedString("Unknown field %d for %@s.", comment: "")
+                return String(format: format, actionDetail1, durationValue())
             case .physical, .magical:
-                return NSLocalizedString("Nullify [%@] \(`class`)", comment: "")
+                let format = NSLocalizedString("Nullify [%@] %@ for %@s.", comment: "")
+                return String(format: format, actionValue(of: level), `class`.description, durationValue())
             case .physicalAbsorb:
-                return NSLocalizedString("Absorb [%@] physical damage", comment: "")
-            case .magicAbsorb:
-                return NSLocalizedString("Absorb [%@] magical damage", comment: "")
+                let format = NSLocalizedString("Absorb [%@] physical damage for %@s.", comment: "")
+                return String(format: format, actionValue(of: level), durationValue())
+            case .magicalAbsorb:
+                let format = NSLocalizedString("Absorb [%@] magical damage for %@s.", comment: "")
+                return String(format: format, actionValue(of: level), durationValue())
             case .physicalMagicAbsorb:
-                return NSLocalizedString("Absorb [%@] physical and magical damage", comment: "")
+                let format = NSLocalizedString("Absorb [%@] physical and magical damage for %@s.", comment: "")
+                return String(format: format, actionValue(of: level), durationValue())
             }
         case (.damage, _):
-            return NSLocalizedString("Deal [%@] \(`class`)", comment: "")
+            let format = NSLocalizedString("Deal [%@] %@.", comment: "")
+            return String(format: format, actionValue(of: level), `class`.description)
         case (.ex, _):
-            return NSLocalizedString("Raise [%@] \(PropertyKey(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
+            let format = NSLocalizedString("Raise [%@] %@.", comment: "")
+            return String(format: format, actionValue(of: level), propertyKey.description)
         case (_, .action):
             switch ailment.ailmentDetail {
-            case .some(.action(.haste)), .some(.action(.slow)):
-                return "\(ailment) [%@]"
+            case .some(.action(.haste)):
+                let format = NSLocalizedString("Haste [%@] for %@s.", comment: "")
+                return String(format: format, actionValue(of: level), durationValue())
+            case .some(.action(.slow)):
+                let format = NSLocalizedString("Slow [%@] for %@s.", comment: "")
+                return String(format: format, actionValue(of: level), durationValue())
             default:
-                return "\(ailment) target"
+                let format = NSLocalizedString("%@ target for %@s.", comment: "")
+                return String(format: format, ailment.description, durationValue())
             }
         case (_, .dot):
-            return "\(ailment) target and deal [%@] damage per second"
+            let format = NSLocalizedString("%@ target and deal [%@] damage per second for %@s.", comment: "")
+            return String(format: format, ailment.description, actionValue(of: level), durationValue())
         case (_, let type) where [.darken, .charm, .silence].contains(type):
-            return "\(ailment) target with [%@]%% chance"
+            let format = NSLocalizedString("%@ target with [%@]%% chance for %@s.", comment: "")
+            return String(format: format, ailment.description, actionValue(of: level), durationValue())
         case (.aura, _):
-            return NSLocalizedString("\(modifer) [%@]\(unitModifier) \(PropertyKey(actionDetail1)?.description ?? NSLocalizedString("Unknown", comment: ""))", comment: "")
+            let format = NSLocalizedString("%@ [%@]%@ %@ for %@s.", comment: "")
+            return String(format: format, auraModifier.description, actionValue(of: level), percentModifier.description, propertyKey.description, durationValue())
         case (.position, _):
-            return NSLocalizedString("Change self position", comment: "")
+            let format = NSLocalizedString("Change self position.", comment: "")
+            return String(format: format)
         case (.tp, _):
-            return NSLocalizedString("\(modifer) [%@] TP", comment: "")
+            let format = NSLocalizedString("%@ [%@] TP.", comment: "")
+            return String(format: format, auraModifier.description, actionValue(of: level))
         case (.additionalDamage, _):
-            return NSLocalizedString("Add additional damage [%@]", comment: "")
+            let format = NSLocalizedString("Add additional damage [%@] with max %@ stacks.", comment: "")
+            return String(format: format, actionValue(of: level), stackValue())
         case (.invulnerable, _):
-            return NSLocalizedString("Become invulnerable for [%@]s", comment: "")
+            let format = NSLocalizedString("Become invulnerable for [%@]s.", comment: "")
+            return String(format: format, actionValue(of: level))
         case (.taunt, _):
-            return NSLocalizedString("Taunt target", comment: "")
+            let format = NSLocalizedString("Taunt targets for %@s.", comment: "")
+            return String(format: format, durationValue())
         case (.summon, _):
-            let format = NSLocalizedString("Summon minion ID %d", comment: "")
+            let format = NSLocalizedString("Summon minion ID %d.", comment: "")
             return String(format: format, actionDetail2)
         case (.healingPool, _):
-            return NSLocalizedString("Summon a healing pool to heal [%@]", comment: "")
-        case (.cursingPool, _):
-            return NSLocalizedString("Summon a pool to reduce [%@] DEF", comment: "")
+            let format = NSLocalizedString("Summon a healing pool to heal [%@] for %@s.", comment: "")
+            return String(format: format, actionValue(of: level), durationValue())
+        case (.defDownPoll, _):
+            let format = NSLocalizedString("Summon a pool to reduce [%@] DEF for %@s.", comment: "")
+            return String(format: format, actionValue(of: level), durationValue())
         case (.instantDeath, _):
-            return NSLocalizedString("Die instantly", comment: "")
+            return NSLocalizedString("Die instantly.", comment: "")
         case (.chooseArea, _):
-            return NSLocalizedString("Choose target area", comment: "")
+            return NSLocalizedString("Choose target area.", comment: "")
         case (.knock, _):
-            let format = NSLocalizedString("Knock target away %d distance in %d speed", comment: "")
+            let format = NSLocalizedString("Knock target away %d at speed %d.", comment: "")
             return String(format: format, Int(actionValue1.rounded()), Int(actionValue3.rounded()))
         default:
-            let format = NSLocalizedString("Unknown effect %d with arguments %@", comment: "")
+            let format = NSLocalizedString("Unknown effect %d with arguments %@.", comment: "")
             return String(format: format, actionType, arguments.filter { $0 != 0 }.map(String.init).joined(separator: ", "))
         }
+        
     }
     
     private func actionValue(of level: Int) -> String {
@@ -491,19 +519,6 @@ extension Skill.Action {
         }
     }
     
-    private func buildDurationDescription() -> String {
-        switch (type, ailment.ailmentType) {
-        case (_, .dot):
-            return NSLocalizedString(" over %@s", comment: "")
-        case (_, let ailment) where ![.unknown, .instantDeath, .dot].contains(ailment):
-            return NSLocalizedString(" for %@s", comment: "")
-        case (.aura, _), (.taunt, _), (.healingPool, _), (.guard, _):
-            return NSLocalizedString(" for %@s", comment: "")
-        default:
-            return ""
-        }
-    }
-    
     private func durationValue() -> String {
         var fixedValue = 0.0
         for value in values {
@@ -520,15 +535,6 @@ extension Skill.Action {
         return "\(valueString)"
     }
     
-    private func buildStackDescription() -> String {
-        switch type {
-        case .additionalDamage:
-            return NSLocalizedString(" with max %@ stacks", comment: "")
-        default:
-            return ""
-        }
-    }
-    
     private func stackValue() -> String {
         var fixedValue = 0.0
         for value in values {
@@ -543,9 +549,5 @@ extension Skill.Action {
         let valueString = String(Int(floor(fixedValue)))
         
         return "\(valueString)"
-    }
-    
-    func detail(of level: Int = CDSettingsViewController.Setting.default.skillLevel) -> String {
-        return String(format: buildActionDescription(), actionValue(of: level)) + String(format: buildStackDescription(), stackValue()) + String(format: buildDurationDescription(), durationValue()) + NSLocalizedString(".", comment: "")
     }
 }
