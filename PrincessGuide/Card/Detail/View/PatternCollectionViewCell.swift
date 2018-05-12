@@ -59,15 +59,12 @@ class PatternCollectionViewCell: UICollectionViewCell {
                 skillIcon.equipmentID = 101011                
             }
             skillLabel.text = NSLocalizedString("Swing", comment: "")
-        case 1001:
-            skillIcon.skillIconID = unit.mainSkill1?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 1", comment: "")
-        case 1002:
-            skillIcon.skillIconID = unit.mainSkill2?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 2", comment: "")
-        case 1003:
-            skillIcon.skillIconID = unit.mainSkill3?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 3", comment: "")
+        case let x where x > 1000:
+            let index = x - 1001
+            guard index < unit.mainSkills.count else { fallthrough }
+            skillIcon.skillIconID = unit.mainSkills[index].base.iconType
+            let format = NSLocalizedString("Main %d", comment: "")
+            skillLabel.text = String(format: format, index + 1)
         default:
             skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
             skillLabel.text = NSLocalizedString("Unknown", comment: "")

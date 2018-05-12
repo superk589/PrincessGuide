@@ -10,6 +10,7 @@
 		12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */; };
 		12124F462089C9E1001C1A6F /* PropertyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F452089C9E1001C1A6F /* PropertyKey.swift */; };
 		12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4D208EC1A4001C1A6F /* Ailment.swift */; };
+		1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */; };
 		1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDBF207B9541008F30AA /* Assets.xcassets */; };
 		1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC1207B96FA008F30AA /* CardTableViewController.swift */; };
 		1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC7207B973B008F30AA /* CardTableViewCell.swift */; };
@@ -126,6 +127,7 @@
 		12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSkillTableViewCell.swift; sourceTree = "<group>"; };
 		12124F452089C9E1001C1A6F /* PropertyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKey.swift; sourceTree = "<group>"; };
 		12124F4D208EC1A4001C1A6F /* Ailment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ailment.swift; sourceTree = "<group>"; };
+		1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDBasicTableViewCell.swift; sourceTree = "<group>"; };
 		1221CDBF207B9541008F30AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1221CDC1207B96FA008F30AA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
 		1221CDC7207B973B008F30AA /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
@@ -559,6 +561,7 @@
 				12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */,
 				12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */,
 				1280DE3C20A5B673008D9D72 /* EDProfileTextTableViewCell.swift */,
+				1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				12398EA12092D78C006AC352 /* Updater.swift in Sources */,
 				129A7F8320A2815400D93996 /* CDSettingsViewController.swift in Sources */,
 				129A7F54209FE7A800D93996 /* CDProfileTableViewCell.swift in Sources */,
+				1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */,
 				12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */,
 				12398E7220915737006AC352 /* AttackPattern.swift in Sources */,
 				1280DE4320A5D084008D9D72 /* DateExtension.swift in Sources */,

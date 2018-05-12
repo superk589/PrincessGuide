@@ -101,57 +101,63 @@ class Enemy: Codable {
                             physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
                             waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery))
         }
+        
+        var exSkillIDs: [Int] {
+            return Array([exSkill1, exSkill2, exSkill3, exSkill4, exSkill5].prefix { $0 != 0 })
+        }
+        
+        var mainSkillIDs: [Int] {
+            return Array([mainSkill1, mainSkill2, mainSkill3, mainSkill4, mainSkill5, mainSkill6, mainSkill7, mainSkill8, mainSkill9, mainSkill10].prefix { $0 != 0 }
+            )
+        }
+        
+        var exSkillLevels: [Int] {
+            return [exSkillLv1, exSkillLv2, exSkillLv3, exSkillLv4, exSkillLv5]
+        }
+        
+        var mainSkillLevels: [Int] {
+            return [mainSkillLv1, mainSkillLv2, mainSkillLv3, mainSkillLv4, mainSkillLv5, mainSkillLv6, mainSkillLv7, mainSkillLv8, mainSkillLv9, mainSkillLv10]
+        }
+        
+    }
+    
+    func exSkillLevel(for id: Int) -> Int {
+        return exSkillLevels[id] ?? 0
+    }
+    
+    func mainSkillLevel(for id: Int) -> Int {
+        return mainSkillLevels[id] ?? 0
     }
     
     // MARK: lazy vars
     
-    lazy var exSkill1: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: self.base.exSkill1, callback: closure)
-    })
+    lazy var exSkillLevels: [Int: Int] = {
+        return zip(base.exSkillLevels, base.exSkillIDs)
+            .prefix { $0.0 != 0 }
+            .reduce(into: [Int: Int]() ) {
+                $0[$1.1] = $1.0
+        }
+    }()
     
-    lazy var mainSkill1: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill1, callback: closure)
-    })
+    lazy var mainSkillLevels: [Int: Int] = {
+        return zip(base.mainSkillLevels, base.mainSkillIDs)
+            .prefix { $0.0 != 0 }
+            .reduce(into: [Int: Int]()) {
+                $0[$1.1] = $1.0
+        }
+    }()
     
-    lazy var mainSkill2: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill2, callback: closure)
-    })
+    lazy var exSkills = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: self.base.exSkillIDs, callback: closure)
+    } ?? []
     
-    lazy var mainSkill3: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill3, callback: closure)
-    })
+    lazy var mainSkills = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: self.base.mainSkillIDs, callback: closure)
+    } ?? []
     
-    lazy var mainSkill4: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill4, callback: closure)
-    })
-    
-    lazy var mainSkill5: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill5, callback: closure)
-    })
-    
-    lazy var mainSkill6: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill6, callback: closure)
-    })
-    
-    lazy var mainSkill7: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill7, callback: closure)
-    })
-    
-    lazy var mainSkill8: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill8, callback: closure)
-    })
-    
-    lazy var mainSkill9: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill9, callback: closure)
-    })
-    
-    lazy var mainSkill10: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.mainSkill10, callback: closure)
-    })
-    
-    lazy var unionBurst: Skill? = DispatchSemaphore.sync({ [unowned self] closure in
-        Master.shared.getSkill(skillID: base.unionBurst, callback: closure)
-    })
+    lazy var unionBurst = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: [self.base.unionBurst], callback: closure)
+    }?.first
     
     lazy var patterns: [AttackPattern]? = DispatchSemaphore.sync({ [unowned self] closure in
         Master.shared.getAttackPatterns(unitID: base.unitId, callback: closure)

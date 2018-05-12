@@ -21,36 +21,12 @@ extension PatternCollectionViewCell {
                 skillIcon.equipmentID = 101011
             }
             skillLabel.text = NSLocalizedString("Swing", comment: "")
-        case 1001:
-            skillIcon.skillIconID = enemy.mainSkill1?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 1", comment: "")
-        case 1002:
-            skillIcon.skillIconID = enemy.mainSkill2?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 2", comment: "")
-        case 1003:
-            skillIcon.skillIconID = enemy.mainSkill3?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 3", comment: "")
-        case 1004:
-            skillIcon.skillIconID = enemy.mainSkill4?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 4", comment: "")
-        case 1005:
-            skillIcon.skillIconID = enemy.mainSkill5?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 5", comment: "")
-        case 1006:
-            skillIcon.skillIconID = enemy.mainSkill6?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 6", comment: "")
-        case 1007:
-            skillIcon.skillIconID = enemy.mainSkill7?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 7", comment: "")
-        case 1008:
-            skillIcon.skillIconID = enemy.mainSkill8?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 8", comment: "")
-        case 1009:
-            skillIcon.skillIconID = enemy.mainSkill9?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 9", comment: "")
-        case 1010:
-            skillIcon.skillIconID = enemy.mainSkill10?.base.iconType
-            skillLabel.text = NSLocalizedString("Main 10", comment: "")
+        case let x where x > 1000:
+            let index = x - 1001
+            guard index < enemy.mainSkills.count else { fallthrough }
+            skillIcon.skillIconID = enemy.mainSkills[index].base.iconType
+            let format = NSLocalizedString("Main %d", comment: "")
+            skillLabel.text = String(format: format, index + 1)
         default:
             skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
             skillLabel.text = NSLocalizedString("Unknown", comment: "")

@@ -12,15 +12,17 @@ class EDStatusTableViewController: EDTableViewController {
     
     override func prepareRows() {
         rows.removeAll()
+        let property = enemy.base.property
         rows += [
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([enemy.base.property.item(for: .atk),
-                                                                          enemy.base.property.item(for: .magicStr)])),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([enemy.base.property.item(for: .def),
-                                                                          enemy.base.property.item(for: .magicDef)])),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([enemy.base.property.item(for: .hp),
-                                                                          enemy.base.property.item(for: .physicalCritical)])),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([enemy.base.property.item(for: .dodge),
-                                                                          enemy.base.property.item(for: .magicCritical)]))
+            Row(type: EDBasicTableViewCell.self, data: .unit(enemy.unit)),
+            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .atk),
+                                                                          property.item(for: .magicStr)])),
+            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .def),
+                                                                          property.item(for: .magicDef)])),
+            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .hp),
+                                                                          property.item(for: .physicalCritical)])),
+            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .dodge),
+                                                                          property.item(for: .magicCritical)]))
         ]
         rows += [
             Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Swing Time", comment: ""), "\(enemy.unit.normalAtkCastTime)s")),

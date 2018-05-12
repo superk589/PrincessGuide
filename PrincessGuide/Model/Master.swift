@@ -328,8 +328,8 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getSkill(skillID: Int, callback: @escaping FMDBCallBackClosure<Skill?>) {
-        var result: Skill?
+    func getSkills(skillIDs: [Int], callback: @escaping FMDBCallBackClosure<[Skill]>) {
+        var skills = [Skill]()
         execute({ (db) in
             let sql = """
             SELECT
@@ -337,7 +337,7 @@ class Master: FMDatabaseQueue {
             FROM
                 skill_data
             WHERE
-                skill_id = \(skillID)
+                skill_id IN (\(skillIDs.map(String.init).joined(separator: ",")))
             """
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
@@ -376,12 +376,11 @@ class Master: FMDatabaseQueue {
                 }
                 if let base = try? decoder.decode(Skill.Base.self, from: json.rawData()) {
                     let skill = Skill(actions: actions, base: base)
-                    result = skill
-                    break
+                    skills.append(skill)
                 }
             }
         }) {
-            callback(result)
+            callback(skills)
         }
     }
     
@@ -517,7 +516,6 @@ class Master: FMDatabaseQueue {
                     """
                     var groups = [ClanBattle.Group]()
                     let groupSet = try db.executeQuery(groupSql, values: nil)
-                    print(groupSql)
                     while groupSet.next() {
                         let json = JSON(groupSet.resultDictionary ?? [:])
                         let groupId = json["clan_battle_boss_group_id"].intValue
