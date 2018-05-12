@@ -128,8 +128,8 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 1...ConsoleVariables.default.maxPlayerLevel {
-                    row.options.append(i)
+                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                    row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitLevel
                 }.onCellSelection(onCellSelection(cell:row:))
@@ -140,8 +140,8 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 1...ConsoleVariables.default.maxEquipmentRank {
-                    row.options.append(i)
+                for i in 0..<ConsoleVariables.default.maxEquipmentRank {
+                    row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitRank
                 
@@ -153,8 +153,8 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 1...ConsoleVariables.default.maxEquipmentRank {
-                    row.options.append(i)
+                for i in 0..<ConsoleVariables.default.maxEquipmentRank {
+                    row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitLove
                 
@@ -166,8 +166,8 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 1...Constant.presetMaxRarity {
-                    row.options.append(i)
+                for i in 0..<Constant.presetMaxRarity {
+                    row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitRarity
                 
@@ -182,8 +182,8 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 1...ConsoleVariables.default.maxPlayerLevel {
-                    row.options.append(i)
+                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                    row.options.append(i + 1)
                 }
                 row.value = Setting.default.skillLevel
                 

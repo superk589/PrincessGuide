@@ -200,6 +200,11 @@
 		1280DE4020A5CEB2008D9D72 /* ClanBattle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBattle.swift; sourceTree = "<group>"; };
 		1280DE4220A5D084008D9D72 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		1280DE4420A5DED5008D9D72 /* ClanBattleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBattleTableViewController.swift; sourceTree = "<group>"; };
+		1280DE4820A71988008D9D72 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		1280DE4920A71988008D9D72 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1280DE4A20A71988008D9D72 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1280DE4B20A71988008D9D72 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1280DE4C20A71989008D9D72 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1281FA47209AB83300F2D567 /* PromotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionView.swift; sourceTree = "<group>"; };
 		1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftTableViewController.swift; sourceTree = "<group>"; };
@@ -687,6 +692,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				ja,
 			);
 			mainGroup = 12659DF9205F5DB100A8B9A2;
 			productRefGroup = 12659E03205F5DB100A8B9A2 /* Products */;
@@ -926,6 +932,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1218E61520A6D53700D68610 /* zh-Hans */,
+				1280DE4B20A71988008D9D72 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -934,6 +941,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1218E61820A6D53700D68610 /* zh-Hans */,
+				1280DE4C20A71989008D9D72 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -942,6 +950,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1218E61B20A6D53700D68610 /* zh-Hans */,
+				1280DE4A20A71988008D9D72 /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -951,6 +960,7 @@
 			children = (
 				12659E0A205F5DB100A8B9A2 /* Base */,
 				1218E61220A6C3F500D68610 /* zh-Hans */,
+				1280DE4820A71988008D9D72 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -960,6 +970,7 @@
 			children = (
 				12C4413F209C92AF00016BDC /* Base */,
 				1218E61320A6C3F500D68610 /* zh-Hans */,
+				1280DE4920A71988008D9D72 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
