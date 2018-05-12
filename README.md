@@ -4,21 +4,21 @@ App Store Name: Hatsune's Notes
 
 An unofficial iOS app for **プリンセスコネクト！Re:Dive**
 
-## Features (ToDo)
-- [x] Image Server -- <https://redive.estertion.win>
-- [ ] Api Client  -- need help
-- [x] Auto Data Sync
-- [ ] Card Viewer
-    - [x] Card Properties
-    - [x] Skill Effect Analysis
-    - [x] Attack Patterns
-    - [ ] Damage or Healing Simulation
-    - [x] Equipments
-    - [x] Chara Profile
-- [x] Area and Quest
-    - [x] Equipments Drop Rate
-- [x] Enemy and Boss
-    - [x] Enemy and Boss Properties
-    - [x] Boss Skill Effect Analysis
-- [ ] Gacha Simulation
-- [x] Localization(English and Chinese)
+## Features
+1. Chara Skill Effect Analysis
+1. Unit Attack Patterns
+1. Chara Status
+1. Chara Profile
+1. Equipments Drop Rate
+1. Enemy and Boss Status
+1. Enemy and Boss Skill Effect Analysis
+1. Auto Data Updating
+
+## Acknowledgement
+* [esterTion](https://github.com/esterTion)
+* Axx
+* GSflky
+* izuna
+
+## Contact
+Follow and contact me on [Twitter](https://twitter.com/superk64). If you find an issue, just [open a ticket](https://github.com/superk589/PrincessGuide/issues/new). Pull requests are warmly welcome as well.
