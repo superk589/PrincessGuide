@@ -1,5 +1,5 @@
 # Localizations #
-This shells are from [KeepingYouAwake](https://github.com/newmarcel/KeepingYouAwake)
+These scripts are from [KeepingYouAwake](https://github.com/newmarcel/KeepingYouAwake)
 
 This folder is intended as export location for Xcode's *"Export for Localizations…"* feature.
 

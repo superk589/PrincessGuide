@@ -86,7 +86,7 @@
       </trans-unit>
       <trans-unit id="ATK">
         <source>ATK</source>
-        <target>物理攻击力</target>
+        <target>物理攻撃力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="ATK Coefficient">
@@ -141,17 +141,17 @@
       </trans-unit>
       <trans-unit id="Bind">
         <source>Bind</source>
-        <target>束缚</target>
+        <target>束縛</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Birthday">
         <source>Birthday</source>
-        <target>生日</target>
+        <target>誕生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Blood Type">
         <source>Blood Type</source>
-        <target>血型</target>
+        <target>血液型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Burn">
@@ -266,7 +266,7 @@
       </trans-unit>
       <trans-unit id="Dodge">
         <source>Dodge</source>
-        <target>回避等级</target>
+        <target>回避</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Dot">
@@ -366,7 +366,7 @@
       </trans-unit>
       <trans-unit id="HP Recovery Rate">
         <source>HP Recovery Rate</source>
-        <target>恢复量上升</target>
+        <target>回復量上昇</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Hard">
@@ -386,7 +386,7 @@
       </trans-unit>
       <trans-unit id="Height">
         <source>Height</source>
-        <target>身高</target>
+        <target>身長</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Increased Per Skill Level">
@@ -406,7 +406,7 @@
       </trans-unit>
       <trans-unit id="Interest">
         <source>Interest</source>
-        <target>兴趣</target>
+        <target>趣味</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Knock target away %d at speed %d.">
@@ -421,7 +421,7 @@
       </trans-unit>
       <trans-unit id="Life Steal">
         <source>Life Steal</source>
-        <target>HP 吸收</target>
+        <target>HP吸収</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Loop end">
@@ -441,12 +441,12 @@
       </trans-unit>
       <trans-unit id="Love Rank">
         <source>Love Rank</source>
-        <target>绊 Rank</target>
+        <target>绊ランク</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Magic Critical">
         <source>Magic Critical</source>
-        <target>魔法暴击等级</target>
+        <target>魔法クリティカル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Magic DEF">
@@ -461,7 +461,7 @@
       </trans-unit>
       <trans-unit id="Magic STR">
         <source>Magic STR</source>
-        <target>魔法攻击力</target>
+        <target>魔法攻撃力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Magic STR Coefficient">
@@ -511,7 +511,7 @@
       </trans-unit>
       <trans-unit id="Paralyse">
         <source>Paralyse</source>
-        <target>麻痹</target>
+        <target>麻痺</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Petrify">
@@ -521,7 +521,7 @@
       </trans-unit>
       <trans-unit id="Physical Critical">
         <source>Physical Critical</source>
-        <target>物理暴击等级</target>
+        <target>物理クリティカル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Physical Penetrate">
@@ -560,7 +560,7 @@
       </trans-unit>
       <trans-unit id="Race">
         <source>Race</source>
-        <target>种族</target>
+        <target>種族</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raise">
@@ -575,7 +575,7 @@
       </trans-unit>
       <trans-unit id="Rank">
         <source>Rank</source>
-        <target>Rank</target>
+        <target>ランク</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raw Materials">
@@ -620,7 +620,7 @@
       </trans-unit>
       <trans-unit id="Silence">
         <source>Silence</source>
-        <target>沉默</target>
+        <target>沈黙</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Skill">
@@ -660,7 +660,7 @@
       </trans-unit>
       <trans-unit id="Star Rank">
         <source>Star Rank</source>
-        <target>稀有度</target>
+        <target>星级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Status">
@@ -675,7 +675,7 @@
       </trans-unit>
       <trans-unit id="Stun">
         <source>Stun</source>
-        <target>击晕</target>
+        <target>スタン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a healing pool to heal [%@] for %@s.">
@@ -775,12 +775,12 @@
       </trans-unit>
       <trans-unit id="Wave Energy Recovery">
         <source>Wave Energy Recovery</source>
-        <target>TP 自动恢复</target>
+        <target>TP自動回復</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave HP Recovery">
         <source>Wave HP Recovery</source>
-        <target>HP 自动恢复</target>
+        <target>HP自動回復</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Weight">
