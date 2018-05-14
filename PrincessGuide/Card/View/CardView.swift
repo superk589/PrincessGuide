@@ -39,6 +39,9 @@ class CardView: UIView {
         }
         
         nameLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
+        if #available(iOS 11.0, *) {
+            nameLabel.adjustsFontForContentSizeCategory = true
+        }
     }
     
     func configure(for card: Card) {
