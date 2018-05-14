@@ -35,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
 
+        // set Kingfisher cache never expiring
+        ImageCache.default.maxCachePeriodInSecond = -1
+        
         return true
     }
 
