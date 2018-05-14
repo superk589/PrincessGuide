@@ -15,9 +15,13 @@ class CustomAcknowViewController: AcknowViewController {
     let backgroundImageView = UIImageView()
     
     override func viewDidLoad() {
-        view.addSubview(backgroundImageView)
-        backgroundImageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+        if #available(iOS 11, *) {
+            view.addSubview(backgroundImageView)
+            backgroundImageView.snp.makeConstraints { (make) in
+                make.edges.equalToSuperview()
+            }
+        } else {
+            // do nothing but use the default background color
         }
         
         super.viewDidLoad()
@@ -27,6 +31,7 @@ class CustomAcknowViewController: AcknowViewController {
             themable.textView?.textColor = theme.color.title
             themable.backgroundImageView.image = theme.backgroundImage
             themable.textView?.indicatorStyle = theme.indicatorStyle
+            themable.view.backgroundColor = theme.color.background
         }
     }
 
