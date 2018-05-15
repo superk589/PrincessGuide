@@ -16,6 +16,7 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**
 
 ## Acknowledgement
 * [esterTion](https://github.com/esterTion)
+* [CaiMiao](https://github.com/CaiMiao)
 * Axx
 * GSflky
 * izuna

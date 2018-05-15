@@ -146,10 +146,12 @@ enum ActionType: Int {
     case taunt = 20
     case invulnerable
     
+    case selection = 28
     case instantDeath = 30
     case additionalDamage = 34
     case healingPool = 37
-    case defDownPoll = 38
+    case defDownPool = 38
+    case hot = 48
     
     case ex = 90
 }
@@ -334,7 +336,7 @@ extension Skill.Action {
                 ActionValue(key: .atk, value: String(actionValue3)),
                 ActionValue(key: .duration, value: String(actionValue5))
             ]
-        case (.defDownPoll, _, _):
+        case (.defDownPool, _, _):
             return [
                 ActionValue(key: .initialValue, value: String(actionValue1)),
                 ActionValue(key: .skillLevel, value: String(actionValue2)),
@@ -388,6 +390,20 @@ extension Skill.Action {
             return [
                 ActionValue(key: .duration, value: String(actionValue1))
             ]
+        case (.hot, .magical, _):
+            return [
+                ActionValue(key: .duration, value: String(actionValue5)),
+                ActionValue(key: .initialValue, value: String(actionValue1)),
+                ActionValue(key: .skillLevel, value: String(actionValue2)),
+                ActionValue(key: .magicStr, value: String(actionValue3))
+            ]
+        case (.hot, .physical, _):
+            return [
+                ActionValue(key: .duration, value: String(actionValue5)),
+                ActionValue(key: .initialValue, value: String(actionValue1)),
+                ActionValue(key: .skillLevel, value: String(actionValue2)),
+                ActionValue(key: .atk, value: String(actionValue3))
+            ]
         default:
             return []
         }
@@ -425,11 +441,11 @@ extension Skill.Action {
         case (_, .action):
             switch ailment.ailmentDetail {
             case .some(.action(.haste)):
-                let format = NSLocalizedString("Haste [%@] for %@s.", comment: "Haste [1.5] for 10s.")
-                return String(format: format, actionValue(of: level), durationValue())
+                let format = NSLocalizedString("Raise %d%% attack speed for %@s.", comment: "Raise 50% attack speed for 10s.")
+                return String(format: format, Int(((actionValue1 - 1) * 100).rounded()), durationValue())
             case .some(.action(.slow)):
-                let format = NSLocalizedString("Slow [%@] for %@s.", comment: "Slow [0.5] for 10s.")
-                return String(format: format, actionValue(of: level), durationValue())
+                let format = NSLocalizedString("Reduce %d%% attack speed for %@s.", comment: "Reduce 50% attack speed for 10s.")
+                return String(format: format, Int(((1 - actionValue1) * 100).rounded()), durationValue())
             case .some(.action(.sleep)):
                 let format = NSLocalizedString("Make target fall asleep for %@s.", comment: "")
                 return String(format: format, durationValue())
@@ -479,7 +495,7 @@ extension Skill.Action {
         case (.healingPool, _):
             let format = NSLocalizedString("Summon a healing pool to heal [%@] for %@s.", comment: "")
             return String(format: format, actionValue(of: level), durationValue())
-        case (.defDownPoll, _):
+        case (.defDownPool, _):
             let format = NSLocalizedString("Summon a pool to reduce [%@] DEF for %@s.", comment: "")
             return String(format: format, actionValue(of: level), durationValue())
         case (.instantDeath, _):
@@ -489,6 +505,12 @@ extension Skill.Action {
         case (.knock, _):
             let format = NSLocalizedString("Knock target away %d at speed %d.", comment: "Knock target away 1000 at speed 500.")
             return String(format: format, Int(actionValue1.rounded()), Int(actionValue3.rounded()))
+        case (.hot, _):
+            let format = NSLocalizedString("Restore [%@] HP per second for %@s.", comment: "")
+            return String(format: format, actionValue(of: level), durationValue())
+        case (.selection, _):
+            let format = NSLocalizedString("Make a choice.", comment: "")
+            return String(format: format)
         default:
             let format = NSLocalizedString("Unknown effect %d with arguments %@.", comment: "")
             return String(format: format, actionType, arguments.filter { $0 != 0 }.map(String.init).joined(separator: ", "))

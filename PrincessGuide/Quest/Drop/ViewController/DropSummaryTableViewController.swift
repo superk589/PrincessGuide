@@ -57,7 +57,7 @@ class DropSummaryTableViewController: UITableViewController {
         }
         
         tableView.allowsSelection = false
-        tableView.estimatedRowHeight = 88
+        tableView.estimatedRowHeight = 305
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.register(DropSummaryTableViewCell.self, forCellReuseIdentifier: DropSummaryTableViewCell.description())
