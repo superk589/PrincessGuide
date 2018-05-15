@@ -97,31 +97,6 @@ enum ActionKey: String {
     case stack
     case distance
     case speed
-    
-//    var description: String {
-//        switch self {
-//        case .atk:
-//            return NSLocalizedString("ATK Coefficient", comment: "")
-//        case .magicStr:
-//            return NSLocalizedString("Magic STR Coefficient", comment: "")
-//        case .skillLevel:
-//            return NSLocalizedString("Increased Per Skill Level", comment: "")
-//        case .initialValue:
-//            return NSLocalizedString("Initial Value", comment: "")
-//        case .duration:
-//            return NSLocalizedString("Duration", comment: "")
-//        case .chance:
-//            return NSLocalizedString("Chance", comment: "")
-//        case .stack:
-//            return NSLocalizedString("Stack", comment: "")
-//        case .def:
-//            return NSLocalizedString("DEF", comment: "")
-//        case .distance:
-//            return NSLocalizedString("Distance", comment: "")
-//        case .speed:
-//            return NSLocalizedString("Speed", comment: "")
-//        }
-//    }
 }
 
 struct ActionValue {
@@ -141,16 +116,24 @@ enum ActionType: Int {
     
     case aura = 10
     case summon = 15
-    case tp = 16
+    case tp
+    case hpCondition
+    case hold
     
     case taunt = 20
     case invulnerable
     
-    case selection = 28
+    case ifStatement = 27
+    case switchStatement = 28
     case instantDeath = 30
+    
+    case additionalLifeSteal = 32
     case additionalDamage = 34
     case healingPool = 37
     case defDownPool = 38
+    
+    case jumpForward = 42
+    
     case hot = 48
     
     case ex = 90
@@ -260,6 +243,11 @@ extension PropertyKey {
             return nil
         }
     }
+}
+
+enum TargetAssignment: Int {
+    case enemy = 1
+    case friend
 }
 
 extension Skill.Action {
@@ -404,6 +392,14 @@ extension Skill.Action {
                 ActionValue(key: .skillLevel, value: String(actionValue2)),
                 ActionValue(key: .atk, value: String(actionValue3))
             ]
+        case (.jumpForward, _, _):
+            return [
+                ActionValue(key: .duration, value: String(actionValue4))
+            ]
+        case (.hold, _, _):
+            return [
+                ActionValue(key: .duration, value: String(actionValue3))
+            ]
         default:
             return []
         }
@@ -462,9 +458,12 @@ extension Skill.Action {
                 let format = NSLocalizedString("%@ target and deal [%@] damage per second for %@s.", comment: "")
                 return String(format: format, ailment.description, actionValue(of: level), durationValue())
             }
-        case (_, let type) where [.darken, .charm, .silence].contains(type):
+        case (_, .charm), (_, .silence):
             let format = NSLocalizedString("%@ target with [%@]%% chance for %@s.", comment: "Charm target with [90]% chance for 10s.")
             return String(format: format, ailment.description, actionValue(of: level), durationValue())
+        case (_, .darken):
+            let format = NSLocalizedString("Darken target with [%@]%% chance for %@s.", comment: "")
+            return String(format: format, actionValue(of: level), durationValue())
         case (.aura, _):
             let format = NSLocalizedString("%@ [%@]%@ %@ for %@s.", comment: "Raise [x]% ATK for 10s.")
             return String(format: format, auraModifier.description, actionValue(of: level), percentModifier.description, propertyKey.description, durationValue())
@@ -493,7 +492,7 @@ extension Skill.Action {
             let format = NSLocalizedString("Summon minion ID %d.", comment: "")
             return String(format: format, actionDetail2)
         case (.healingPool, _):
-            let format = NSLocalizedString("Summon a healing pool to heal [%@] for %@s.", comment: "")
+            let format = NSLocalizedString("Summon a healing pool to heal [%@] per second for %@s.", comment: "")
             return String(format: format, actionValue(of: level), durationValue())
         case (.defDownPool, _):
             let format = NSLocalizedString("Summon a pool to reduce [%@] DEF for %@s.", comment: "")
@@ -508,9 +507,18 @@ extension Skill.Action {
         case (.hot, _):
             let format = NSLocalizedString("Restore [%@] HP per second for %@s.", comment: "")
             return String(format: format, actionValue(of: level), durationValue())
-        case (.selection, _):
-            let format = NSLocalizedString("Make a choice.", comment: "")
+        case (.switchStatement, _), (.ifStatement, _):
+            let format = NSLocalizedString("Internal statement.", comment: "")
             return String(format: format)
+        case (.jumpForward, _):
+            let format = NSLocalizedString("Jump forward %d and hold there for %@s.", comment: "")
+            return String(format: format, Int(actionValue1.rounded()), durationValue())
+        case (.hold, _):
+            let format = NSLocalizedString("Hold for %@s.", comment: "")
+            return String(format: format, durationValue())
+        case (.hpCondition, _):
+            let format = NSLocalizedString("Condition: HP is below %d%%.", comment: "")
+            return String(format: format, Int(actionValue3.rounded()))
         default:
             let format = NSLocalizedString("Unknown effect %d with arguments %@.", comment: "")
             return String(format: format, actionType, arguments.filter { $0 != 0 }.map(String.init).joined(separator: ", "))
@@ -521,6 +529,7 @@ extension Skill.Action {
     private func actionValue(of level: Int) -> String {
         var expression = ""
         var fixedValue = 0.0
+        var hasLevelCoefficient = false
         for value in values {
             if let value = Double(value.value), value == 0 { continue }
             switch value.key {
@@ -532,6 +541,7 @@ extension Skill.Action {
                 expression += "\(value.value) * \(PropertyKey.def)"
             case .skillLevel:
                 fixedValue += Double(level) * (Double(value.value) ?? 0)
+                hasLevelCoefficient = true
             case .initialValue:
                 fixedValue += Double(value.value) ?? 0
             case .chance:
@@ -550,10 +560,15 @@ extension Skill.Action {
         }
         
         if expression != "" {
-            return "\(expression) + \(valueString)@\(level)"
+            expression = "\(expression) + \(valueString)"
         } else {
-            return "\(valueString)@\(level)"
+            expression = "\(valueString)"
         }
+        
+        if hasLevelCoefficient {
+            expression += "@\(level)"
+        }
+        return expression
     }
     
     private func durationValue() -> String {

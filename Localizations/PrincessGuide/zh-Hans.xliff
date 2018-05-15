@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3" build-num="9E145"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title">
@@ -29,7 +29,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3" build-num="9E145"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
@@ -46,7 +46,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3" build-num="9E145"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
     </header>
     <body>
       <trans-unit id="%@ Feedback">
@@ -87,11 +87,6 @@
       <trans-unit id="ATK">
         <source>ATK</source>
         <target>物理攻击力</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="ATK Coefficient">
-        <source>ATK Coefficient</source>
-        <target>ATK Coefficient</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="About">
@@ -179,11 +174,6 @@
         <target>简介</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Chance">
-        <source>Chance</source>
-        <target>Chance</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Change self position.">
         <source>Change self position.</source>
         <target>改变自身位置。</target>
@@ -219,6 +209,11 @@
         <target>公会战 %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Condition: HP is below %d%%.">
+        <source>Condition: HP is below %d%%.</source>
+        <target>触发条件：生命值低于 %d%%。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Crafted">
         <source>Crafted</source>
         <target>制作</target>
@@ -237,6 +232,11 @@
       <trans-unit id="Darken">
         <source>Darken</source>
         <target>暗黑</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Darken target with [%@]%% chance for %@s.">
+        <source>Darken target with [%1$@]%% chance for %2$@s.</source>
+        <target>[%1$@]%% 几率使目标进入黑暗状态，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Data Version">
@@ -259,11 +259,6 @@
         <target>立即死亡。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Distance">
-        <source>Distance</source>
-        <target>Distance</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Dodge">
         <source>Dodge</source>
         <target>回避等级</target>
@@ -282,11 +277,6 @@
       <trans-unit id="Drops">
         <source>Drops</source>
         <target>掉落</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Duration">
-        <source>Duration</source>
-        <target>Duration</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="EX">
@@ -379,24 +369,14 @@
         <target>Haste</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Haste [%@] for %@s.">
-        <source>Haste [%1$@] for %2$@s.</source>
-        <target>提高速度 [%1$@]，持续 %2$@ 秒。</target>
-        <note>Haste [1.5] for 10s.</note>
-      </trans-unit>
       <trans-unit id="Height">
         <source>Height</source>
         <target>身高</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Increased Per Skill Level">
-        <source>Increased Per Skill Level</source>
-        <target>Increased Per Skill Level</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Initial Value">
-        <source>Initial Value</source>
-        <target>Initial Value</target>
+      <trans-unit id="Hold for %@s.">
+        <source>Hold for %@s.</source>
+        <target>等待 %@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant Death">
@@ -407,6 +387,16 @@
       <trans-unit id="Interest">
         <source>Interest</source>
         <target>兴趣</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Internal statement.">
+        <source>Internal statement.</source>
+        <target>处理内部逻辑。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Jump forward %d and hold there for %@s.">
+        <source>Jump forward %1$d and hold there for %2$@s.</source>
+        <target>向前移动 %1$d 并保持 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Knock target away %d at speed %d.">
@@ -462,11 +452,6 @@
       <trans-unit id="Magic STR">
         <source>Magic STR</source>
         <target>魔法攻击力</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Magic STR Coefficient">
-        <source>Magic STR Coefficient</source>
-        <target>Magic STR Coefficient</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Main">
@@ -536,6 +521,7 @@
       </trans-unit>
       <trans-unit id="Poison">
         <source>Poison</source>
+        <target>Poison</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Poison target and deal [%@] damage per second for %@s.">
@@ -568,6 +554,11 @@
         <target>提高</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Raise %d%% attack speed for %@s.">
+        <source>Raise %1$d%% attack speed for %2$@s.</source>
+        <target>提高 %1$d%% 攻击速度，持续 %2$@ 秒。</target>
+        <note>Raise 50% attack speed for 10s.</note>
+      </trans-unit>
       <trans-unit id="Raise [%@] %@.">
         <source>Raise [%1$@] %2$@.</source>
         <target>提高 [%1$@] %2$@。</target>
@@ -588,9 +579,19 @@
         <target>降低</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Reduce %d%% attack speed for %@s.">
+        <source>Reduce %1$d%% attack speed for %2$@s.</source>
+        <target>降低 %1$d%% 攻击速度，持续 %2$@ 秒。</target>
+        <note>Reduce 50% attack speed for 10s.</note>
+      </trans-unit>
       <trans-unit id="Restore">
         <source>Restore</source>
         <target>恢复</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Restore [%@] HP per second for %@s.">
+        <source>Restore [%1$@] HP per second for %2$@s.</source>
+        <target>每秒恢复 [%1$@] HP，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Restore [%@]%@ HP.">
@@ -643,21 +644,6 @@
         <target>Slow</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Slow [%@] for %@s.">
-        <source>Slow [%1$@] for %2$@s.</source>
-        <target>减速 [%1$@]，持续 %2$@ 秒。</target>
-        <note>Slow [0.5] for 10s.</note>
-      </trans-unit>
-      <trans-unit id="Speed">
-        <source>Speed</source>
-        <target>Speed</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Stack">
-        <source>Stack</source>
-        <target>Stack</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Star Rank">
         <source>Star Rank</source>
         <target>星级</target>
@@ -678,9 +664,9 @@
         <target>击晕</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing pool to heal [%@] for %@s.">
-        <source>Summon a healing pool to heal [%1$@] for %2$@s.</source>
-        <target>召唤治疗池，治疗 [%1$@]，持续 %2$@ 秒。</target>
+      <trans-unit id="Summon a healing pool to heal [%@] per second for %@s.">
+        <source>Summon a healing pool to heal [%1$@] per second for %2$@s.</source>
+        <target>召唤一个治疗池，每秒治疗 [%1$@] HP，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a pool to reduce [%@] DEF for %@s.">
@@ -822,7 +808,7 @@
   </file>
   <file original="PrincessGuideTests/en.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3" build-num="9E145"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
     </header>
     <body>
       <trans-unit id="CFBundleName">
