@@ -76,12 +76,12 @@
       </trans-unit>
       <trans-unit id="%@ %@ for %@s.">
         <source>%1$@ %2$@ for %3$@s.</source>
-        <target>%2$@に%1$@状態付与、%2$@秒継続する。</target>
+        <target>%2$@に%1$@状態付与、%3$@秒継続する。</target>
         <note>Stun one enemy target for 5s.</note>
       </trans-unit>
       <trans-unit id="%@ %@ target in range %d">
         <source>%1$@ %2$@ target in range %3$d</source>
-        <target></target>
+        <target>%3$d範囲の%1$@%2$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ with [%@]%% chance for %@s.">
@@ -116,7 +116,7 @@
       </trans-unit>
       <trans-unit id="Add additional damage [%@] with max %@ stacks.">
         <source>Add additional damage [%1$@] with max %2$@ stacks.</source>
-        <target>攻撃する度にダメージ [%1$@] 増加、最大 %2$@ 回まで累積する。</target>
+        <target>攻撃する度にダメージ[%1$@]増加、最大%2$@回まで累積する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="App Version">
@@ -131,7 +131,7 @@
       </trans-unit>
       <trans-unit id="Become invulnerable for [%@]s.">
         <source>Become invulnerable for [%@]s.</source>
-        <target>無敵状態になる、[%@] 秒継続する。</target>
+        <target>無敵状態になる、[%@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Bind">
@@ -191,7 +191,7 @@
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to nullify [%@] %@ for %@s.">
         <source>Cast a barrier on %1$@ to nullify [%2$@] %3$@ for %4$@s.</source>
-        <target>%1$@に[%2$@] %3$@を無効にするバリアを展開する、%4$@秒継続する。</target>
+        <target>%1$@に[%2$@]%3$@を無効にするバリアを展開する、%4$@秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast an unknown barrier %d on %@ for %@s.">
@@ -226,7 +226,7 @@
       </trans-unit>
       <trans-unit id="Choose target area.">
         <source>Choose target area.</source>
-        <target>エリアを選んでください。</target>
+        <target>エリアを指定する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clan Battle">
@@ -576,7 +576,7 @@
       </trans-unit>
       <trans-unit id="Raise %@ %d%% attack speed for %@s.">
         <source>Raise %1$@ %2$d%% attack speed for %3$@s.</source>
-        <target>%1$@の行動速度を[%2$@]アップ、%3$@秒継続する。</target>
+        <target>%1$@の行動速度を%2$d%%アップ、%3$@秒継続する。</target>
         <note>Raise all friendly targets 50% attack speed for 10s.</note>
       </trans-unit>
       <trans-unit id="Raise [%@] %@.">
@@ -601,7 +601,7 @@
       </trans-unit>
       <trans-unit id="Reduce %@ %d%% attack speed for %@s.">
         <source>Reduce %1$@ %2$d%% attack speed for %3$@s.</source>
-        <target>%1$@の行動速度を[%2$@]ダウン、%3$@秒継続する。</target>
+        <target>%1$@の行動速度を%2$d%%ダウン、%3$@秒継続する。</target>
         <note>Reduce one enemy target 50% attack speed for 10s.</note>
       </trans-unit>
       <trans-unit id="Restore">
@@ -611,12 +611,12 @@
       </trans-unit>
       <trans-unit id="Restore %@ [%@] HP per second for %@s.">
         <source>Restore %1$@ [%2$@] HP per second for %3$@s.</source>
-        <target></target>
+        <target>%1$@に毎秒HPを[%2$@]回復、%3$@秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Restore [%@]%@ HP to %@.">
         <source>Restore [%1$@]%2$@ HP to %3$@.</source>
-        <target>%1$@のHPを[%2$@]%3$@回復。</target>
+        <target>%3$@のHPを[%1$@]%2$@回復。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Review at App Store">
@@ -796,7 +796,7 @@
       </trans-unit>
       <trans-unit id="all %@ %@ in range %d">
         <source>all %1$@ %2$@ in range %3$d</source>
-        <target>%3$d範囲の%1$@全体</target>
+        <target>%3$d範囲の%1$@%2$@全体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="enemy">
@@ -831,7 +831,7 @@
       </trans-unit>
       <trans-unit id="max %@ %@ %@ in range %d">
         <source>max %1$@ %2$@ %3$@ in range %4$d</source>
-        <target></target>
+        <target>%4$d範囲の最大%1$@%2$@%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="one">
@@ -861,37 +861,37 @@
       </trans-unit>
       <trans-unit id="target">
         <source>target</source>
-        <target>目標</target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets">
-        <source>目標</source>
-        <target></target>
+        <source>targets</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the highest ATK">
-        <source>攻撃力が一番高い</source>
-        <target></target>
+        <source>the highest ATK</source>
+        <target>物理攻撃力が一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the highest Magic STR">
-        <source>魔法攻撃力が一番高い</source>
-        <target></target>
+        <source>the highest Magic STR</source>
+        <target>魔法攻撃力が一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the highest TP">
-        <source>TPが一番高い</source>
-        <target></target>
+        <source>the highest TP</source>
+        <target>TPが一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest HP">
-        <source>HPが一番低い</source>
-        <target></target>
+        <source>the lowest HP</source>
+        <target>HPが一番低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest TP">
-        <source>TPが一番低い</source>
-        <target></target>
+        <source>the lowest TP</source>
+        <target>TPが一番低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="three">
