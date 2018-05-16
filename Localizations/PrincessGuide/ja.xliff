@@ -49,35 +49,50 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
     </header>
     <body>
+      <trans-unit id="%@ %@">
+        <source>%1$@ %2$@</source>
+        <target>%1$@%2$@</target>
+        <note>one target/two targets</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ %@">
+        <source>%1$@ %2$@ %3$@</source>
+        <target>%1$@%2$@%3$@</target>
+        <note>three enemy targets</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ [%@] TP.">
+        <source>%1$@ %2$@ [%3$@] TP.</source>
+        <target>%2$@のTPを[%3$@]%1$@。</target>
+        <note>Restore one friendly target [x] TP.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ [%@]%@ %@ for %@s.">
+        <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for %6$@s.</source>
+        <target>%2$@に%5$@を[%3$@]%4$@%1$@、%6$@秒継続する。</target>
+        <note>Raise one friendly target [x]% ATK for 10s.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ and deal [%@] damage per second for %@s.">
+        <source>%1$@ %2$@ and deal [%3$@] damage per second for %4$@s.</source>
+        <target>%2$@に%1$@状態付与、毎秒[%3$@]のダメージを与える、%4$@秒継続する。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ for %@s.">
+        <source>%1$@ %2$@ for %3$@s.</source>
+        <target>%2$@に%1$@状態付与、%2$@秒継続する。</target>
+        <note>Stun one enemy target for 5s.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ target in range %d">
+        <source>%1$@ %2$@ target in range %3$d</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ with [%@]%% chance for %@s.">
+        <source>%1$@ %2$@ with [%3$@]%% chance for %4$@s.</source>
+        <target>[%3$@]%%の確率で%2$@に%1$@状態付与、%4$@秒継続する。</target>
+        <note>Charm all enemy targets with [90]% chance for 10s.</note>
+      </trans-unit>
       <trans-unit id="%@ Feedback">
         <source>%@ Feedback</source>
         <target>%@ フィードバック</target>
         <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="%@ [%@] TP.">
-        <source>%1$@ [%2$@] TP.</source>
-        <target>TPを [%2$@] %1$@。</target>
-        <note>Restore [x] TP.</note>
-      </trans-unit>
-      <trans-unit id="%@ [%@]%@ %@ for %@s.">
-        <source>%1$@ [%2$@]%3$@ %4$@ for %5$@s.</source>
-        <target>%4$@ を [%2$@]%3$@ %1$@、%5$@ 秒継続する。</target>
-        <note>Raise [x]% ATK for 10s.</note>
-      </trans-unit>
-      <trans-unit id="%@ target and deal [%@] damage per second for %@s.">
-        <source>%1$@ target and deal [%2$@] damage per second for %3$@s.</source>
-        <target>目標に%1$@状態付与、毎秒[%2$@]のダメージを与える、%3$@ 秒継続する。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="%@ target for %@s.">
-        <source>%1$@ target for %2$@s.</source>
-        <target>目標に%1$@状態付与、%2$@ 秒継続する。</target>
-        <note>Stun target for 5s.</note>
-      </trans-unit>
-      <trans-unit id="%@ target with [%@]%% chance for %@s.">
-        <source>%1$@ target with [%2$@]%% chance for %3$@s.</source>
-        <target>[%2$@]%% の確率で目標に%1$@状態付与、%3$@ 秒継続する。</target>
-        <note>Charm target with [90]% chance for 10s.</note>
       </trans-unit>
       <trans-unit id="%@/%@">
         <source>%1$@/%2$@</source>
@@ -92,21 +107,6 @@
       <trans-unit id="About">
         <source>About</source>
         <target>アプリについて</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Absorb [%@] magical damage for %@s.">
-        <source>Absorb [%1$@] magical damage for %2$@s.</source>
-        <target>[%1$@] ダメージ分の魔法吸収バリアを展開する、%2$@ 秒継続する。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Absorb [%@] physical and magical damage for %@s.">
-        <source>Absorb [%1$@] physical and magical damage for %2$@s.</source>
-        <target>[%1$@] ダメージ分の物理・魔法吸収バリアを展開する、%2$@ 秒継続する。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Absorb [%@] physical damage for %@s.">
-        <source>Absorb [%1$@] physical damage for %2$@s.</source>
-        <target>[%1$@] ダメージ分の物理吸収バリアを展開する、%2$@ 秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Action">
@@ -149,6 +149,11 @@
         <target>血液型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Bond Rank">
+        <source>Bond Rank</source>
+        <target>绊ランク</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Burn">
         <source>Burn</source>
         <target>火傷</target>
@@ -167,6 +172,31 @@
       <trans-unit id="Cast Time">
         <source>Cast Time</source>
         <target>発動時間</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for %@s.">
+        <source>Cast a barrier on %1$@ to absorb [%2$@] magical damage for %3$@s.</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for %@s.">
+        <source>Cast a barrier on %1$@ to absorb [%2$@] physical and magical damage for %3$@s.</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for %@s.">
+        <source>Cast a barrier on %1$@ to absorb [%2$@] physical damage for %3$@s.</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] %@ for %@s.">
+        <source>Cast a barrier on %1$@ to nullify [%2$@] %3$@ for %4$@s.</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast an unknown barrier %d on %@ for %@s.">
+        <source>Cast an unknown barrier %1$d on %2$@ for %3$@s.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Catch Copy">
@@ -211,6 +241,7 @@
       </trans-unit>
       <trans-unit id="Condition: HP is below %d%%.">
         <source>Condition: HP is below %d%%.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Crafted">
@@ -233,9 +264,9 @@
         <target>暗闇</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Darken target with [%@]%% chance for %@s.">
-        <source>Darken target with [%1$@]%% chance for %2$@s.</source>
-        <target>[%1$@]%% の確率で目標に暗闇状態付与、%2$@ 秒継続する。</target>
+      <trans-unit id="Darken %@ with [%@]%% chance for %@s.">
+        <source>Darken %1$@ with [%2$@]%% chance for %3$@s.</source>
+        <target>[%2$@]%%の確率で%1$@に暗闇状態付与、%3$@秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Data Version">
@@ -243,10 +274,10 @@
         <target>データバージョン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deal [%@] %@.">
-        <source>Deal [%1$@] %2$@.</source>
-        <target>[%1$@]の%2$@を与える。</target>
-        <note>Deal [x] physical damage/magical damage.</note>
+      <trans-unit id="Deal [%@] %@ to %@.">
+        <source>Deal [%1$@] %2$@ to %3$@.</source>
+        <target>%3$@に[%1$@]の%2$@を与える。</target>
+        <note>Deal [x] physical damage/magical damage to one enemy target.</note>
       </trans-unit>
       <trans-unit id="Detain">
         <source>Detain</source>
@@ -375,6 +406,7 @@
       </trans-unit>
       <trans-unit id="Hold for %@s.">
         <source>Hold for %@s.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant Death">
@@ -389,15 +421,17 @@
       </trans-unit>
       <trans-unit id="Internal statement.">
         <source>Internal statement.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Jump forward %d and hold there for %@s.">
         <source>Jump forward %1$d and hold there for %2$@s.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Knock target away %d at speed %d.">
-        <source>Knock target away %1$d at speed %2$d.</source>
-        <target>目標を %1$d 吹き飛ばす、速度 %2$d。</target>
+      <trans-unit id="Knock %@ away %d at speed %d.">
+        <source>Knock %1$@ away %2$d at speed %3$d.</source>
+        <target>%1$@を%2$d吹き飛ばす、速度%3$d。</target>
         <note>Knock target away 1000 at speed 500.</note>
       </trans-unit>
       <trans-unit id="Level">
@@ -423,11 +457,6 @@
       <trans-unit id="Loop start">
         <source>Loop start</source>
         <target>ループ開始</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Love Rank">
-        <source>Love Rank</source>
-        <target>绊ランク</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Magic Critical">
@@ -460,24 +489,19 @@
         <target>メイン %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make target fall asleep for %@s.">
-        <source>Make target fall asleep for %@s.</source>
-        <target>目標を睡眠状態にする、%@ 秒継続する。</target>
+      <trans-unit id="Make %@ fall asleep for %@s.">
+        <source>Make %1$@ fall asleep for %2$@s.</source>
+        <target>%1$@を睡眠状態にする、%2$@秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make target lose [%@] TP.">
-        <source>Make target lose [%@] TP.</source>
-        <target>目標のTPを [%@] 失わせる。</target>
+      <trans-unit id="Make %@ lose [%@] TP.">
+        <source>Make %1$@ lose [%2$@] TP.</source>
+        <target>%1$@のTPを[%2$@]失わせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Normal">
         <source>Normal</source>
         <target>NORMAL</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Nullify [%@] %@ for %@s.">
-        <source>Nullify [%1$@] %2$@ for %3$@s.</source>
-        <target>[%1$@] %2$@ を無効させる、%3$@ 秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="OK">
@@ -520,9 +544,9 @@
         <target>毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Poison target and deal [%@] damage per second for %@s.">
-        <source>Poison target and deal [%1$@] damage per second for %2$@s.</source>
-        <target>目標に毒状態にして、[%2$@] のダメージを与える、%3$@ 秒継続する。</target>
+      <trans-unit id="Poison %@ and deal [%@] damage per second for %@s.">
+        <source>Poison %1$@ and deal [%2$@] damage per second for %3$@s.</source>
+        <target>%1$@に毒状態にして、[%2$@]のダメージを与える、%3$@秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Position">
@@ -550,10 +574,10 @@
         <target>アップ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise %d%% attack speed for %@s.">
-        <source>Raise %1$d%% attack speed for %2$@s.</source>
-        <target>行動速度を [%1$@] アップ、%2$@ 秒継続する。</target>
-        <note>Raise 50% attack speed for 10s.</note>
+      <trans-unit id="Raise %@ %d%% attack speed for %@s.">
+        <source>Raise %1$@ %2$d%% attack speed for %3$@s.</source>
+        <target>%1$@の行動速度を[%2$@]アップ、%3$@秒継続する。</target>
+        <note>Raise all friendly targets 50% attack speed for 10s.</note>
       </trans-unit>
       <trans-unit id="Raise [%@] %@.">
         <source>Raise [%1$@] %2$@.</source>
@@ -575,23 +599,24 @@
         <target>ダウン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Reduce %d%% attack speed for %@s.">
-        <source>Reduce %1$d%% attack speed for %2$@s.</source>
-        <target>行動速度を [%1$@] ダウン、%2$@ 秒継続する。</target>
-        <note>Reduce 50% attack speed for 10s.</note>
+      <trans-unit id="Reduce %@ %d%% attack speed for %@s.">
+        <source>Reduce %1$@ %2$d%% attack speed for %3$@s.</source>
+        <target>%1$@の行動速度を[%2$@]ダウン、%3$@秒継続する。</target>
+        <note>Reduce one enemy target 50% attack speed for 10s.</note>
       </trans-unit>
       <trans-unit id="Restore">
         <source>Restore</source>
         <target>回復</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore [%@] HP per second for %@s.">
-        <source>Restore [%1$@] HP per second for %2$@s.</source>
+      <trans-unit id="Restore %@ [%@] HP per second for %@s.">
+        <source>Restore %1$@ [%2$@] HP per second for %3$@s.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore [%@]%@ HP.">
-        <source>Restore [%1$@]%2$@ HP.</source>
-        <target>HP を [%1$@]%2$@ 回復。 </target>
+      <trans-unit id="Restore [%@]%@ HP to %@.">
+        <source>Restore [%1$@]%2$@ HP to %3$@.</source>
+        <target>%1$@のHPを[%2$@]%3$@回復。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Review at App Store">
@@ -659,14 +684,14 @@
         <target>スタン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing pool to heal [%@] per second for %@s.">
-        <source>Summon a healing pool to heal [%1$@] per second for %2$@s.</source>
-        <target>毎秒HPを [%1$@] 回復するフィールドを展開する、%2$@ 秒継続する。</target>
+      <trans-unit id="Summon a healing pool to heal all friendly targets in range %d [%@] HP per second for %@s.">
+        <source>Summon a healing pool to heal all friendly targets in range %1$d [%2$@] HP per second for %3$@s.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a pool to reduce [%@] DEF for %@s.">
-        <source>Summon a pool to reduce [%1$@] DEF for %2$@s.</source>
-        <target>敵の物理防御力を [%1$@] ダウンするフィールドを展開する、%2$@ 秒継続する。</target>
+      <trans-unit id="Summon a pool to reduce %@ [%@] DEF for %@s.">
+        <source>Summon a pool to reduce %1$@ [%2$@] DEF for %3$@s.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon minion ID %d.">
@@ -684,9 +709,9 @@
         <target>通常攻撃間隔</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Taunt targets for %@s.">
-        <source>Taunt targets for %@s.</source>
-        <target>目标を挑発する、%@ 秒継続する。 </target>
+      <trans-unit id="Taunt all enemy targets for %@s.">
+        <source>Taunt all enemy targets for %@s.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="There aren't any Mail accounts">
@@ -729,14 +754,9 @@
         <target>未知効果</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unknown effect %d with arguments %@.">
-        <source>Unknown effect %1$d with arguments %2$@.</source>
-        <target>未知効果 %1$d，パラメーター %2$@。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Unknown field %d for %@s.">
-        <source>Unknown field %1$d for %2$@s.</source>
-        <target>未知バリアタイプ %1$d、%2$@ 秒継続する。</target>
+      <trans-unit id="Unknown effect %d with arguments [%@] on %@.">
+        <source>Unknown effect %1$d with arguments [%2$@] on %3$@.</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Up to date!">
@@ -769,6 +789,36 @@
         <target>体重</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="all">
+        <source>all</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="all %@ %@ in range %d">
+        <source>all %1$@ %2$@ in range %3$d</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="enemy">
+        <source>enemy</source>
+        <target/>
+        <note>target modifier</note>
+      </trans-unit>
+      <trans-unit id="four">
+        <source>four</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="friendly">
+        <source>friendly</source>
+        <target/>
+        <note>target modifier</note>
+      </trans-unit>
+      <trans-unit id="last effect affected">
+        <source>last effect affected</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="magical absorb field">
         <source>magical absorb field</source>
         <target>magical absorb field</target>
@@ -777,6 +827,16 @@
       <trans-unit id="magical damage">
         <source>magical damage</source>
         <target>魔法ダメージ</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="max %@ %@ %@ in range %d">
+        <source>max %1$@ %2$@ %3$@ in range %4$d</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="one">
+        <source>one</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="physical absorb field">
@@ -792,6 +852,56 @@
       <trans-unit id="physical damage">
         <source>physical damage</source>
         <target>物理ダメージ</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="self">
+        <source>self</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="target">
+        <source>target</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="targets">
+        <source>targets</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the highest ATK">
+        <source>the highest ATK</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the highest Magic STR">
+        <source>the highest Magic STR</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the highest TP">
+        <source>the highest TP</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the lowest HP">
+        <source>the lowest HP</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the lowest TP">
+        <source>the lowest TP</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="three">
+        <source>three</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="two">
+        <source>two</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="unknown">
