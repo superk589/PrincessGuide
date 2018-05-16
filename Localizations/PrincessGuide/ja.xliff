@@ -81,7 +81,7 @@
       </trans-unit>
       <trans-unit id="%@ %@ target in range %d">
         <source>%1$@ %2$@ target in range %3$d</source>
-        <target>%3$d範囲の%1$@%2$@</target>
+        <target>%3$d範囲内%1$@%2$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ with [%@]%% chance for %@s.">
@@ -536,7 +536,7 @@
       </trans-unit>
       <trans-unit id="Please wait">
         <source>Please wait</source>
-        <target>しばらくお待ちください</target>
+        <target>処理中...</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Poison">
@@ -686,7 +686,7 @@
       </trans-unit>
       <trans-unit id="Summon a healing pool to heal all friendly targets in range %d [%@] HP per second for %@s.">
         <source>Summon a healing pool to heal all friendly targets in range %1$d [%2$@] HP per second for %3$@s.</source>
-        <target>%1$d範囲の味方に毎秒HPを[%2$@]回復するフィールドを展開する、%3$@秒継続する。</target>
+        <target>%1$d範囲内味方に毎秒HPを[%2$@]回復するフィールドを展開する、%3$@秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a pool to reduce %@ [%@] DEF for %@s.">
@@ -796,7 +796,7 @@
       </trans-unit>
       <trans-unit id="all %@ %@ in range %d">
         <source>all %1$@ %2$@ in range %3$d</source>
-        <target>%3$d範囲の%1$@%2$@全体</target>
+        <target>%3$d範囲内%1$@%2$@全体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="enemy">
@@ -831,7 +831,7 @@
       </trans-unit>
       <trans-unit id="max %@ %@ %@ in range %d">
         <source>max %1$@ %2$@ %3$@ in range %4$d</source>
-        <target>%4$d範囲の最大%1$@%2$@%3$@</target>
+        <target>%4$d範囲内%1$@までの%2$@%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="one">
