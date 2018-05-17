@@ -289,7 +289,7 @@ enum RangeModifier {
     
 }
 
-enum TargetPluralModifer: String, CustomStringConvertible {
+enum TargetPluralModifier: String, CustomStringConvertible {
     case target
     case targets
     var description: String {
@@ -321,7 +321,7 @@ enum TargetCountModifier: Int, CustomStringConvertible {
         }
     }
     
-    var pluralModifier: TargetPluralModifer {
+    var pluralModifier: TargetPluralModifier {
         switch self {
         case .one:
             return .target
@@ -404,7 +404,7 @@ extension Skill.Action {
         return TargetCountModifier(rawValue: targetCount) ?? .all
     }
     
-    var pluralModifier: TargetPluralModifer {
+    var pluralModifier: TargetPluralModifier {
         return countModifier.pluralModifier
     }
     

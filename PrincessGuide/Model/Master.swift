@@ -490,6 +490,15 @@ class Master: FMDatabaseQueue {
         return waves
     }
     
+    func getWaves(waveIDs: [Int], callback: @escaping FMDBCallBackClosure<[Wave]>) {
+        var waves = [Wave]()
+        execute({ [unowned self] (db) in
+            waves = try self.getWaves(from: db, waveIDs: waveIDs)
+        }) {
+            callback(waves)
+        }
+    }
+    
     func getClanBattles(callback: @escaping FMDBCallBackClosure<[ClanBattle]>) {
         var clanBattles = [ClanBattle]()
         execute({ [unowned self] (db) in
@@ -531,6 +540,36 @@ class Master: FMDatabaseQueue {
             }
         }) {
             callback(clanBattles)
+        }
+    }
+    
+    func getHatsuneEventAreas(callback: @escaping FMDBCallBackClosure<[HatsuneEventArea]>) {
+        var areas = [HatsuneEventArea]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*,
+                b.title,
+                c.wave_group_id_1
+            FROM
+                hatsune_quest_area a,
+                event_story_data b,
+                hatsune_boss c
+            WHERE
+                a.event_id = b.value
+                AND a.area_id = c.area_id
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let base = try decoder.decode(HatsuneEventArea.Base.self, from: json.rawData())
+                let area = HatsuneEventArea(base: base)
+                areas.append(area)
+            }
+        }) {
+            callback(areas)
         }
     }
     

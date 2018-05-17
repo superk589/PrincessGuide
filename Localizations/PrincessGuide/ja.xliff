@@ -426,7 +426,7 @@
       </trans-unit>
       <trans-unit id="Jump forward %d and hold there for %@s.">
         <source>Jump forward %1$d and hold there for %2$@s.</source>
-        <target>%1$dの前へ跳ねて、その後%@秒どとまる。</target>
+        <target>%1$dの前へ跳ねて、その後%2$@秒どとまる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Knock %@ away %d at speed %d.">

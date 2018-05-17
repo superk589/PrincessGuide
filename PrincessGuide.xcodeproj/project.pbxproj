@@ -29,6 +29,7 @@
 		1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE2207DB076008F30AA /* LoadingHUD.swift */; };
 		1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */; };
 		1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE6207DB350008F30AA /* Debouncer.swift */; };
+		1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */; };
 		123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E02093105D003E7D11 /* LZ4Decompressor.swift */; };
 		123608E32093200A003E7D11 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E22093200A003E7D11 /* Defaults.swift */; };
 		123608E7209322EB003E7D11 /* DataChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E6209322EB003E7D11 /* DataChecking.swift */; };
@@ -69,6 +70,8 @@
 		126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */; };
 		126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFB209EF289004EC56A /* CDTableViewController.swift */; };
 		126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */; };
+		1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */; };
+		1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */; };
 		1280DE3320A09278008D9D72 /* CDPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE3220A09278008D9D72 /* CDPropertyViewController.swift */; };
 		1280DE3D20A5B673008D9D72 /* EDProfileTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE3C20A5B673008D9D72 /* EDProfileTextTableViewCell.swift */; };
 		1280DE3F20A5C5A5008D9D72 /* QuestNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE3E20A5C5A5008D9D72 /* QuestNameTableViewCell.swift */; };
@@ -152,6 +155,7 @@
 		1221CDE2207DB076008F30AA /* LoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
 		1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 		1221CDE6207DB350008F30AA /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventTableViewCell.swift; sourceTree = "<group>"; };
 		123608E02093105D003E7D11 /* LZ4Decompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZ4Decompressor.swift; sourceTree = "<group>"; };
 		123608E22093200A003E7D11 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		123608E6209322EB003E7D11 /* DataChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChecking.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 		126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewController.swift; sourceTree = "<group>"; };
 		126DECFB209EF289004EC56A /* CDTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
 		126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTabViewController.swift; sourceTree = "<group>"; };
+		1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventArea.swift; sourceTree = "<group>"; };
+		1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventAreaTableViewController.swift; sourceTree = "<group>"; };
 		1280DE3220A09278008D9D72 /* CDPropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPropertyViewController.swift; sourceTree = "<group>"; };
 		1280DE3C20A5B673008D9D72 /* EDProfileTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDProfileTextTableViewCell.swift; sourceTree = "<group>"; };
 		1280DE3E20A5C5A5008D9D72 /* QuestNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestNameTableViewCell.swift; sourceTree = "<group>"; };
@@ -300,6 +306,7 @@
 				129A7F6120A0465800D93996 /* CharaStory.swift */,
 				129A7F8620A2EE7E00D93996 /* Enemy.swift */,
 				1280DE4020A5CEB2008D9D72 /* ClanBattle.swift */,
+				1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				12398E7F209158EA006AC352 /* QuestAreaTableViewCell.swift */,
+				1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,6 +409,7 @@
 				129A7F8820A3108C00D93996 /* QuestTabViewController.swift */,
 				126DECF1209EDC0E004EC56A /* QuestAreaTabViewController.swift */,
 				1280DE4420A5DED5008D9D72 /* ClanBattleTableViewController.swift */,
+				1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -820,6 +829,7 @@
 				129A7F5E20A0364300D93996 /* CDProfileTextTableViewCell.swift in Sources */,
 				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
+				1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */,
 				126DECF6209EEEB4004EC56A /* CDTabViewController.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				129A7F6220A0465800D93996 /* CharaStory.swift in Sources */,
@@ -899,11 +909,13 @@
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
+				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDSkillTableViewController.swift in Sources */,
 				129A7F8D20A3124600D93996 /* QuestEnemyTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
+				1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
 				12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */,
 			);

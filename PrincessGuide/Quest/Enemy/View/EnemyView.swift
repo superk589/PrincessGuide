@@ -28,7 +28,7 @@ class EnemyView: UIView {
         if enemy.unit.visualChangeFlag == 1 {
             enemyIcon.shadowUnitID = enemy.unit.prefabId
         } else {
-            enemyIcon.unitID = enemy.unit.unitId
+            enemyIcon.unitID = enemy.unit.prefabId
         }
     }
     

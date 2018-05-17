@@ -18,7 +18,7 @@ extension EDBasicTableViewCell: EnemyDetailConfigurable {
         if enemyUnit.visualChangeFlag == 1 {
             cardIcon.shadowUnitID = enemyUnit.prefabId
         } else {
-            cardIcon.unitID = enemyUnit.unitId
+            cardIcon.unitID = enemyUnit.prefabId
         }
     }
     
