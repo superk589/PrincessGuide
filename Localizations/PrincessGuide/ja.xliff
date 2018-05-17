@@ -344,6 +344,11 @@
         <target>装備品</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Event">
+        <source>Event</source>
+        <target>イベント</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Exploration">
         <source>Exploration</source>
         <target>探索</target>

@@ -147,20 +147,23 @@ class Enemy: Codable {
         }
     }()
     
-    lazy var exSkills = DispatchSemaphore.sync { [unowned self] (closure) in
-        Master.shared.getSkills(skillIDs: self.base.exSkillIDs, callback: closure)
+    lazy var exSkills = DispatchSemaphore.sync { (closure) in
+        Master.shared.getSkills(skillIDs: base.exSkillIDs, callback: closure)
     } ?? []
     
-    lazy var mainSkills = DispatchSemaphore.sync { [unowned self] (closure) in
-        Master.shared.getSkills(skillIDs: self.base.mainSkillIDs, callback: closure)
+    lazy var mainSkills = DispatchSemaphore.sync { (closure) in
+        Master.shared.getSkills(skillIDs: base.mainSkillIDs, callback: closure)
     } ?? []
     
-    lazy var unionBurst = DispatchSemaphore.sync { [unowned self] (closure) in
-        Master.shared.getSkills(skillIDs: [self.base.unionBurst], callback: closure)
+    lazy var unionBurst = DispatchSemaphore.sync { (closure) in
+        Master.shared.getSkills(skillIDs: [base.unionBurst], callback: closure)
     }?.first
     
-    lazy var patterns: [AttackPattern]? = DispatchSemaphore.sync({ [unowned self] closure in
+    lazy var patterns: [AttackPattern]? = DispatchSemaphore.sync({ closure in
         Master.shared.getAttackPatterns(unitID: base.unitId, callback: closure)
     })
     
+    lazy var resist: Resist? = DispatchSemaphore.sync { (closure) in
+        Master.shared.getResistData(resistID: base.resistStatusId, callback: closure)
+    }
 }

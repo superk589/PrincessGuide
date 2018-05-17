@@ -30,6 +30,8 @@
 		1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */; };
 		1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE6207DB350008F30AA /* Debouncer.swift */; };
 		1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */; };
+		1226532320AD626700BB3E56 /* Resist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226532220AD626700BB3E56 /* Resist.swift */; };
+		1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226532420AD68BE00BB3E56 /* EDResistTableViewController.swift */; };
 		123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E02093105D003E7D11 /* LZ4Decompressor.swift */; };
 		123608E32093200A003E7D11 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E22093200A003E7D11 /* Defaults.swift */; };
 		123608E7209322EB003E7D11 /* DataChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E6209322EB003E7D11 /* DataChecking.swift */; };
@@ -156,6 +158,8 @@
 		1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 		1221CDE6207DB350008F30AA /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventTableViewCell.swift; sourceTree = "<group>"; };
+		1226532220AD626700BB3E56 /* Resist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resist.swift; sourceTree = "<group>"; };
+		1226532420AD68BE00BB3E56 /* EDResistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDResistTableViewController.swift; sourceTree = "<group>"; };
 		123608E02093105D003E7D11 /* LZ4Decompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZ4Decompressor.swift; sourceTree = "<group>"; };
 		123608E22093200A003E7D11 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		123608E6209322EB003E7D11 /* DataChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChecking.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 				129A7F8620A2EE7E00D93996 /* Enemy.swift */,
 				1280DE4020A5CEB2008D9D72 /* ClanBattle.swift */,
 				1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */,
+				1226532220AD626700BB3E56 /* Resist.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 				12D3D13C20A586A500034DD6 /* EDTableViewController.swift */,
 				12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */,
 				12D3D13820A573B800034DD6 /* EDSkillTableViewController.swift */,
+				1226532420AD68BE00BB3E56 /* EDResistTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -912,6 +918,8 @@
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
+				1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */,
+				1226532320AD626700BB3E56 /* Resist.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDSkillTableViewController.swift in Sources */,
 				129A7F8D20A3124600D93996 /* QuestEnemyTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,

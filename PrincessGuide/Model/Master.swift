@@ -770,4 +770,66 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getResistData(resistID: Int, callback: @escaping FMDBCallBackClosure<Resist?>) {
+        var result: Resist?
+        let ailments = DispatchSemaphore.sync { (closure) in
+            getAilments(callback: closure)
+        } ?? []
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                *
+            FROM
+                resist_data
+            WHERE
+                resist_status_id = \(resistID)
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                
+                var items = [Resist.Item]()
+                for i in 0..<ailments.count {
+                    let rate = json["ailment_\(i + 1)"].intValue
+                    let ailment = ailments[i]
+                    let item = Resist.Item(ailment: ailment, rate: rate)
+                    items.append(item)
+                }
+                
+                result = Resist(items: items)
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
+    func getAilments(ailmentID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Ailment]>) {
+        var ailments = [Ailment]()
+        execute({ (db) in
+            var selectSql = """
+            SELECT
+                *
+            FROM
+                ailment_data
+            """
+            if let id = ailmentID {
+                selectSql.append(" WHERE ailment_id = \(id)")
+            }
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let type = json["ailment_action"].intValue
+                let detail = json["ailment_detail_1"].intValue
+                
+                let ailment = Ailment(type: type, detail: detail)
+                ailments.append(ailment)
+            }
+        }) {
+            callback(ailments)
+        }
+    }
 }

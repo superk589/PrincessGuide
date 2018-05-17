@@ -115,7 +115,7 @@ enum AilmentType: Int, CustomStringConvertible {
     }
 }
 
-struct Ailment: CustomStringConvertible {
+struct Ailment: Codable, CustomStringConvertible {
     let type: Int
     let detail: Int
     
@@ -137,4 +137,5 @@ struct Ailment: CustomStringConvertible {
     var description: String {
         return ailmentDetail?.description ?? ailmentType.description
     }
+    
 }
