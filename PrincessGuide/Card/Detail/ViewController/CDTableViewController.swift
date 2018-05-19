@@ -93,7 +93,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         cell.configure(for: model.data)
         
         if let cell = cell as? CDPromotionTableViewCell {
-            cell.promotionView.delegate = self
+            cell.delegate = self
         } else if let cell = cell as? CDImageTableViewCell {
             cell.delegate = self
         }
@@ -101,14 +101,14 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         return cell as! UITableViewCell
     }
     
-    func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL) {
+    func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL?) {
         
     }
 }
 
-extension CDTableViewController: PromotionViewDelegate {
+extension CDTableViewController: CDPromotionTableViewCellDelegate {
     
-    func promotionView(_ promotionView: PromotionView, didSelectEquipmentID equipmentID: Int) {
+    func cdPromotionTableViewCell(_ cdPromotionTableViewCell: CDPromotionTableViewCell, didSelectEquipmentID equipmentID: Int) {
         
         let equipments = DispatchSemaphore.sync { (closure) in
             Master.shared.getEquipments(equipmentID: equipmentID) { equipments in

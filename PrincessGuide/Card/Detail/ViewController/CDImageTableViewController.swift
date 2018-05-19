@@ -87,8 +87,8 @@ class CDImageTableViewController: CDTableViewController {
         return staticCells[indexPath.row]
     }
     
-    override func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL) {
-        if let index = urls.index(where: { $0.absoluteString == String(url.absoluteString.split(separator: "@").first ?? "") }) {
+    override func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL?) {
+        if let index = urls.index(where: { $0.absoluteString == String(url?.absoluteString.split(separator: "@").first ?? "") }) {
             let vc = createGalleryViewController(startIndex: index, image: imageView.image)
             presentImageGallery(vc)
         }
@@ -126,8 +126,8 @@ extension CDImageTableViewController: GalleryDisplacedViewsDataSource {
         if let row = row, let item = item {
             let indexPath = IndexPath(row: row, section: 0)
             if let tableViewCell = tableView.cellForRow(at: indexPath) as? CDImageTableViewCell,
-                let collectionViewCell = tableViewCell.imageCollectionView.cellForItem(at: IndexPath(item: item, section: 0)) as? ImageCollectionViewCell {
-                return collectionViewCell.imageView
+                let imageView = tableViewCell.stackView.arrangedSubviews[item] as? CDImageView {
+                return imageView
             }
         }
         return nil

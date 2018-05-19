@@ -1,5 +1,5 @@
 //
-//  ImageCollectionViewCell.swift
+//  CDImageView.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/5/18.
@@ -10,23 +10,16 @@ import UIKit
 import Kingfisher
 import Gestalt
 
-class ImageCollectionViewCell: UICollectionViewCell {
-    
-    let imageView = UIImageView()
+class CDImageView: UIImageView {
     
     let indicator = UIActivityIndicatorView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(imageView)
-        imageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-            make.height.lessThanOrEqualTo(CDImageTableViewCell.imageHeight)
-        }
         
-        imageView.addSubview(indicator)
+        addSubview(indicator)
         indicator.snp.makeConstraints { (make) in
-            make.center.equalTo(imageView)
+            make.center.equalToSuperview()
         }
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
@@ -34,14 +27,26 @@ class ImageCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    convenience init() {
+        self.init(frame: .zero)
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        if image == nil {
+            return CGSize(width: CDImageTableViewCell.imageHeight * 3 / 2, height: CDImageTableViewCell.imageHeight)
+        } else {
+            return image!.size
+        }
+    }
+    
     var url: URL?
     
-    func configure(for url: URL, completion: @escaping () -> Void) {
+    func configure(for url: URL, completion: (() -> Void)? = nil) {
         self.url = url
         indicator.startAnimating()
-        imageView.kf.setImage(with: url, options: [.scaleFactor(UIScreen.main.scale)]) { [weak self] _, _, _, _ in
+        kf.setImage(with: url, options: [.scaleFactor(UIScreen.main.scale)]) { [weak self] _, _, _, _ in
             self?.indicator.stopAnimating()
-            completion()
+            completion?()
         }
     }
     

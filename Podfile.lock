@@ -102,7 +102,7 @@ CHECKOUT OPTIONS:
     :commit: 4c45476c71c59000a809cef2b73fc05139acafc2
     :git: https://github.com/superk589/Eureka.git
   ImageViewer:
-    :commit: e35429e515ed7ce786f2a2bdb0bbcda56111f198
+    :commit: f164d8ed771c2f16e82c63d246609b4c01848a4b
     :git: https://github.com/superk589/ImageViewer.git
   Tabman:
     :commit: 6c933f1bb6debbb58ceca73a7aa7e16c99794117

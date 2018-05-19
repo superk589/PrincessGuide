@@ -10,7 +10,7 @@ import UIKit
 import Gestalt
 
 protocol CDImageTableViewCellDelegate: class {
-    func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL)
+    func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL?)
 }
 
 class CDImageTableViewCell: UITableViewCell, CardDetailConfigurable {
@@ -19,24 +19,21 @@ class CDImageTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     let titleLabel = UILabel()
     
-    let layout: UICollectionViewFlowLayout
-    let imageCollectionView: UICollectionView
+    let stackView = UIStackView()
+    let scrollView = UIScrollView()
     
     weak var delegate: CDImageTableViewCellDelegate?
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
-        layout = UICollectionViewFlowLayout()
-        imageCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 10, height: CDImageTableViewCell.imageHeight), collectionViewLayout: layout)
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView()
-        
+
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
             themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themable.backgroundColor = theme.color.tableViewCell.background
             themable.titleLabel.textColor = theme.color.title
-            themable.imageCollectionView.indicatorStyle = theme.indicatorStyle
+            themable.scrollView.indicatorStyle = theme.indicatorStyle
         }
         
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
@@ -46,23 +43,23 @@ class CDImageTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.top.equalTo(10)
         }
         
-        layout.estimatedItemSize = CGSize(width: CDImageTableViewCell.imageHeight * 3 / 2, height: CDImageTableViewCell.imageHeight)
-        layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 10
-        
-        contentView.addSubview(imageCollectionView)
-        imageCollectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+        contentView.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
             make.left.right.equalTo(readableContentGuide)
-            make.height.equalTo(CDImageTableViewCell.imageHeight + 2)
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.height.equalTo(CDImageTableViewCell.imageHeight + 10)
             make.bottom.equalTo(-10)
         }
         
-        imageCollectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.description())
-        imageCollectionView.backgroundColor = .clear
-        imageCollectionView.delegate = self
-        imageCollectionView.dataSource = self
-        imageCollectionView.scrollsToTop = false
+        scrollView.addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+            make.height.equalTo(CDImageTableViewCell.imageHeight)
+        }
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.distribution = .fillProportionally
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,10 +67,32 @@ class CDImageTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
 
     private var urls = [URL]()
+    
+    private var imageViews = [CDImageView]()
+
     func configure(for urls: [URL], title: String) {
         self.urls = urls
         titleLabel.text = title
-        imageCollectionView.reloadData()
+        
+        imageViews.forEach { $0.removeFromSuperview() }
+        imageViews.removeAll()
+        
+        urls.forEach {
+            let imageView = CDImageView()
+            imageView.isUserInteractionEnabled = true
+            imageViews.append(imageView)
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
+            imageView.addGestureRecognizer(tapGesture)
+            stackView.addArrangedSubview(imageView)
+            imageView.configure(for: $0)
+        }
+
+    }
+    
+    @objc private func handleTapGestureRecognizer(_ tap: UITapGestureRecognizer) {
+        if let imageView = tap.view as? CDImageView {
+            delegate?.cdImageTableViewCell(self, didSelect: imageView, url: imageView.url)
+        }
     }
     
     func configure(for item: CardDetailItem) {
@@ -83,33 +102,4 @@ class CDImageTableViewCell: UITableViewCell, CardDetailConfigurable {
         configure(for: thumbnailURLs, title: title)
     }
     
-}
-
-extension CDImageTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return urls.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.description(), for: indexPath) as! ImageCollectionViewCell
-        let url = urls[indexPath.item]
-        cell.configure(for: url) { [weak self] in
-            if cell.url == url {
-                self?.imageCollectionView.reloadItems(at: [indexPath])
-            }
-        }
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let imageCollectionViewCell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else {
-            return
-        }
-        delegate?.cdImageTableViewCell(self, didSelect: imageCollectionViewCell.imageView, url: urls[indexPath.item])
-    }
 }

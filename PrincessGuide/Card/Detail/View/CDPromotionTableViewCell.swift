@@ -9,11 +9,18 @@
 import UIKit
 import Gestalt
 
+protocol CDPromotionTableViewCellDelegate: class {
+    func cdPromotionTableViewCell(_ cdPromotionTableViewCell: CDPromotionTableViewCell, didSelectEquipmentID equipmentID: Int)
+}
+
 class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     let titleLabel = UILabel()
     
-    let promotionView = PromotionView()
+    var icons = [IconImageView]()
+    let stackView = UIStackView()
+    
+    weak var delegate: CDPromotionTableViewCellDelegate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,12 +40,18 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
         }
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         
-        contentView.addSubview(promotionView)
-        promotionView.snp.makeConstraints { (make) in
-            make.left.right.equalTo(readableContentGuide)
-            make.bottom.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom)
+        contentView.addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
+            make.left.equalTo(readableContentGuide)
+            make.right.lessThanOrEqualTo(readableContentGuide)
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.bottom.equalTo(-10)
+            make.width.lessThanOrEqualTo(64 * 6 + 50)
+            make.width.equalTo(stackView.snp.height).multipliedBy(6).offset(50)
         }
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
         
     }
     
@@ -53,6 +66,24 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     func configure(for promotion: Card.Promotion) {
         titleLabel.text = NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)"
-        promotionView.configure(for: promotion)
+        
+        icons.forEach {
+            $0.removeFromSuperview()
+        }
+        promotion.equipSlots.forEach {
+            let icon = IconImageView()
+            icon.isUserInteractionEnabled = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
+            icon.equipmentID = $0
+            icon.addGestureRecognizer(tapGesture)
+            stackView.addArrangedSubview(icon)
+            icons.append(icon)
+        }
+    }
+    
+    @objc private func handleTapGestureRecognizer(_ tap: UITapGestureRecognizer) {
+        if let imageView = tap.view as? IconImageView, let id = imageView.equipmentID {
+            delegate?.cdPromotionTableViewCell(self, didSelectEquipmentID: id)
+        }
     }
 }

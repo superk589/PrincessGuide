@@ -81,8 +81,6 @@
 		1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE4020A5CEB2008D9D72 /* ClanBattle.swift */; };
 		1280DE4320A5D084008D9D72 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE4220A5D084008D9D72 /* DateExtension.swift */; };
 		1280DE4520A5DED5008D9D72 /* ClanBattleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE4420A5DED5008D9D72 /* ClanBattleTableViewController.swift */; };
-		1281FA48209AB83300F2D567 /* PromotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA47209AB83300F2D567 /* PromotionView.swift */; };
-		1281FA4A209AB87800F2D567 /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */; };
 		1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */; };
 		1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA4D209AE25700F2D567 /* CraftTableViewCell.swift */; };
 		1281FA52209AE3E900F2D567 /* Craft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA51209AE3E900F2D567 /* Craft.swift */; };
@@ -118,7 +116,7 @@
 		12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */; };
 		12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */; };
 		12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */; };
-		12F125B120AEC069005C9659 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* ImageCollectionViewCell.swift */; };
+		12F125B120AEC069005C9659 /* CDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* CDImageView.swift */; };
 		12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
@@ -220,8 +218,6 @@
 		1280DE4A20A71988008D9D72 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1280DE4B20A71988008D9D72 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1280DE4C20A71989008D9D72 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1281FA47209AB83300F2D567 /* PromotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionView.swift; sourceTree = "<group>"; };
-		1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftTableViewController.swift; sourceTree = "<group>"; };
 		1281FA4D209AE25700F2D567 /* CraftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftTableViewCell.swift; sourceTree = "<group>"; };
 		1281FA51209AE3E900F2D567 /* Craft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Craft.swift; sourceTree = "<group>"; };
@@ -259,7 +255,7 @@
 		12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDPatternTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewCell.swift; sourceTree = "<group>"; };
 		12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewCell.swift; sourceTree = "<group>"; };
-		12F125B020AEC069005C9659 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		12F125B020AEC069005C9659 /* CDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageView.swift; sourceTree = "<group>"; };
 		12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewController.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
@@ -540,8 +536,6 @@
 			children = (
 				12B85D362089B1DB0088F5FB /* CDBasicTableViewCell.swift */,
 				12B85D382089B1DB0088F5FB /* CDPromotionTableViewCell.swift */,
-				1281FA47209AB83300F2D567 /* PromotionView.swift */,
-				1281FA49209AB87800F2D567 /* PromotionCollectionViewCell.swift */,
 				12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */,
 				12398E7720915771006AC352 /* CDPatternTableViewCell.swift */,
 				12398E7920915781006AC352 /* AttackPatternView.swift */,
@@ -552,7 +546,7 @@
 				129A7F5B20A02E5400D93996 /* CDCommentTableViewCell.swift */,
 				129A7F5D20A0364300D93996 /* CDProfileTextTableViewCell.swift */,
 				12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */,
-				12F125B020AEC069005C9659 /* ImageCollectionViewCell.swift */,
+				12F125B020AEC069005C9659 /* CDImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -844,7 +838,6 @@
 				1280DE3F20A5C5A5008D9D72 /* QuestNameTableViewCell.swift in Sources */,
 				129A7F8F20A31D1600D93996 /* QuestEnemyTableViewCell.swift in Sources */,
 				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
-				1281FA4A209AB87800F2D567 /* PromotionCollectionViewCell.swift in Sources */,
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
 				129A7F5E20A0364300D93996 /* CDProfileTextTableViewCell.swift in Sources */,
 				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
@@ -899,14 +892,13 @@
 				12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */,
 				1280DE4520A5DED5008D9D72 /* ClanBattleTableViewController.swift in Sources */,
 				12398E8B20917554006AC352 /* DropSummaryTableViewController.swift in Sources */,
-				1281FA48209AB83300F2D567 /* PromotionView.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				12D3D13D20A586A500034DD6 /* EDTableViewController.swift in Sources */,
 				12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */,
 				12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */,
 				12D3D14120A587FF00034DD6 /* EDPropertyTableViewCell.swift in Sources */,
 				12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */,
-				12F125B120AEC069005C9659 /* ImageCollectionViewCell.swift in Sources */,
+				12F125B120AEC069005C9659 /* CDImageView.swift in Sources */,
 				12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */,
 				12360921209940B2003E7D11 /* Binary.swift in Sources */,
 				129A7F8920A3108C00D93996 /* QuestTabViewController.swift in Sources */,

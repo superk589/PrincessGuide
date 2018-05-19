@@ -8,6 +8,7 @@
 
 import UIKit
 import MJRefresh
+import AudioToolbox
 
 protocol DataChecking {
     var refresher: RefreshHeader { get }
@@ -19,6 +20,7 @@ extension DataChecking where Self: UIViewController {
     func check() {
         let updater = Updater.shared
         defer {
+            AudioServicesPlaySystemSound(1519)
             refresher.endRefreshing()
         }
         if updater.isUpdating { return }
