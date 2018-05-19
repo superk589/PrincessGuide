@@ -43,14 +43,15 @@ class CDImageTableViewController: CDTableViewController {
             GalleryConfigurationItem.thumbnailsButtonMode(.none),
             GalleryConfigurationItem.swipeToDismissMode(.vertical),
             GalleryConfigurationItem.activityViewByLongPress(true),
-            GalleryConfigurationItem.placeHolderImage(image),
-            
+            GalleryConfigurationItem.placeHolderImage(image)            
         ]
         let vc = GalleryViewController(startIndex: startIndex, itemsDataSource: self, itemsDelegate: nil, displacedViewsDataSource: self, configuration: config)
         return vc
     }
     
     private var urls = [URL]()
+    
+    private var staticCells = [UITableViewCell]()
 
     override func prepareRows(for card: Card) {
         let height = Int(CDImageTableViewCell.imageHeight * UIScreen.main.scale)
@@ -73,6 +74,17 @@ class CDImageTableViewController: CDTableViewController {
             }
         }
         items = urls.map { createGalleryItem($0) }
+        
+        staticCells = rows.map {
+            let cell = $0.type.init() as! CDImageTableViewCell
+            cell.configure(for: $0.data)
+            cell.delegate = self
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return staticCells[indexPath.row]
     }
     
     override func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL) {
