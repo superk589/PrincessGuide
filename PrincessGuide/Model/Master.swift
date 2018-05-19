@@ -149,9 +149,8 @@ class Master: FMDatabaseQueue {
                 var promotionStatuses = [Card.PromotionStatus]()
                 while promotionStatusSet.next() {
                     let json = JSON(promotionStatusSet.resultDictionary ?? [:])
-                    if let promotionStatus = try? decoder.decode(Card.PromotionStatus.self, from: json.rawData()) {
-                        promotionStatuses.append(promotionStatus)
-                    }
+                    let promotionStatus = try decoder.decode(Card.PromotionStatus.self, from: json.rawData())
+                    promotionStatuses.append(promotionStatus)
                 }
                 
                 let commentSql = """
@@ -166,9 +165,8 @@ class Master: FMDatabaseQueue {
                 var comments = [Card.Comment]()
                 while commentSet.next() {
                     let json = JSON(commentSet.resultDictionary ?? [:])
-                    if let comment = try? decoder.decode(Card.Comment.self, from: json.rawData()) {
-                        comments.append(comment)
-                    }
+                    let comment = try decoder.decode(Card.Comment.self, from: json.rawData())
+                    comments.append(comment)
                 }
                 
                 let profileSql = """
@@ -183,17 +181,72 @@ class Master: FMDatabaseQueue {
                 var profile: Card.Profile?
                 while profileSet.next() {
                     let json = JSON(profileSet.resultDictionary ?? [:])
-                    profile = try? decoder.decode(Card.Profile.self, from: json.rawData())
+                    profile = try decoder.decode(Card.Profile.self, from: json.rawData())
+                }
+                
+                let actualUnitSql = """
+                SELECT
+                    *
+                FROM
+                    actual_unit_background
+                WHERE
+                    unit_id like '\(json["unit_id"].stringValue.prefix(4))%'
+                """
+                let actualUnitSet = try db.executeQuery(actualUnitSql, values: nil)
+                var actualUnit: Card.ActualUnit?
+                while actualUnitSet.next() {
+                    let json = JSON(actualUnitSet.resultDictionary ?? [:])
+                    actualUnit = try decoder.decode(Card.ActualUnit.self, from: json.rawData())
+                }
+                
+                let unitBackgroundSql = """
+                SELECT
+                    *
+                FROM
+                    unit_background
+                WHERE
+                    unit_id = \(json["unit_id"])
+                """
+                let unitBackgroundSet = try db.executeQuery(unitBackgroundSql, values: nil)
+                var unitBackground: Card.UnitBackground?
+                while unitBackgroundSet.next() {
+                    let json = JSON(unitBackgroundSet.resultDictionary ?? [:])
+                    unitBackground = try decoder.decode(Card.UnitBackground.self, from: json.rawData())
                 }
                 
                 if let base = try? decoder.decode(Card.Base.self, from: json.rawData()),
-                    let profile = profile {
-                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments)
+                    let profile = profile, let actualUnit = actualUnit, let unitBackground = unitBackground {
+                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground)
                     cards.append(card)
                 }
             }
         }) {
             callback(cards)
+        }
+    }
+    
+    func getStills(storyGroupID: Int, callback: @escaping FMDBCallBackClosure<[Still]>) {
+        var stills = [Still]()
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                *
+            FROM
+                still
+            WHERE
+                story_group_id = \(storyGroupID)
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let still = try decoder.decode(Still.self, from: json.rawData())
+                stills.append(still)
+            }
+        }) {
+            callback(stills)
         }
     }
     

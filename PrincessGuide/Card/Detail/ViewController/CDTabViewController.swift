@@ -13,7 +13,7 @@ import Gestalt
 
 class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
-    static var defaultTabIndex: Int = 1
+    static var defaultTabIndex: Int = 2
 
     private var viewControllers: [CDTableViewController]
     
@@ -21,7 +21,7 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     init(card: Card) {
         self.card = card
-        viewControllers = [CDSkillTableViewController(), CDProfileTableViewController(), CDPropertyViewController(), CDPromotionTableViewController()]
+        viewControllers = [CDImageTableViewController(), CDSkillTableViewController(), CDProfileTableViewController(), CDPropertyViewController(), CDPromotionTableViewController()]
         viewControllers.forEach { $0.card = card }
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = card.base.unitName
@@ -36,7 +36,8 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         navigationItem.title = card.base.unitName
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
         
-        let items = [NSLocalizedString("Skill", comment: ""),
+        let items = [NSLocalizedString("Image", comment: ""),
+                     NSLocalizedString("Skill", comment: ""),
                      NSLocalizedString("Profile", comment: ""),
                      NSLocalizedString("Status", comment: ""),
                      NSLocalizedString("Equipment", comment: "")].map { Item(title: $0) }

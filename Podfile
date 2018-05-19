@@ -17,4 +17,5 @@ target 'PrincessGuide' do
   pod 'Timepiece'
   pod 'Tabman', :git => 'https://github.com/superk589/Tabman.git'
   pod 'Eureka', :git => 'https://github.com/superk589/Eureka.git', :branch => 'picker-row-support-attributed-strings'
+  pod 'ImageViewer', :git => 'https://github.com/superk589/ImageViewer.git'
 end

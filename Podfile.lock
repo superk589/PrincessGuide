@@ -8,8 +8,9 @@ PODS:
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
   - Gestalt (1.1.0)
-  - Kingfisher (4.7.0)
-  - KingfisherWebP (0.4.0):
+  - ImageViewer (5.0.0)
+  - Kingfisher (4.8.0)
+  - KingfisherWebP (0.4.1):
     - Kingfisher (~> 4.0)
     - libwebp (>= 0.5.0)
   - libwebp (0.6.1):
@@ -55,6 +56,7 @@ DEPENDENCIES:
   - Eureka (from `https://github.com/superk589/Eureka.git`, branch `picker-row-support-attributed-strings`)
   - FMDB
   - Gestalt
+  - ImageViewer (from `https://github.com/superk589/ImageViewer.git`)
   - Kingfisher
   - KingfisherWebP
   - lz4
@@ -67,7 +69,7 @@ DEPENDENCIES:
   - TTGTagCollectionView
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AcknowList
     - Alamofire
     - AutoInsetter
@@ -90,6 +92,8 @@ EXTERNAL SOURCES:
   Eureka:
     :branch: picker-row-support-attributed-strings
     :git: https://github.com/superk589/Eureka.git
+  ImageViewer:
+    :git: https://github.com/superk589/ImageViewer.git
   Tabman:
     :git: https://github.com/superk589/Tabman.git
 
@@ -97,6 +101,9 @@ CHECKOUT OPTIONS:
   Eureka:
     :commit: 4c45476c71c59000a809cef2b73fc05139acafc2
     :git: https://github.com/superk589/Eureka.git
+  ImageViewer:
+    :commit: e35429e515ed7ce786f2a2bdb0bbcda56111f198
+    :git: https://github.com/superk589/ImageViewer.git
   Tabman:
     :commit: 6c933f1bb6debbb58ceca73a7aa7e16c99794117
     :git: https://github.com/superk589/Tabman.git
@@ -109,8 +116,9 @@ SPEC CHECKSUMS:
   Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   Gestalt: be239fdeee2de30b2468865cf5e24b7923f507c2
-  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
-  KingfisherWebP: 22db72e41267cdfe15f7ba3ac94a386c88260ee6
+  ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  KingfisherWebP: 3cf59fe4c258efc2084fda65eaae950487048259
   libwebp: 0f01098c6c17175391af621b2f14150f3ca16e16
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
@@ -122,6 +130,6 @@ SPEC CHECKSUMS:
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
 
-PODFILE CHECKSUM: beeacd8563c9fe5a0bc2964a5c50ad3f1b9a366e
+PODFILE CHECKSUM: b8746969f8b85b938500354d7a69b24f30126186
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2

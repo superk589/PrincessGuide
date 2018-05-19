@@ -20,15 +20,21 @@ class Card: Codable {
     
     let profile: Profile
     
+    let actualUnit: ActualUnit
+    
+    let unitBackground: UnitBackground
+    
     let comments: [Comment]
     
-    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment]) {
+    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment], actualUnit: ActualUnit, unitBackground: UnitBackground) {
         self.base = base
         self.promotions = promotions
         self.promotionStatuses = promotionStatuses
         self.rarities = rarities
         self.profile = profile
         self.comments = comments
+        self.actualUnit = actualUnit
+        self.unitBackground = unitBackground
     }
     
     struct Base: Codable {
@@ -75,6 +81,7 @@ class Card: Codable {
         let unionBurst: Int
         let unitId: Int
         let unitName: String
+        
         
         var exSkillIDs: [Int] {
             return Array([exSkill1, exSkill2, exSkill3, exSkill4, exSkill5].prefix { $0 != 0 })
@@ -174,9 +181,25 @@ class Card: Codable {
         }
     }
     
+    struct ActualUnit: Codable {
+        let unitId: Int
+        let unitName: String
+        let bgId: Int
+        let faceType: Int
+    }
+    
+    struct UnitBackground: Codable {
+        let unitId: Int
+        let unitName: String
+        let bgId: Int
+        let position: Int
+        let faceType: Int
+        let bgName: String
+    }
+    
     struct Comment: Codable {
         let changeFace: Int
-        let changeTime: Int
+        let changeTime: Double
         let description: String
         let faceId: Int
         let id: Int
@@ -299,15 +322,19 @@ class Card: Codable {
         Master.shared.getSkills(skillIDs: [self.base.unionBurst], callback: closure)
     }?.first
     
-    lazy var patterns: [AttackPattern]? = DispatchSemaphore.sync({ [unowned self] closure in
+    lazy var patterns: [AttackPattern]? = DispatchSemaphore.sync { closure in
         Master.shared.getAttackPatterns(unitID: base.unitId, callback: closure)
-    })
+    }
     
-    lazy var charaStorys: [CharaStory]? = DispatchSemaphore.sync { [unowned self] (closure) in
+    lazy var charaStorys: [CharaStory]? = DispatchSemaphore.sync { (closure) in
         Master.shared.getCharaStory(charaID: charaID, callback: closure)
     }
     
     lazy var maxProperty: Property = property()
+    
+    lazy var stills = DispatchSemaphore.sync { (closure) in
+        Master.shared.getStills(storyGroupID: charaID, callback: closure)
+    } ?? []
 }
 
 extension Card {
@@ -337,6 +364,41 @@ extension Card {
             }
         }
         return property.rounded()
+    }
+    
+}
+
+extension Card {
+    
+    func stillImageURLs(postfix: String = "") -> [URL] {
+        return stills.map {
+            URL.image.appendingPathComponent("card/story/\($0.stillId).webp\(postfix)")
+        }
+    }
+    
+    func comicImageURLs(postfix: String = "") -> [URL] {
+        return [
+            URL.image.appendingPathComponent("comic/\(base.prefabId)_01.webp\(postfix)"),
+        ]
+    }
+    
+    func plateImageURLs(postfix: String = "") -> [URL] {
+        return [
+            URL.image.appendingPathComponent("icon/plate/\(base.prefabId + 10).webp\(postfix)"),
+            URL.image.appendingPathComponent("icon/plate/\(base.prefabId + 30).webp\(postfix)")
+        ]
+    }
+    
+    func fullImageURL(postfix: String = "") -> URL {
+        return URL.image.appendingPathComponent("card/full/\(base.prefabId + 30).webp\(postfix)")
+    }
+    
+    func profileImageURLs(postfix: String = "") -> [URL] {
+        return [
+            URL.image.appendingPathComponent("card/profile/\(base.prefabId + 10).webp\(postfix)"),
+            URL.image.appendingPathComponent("card/profile/\(base.prefabId + 30).webp\(postfix)"),
+            URL.image.appendingPathComponent("card/actual_profile/\(actualUnit.unitId).webp\(postfix)")
+        ]
     }
     
 }

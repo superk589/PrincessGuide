@@ -9,7 +9,7 @@
 import UIKit
 import Gestalt
 
-class CDTableViewController: UITableViewController {
+class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate {
     
     struct Row {
         enum Model {
@@ -22,6 +22,7 @@ class CDTableViewController: UITableViewController {
             case propertyItems([Property.Item])
             case comment(Card.Comment)
             case text(String, String)
+            case album(String, [URL], [URL])
         }
         var type: UITableViewCell.Type
         var data: Model
@@ -46,44 +47,7 @@ class CDTableViewController: UITableViewController {
     
     /// should be overrided by subclasses
     func prepareRows(for card: Card) {
-        
-//        rows.removeAll()
-//
-//        rows.append(Row(type: CDBasicTableViewCell.self, data: .profile(card.profile)))
-//
-//        card.patterns?.forEach {
-//            rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0, card)))
-//        }
-//
-//        if let unionBurst = card.unionBurst {
-//            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, nil)))
-//        }
-//
-//        rows.append(contentsOf:
-//            card.mainSkills
-//                .enumerated()
-//                .map {
-//                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, $0.offset))
-//                }
-//        )
-//
-//        rows.append(contentsOf:
-//            card.exSkills
-//                .enumerated()
-//                .map {
-//                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, $0.offset))
-//            }
-//        )
-//
-//        rows.append(contentsOf:
-//            card.exSkillEvolutions
-//                .enumerated()
-//                .map {
-//                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .exEvolution, $0.offset))
-//            }
-//        )
-//
-//        rows += card.promotions.map { Row(type: CDPromotionTableViewCell.self, data: .promotion($0)) }
+
     }
     
     func registerRows() {
@@ -130,9 +94,15 @@ class CDTableViewController: UITableViewController {
         
         if let cell = cell as? CDPromotionTableViewCell {
             cell.promotionView.delegate = self
+        } else if let cell = cell as? CDImageTableViewCell {
+            cell.delegate = self
         }
         
         return cell as! UITableViewCell
+    }
+    
+    func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL) {
+        
     }
 }
 

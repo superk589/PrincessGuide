@@ -239,6 +239,11 @@
         <target>公会战 %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Comic">
+        <source>Comic</source>
+        <target>小剧场</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Condition: HP is below %d%%.">
         <source>Condition: HP is below %d%%.</source>
         <target>触发条件：生命值低于 %d%%。</target>
@@ -374,6 +379,11 @@
         <target>冻结</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Full">
+        <source>Full</source>
+        <target>大图</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="General">
         <source>General</source>
         <target>通用</target>
@@ -412,6 +422,11 @@
       <trans-unit id="Hold for %@s.">
         <source>Hold for %@s.</source>
         <target>等待 %@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Image">
+        <source>Image</source>
+        <target>图片</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant Death">
@@ -537,6 +552,11 @@
       <trans-unit id="Physical Penetrate">
         <source>Physical Penetrate</source>
         <target>物理穿透</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Plate">
+        <source>Plate</source>
+        <target>缩略图</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Please wait">
@@ -682,6 +702,11 @@
       <trans-unit id="Steal">
         <source>Steal</source>
         <target>偷取</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Still">
+        <source>Still</source>
+        <target>剧情</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Stun">

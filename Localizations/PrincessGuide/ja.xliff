@@ -239,6 +239,10 @@
         <target>クランバトル %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Comic">
+        <source>Comic</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Condition: HP is below %d%%.">
         <source>Condition: HP is below %d%%.</source>
         <target>条件：HP %d%%以下</target>
@@ -374,6 +378,10 @@
         <target>凍結</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Full">
+        <source>Full</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="General">
         <source>General</source>
         <target>全般</target>
@@ -412,6 +420,10 @@
       <trans-unit id="Hold for %@s.">
         <source>Hold for %@s.</source>
         <target>%@秒とどまる。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Image">
+        <source>Image</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant Death">
@@ -537,6 +549,10 @@
       <trans-unit id="Physical Penetrate">
         <source>Physical Penetrate</source>
         <target>物理穿透</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Plate">
+        <source>Plate</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Please wait">
@@ -682,6 +698,10 @@
       <trans-unit id="Steal">
         <source>Steal</source>
         <target>盗む</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Still">
+        <source>Still</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Stun">
