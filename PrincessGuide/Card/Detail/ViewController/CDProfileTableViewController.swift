@@ -14,6 +14,7 @@ class CDProfileTableViewController: CDTableViewController {
         rows.removeAll()
         rows += [
             Row(type: CDBasicTableViewCell.self, data: .base(card.base)),
+            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("True Name", comment: ""), card.actualUnit.unitName)),
             Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Catch Copy", comment: ""), card.profile.catchCopy)),
             Row(type: CDProfileTableViewCell.self, data: .profileItems([
                 card.profile.item(for: .height),

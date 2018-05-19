@@ -62,7 +62,7 @@ class CDImageTableViewController: CDTableViewController {
             Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Full", comment: ""), [card.fullImageURL()], [card.fullImageURL(postfix: "@h\(height)")])),
             Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Profile", comment: ""), card.profileImageURLs(), card.profileImageURLs(postfix: "@h\(height)"))),
             Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Comic", comment: ""), card.comicImageURLs(), card.comicImageURLs(postfix: "@h\(height)"))),
-            Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Plate", comment: ""), card.plateImageURLs(), card.plateImageURLs(postfix: "@h\(height)")))
+            // Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Plate", comment: ""), card.plateImageURLs(), card.plateImageURLs(postfix: "@h\(height)")))
         ]
         
         urls = rows.flatMap { (row) -> [URL] in
