@@ -37,8 +37,8 @@ class CDImageTableViewController: CDTableViewController {
         let config = [
             GalleryConfigurationItem.closeButtonMode(.builtIn),
             GalleryConfigurationItem.closeLayout(.pinLeft(32, 20)),
-            GalleryConfigurationItem.thumbnailsActivityIndicator(true),
             GalleryConfigurationItem.hideDecorationViewsOnLaunch(true),
+            GalleryConfigurationItem.spinnerColor(.hatsunePurple),
             GalleryConfigurationItem.deleteButtonMode(.none),
             GalleryConfigurationItem.thumbnailsButtonMode(.none),
             GalleryConfigurationItem.swipeToDismissMode(.vertical),
