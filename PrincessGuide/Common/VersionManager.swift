@@ -34,4 +34,14 @@ class VersionManager {
         }
     }
     
+    func executeDocumentReset(_ reset: (Int) -> Void) {
+        guard let documentVersion = Bundle.main.infoDictionary?["Document version"] as? Int else {
+            return
+        }
+        let lastVersion = UserDefaults.standard.value(forKey: "last_document_version") as? Int ?? 0
+        if documentVersion > lastVersion {
+            reset(lastVersion)
+        }
+        UserDefaults.standard.set(documentVersion, forKey: "last_document_version")
+    }
 }

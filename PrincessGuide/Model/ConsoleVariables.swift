@@ -20,9 +20,9 @@ class ConsoleVariables: Codable {
     
     static let url = URL(fileURLWithPath: Path.library).appendingPathComponent("console_variables.json")
     
-    var maxPlayerLevel = 90 { didSet { save() } }
+    var maxPlayerLevel = Constant.presetMaxPlayerLevel { didSet { save() } }
     
-    var maxEquipmentRank = 8 { didSet { save() } }
+    var maxEquipmentRank = Constant.presetMaxRank { didSet { save() } }
     
     var coefficient = Coefficient.default { didSet { save() } }
     
@@ -51,11 +51,11 @@ class ConsoleVariables: Codable {
             }
         }
         
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
-            Master.shared.getCoefficient(callback: { (coefficient) in
-                self?.coefficient = coefficient ?? Coefficient.default
-            })
-        }
+//        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+//            Master.shared.getCoefficient(callback: { (coefficient) in
+//                self?.coefficient = coefficient ?? Coefficient.default
+//            })
+//        }
         
         DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
             Master.shared.getMaxRank(callback: { (rank) in

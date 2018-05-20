@@ -12,8 +12,8 @@ struct Constant {
     static let appID = 1377498032
     static let appName = "Hatsune's Notes"
     static let appNameHashtag = "HatsunesNotes"
-    static let presetMaxRank = 8
-    static let presetMaxPlayerLevel = 90
+    static let presetMaxRank = 9
+    static let presetMaxPlayerLevel = 93
     static let presetMaxCharaLoveRank = 8
     static let presetMaxRarity = 5
 }

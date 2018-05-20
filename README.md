@@ -1,8 +1,9 @@
-![Hatsune's Notes](./PrincessGuide/Assets.xcassets/AppIcon.appiconset/icon_76pt%402x.png)
-# PrincessGuide
-App Store Name: Hatsune's Notes
+![Hatsune's Notes](./PrincessGuide/Assets.xcassets/AppIcon.appiconset/icon_76pt%402x.png)  
 
-An unofficial iOS app for **プリンセスコネクト！Re:Dive**
+[![](./badge-download-on-the-app-store.svg)](https://itunes.apple.com/app/id1377498032)  
+# Hatsune's Notes
+An unofficial iOS app for **プリンセスコネクト！Re:Dive**.  
+**Hatsune's Notes** is the app name and **PrincessGuide** is the project name.  
 
 ## Features
 1. Chara Skill Effect Analysis

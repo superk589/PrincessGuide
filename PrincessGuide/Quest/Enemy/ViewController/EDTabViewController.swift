@@ -13,7 +13,7 @@ import Gestalt
 
 class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
-    static var defaultTabIndex: Int = 0
+    static var defaultTabIndex: Int = 1
     
     private var viewControllers: [UIViewController]
     
@@ -21,7 +21,7 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     init(enemy: Enemy) {
         self.enemy = enemy
-        viewControllers = [EDStatusTableViewController(enemy: enemy), EDSkillTableViewController(enemy: enemy)]
+        viewControllers = [EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy)]
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = enemy.base.name
     }
@@ -33,8 +33,9 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let items = [NSLocalizedString("Status", comment: ""),
-                     NSLocalizedString("Skill", comment: "")].map { Item(title: $0) }
+        let items = [NSLocalizedString("Skill", comment: ""),
+                     NSLocalizedString("Status", comment: "")]
+            .map { Item(title: $0) }
         
         dataSource = self
         bar.items = items

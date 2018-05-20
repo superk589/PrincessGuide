@@ -114,6 +114,11 @@
         <target>Action</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Add additional [%@] %@ to %@ for next attack within %@s.">
+        <source>Add additional [%1$@] %2$@ to %3$@ for next attack within %4$@s.</source>
+        <target>为%3$@附加效果：使 %4$@ 秒内的下一次攻击获得额外 [%1$@] %2$@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Add additional damage [%@] with max %@ stacks.">
         <source>Add additional damage [%1$@] with max %2$@ stacks.</source>
         <target>每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 %2$@ 层。</target>
@@ -284,6 +289,11 @@
         <target>对%3$@造成 [%1$@] %2$@。</target>
         <note>Deal [x] physical damage/magical damage to one enemy target.</note>
       </trans-unit>
+      <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@.">
+        <source>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</source>
+        <target>对%2$@造成其最大生命值 [%1$@]%% 的伤害。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Detain">
         <source>Detain</source>
         <target>拘留</target>
@@ -296,7 +306,7 @@
       </trans-unit>
       <trans-unit id="Dodge">
         <source>Dodge</source>
-        <target>回避等级</target>
+        <target>回避</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Dot">
@@ -481,7 +491,7 @@
       </trans-unit>
       <trans-unit id="Magic Critical">
         <source>Magic Critical</source>
-        <target>魔法暴击等级</target>
+        <target>魔法暴击</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Magic DEF">
@@ -546,7 +556,7 @@
       </trans-unit>
       <trans-unit id="Physical Critical">
         <source>Physical Critical</source>
-        <target>物理暴击等级</target>
+        <target>物理暴击</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Physical Penetrate">
@@ -906,6 +916,11 @@
       <trans-unit id="the highest ATK">
         <source>the highest ATK</source>
         <target>物理攻击力最高的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the highest HP">
+        <source>the highest HP</source>
+        <target>HP 最多的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the highest Magic STR">

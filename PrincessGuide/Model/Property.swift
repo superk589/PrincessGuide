@@ -39,6 +39,8 @@ struct Property: Codable, Equatable {
         var value: Double
         var percent: Double? {
             switch key {
+            case .lifeSteal:
+                return value * ConsoleVariables.default.coefficient.value(for: key)
 //            case .dodge, .magicCritical, .physicalCritical, .lifeSteal:
 //                return value * ConsoleVariables.default.coefficient.value(for: key) / 10
 //            case .hpRecoveryRate:

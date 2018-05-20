@@ -114,6 +114,11 @@
         <target>行動</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Add additional [%@] %@ to %@ for next attack within %@s.">
+        <source>Add additional [%1$@] %2$@ to %3$@ for next attack within %4$@s.</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Add additional damage [%@] with max %@ stacks.">
         <source>Add additional damage [%1$@] with max %2$@ stacks.</source>
         <target>攻撃する度にダメージ[%1$@]増加、最大%2$@回まで累積する。</target>
@@ -241,6 +246,7 @@
       </trans-unit>
       <trans-unit id="Comic">
         <source>Comic</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Condition: HP is below %d%%.">
@@ -282,6 +288,11 @@
         <source>Deal [%1$@] %2$@ to %3$@.</source>
         <target>%3$@に[%1$@]の%2$@を与える。</target>
         <note>Deal [x] physical damage/magical damage to one enemy target.</note>
+      </trans-unit>
+      <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@.">
+        <source>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</source>
+        <target/>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Detain">
         <source>Detain</source>
@@ -380,6 +391,7 @@
       </trans-unit>
       <trans-unit id="Full">
         <source>Full</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="General">
@@ -424,6 +436,7 @@
       </trans-unit>
       <trans-unit id="Image">
         <source>Image</source>
+        <target>画像</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant Death">
@@ -553,6 +566,7 @@
       </trans-unit>
       <trans-unit id="Plate">
         <source>Plate</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Please wait">
@@ -702,6 +716,7 @@
       </trans-unit>
       <trans-unit id="Still">
         <source>Still</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Stun">
@@ -751,6 +766,7 @@
       </trans-unit>
       <trans-unit id="True Name">
         <source>True Name</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Twitter">
@@ -901,6 +917,11 @@
       <trans-unit id="the highest ATK">
         <source>the highest ATK</source>
         <target>物理攻撃力が一番高い</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the highest HP">
+        <source>the highest HP</source>
+        <target>HPが一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the highest Magic STR">

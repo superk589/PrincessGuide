@@ -27,7 +27,7 @@ struct Coefficient: Codable {
             "dodge_coefficient": 6.0,
             "physical_penetrate_coefficient": 6.0,
             "magic_penetrate_coefficient": 6.0,
-            "life_steal_coefficient": 4.5,
+            "life_steal_coefficient": 0.7,
             "hp_recovery_rate_coefficient": 1.0,
             "energy_recovery_rate_coefficient": 1.5,
             "energy_reduce_rate_coefficient": 3.0,

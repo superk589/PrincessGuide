@@ -33,14 +33,19 @@ extension DataChecking where Self: UIViewController {
                     DispatchQueue.main.async {
                         hudManager.setup("\(Int(progress.fractionCompleted * 100))%", animated: true)
                     }
-                }, completion: { (data, error) in
-                    if data != nil {
+                }, completion: { (_, error) in
+                    if error == nil {
                         VersionManager.shared.hash = hash
                         VersionManager.shared.truthVersion = version
-                    }
-                    DispatchQueue.main.async {
-                        hudManager.setup(NSLocalizedString("Finished", comment: ""), animated: false)
-                        hudManager.hide(animated: true)
+                        DispatchQueue.main.async {
+                            hudManager.setup(NSLocalizedString("Finished", comment: ""), animated: false)
+                            hudManager.hide(animated: true)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            hudManager.setup(NSLocalizedString("Failed", comment: ""), animated: false)
+                            hudManager.hide(animated: true)
+                        }
                     }
                 })
             } else if error != nil {

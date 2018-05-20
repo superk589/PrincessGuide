@@ -38,6 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set Kingfisher cache never expiring
         ImageCache.default.maxCachePeriodInSecond = -1
         
+        VersionManager.shared.executeDocumentReset { (lastVersion) in
+            do {
+                if lastVersion < 1 {
+                    try FileManager.default.removeItem(at: ConsoleVariables.url)
+                }
+            } catch (let error) {
+                print(error)
+            }
+        }
+        
         return true
     }
 

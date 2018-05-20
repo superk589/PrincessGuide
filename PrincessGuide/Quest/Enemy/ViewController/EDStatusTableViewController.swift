@@ -15,6 +15,7 @@ class EDStatusTableViewController: EDTableViewController {
         let property = enemy.base.property
         rows += [
             Row(type: EDBasicTableViewCell.self, data: .unit(enemy.unit)),
+            Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Level", comment: ""), String(enemy.base.level))),
             Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .atk),
                                                                           property.item(for: .magicStr)])),
             Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .def),

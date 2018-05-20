@@ -134,6 +134,8 @@ enum ActionType: Int {
     
     case jumpForward = 42
     
+    case gravity = 46
+    
     case hot = 48
     
     case ex = 90
@@ -340,9 +342,10 @@ enum TargetCountModifier: Int, CustomStringConvertible {
 enum TargetTypeModifier: Int, CustomStringConvertible {
     case none = -1
     case lowestHP = 5
+    case highestHP = 6
+    case `self` = 7
     case highestTP = 12
     case lowestTP = 13
-    case `self` = 7
     case highestATK = 14
     case highestMagicSTR = 16
     var description: String {
@@ -353,6 +356,8 @@ enum TargetTypeModifier: Int, CustomStringConvertible {
             return NSLocalizedString("the highest ATK", comment: "")
         case .lowestHP:
             return NSLocalizedString("the lowest HP", comment: "")
+        case .highestHP:
+            return NSLocalizedString("the highest HP", comment: "")
         case .lowestTP:
             return NSLocalizedString("the lowest TP", comment: "")
         case .highestTP:
@@ -505,6 +510,12 @@ extension Skill.Action {
                 ActionValue(key: .skillLevel, value: String(actionValue3)),
                 ActionValue(key: .stack, value: String(actionValue4))
             ]
+        case (.additionalLifeSteal, _, _):
+            return [
+                ActionValue(key: .initialValue, value: String(actionValue2)),
+                ActionValue(key: .skillLevel, value: String(actionValue3)),
+                ActionValue(key: .duration, value: String(actionValue1))
+            ]
         case (.invulnerable, _, _):
             return [
                 ActionValue(key: .initialValue, value: String(actionValue1)),
@@ -536,6 +547,11 @@ extension Skill.Action {
             return [
                 ActionValue(key: .duration, value: String(actionValue3))
             ]
+        case (.gravity, _, _):
+            return [
+                ActionValue(key: .initialValue, value: String(actionValue1))
+            ]
+            
         default:
             return []
         }
@@ -655,6 +671,12 @@ extension Skill.Action {
         case (.hpCondition, _):
             let format = NSLocalizedString("Condition: HP is below %d%%.", comment: "")
             return String(format: format, Int(actionValue3.rounded()))
+        case (.gravity, _):
+            let format = NSLocalizedString("Deal damage equal to [%@]%% of target's max HP to %@.", comment: "")
+            return String(format: format, actionValue(of: level), targetValue())
+        case (.additionalLifeSteal, _):
+            let format = NSLocalizedString("Add additional [%@] %@ to %@ for next attack within %@s.", comment: "")
+            return String(format: format, actionValue(of: level), PropertyKey.lifeSteal.description, targetValue(), durationValue())
         default:
             let format = NSLocalizedString("Unknown effect %d with arguments [%@] on %@.", comment: "")
             return String(format: format, actionType, arguments.filter { $0 != 0 }.map(String.init).joined(separator: ", "), targetValue())
