@@ -48,6 +48,7 @@ class QuestEnemyTableViewController: UITableViewController {
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
             themable.backgroundImageView.image = theme.backgroundImage
             themable.tableView.indicatorStyle = theme.indicatorStyle
+            themable.tableView.backgroundColor = theme.color.background
         }
         
         tableView.allowsSelection = false

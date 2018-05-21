@@ -341,6 +341,10 @@ enum TargetCountModifier: Int, CustomStringConvertible {
 
 enum TargetTypeModifier: Int, CustomStringConvertible {
     case none = -1
+    // not sure for 1, 2 ,3
+//    case forward = 2
+//    case centre = 3
+    case fullback = 4
     case lowestHP = 5
     case highestHP = 6
     case `self` = 7
@@ -355,15 +359,17 @@ enum TargetTypeModifier: Int, CustomStringConvertible {
         case .highestATK:
             return NSLocalizedString("the highest ATK", comment: "")
         case .lowestHP:
-            return NSLocalizedString("the lowest HP", comment: "")
+            return NSLocalizedString("the lowest current HP", comment: "")
         case .highestHP:
-            return NSLocalizedString("the highest HP", comment: "")
+            return NSLocalizedString("the highest max HP", comment: "")
         case .lowestTP:
             return NSLocalizedString("the lowest TP", comment: "")
         case .highestTP:
             return NSLocalizedString("the highest TP", comment: "")
         case .highestMagicSTR:
             return NSLocalizedString("the highest Magic STR", comment: "")
+        case .fullback:
+            return NSLocalizedString("fullback", comment: "")
         default:
             return ""
         }
@@ -752,7 +758,12 @@ extension Skill.Action {
             return String(format: format, countModifier.description, pluralModifier.description)
         case (.`self`, _, _):
             return targetTypeModifier.description
-        case (.highestATK, _, _), (.lowestHP, _, _), (.lowestTP, _, _), (.highestTP, _, _), (.highestMagicSTR, _, _):
+        case (.highestATK, _, _),
+             (.lowestHP, _, _),
+             (.lowestTP, _, _),
+             (.highestTP, _, _),
+             (.highestMagicSTR, _, _),
+             (.highestHP, _, _):
             let format: String
             if case .finite(let range) = rangeModifier {
                 format = NSLocalizedString("%@ %@ target in range %d", comment: "")
@@ -761,11 +772,20 @@ extension Skill.Action {
                 format = NSLocalizedString("%@ %@ %@", comment: "")
                 return String(format: format, targetTypeModifier.description, assignment.description, pluralModifier.description)
             }
+        case (.fullback, .finite(let range), .all):
+            let format = NSLocalizedString("all %@ %@ %@ in range %d", comment: "")
+            return String(format: format, assignment.description, targetTypeModifier.description, pluralModifier.description, range)
+        case (.fullback, .finite(let range), _):
+            let format = NSLocalizedString("max %@ %@ %@ %@ in range %d", comment: "")
+            return String(format: format, countModifier.description, assignment.description, targetTypeModifier.description, pluralModifier.description, range)
+        case (.fullback, _, _):
+            let format = NSLocalizedString("%@ %@ %@ %@", comment: "")
+            return String(format: format, countModifier.description, assignment.description, targetTypeModifier.description, pluralModifier.description)
         case (_, .zero, _):
             if targetType == 3 && assignment == .friend && targetCount == 1 {
                 return TargetTypeModifier.`self`.description
             } else {
-                let format = NSLocalizedString("%@ %@ %@", comment: "three enemy targets")
+                let format = NSLocalizedString("%@ %@ %@", tableName: "Localizable2", comment: "three enemy targets")
                 return String(format: format, countModifier.description, assignment.description, pluralModifier.description)
             }
         case (_, .finite(let range), .all):
@@ -775,7 +795,7 @@ extension Skill.Action {
             let format = NSLocalizedString("max %@ %@ %@ in range %d", comment: "")
             return String(format: format, countModifier.description, assignment.description, pluralModifier.description, range)
         default:
-            let format = NSLocalizedString("%@ %@ %@", comment: "three enemy targets")
+            let format = NSLocalizedString("%@ %@ %@", tableName: "Localizable2", comment: "three enemy targets")
             return String(format: format, countModifier.description, assignment.description, pluralModifier.description)
         }
     }

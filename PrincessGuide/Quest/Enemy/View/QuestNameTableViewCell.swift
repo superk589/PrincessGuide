@@ -31,9 +31,7 @@ class QuestNameTableViewCell: UITableViewCell {
             make.centerY.equalToSuperview()
         }
         
-        contentView.snp.makeConstraints { (make) in
-            make.height.equalTo(66)
-        }
+        contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 66).isActive = true
     }
     
     func configure(for title: String) {

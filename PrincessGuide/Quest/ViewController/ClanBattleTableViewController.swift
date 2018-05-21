@@ -29,6 +29,7 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
             themable.refresher.arrowImage.tintColor = theme.color.indicator
             themable.refresher.loadingView.color = theme.color.indicator
             themable.tableView.indicatorStyle = theme.indicatorStyle
+            themable.tableView.backgroundColor = theme.color.background
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)

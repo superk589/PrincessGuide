@@ -38,5 +38,9 @@ class EDSkillTableViewController: EDTableViewController {
             }
         )
     }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 280
+    }
 
 }

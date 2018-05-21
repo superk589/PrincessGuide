@@ -57,7 +57,12 @@
       <trans-unit id="%@ %@ %@">
         <source>%1$@ %2$@ %3$@</source>
         <target>%1$@%2$@%3$@</target>
-        <note>three enemy targets</note>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ %@ %@">
+        <source>%1$@ %2$@ %3$@ %4$@</source>
+        <target>%3$@の%2$@%4$@%1$@</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@] TP.">
         <source>%1$@ %2$@ [%3$@] TP.</source>
@@ -116,7 +121,7 @@
       </trans-unit>
       <trans-unit id="Add additional [%@] %@ to %@ for next attack within %@s.">
         <source>Add additional [%1$@] %2$@ to %3$@ for next attack within %4$@s.</source>
-        <target/>
+        <target>%4$@秒以内、%3$@の次の攻撃に[%1$@]%2$@を追加する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add additional damage [%@] with max %@ stacks.">
@@ -246,7 +251,7 @@
       </trans-unit>
       <trans-unit id="Comic">
         <source>Comic</source>
-        <target/>
+        <target>ロード画面</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Condition: HP is below %d%%.">
@@ -291,7 +296,7 @@
       </trans-unit>
       <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@.">
         <source>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</source>
-        <target/>
+        <target>%2$@に最大HPの[%1$@]%%のダメージを与える。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Detain">
@@ -391,7 +396,7 @@
       </trans-unit>
       <trans-unit id="Full">
         <source>Full</source>
-        <target/>
+        <target>★３のイラスト</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="General">
@@ -716,7 +721,7 @@
       </trans-unit>
       <trans-unit id="Still">
         <source>Still</source>
-        <target/>
+        <target>絆ストーリー</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Stun">
@@ -766,7 +771,7 @@
       </trans-unit>
       <trans-unit id="True Name">
         <source>True Name</source>
-        <target/>
+        <target>本名</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Twitter">
@@ -839,6 +844,11 @@
         <target>全体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="all %@ %@ %@ in range %d">
+        <source>all %1$@ %2$@ %3$@ in range %4$d</source>
+        <target>%4$d範囲内%2$@の%1$@%3$@全体</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="all %@ %@ in range %d">
         <source>all %1$@ %2$@ in range %3$d</source>
         <target>%3$d範囲内%1$@%2$@全体</target>
@@ -859,6 +869,11 @@
         <target>味方</target>
         <note>target modifier</note>
       </trans-unit>
+      <trans-unit id="fullback">
+        <source>fullback</source>
+        <target>後衛</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="last effect affected">
         <source>last effect affected</source>
         <target>同じ</target>
@@ -872,6 +887,11 @@
       <trans-unit id="magical damage">
         <source>magical damage</source>
         <target>魔法ダメージ</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="max %@ %@ %@ %@ in range %d">
+        <source>max %1$@ %2$@ %3$@ %4$@ in range %5$d</source>
+        <target>%5$d範囲内%1$@までの%3$@の%2$@%4$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="max %@ %@ %@ in range %d">
@@ -919,11 +939,6 @@
         <target>物理攻撃力が一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the highest HP">
-        <source>the highest HP</source>
-        <target>HPが一番高い</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="the highest Magic STR">
         <source>the highest Magic STR</source>
         <target>魔法攻撃力が一番高い</target>
@@ -934,14 +949,19 @@
         <target>TPが一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the lowest HP">
-        <source>the lowest HP</source>
-        <target>HPが一番低い</target>
+      <trans-unit id="the highest max HP">
+        <source>the highest max HP</source>
+        <target>最大HPが一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest TP">
         <source>the lowest TP</source>
         <target>TPが一番低い</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the lowest current HP">
+        <source>the lowest current HP</source>
+        <target>HPが一番低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="three">
@@ -958,6 +978,18 @@
         <source>unknown</source>
         <target>未知</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="PrincessGuide/en.lproj/Localizable2.strings" source-language="en" datatype="plaintext" target-language="ja">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+    </header>
+    <body>
+      <trans-unit id="%@ %@ %@">
+        <source>%1$@ %2$@ %3$@</source>
+        <target>%2$@%1$@%3$@</target>
+        <note>three enemy targets</note>
       </trans-unit>
     </body>
   </file>

@@ -115,6 +115,7 @@
 		12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */; };
 		12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */; };
 		12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */; };
+		12D61B0920B3159A00A6B9B2 /* Localizable2.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12D61B0720B3159A00A6B9B2 /* Localizable2.strings */; };
 		12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */; };
 		12F125B120AEC069005C9659 /* CDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* CDImageView.swift */; };
 		12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */; };
@@ -254,6 +255,8 @@
 		12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPropertyTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDPatternTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewCell.swift; sourceTree = "<group>"; };
+		12D61B0820B3159A00A6B9B2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable2.strings"; sourceTree = "<group>"; };
+		12E756ED20B3159F003FC66D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable2.strings; sourceTree = "<group>"; };
 		12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewCell.swift; sourceTree = "<group>"; };
 		12F125B020AEC069005C9659 /* CDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageView.swift; sourceTree = "<group>"; };
 		12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewController.swift; sourceTree = "<group>"; };
@@ -479,6 +482,7 @@
 				1221CDBF207B9541008F30AA /* Assets.xcassets */,
 				1221CDCE207C41C7008F30AA /* PrincessGuide-Bridging-Header.h */,
 				12659E11205F5DB100A8B9A2 /* Info.plist */,
+				12D61B0720B3159A00A6B9B2 /* Localizable2.strings */,
 				1218E61A20A6D53700D68610 /* Localizable.strings */,
 				1218E61420A6D53700D68610 /* InfoPlist.strings */,
 				12398E8E20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist */,
@@ -735,6 +739,7 @@
 				1218E61C20A6D53700D68610 /* Localizable.strings in Resources */,
 				12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */,
 				12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */,
+				12D61B0920B3159A00A6B9B2 /* Localizable2.strings in Resources */,
 				12398E8F20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist in Resources */,
 				1218E61620A6D53700D68610 /* InfoPlist.strings in Resources */,
 			);
@@ -1003,6 +1008,15 @@
 				1280DE4920A71988008D9D72 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		12D61B0720B3159A00A6B9B2 /* Localizable2.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12D61B0820B3159A00A6B9B2 /* zh-Hans */,
+				12E756ED20B3159F003FC66D /* ja */,
+			);
+			name = Localizable2.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

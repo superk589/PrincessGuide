@@ -57,7 +57,12 @@
       <trans-unit id="%@ %@ %@">
         <source>%1$@ %2$@ %3$@</source>
         <target>%1$@%2$@%3$@</target>
-        <note>three enemy targets</note>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ %@ %@">
+        <source>%1$@ %2$@ %3$@ %4$@</source>
+        <target>%1$@%2$@%3$@%4$@</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@] TP.">
         <source>%1$@ %2$@ [%3$@] TP.</source>
@@ -251,7 +256,7 @@
       </trans-unit>
       <trans-unit id="Condition: HP is below %d%%.">
         <source>Condition: HP is below %d%%.</source>
-        <target>触发条件：生命值低于 %d%%。</target>
+        <target>触发条件：HP 低于 %d%%。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Crafted">
@@ -291,7 +296,7 @@
       </trans-unit>
       <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@.">
         <source>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</source>
-        <target>对%2$@造成其最大生命值 [%1$@]%% 的伤害。</target>
+        <target>对%2$@造成其最大 HP [%1$@]%% 的伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Detain">
@@ -566,6 +571,7 @@
       </trans-unit>
       <trans-unit id="Plate">
         <source>Plate</source>
+        <target>Plate</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Please wait">
@@ -838,6 +844,11 @@
         <target>全部</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="all %@ %@ %@ in range %d">
+        <source>all %1$@ %2$@ %3$@ in range %4$d</source>
+        <target>范围 %4$d 内的全部%1$@%2$@%3$@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="all %@ %@ in range %d">
         <source>all %1$@ %2$@ in range %3$d</source>
         <target>范围 %3$d 内的全部%1$@%2$@</target>
@@ -858,6 +869,11 @@
         <target>友方</target>
         <note>target modifier</note>
       </trans-unit>
+      <trans-unit id="fullback">
+        <source>fullback</source>
+        <target>后卫</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="last effect affected">
         <source>last effect affected</source>
         <target>上一个效果影响到的</target>
@@ -871,6 +887,11 @@
       <trans-unit id="magical damage">
         <source>magical damage</source>
         <target>魔法伤害</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="max %@ %@ %@ %@ in range %d">
+        <source>max %1$@ %2$@ %3$@ %4$@ in range %5$d</source>
+        <target>范围 %5$d 内的至多%1$@%2$@%3$@%4$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="max %@ %@ %@ in range %d">
@@ -918,11 +939,6 @@
         <target>物理攻击力最高的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the highest HP">
-        <source>the highest HP</source>
-        <target>HP 最多的</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="the highest Magic STR">
         <source>the highest Magic STR</source>
         <target>魔法攻击力最高的</target>
@@ -933,14 +949,19 @@
         <target> TP 最多的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the lowest HP">
-        <source>the lowest HP</source>
-        <target> HP 最少的</target>
+      <trans-unit id="the highest max HP">
+        <source>the highest max HP</source>
+        <target>最大 HP 最多的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest TP">
         <source>the lowest TP</source>
         <target> TP 最少的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the lowest current HP">
+        <source>the lowest current HP</source>
+        <target>当前 HP 最少的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="three">
@@ -957,6 +978,18 @@
         <source>unknown</source>
         <target>未知</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="PrincessGuide/en.lproj/Localizable2.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+    </header>
+    <body>
+      <trans-unit id="%@ %@ %@">
+        <source>%1$@ %2$@ %3$@</source>
+        <target>%1$@%2$@%3$@</target>
+        <note>three enemy targets</note>
       </trans-unit>
     </body>
   </file>

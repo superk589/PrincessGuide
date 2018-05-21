@@ -29,7 +29,6 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         selectedBackgroundView = UIView()
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
@@ -105,6 +104,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         actionLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         actionLabel.numberOfLines = 0
         actionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+
     }
     
     private func createSubTitleLabel(title: String) -> UILabel {
@@ -132,6 +132,14 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         configure(for: skill, category: category, index: index)
     }
     
+//    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+//        setNeedsLayout()
+//        setNeedsUpdateConstraints()
+//        updateConstraints()
+//        layoutIfNeeded()
+//        return super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
+//    }
+//
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
