@@ -61,7 +61,7 @@
       </trans-unit>
       <trans-unit id="%@ %@ %@ %@">
         <source>%1$@ %2$@ %3$@ %4$@</source>
-        <target>%3$@の%2$@%4$@%1$@</target>
+        <target>%1$@%3$@%4$@%2$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@] TP.">
@@ -337,6 +337,14 @@
       <trans-unit id="EX+">
         <source>EX+</source>
         <target>EX+</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Effective Magical HP">
+        <source>Effective Magical HP</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Effective Physical HP">
+        <source>Effective Physical HP</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Email">
@@ -869,11 +877,6 @@
         <target>味方</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="fullback">
-        <source>fullback</source>
-        <target>後衛</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="last effect affected">
         <source>last effect affected</source>
         <target>同じ</target>
@@ -887,16 +890,6 @@
       <trans-unit id="magical damage">
         <source>magical damage</source>
         <target>魔法ダメージ</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="max %@ %@ %@ %@ in range %d">
-        <source>max %1$@ %2$@ %3$@ %4$@ in range %5$d</source>
-        <target>%5$d範囲内%1$@までの%3$@の%2$@%4$@</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="max %@ %@ %@ in range %d">
-        <source>max %1$@ %2$@ %3$@ in range %4$d</source>
-        <target>%4$d範囲内%1$@までの%2$@%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="one">
@@ -934,6 +927,11 @@
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the farthest">
+        <source>the farthest</source>
+        <target>最も遠い</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the highest ATK">
         <source>the highest ATK</source>
         <target>物理攻撃力が一番高い</target>
@@ -949,9 +947,9 @@
         <target>TPが一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the highest max HP">
-        <source>the highest max HP</source>
-        <target>最大HPが一番高い</target>
+      <trans-unit id="the highest current HP">
+        <source>the highest current HP</source>
+        <target>残りHPが一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest TP">
@@ -961,7 +959,7 @@
       </trans-unit>
       <trans-unit id="the lowest current HP">
         <source>the lowest current HP</source>
-        <target>HPが一番低い</target>
+        <target>残りHPが一番低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="three">
@@ -977,6 +975,16 @@
       <trans-unit id="unknown">
         <source>unknown</source>
         <target>未知</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="up to %@ %@ %@ %@ in range %d">
+        <source>up to %1$@ %2$@ %3$@ %4$@ in range %5$d</source>
+        <target>%5$d範囲内%1$@までの%2$@%3$@%4$@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="up to %@ %@ %@ in range %d">
+        <source>up to %1$@ %2$@ %3$@ in range %4$d</source>
+        <target>%4$d範囲内%1$@までの%2$@%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>

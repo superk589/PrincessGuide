@@ -27,7 +27,7 @@ struct Property: Codable, Equatable {
     var waveHpRecovery: Double
     
     var effectivePhysicalHP: Double {
-        return hp * (1 + def / 100) / (1 - dodge * ConsoleVariables.default.coefficient.value(for: .dodge) / 1000)
+        return hp * (1 + def / 100) * (1 + dodge / 100)
     }
     
     var effectiveMagicalHP: Double {
@@ -41,6 +41,10 @@ struct Property: Codable, Equatable {
             switch key {
             case .lifeSteal:
                 return value * ConsoleVariables.default.coefficient.value(for: key)
+            case .dodge:
+                return 100 * value / (value + 100)
+            case .physicalCritical, .magicCritical:
+                return value * 0.05
 //            case .dodge, .magicCritical, .physicalCritical, .lifeSteal:
 //                return value * ConsoleVariables.default.coefficient.value(for: key) / 10
 //            case .hpRecoveryRate:

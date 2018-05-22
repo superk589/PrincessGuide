@@ -344,7 +344,7 @@ enum TargetTypeModifier: Int, CustomStringConvertible {
     // not sure for 1, 2 ,3
 //    case forward = 2
 //    case centre = 3
-    case fullback = 4
+    case fromBack = 4
     case lowestHP = 5
     case highestHP = 6
     case `self` = 7
@@ -361,15 +361,15 @@ enum TargetTypeModifier: Int, CustomStringConvertible {
         case .lowestHP:
             return NSLocalizedString("the lowest current HP", comment: "")
         case .highestHP:
-            return NSLocalizedString("the highest max HP", comment: "")
+            return NSLocalizedString("the highest current HP", comment: "")
         case .lowestTP:
             return NSLocalizedString("the lowest TP", comment: "")
         case .highestTP:
             return NSLocalizedString("the highest TP", comment: "")
         case .highestMagicSTR:
             return NSLocalizedString("the highest Magic STR", comment: "")
-        case .fullback:
-            return NSLocalizedString("fullback", comment: "")
+        case .fromBack:
+            return NSLocalizedString("the farthest", comment: "")
         default:
             return ""
         }
@@ -772,15 +772,15 @@ extension Skill.Action {
                 format = NSLocalizedString("%@ %@ %@", comment: "")
                 return String(format: format, targetTypeModifier.description, assignment.description, pluralModifier.description)
             }
-        case (.fullback, .finite(let range), .all):
-            let format = NSLocalizedString("all %@ %@ %@ in range %d", comment: "")
-            return String(format: format, assignment.description, targetTypeModifier.description, pluralModifier.description, range)
-        case (.fullback, .finite(let range), _):
-            let format = NSLocalizedString("max %@ %@ %@ %@ in range %d", comment: "")
-            return String(format: format, countModifier.description, assignment.description, targetTypeModifier.description, pluralModifier.description, range)
-        case (.fullback, _, _):
+//        case (.fromBack, .finite(let range), .all):
+//            let format = NSLocalizedString("all %@ %@ %@ in range %d", comment: "")
+//            return String(format: format, assignment.description, targetTypeModifier.description, pluralModifier.description, range)
+        case (.fromBack, .finite(let range), _):
+            let format = NSLocalizedString("up to %@ %@ %@ %@ in range %d", comment: "")
+            return String(format: format, countModifier.description, targetTypeModifier.description, assignment.description, pluralModifier.description, range)
+        case (.fromBack, _, _):
             let format = NSLocalizedString("%@ %@ %@ %@", comment: "")
-            return String(format: format, countModifier.description, assignment.description, targetTypeModifier.description, pluralModifier.description)
+            return String(format: format, targetTypeModifier.description, countModifier.description, assignment.description, pluralModifier.description)
         case (_, .zero, _):
             if targetType == 3 && assignment == .friend && targetCount == 1 {
                 return TargetTypeModifier.`self`.description
@@ -792,7 +792,7 @@ extension Skill.Action {
             let format = NSLocalizedString("all %@ %@ in range %d", comment: "")
             return String(format: format, assignment.description, pluralModifier.description, range)
         case (_, .finite(let range), _):
-            let format = NSLocalizedString("max %@ %@ %@ in range %d", comment: "")
+            let format = NSLocalizedString("up to %@ %@ %@ in range %d", comment: "")
             return String(format: format, countModifier.description, assignment.description, pluralModifier.description, range)
         default:
             let format = NSLocalizedString("%@ %@ %@", tableName: "Localizable2", comment: "three enemy targets")

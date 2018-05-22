@@ -61,7 +61,7 @@
       </trans-unit>
       <trans-unit id="%@ %@ %@ %@">
         <source>%1$@ %2$@ %3$@ %4$@</source>
-        <target>%1$@%2$@%3$@%4$@</target>
+        <target>%2$@%1$@%3$@%4$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@] TP.">
@@ -337,6 +337,16 @@
       <trans-unit id="EX+">
         <source>EX+</source>
         <target>EX+</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Effective Magical HP">
+        <source>Effective Magical HP</source>
+        <target>魔法有效 HP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Effective Physical HP">
+        <source>Effective Physical HP</source>
+        <target>物理有效 HP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Email">
@@ -869,11 +879,6 @@
         <target>友方</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="fullback">
-        <source>fullback</source>
-        <target>后卫</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="last effect affected">
         <source>last effect affected</source>
         <target>上一个效果影响到的</target>
@@ -887,16 +892,6 @@
       <trans-unit id="magical damage">
         <source>magical damage</source>
         <target>魔法伤害</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="max %@ %@ %@ %@ in range %d">
-        <source>max %1$@ %2$@ %3$@ %4$@ in range %5$d</source>
-        <target>范围 %5$d 内的至多%1$@%2$@%3$@%4$@</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="max %@ %@ %@ in range %d">
-        <source>max %1$@ %2$@ %3$@ in range %4$d</source>
-        <target>范围 %4$d 内的至多%1$@%2$@%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="one">
@@ -934,6 +929,11 @@
         <target>目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the farthest">
+        <source>the farthest</source>
+        <target>最远的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the highest ATK">
         <source>the highest ATK</source>
         <target>物理攻击力最高的</target>
@@ -949,9 +949,9 @@
         <target> TP 最多的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the highest max HP">
-        <source>the highest max HP</source>
-        <target>最大 HP 最多的</target>
+      <trans-unit id="the highest current HP">
+        <source>the highest current HP</source>
+        <target>当前 HP 最多的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest TP">
@@ -977,6 +977,16 @@
       <trans-unit id="unknown">
         <source>unknown</source>
         <target>未知</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="up to %@ %@ %@ %@ in range %d">
+        <source>up to %1$@ %2$@ %3$@ %4$@ in range %5$d</source>
+        <target>范围 %5$d 内%2$@的至多%1$@%3$@%4$@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="up to %@ %@ %@ in range %d">
+        <source>up to %1$@ %2$@ %3$@ in range %4$d</source>
+        <target>范围 %4$d 内至多%1$@%2$@%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>

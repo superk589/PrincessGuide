@@ -40,6 +40,8 @@ class CDPropertyViewController: CDTableViewController {
                 property.item(for: .dodge),
                 property.item(for: .magicCritical)
                 ])),
+            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Physical HP", comment: ""), String(Int(property.effectivePhysicalHP.rounded())))),
+            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Magical HP", comment: ""), String(Int(property.effectiveMagicalHP.rounded())))),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .waveHpRecovery)
                 ])),
