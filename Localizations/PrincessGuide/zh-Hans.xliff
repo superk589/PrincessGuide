@@ -42,6 +42,16 @@
         <target>$(PRODUCT_NAME)</target>
         <note>Bundle name</note>
       </trans-unit>
+      <trans-unit id="NSPhotoLibraryAddUsageDescription">
+        <source>In order to save the image we will need access to your camera roll.</source>
+        <target>为了保存这张图片，我们需要相册的访问权限。</target>
+        <note>Privacy - Photo Library Additions Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSPhotoLibraryUsageDescription">
+        <source>In order to save the image we will need access to your camera roll.</source>
+        <target>为了保存这张图片，我们需要相册的访问权限。</target>
+        <note>Privacy - Photo Library Usage Description</note>
+      </trans-unit>
     </body>
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
