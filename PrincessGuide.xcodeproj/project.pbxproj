@@ -121,6 +121,7 @@
 		12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */; };
 		12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125C720B7AD8F005C9659 /* CompletionView.swift */; };
 		12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125C920B7D42F005C9659 /* ErrorView.swift */; };
+		12F125CC20B7E803005C9659 /* CraftTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125CB20B7E803005C9659 /* CraftTextTableViewCell.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
 		BD1F9CD415774DF7E9F1F065 /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */; };
@@ -264,6 +265,7 @@
 		12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewController.swift; sourceTree = "<group>"; };
 		12F125C720B7AD8F005C9659 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
 		12F125C920B7D42F005C9659 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		12F125CB20B7E803005C9659 /* CraftTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftTextTableViewCell.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
 		137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -640,6 +642,7 @@
 				1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */,
 				1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */,
 				12D3D13A20A57EB200034DD6 /* CraftPropertyTableViewCell.swift */,
+				12F125CB20B7E803005C9659 /* CraftTextTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -871,6 +874,7 @@
 				123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */,
 				123608E7209322EB003E7D11 /* DataChecking.swift in Sources */,
 				126DECF2209EDC0E004EC56A /* QuestAreaTabViewController.swift in Sources */,
+				12F125CC20B7E803005C9659 /* CraftTextTableViewCell.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficient.swift in Sources */,

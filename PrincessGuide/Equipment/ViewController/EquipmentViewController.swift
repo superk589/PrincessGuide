@@ -94,7 +94,7 @@ class EquipmentViewController: UIViewController, DataChecking {
             Master.shared.getEquipments(equipmentType: self?.equipmentType, callback: { (equipments) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
-                    self?.equipments = equipments.sorted { ($0.craftFlg, $1.promotionLevel) < ($1.craftFlg, $0.promotionLevel) }
+                    self?.equipments = equipments.sorted { ($0.promotionLevel, $0.salePrice, $0.equipmentId) > ($1.promotionLevel, $1.salePrice, $1.equipmentId) }
                     self?.collectionView.reloadData()
                 }
             })

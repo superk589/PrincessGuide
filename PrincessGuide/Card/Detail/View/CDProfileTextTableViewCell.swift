@@ -43,6 +43,8 @@ class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.right.lessThanOrEqualTo(readableContentGuide)
         }
         contentLabel.numberOfLines = 0
+        
+        selectionStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -16,6 +16,7 @@ class CraftTableViewController: UITableViewController {
             case summary(Equipment)
             case consume(Craft.Consume)
             case properties([Property.Item])
+            case text(String, String)
         }
         var type: UITableViewCell.Type
         var data: Model
@@ -48,6 +49,7 @@ class CraftTableViewController: UITableViewController {
         
         rows += craft.consumes.map { Row(type: CraftTableViewCell.self, data: .consume($0)) }
         rows += equipment.property.noneZeroProperties().map { Row(type: CraftPropertyTableViewCell.self, data: .properties([$0])) }
+        rows.append(Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Description", comment: ""), equipment.description)))
     }
     
     let backgroundImageView = UIImageView()
