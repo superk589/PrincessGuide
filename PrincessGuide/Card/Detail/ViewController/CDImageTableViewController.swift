@@ -43,7 +43,7 @@ class CDImageTableViewController: CDTableViewController {
             GalleryConfigurationItem.thumbnailsButtonMode(.none),
             GalleryConfigurationItem.swipeToDismissMode(.vertical),
             GalleryConfigurationItem.activityViewByLongPress(true),
-            GalleryConfigurationItem.placeHolderImage(image)            
+            GalleryConfigurationItem.placeHolderImage(image)
         ]
         let vc = GalleryViewController(startIndex: startIndex, itemsDataSource: self, itemsDelegate: nil, displacedViewsDataSource: self, configuration: config)
         return vc

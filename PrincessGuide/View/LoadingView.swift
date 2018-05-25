@@ -1,5 +1,5 @@
 //
-//  LoadingImageView.swift
+//  LoadingView.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/4/11.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingImageView: UIView {
+class LoadingView: UIView {
     
     let star1 = UIImageView(image: #imageLiteral(resourceName: "loading_star").withRenderingMode(.alwaysTemplate))
     let star2 = UIImageView(image: #imageLiteral(resourceName: "loading_star").withRenderingMode(.alwaysTemplate))

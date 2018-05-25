@@ -12,9 +12,37 @@ import Gestalt
 
 class LoadingHUD: UIView {
     
-    let imageView = LoadingImageView(frame: CGRect(x: 35, y: 20, width: 50, height: 50))
+    let loadingView = LoadingView(frame: CGRect(x: 35, y: 20, width: 50, height: 50))
+    let errorView = ErrorView(frame: CGRect(x: 35, y: 20, width: 50, height: 50))
+    let completionView = CompletionView(frame: CGRect(x: 35, y: 20, width: 50, height: 50))
     let titleLabel = UILabel(frame: CGRect(x: 0, y: 75, width: 120, height: 25))
     let contentView = UIView()
+    
+    enum Style {
+        case loading
+        case completion
+        case error
+    }
+    
+    var style = Style.loading {
+        didSet {
+            switch style {
+            case .completion:
+                loadingView.isHidden = true
+                completionView.isHidden = false
+                errorView.isHidden = true
+            case .loading:
+                loadingView.isHidden = false
+                completionView.isHidden = true
+                errorView.isHidden = true
+            case .error:
+                loadingView.isHidden = true
+                completionView.isHidden = true
+                errorView.isHidden = false
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -41,7 +69,11 @@ class LoadingHUD: UIView {
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 17)
         titleLabel.text = NSLocalizedString("Please wait", comment: "")
         
-        contentView.addSubview(imageView)
+        contentView.addSubview(loadingView)
+        contentView.addSubview(completionView)
+        contentView.addSubview(errorView)
+        completionView.isHidden = true
+        errorView.isHidden = true
         contentView.addSubview(titleLabel)
         alpha = 0
     }
@@ -66,7 +98,7 @@ class LoadingHUDManager {
         
     }
     
-    private lazy var showClosure: (() -> Void)? = { [unowned self] in
+    private lazy var showClosure: (() -> Void) = { [unowned self] in
         if let window = UIApplication.shared.keyWindow {
             window.addSubview(self.hud)
             self.hud.snp.makeConstraints { (make) in
@@ -83,8 +115,29 @@ class LoadingHUDManager {
     
     func show(text: String = NSLocalizedString("Please wait", comment: "")) {
         hud.setup(title: text)
+        hud.style = .loading
         debouncer.callback = showClosure
         debouncer.call()
+    }
+    
+    func showCheckMark(text: String = NSLocalizedString("Completed", comment: ""), dismissedAfter second: TimeInterval = 1.35) {
+        hud.setup(title: text)
+        hud.style = .completion
+        showClosure()
+        hud.completionView.startAnimation()
+        DispatchQueue.main.asyncAfter(deadline: .now() + second) { [unowned self] in
+            self.hide()
+        }
+    }
+    
+    func showErrorMark(text: String = NSLocalizedString("Error", comment: ""), dismissAfter second: TimeInterval = 1.35) {
+        hud.setup(title: text)
+        hud.style = .error
+        showClosure()
+        hud.errorView.startAnimation()
+        DispatchQueue.main.asyncAfter(deadline: .now() + second) { [unowned self] in
+            self.hide()
+        }
     }
     
     func hide() {

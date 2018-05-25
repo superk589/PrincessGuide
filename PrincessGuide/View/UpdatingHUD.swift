@@ -13,7 +13,7 @@ import Gestalt
 class UpdatingHUD: UIView {
     
     let statusLabel = UILabel()
-    private let loadingView = LoadingImageView()
+    private let loadingView = LoadingView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

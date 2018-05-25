@@ -1,5 +1,12 @@
+# 1.0.3
+
+修复保存图片时闪退的 Bug。
+
+## English version
+Fix a crash when saving image to Photos.
 
 # 1.0.2
+2018-5-22
 
 1. 新增查看和导出角色图片的功能。
 2. 增加更多技能细节信息。

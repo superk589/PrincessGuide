@@ -27,7 +27,7 @@
 		1221CDDF207CC4A7008F30AA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDDE207CC4A7008F30AA /* Color.swift */; };
 		1221CDE1207D9709008F30AA /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE0207D9709008F30AA /* Font.swift */; };
 		1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE2207DB076008F30AA /* LoadingHUD.swift */; };
-		1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */; };
+		1221CDE5207DB0BC008F30AA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE4207DB0BC008F30AA /* LoadingView.swift */; };
 		1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE6207DB350008F30AA /* Debouncer.swift */; };
 		1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */; };
 		1226532320AD626700BB3E56 /* Resist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226532220AD626700BB3E56 /* Resist.swift */; };
@@ -119,6 +119,8 @@
 		12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */; };
 		12F125B120AEC069005C9659 /* CDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* CDImageView.swift */; };
 		12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */; };
+		12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125C720B7AD8F005C9659 /* CompletionView.swift */; };
+		12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125C920B7D42F005C9659 /* ErrorView.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
 		BD1F9CD415774DF7E9F1F065 /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */; };
@@ -158,7 +160,7 @@
 		1221CDDE207CC4A7008F30AA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		1221CDE0207D9709008F30AA /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		1221CDE2207DB076008F30AA /* LoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
-		1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
+		1221CDE4207DB0BC008F30AA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1221CDE6207DB350008F30AA /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventTableViewCell.swift; sourceTree = "<group>"; };
 		1226532220AD626700BB3E56 /* Resist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resist.swift; sourceTree = "<group>"; };
@@ -260,6 +262,8 @@
 		12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewCell.swift; sourceTree = "<group>"; };
 		12F125B020AEC069005C9659 /* CDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageView.swift; sourceTree = "<group>"; };
 		12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewController.swift; sourceTree = "<group>"; };
+		12F125C720B7AD8F005C9659 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
+		12F125C920B7D42F005C9659 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
 		137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -338,7 +342,9 @@
 				12398E7B209157B1006AC352 /* IconImageView.swift */,
 				1221CDE2207DB076008F30AA /* LoadingHUD.swift */,
 				123608EC20932590003E7D11 /* UpdatingHUD.swift */,
-				1221CDE4207DB0BC008F30AA /* LoadingImageView.swift */,
+				1221CDE4207DB0BC008F30AA /* LoadingView.swift */,
+				12F125C720B7AD8F005C9659 /* CompletionView.swift */,
+				12F125C920B7D42F005C9659 /* ErrorView.swift */,
 				123608E82093234F003E7D11 /* RefreshHeader.swift */,
 			);
 			path = View;
@@ -846,6 +852,7 @@
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
 				129A7F5E20A0364300D93996 /* CDProfileTextTableViewCell.swift in Sources */,
 				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
+				12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
 				1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */,
 				126DECF6209EEEB4004EC56A /* CDTabViewController.swift in Sources */,
@@ -858,6 +865,7 @@
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
+				12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */,
 				12398E7A20915781006AC352 /* AttackPatternView.swift in Sources */,
 				12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */,
 				123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */,
@@ -879,7 +887,7 @@
 				126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */,
 				12398E89209168A2006AC352 /* Wave.swift in Sources */,
 				129A7F8720A2EE7E00D93996 /* Enemy.swift in Sources */,
-				1221CDE5207DB0BC008F30AA /* LoadingImageView.swift in Sources */,
+				1221CDE5207DB0BC008F30AA /* LoadingView.swift in Sources */,
 				12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */,
 				1221CDDC207CC39E008F30AA /* Constant.swift in Sources */,
 				12B85D3D2089B1DB0088F5FB /* CDPromotionTableViewCell.swift in Sources */,

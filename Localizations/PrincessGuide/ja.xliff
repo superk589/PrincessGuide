@@ -44,12 +44,12 @@
       </trans-unit>
       <trans-unit id="NSPhotoLibraryAddUsageDescription">
         <source>In order to save the image we will need access to your camera roll.</source>
-        <target>画像を保存するために写真にアクセスが必要です。</target>
+        <target>画像を保存するためにアルバムへのアクセスが必要です。</target>
         <note>Privacy - Photo Library Additions Usage Description</note>
       </trans-unit>
       <trans-unit id="NSPhotoLibraryUsageDescription">
         <source>In order to save the image we will need access to your camera roll.</source>
-        <target>画像を保存するために写真にアクセスが必要です。</target>
+        <target>画像を保存するためにアルバムへのアクセスが必要です。</target>
         <note>Privacy - Photo Library Usage Description</note>
       </trans-unit>
     </body>
