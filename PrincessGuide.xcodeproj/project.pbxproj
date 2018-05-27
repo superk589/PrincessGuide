@@ -115,13 +115,60 @@
 		12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */; };
 		12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */; };
 		12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */; };
-		12D61B0920B3159A00A6B9B2 /* Localizable2.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12D61B0720B3159A00A6B9B2 /* Localizable2.strings */; };
 		12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */; };
 		12F125B120AEC069005C9659 /* CDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* CDImageView.swift */; };
 		12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */; };
 		12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125C720B7AD8F005C9659 /* CompletionView.swift */; };
 		12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125C920B7D42F005C9659 /* ErrorView.swift */; };
 		12F125CC20B7E803005C9659 /* CraftTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125CB20B7E803005C9659 /* CraftTextTableViewCell.swift */; };
+		12F125D220B90DF3005C9659 /* ActionParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125D120B90DF3005C9659 /* ActionParameter.swift */; };
+		12F125D420B90E1F005C9659 /* TargetParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125D320B90E1F005C9659 /* TargetParameter.swift */; };
+		12F125D720B92686005C9659 /* DamageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125D620B92686005C9659 /* DamageAction.swift */; };
+		12F125D920B92C29005C9659 /* HealAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125D820B92C29005C9659 /* HealAction.swift */; };
+		12F125DB20B92E79005C9659 /* MoveAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125DA20B92E79005C9659 /* MoveAction.swift */; };
+		12F125DD20B92FA7005C9659 /* KnockAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125DC20B92FA7005C9659 /* KnockAction.swift */; };
+		12F125DF20B931EF005C9659 /* CureAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125DE20B931EF005C9659 /* CureAction.swift */; };
+		12F125E320B93219005C9659 /* BarrierAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125E220B93219005C9659 /* BarrierAction.swift */; };
+		12F125E520B93D99005C9659 /* ReflexiveAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125E420B93D99005C9659 /* ReflexiveAction.swift */; };
+		12F125E720B93F7E005C9659 /* AilmentAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125E620B93F7E005C9659 /* AilmentAction.swift */; };
+		12F125E920B94370005C9659 /* AuraAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125E820B94370005C9659 /* AuraAction.swift */; };
+		12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125EA20B94AEE005C9659 /* ModeChangeAction.swift */; };
+		12F125ED20B94B11005C9659 /* SummonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125EC20B94B11005C9659 /* SummonAction.swift */; };
+		12F125EF20B94D1D005C9659 /* ChangeEnergyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125EE20B94D1D005C9659 /* ChangeEnergyAction.swift */; };
+		12F125F120B94E2B005C9659 /* TriggerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F020B94E2B005C9659 /* TriggerAction.swift */; };
+		12F125F320B9501F005C9659 /* DamageChargeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F220B9501F005C9659 /* DamageChargeAction.swift */; };
+		12F125F520B95037005C9659 /* ChargeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F420B95037005C9659 /* ChargeAction.swift */; };
+		12F125F720B9505D005C9659 /* TauntAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F620B9505D005C9659 /* TauntAction.swift */; };
+		12F125F920B950F9005C9659 /* NoDamageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F820B950F9005C9659 /* NoDamageAction.swift */; };
+		12F125FB20B952CA005C9659 /* ChangePatternAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125FA20B952CA005C9659 /* ChangePatternAction.swift */; };
+		12F125FD20B952EB005C9659 /* IfForChildrenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */; };
+		12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125FE20B95315005C9659 /* RevivalAction.swift */; };
+		12F1260120B95345005C9659 /* ContinuousAttackAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260020B95345005C9659 /* ContinuousAttackAction.swift */; };
+		12F1260320B9536C005C9659 /* AddtivieAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260220B9536C005C9659 /* AddtivieAction.swift */; };
+		12F1260520B95377005C9659 /* MultipleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260420B95377005C9659 /* MultipleAction.swift */; };
+		12F1260720B9539D005C9659 /* IfForAllAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260620B9539D005C9659 /* IfForAllAction.swift */; };
+		12F1260920B953BD005C9659 /* SearchAreaChangeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260820B953BD005C9659 /* SearchAreaChangeAction.swift */; };
+		12F1260B20B953DD005C9659 /* DestroyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260A20B953DD005C9659 /* DestroyAction.swift */; };
+		12F1260D20B9543A005C9659 /* ContinuousAttackNearbyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260C20B9543A005C9659 /* ContinuousAttackNearbyAction.swift */; };
+		12F1260F20B9547B005C9659 /* EnchantLifeStealAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260E20B9547B005C9659 /* EnchantLifeStealAction.swift */; };
+		12F1261120B95498005C9659 /* EnchantStrikeBackAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261020B95498005C9659 /* EnchantStrikeBackAction.swift */; };
+		12F1261320B954C1005C9659 /* AccumulativeDamageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261220B954C1005C9659 /* AccumulativeDamageAction.swift */; };
+		12F1261520B954DB005C9659 /* SealAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261420B954DB005C9659 /* SealAction.swift */; };
+		12F1261720B954F4005C9659 /* AttackFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261620B954F4005C9659 /* AttackFieldAction.swift */; };
+		12F1261920B95509005C9659 /* HealFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261820B95509005C9659 /* HealFieldAction.swift */; };
+		12F1261B20B95528005C9659 /* ChangeParameterFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261A20B95528005C9659 /* ChangeParameterFieldAction.swift */; };
+		12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261C20B95547005C9659 /* DotFieldAction.swift */; };
+		12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261E20B9556A005C9659 /* ChangeSpeedFieldAction.swift */; };
+		12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262020B95588005C9659 /* UBChangeTimeAction.swift */; };
+		12F1262320B955A2005C9659 /* LoopTriggerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262220B955A2005C9659 /* LoopTriggerAction.swift */; };
+		12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262420B955BC005C9659 /* IfHasTargetAction.swift */; };
+		12F1262720B955D5005C9659 /* WaveStartIdleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262620B955D5005C9659 /* WaveStartIdleAction.swift */; };
+		12F1262920B955FC005C9659 /* SkillExecCountAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262820B955FC005C9659 /* SkillExecCountAction.swift */; };
+		12F1262B20B9561B005C9659 /* RatioDamageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262A20B9561B005C9659 /* RatioDamageAction.swift */; };
+		12F1262D20B95636005C9659 /* UpperLimitAttackAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262C20B95636005C9659 /* UpperLimitAttackAction.swift */; };
+		12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262E20B9566A005C9659 /* RegenerationAction.swift */; };
+		12F1263120B95684005C9659 /* PassiveAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263020B95684005C9659 /* PassiveAction.swift */; };
+		12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
 		BD1F9CD415774DF7E9F1F065 /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */; };
@@ -258,14 +305,60 @@
 		12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPropertyTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDPatternTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewCell.swift; sourceTree = "<group>"; };
-		12D61B0820B3159A00A6B9B2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable2.strings"; sourceTree = "<group>"; };
-		12E756ED20B3159F003FC66D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable2.strings; sourceTree = "<group>"; };
 		12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewCell.swift; sourceTree = "<group>"; };
 		12F125B020AEC069005C9659 /* CDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageView.swift; sourceTree = "<group>"; };
 		12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewController.swift; sourceTree = "<group>"; };
 		12F125C720B7AD8F005C9659 /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
 		12F125C920B7D42F005C9659 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		12F125CB20B7E803005C9659 /* CraftTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftTextTableViewCell.swift; sourceTree = "<group>"; };
+		12F125D120B90DF3005C9659 /* ActionParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionParameter.swift; sourceTree = "<group>"; };
+		12F125D320B90E1F005C9659 /* TargetParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetParameter.swift; sourceTree = "<group>"; };
+		12F125D620B92686005C9659 /* DamageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageAction.swift; sourceTree = "<group>"; };
+		12F125D820B92C29005C9659 /* HealAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealAction.swift; sourceTree = "<group>"; };
+		12F125DA20B92E79005C9659 /* MoveAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAction.swift; sourceTree = "<group>"; };
+		12F125DC20B92FA7005C9659 /* KnockAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnockAction.swift; sourceTree = "<group>"; };
+		12F125DE20B931EF005C9659 /* CureAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CureAction.swift; sourceTree = "<group>"; };
+		12F125E220B93219005C9659 /* BarrierAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrierAction.swift; sourceTree = "<group>"; };
+		12F125E420B93D99005C9659 /* ReflexiveAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflexiveAction.swift; sourceTree = "<group>"; };
+		12F125E620B93F7E005C9659 /* AilmentAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AilmentAction.swift; sourceTree = "<group>"; };
+		12F125E820B94370005C9659 /* AuraAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuraAction.swift; sourceTree = "<group>"; };
+		12F125EA20B94AEE005C9659 /* ModeChangeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeChangeAction.swift; sourceTree = "<group>"; };
+		12F125EC20B94B11005C9659 /* SummonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonAction.swift; sourceTree = "<group>"; };
+		12F125EE20B94D1D005C9659 /* ChangeEnergyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEnergyAction.swift; sourceTree = "<group>"; };
+		12F125F020B94E2B005C9659 /* TriggerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerAction.swift; sourceTree = "<group>"; };
+		12F125F220B9501F005C9659 /* DamageChargeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageChargeAction.swift; sourceTree = "<group>"; };
+		12F125F420B95037005C9659 /* ChargeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeAction.swift; sourceTree = "<group>"; };
+		12F125F620B9505D005C9659 /* TauntAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TauntAction.swift; sourceTree = "<group>"; };
+		12F125F820B950F9005C9659 /* NoDamageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDamageAction.swift; sourceTree = "<group>"; };
+		12F125FA20B952CA005C9659 /* ChangePatternAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePatternAction.swift; sourceTree = "<group>"; };
+		12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfForChildrenAction.swift; sourceTree = "<group>"; };
+		12F125FE20B95315005C9659 /* RevivalAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevivalAction.swift; sourceTree = "<group>"; };
+		12F1260020B95345005C9659 /* ContinuousAttackAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousAttackAction.swift; sourceTree = "<group>"; };
+		12F1260220B9536C005C9659 /* AddtivieAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddtivieAction.swift; sourceTree = "<group>"; };
+		12F1260420B95377005C9659 /* MultipleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAction.swift; sourceTree = "<group>"; };
+		12F1260620B9539D005C9659 /* IfForAllAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfForAllAction.swift; sourceTree = "<group>"; };
+		12F1260820B953BD005C9659 /* SearchAreaChangeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAreaChangeAction.swift; sourceTree = "<group>"; };
+		12F1260A20B953DD005C9659 /* DestroyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyAction.swift; sourceTree = "<group>"; };
+		12F1260C20B9543A005C9659 /* ContinuousAttackNearbyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousAttackNearbyAction.swift; sourceTree = "<group>"; };
+		12F1260E20B9547B005C9659 /* EnchantLifeStealAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantLifeStealAction.swift; sourceTree = "<group>"; };
+		12F1261020B95498005C9659 /* EnchantStrikeBackAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantStrikeBackAction.swift; sourceTree = "<group>"; };
+		12F1261220B954C1005C9659 /* AccumulativeDamageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulativeDamageAction.swift; sourceTree = "<group>"; };
+		12F1261420B954DB005C9659 /* SealAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SealAction.swift; sourceTree = "<group>"; };
+		12F1261620B954F4005C9659 /* AttackFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackFieldAction.swift; sourceTree = "<group>"; };
+		12F1261820B95509005C9659 /* HealFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealFieldAction.swift; sourceTree = "<group>"; };
+		12F1261A20B95528005C9659 /* ChangeParameterFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeParameterFieldAction.swift; sourceTree = "<group>"; };
+		12F1261C20B95547005C9659 /* DotFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFieldAction.swift; sourceTree = "<group>"; };
+		12F1261E20B9556A005C9659 /* ChangeSpeedFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSpeedFieldAction.swift; sourceTree = "<group>"; };
+		12F1262020B95588005C9659 /* UBChangeTimeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBChangeTimeAction.swift; sourceTree = "<group>"; };
+		12F1262220B955A2005C9659 /* LoopTriggerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopTriggerAction.swift; sourceTree = "<group>"; };
+		12F1262420B955BC005C9659 /* IfHasTargetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfHasTargetAction.swift; sourceTree = "<group>"; };
+		12F1262620B955D5005C9659 /* WaveStartIdleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveStartIdleAction.swift; sourceTree = "<group>"; };
+		12F1262820B955FC005C9659 /* SkillExecCountAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillExecCountAction.swift; sourceTree = "<group>"; };
+		12F1262A20B9561B005C9659 /* RatioDamageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioDamageAction.swift; sourceTree = "<group>"; };
+		12F1262C20B95636005C9659 /* UpperLimitAttackAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperLimitAttackAction.swift; sourceTree = "<group>"; };
+		12F1262E20B9566A005C9659 /* RegenerationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegenerationAction.swift; sourceTree = "<group>"; };
+		12F1263020B95684005C9659 /* PassiveAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveAction.swift; sourceTree = "<group>"; };
+		12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveInermittentAction.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
 		137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,6 +406,7 @@
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
 				1250190720AF0DBC00D2FBDC /* Still.swift */,
 				12B85D2A2089840A0088F5FB /* Skill.swift */,
+				12F125D520B92658005C9659 /* Action */,
 				12124F452089C9E1001C1A6F /* PropertyKey.swift */,
 				129A7F5720A0249600D93996 /* Property.swift */,
 				12124F4D208EC1A4001C1A6F /* Ailment.swift */,
@@ -490,7 +584,6 @@
 				1221CDBF207B9541008F30AA /* Assets.xcassets */,
 				1221CDCE207C41C7008F30AA /* PrincessGuide-Bridging-Header.h */,
 				12659E11205F5DB100A8B9A2 /* Info.plist */,
-				12D61B0720B3159A00A6B9B2 /* Localizable2.strings */,
 				1218E61A20A6D53700D68610 /* Localizable.strings */,
 				1218E61420A6D53700D68610 /* InfoPlist.strings */,
 				12398E8E20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist */,
@@ -613,6 +706,61 @@
 				1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		12F125D520B92658005C9659 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				12F125D320B90E1F005C9659 /* TargetParameter.swift */,
+				12F125D120B90DF3005C9659 /* ActionParameter.swift */,
+				12F125D620B92686005C9659 /* DamageAction.swift */,
+				12F125DA20B92E79005C9659 /* MoveAction.swift */,
+				12F125DC20B92FA7005C9659 /* KnockAction.swift */,
+				12F125D820B92C29005C9659 /* HealAction.swift */,
+				12F125DE20B931EF005C9659 /* CureAction.swift */,
+				12F125E220B93219005C9659 /* BarrierAction.swift */,
+				12F125E420B93D99005C9659 /* ReflexiveAction.swift */,
+				12F125E620B93F7E005C9659 /* AilmentAction.swift */,
+				12F125E820B94370005C9659 /* AuraAction.swift */,
+				12F125EA20B94AEE005C9659 /* ModeChangeAction.swift */,
+				12F125EC20B94B11005C9659 /* SummonAction.swift */,
+				12F125EE20B94D1D005C9659 /* ChangeEnergyAction.swift */,
+				12F125F020B94E2B005C9659 /* TriggerAction.swift */,
+				12F125F220B9501F005C9659 /* DamageChargeAction.swift */,
+				12F125F420B95037005C9659 /* ChargeAction.swift */,
+				12F125F620B9505D005C9659 /* TauntAction.swift */,
+				12F125F820B950F9005C9659 /* NoDamageAction.swift */,
+				12F125FA20B952CA005C9659 /* ChangePatternAction.swift */,
+				12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */,
+				12F125FE20B95315005C9659 /* RevivalAction.swift */,
+				12F1260020B95345005C9659 /* ContinuousAttackAction.swift */,
+				12F1260220B9536C005C9659 /* AddtivieAction.swift */,
+				12F1260420B95377005C9659 /* MultipleAction.swift */,
+				12F1260620B9539D005C9659 /* IfForAllAction.swift */,
+				12F1260820B953BD005C9659 /* SearchAreaChangeAction.swift */,
+				12F1260A20B953DD005C9659 /* DestroyAction.swift */,
+				12F1260C20B9543A005C9659 /* ContinuousAttackNearbyAction.swift */,
+				12F1260E20B9547B005C9659 /* EnchantLifeStealAction.swift */,
+				12F1261020B95498005C9659 /* EnchantStrikeBackAction.swift */,
+				12F1261220B954C1005C9659 /* AccumulativeDamageAction.swift */,
+				12F1261420B954DB005C9659 /* SealAction.swift */,
+				12F1261620B954F4005C9659 /* AttackFieldAction.swift */,
+				12F1261820B95509005C9659 /* HealFieldAction.swift */,
+				12F1261A20B95528005C9659 /* ChangeParameterFieldAction.swift */,
+				12F1261C20B95547005C9659 /* DotFieldAction.swift */,
+				12F1261E20B9556A005C9659 /* ChangeSpeedFieldAction.swift */,
+				12F1262020B95588005C9659 /* UBChangeTimeAction.swift */,
+				12F1262220B955A2005C9659 /* LoopTriggerAction.swift */,
+				12F1262420B955BC005C9659 /* IfHasTargetAction.swift */,
+				12F1262620B955D5005C9659 /* WaveStartIdleAction.swift */,
+				12F1262820B955FC005C9659 /* SkillExecCountAction.swift */,
+				12F1262A20B9561B005C9659 /* RatioDamageAction.swift */,
+				12F1262C20B95636005C9659 /* UpperLimitAttackAction.swift */,
+				12F1262E20B9566A005C9659 /* RegenerationAction.swift */,
+				12F1263020B95684005C9659 /* PassiveAction.swift */,
+				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
+			);
+			path = Action;
 			sourceTree = "<group>";
 		};
 		12F7500220921D8200E11CC8 /* Equipment */ = {
@@ -748,7 +896,6 @@
 				1218E61C20A6D53700D68610 /* Localizable.strings in Resources */,
 				12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */,
 				12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */,
-				12D61B0920B3159A00A6B9B2 /* Localizable2.strings in Resources */,
 				12398E8F20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist in Resources */,
 				1218E61620A6D53700D68610 /* InfoPlist.strings in Resources */,
 			);
@@ -851,21 +998,34 @@
 				129A7F5820A0249600D93996 /* Property.swift in Sources */,
 				1280DE3F20A5C5A5008D9D72 /* QuestNameTableViewCell.swift in Sources */,
 				129A7F8F20A31D1600D93996 /* QuestEnemyTableViewCell.swift in Sources */,
+				12F1262720B955D5005C9659 /* WaveStartIdleAction.swift in Sources */,
 				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
+				12F1261720B954F4005C9659 /* AttackFieldAction.swift in Sources */,
+				12F1260D20B9543A005C9659 /* ContinuousAttackNearbyAction.swift in Sources */,
 				129A7F5E20A0364300D93996 /* CDProfileTextTableViewCell.swift in Sources */,
 				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
 				12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
+				12F1261320B954C1005C9659 /* AccumulativeDamageAction.swift in Sources */,
 				1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */,
+				12F1260920B953BD005C9659 /* SearchAreaChangeAction.swift in Sources */,
+				12F1261920B95509005C9659 /* HealFieldAction.swift in Sources */,
 				126DECF6209EEEB4004EC56A /* CDTabViewController.swift in Sources */,
+				12F1262B20B9561B005C9659 /* RatioDamageAction.swift in Sources */,
+				12F125F520B95037005C9659 /* ChargeAction.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				129A7F6220A0465800D93996 /* CharaStory.swift in Sources */,
+				12F1260320B9536C005C9659 /* AddtivieAction.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
+				12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
 				126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */,
+				12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */,
+				12F125DB20B92E79005C9659 /* MoveAction.swift in Sources */,
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
+				12F1262D20B95636005C9659 /* UpperLimitAttackAction.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
 				12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */,
@@ -875,22 +1035,34 @@
 				123608E7209322EB003E7D11 /* DataChecking.swift in Sources */,
 				126DECF2209EDC0E004EC56A /* QuestAreaTabViewController.swift in Sources */,
 				12F125CC20B7E803005C9659 /* CraftTextTableViewCell.swift in Sources */,
+				12F1260720B9539D005C9659 /* IfForAllAction.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficient.swift in Sources */,
+				12F125E520B93D99005C9659 /* ReflexiveAction.swift in Sources */,
+				12F125D720B92686005C9659 /* DamageAction.swift in Sources */,
 				1280DE3320A09278008D9D72 /* CDPropertyViewController.swift in Sources */,
+				12F1263120B95684005C9659 /* PassiveAction.swift in Sources */,
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
+				12F1261520B954DB005C9659 /* SealAction.swift in Sources */,
+				12F125F920B950F9005C9659 /* NoDamageAction.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
 				123608E92093234F003E7D11 /* RefreshHeader.swift in Sources */,
+				12F125D220B90DF3005C9659 /* ActionParameter.swift in Sources */,
+				12F125DF20B931EF005C9659 /* CureAction.swift in Sources */,
+				12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */,
+				12F125F720B9505D005C9659 /* TauntAction.swift in Sources */,
 				12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */,
+				12F1260520B95377005C9659 /* MultipleAction.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
 				12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */,
 				126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */,
 				12398E89209168A2006AC352 /* Wave.swift in Sources */,
 				129A7F8720A2EE7E00D93996 /* Enemy.swift in Sources */,
+				12F1262920B955FC005C9659 /* SkillExecCountAction.swift in Sources */,
 				1221CDE5207DB0BC008F30AA /* LoadingView.swift in Sources */,
 				12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */,
 				1221CDDC207CC39E008F30AA /* Constant.swift in Sources */,
@@ -898,6 +1070,7 @@
 				126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */,
 				12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */,
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
+				12F125E720B93F7E005C9659 /* AilmentAction.swift in Sources */,
 				1250190820AF0DBC00D2FBDC /* Still.swift in Sources */,
 				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
 				12D3D13B20A57EB200034DD6 /* CraftPropertyTableViewCell.swift in Sources */,
@@ -911,47 +1084,69 @@
 				12398E8B20917554006AC352 /* DropSummaryTableViewController.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				12D3D13D20A586A500034DD6 /* EDTableViewController.swift in Sources */,
+				12F1260B20B953DD005C9659 /* DestroyAction.swift in Sources */,
 				12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */,
 				12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */,
 				12D3D14120A587FF00034DD6 /* EDPropertyTableViewCell.swift in Sources */,
+				12F1260F20B9547B005C9659 /* EnchantLifeStealAction.swift in Sources */,
+				12F1262320B955A2005C9659 /* LoopTriggerAction.swift in Sources */,
+				12F125D920B92C29005C9659 /* HealAction.swift in Sources */,
 				12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */,
 				12F125B120AEC069005C9659 /* CDImageView.swift in Sources */,
 				12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */,
+				12F125FD20B952EB005C9659 /* IfForChildrenAction.swift in Sources */,
 				12360921209940B2003E7D11 /* Binary.swift in Sources */,
 				129A7F8920A3108C00D93996 /* QuestTabViewController.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
+				12F125FB20B952CA005C9659 /* ChangePatternAction.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
+				12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
 				1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */,
 				12398E8D20917C1F006AC352 /* DropSummaryTableViewCell.swift in Sources */,
 				126DECE1209E0B2C004EC56A /* CustomAcknowViewController.swift in Sources */,
 				12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */,
+				12F1261B20B95528005C9659 /* ChangeParameterFieldAction.swift in Sources */,
 				126DECDC209DD78E004EC56A /* Theme.swift in Sources */,
 				12398EA12092D78C006AC352 /* Updater.swift in Sources */,
 				129A7F8320A2815400D93996 /* CDSettingsViewController.swift in Sources */,
+				12F125E920B94370005C9659 /* AuraAction.swift in Sources */,
+				12F1260120B95345005C9659 /* ContinuousAttackAction.swift in Sources */,
 				129A7F54209FE7A800D93996 /* CDProfileTableViewCell.swift in Sources */,
 				1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */,
 				12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */,
+				12F125EF20B94D1D005C9659 /* ChangeEnergyAction.swift in Sources */,
 				12398E7220915737006AC352 /* AttackPattern.swift in Sources */,
 				1280DE4320A5D084008D9D72 /* DateExtension.swift in Sources */,
+				12F125ED20B94B11005C9659 /* SummonAction.swift in Sources */,
 				12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */,
 				129A7F9120A3211900D93996 /* EnemyView.swift in Sources */,
 				1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */,
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
+				12F125E320B93219005C9659 /* BarrierAction.swift in Sources */,
+				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
+				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
 				1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */,
+				12F125DD20B92FA7005C9659 /* KnockAction.swift in Sources */,
+				12F125F320B9501F005C9659 /* DamageChargeAction.swift in Sources */,
 				1226532320AD626700BB3E56 /* Resist.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDSkillTableViewController.swift in Sources */,
 				129A7F8D20A3124600D93996 /* QuestEnemyTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
+				12F125F120B94E2B005C9659 /* TriggerAction.swift in Sources */,
+				12F125D420B90E1F005C9659 /* TargetParameter.swift in Sources */,
+				12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */,
+				12F1261120B95498005C9659 /* EnchantStrikeBackAction.swift in Sources */,
 				1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
+				12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */,
 				12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1020,15 +1215,6 @@
 				1280DE4920A71988008D9D72 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		12D61B0720B3159A00A6B9B2 /* Localizable2.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12D61B0820B3159A00A6B9B2 /* zh-Hans */,
-				12E756ED20B3159F003FC66D /* ja */,
-			);
-			name = Localizable2.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

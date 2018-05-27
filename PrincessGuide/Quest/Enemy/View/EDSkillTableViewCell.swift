@@ -22,7 +22,7 @@ extension EDSkillTableViewCell: EnemyDetailConfigurable {
         castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
         skillIcon.skillIconID = skill.base.iconType
-        actionLabel.text = skill.actions.map { "- \($0.localizedDetail(of: level))" }.joined(separator: "\n")
+        actionLabel.text = skill.actions.map { "- \($0.parameter.localizedDetail(of: level))" }.joined(separator: "\n")
     }
     
     func configure(for item: EnemyDetailItem) {
