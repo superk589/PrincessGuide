@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GeneralCardTableViewController: CardTableViewController {
+class GeneralCardTableViewController: SearchableCardTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -169,6 +169,7 @@
 		12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262E20B9566A005C9659 /* RegenerationAction.swift */; };
 		12F1263120B95684005C9659 /* PassiveAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263020B95684005C9659 /* PassiveAction.swift */; };
 		12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */; };
+		12F1263B20BC23F5005C9659 /* SearchableCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
 		BD1F9CD415774DF7E9F1F065 /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */; };
@@ -359,6 +360,7 @@
 		12F1262E20B9566A005C9659 /* RegenerationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegenerationAction.swift; sourceTree = "<group>"; };
 		12F1263020B95684005C9659 /* PassiveAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveAction.swift; sourceTree = "<group>"; };
 		12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveInermittentAction.swift; sourceTree = "<group>"; };
+		12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableCardTableViewController.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
 		137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -461,6 +463,7 @@
 			children = (
 				1221CDC1207B96FA008F30AA /* CardTableViewController.swift */,
 				12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */,
+				12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1083,6 +1086,7 @@
 				1280DE4520A5DED5008D9D72 /* ClanBattleTableViewController.swift in Sources */,
 				12398E8B20917554006AC352 /* DropSummaryTableViewController.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
+				12F1263B20BC23F5005C9659 /* SearchableCardTableViewController.swift in Sources */,
 				12D3D13D20A586A500034DD6 /* EDTableViewController.swift in Sources */,
 				12F1260B20B953DD005C9659 /* DestroyAction.swift in Sources */,
 				12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */,
