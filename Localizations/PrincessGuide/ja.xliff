@@ -283,6 +283,10 @@
         <source>Change the perspective to %1$@ %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Chara Name">
+        <source>Chara Name</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Charge for %@s and deal [%@ * damage taken] additional damage on the next effect.">
         <source>Charge for %1$@s and deal [%2$@ * damage taken] additional damage on the next effect.</source>
         <note>No comment provided by engineer.</note>

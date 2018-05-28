@@ -315,6 +315,11 @@
         <target>向%1$@移动自身视角，距离 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Chara Name">
+        <source>Chara Name</source>
+        <target>角色名</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Charge for %@s and deal [%@ * damage taken] additional damage on the next effect.">
         <source>Charge for %1$@s and deal [%2$@ * damage taken] additional damage on the next effect.</source>
         <target>充能 %1$@ 秒，下一个效果造成 [%2$@ * 所受伤害] 的额外伤害。</target>

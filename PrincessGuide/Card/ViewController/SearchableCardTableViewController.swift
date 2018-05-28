@@ -15,7 +15,7 @@ class SearchableCardTableViewController: CardTableViewController {
 
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "Name"
+        searchController.searchBar.placeholder = NSLocalizedString("Chara Name", comment: "")
         searchController.searchResultsUpdater = self
         searchController.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
