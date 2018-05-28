@@ -18,7 +18,28 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
 ## How to localize
 By now, **Hatsune's Notes** provides Chinese and English localization fully, and Japanese partically.  
 If you want to localize the app, please goto `./Localizations/PrincessGuide/` and edit the .xliff files.  
-If you want to add a new language please tell me.
+If you want to add a new language please tell me.  
+For developers only, if you have macOS and Xcode, please read `./Localizations/README.md` and use those scripts to export or import localization.
+
+## How to build
+### Requirements
+* iOS 9.0+
+* Xcode 9.3+
+* Swift 4.1+
+
+### Steps
+* Clone the repository
+```
+$ git clone https://github.com/superk589/PrincessGuide.git
+```
+* Install dependencies with [CocoaPods](https://cocoapods.org).
+```
+$ pod install
+```
+* Open the workspace in Xcode
+```
+$ open PrincessGuide.xcworkspace
+```
 
 ## Acknowledgement
 * [esterTion](https://github.com/esterTion)
