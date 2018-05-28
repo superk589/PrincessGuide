@@ -25,22 +25,27 @@ class IfForAllAction: ActionParameter {
         
         switch actionDetail1 {
         case 0..<100:
-            if actionDetail2 < actionDetail3 {
-                let format = NSLocalizedString("Random event: %d%% chance.", comment: "")
-                return String(format: format, actionDetail1)
+            if actionDetail2 != 0 && actionDetail3 != 0 {
+                let format = NSLocalizedString("Random event: %d%% chance use %d, otherwise %d.", comment: "")
+                return String(format: format, actionDetail1, actionDetail2 % 10, actionDetail3 % 10)
+            } else if actionDetail2 != 0 {
+                let format = NSLocalizedString("Random event: %d%% chance use %d.", comment: "")
+                return String(format: format, actionDetail1, actionDetail2 % 10)
             } else {
-                let format = NSLocalizedString("Random event: %d%% chance.", comment: "")
-                return String(format: format, 100 - actionDetail1)
+                return super.localizedDetail(of: level)
             }
         case 1000:
-            return NSLocalizedString("Condition: defeat target by the last effect.", comment: "")
+            let format = NSLocalizedString("Condition: if defeat target by the last effect then use %d.", comment: "")
+            return String(format: format, actionDetail2 % 10)
         case 1200..<1300:
-            if actionDetail2 < actionDetail3 {
-                let format = NSLocalizedString("Condition: counter is greater or equal to %d.", comment: "")
-                return String(format: format, actionDetail1 % 10)
+            if actionDetail2 != 0 && actionDetail3 != 0 {
+                let format = NSLocalizedString("Condition: counter is greater or equal to %d then use %d, otherwise %d.", comment: "")
+                return String(format: format, actionDetail1 % 10, actionDetail2 % 10, actionDetail3 % 10)
+            } else if actionDetail2 != 0 {
+                let format = NSLocalizedString("Condition: counter is greater or equal to %d then use %d.", comment: "")
+                return String(format: format, actionDetail1 % 10, actionDetail2 % 10)
             } else {
-                let format = NSLocalizedString("Condition: counter is less than %d.", comment: "")
-                return String(format: format, actionDetail1 % 10)
+                return super.localizedDetail(of: level)
             }
         default:
             return super.localizedDetail(of: level)

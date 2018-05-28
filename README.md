@@ -15,6 +15,11 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
 1. Enemy and Boss Skill Effect Analysis
 1. Auto Data Updating
 
+## How to localize
+By now, **Hatsune's Notes** provides Chinese and English localization fully, and Japanese partically.  
+If you want to localize the app, please goto `./Localizations/PrincessGuide/` and edit the .xliff files.  
+If you want to add a new language please tell me.
+
 ## Acknowledgement
 * [esterTion](https://github.com/esterTion)
 * [CaiMiao](https://github.com/CaiMiao)

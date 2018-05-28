@@ -14,7 +14,7 @@ class ReflexiveAction: ActionParameter {
         switch targetParameter.targetType {
         case .absolute:
             let format = NSLocalizedString("Change the perspective to %@ %d.", comment: "")
-            return String(format: format, targetParameter.direction.description, Int(actionValue1))
+            return String(format: format, targetParameter.direction.rawDescription, Int(actionValue1))
         default:
             let format = NSLocalizedString("Change the perspective on %@.", comment: "")
             return String(format: format, targetParameter.buildTargetClause())

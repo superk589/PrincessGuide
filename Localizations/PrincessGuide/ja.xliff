@@ -64,10 +64,28 @@
         <note>the fathest two enemy targets
    the second to fourth fathest enemy targets</note>
       </trans-unit>
+      <trans-unit id="%@ %@ %@ %@ %@">
+        <source>%1$@ %2$@ %3$@ %4$@ %5$@</source>
+        <note>the second to fourth fathest front friendly targets</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ %@ %@ %@ in range %d">
+        <source>%1$@ %2$@ %3$@ %4$@ %5$@ in range %6$d</source>
+        <note>the fathest two front friendly targets in range 500
+   the second to fourth fathest front friendly targets in range 500</note>
+      </trans-unit>
       <trans-unit id="%@ %@ %@ %@ in range %d">
         <source>%1$@ %2$@ %3$@ %4$@ in range %5$d</source>
         <note>the fathest two enemy targets in range 500
    the second to fourth fathest enemy targets in range 500</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ %@ in range %d">
+        <source>%1$@ %2$@ %3$@ in range %4$d</source>
+        <note>front friendly targets in range 500</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ %@ target in range %d">
+        <source>%1$@ %2$@ %3$@ target in range %4$d</source>
+        <note>the nearest front friendly target in range 500
+   the second nearest front friendly target in range 500</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ for %@s.">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for %6$@s.</source>
@@ -81,6 +99,10 @@
         <source>%1$@ %2$@ for %3$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="%@ %@ in range %d">
+        <source>%1$@ %2$@ in range %3$d</source>
+        <note>friendly targets in range 500</note>
+      </trans-unit>
       <trans-unit id="%@ %@ target">
         <source>%1$@ %2$@ target</source>
         <note>the nearest enemy target
@@ -91,6 +113,10 @@
         <note>the nearest enemy target in range 500
    the second nearest enemy target in range 500</note>
       </trans-unit>
+      <trans-unit id="%@ %@ targets in range %d">
+        <source>%1$@ %2$@ targets in range %3$d</source>
+        <note>front friendly targets in range 500</note>
+      </trans-unit>
       <trans-unit id="%@ Feedback">
         <source>%@ Feedback</source>
         <target>%@ フィードバック</target>
@@ -98,7 +124,7 @@
       </trans-unit>
       <trans-unit id="%@ targets in range %d">
         <source>%1$@ targets in range %2$d</source>
-        <note>No comment provided by engineer.</note>
+        <note>enemy targets in range 500</note>
       </trans-unit>
       <trans-unit id="%@ to %@">
         <source>%1$@ to %2$@</source>
@@ -304,20 +330,20 @@
         <target>条件：HP %d%%以下</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: [%@]%% chance when takes damage within %@s.">
-        <source>Condition: [%1$@]%% chance when takes damage within %2$@s.</source>
+      <trans-unit id="Condition: [%@]%% chance use %d when takes damage within %@s.">
+        <source>Condition: [%1$@]%% chance use %2$d when takes damage within %3$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: counter is greater or equal to %d.">
-        <source>Condition: counter is greater or equal to %d.</source>
+      <trans-unit id="Condition: counter is greater or equal to %d then use %d, otherwise %d.">
+        <source>Condition: counter is greater or equal to %1$d then use %2$d, otherwise %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: counter is less than %d.">
-        <source>Condition: counter is less than %d.</source>
+      <trans-unit id="Condition: counter is greater or equal to %d then use %d.">
+        <source>Condition: counter is greater or equal to %1$d then use %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: defeat target by the last effect.">
-        <source>Condition: defeat target by the last effect.</source>
+      <trans-unit id="Condition: if defeat target by the last effect then use %d.">
+        <source>Condition: if defeat target by the last effect then use %d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Crafted">
@@ -698,8 +724,12 @@
         <target>%2$@を[%1$@]アップ。</target>
         <note>Raise [x] ATK.</note>
       </trans-unit>
-      <trans-unit id="Random event: %d%% chance.">
-        <source>Random event: %d%% chance.</source>
+      <trans-unit id="Random event: %d%% chance use %d, otherwise %d.">
+        <source>Random event: %1$d%% chance use %2$d, otherwise %3$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Random event: %d%% chance use %d.">
+        <source>Random event: %1$d%% chance use %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Rank">
@@ -810,8 +840,8 @@
         <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@] HP per second for %4$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon minion, ID: %d.">
-        <source>Summon minion, ID: %d.</source>
+      <trans-unit id="Summon a minion of ID: %d at the position of %@.">
+        <source>Summon a minion of ID: %1$d at the position of %2$@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Swing">
@@ -921,9 +951,9 @@
         <source>all %1$@ %2$@</source>
         <note>all enemy targets</note>
       </trans-unit>
-      <trans-unit id="all %@ %@ in range %d">
-        <source>all %1$@ %2$@ in range %3$d</source>
-        <note>all enemy targets in range 500</note>
+      <trans-unit id="all %@ %@ %@">
+        <source>all %1$@ %2$@ %3$@</source>
+        <note>all front friendly targets</note>
       </trans-unit>
       <trans-unit id="enemy">
         <source>enemy</source>
@@ -954,6 +984,10 @@
       </trans-unit>
       <trans-unit id="front and back">
         <source>front and back</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="front(including self)">
+        <source>front(including self)</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="last effect affected or the nearest">

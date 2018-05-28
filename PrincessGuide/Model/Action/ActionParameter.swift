@@ -113,6 +113,7 @@ class ActionParameter {
     let actionType: ActionType
    
     let rawActionType: Int
+    let id: Int
     
     let actionValue1: Double
     let actionValue2: Double
@@ -142,9 +143,10 @@ class ActionParameter {
         self.actionDetail3
     ]
     
-    required init(targetAssignment: Int, targetNth: Int, actionType: Int, targetType: Int, targetRange: Int,
+    required init(id: Int, targetAssignment: Int, targetNth: Int, actionType: Int, targetType: Int, targetRange: Int,
                   direction: Int, targetCount: Int, actionValue1: Double, actionValue2: Double, actionValue3: Double, actionValue4: Double, actionValue5: Double, actionValue6: Double, actionValue7: Double, actionDetail1: Int, actionDetail2: Int, actionDetail3: Int) {
         self.targetParameter = TargetParameter(targetAssignment: targetAssignment, targetNth: targetNth, targetType: targetType, targetRange: targetRange, direction: direction, targetCount: targetCount)
+        self.id = id
         self.rawActionType = actionType
         self.actionType = ActionType(rawValue: actionType) ?? .unknown
         self.actionValue1 = actionValue1

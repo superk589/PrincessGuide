@@ -30,8 +30,8 @@ class LoopTriggerAction: ActionParameter {
     override func localizedDetail(of level: Int) -> String {
         switch TriggerType(rawValue: actionDetail1) ?? .unknown {
         case .damaged:
-            let format = NSLocalizedString("Condition: [%@]%% chance when takes damage within %@s.", comment: "")
-            return String(format: format, buildExpression(of: level), actionValue4.description)
+            let format = NSLocalizedString("Condition: [%@]%% chance use %d when takes damage within %@s.", comment: "")
+            return String(format: format, buildExpression(of: level), actionDetail2 % 10, actionValue4.description)
         default:
             return super.localizedDetail(of: level)
         }
