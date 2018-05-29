@@ -19,11 +19,35 @@ extension Notification.Name {
 class CDSettingsViewController: FormViewController {
     
     struct Setting: Codable, Equatable {
+        
+        enum ExpressionStyle: String, Codable, CustomStringConvertible {
+            case full = "full"
+            case short = "short"
+            case valueOnly = "value_only"
+            case valueInCombat = "value_in_combat"
+            
+            var description: String {
+                switch self {
+                case .full:
+                    return NSLocalizedString("full", comment: "expression style")
+                case .short:
+                    return NSLocalizedString("short", comment: "expression style")
+                case .valueOnly:
+                    return NSLocalizedString("value only", comment: "expression style")
+                case .valueInCombat:
+                    return NSLocalizedString("value in combat", comment: "expression style")
+                }
+            }
+            
+            static var allLabels = [ExpressionStyle.full, .short, .valueOnly, .valueInCombat]
+        }
+        
         var unitLevel: Int
         var unitRank: Int
         var unitLove: Int
         var skillLevel: Int
         var unitRarity: Int
+        var expressionStyle: ExpressionStyle = .short
         
         func save() {
             let encoder = JSONEncoder()
@@ -91,14 +115,30 @@ class CDSettingsViewController: FormViewController {
             }
         }
         
-        func onCellSelection(cell: PickerInlineCell<Int>, row: PickerInlineRow<Int>) {
+        PickerInlineRow<String>.defaultCellSetup = { (cell, row) in
+            cell.selectedBackgroundView = UIView()
+            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                themeable.textLabel?.textColor = theme.color.title
+                themeable.detailTextLabel?.textColor = theme.color.tint
+                themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                themeable.backgroundColor = theme.color.tableViewCell.background
+            }
+        }
+        PickerInlineRow<String>.defaultCellUpdate = { (cell, row) in
             ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
                 themeable.textLabel?.textColor = theme.color.title
                 themeable.detailTextLabel?.textColor = theme.color.tint
             }
         }
         
-        func onExpandInlineRow(cell: PickerInlineCell<Int>, row: PickerInlineRow<Int>, pickerRow: PickerRow<Int>) {
+        func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
+            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                themeable.textLabel?.textColor = theme.color.title
+                themeable.detailTextLabel?.textColor = theme.color.tint
+            }
+        }
+        
+        func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
             pickerRow.cell.selectedBackgroundView = UIView()
             pickerRow.cellSetup{ (cell, row) in
                 ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
@@ -186,6 +226,17 @@ class CDSettingsViewController: FormViewController {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.skillLevel
+                
+                }.onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
+            <<< PickerInlineRow<String>("expression_style") { (row : PickerInlineRow<String>) -> Void in
+                row.title = NSLocalizedString("Expression Style", comment: "")
+                row.displayValueFor = { (rowValue: String?) in
+                    return rowValue.flatMap { Setting.ExpressionStyle(rawValue: $0)?.description }
+                }
+                row.options = Setting.ExpressionStyle.allLabels.map { $0.rawValue }
+                row.value = Setting.default.expressionStyle.rawValue
                 
                 }.onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))

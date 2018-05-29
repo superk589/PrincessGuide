@@ -30,11 +30,11 @@ class NoDamageAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         switch noDamageType {
         case .noDisplay:
             let format = NSLocalizedString("Become invulnerable for [%@]s.", comment: "")
-            return String(format: format, buildExpression(of: level, roundingRule: nil))
+            return String(format: format, buildExpression(of: level, roundingRule: nil, property: property))
         default:
             return super.localizedDetail(of: level)
         }

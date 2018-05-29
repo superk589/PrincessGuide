@@ -550,6 +550,10 @@
         <target>探索</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Expression Style">
+        <source>Expression Style</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Failed">
         <source>Failed</source>
         <target>更新失敗</target>
@@ -844,6 +848,10 @@
         <target>%d 戦目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="SLv.">
+        <source>SLv.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="SP">
         <source>SP</source>
         <target>SP</target>
@@ -1073,6 +1081,10 @@
         <source>front(including self)</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="full">
+        <source>full</source>
+        <note>expression style</note>
+      </trans-unit>
       <trans-unit id="last effect affected or the nearest">
         <source>last effect affected or the nearest</source>
         <note>No comment provided by engineer.</note>
@@ -1126,6 +1138,10 @@
         <source>self</source>
         <target>自分</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="short">
+        <source>short</source>
+        <note>expression style</note>
       </trans-unit>
       <trans-unit id="target">
         <source>target</source>
@@ -1270,6 +1286,14 @@
         <source>unknown</source>
         <target>未知</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="value in combat">
+        <source>value in combat</source>
+        <note>expression style</note>
+      </trans-unit>
+      <trans-unit id="value only">
+        <source>value only</source>
+        <note>expression style</note>
       </trans-unit>
     </body>
   </file>

@@ -615,6 +615,10 @@
         <target>探索</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Expression Style">
+        <source>Expression Style</source>
+        <note>No comment provided by engineer.</note>
+      <target>表达式类型</target></trans-unit>
       <trans-unit id="Failed">
         <source>Failed</source>
         <target>检查更新失败</target>
@@ -925,6 +929,11 @@
         <target>第 %d 周目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="SLv.">
+        <source>SLv.</source>
+        <target>技能等级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="SP">
         <source>SP</source>
         <target>SP</target>
@@ -1170,6 +1179,10 @@
         <target>前方（包括自己）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="full">
+        <source>full</source>
+        <note>expression style</note>
+      <target>完整</target></trans-unit>
       <trans-unit id="last effect affected or the nearest">
         <source>last effect affected or the nearest</source>
         <target>上一个效果或最近的</target>
@@ -1235,6 +1248,10 @@
         <target>自身</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="short">
+        <source>short</source>
+        <note>expression style</note>
+      <target>简短</target></trans-unit>
       <trans-unit id="target">
         <source>target</source>
         <target>目标</target>
@@ -1405,6 +1422,14 @@
         <target>未知</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="value in combat">
+        <source>value in combat</source>
+        <note>expression style</note>
+      <target>战斗中数值</target></trans-unit>
+      <trans-unit id="value only">
+        <source>value only</source>
+        <note>expression style</note>
+      <target>面板数值</target></trans-unit>
     </body>
   </file>
   <file original="PrincessGuideTests/en.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">

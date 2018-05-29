@@ -114,7 +114,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         return label
     }
     
-    func configure(for skill: Skill, category: SkillCategory, index: Int? = nil) {
+    func configure(for skill: Skill, category: SkillCategory, property: Property, index: Int? = nil) {
         nameLabel.text = skill.base.name
         if let index = index {
             categoryLabel.text = "\(category.description) \(index)"
@@ -126,13 +126,13 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         skillIcon.skillIconID = skill.base.iconType
         actionLabel.text = skill.actions.map {
             let parameter = $0.parameter
-            return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: CDSettingsViewController.Setting.default.skillLevel))"
+            return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: CDSettingsViewController.Setting.default.skillLevel, property: property))"
             }.joined(separator: "\n")
     }
     
     func configure(for item: CardDetailItem) {
-        guard case .skill(let skill, let category, let index) = item else { return }
-        configure(for: skill, category: category, index: index)
+        guard case .skill(let skill, let category, let property, let index) = item else { return }
+        configure(for: skill, category: category, property: property, index: index)
     }
     
 //    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {

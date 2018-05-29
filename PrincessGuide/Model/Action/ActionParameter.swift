@@ -108,6 +108,15 @@ class ActionParameter {
             return ActionParameter.self
         }
     }
+    
+    var isHealingAction: Bool {
+        switch rawActionType {
+        case 4, 37, 48:
+            return true
+        default:
+            return false
+        }
+    }
    
     let targetParameter: TargetParameter
     let actionType: ActionType
@@ -161,7 +170,7 @@ class ActionParameter {
         self.actionDetail3 = actionDetail3
     }
     
-    func localizedDetail(of level: Int) -> String {
+    func localizedDetail(of level: Int, property: Property = .zero) -> String {
         let format = NSLocalizedString("Unknown effect %d to %@ with details [%@], values [%@].", comment: "")
         return String(
             format: format,
@@ -182,45 +191,146 @@ class ActionParameter {
         return []
     }
     
-    func buildExpression(of level: Int, actionValues: [ActionValue]? = nil, roundingRule: FloatingPointRoundingRule? = .down) -> String {
-        var expression = ""
-        var fixedValue = 0.0
-        var hasLevelCoefficient = false
-        
-        for value in actionValues ?? self.actionValues {
-            if let value = Double(value.value), value == 0 { continue }
-            switch value.key {
-            case .atk:
-                expression += "\(value.value) * \(PropertyKey.atk)"
-            case .magicStr:
-                expression += "\(value.value) * \(PropertyKey.magicStr)"
-            case .def:
-                expression += "\(value.value) * \(PropertyKey.def)"
-            case .skillLevel:
-                fixedValue += Double(level) * (Double(value.value) ?? 0)
-                hasLevelCoefficient = true
-            case .initialValue:
-                fixedValue += Double(value.value) ?? 0
+    func buildExpression(of level: Int,
+                         actionValues: [ActionValue]? = nil,
+                         roundingRule: FloatingPointRoundingRule? = .down,
+                         style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle,
+                         property: Property = .zero) -> String {
+
+        switch style {
+        case .short:
+            var expression = ""
+            var fixedValue = 0.0
+            var hasLevelCoefficient = false
+            
+            for value in actionValues ?? self.actionValues {
+                if let value = Double(value.value), value == 0 { continue }
+                switch value.key {
+                case .atk:
+                    expression += "\(value.value) * \(PropertyKey.atk)"
+                case .magicStr:
+                    expression += "\(value.value) * \(PropertyKey.magicStr)"
+                case .def:
+                    expression += "\(value.value) * \(PropertyKey.def)"
+                case .skillLevel:
+                    fixedValue += Double(level) * (Double(value.value) ?? 0)
+                    hasLevelCoefficient = true
+                case .initialValue:
+                    fixedValue += Double(value.value) ?? 0
+                }
             }
+            
+            let valueString: String
+            if let roundingRule = roundingRule {
+                valueString = String(Int(fixedValue.rounded(roundingRule)))
+            } else {
+                valueString = String(fixedValue)
+            }
+            
+            if expression != "" {
+                expression = "\(expression) + \(valueString)"
+            } else {
+                expression = "\(valueString)"
+            }
+            
+            if hasLevelCoefficient {
+                expression += "@\(level)"
+            }
+            return expression
+        case .full:
+            
+            let actionValues = actionValues ?? self.actionValues
+            let part1 = actionValues.compactMap { (value: ActionValue) -> String? in
+                if let value = Double(value.value), value == 0 { return nil }
+                switch value.key {
+                case .atk:
+                    return "\(value.value) * \(PropertyKey.atk)"
+                case .magicStr:
+                    return "\(value.value) * \(PropertyKey.magicStr)"
+                case .def:
+                    return "\(value.value) * \(PropertyKey.def)"
+                default:
+                    return nil
+                }
+            }
+            
+            let part2 = actionValues.compactMap { (value: ActionValue) -> String? in
+                if let value = Double(value.value), value == 0 { return nil }
+                switch value.key {
+                case .initialValue:
+                    return "\(value.value)"
+                case .skillLevel:
+                    return "\(value.value) * \(NSLocalizedString("SLv.", comment: ""))"
+                default:
+                    return nil
+                }
+            }
+            
+            return (part1 + part2).joined(separator: " + ")
+        case .valueOnly:
+            
+            var fixedValue = 0.0
+            
+            for value in actionValues ?? self.actionValues {
+                let key = value.key
+                guard let value = Double(value.value), value != 0 else { continue }
+                switch key {
+                case .atk:
+                    fixedValue += value * property.atk
+                case .magicStr:
+                    fixedValue += value * property.magicStr
+                case .def:
+                    fixedValue += value * property.def
+                case .skillLevel:
+                    fixedValue += Double(level) * value
+                case .initialValue:
+                    fixedValue += value
+                }
+            }
+            
+            let valueString: String
+            if let roundingRule = roundingRule {
+                valueString = String(Int(fixedValue.rounded(roundingRule)))
+            } else {
+                valueString = String(fixedValue)
+            }
+            
+            return valueString
+        case .valueInCombat:
+            
+            var fixedValue = 0.0
+            
+            for value in actionValues ?? self.actionValues {
+                let key = value.key
+                guard let value = Double(value.value), value != 0 else { continue }
+                switch key {
+                case .atk:
+                    fixedValue += value * property.atk
+                case .magicStr:
+                    fixedValue += value * property.magicStr
+                case .def:
+                    fixedValue += value * property.def
+                case .skillLevel:
+                    fixedValue += Double(level) * value
+                case .initialValue:
+                    fixedValue += value
+                }
+            }
+            
+            if isHealingAction {
+                fixedValue *= (property.hpRecoveryRate / 100 + 1)
+            }
+            
+            let valueString: String
+            if let roundingRule = roundingRule {
+                valueString = String(Int(fixedValue.rounded(roundingRule)))
+            } else {
+                valueString = String(fixedValue)
+            }
+            
+            return valueString
         }
         
-        let valueString: String
-        if let roundingRule = roundingRule {
-            valueString = String(Int(fixedValue.rounded(roundingRule)))
-        } else {
-            valueString = String(fixedValue)
-        }
-        
-        if expression != "" {
-            expression = "\(expression) + \(valueString)"
-        } else {
-            expression = "\(valueString)"
-        }
-        
-        if hasLevelCoefficient {
-            expression += "@\(level)"
-        }
-        return expression
     }
     
 }

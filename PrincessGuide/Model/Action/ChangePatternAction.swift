@@ -11,7 +11,7 @@ import Foundation
 class ChangePatterAction: ActionParameter {
     
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         switch actionDetail1 {
         case 1:
             return NSLocalizedString("Change attack pattern.", comment: "")

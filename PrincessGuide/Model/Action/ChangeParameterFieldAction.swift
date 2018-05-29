@@ -17,8 +17,8 @@ class ChangeParameterFieldAction: AuraAction {
         ]
     }
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         let format = NSLocalizedString("Summon a field of radius %d to %@ %@ [%@]%@ %@ for %@s.", comment: "")
-        return String(format: format, Int(actionValue5), auraActionType.description.lowercased(), targetParameter.buildTargetClause(), buildExpression(of: level), percentModifier.description, auraType.description, actionValue3.description)
+        return String(format: format, Int(actionValue5), auraActionType.description.lowercased(), targetParameter.buildTargetClause(), buildExpression(of: level, property: property), percentModifier.description, auraType.description, actionValue3.description)
     }
 }

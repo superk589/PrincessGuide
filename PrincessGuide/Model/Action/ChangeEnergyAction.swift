@@ -17,15 +17,15 @@ class ChangeEnergyAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         
         switch actionDetail1 {
         case 1:
             let format = NSLocalizedString("Restore %@ [%@] TP.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level))
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, property: property))
         default:
             let format = NSLocalizedString("Make %@ lose [%@] TP.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level))
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, property: property))
         }
     }
 }

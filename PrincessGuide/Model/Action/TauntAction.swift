@@ -10,7 +10,7 @@ import Foundation
 
 class TauntAction: ActionParameter {
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         let format = NSLocalizedString("Taunt all enemy targets for %@s.", comment: "")
         return String(format: format, actionValue1.description)
     }

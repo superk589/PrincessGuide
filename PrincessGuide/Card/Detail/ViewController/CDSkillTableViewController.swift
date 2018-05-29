@@ -22,6 +22,16 @@ class CDSkillTableViewController: CDTableViewController {
     
     override func prepareRows(for card: Card) {
         
+        let property: Property
+        let settings = CDSettingsViewController.Setting.default
+        if CDSettingsViewController.Setting.default.expressionStyle == .valueOnly {
+            property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, loveRank: settings.unitLove, unitRarity: settings.unitRarity, addEx: false)
+        } else if CDSettingsViewController.Setting.default.expressionStyle == .valueInCombat {
+            property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, loveRank: settings.unitLove, unitRarity: settings.unitRarity, addEx: true)
+        } else {
+            property = .zero
+        }
+        
         rows.removeAll()
         
         card.patterns?.forEach {
@@ -29,14 +39,14 @@ class CDSkillTableViewController: CDTableViewController {
         }
         
         if let unionBurst = card.unionBurst {
-            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, nil)))
+            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, property, nil)))
         }
         
         rows.append(contentsOf:
             card.mainSkills
                 .enumerated()
                 .map {
-                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, $0.offset + 1))
+                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, property, $0.offset + 1))
             }
         )
         
@@ -44,7 +54,7 @@ class CDSkillTableViewController: CDTableViewController {
             card.exSkills
                 .enumerated()
                 .map {
-                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, $0.offset + 1))
+                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, property, $0.offset + 1))
             }
         )
         
@@ -52,7 +62,7 @@ class CDSkillTableViewController: CDTableViewController {
             card.exSkillEvolutions
                 .enumerated()
                 .map {
-                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .exEvolution, $0.offset + 1))
+                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .exEvolution, property, $0.offset + 1))
             }
         )
     }

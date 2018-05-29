@@ -10,7 +10,7 @@ import Foundation
 
 class DestroyAction: ActionParameter {
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         return NSLocalizedString("Die instantly.", comment: "")
     }
     

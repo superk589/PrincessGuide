@@ -33,8 +33,8 @@ class RegenerationAction: ActionParameter {
         }
     }
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         let format = NSLocalizedString("Restore %@ [%@] HP per second for %@s.", comment: "")
-        return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level), actionValue5.description)
+        return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, property: property), actionValue5.description)
     }
 }

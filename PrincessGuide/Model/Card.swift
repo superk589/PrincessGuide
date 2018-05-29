@@ -346,7 +346,8 @@ extension Card {
     func property(unitLevel: Int = ConsoleVariables.default.maxPlayerLevel,
                   unitRank: Int = ConsoleVariables.default.maxEquipmentRank,
                   loveRank: Int = Constant.presetMaxCharaLoveRank,
-                  unitRarity: Int = Constant.presetMaxRarity) -> Property {
+                  unitRarity: Int = Constant.presetMaxRarity,
+                  addEx: Bool = false) -> Property {
         var property = Property()
         let storyPropertyItems = charaStorys?.filter { $0.storyID % 1000 <= loveRank }.flatMap { $0.status.map { $0.property() } } ?? []
         for item in storyPropertyItems {
@@ -362,6 +363,12 @@ extension Card {
             for equipment in promotion.equipments {
                 property += equipment.property.ceiled()
             }
+        }
+        if addEx {
+            exSkills
+                .flatMap { $0.actions }
+                .compactMap { ($0.parameter as? PassiveAction)?.propertyItem(of: unitLevel) }
+                .forEach { property += $0 }
         }
         return property.rounded()
     }

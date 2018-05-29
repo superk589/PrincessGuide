@@ -17,17 +17,17 @@ class MultipleAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         switch actionValue1 {
         case 0:
             let format = NSLocalizedString("Multiple [%@ * HP / max HP] to next effect.", comment: "")
-            return String(format: format, buildExpression(of: level, roundingRule: .none))
+            return String(format: format, buildExpression(of: level, roundingRule: .none, property: property))
         case 1:
             let format = NSLocalizedString("Multiple [%@ * lost HP / max HP] to next effect.", comment: "")
-            return String(format: format, buildExpression(of: level, roundingRule: .none))
+            return String(format: format, buildExpression(of: level, roundingRule: .none, property: property))
         case 2:
             let format = NSLocalizedString("Multiple [%@ * defeated enemy count] to next effect.", comment: "")
-            return String(format: format, buildExpression(of: level))
+            return String(format: format, buildExpression(of: level, property: property))
         default:
             return super.localizedDetail(of: level)
         }

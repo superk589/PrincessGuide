@@ -21,7 +21,7 @@ class AilmentAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         switch ailment.ailmentType {
         case .action:
             switch ailment.ailmentDetail {
@@ -42,10 +42,10 @@ class AilmentAction: ActionParameter {
             switch ailment.ailmentDetail {
             case .some(.dot(.poison)):
                 let format = NSLocalizedString("Poison %@ and deal [%@] damage per second for %@s.", comment: "")
-                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level), actionValue3.description)
+                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, property: property), actionValue3.description)
             default:
                 let format = NSLocalizedString("%@ %@ and deal [%@] damage per second for %@s.", comment: "")
-                return String(format: format, ailment.description, targetParameter.buildTargetClause(), buildExpression(of: level), actionValue3.description)
+                return String(format: format, ailment.description, targetParameter.buildTargetClause(), buildExpression(of: level, property: property), actionValue3.description)
             }
         case .silence:
             let format = NSLocalizedString("Silence %@ with [%d]%% chance for %@s.", comment: "")

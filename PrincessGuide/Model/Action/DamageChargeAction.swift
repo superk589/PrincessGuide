@@ -17,9 +17,9 @@ class DamageChargeAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         let format = NSLocalizedString("Charge for %@s and deal [%@ * damage taken] additional damage on the next effect.", comment: "")
-        return String(format: format, actionValue3.description, buildExpression(of: level, roundingRule: nil))
+        return String(format: format, actionValue3.description, buildExpression(of: level, roundingRule: nil, property: property))
     }
     
 }

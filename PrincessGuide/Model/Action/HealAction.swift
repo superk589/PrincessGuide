@@ -37,9 +37,9 @@ class HealAction: ActionParameter {
         }
     }
     
-    override func localizedDetail(of level: Int) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
         let format = NSLocalizedString("Restore %@ [%@]%@ HP.", comment: "")
-        return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level), pecentModifier.description)
+        return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, property: property), pecentModifier.description)
     }
     
 }
