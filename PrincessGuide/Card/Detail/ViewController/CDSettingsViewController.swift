@@ -66,51 +66,51 @@ class CDSettingsViewController: FormViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleNavigationRightItem(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleNavigationLeftItem(_:)))
         tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            let navigationBar = themable.navigationController?.navigationBar
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
             navigationBar?.barStyle = theme.barStyle
-            themable.backgroundImageView.image = theme.backgroundImage
-            themable.tableView.indicatorStyle = theme.indicatorStyle
-            themable.tableView.backgroundColor = theme.color.background
+            themeable.backgroundImageView.image = theme.backgroundImage
+            themeable.tableView.indicatorStyle = theme.indicatorStyle
+            themeable.tableView.backgroundColor = theme.color.background
         }
         
         PickerInlineRow<Int>.defaultCellSetup = { (cell, row) in
             cell.selectedBackgroundView = UIView()
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themable, theme) in
-                themable.textLabel?.textColor = theme.color.title
-                themable.detailTextLabel?.textColor = theme.color.tint
-                themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                themable.backgroundColor = theme.color.tableViewCell.background
+            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                themeable.textLabel?.textColor = theme.color.title
+                themeable.detailTextLabel?.textColor = theme.color.tint
+                themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                themeable.backgroundColor = theme.color.tableViewCell.background
             }
         }
         PickerInlineRow<Int>.defaultCellUpdate = { (cell, row) in
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themable, theme) in
-                themable.textLabel?.textColor = theme.color.title
-                themable.detailTextLabel?.textColor = theme.color.tint
+            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                themeable.textLabel?.textColor = theme.color.title
+                themeable.detailTextLabel?.textColor = theme.color.tint
             }
         }
         
         func onCellSelection(cell: PickerInlineCell<Int>, row: PickerInlineRow<Int>) {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themable, theme) in
-                themable.textLabel?.textColor = theme.color.title
-                themable.detailTextLabel?.textColor = theme.color.tint
+            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                themeable.textLabel?.textColor = theme.color.title
+                themeable.detailTextLabel?.textColor = theme.color.tint
             }
         }
         
         func onExpandInlineRow(cell: PickerInlineCell<Int>, row: PickerInlineRow<Int>, pickerRow: PickerRow<Int>) {
             pickerRow.cell.selectedBackgroundView = UIView()
             pickerRow.cellSetup{ (cell, row) in
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themable, theme) in
-                    themable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                    themable.cell.backgroundColor = theme.color.tableViewCell.background
+                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
+                    themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
                 }
             }
             pickerRow.cellUpdate { (cell, row) in
                 cell.picker.showsSelectionIndicator = false
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themable, theme) in
-                    themable.cell.backgroundColor = theme.color.tableViewCell.background
-                    themable.onProvideStringAttributes = {
+                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
+                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
+                    themeable.onProvideStringAttributes = {
                         return [NSAttributedStringKey.foregroundColor: theme.color.body]
                     }
                 }

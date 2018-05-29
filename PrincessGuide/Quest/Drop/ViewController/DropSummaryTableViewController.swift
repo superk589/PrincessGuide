@@ -51,9 +51,9 @@ class DropSummaryTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.backgroundImageView.image = theme.backgroundImage
-            themable.tableView.indicatorStyle = theme.indicatorStyle
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.backgroundImageView.image = theme.backgroundImage
+            themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
         tableView.allowsSelection = false

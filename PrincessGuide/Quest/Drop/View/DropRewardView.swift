@@ -18,8 +18,8 @@ class DropRewardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.rateLabel.textColor = theme.color.caption
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.rateLabel.textColor = theme.color.caption
         }
         
         addSubview(itemIcon)
@@ -56,14 +56,14 @@ class DropRewardView: UIView {
             itemIcon.layer.borderWidth = 2
             itemIcon.layer.cornerRadius = 6
             itemIcon.layer.masksToBounds = true
-            ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-                themable.itemIcon.layer.borderColor = theme.color.highlightedText.cgColor
-                themable.rateLabel.textColor = theme.color.highlightedText
+            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                themeable.itemIcon.layer.borderColor = theme.color.highlightedText.cgColor
+                themeable.rateLabel.textColor = theme.color.highlightedText
             }
         } else {
             itemIcon.layer.borderWidth = 0
-            ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-                themable.rateLabel.textColor = theme.color.caption
+            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                themeable.rateLabel.textColor = theme.color.caption
             }
         }
     }

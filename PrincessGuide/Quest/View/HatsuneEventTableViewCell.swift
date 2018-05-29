@@ -20,11 +20,11 @@ class HatsuneEventTableViewCell: UITableViewCell {
         
         selectedBackgroundView = UIView()
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.titleLabel.textColor = theme.color.title
-            themable.subtitleLabel.textColor = theme.color.lightText
-            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themable.backgroundColor = theme.color.tableViewCell.background
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.titleLabel.textColor = theme.color.title
+            themeable.subtitleLabel.textColor = theme.color.lightText
+            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themeable.backgroundColor = theme.color.tableViewCell.background
         }
         
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)

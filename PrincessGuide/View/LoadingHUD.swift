@@ -46,10 +46,10 @@ class LoadingHUD: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.backgroundColor = theme.color.loadingHUD.background
-            themable.titleLabel.textColor = theme.color.loadingHUD.text
-            themable.contentView.backgroundColor = theme.color.loadingHUD.foreground
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.backgroundColor = theme.color.loadingHUD.background
+            themeable.titleLabel.textColor = theme.color.loadingHUD.text
+            themeable.contentView.backgroundColor = theme.color.loadingHUD.foreground
         }
         
         isUserInteractionEnabled = true

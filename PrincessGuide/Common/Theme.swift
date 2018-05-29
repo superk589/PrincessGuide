@@ -93,7 +93,7 @@ struct Theme: ThemeProtocol {
             body: .nearWhite,
             lightText: .gray,
             highlightedText: .darkHighlighted,
-            background: .black,
+            background: UIColor(hexString: "1A1A32"),
             indicator: .hatsunePurple,
             caption: .nearWhite,
             tableViewCell: ThemeTableViewCell(

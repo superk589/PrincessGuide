@@ -34,15 +34,15 @@ class SettingsTableViewController: UITableViewController {
         var settingRows = [Row]()
         
         let downloadAtStartSwitch = UISwitch()
-        ThemeManager.default.apply(theme: Theme.self, to: downloadAtStartSwitch) { (themable, theme) in
-            themable.onTintColor = theme.color.tint
+        ThemeManager.default.apply(theme: Theme.self, to: downloadAtStartSwitch) { (themeable, theme) in
+            themeable.onTintColor = theme.color.tint
         }
         downloadAtStartSwitch.isOn = Defaults.downloadAtStart
         downloadAtStartSwitch.addTarget(self, action: #selector(handleDownloadAtStartSwitch(_:)), for: .valueChanged)
         
         let darkThemeSwitch = UISwitch()
-        ThemeManager.default.apply(theme: Theme.self, to: darkThemeSwitch) { (themable, theme) in
-            themable.onTintColor = theme.color.tint
+        ThemeManager.default.apply(theme: Theme.self, to: darkThemeSwitch) { (themeable, theme) in
+            themeable.onTintColor = theme.color.tint
         }
         darkThemeSwitch.isOn = Defaults.prefersDarkTheme
         darkThemeSwitch.addTarget(self, action: #selector(handleDarkThemeSwitch(_:)), for: .valueChanged)
@@ -70,12 +70,12 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            let navigationBar = themable.navigationController?.navigationBar
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
             navigationBar?.barStyle = theme.barStyle
-            themable.backgroundImageView.image = theme.backgroundImage
-            themable.tableView.indicatorStyle = theme.indicatorStyle
+            themeable.backgroundImageView.image = theme.backgroundImage
+            themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
         navigationItem.title = NSLocalizedString("Settings", comment: "")
@@ -181,11 +181,11 @@ class SettingsTableViewController: UITableViewController {
         cell.selectionStyle = .none
         cell.selectedBackgroundView = UIView()
         
-        ThemeManager.default.apply(theme: Theme.self, to: cell) { (themable, theme) in
-            themable.textLabel?.textColor = theme.color.title
-            themable.detailTextLabel?.textColor = theme.color.body
-            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themable.backgroundColor = theme.color.tableViewCell.background
+        ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+            themeable.textLabel?.textColor = theme.color.title
+            themeable.detailTextLabel?.textColor = theme.color.body
+            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themeable.backgroundColor = theme.color.tableViewCell.background
         }
         
         return cell

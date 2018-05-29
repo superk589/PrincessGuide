@@ -18,8 +18,8 @@ class CraftSummaryCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.numberLabel.textColor = theme.color.caption
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.numberLabel.textColor = theme.color.caption
         }
         
         contentView.addSubview(icon)

@@ -19,9 +19,9 @@ class UpdatingHUD: UIView {
         super.init(frame: frame)
         layer.cornerRadius = 10
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.backgroundColor = theme.color.loadingHUD.foreground
-            themable.statusLabel.textColor = theme.color.loadingHUD.text
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.backgroundColor = theme.color.loadingHUD.foreground
+            themeable.statusLabel.textColor = theme.color.loadingHUD.text
         }
         
         loadingView.hideWhenStopped = true

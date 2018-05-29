@@ -29,11 +29,11 @@ class CDImageTableViewCell: UITableViewCell, CardDetailConfigurable {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView()
 
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themable.backgroundColor = theme.color.tableViewCell.background
-            themable.titleLabel.textColor = theme.color.title
-            themable.scrollView.indicatorStyle = theme.indicatorStyle
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themeable.backgroundColor = theme.color.tableViewCell.background
+            themeable.titleLabel.textColor = theme.color.title
+            themeable.scrollView.indicatorStyle = theme.indicatorStyle
         }
         
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)

@@ -41,13 +41,13 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         bar.items = items
         bar.location = .bottom
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            let navigationBar = themable.navigationController?.navigationBar
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
             navigationBar?.barStyle = theme.barStyle
             
-            themable.view.backgroundColor = theme.color.background
-            themable.bar.appearance = TabmanBar.Appearance({ (appearance) in
+            themeable.view.backgroundColor = theme.color.background
+            themeable.bar.appearance = TabmanBar.Appearance({ (appearance) in
                 appearance.indicator.color = theme.color.tint
                 appearance.state.selectedColor = theme.color.tint
                 appearance.state.color = theme.color.lightText

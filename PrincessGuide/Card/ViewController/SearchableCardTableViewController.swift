@@ -37,8 +37,8 @@ class SearchableCardTableViewController: CardTableViewController {
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
         }
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.searchController.searchBar.tintColor = theme.color.tint
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.searchController.searchBar.tintColor = theme.color.tint
         }
     }
     

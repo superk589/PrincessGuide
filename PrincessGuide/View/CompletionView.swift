@@ -32,8 +32,8 @@ class CompletionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.addSublayer(checkmarkShapeLayer)
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.checkmarkShapeLayer.strokeColor = theme.color.tint.cgColor
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.checkmarkShapeLayer.strokeColor = theme.color.tint.cgColor
         }
     }
     

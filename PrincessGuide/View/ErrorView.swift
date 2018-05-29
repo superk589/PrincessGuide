@@ -35,9 +35,9 @@ class ErrorView: UIView {
         super.init(frame: frame)
         layer.addSublayer(dashOneLayer)
         layer.addSublayer(dashTwoLayer)
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.dashOneLayer.strokeColor = theme.color.tint.cgColor
-            themable.dashTwoLayer.strokeColor = theme.color.tint.cgColor
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.dashOneLayer.strokeColor = theme.color.tint.cgColor
+            themeable.dashTwoLayer.strokeColor = theme.color.tint.cgColor
         }
     }
     

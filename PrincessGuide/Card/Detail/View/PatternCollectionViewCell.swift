@@ -21,9 +21,9 @@ class PatternCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.skillLabel.textColor = theme.color.caption
-            themable.loopLabel.textColor = theme.color.caption
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.skillLabel.textColor = theme.color.caption
+            themeable.loopLabel.textColor = theme.color.caption
         }
         
         contentView.addSubview(skillIcon)

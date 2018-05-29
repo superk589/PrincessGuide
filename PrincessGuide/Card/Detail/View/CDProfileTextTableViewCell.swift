@@ -20,9 +20,9 @@ class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
         
         selectedBackgroundView = UIView()
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themable.backgroundColor = theme.color.tableViewCell.background
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themeable.backgroundColor = theme.color.tableViewCell.background
         }
         
         stackView.axis = .horizontal

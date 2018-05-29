@@ -22,8 +22,8 @@ class CDImageView: UIImageView {
             make.center.equalToSuperview()
         }
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.indicator.color = theme.color.indicator
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.indicator.color = theme.color.indicator
         }
     }
     

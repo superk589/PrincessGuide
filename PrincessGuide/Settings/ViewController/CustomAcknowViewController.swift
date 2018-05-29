@@ -27,11 +27,11 @@ class CustomAcknowViewController: AcknowViewController {
         super.viewDidLoad()
         textView?.backgroundColor = .clear
 
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.textView?.textColor = theme.color.title
-            themable.backgroundImageView.image = theme.backgroundImage
-            themable.textView?.indicatorStyle = theme.indicatorStyle
-            themable.view.backgroundColor = theme.color.background
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.textView?.textColor = theme.color.title
+            themeable.backgroundImageView.image = theme.backgroundImage
+            themeable.textView?.indicatorStyle = theme.indicatorStyle
+            themeable.view.backgroundColor = theme.color.background
         }
     }
 

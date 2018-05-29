@@ -31,16 +31,16 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView()
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.nameLabel.textColor = theme.color.title
-            themable.categoryLabel.textColor = theme.color.caption
-            themable.castTimeLabel.textColor = theme.color.body
-            themable.descLabel.textColor = theme.color.body
-            themable.subtitleLabel.textColor = theme.color.title
-            themable.subtitleLabel2.textColor = theme.color.title
-            themable.actionLabel.textColor = theme.color.body
-            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themable.backgroundColor = theme.color.tableViewCell.background
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.nameLabel.textColor = theme.color.title
+            themeable.categoryLabel.textColor = theme.color.caption
+            themeable.castTimeLabel.textColor = theme.color.body
+            themeable.descLabel.textColor = theme.color.body
+            themeable.subtitleLabel.textColor = theme.color.title
+            themeable.subtitleLabel2.textColor = theme.color.title
+            themeable.actionLabel.textColor = theme.color.body
+            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themeable.backgroundColor = theme.color.tableViewCell.background
         }
         
         contentView.addSubview(skillIcon)

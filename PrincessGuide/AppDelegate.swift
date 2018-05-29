@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tabBar = rootTabBarController.tabBar
             tabBar.tintColor = theme.color.tint
             tabBar.barStyle = theme.barStyle
+            themeable.window?.backgroundColor = theme.color.background
         }
         
         ThemeManager.default.theme = Defaults.prefersDarkTheme ? Theme.dark : Theme.light

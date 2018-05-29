@@ -22,11 +22,11 @@ class CraftTableViewCell: UITableViewCell, CraftDetailConfigurable {
         
         selectedBackgroundView = UIView()
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.nameLabel.textColor = theme.color.title
-            themable.consumeNumberLabel.textColor = theme.color.body
-            themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themable.backgroundColor = theme.color.tableViewCell.background
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.nameLabel.textColor = theme.color.title
+            themeable.consumeNumberLabel.textColor = theme.color.body
+            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themeable.backgroundColor = theme.color.tableViewCell.background
         }
         
         contentView.addSubview(icon)

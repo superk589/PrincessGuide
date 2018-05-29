@@ -14,9 +14,9 @@ class ProfileItemView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.titleLabel.textColor = theme.color.title
-            themable.contentLabel.textColor = theme.color.body
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.titleLabel.textColor = theme.color.title
+            themeable.contentLabel.textColor = theme.color.body
         }
         
         addSubview(titleLabel)
@@ -29,6 +29,7 @@ class ProfileItemView: UIView {
             make.left.bottom.equalToSuperview()
             make.top.greaterThanOrEqualTo(titleLabel.snp.bottom)
         }
+        contentLabel.numberOfLines = 0
         contentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
     }
     

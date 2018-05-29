@@ -22,8 +22,8 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            themable.collectionView.indicatorStyle = theme.indicatorStyle
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            themeable.collectionView.indicatorStyle = theme.indicatorStyle
         }
         
         let height = PatternCollectionViewCell().intrinsicContentSize.height

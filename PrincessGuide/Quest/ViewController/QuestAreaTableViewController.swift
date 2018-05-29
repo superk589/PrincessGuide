@@ -32,14 +32,14 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
         super.viewDidLoad()
         
         tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
-            let navigationBar = themable.navigationController?.navigationBar
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
             navigationBar?.barStyle = theme.barStyle
-            themable.backgroundImageView.image = theme.backgroundImage
-            themable.refresher.arrowImage.tintColor = theme.color.indicator
-            themable.refresher.loadingView.color = theme.color.indicator
-            themable.tableView.indicatorStyle = theme.indicatorStyle
+            themeable.backgroundImageView.image = theme.backgroundImage
+            themeable.refresher.arrowImage.tintColor = theme.color.indicator
+            themeable.refresher.loadingView.color = theme.color.indicator
+            themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
