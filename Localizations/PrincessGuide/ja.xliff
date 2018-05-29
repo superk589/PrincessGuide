@@ -59,33 +59,15 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
     </header>
     <body>
-      <trans-unit id="%@ %@ %@ %@">
-        <source>%1$@ %2$@ %3$@ %4$@</source>
-        <note>the fathest two enemy targets
-   the second to fourth fathest enemy targets</note>
-      </trans-unit>
-      <trans-unit id="%@ %@ %@ %@ %@">
-        <source>%1$@ %2$@ %3$@ %4$@ %5$@</source>
-        <note>the second to fourth fathest front friendly targets</note>
-      </trans-unit>
-      <trans-unit id="%@ %@ %@ %@ %@ in range %d">
-        <source>%1$@ %2$@ %3$@ %4$@ %5$@ in range %6$d</source>
-        <note>the fathest two front friendly targets in range 500
-   the second to fourth fathest front friendly targets in range 500</note>
-      </trans-unit>
-      <trans-unit id="%@ %@ %@ %@ in range %d">
-        <source>%1$@ %2$@ %3$@ %4$@ in range %5$d</source>
-        <note>the fathest two enemy targets in range 500
-   the second to fourth fathest enemy targets in range 500</note>
+      <trans-unit id="%@ %@ %@">
+        <source>%1$@ %2$@ %3$@</source>
+        <note>[the fathest two] [enemy] [targets]
+   [the second to fourth fathest] [enemy] [targets]</note>
       </trans-unit>
       <trans-unit id="%@ %@ %@ in range %d">
         <source>%1$@ %2$@ %3$@ in range %4$d</source>
-        <note>front friendly targets in range 500</note>
-      </trans-unit>
-      <trans-unit id="%@ %@ %@ target in range %d">
-        <source>%1$@ %2$@ %3$@ target in range %4$d</source>
-        <note>the nearest front friendly target in range 500
-   the second nearest front friendly target in range 500</note>
+        <note>[the fathest two] [enemy] [targets] in range [500]
+   [the second to fourth fathest] [enemy] [targets] in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ for %@s.">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for %6$@s.</source>
@@ -99,36 +81,122 @@
         <source>%1$@ %2$@ for %3$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ in range %d">
-        <source>%1$@ %2$@ in range %3$d</source>
-        <note>friendly targets in range 500</note>
-      </trans-unit>
       <trans-unit id="%@ %@ target">
         <source>%1$@ %2$@ target</source>
-        <note>the nearest enemy target
-   the second nearest enemy target</note>
+        <note>[the nearest] [enemy] target
+   [the second nearest] [enemy] target</note>
       </trans-unit>
       <trans-unit id="%@ %@ target in range %d">
         <source>%1$@ %2$@ target in range %3$d</source>
-        <note>the nearest enemy target in range 500
-   the second nearest enemy target in range 500</note>
+        <note>[the nearest] [enemy] target in range [500]
+   [the second nearest] [enemy] target in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ %@ targets in range %d">
         <source>%1$@ %2$@ targets in range %3$d</source>
-        <note>front friendly targets in range 500</note>
+        <note>[friendly] [physics] targets in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ Feedback">
         <source>%@ Feedback</source>
         <target>%@ フィードバック</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="%@ absolute">
+        <source>%@ absolute</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ farthest">
+        <source>%@ farthest</source>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ front friendly %@">
+        <source>%1$@ front friendly %2$@</source>
+        <note>[the second to fourth fathest] front friendly [targets]</note>
+      </trans-unit>
+      <trans-unit id="%@ front friendly %@ in range %d">
+        <source>%1$@ front friendly %2$@ in range %3$d</source>
+        <note>[the fathest two] front friendly [targets] in range [500]
+   [the second to fourth fathest] front friendly [targets] in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ front friendly target in range %d">
+        <source>%1$@ front friendly target in range %2$d</source>
+        <note>[the nearest] front friendly target in range [500]
+   [the second nearest] front friendly target in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ highest ATK">
+        <source>%@ highest ATK</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ highest HP ratio">
+        <source>%@ highest HP ratio</source>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ highest Magic STR">
+        <source>%@ highest Magic STR</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ highest TP">
+        <source>%@ highest TP</source>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ lowest ATK">
+        <source>%@ lowest ATK</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ lowest HP ratio">
+        <source>%@ lowest HP ratio</source>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ lowest Magic STR">
+        <source>%@ lowest Magic STR</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ lowest TP">
+        <source>%@ lowest TP</source>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ magic">
+        <source>%@ magic</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ minion">
+        <source>%@ minion</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ most backward">
+        <source>%@ most backward</source>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ most forward">
+        <source>%@ most forward</source>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ nearest">
+        <source>%@ nearest</source>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ physics">
+        <source>%@ physics</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ random">
+        <source>%@ random</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ random(once)">
+        <source>%@ random(once)</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ targets in range %d">
         <source>%1$@ targets in range %2$d</source>
-        <note>enemy targets in range 500</note>
+        <note>[enemy] targets in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ to %@">
         <source>%1$@ to %2$@</source>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ unknown type">
+        <source>%@ unknown type</source>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="%@/%@">
         <source>%1$@/%2$@</source>
@@ -698,11 +766,6 @@
         <source>Poison %1$@ and deal [%2$@] damage per second for %3$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Position">
-        <source>Position</source>
-        <target>ボジション</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Profile">
         <source>Profile</source>
         <target>プロファイル</target>
@@ -955,13 +1018,17 @@
         <target>全体</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="all %@ %@">
-        <source>all %1$@ %2$@</source>
-        <note>all enemy targets</note>
+      <trans-unit id="all %@ %@ targets">
+        <source>all %1$@ %2$@ targets</source>
+        <note>all [enemy] [physics] targets</note>
       </trans-unit>
-      <trans-unit id="all %@ %@ %@">
-        <source>all %1$@ %2$@ %3$@</source>
-        <note>all front friendly targets</note>
+      <trans-unit id="all %@ targets">
+        <source>all %@ targets</source>
+        <note>all [enemy] targets</note>
+      </trans-unit>
+      <trans-unit id="all front(including self) friendly targets">
+        <source>all front(including self) friendly targets</source>
+        <note>all front(including self) friendly targets</note>
       </trans-unit>
       <trans-unit id="enemy">
         <source>enemy</source>
@@ -990,9 +1057,17 @@
         <source>front</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="front %@ %@ targets in range %d">
+        <source>front %1$@ %2$@ targets in range %3$d</source>
+        <note>front [friendly] [physics] targets in range [500]</note>
+      </trans-unit>
       <trans-unit id="front and back">
         <source>front and back</source>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="front friendly targets in range %d">
+        <source>front friendly targets in range %d</source>
+        <note>front friendly targets in range [500]</note>
       </trans-unit>
       <trans-unit id="front(including self)">
         <source>front(including self)</source>
@@ -1063,6 +1138,10 @@
       <trans-unit id="targets of last effect">
         <source>targets of last effect</source>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="targets of last effect or %@ nearest">
+        <source>targets of last effect or %@ nearest</source>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="targets of last effect or the %@ nearest">
         <source>targets of last effect or the %@ nearest</source>

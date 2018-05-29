@@ -27,7 +27,7 @@ class EDStatusTableViewController: EDTableViewController {
         ]
         rows += [
             Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Swing Time", comment: ""), "\(enemy.unit.normalAtkCastTime)s")),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Position", comment: ""), "\(enemy.unit.searchAreaWidth)"))
+            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Attack Range", comment: ""), "\(enemy.unit.searchAreaWidth)"))
         ]
     }
     

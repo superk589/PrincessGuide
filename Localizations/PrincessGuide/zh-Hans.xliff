@@ -59,39 +59,17 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
     </header>
     <body>
-      <trans-unit id="%@ %@ %@ %@">
-        <source>%1$@ %2$@ %3$@ %4$@</source>
-        <target>%1$@%2$@%3$@%4$@</target>
-        <note>the fathest two enemy targets
-   the second to fourth fathest enemy targets</note>
-      </trans-unit>
-      <trans-unit id="%@ %@ %@ %@ %@">
-        <source>%1$@ %2$@ %3$@ %4$@ %5$@</source>
-        <target>%3$@%1$@%2$@%4$@%5$@</target>
-        <note>the second to fourth fathest front friendly targets</note>
-      </trans-unit>
-      <trans-unit id="%@ %@ %@ %@ %@ in range %d">
-        <source>%1$@ %2$@ %3$@ %4$@ %5$@ in range %6$d</source>
-        <target>%3$@范围 %6$d 内的%1$@%2$@%4$@%5$@</target>
-        <note>the fathest two front friendly targets in range 500
-   the second to fourth fathest front friendly targets in range 500</note>
-      </trans-unit>
-      <trans-unit id="%@ %@ %@ %@ in range %d">
-        <source>%1$@ %2$@ %3$@ %4$@ in range %5$d</source>
-        <target>范围 %5$d 内的%1$@%2$@%3$@%4$@</target>
-        <note>the fathest two enemy targets in range 500
-   the second to fourth fathest enemy targets in range 500</note>
+      <trans-unit id="%@ %@ %@">
+        <source>%1$@ %2$@ %3$@</source>
+        <target>%1$@%2$@%3$@</target>
+        <note>[the fathest two] [enemy] [targets]
+   [the second to fourth fathest] [enemy] [targets]</note>
       </trans-unit>
       <trans-unit id="%@ %@ %@ in range %d">
         <source>%1$@ %2$@ %3$@ in range %4$d</source>
-        <target>%1$@范围 %4$d 内的%1$@%2$@</target>
-        <note>front friendly targets in range 500</note>
-      </trans-unit>
-      <trans-unit id="%@ %@ %@ target in range %d">
-        <source>%1$@ %2$@ %3$@ target in range %4$d</source>
-        <target>%2$@范围 %4$d 内%1$@%3$@目标</target>
-        <note>the nearest front friendly target in range 500
-   the second nearest front friendly target in range 500</note>
+        <target>范围 %4$d 内%1$@%2$@%3$@</target>
+        <note>[the fathest two] [enemy] [targets] in range [500]
+   [the second to fourth fathest] [enemy] [targets] in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ for %@s.">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for %6$@s.</source>
@@ -108,42 +86,149 @@
         <target>%1$@%2$@，持续 %3$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ in range %d">
-        <source>%1$@ %2$@ in range %3$d</source>
-        <target>范围 %3$d 内的%1$@%2$@</target>
-        <note>friendly targets in range 500</note>
-      </trans-unit>
       <trans-unit id="%@ %@ target">
         <source>%1$@ %2$@ target</source>
         <target>%1$@%2$@目标</target>
-        <note>the nearest enemy target
-   the second nearest enemy target</note>
+        <note>[the nearest] [enemy] target
+   [the second nearest] [enemy] target</note>
       </trans-unit>
       <trans-unit id="%@ %@ target in range %d">
         <source>%1$@ %2$@ target in range %3$d</source>
         <target>范围 %3$d 内%1$@%2$@目标</target>
-        <note>the nearest enemy target in range 500
-   the second nearest enemy target in range 500</note>
+        <note>[the nearest] [enemy] target in range [500]
+   [the second nearest] [enemy] target in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ %@ targets in range %d">
         <source>%1$@ %2$@ targets in range %3$d</source>
-        <target>%1$@范围 %3$d 内的%2$@目标</target>
-        <note>front friendly targets in range 500</note>
+        <target>范围 %3$d 内%1$@%2$@目标</target>
+        <note>[friendly] [physics] targets in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ Feedback">
         <source>%@ Feedback</source>
         <target>%@ 反馈</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="%@ absolute">
+        <source>%@ absolute</source>
+        <target>%@绝对位置的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ farthest">
+        <source>%@ farthest</source>
+        <target>最远的%@</target>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ front friendly %@">
+        <source>%1$@ front friendly %2$@</source>
+        <target>前方%1$@友方%2$@</target>
+        <note>[the second to fourth fathest] front friendly [targets]</note>
+      </trans-unit>
+      <trans-unit id="%@ front friendly %@ in range %d">
+        <source>%1$@ front friendly %2$@ in range %3$d</source>
+        <target>前方 %3$d 范围内%1$@友方%2$@</target>
+        <note>[the fathest two] front friendly [targets] in range [500]
+   [the second to fourth fathest] front friendly [targets] in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ front friendly target in range %d">
+        <source>%1$@ front friendly target in range %2$d</source>
+        <target>前方 %2$d 范围内%1$@友方目标</target>
+        <note>[the nearest] front friendly target in range [500]
+   [the second nearest] front friendly target in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ highest ATK">
+        <source>%@ highest ATK</source>
+        <target>物理攻击力最高的%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ highest HP ratio">
+        <source>%@ highest HP ratio</source>
+        <target> HP 比例最高的%@</target>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ highest Magic STR">
+        <source>%@ highest Magic STR</source>
+        <target>魔法攻击力最高的%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ highest TP">
+        <source>%@ highest TP</source>
+        <target> TP 最多的%@</target>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ lowest ATK">
+        <source>%@ lowest ATK</source>
+        <target>物理攻击力最低的%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ lowest HP ratio">
+        <source>%@ lowest HP ratio</source>
+        <target> HP 比例最低的%@</target>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ lowest Magic STR">
+        <source>%@ lowest Magic STR</source>
+        <target>魔法攻击力最低的%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ lowest TP">
+        <source>%@ lowest TP</source>
+        <target> TP 最少的%@</target>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ magic">
+        <source>%@ magic</source>
+        <target>%@法系</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ minion">
+        <source>%@ minion</source>
+        <target>%@随从</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ most backward">
+        <source>%@ most backward</source>
+        <target>最靠后的%@</target>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ most forward">
+        <source>%@ most forward</source>
+        <target>最靠前的%@</target>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ nearest">
+        <source>%@ nearest</source>
+        <target>最近的%@</target>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="%@ physics">
+        <source>%@ physics</source>
+        <target>%@物理系</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ random">
+        <source>%@ random</source>
+        <target>%@随机</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ random(once)">
+        <source>%@ random(once)</source>
+        <target>%@随机（仅一次）</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ targets in range %d">
         <source>%1$@ targets in range %2$d</source>
-        <target>范围 %2$d 内的%1$@目标</target>
-        <note>enemy targets in range 500</note>
+        <target>范围 %2$d 内%1$@目标</target>
+        <note>[enemy] targets in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ to %@">
         <source>%1$@ to %2$@</source>
         <target>%1$@至%2$@</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ unknown type">
+        <source>%@ unknown type</source>
+        <target>%@未知类型</target>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="%@/%@">
         <source>%1$@/%2$@</source>
@@ -755,10 +840,6 @@
         <target>使%1$@中毒并每秒造成 [%2$@] 伤害，持续 %3$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Position">
-        <source>Position</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Profile">
         <source>Profile</source>
         <target>角色</target>
@@ -1024,15 +1105,20 @@
         <target>全部</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="all %@ %@">
-        <source>all %1$@ %2$@</source>
-        <target>所有%1$@%2$@</target>
-        <note>all enemy targets</note>
+      <trans-unit id="all %@ %@ targets">
+        <source>all %1$@ %2$@ targets</source>
+        <target>所有%1$@%2$@目标</target>
+        <note>all [enemy] [physics] targets</note>
       </trans-unit>
-      <trans-unit id="all %@ %@ %@">
-        <source>all %1$@ %2$@ %3$@</source>
-        <target>所有%1$@%的%2$@%3$@</target>
-        <note>all front friendly targets</note>
+      <trans-unit id="all %@ targets">
+        <source>all %@ targets</source>
+        <target>所有%@目标</target>
+        <note>all [enemy] targets</note>
+      </trans-unit>
+      <trans-unit id="all front(including self) friendly targets">
+        <source>all front(including self) friendly targets</source>
+        <target>所有前方的友方目标（包括自己）</target>
+        <note>all front(including self) friendly targets</note>
       </trans-unit>
       <trans-unit id="enemy">
         <source>enemy</source>
@@ -1064,10 +1150,20 @@
         <target>前方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="front %@ %@ targets in range %d">
+        <source>front %1$@ %2$@ targets in range %3$d</source>
+        <target>前方 %3$d 范围内%1$@%2$@目标</target>
+        <note>front [friendly] [physics] targets in range [500]</note>
+      </trans-unit>
       <trans-unit id="front and back">
         <source>front and back</source>
         <target>前方和后方</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="front friendly targets in range %d">
+        <source>front friendly targets in range %d</source>
+        <target>前方 %d 范围内友方目标</target>
+        <note>front friendly targets in range [500]</note>
       </trans-unit>
       <trans-unit id="front(including self)">
         <source>front(including self)</source>
@@ -1081,7 +1177,7 @@
       </trans-unit>
       <trans-unit id="magic">
         <source>magic</source>
-        <target>魔法</target>
+        <target>法系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="magical">
@@ -1106,7 +1202,7 @@
       </trans-unit>
       <trans-unit id="physics">
         <source>physics</source>
-        <target>物理</target>
+        <target>物理系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="random">
@@ -1153,6 +1249,11 @@
         <source>targets of last effect</source>
         <target>上一个效果影响到的目标</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="targets of last effect or %@ nearest">
+        <source>targets of last effect or %@ nearest</source>
+        <target>上一个效果或最近的%@</target>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="targets of last effect or the %@ nearest">
         <source>targets of last effect or the %@ nearest</source>
