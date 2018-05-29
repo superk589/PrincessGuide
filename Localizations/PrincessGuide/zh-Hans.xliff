@@ -210,6 +210,11 @@
         <target>攻击模式</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Attack Range">
+        <source>Attack Range</source>
+        <target>攻击范围</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Become invulnerable for [%@]s.">
         <source>Become invulnerable for [%@]s.</source>
         <target>进入无敌状态，持续 [%@] 秒。</target>
@@ -752,7 +757,6 @@
       </trans-unit>
       <trans-unit id="Position">
         <source>Position</source>
-        <target>位置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Profile">

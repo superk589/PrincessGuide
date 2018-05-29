@@ -40,6 +40,12 @@ class CDPropertyViewController: CDTableViewController {
                 property.item(for: .dodge),
                 property.item(for: .magicCritical)
                 ])),
+            Row(type: CDProfileTextTableViewCell.self, data: .texts(
+                [
+                    (NSLocalizedString("Swing Time", comment: ""), String(card.base.normalAtkCastTime) + "s"),
+                    (NSLocalizedString("Attack Range", comment: ""), String(card.base.searchAreaWidth))
+                ]
+            )),
             Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Physical HP", comment: ""), String(Int(property.effectivePhysicalHP.rounded())))),
             Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Magical HP", comment: ""), String(Int(property.effectiveMagicalHP.rounded())))),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
@@ -63,8 +69,7 @@ class CDPropertyViewController: CDTableViewController {
         ]
         
         rows += [
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Swing Time", comment: ""), String(card.base.normalAtkCastTime) + "s")),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Position", comment: ""), String(card.base.searchAreaWidth)))
+            
         ]
     }
 

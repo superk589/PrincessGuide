@@ -11,9 +11,9 @@ import Gestalt
 
 class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
     
-    let titleLabel = UILabel()
+    let stackView = UIStackView()
     
-    let contentLabel = UILabel()
+    var itemViews = [CDTextItemView]()
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,26 +23,19 @@ class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themable, theme) in
             themable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themable.backgroundColor = theme.color.tableViewCell.background
-            themable.titleLabel.textColor = theme.color.title
-            themable.contentLabel.textColor = theme.color.body
         }
         
-        contentView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
+        stackView.axis = .horizontal
+        stackView.spacing = 0
+        stackView.distribution = .fillEqually
+        stackView.alignment = .leading
+        contentView.addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
             make.top.equalTo(10)
-        }
-        titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
-        
-        contentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
-        contentView.addSubview(contentLabel)
-        contentLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(readableContentGuide)
-            make.top.greaterThanOrEqualTo(titleLabel.snp.bottom)
             make.bottom.equalTo(-10)
-            make.right.lessThanOrEqualTo(readableContentGuide)
+            make.right.equalTo(readableContentGuide)
         }
-        contentLabel.numberOfLines = 0
         
         selectionStyle = .none
     }
@@ -52,15 +45,28 @@ class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
     func configure(for item: CardDetailItem) {
-        guard case .text(let title, let content) = item else {
-            fatalError()
+        if case .text(let title, let content) = item {
+            configure(for: [(title, content)])
+        } else if case .texts(let elements) = item {
+            configure(for: elements)
         }
-        configure(for: title, content: content)
     }
     
     func configure(for title: String, content: String) {
-        titleLabel.text = title
-        contentLabel.text = content.replacingOccurrences(of: "\\n", with: "\n")
+        let itemView = CDTextItemView()
+        itemView.configure(for: title, content: content)
+        itemViews.append(itemView)
+        stackView.addArrangedSubview(itemView)
+    }
+    
+    func configure(for elements: [(String, String)]) {
+        itemViews.forEach {
+            $0.removeFromSuperview()
+        }
+        itemViews.removeAll()
+        for element in elements {
+            configure(for: element.0, content: element.1)
+        }
     }
     
 }

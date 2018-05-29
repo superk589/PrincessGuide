@@ -188,6 +188,10 @@
         <target>攻撃パターン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Attack Range">
+        <source>Attack Range</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Become invulnerable for [%@]s.">
         <source>Become invulnerable for [%@]s.</source>
         <target>無敵状態になる、[%@]秒継続する。</target>
