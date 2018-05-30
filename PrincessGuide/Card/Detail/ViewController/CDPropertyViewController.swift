@@ -22,7 +22,7 @@ class CDPropertyViewController: CDTableViewController {
     override func prepareRows(for card: Card) {
         rows.removeAll()
         let settings = CDSettingsViewController.Setting.default
-        let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, loveRank: settings.unitLove, unitRarity: settings.unitRarity)
+        let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity)
         rows += [
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .atk),

@@ -21,6 +21,7 @@ class CardTableViewCell: UITableViewCell {
 
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             themeable.cardView.nameLabel.textColor = theme.color.title
+            themeable.cardView.rightLabel.textColor = theme.color.body
             themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themeable.backgroundColor = theme.color.tableViewCell.background
         }
@@ -33,8 +34,8 @@ class CardTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(for card: Card) {
-        cardView.configure(for: card)
+    func configure(for card: Card, value: String?, mode: CardView.Mode) {
+        cardView.configure(for: card, value: value, mode: mode)
     }
     
     required init?(coder aDecoder: NSCoder) {

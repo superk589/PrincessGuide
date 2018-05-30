@@ -345,11 +345,11 @@ extension Card {
     
     func property(unitLevel: Int = ConsoleVariables.default.maxPlayerLevel,
                   unitRank: Int = ConsoleVariables.default.maxEquipmentRank,
-                  loveRank: Int = Constant.presetMaxCharaLoveRank,
+                  bondRank: Int = Constant.presetMaxBondRank,
                   unitRarity: Int = Constant.presetMaxRarity,
                   addsEx: Bool = false) -> Property {
         var property = Property()
-        let storyPropertyItems = charaStorys?.filter { $0.storyID % 1000 <= loveRank }.flatMap { $0.status.map { $0.property() } } ?? []
+        let storyPropertyItems = charaStorys?.filter { $0.storyID % 1000 <= bondRank }.flatMap { $0.status.map { $0.property() } } ?? []
         for item in storyPropertyItems {
             property += item
         }

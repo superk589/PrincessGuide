@@ -32,10 +32,10 @@ class HatsuneEventArea: Codable {
     }
     
     var areaType: AreaType {
-        switch base.areaId {
-        case 61000..<62000:
+        switch base.areaId % 1000 {
+        case 100..<200:
             return .normal
-        case 62000..<63000:
+        case 200..<300:
             return .hard
         default:
             return .unknown

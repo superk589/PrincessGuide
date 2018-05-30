@@ -86,6 +86,7 @@
 		1281FA52209AE3E900F2D567 /* Craft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA51209AE3E900F2D567 /* Craft.swift */; };
 		1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */; };
 		1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */; };
+		12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12901E9820BE859C00697053 /* CardSortingViewController.swift */; };
 		129A7F54209FE7A800D93996 /* CDProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */; };
 		129A7F56209FE8D400D93996 /* ProfileItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F55209FE8D400D93996 /* ProfileItemView.swift */; };
 		129A7F5820A0249600D93996 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F5720A0249600D93996 /* Property.swift */; };
@@ -276,6 +277,7 @@
 		1281FA51209AE3E900F2D567 /* Craft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Craft.swift; sourceTree = "<group>"; };
 		1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		12901E9820BE859C00697053 /* CardSortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortingViewController.swift; sourceTree = "<group>"; };
 		129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewCell.swift; sourceTree = "<group>"; };
 		129A7F55209FE8D400D93996 /* ProfileItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemView.swift; sourceTree = "<group>"; };
 		129A7F5720A0249600D93996 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 				1221CDC1207B96FA008F30AA /* CardTableViewController.swift */,
 				12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */,
 				12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */,
+				12901E9820BE859C00697053 /* CardSortingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1012,6 +1015,7 @@
 				129A7F5E20A0364300D93996 /* CDProfileTextTableViewCell.swift in Sources */,
 				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
 				12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */,
+				12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
 				12F1261320B954C1005C9659 /* AccumulativeDamageAction.swift in Sources */,
 				1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */,

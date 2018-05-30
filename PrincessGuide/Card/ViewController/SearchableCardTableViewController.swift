@@ -42,6 +42,24 @@ class SearchableCardTableViewController: CardTableViewController {
         }
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        switch searchController.isActive {
+        case true:
+            return 1
+        default:
+            return super.numberOfSections(in: tableView)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch searchController.isActive {
+        case true:
+            return nil
+        default:
+            return super.tableView(tableView, titleForHeaderInSection: section)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch searchController.isActive {
         case true:
@@ -55,7 +73,9 @@ class SearchableCardTableViewController: CardTableViewController {
         switch searchController.isActive {
         case true:
             let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.description(), for: indexPath) as! CardTableViewCell
-            cell.configure(for: filteredCards[indexPath.row])
+            let card = filteredCards[indexPath.row]
+            let (mode, text) = cardViewRightContent(card: card, settings: CardSortingViewController.Setting.default)
+            cell.configure(for: filteredCards[indexPath.row], value: text, mode: mode)
             return cell
         default:
             return super.tableView(tableView, cellForRowAt: indexPath)

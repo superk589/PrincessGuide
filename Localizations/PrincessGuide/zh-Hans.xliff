@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.4" build-num="9F1027a"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title">
@@ -29,7 +29,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.4" build-num="9F1027a"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
@@ -56,7 +56,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.4" build-num="9F1027a"/>
     </header>
     <body>
       <trans-unit id="%@ %@ %@">
@@ -290,6 +290,11 @@
         <target>回合开始后 %@ 秒入场。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Ascending">
+        <source>Ascending</source>
+        <target>升序</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Attack Pattern">
         <source>Attack Pattern</source>
         <target>攻击模式</target>
@@ -298,6 +303,16 @@
       <trans-unit id="Attack Range">
         <source>Attack Range</source>
         <target>攻击范围</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Attack Type">
+        <source>Attack Type</source>
+        <target>攻击类型</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Back">
+        <source>Back</source>
+        <target>后卫</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Become invulnerable for [%@]s.">
@@ -383,6 +398,11 @@
       <trans-unit id="Catch Copy">
         <source>Catch Copy</source>
         <target>简介</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Center">
+        <source>Center</source>
+        <target>中卫</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Change attack pattern.">
@@ -520,6 +540,11 @@
         <target>对%2$@造成其最大 HP [%1$@]%% 的伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Descending">
+        <source>Descending</source>
+        <target>降序</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Description">
         <source>Description</source>
         <target>描述</target>
@@ -617,8 +642,9 @@
       </trans-unit>
       <trans-unit id="Expression Style">
         <source>Expression Style</source>
+        <target>表达式类型</target>
         <note>No comment provided by engineer.</note>
-      <target>表达式类型</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Failed">
         <source>Failed</source>
         <target>检查更新失败</target>
@@ -647,6 +673,16 @@
       <trans-unit id="General">
         <source>General</source>
         <target>通用</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Group by">
+        <source>Group by</source>
+        <target>分组方式</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Grouping">
+        <source>Grouping</source>
+        <target>分组</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Guild">
@@ -694,6 +730,11 @@
         <target>兴趣</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Internal ID">
+        <source>Internal ID</source>
+        <target>内部 ID</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Knock %@ away %d.">
         <source>Knock %1$@ away %2$d.</source>
         <target>击退%1$@，距离 %2$d。</target>
@@ -727,6 +768,11 @@
       <trans-unit id="Loop start">
         <source>Loop start</source>
         <target>循环开始</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Magic">
+        <source>Magic</source>
+        <target>法系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Magic Critical">
@@ -789,6 +835,11 @@
         <target>使下一个效果的数值乘以 [%@ * 损失的 HP / 最大 HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="None">
+        <source>None</source>
+        <target>无</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Normal">
         <source>Normal</source>
         <target>普通</target>
@@ -824,6 +875,11 @@
         <target>物理穿透</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Physics">
+        <source>Physics</source>
+        <target>物理系</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Plate">
         <source>Plate</source>
         <target>Plate</target>
@@ -842,6 +898,11 @@
       <trans-unit id="Poison %@ and deal [%@] damage per second for %@s.">
         <source>Poison %1$@ and deal [%2$@] damage per second for %3$@s.</source>
         <target>使%1$@中毒并每秒造成 [%2$@] 伤害，持续 %3$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Position">
+        <source>Position</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Profile">
@@ -887,6 +948,11 @@
       <trans-unit id="Rank">
         <source>Rank</source>
         <target>Rank</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Rarity">
+        <source>Rarity</source>
+        <target>稀有度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raw Materials">
@@ -972,6 +1038,21 @@
       <trans-unit id="Slow">
         <source>Slow</source>
         <target>Slow</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Sort">
+        <source>Sort</source>
+        <target>排序</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Sort by">
+        <source>Sort by</source>
+        <target>排序方式</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Sorting">
+        <source>Sorting</source>
+        <target>排序</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Star Rank">
@@ -1084,6 +1165,11 @@
         <target>使用深色主题</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Vanguard">
+        <source>Vanguard</source>
+        <target>前卫</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Wave %d">
         <source>Wave %d</source>
         <target>Wave %d</target>
@@ -1181,8 +1267,9 @@
       </trans-unit>
       <trans-unit id="full">
         <source>full</source>
+        <target>完整</target>
         <note>expression style</note>
-      <target>完整</target></trans-unit>
+      </trans-unit>
       <trans-unit id="last effect affected or the nearest">
         <source>last effect affected or the nearest</source>
         <target>上一个效果或最近的</target>
@@ -1250,8 +1337,9 @@
       </trans-unit>
       <trans-unit id="short">
         <source>short</source>
+        <target>简短</target>
         <note>expression style</note>
-      <target>简短</target></trans-unit>
+      </trans-unit>
       <trans-unit id="target">
         <source>target</source>
         <target>目标</target>
@@ -1424,17 +1512,19 @@
       </trans-unit>
       <trans-unit id="value in combat">
         <source>value in combat</source>
+        <target>战斗中数值</target>
         <note>expression style</note>
-      <target>战斗中数值</target></trans-unit>
+      </trans-unit>
       <trans-unit id="value only">
         <source>value only</source>
+        <target>面板数值</target>
         <note>expression style</note>
-      <target>面板数值</target></trans-unit>
+      </trans-unit>
     </body>
   </file>
   <file original="PrincessGuideTests/en.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.4" build-num="9F1027a"/>
     </header>
     <body>
       <trans-unit id="CFBundleName">

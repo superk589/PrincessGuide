@@ -199,6 +199,7 @@ class ActionParameter {
 
         switch style {
         case .short:
+            
             var expression = ""
             var fixedValue = 0.0
             var hasLevelCoefficient = false
@@ -214,7 +215,9 @@ class ActionParameter {
                     expression += "\(value.value) * \(PropertyKey.def)"
                 case .skillLevel:
                     fixedValue += Double(level) * (Double(value.value) ?? 0)
-                    hasLevelCoefficient = true
+                    if Double(value.value) != 0 {
+                        hasLevelCoefficient = true
+                    }
                 case .initialValue:
                     fixedValue += Double(value.value) ?? 0
                 }
@@ -228,7 +231,9 @@ class ActionParameter {
             }
             
             if expression != "" {
-                expression = "\(expression) + \(valueString)"
+                if fixedValue != 0 {
+                    expression += " + \(valueString)"
+                }
             } else {
                 expression = "\(valueString)"
             }
@@ -236,6 +241,7 @@ class ActionParameter {
             if hasLevelCoefficient {
                 expression += "@\(level)"
             }
+            
             return expression
         case .full:
             

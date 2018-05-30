@@ -44,7 +44,7 @@ class CDSettingsViewController: FormViewController {
         
         var unitLevel: Int
         var unitRank: Int
-        var unitLove: Int
+        var bondRank: Int
         var skillLevel: Int
         var unitRarity: Int
         var expressionStyle: ExpressionStyle = .short
@@ -77,7 +77,7 @@ class CDSettingsViewController: FormViewController {
         init() {
             unitLevel = ConsoleVariables.default.maxPlayerLevel
             skillLevel = ConsoleVariables.default.maxPlayerLevel
-            unitLove = Constant.presetMaxCharaLoveRank
+            bondRank = Constant.presetMaxBondRank
             unitRank = ConsoleVariables.default.maxEquipmentRank
             unitRarity = Constant.presetMaxRarity
         }
@@ -99,35 +99,20 @@ class CDSettingsViewController: FormViewController {
             themeable.tableView.backgroundColor = theme.color.background
         }
         
-        PickerInlineRow<Int>.defaultCellSetup = { (cell, row) in
-            cell.selectedBackgroundView = UIView()
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-                themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                themeable.backgroundColor = theme.color.tableViewCell.background
-            }
-        }
-        PickerInlineRow<Int>.defaultCellUpdate = { (cell, row) in
+        func cellUpdate<T: RowType>(cell: T.Cell, row: T) {
             ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
                 themeable.textLabel?.textColor = theme.color.title
                 themeable.detailTextLabel?.textColor = theme.color.tint
             }
         }
         
-        PickerInlineRow<String>.defaultCellSetup = { (cell, row) in
+        func cellSetup<T: RowType>(cell: T.Cell, row: T) {
             cell.selectedBackgroundView = UIView()
             ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
                 themeable.textLabel?.textColor = theme.color.title
                 themeable.detailTextLabel?.textColor = theme.color.tint
                 themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
                 themeable.backgroundColor = theme.color.tableViewCell.background
-            }
-        }
-        PickerInlineRow<String>.defaultCellUpdate = { (cell, row) in
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
             }
         }
         
@@ -172,7 +157,9 @@ class CDSettingsViewController: FormViewController {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitLevel
-                }.onCellSelection(onCellSelection(cell:row:))
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             <<< PickerInlineRow<Int>("unit_rank") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Rank", comment: "")
@@ -185,20 +172,24 @@ class CDSettingsViewController: FormViewController {
                 }
                 row.value = Setting.default.unitRank
                 
-                }.onCellSelection(onCellSelection(cell:row:))
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
-            <<< PickerInlineRow<Int>("unit_love") { (row : PickerInlineRow<Int>) -> Void in
+            <<< PickerInlineRow<Int>("bond_rank") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Bond Rank", comment: "")
                 row.displayValueFor = { (rowValue: Int?) in
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxEquipmentRank {
+                for i in 0..<Constant.presetMaxBondRank {
                     row.options.append(i + 1)
                 }
-                row.value = Setting.default.unitLove
+                row.value = Setting.default.bondRank
                 
-                }.onCellSelection(onCellSelection(cell:row:))
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             <<< PickerInlineRow<Int>("unit_rarity") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Star Rank", comment: "")
@@ -211,7 +202,9 @@ class CDSettingsViewController: FormViewController {
                 }
                 row.value = Setting.default.unitRarity
                 
-                }.onCellSelection(onCellSelection(cell:row:))
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             
             +++ Section(NSLocalizedString("Skill", comment: ""))
@@ -227,7 +220,9 @@ class CDSettingsViewController: FormViewController {
                 }
                 row.value = Setting.default.skillLevel
                 
-                }.onCellSelection(onCellSelection(cell:row:))
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             
             <<< PickerInlineRow<String>("expression_style") { (row : PickerInlineRow<String>) -> Void in
@@ -238,7 +233,9 @@ class CDSettingsViewController: FormViewController {
                 row.options = Setting.ExpressionStyle.allLabels.map { $0.rawValue }
                 row.value = Setting.default.expressionStyle.rawValue
                 
-                }.onCellSelection(onCellSelection(cell:row:))
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
 
     }
