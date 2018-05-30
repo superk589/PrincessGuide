@@ -22,7 +22,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             case propertyItems([Property.Item])
             case comment(Card.Comment)
             case text(String, String)
-            case texts([(String, String)])
+            case textArray([(String, String)])
             case album(String, [URL], [URL])
         }
         var type: UITableViewCell.Type

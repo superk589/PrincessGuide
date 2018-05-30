@@ -40,7 +40,7 @@ class CDPropertyViewController: CDTableViewController {
                 property.item(for: .dodge),
                 property.item(for: .magicCritical)
                 ])),
-            Row(type: CDProfileTextTableViewCell.self, data: .texts(
+            Row(type: CDProfileTextTableViewCell.self, data: .textArray(
                 [
                     (NSLocalizedString("Swing Time", comment: ""), String(card.base.normalAtkCastTime) + "s"),
                     (NSLocalizedString("Attack Range", comment: ""), String(card.base.searchAreaWidth))

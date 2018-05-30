@@ -13,9 +13,10 @@ typealias EDProfileTextTableViewCell = CDProfileTextTableViewCell
 extension EDProfileTextTableViewCell: EnemyDetailConfigurable {
     
     func configure(for item: EDTableViewController.Row.Model) {
-        guard case .text(let title, let value) = item else {
-            fatalError()
+        if case .text(let title, let content) = item {
+            configure(for: [(title, content)])
+        } else if case .textArray(let elements) = item {
+            configure(for: elements)
         }
-        configure(for: title, content: value)
     }
 }

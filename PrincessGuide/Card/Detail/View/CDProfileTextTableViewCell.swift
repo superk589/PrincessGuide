@@ -47,7 +47,7 @@ class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
     func configure(for item: CardDetailItem) {
         if case .text(let title, let content) = item {
             configure(for: [(title, content)])
-        } else if case .texts(let elements) = item {
+        } else if case .textArray(let elements) = item {
             configure(for: elements)
         }
     }

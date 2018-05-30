@@ -21,6 +21,7 @@ class EDTableViewController: UITableViewController {
             case pattern(AttackPattern, Enemy)
             case propertyItems([Property.Item])
             case text(String, String)
+            case textArray([(String, String)])
         }
         var type: UITableViewCell.Type
         var data: Model
