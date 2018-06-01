@@ -10,7 +10,7 @@ import Foundation
 
 class WaveStartIdleAction: ActionParameter {
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Appear after %@s since wave start.", comment: "")
         return String(format: format, actionValue1.description)
     }

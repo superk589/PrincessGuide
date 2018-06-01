@@ -30,7 +30,7 @@ class NoDamageAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch noDamageType {
         case .noDisplay:
             let format = NSLocalizedString("Become invulnerable for [%@]s.", comment: "")

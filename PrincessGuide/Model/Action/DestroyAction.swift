@@ -10,7 +10,7 @@ import Foundation
 
 class DestroyAction: ActionParameter {
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         return NSLocalizedString("Die instantly.", comment: "")
     }
     

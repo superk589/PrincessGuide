@@ -8,13 +8,13 @@
 
 import Foundation
 
-class UpperLimitAttackAction: ActionParameter {
- 
-    override var actionValues: [ActionValue] {
-        return [
-            ActionValue(key: .initialValue, value: String(actionValue1)),
-            ActionValue(key: .skillLevel, value: String(actionValue2))
-        ]
+class UpperLimitAttackAction: DamageAction {
+    
+    override func localizedDetail(of level: Int, property: Property, style: CDSettingsViewController.Setting.ExpressionStyle) -> String {
+        let superString = super.localizedDetail(of: level, property: property, style: style)
+        
+        /// FIXME: what's the amount of reduced damage is not clear by now.
+        let format = NSLocalizedString("%@ Damage is reduced on low level players.", comment: "")
+        return String(format: format, superString)
     }
-
 }

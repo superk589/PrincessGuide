@@ -17,7 +17,7 @@ class AdditiveAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch actionValue1 {
         case 0:
             let format = NSLocalizedString("Add [%@ * HP] to next effect.", comment: "")
@@ -27,7 +27,7 @@ class AdditiveAction: ActionParameter {
             return String(format: format, buildExpression(of: level, roundingRule: .none, property: property))
         case 2:
             let format = NSLocalizedString("Add [%@ * defeated enemy count] to next effect.", comment: "")
-            return String(format: format, buildExpression(of: level, property: property))
+            return String(format: format, buildExpression(of: level, style: style, property: property))
         default:
             return super.localizedDetail(of: level)
         }

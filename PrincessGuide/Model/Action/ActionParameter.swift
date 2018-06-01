@@ -170,7 +170,9 @@ class ActionParameter {
         self.actionDetail3 = actionDetail3
     }
     
-    func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    func localizedDetail(of level: Int,
+                         property: Property = .zero,
+                         style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Unknown effect %d to %@ with details [%@], values [%@].", comment: "")
         return String(
             format: format,

@@ -103,6 +103,10 @@
         <target>%3$d範囲内%2$@%1$@全体</target>
         <note>[friendly] [physics] targets in range [500]</note>
       </trans-unit>
+      <trans-unit id="%@ Damage is reduced on low level players.">
+        <source>%@ Damage is reduced on low level players.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ Feedback">
         <source>%@ Feedback</source>
         <target>%@ フィードバック</target>
@@ -409,9 +413,8 @@
         <target>中衛</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change attack pattern.">
-        <source>Change attack pattern.</source>
-        <target/>
+      <trans-unit id="Change attack pattern to %d for %@s.">
+        <source>Change attack pattern to %1$d for %2$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Change self position.">

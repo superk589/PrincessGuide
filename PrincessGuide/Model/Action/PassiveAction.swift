@@ -34,9 +34,9 @@ class PassiveAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Raise [%@] %@.", comment: "Raise [x] ATK.")
-        return String(format: format, buildExpression(of: level, property: property), propertyKey.description)
+        return String(format: format, buildExpression(of: level, style: style, property: property), propertyKey.description)
     }
     
     func propertyItem(of level: Int) -> Property.Item {

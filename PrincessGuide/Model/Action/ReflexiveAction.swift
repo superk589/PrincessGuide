@@ -10,7 +10,7 @@ import Foundation
 
 class ReflexiveAction: ActionParameter {
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch targetParameter.targetType {
         case .absolute:
             let format = NSLocalizedString("Change the perspective to %@ %d.", comment: "")

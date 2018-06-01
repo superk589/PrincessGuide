@@ -33,9 +33,9 @@ class DamageAction: ActionParameter {
         }
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Deal [%@] %@ damage to %@.", comment: "")
-        return String(format: format, buildExpression(of: level, property: property), damageClass.description, targetParameter.buildTargetClause())
+        return String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
     }
     
 }

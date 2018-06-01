@@ -43,11 +43,16 @@ class CDPatternTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
     func configure(for item: CardDetailItem) {
-        guard case .pattern(let pattern, let card) = item else { return }
-        configure(for: pattern, unit: card)
+        guard case .pattern(let pattern, let card, let index) = item else { return }
+        configure(for: pattern, unit: card, index: index)
     }
     
-    func configure(for pattern: AttackPattern, unit: Card) {
+    func configure(for pattern: AttackPattern, unit: Card, index: Int?) {
+        if let index = index {
+            titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
+        } else {
+            titleLabel.text = NSLocalizedString("Attack Pattern", comment: "")
+        }
         attackPatternView.configure(for: pattern, unit: unit)
     }
     

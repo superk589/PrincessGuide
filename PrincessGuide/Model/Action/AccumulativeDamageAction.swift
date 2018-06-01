@@ -17,9 +17,9 @@ class AccumulativeDamageAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Add additional [%@] damage per attack with max %d stacks to current target.", comment: "")
-        return String(format: format, buildExpression(of: level, property: property), Int(actionValue4))
+        return String(format: format, buildExpression(of: level, style: style, property: property), Int(actionValue4))
     }
     
 }

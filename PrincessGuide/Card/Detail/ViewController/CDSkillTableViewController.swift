@@ -34,8 +34,14 @@ class CDSkillTableViewController: CDTableViewController {
         
         rows.removeAll()
         
-        card.patterns?.forEach {
-            rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0, card)))
+        if let patterns = card.patterns, patterns.count > 1 {
+            card.patterns?.enumerated().forEach {
+                rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0.element, card, $0.offset + 1)))
+            }
+        } else {
+            card.patterns?.enumerated().forEach {
+                rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0.element, card, nil)))
+            }
         }
         
         if let unionBurst = card.unionBurst {

@@ -25,7 +25,7 @@ class TriggerAction: ActionParameter {
         return TriggerType(rawValue: actionDetail1) ?? .unknown
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch triggerType {
         case .hp:
             let format = NSLocalizedString("Condition: HP is below %d%%.", comment: "")

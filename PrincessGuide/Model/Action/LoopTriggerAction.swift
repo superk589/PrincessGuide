@@ -27,11 +27,11 @@ class LoopTriggerAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch TriggerType(rawValue: actionDetail1) ?? .unknown {
         case .damaged:
             let format = NSLocalizedString("Condition: [%@]%% chance use %d when takes damage within %@s.", comment: "")
-            return String(format: format, buildExpression(of: level, property: property), actionDetail2 % 10, actionValue4.description)
+            return String(format: format, buildExpression(of: level, style: style, property: property), actionDetail2 % 10, actionValue4.description)
         default:
             return super.localizedDetail(of: level)
         }

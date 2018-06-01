@@ -17,9 +17,9 @@ class EnchantLifeStealAction: ActionParameter {
         ]
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Add additional [%@] %@ to %@ for next attack within %@s.", comment: "")
-        return String(format: format, buildExpression(of: level, property: property), PropertyKey.lifeSteal.description, targetParameter.buildTargetClause(), actionValue1.description)
+        return String(format: format, buildExpression(of: level, style: style, property: property), PropertyKey.lifeSteal.description, targetParameter.buildTargetClause(), actionValue1.description)
         
     }
 }

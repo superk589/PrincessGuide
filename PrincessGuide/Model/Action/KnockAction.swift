@@ -23,7 +23,7 @@ class KnockAction: ActionParameter {
         return KnockType(rawValue: actionDetail1) ?? .unknown
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch knockType {
         case .upDown:
             let format = NSLocalizedString("Knock %@ up %d.", comment: "")

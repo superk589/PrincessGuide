@@ -10,7 +10,7 @@ import Foundation
 
 class SummonAction: ActionParameter {
 
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Summon a minion of ID: %d at the position of %@.", comment: "")
         return String(format: format, actionDetail2, targetParameter.buildTargetClause())
     }

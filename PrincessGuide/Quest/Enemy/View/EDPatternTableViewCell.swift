@@ -48,15 +48,20 @@ extension PatternCollectionViewCell {
 
 extension EDPatternTableViewCell: EnemyDetailConfigurable {
     
-    func configure(for pattern: AttackPattern, enemy: Enemy) {
+    func configure(for pattern: AttackPattern, enemy: Enemy, index: Int?) {
         attackPatternView.configure(for: pattern, enemy: enemy)
+        if let index = index {
+            titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
+        } else {
+            titleLabel.text = NSLocalizedString("Attack Pattern", comment: "")
+        }
     }
     
     func configure(for item: EDTableViewController.Row.Model) {
-        guard case .pattern(let pattern, let enemy) = item else {
+        guard case .pattern(let pattern, let enemy, let index) = item else {
             fatalError()
         }
-        configure(for: pattern, enemy: enemy)
+        configure(for: pattern, enemy: enemy, index: index)
     }
 }
 

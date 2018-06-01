@@ -14,19 +14,27 @@ class EDSkillTableViewController: EDTableViewController {
         
         rows.removeAll()
         
-        enemy.patterns?.forEach {
-            rows.append(Row(type: EDPatternTableViewCell.self, data: .pattern($0, enemy)))
+        if let patterns = enemy.patterns, patterns.count > 1 {
+            enemy.patterns?.enumerated().forEach {
+                rows.append(Row(type: EDPatternTableViewCell.self, data: .pattern($0.element, enemy, $0.offset + 1)))
+            }
+        } else {
+            enemy.patterns?.enumerated().forEach {
+                rows.append(Row(type: EDPatternTableViewCell.self, data: .pattern($0.element, enemy, nil)))
+            }
         }
         
+        let property = enemy.base.property
+        
         if let unionBurst = enemy.unionBurst {
-            rows.append(Row(type: EDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, enemy.base.unionBurstLevel, nil)))
+            rows.append(Row(type: EDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, enemy.base.unionBurstLevel, property, nil)))
         }
         
         rows.append(contentsOf:
             enemy.mainSkills
                 .enumerated()
                 .map {
-                    Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .main, enemy.mainSkillLevel(for: $0.element.base.skillId), $0.offset + 1))
+                    Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .main, enemy.mainSkillLevel(for: $0.element.base.skillId), property, $0.offset + 1))
             }
         )
         
@@ -34,7 +42,7 @@ class EDSkillTableViewController: EDTableViewController {
             enemy.exSkills
                 .enumerated()
                 .map {
-                    Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .ex, enemy.exSkillLevel(for: $0.element.base.skillId), $0.offset + 1))
+                    Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .ex, enemy.exSkillLevel(for: $0.element.base.skillId), property, $0.offset + 1))
             }
         )
     }

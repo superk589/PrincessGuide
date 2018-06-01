@@ -96,7 +96,7 @@ class AuraAction: ActionParameter {
         return AuraType(rawValue: actionDetail1 / 10) ?? .none
     }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("%@ %@ [%@]%@ %@ for %@s.", comment: "")
         return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .up, property: property), percentModifier.description, auraType.description, actionValue4.description)
     }

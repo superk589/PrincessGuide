@@ -21,7 +21,7 @@ class IfForAllAction: ActionParameter {
 //        case skillCount = 1200
 //    }
     
-    override func localizedDetail(of level: Int, property: Property = .zero) -> String {
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         switch actionDetail1 {
         case 0..<100:

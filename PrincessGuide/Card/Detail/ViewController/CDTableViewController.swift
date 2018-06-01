@@ -16,7 +16,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             case skill(Skill, SkillCategory, Property, Int?)
             case base(Card.Base)
             case profile(Card.Profile)
-            case pattern(AttackPattern, Card)
+            case pattern(AttackPattern, Card, Int?)
             case promotion(Card.Promotion)
             case profileItems([Card.Profile.Item])
             case propertyItems([Property.Item])

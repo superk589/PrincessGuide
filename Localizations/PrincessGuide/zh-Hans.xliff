@@ -103,6 +103,11 @@
         <target>范围 %3$d 内%1$@%2$@目标</target>
         <note>[friendly] [physics] targets in range [500]</note>
       </trans-unit>
+      <trans-unit id="%@ Damage is reduced on low level players.">
+        <source>%@ Damage is reduced on low level players.</source>
+        <target>%@伤害对低等级玩家会减少。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ Feedback">
         <source>%@ Feedback</source>
         <target>%@ 反馈</target>
@@ -410,9 +415,9 @@
         <target>中卫</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change attack pattern.">
-        <source>Change attack pattern.</source>
-        <target>改变攻击模式。</target>
+      <trans-unit id="Change attack pattern to %d for %@s.">
+        <source>Change attack pattern to %1$d for %2$@s.</source>
+        <target>改为使用攻击模式 %1$d，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Change self position.">

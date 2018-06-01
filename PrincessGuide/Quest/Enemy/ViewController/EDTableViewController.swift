@@ -15,10 +15,10 @@ class EDTableViewController: UITableViewController {
     
     struct Row {
         enum Model {
-            case skill(Skill, SkillCategory, Int, Int?)
+            case skill(Skill, SkillCategory, Int, Property, Int?)
             case unit(Enemy.Unit)
             case profile(Enemy.Unit)
-            case pattern(AttackPattern, Enemy)
+            case pattern(AttackPattern, Enemy, Int?)
             case propertyItems([Property.Item])
             case text(String, String)
             case textArray([(String, String)])

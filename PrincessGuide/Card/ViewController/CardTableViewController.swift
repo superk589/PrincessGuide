@@ -18,7 +18,12 @@ class CardTableViewController: UITableViewController, DataChecking {
     
     let backgroundImageView = UIImageView()
     
-    var sortedAndGroupedCards = [String: [Card]]()
+    struct Section {
+        var title: String
+        var cards: [Card]
+    }
+    
+    var sortedAndGroupedCards = [Section]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +114,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         if sortedAndGroupedCards.count <= 1 {
             return nil
         } else {
-            return Array(sortedAndGroupedCards.keys)[section]
+            return sortedAndGroupedCards[section].title
         }
     }
     
@@ -123,15 +128,13 @@ class CardTableViewController: UITableViewController, DataChecking {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let key = Array(sortedAndGroupedCards.keys)[section]
-        return sortedAndGroupedCards[key]!.count
+        return sortedAndGroupedCards[section].cards.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.description(), for: indexPath) as! CardTableViewCell
         
-        let key = Array(sortedAndGroupedCards.keys)[indexPath.section]
-        let card = sortedAndGroupedCards[key]![indexPath.row]
+        let card = sortedAndGroupedCards[indexPath.section].cards[indexPath.row]
         let (mode, text) = cardViewRightContent(card: card, settings: CardSortingViewController.Setting.default)
         cell.configure(for: card, value: text, mode: mode)
         
@@ -139,8 +142,7 @@ class CardTableViewController: UITableViewController, DataChecking {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let key = Array(sortedAndGroupedCards.keys)[indexPath.section]
-        let card = sortedAndGroupedCards[key]![indexPath.row]
+        let card = sortedAndGroupedCards[indexPath.section].cards[indexPath.row]
         let vc = CDTabViewController(card: card)
         print("card id: \(card.base.unitId)")
         vc.hidesBottomBarWhenPushed = true
@@ -192,46 +194,50 @@ class CardTableViewController: UITableViewController, DataChecking {
 
 extension Array where Element == Card {
     
-    func filter(settings: CardSortingViewController.Setting) -> [String: [Card]] {
-        var newDict = [String: [Card]]()
+    func filter(settings: CardSortingViewController.Setting) -> [CardTableViewController.Section] {
+        
+        typealias Section = CardTableViewController.Section
+
+        var sections = [Section]()
         switch settings.groupingMethod {
         case .none:
-            newDict["default"] = self
+            let section = Section(title: "default", cards: self)
+            sections = [section]
         case .guild:
+            var guildDict = [String: [Card]]()
             for card in self {
-                if newDict[card.profile.guild] == nil {
-                    newDict[card.profile.guild] = [Card]()
+                if guildDict[card.profile.guild] == nil {
+                    guildDict[card.profile.guild] = [Card]()
                 }
-                newDict[card.profile.guild]?.append(card)
+                guildDict[card.profile.guild]?.append(card)
             }
+            sections = guildDict.map { Section(title: $0, cards: $1) }.sorted { $0.title < $1.title }
         case .attackType:
-            let magicKey = NSLocalizedString("Magic", comment: "")
-            let physicsKey = NSLocalizedString("Physics", comment: "")
-            newDict[magicKey] = [Card]()
-            newDict[physicsKey] = [Card]()
+            var physicsSection = Section(title: NSLocalizedString("Physics", comment: ""), cards: [])
+            var magicSection = Section(title: NSLocalizedString("Magic", comment: ""), cards: [])
+
             for card in self {
                 if card.base.atkType == 1 {
-                    newDict[physicsKey]?.append(card)
+                    physicsSection.cards.append(card)
                 } else {
-                    newDict[magicKey]?.append(card)
+                    magicSection.cards.append(card)
                 }
             }
+            sections = [physicsSection, magicSection]
         case .position:
-            let frontKey = NSLocalizedString("Vanguard", comment: "")
-            let middleKey = NSLocalizedString("Center", comment: "")
-            let backKey = NSLocalizedString("Back", comment: "")
-            newDict[frontKey] = [Card]()
-            newDict[middleKey] = [Card]()
-            newDict[backKey] = [Card]()
+            var frontSection = Section(title: NSLocalizedString("Vanguard", comment: ""), cards: [])
+            var middleSection = Section(title: NSLocalizedString("Center", comment: ""), cards: [])
+            var backSection = Section(title: NSLocalizedString("Back", comment: ""), cards: [])
             for card in self {
                 if card.base.searchAreaWidth <= 300 {
-                    newDict[frontKey]?.append(card)
+                    frontSection.cards.append(card)
                 } else if card.base.searchAreaWidth <= 600 {
-                    newDict[middleKey]?.append(card)
+                    middleSection.cards.append(card)
                 } else {
-                    newDict[backKey]?.append(card)
+                    backSection.cards.append(card)
                 }
             }
+            sections = [frontSection, middleSection, backSection]
         }
         
         let sortingMethod: (Card, Card) -> Bool
@@ -261,16 +267,16 @@ extension Array where Element == Card {
             sortingMethod = { Int($0.profile.age) ?? .max < Int($1.profile.age) ?? .max }
         }
         
-        for (key, _) in newDict {
-            newDict[key]?.sort(by: sortingMethod)
+        for index in sections.indices {
+            sections[index].cards.sort(by: sortingMethod)
         }
         
         if !settings.isAscending {
-            for (key, _) in newDict {
-                newDict[key]?.reverse()
+            for index in sections.indices {
+                sections[index].cards.reverse()
             }
         }
         
-        return newDict
+        return sections
     }
 }

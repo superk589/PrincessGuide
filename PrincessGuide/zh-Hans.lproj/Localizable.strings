@@ -29,6 +29,9 @@
 /* No comment provided by engineer. */
 "%@ absolute" = "%@绝对位置的";
 
+/* No comment provided by engineer. */
+"%@ Damage is reduced on low level players." = "%@伤害对低等级玩家会减少。";
+
 /* target type */
 "%@ farthest" = "最远的%@";
 
@@ -224,7 +227,7 @@
 "Center" = "中卫";
 
 /* No comment provided by engineer. */
-"Change attack pattern." = "改变攻击模式。";
+"Change attack pattern to %d for %@s." = "改为使用攻击模式 %1$d，持续 %2$@ 秒。";
 
 /* No comment provided by engineer. */
 "Change self position." = "改变自身位置。";
