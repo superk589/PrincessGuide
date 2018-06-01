@@ -280,6 +280,10 @@
         <target>攻撃する度にダメージ[%1$@]増加、最大%2$@回まで累積する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Age">
+        <source>Age</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="App Version">
         <source>App Version</source>
         <target>アプリバージョン</target>
@@ -853,6 +857,10 @@
       <trans-unit id="Options">
         <source>Options</source>
         <target>オプション</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Order">
+        <source>Order</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Paralyse">

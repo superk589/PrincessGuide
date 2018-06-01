@@ -133,6 +133,9 @@
 /* No comment provided by engineer. */
 "Add additional [%@] damage per attack with max %d stacks to current target." = "对当前目标的每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 %2$d 层。";
 
+/* No comment provided by engineer. */
+"Age" = "年龄";
+
 /* target modifier */
 "all" = "全部";
 
@@ -540,6 +543,9 @@
 
 /* No comment provided by engineer. */
 "Options" = "选项";
+
+/* No comment provided by engineer. */
+"Order" = "顺序";
 
 /* No comment provided by engineer. */
 "Paralyse" = "麻痹";

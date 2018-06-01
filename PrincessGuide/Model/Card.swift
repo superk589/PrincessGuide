@@ -132,6 +132,7 @@ class Card: Codable {
             case guild
             case favorite
             case voice
+            case age
             
             var description: String {
                 switch self {
@@ -151,6 +152,8 @@ class Card: Codable {
                     return NSLocalizedString("Interest", comment: "")
                 case .voice:
                     return NSLocalizedString("CV", comment: "")
+                case .age:
+                    return NSLocalizedString("Age", comment: "")
                 }
             }
         }
@@ -177,6 +180,8 @@ class Card: Codable {
                 return Item(key: key, value: favorite)
             case .voice:
                 return Item(key: key, value: voice)
+            case .age:
+                return Item(key: key, value: age)
             }
         }
     }

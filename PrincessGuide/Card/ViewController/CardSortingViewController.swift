@@ -69,6 +69,10 @@ class CardSortingViewController: FormViewController {
             
             case name
             
+            case height
+            case weight
+            case age
+            
             var description: String {
                 switch self {
                 case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate,
@@ -88,10 +92,16 @@ class CardSortingViewController: FormViewController {
                     return NSLocalizedString("Internal ID", comment: "")
                 case .name:
                     return NSLocalizedString("Chara Name", comment: "")
+                case .age:
+                    return Card.Profile.ItemKey.age.description
+                case .height:
+                    return Card.Profile.ItemKey.height.description
+                case .weight:
+                    return Card.Profile.ItemKey.weight.description
                 }
             }
             
-            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .swingTime, .attackRange, .id, .name]
+            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .swingTime, .attackRange, .id, .name, .age, .height, .weight]
         }
         
         var isAscending: Bool = true
@@ -157,7 +167,9 @@ class CardSortingViewController: FormViewController {
                 themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
                 themeable.backgroundColor = theme.color.tableViewCell.background
             }
-            (cell as? SegmentedCell<U>)?.segmentedControl.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+            if let segmentedControl = (cell as? SegmentedCell<U>)?.segmentedControl {
+                 segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
+            }
         }
         
         func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
@@ -168,8 +180,8 @@ class CardSortingViewController: FormViewController {
         }
         
         func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
-            pickerRow.cell.selectedBackgroundView = UIView()
             pickerRow.cellSetup{ (cell, row) in
+                cell.selectedBackgroundView = UIView()
                 ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
                     themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
                     themeable.cell.backgroundColor = theme.color.tableViewCell.background
@@ -206,7 +218,7 @@ class CardSortingViewController: FormViewController {
             +++ Section(NSLocalizedString("Sorting", comment: ""))
             
             <<< SegmentedRow<Bool>("is_ascending"){
-                $0.title = "Order"
+                $0.title = NSLocalizedString("Order", comment: "")
                 $0.displayValueFor = { (rowValue: Bool?) in
                     if let rowValue = rowValue, rowValue {
                         return NSLocalizedString("Ascending", comment: "")

@@ -124,8 +124,8 @@ class CDSettingsViewController: FormViewController {
         }
         
         func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
-            pickerRow.cell.selectedBackgroundView = UIView()
             pickerRow.cellSetup{ (cell, row) in
+                cell.selectedBackgroundView = UIView()
                 ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
                     themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
                     themeable.cell.backgroundColor = theme.color.tableViewCell.background

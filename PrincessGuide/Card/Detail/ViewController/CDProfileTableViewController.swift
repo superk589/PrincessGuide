@@ -25,7 +25,8 @@ class CDProfileTableViewController: CDTableViewController {
                 card.profile.item(for: .blood)
             ])),
             Row(type: CDProfileTableViewCell.self, data: .profileItems([
-                card.profile.item(for: .race)
+                card.profile.item(for: .race),
+                card.profile.item(for: .age)
             ])),
             Row(type: CDProfileTableViewCell.self, data: .profileItems([
                 card.profile.item(for: .guild)

@@ -115,7 +115,7 @@ class CardTableViewController: UITableViewController, DataChecking {
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         ThemeManager.default.apply(theme: Theme.self, to: view) { (themeable, theme) in
-            if let view = themeable as? UITableViewHeaderFooterView {
+            if let view = themeable as? UITableViewHeaderFooterView, !(view.backgroundView is UIVisualEffectView) {
                 view.backgroundView = UIVisualEffectView(effect: UIBlurEffect(style: theme.blurEffectStyle))
                 view.textLabel?.textColor = theme.color.title
             }
@@ -176,6 +176,15 @@ class CardTableViewController: UITableViewController, DataChecking {
         case .name:
             mode = .rarity
             text = card.base.unitName
+        case .age:
+            mode = .text
+            text = card.profile.age
+        case .height:
+            mode = .text
+            text = card.profile.height
+        case .weight:
+            mode = .text
+            text = card.profile.weight
         }
         return (mode, text)
     }
@@ -244,6 +253,12 @@ extension Array where Element == Card {
             sortingMethod = { $0.base.unitId < $1.base.unitId }
         case .name:
             sortingMethod = { $0.base.unitName < $1.base.unitName }
+        case .height:
+            sortingMethod = { Int($0.profile.height) ?? .max < Int($1.profile.height) ?? .max}
+        case .weight:
+            sortingMethod = { Int($0.profile.weight) ?? .max < Int($1.profile.weight) ?? .max }
+        case .age:
+            sortingMethod = { Int($0.profile.age) ?? .max < Int($1.profile.age) ?? .max }
         }
         
         for (key, _) in newDict {

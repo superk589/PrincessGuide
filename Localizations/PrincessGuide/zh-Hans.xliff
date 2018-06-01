@@ -280,6 +280,11 @@
         <target>对当前目标的每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 %2$d 层。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Age">
+        <source>Age</source>
+        <target>年龄</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="App Version">
         <source>App Version</source>
         <target>程序版本</target>
@@ -855,6 +860,11 @@
         <target>选项</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Order">
+        <source>Order</source>
+        <target>顺序</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Paralyse">
         <source>Paralyse</source>
         <target>麻痹</target>
@@ -902,7 +912,7 @@
       </trans-unit>
       <trans-unit id="Position">
         <source>Position</source>
-        <target/>
+        <target>位置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Profile">
