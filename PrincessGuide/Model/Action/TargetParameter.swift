@@ -75,7 +75,7 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ %@ target", comment: "[the nearest] [enemy] target")
                 return String(format: format, targetType.description, targetAssignment.description)
             } else {
-                let format = NSLocalizedString("%@ %@ %@", comment: "[the fathest two] [enemy] [targets]")
+                let format = NSLocalizedString("%@ %@ %@", comment: "[the farthest two] [enemy] [targets]")
                 return String(format: format, targetType.description(with: targetCount), targetAssignment.description, targetCount.pluralModifier.description)
             }
         case (true, false, false, true, true):
@@ -102,7 +102,7 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ %@ target in range %d", comment: "[the nearest] [enemy] target in range [500]")
                 return String(format: format, targetType.description, targetAssignment.description, targetRange.rawRange)
             } else {
-                let format = NSLocalizedString("%@ %@ %@ in range %d", comment: "[the fathest two] [enemy] [targets] in range [500]")
+                let format = NSLocalizedString("%@ %@ %@ in range %d", comment: "[the farthest two] [enemy] [targets] in range [500]")
                 return String(format: format, targetType.description(with: targetCount), targetAssignment.description, targetCount.pluralModifier.description, targetRange.rawRange)
             }
         case (true, false, true, true, true):
@@ -118,7 +118,7 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ front friendly target in range %d", comment: "[the nearest] front friendly target in range [500]")
                 return String(format: format, targetType.description, targetRange.rawRange)
             } else {
-                let format = NSLocalizedString("%@ front friendly %@ in range %d", comment: "[the fathest two] front friendly [targets] in range [500]")
+                let format = NSLocalizedString("%@ front friendly %@ in range %d", comment: "[the farthest two] front friendly [targets] in range [500]")
                 return String(format: format, targetType.description(with: targetCount), targetCount.pluralModifier.description, targetRange.rawRange)
             }
         case (true, true, false, true, false):
@@ -126,14 +126,14 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ %@ target", comment: "[the second nearest] [enemy] target")
                 return String(format: format, targetType.description(with: targetNth), targetAssignment.description)
             } else {
-                let format = NSLocalizedString("%@ %@ %@", comment: "[the second to fourth fathest] [enemy] [targets]")
+                let format = NSLocalizedString("%@ %@ %@", comment: "[the second to fourth farthest] [enemy] [targets]")
                 let targetMth = targetNth.add(targetCount) ?? .fifth
                 let modifierFormat = NSLocalizedString("%@ to %@", comment: "")
                 let modifier = String(format: modifierFormat, targetNth.description, targetMth.description)
                 return String(format: format, targetType.description(with: targetNth, localizedNth: modifier), targetAssignment.description, targetCount.pluralModifier.description)
             }
         case (true, true, false, true, true):
-            let format = NSLocalizedString("%@ front friendly %@", comment: "[the second to fourth fathest] front friendly [targets]")
+            let format = NSLocalizedString("%@ front friendly %@", comment: "[the second to fourth farthest] front friendly [targets]")
             let targetMth = targetNth.add(targetCount) ?? .fifth
             let modifierFormat = NSLocalizedString("%@ to %@", comment: "")
             let modifier = String(format: modifierFormat, targetNth.description, targetMth.description)
@@ -143,7 +143,7 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ %@ target in range %d", comment: "[the second nearest] [enemy] target in range [500]")
                 return String(format: format, targetType.description(with: targetNth), targetAssignment.description, targetRange.rawRange)
             } else {
-                let format = NSLocalizedString("%@ %@ %@ in range %d", comment: "[the second to fourth fathest] [enemy] [targets] in range [500]")
+                let format = NSLocalizedString("%@ %@ %@ in range %d", comment: "[the second to fourth farthest] [enemy] [targets] in range [500]")
                 let targetMth = targetNth.add(targetCount) ?? .fifth
                 let modifierFormat = NSLocalizedString("%@ to %@", comment: "")
                 let modifier = String(format: modifierFormat, targetNth.description, targetMth.description)
@@ -154,7 +154,7 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ front friendly target in range %d", comment: "[the second nearest] front friendly target in range [500]")
                 return String(format: format, targetType.description(with: targetNth), targetRange.rawRange)
             } else {
-                let format = NSLocalizedString("%@ front friendly %@ in range %d", comment: "[the second to fourth fathest] front friendly [targets] in range [500]")
+                let format = NSLocalizedString("%@ front friendly %@ in range %d", comment: "[the second to fourth farthest] front friendly [targets] in range [500]")
                 let targetMth = targetNth.add(targetCount) ?? .fifth
                 let modifierFormat = NSLocalizedString("%@ to %@", comment: "")
                 let modifier = String(format: modifierFormat, targetNth.description, targetMth.description)

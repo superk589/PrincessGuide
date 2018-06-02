@@ -62,14 +62,14 @@
       <trans-unit id="%@ %@ %@">
         <source>%1$@ %2$@ %3$@</source>
         <target>%1$@%2$@%3$@</target>
-        <note>[the fathest two] [enemy] [targets]
-   [the second to fourth fathest] [enemy] [targets]</note>
+        <note>[the farthest two] [enemy] [targets]
+   [the second to fourth farthest] [enemy] [targets]</note>
       </trans-unit>
       <trans-unit id="%@ %@ %@ in range %d">
         <source>%1$@ %2$@ %3$@ in range %4$d</source>
         <target>范围 %4$d 内%1$@%2$@%3$@</target>
-        <note>[the fathest two] [enemy] [targets] in range [500]
-   [the second to fourth fathest] [enemy] [targets] in range [500]</note>
+        <note>[the farthest two] [enemy] [targets] in range [500]
+   [the second to fourth farthest] [enemy] [targets] in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ for %@s.">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for %6$@s.</source>
@@ -126,13 +126,13 @@
       <trans-unit id="%@ front friendly %@">
         <source>%1$@ front friendly %2$@</source>
         <target>前方%1$@友方%2$@</target>
-        <note>[the second to fourth fathest] front friendly [targets]</note>
+        <note>[the second to fourth farthest] front friendly [targets]</note>
       </trans-unit>
       <trans-unit id="%@ front friendly %@ in range %d">
         <source>%1$@ front friendly %2$@ in range %3$d</source>
         <target>前方 %3$d 范围内%1$@友方%2$@</target>
-        <note>[the fathest two] front friendly [targets] in range [500]
-   [the second to fourth fathest] front friendly [targets] in range [500]</note>
+        <note>[the farthest two] front friendly [targets] in range [500]
+   [the second to fourth farthest] front friendly [targets] in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ front friendly target in range %d">
         <source>%1$@ front friendly target in range %2$d</source>
@@ -530,9 +530,9 @@
         <target>暗黑</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Darken %@ with [%d]%% chance for %@s.">
-        <source>Darken %1$@ with [%2$d]%% chance for %3$@s.</source>
-        <target>[%2$d]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒。</target>
+      <trans-unit id="Darken %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss.">
+        <source>Darken %1$@ with [%2$@]%% chance for %3$@s, physical attack has %4$d%% chance to miss.</source>
+        <target>[%2$@]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒，物理攻击会有 %4$d%% 几率丢失。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Data Version">
@@ -1043,6 +1043,11 @@
       <trans-unit id="Skill Detail">
         <source>Skill Detail</source>
         <target>技能详情</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Skill Level">
+        <source>Skill Level</source>
+        <target>技能等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Sleep">

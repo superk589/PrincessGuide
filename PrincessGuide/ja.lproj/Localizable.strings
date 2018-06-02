@@ -1,12 +1,12 @@
 /* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ for %@s." = "%2$@に%5$@を[%3$@]%4$@%1$@、%6$@秒継続する。";
 
-/* [the fathest two] [enemy] [targets]
-   [the second to fourth fathest] [enemy] [targets] */
+/* [the farthest two] [enemy] [targets]
+   [the second to fourth farthest] [enemy] [targets] */
 "%@ %@ %@" = "%1$@%2$@%3$@";
 
-/* [the fathest two] [enemy] [targets] in range [500]
-   [the second to fourth fathest] [enemy] [targets] in range [500] */
+/* [the farthest two] [enemy] [targets] in range [500]
+   [the second to fourth farthest] [enemy] [targets] in range [500] */
 "%@ %@ %@ in range %d" = "%4$d範囲内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
@@ -35,11 +35,11 @@
 /* No comment provided by engineer. */
 "%@ Feedback" = "%@ フィードバック";
 
-/* [the second to fourth fathest] front friendly [targets] */
+/* [the second to fourth farthest] front friendly [targets] */
 "%@ front friendly %@" = "";
 
-/* [the fathest two] front friendly [targets] in range [500]
-   [the second to fourth fathest] front friendly [targets] in range [500] */
+/* [the farthest two] front friendly [targets] in range [500]
+   [the second to fourth farthest] front friendly [targets] in range [500] */
 "%@ front friendly %@ in range %d" = "";
 
 /* [the nearest] front friendly target in range [500]
@@ -285,9 +285,6 @@
 
 /* No comment provided by engineer. */
 "Darken" = "暗闇";
-
-/* No comment provided by engineer. */
-"Darken %@ with [%d]%% chance for %@s." = "[%2$d]%%の確率で%1$@に暗闇状態付与、%3$@秒継続する。";
 
 /* No comment provided by engineer. */
 "Data Version" = "データバージョン";

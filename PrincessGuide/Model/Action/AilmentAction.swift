@@ -21,6 +21,13 @@ class AilmentAction: ActionParameter {
         ]
     }
     
+    var chanceValues: [ActionValue] {
+        return [
+            ActionValue(key: .initialValue, value: String(actionValue3)),
+            ActionValue(key: .skillLevel, value: String(actionValue4))
+        ]
+    }
+    
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch ailment.ailmentType {
         case .action:
@@ -54,8 +61,8 @@ class AilmentAction: ActionParameter {
             let format = NSLocalizedString("Charm %@ with [%d]%% chance for %@s.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), Int(actionValue3), actionValue1.description)
         case .darken:
-            let format = NSLocalizedString("Darken %@ with [%d]%% chance for %@s.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), Int(actionValue3), actionValue1.description)
+            let format = NSLocalizedString("Darken %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss.", comment: "")
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: chanceValues), buildExpression(of: level), actionDetail1)
         default:
             return super.localizedDetail(of: level)
         }

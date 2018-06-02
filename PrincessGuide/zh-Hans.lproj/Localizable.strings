@@ -1,12 +1,12 @@
 /* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ for %@s." = "%1$@%2$@ [%3$@]%4$@ %5$@，持续 %6$@ 秒。";
 
-/* [the fathest two] [enemy] [targets]
-   [the second to fourth fathest] [enemy] [targets] */
+/* [the farthest two] [enemy] [targets]
+   [the second to fourth farthest] [enemy] [targets] */
 "%@ %@ %@" = "%1$@%2$@%3$@";
 
-/* [the fathest two] [enemy] [targets] in range [500]
-   [the second to fourth fathest] [enemy] [targets] in range [500] */
+/* [the farthest two] [enemy] [targets] in range [500]
+   [the second to fourth farthest] [enemy] [targets] in range [500] */
 "%@ %@ %@ in range %d" = "范围 %4$d 内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
@@ -38,11 +38,11 @@
 /* No comment provided by engineer. */
 "%@ Feedback" = "%@ 反馈";
 
-/* [the second to fourth fathest] front friendly [targets] */
+/* [the second to fourth farthest] front friendly [targets] */
 "%@ front friendly %@" = "前方%1$@友方%2$@";
 
-/* [the fathest two] front friendly [targets] in range [500]
-   [the second to fourth fathest] front friendly [targets] in range [500] */
+/* [the farthest two] front friendly [targets] in range [500]
+   [the second to fourth farthest] front friendly [targets] in range [500] */
 "%@ front friendly %@ in range %d" = "前方 %3$d 范围内%1$@友方%2$@";
 
 /* [the nearest] front friendly target in range [500]
@@ -296,7 +296,7 @@
 "Darken" = "暗黑";
 
 /* No comment provided by engineer. */
-"Darken %@ with [%d]%% chance for %@s." = "[%2$d]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒。";
+"Darken %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss." = "[%2$@]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒，物理攻击会有 %4$d%% 几率丢失。";
 
 /* No comment provided by engineer. */
 "Data Version" = "数据版本";
@@ -675,6 +675,9 @@
 
 /* No comment provided by engineer. */
 "Skill Detail" = "技能详情";
+
+/* No comment provided by engineer. */
+"Skill Level" = "技能等级";
 
 /* No comment provided by engineer. */
 "Sleep" = "睡眠";

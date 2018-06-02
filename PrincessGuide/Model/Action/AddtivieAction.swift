@@ -32,4 +32,17 @@ class AdditiveAction: ActionParameter {
             return super.localizedDetail(of: level)
         }
     }
+    
+    override func buildExpression(of level: Int,
+                                  actionValues: [ActionValue]? = nil,
+                                  roundingRule: FloatingPointRoundingRule? = .down,
+                                  style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle,
+                                  property: Property = .zero) -> String {
+        let expression = super.buildExpression(of: level, actionValues: actionValues, roundingRule: roundingRule, style: style, property: property)
+        if actionValue2 != 0 && actionValue3 != 0 {
+            return "(\(expression))"
+        } else {
+            return expression
+        }
+    }
 }
