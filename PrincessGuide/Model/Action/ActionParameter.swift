@@ -274,7 +274,12 @@ class ActionParameter {
                 }
             }
             
-            return (part1 + part2).joined(separator: " + ")
+            let expression = (part1 + part2).joined(separator: " + ")
+            if expression == "" {
+                return "0"
+            } else {
+                return expression
+            }
         case .valueOnly:
             
             var fixedValue = 0.0

@@ -21,15 +21,15 @@ class AdditiveAction: ActionParameter {
         switch actionValue1 {
         case 0:
             let format = NSLocalizedString("Add [%@ * HP] to next effect.", comment: "")
-            return String(format: format, buildExpression(of: level, roundingRule: .none, property: property))
+            return String(format: format, buildExpression(of: level, roundingRule: .none, style: style, property: property))
         case 1:
             let format = NSLocalizedString("Add [%@ * lost HP] to next effect.", comment: "")
-            return String(format: format, buildExpression(of: level, roundingRule: .none, property: property))
+            return String(format: format, buildExpression(of: level, roundingRule: .none, style: style, property: property))
         case 2:
             let format = NSLocalizedString("Add [%@ * defeated enemy count] to next effect.", comment: "")
             return String(format: format, buildExpression(of: level, style: style, property: property))
         default:
-            return super.localizedDetail(of: level)
+            return super.localizedDetail(of: level, property: property, style: style)
         }
     }
     

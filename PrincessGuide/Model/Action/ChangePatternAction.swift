@@ -18,7 +18,7 @@ class ChangePatterAction: ActionParameter {
             return String(format: format, actionDetail2 % 10, actionValue1.description)
         default:
             /// FIXME: this action seems do nothing but visual effect change
-            return super.localizedDetail(of: level)
+            return super.localizedDetail(of: level, property: property, style: style)
         }
     }
 }

@@ -34,9 +34,9 @@ class NoDamageAction: ActionParameter {
         switch noDamageType {
         case .noDisplay:
             let format = NSLocalizedString("Become invulnerable for [%@]s.", comment: "")
-            return String(format: format, buildExpression(of: level, roundingRule: nil, property: property))
+            return String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property))
         default:
-            return super.localizedDetail(of: level)
+            return super.localizedDetail(of: level, property: property, style: style)
         }
     }
 }

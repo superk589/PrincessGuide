@@ -33,7 +33,7 @@ class LoopTriggerAction: ActionParameter {
             let format = NSLocalizedString("Condition: [%@]%% chance use %d when takes damage within %@s.", comment: "")
             return String(format: format, buildExpression(of: level, style: style, property: property), actionDetail2 % 10, actionValue4.description)
         default:
-            return super.localizedDetail(of: level)
+            return super.localizedDetail(of: level, property: property, style: style)
         }
     }
     

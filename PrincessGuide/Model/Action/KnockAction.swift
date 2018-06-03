@@ -32,7 +32,7 @@ class KnockAction: ActionParameter {
             let format = NSLocalizedString("Knock %@ away %d.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), Int(actionValue1))
         default:
-            return super.localizedDetail(of: level)
+            return super.localizedDetail(of: level, property: property, style: style)
         }
  
     }

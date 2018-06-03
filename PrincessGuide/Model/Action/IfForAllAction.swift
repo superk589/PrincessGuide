@@ -32,7 +32,7 @@ class IfForAllAction: ActionParameter {
                 let format = NSLocalizedString("Random event: %d%% chance use %d.", comment: "")
                 return String(format: format, actionDetail1, actionDetail2 % 10)
             } else {
-                return super.localizedDetail(of: level)
+                return super.localizedDetail(of: level, property: property, style: style)
             }
         case 1000:
             let format = NSLocalizedString("Condition: if defeat target by the last effect then use %d.", comment: "")
@@ -45,10 +45,10 @@ class IfForAllAction: ActionParameter {
                 let format = NSLocalizedString("Condition: counter is greater or equal to %d then use %d.", comment: "")
                 return String(format: format, actionDetail1 % 10, actionDetail2 % 10)
             } else {
-                return super.localizedDetail(of: level)
+                return super.localizedDetail(of: level, property: property, style: style)
             }
         default:
-            return super.localizedDetail(of: level)
+            return super.localizedDetail(of: level, property: property, style: style)
         }
     }
     

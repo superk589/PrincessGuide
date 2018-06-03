@@ -31,7 +31,7 @@ class TriggerAction: ActionParameter {
             let format = NSLocalizedString("Condition: HP is below %d%%.", comment: "")
             return String(format: format, Int(actionValue3.rounded()))
         default:
-            return super.localizedDetail(of: level)
+            return super.localizedDetail(of: level, property: property, style: style)
         }
     }
     
