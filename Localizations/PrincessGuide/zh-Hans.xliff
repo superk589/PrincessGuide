@@ -1130,9 +1130,9 @@
         <target>未设置邮件账户</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Third-Party Libraries">
-        <source>Third-Party Libraries</source>
-        <target>第三方库</target>
+      <trans-unit id="Third-Party Licenses">
+        <source>Third-Party Licenses</source>
+        <target>第三方许可</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="True Name">

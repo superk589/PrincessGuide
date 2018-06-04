@@ -26,82 +26,73 @@
 /* [friendly] [physics] targets in range [500] */
 "%@ %@ targets in range %d" = "%3$d範囲内%2$@%1$@全体";
 
-/* No comment provided by engineer. */
-"%@ absolute" = "";
-
 /* target type */
-"%@ farthest" = "%@遠い";
+"%@ farthest" = "最も遠い%@";
 
 /* No comment provided by engineer. */
 "%@ Feedback" = "%@ フィードバック";
 
 /* [the second to fourth farthest] front friendly [targets] */
-"%@ front friendly %@" = "";
+"%@ front friendly %@" = "前方%1$@味方%2$@";
 
 /* [the farthest two] front friendly [targets] in range [500]
    [the second to fourth farthest] front friendly [targets] in range [500] */
-"%@ front friendly %@ in range %d" = "";
+"%@ front friendly %@ in range %d" = "前方%3$d範囲内%1$@味方%2$@";
 
 /* [the nearest] front friendly target in range [500]
    [the second nearest] front friendly target in range [500] */
-"%@ front friendly target in range %d" = "";
+"%@ front friendly target in range %d" = "前方%2$d範囲内%1$@味方";
 
 /* No comment provided by engineer. */
-"%@ highest ATK" = "物理攻撃力が%@高い";
+"%@ highest ATK" = "物理攻撃力が高い%@";
 
 /* target type */
-"%@ highest HP ratio" = "";
+"%@ highest HP ratio" = "HP割合が高い%@";
 
 /* No comment provided by engineer. */
-"%@ highest Magic STR" = "魔法攻撃力が%@高い";
+"%@ highest Magic STR" = "魔法攻撃力が高い%@";
 
 /* target type */
-"%@ highest TP" = "TPが%@高い";
+"%@ highest TP" = "TPが高い%@";
 
 /* No comment provided by engineer. */
-"%@ lowest ATK" = "";
+"%@ lowest ATK" = "物理攻撃力が低い%@";
 
 /* target type */
-"%@ lowest HP ratio" = "";
+"%@ lowest HP ratio" = "HP割合が低い%@";
 
 /* No comment provided by engineer. */
-"%@ lowest Magic STR" = "";
+"%@ lowest Magic STR" = "魔法攻撃力が低い%@";
 
 /* target type */
-"%@ lowest TP" = "TPが%@低い";
+"%@ lowest TP" = "TPが低い%@";
 
 /* No comment provided by engineer. */
-"%@ magic" = "";
-
-/* No comment provided by engineer. */
-"%@ minion" = "";
+"%@ magic" = "魔法攻撃をする%@";
 
 /* target type */
-"%@ most backward" = "";
+"%@ most backward" = "最も後の%@";
 
 /* target type */
-"%@ most forward" = "";
+"%@ most forward" = "最も前の%@";
 
 /* target type */
-"%@ nearest" = "%@近い";
+"%@ nearest" = "最も近い%@";
 
 /* No comment provided by engineer. */
-"%@ physics" = "";
+"%@ physics" = "物理攻撃をする%@";
 
 /* No comment provided by engineer. */
-"%@ random" = "";
-
-/* No comment provided by engineer. */
-"%@ random(once)" = "";
+"%@ random" = "ランダム%@";
 
 /* [enemy] targets in range [500] */
 "%@ targets in range %d" = "%2$d範囲内%1$@全体";
 
 /* No comment provided by engineer. */
-"%@ to %@" = "";
+"%@ to %@" = "%@〜%@";
 
 /* target type */
-"%@ unknown type" = "";
+"%@ unknown type" = "未知種類%@";
 
 /* No comment provided by engineer. */
 "%@/%@" = "%1$@ 月 %2$@ 日";
@@ -110,25 +101,7 @@
 "About" = "アプリについて";
 
 /* No comment provided by engineer. */
-"absolute" = "";
-
-/* No comment provided by engineer. */
 "Action" = "行動";
-
-/* No comment provided by engineer. */
-"Add [%@ * defeated enemy count] to next effect." = "";
-
-/* No comment provided by engineer. */
-"Add [%@ * HP] to next effect." = "";
-
-/* No comment provided by engineer. */
-"Add [%@ * lost HP] to next effect." = "";
-
-/* No comment provided by engineer. */
-"Add [%d] to the counter." = "";
-
-/* No comment provided by engineer. */
-"Add additional [%@] %@ to %@ for next attack within %@s." = "";
 
 /* No comment provided by engineer. */
 "Add additional [%@] damage per attack with max %d stacks to current target." = "攻撃する度にダメージ[%1$@]増加、最大%2$@回まで累積する。";
@@ -142,17 +115,11 @@
 /* all [enemy] targets */
 "all %@ targets" = "%@全体";
 
-/* all front(including self) friendly targets */
-"all front(including self) friendly targets" = "";
-
 /* No comment provided by engineer. */
 "App Version" = "アプリバージョン";
 
 /* No comment provided by engineer. */
-"Appear after %@s since wave start." = "";
-
-/* No comment provided by engineer. */
-"Ascending" = "";
+"Ascending" = "昇順";
 
 /* No comment provided by engineer. */
 "ATK" = "物理攻撃力";
@@ -161,10 +128,10 @@
 "Attack Pattern" = "攻撃パターン";
 
 /* No comment provided by engineer. */
-"Attack Range" = "";
+"Attack Range" = "攻撃範囲";
 
 /* No comment provided by engineer. */
-"Attack Type" = "";
+"Attack Type" = "攻撃タイプ";
 
 /* No comment provided by engineer. */
 "Back" = "後衛";
@@ -224,16 +191,7 @@
 "Change self position." = "自分のポジションを変える。";
 
 /* No comment provided by engineer. */
-"Change the perspective on %@." = "";
-
-/* No comment provided by engineer. */
-"Change the perspective to %@ %d." = "";
-
-/* No comment provided by engineer. */
-"Chara Name" = "";
-
-/* No comment provided by engineer. */
-"Charge for %@s and deal [%@ * damage taken] additional damage on the next effect." = "";
+"Chara Name" = "キャラ名";
 
 /* No comment provided by engineer. */
 "Charm" = "魅了";
@@ -257,22 +215,10 @@
 "Comic" = "ロード画面";
 
 /* No comment provided by engineer. */
-"Completed" = "";
-
-/* No comment provided by engineer. */
-"Condition: [%@]%% chance use %d when takes damage within %@s." = "";
-
-/* No comment provided by engineer. */
-"Condition: counter is greater or equal to %d then use %d, otherwise %d." = "";
-
-/* No comment provided by engineer. */
-"Condition: counter is greater or equal to %d then use %d." = "";
+"Completed" = "完了";
 
 /* No comment provided by engineer. */
 "Condition: HP is below %d%%." = "条件：HP %d%%以下";
-
-/* No comment provided by engineer. */
-"Condition: if defeat target by the last effect then use %d." = "";
 
 /* No comment provided by engineer. */
 "Crafted" = "作成";
@@ -290,19 +236,16 @@
 "Data Version" = "データバージョン";
 
 /* No comment provided by engineer. */
-"Deal [%@] %@ damage to %@." = "%3$@に[%1$@]の%2$@を与える。";
-
-/* No comment provided by engineer. */
-"Deal damage equal to [%@]%% of target's max HP to %@." = "";
+"Deal [%@] %@ damage to %@." = "%3$@に[%1$@]の%2$@ダメージを与える。";
 
 /* No comment provided by engineer. */
 "DEF" = "物理防御力";
 
 /* No comment provided by engineer. */
-"Descending" = "";
+"Descending" = "降順";
 
 /* No comment provided by engineer. */
-"Description" = "";
+"Description" = "説明";
 
 /* No comment provided by engineer. */
 "Detain" = "拘留";
@@ -323,12 +266,6 @@
 "Drops" = "ドロップ";
 
 /* No comment provided by engineer. */
-"Effective Magical HP" = "";
-
-/* No comment provided by engineer. */
-"Effective Physical HP" = "";
-
-/* No comment provided by engineer. */
 "Email" = "メール";
 
 /* target modifier */
@@ -347,7 +284,7 @@
 "Equipments" = "装備品";
 
 /* No comment provided by engineer. */
-"Error" = "";
+"Error" = "エラー";
 
 /* No comment provided by engineer. */
 "Event" = "イベント";
@@ -360,9 +297,6 @@
 
 /* No comment provided by engineer. */
 "Exploration" = "探索";
-
-/* No comment provided by engineer. */
-"Expression Style" = "";
 
 /* No comment provided by engineer. */
 "Failed" = "更新失敗";
@@ -389,34 +323,22 @@
 "friendly" = "味方";
 
 /* No comment provided by engineer. */
-"front" = "";
+"front" = "前方";
 
 /* front [friendly] [physics] targets in range [500] */
-"front %@ %@ targets in range %d" = "";
+"front %@ %@ targets in range %d" = "前方%3$d範囲内%2$@%1$@";
 
 /* No comment provided by engineer. */
-"front and back" = "";
-
-/* front friendly targets in range [500] */
-"front friendly targets in range %d" = "";
-
-/* No comment provided by engineer. */
-"front(including self)" = "";
+"front and back" = "front and back";
 
 /* expression style */
-"full" = "";
+"full" = "詳細";
 
 /* No comment provided by engineer. */
 "Full" = "★３のイラスト";
 
 /* No comment provided by engineer. */
 "General" = "全般";
-
-/* No comment provided by engineer. */
-"Group by" = "";
-
-/* No comment provided by engineer. */
-"Grouping" = "";
 
 /* No comment provided by engineer. */
 "Guild" = "公会";
@@ -446,18 +368,6 @@
 "Interest" = "趣味";
 
 /* No comment provided by engineer. */
-"Internal ID" = "";
-
-/* No comment provided by engineer. */
-"Knock %@ away %d." = "";
-
-/* No comment provided by engineer. */
-"Knock %@ up %d." = "";
-
-/* No comment provided by engineer. */
-"last effect affected or the nearest" = "";
-
-/* No comment provided by engineer. */
 "Level" = "レベル";
 
 /* No comment provided by engineer. */
@@ -473,10 +383,10 @@
 "Loop start" = "ループ開始";
 
 /* No comment provided by engineer. */
-"magic" = "";
+"magic" = "魔法攻撃をするの";
 
 /* No comment provided by engineer. */
-"Magic" = "";
+"Magic" = "魔法系";
 
 /* No comment provided by engineer. */
 "Magic Critical" = "魔法クリティカル";
@@ -506,22 +416,10 @@
 "Make %@ lose [%@] TP." = "%1$@のTPを[%2$@]失わせる。";
 
 /* No comment provided by engineer. */
-"minion" = "";
+"Move Speed" = "移動速度";
 
 /* No comment provided by engineer. */
-"Move Speed" = "";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * defeated enemy count] to next effect." = "";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * HP / max HP] to next effect." = "";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * lost HP / max HP] to next effect." = "";
-
-/* No comment provided by engineer. */
-"None" = "";
+"None" = "なし";
 
 /* No comment provided by engineer. */
 "Normal" = "NORMAL";
@@ -551,13 +449,13 @@
 "Physical Penetrate" = "物理穿透";
 
 /* No comment provided by engineer. */
-"physics" = "";
+"physics" = "物理攻撃をするの";
 
 /* No comment provided by engineer. */
-"Physics" = "";
+"Physics" = "物理系";
 
 /* No comment provided by engineer. */
-"Plate" = "";
+"Plate" = "Plate";
 
 /* No comment provided by engineer. */
 "Please wait" = "処理中...";
@@ -590,28 +488,13 @@
 "Raise %@ %d%% attack speed for %@s." = "%1$@の行動速度を%2$d%%アップ、%3$@秒継続する。";
 
 /* target type */
-"random" = "";
-
-/* No comment provided by engineer. */
-"Random event: %d%% chance use %d, otherwise %d." = "";
-
-/* No comment provided by engineer. */
-"Random event: %d%% chance use %d." = "";
-
-/* No comment provided by engineer. */
-"random minion" = "";
-
-/* No comment provided by engineer. */
-"random self minion" = "";
-
-/* target type */
-"random(once)" = "";
+"random" = "ランダム";
 
 /* No comment provided by engineer. */
 "Rank" = "Rank";
 
 /* No comment provided by engineer. */
-"Rarity" = "";
+"Rarity" = "レア度";
 
 /* No comment provided by engineer. */
 "Raw Materials" = "作成必要素材";
@@ -647,13 +530,10 @@
 "Settings" = "設定";
 
 /* expression style */
-"short" = "";
+"short" = "簡略";
 
 /* No comment provided by engineer. */
 "Silence" = "沈黙";
-
-/* No comment provided by engineer. */
-"Silence %@ with [%d]%% chance for %@s." = "";
 
 /* No comment provided by engineer. */
 "Skill" = "スキル";
@@ -668,16 +548,7 @@
 "Slow" = "スロウ";
 
 /* No comment provided by engineer. */
-"SLv." = "";
-
-/* No comment provided by engineer. */
-"Sort" = "";
-
-/* No comment provided by engineer. */
-"Sort by" = "";
-
-/* No comment provided by engineer. */
-"Sorting" = "";
+"SLv." = "スキルレベル";
 
 /* No comment provided by engineer. */
 "SP" = "SP";
@@ -695,15 +566,6 @@
 "Stun" = "スタン";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d to %@ %@ [%@]%@ %@ for %@s." = "";
-
-/* No comment provided by engineer. */
-"Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for %@s." = "";
-
-/* No comment provided by engineer. */
-"Summon a minion of ID: %d at the position of %@." = "";
-
-/* No comment provided by engineer. */
 "Swing" = "通常攻撃";
 
 /* No comment provided by engineer. */
@@ -719,52 +581,52 @@
 "targets of last effect" = "同じ";
 
 /* target type */
-"targets of last effect or %@ nearest" = "";
+"targets of last effect or %@ nearest" = "同じか最も近い%@";
 
 /* target type */
-"targets of last effect or the %@ nearest" = "";
+"targets of last effect or the %@ nearest" = "同じか%@近い";
 
 /* No comment provided by engineer. */
 "Taunt all enemy targets for %@s." = "敵全体を挑発する、%@秒継続する。";
 
 /* target type */
-"the %@ farthest" = "";
+"the %@ farthest" = "%@遠い";
 
 /* No comment provided by engineer. */
-"the %@ highest ATK" = "";
+"the %@ highest ATK" = "物理攻撃力が%@高い";
 
 /* target type */
-"the %@ highest HP ratio" = "";
+"the %@ highest HP ratio" = "HP割合が%@高い";
 
 /* No comment provided by engineer. */
-"the %@ highest Magic STR" = "";
+"the %@ highest Magic STR" = "魔法攻撃力が%@高い";
 
 /* target type */
-"the %@ highest TP" = "";
+"the %@ highest TP" = "TPが%@高い";
 
 /* No comment provided by engineer. */
-"the %@ lowest ATK" = "";
+"the %@ lowest ATK" = "物理攻撃力が%@低い";
 
 /* target type */
-"the %@ lowest HP ratio" = "";
+"the %@ lowest HP ratio" = "HP割合が%@低い";
 
 /* No comment provided by engineer. */
-"the %@ lowest Magic STR" = "";
+"the %@ lowest Magic STR" = "魔法攻撃力が%@低い";
 
 /* target type */
-"the %@ lowest TP" = "";
+"the %@ lowest TP" = "TPが%@低い";
 
 /* target type */
-"the %@ most backward" = "";
+"the %@ most backward" = "%@後の";
 
 /* target type */
-"the %@ most forward" = "";
+"the %@ most forward" = "%@前の";
 
 /* target type */
-"the %@ nearest" = "";
+"the %@ nearest" = "%@近い";
 
 /* target type */
-"the %@ unknown type" = "";
+"the %@ unknown type" = "%@未知種類";
 
 /* target type */
 "the farthest" = "最も遠い";
@@ -773,7 +635,7 @@
 "the highest ATK" = "物理攻撃力が一番高い";
 
 /* target type */
-"the highest HP ratio" = "";
+"the highest HP ratio" = "HP割合が一番高い";
 
 /* No comment provided by engineer. */
 "the highest Magic STR" = "魔法攻撃力が一番高い";
@@ -782,25 +644,25 @@
 "the highest TP" = "TPが一番高い";
 
 /* No comment provided by engineer. */
-"the lowest ATK" = "";
+"the lowest ATK" = "物理攻撃力が一番低い";
 
 /* target type */
-"the lowest HP ratio" = "";
+"the lowest HP ratio" = "HP割合が一番低い";
 
 /* No comment provided by engineer. */
-"the lowest Magic STR" = "";
+"the lowest Magic STR" = "魔法攻撃力が一番低い";
 
 /* target type */
 "the lowest TP" = "TPが一番低い";
 
 /* target type */
-"the most backward" = "";
+"the most backward" = "最も後の";
 
 /* target type */
-"the most forward" = "";
+"the most forward" = "最も前の";
 
 /* target type */
-"the nearest" = "";
+"the nearest" = "最も近い";
 
 /* No comment provided by engineer. */
 "There aren't any Mail accounts" = "メールアカウントを見つかりませんでした。";
@@ -809,7 +671,7 @@
 "third" = "3番目";
 
 /* No comment provided by engineer. */
-"Third-Party Libraries" = "Third-Party Libraries";
+"Third-Party Licenses" = "Third-Party Licenses";
 
 /* No comment provided by engineer. */
 "three" = "３体";
@@ -842,19 +704,16 @@
 "Unknown Effect" = "未知効果";
 
 /* No comment provided by engineer. */
-"Unknown effect %d to %@ with details [%@], values [%@]." = "";
-
-/* No comment provided by engineer. */
 "Up to date!" = "最新バージョンです";
 
 /* No comment provided by engineer. */
 "Use Dark Theme" = "ダークテーマに設定する";
 
 /* expression style */
-"value in combat" = "";
+"value in combat" = "value in combat";
 
 /* expression style */
-"value only" = "";
+"value only" = "value only";
 
 /* No comment provided by engineer. */
 "Vanguard" = "前衛";

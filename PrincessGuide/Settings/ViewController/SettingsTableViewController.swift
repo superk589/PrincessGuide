@@ -59,7 +59,7 @@ class SettingsTableViewController: UITableViewController {
         sections.append(Section(rows: feedbackRows, title: NSLocalizedString("Feedback", comment: "")))
         
         var aboutRows = [Row]()
-        aboutRows.append(Row(title: NSLocalizedString("Third-Party Libraries", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
+        aboutRows.append(Row(title: NSLocalizedString("Third-Party Licenses", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
         aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: VersionManager.shared.appVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
         aboutRows.append(Row(title: NSLocalizedString("Data Version", comment: ""), detail: VersionManager.shared.truthVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
         sections.append(Section(rows: aboutRows, title: NSLocalizedString("About", comment: "")))
@@ -104,7 +104,7 @@ class SettingsTableViewController: UITableViewController {
     
     @objc private func showAckListViewController() {
         let vc = ThirdPartyLibrariesViewController()
-        vc.navigationItem.title = NSLocalizedString("Third-Party Libraries", comment: "")
+        vc.navigationItem.title = NSLocalizedString("Third-Party Licenses", comment: "")
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
