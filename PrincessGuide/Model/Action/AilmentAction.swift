@@ -61,7 +61,7 @@ class AilmentAction: ActionParameter {
             let format = NSLocalizedString("Charm %@ with [%d]%% chance for %@s.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), Int(actionValue3), actionValue1.description)
         case .darken:
-            let format = NSLocalizedString("Darken %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss.", comment: "")
+            let format = NSLocalizedString("Blind %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: chanceValues, style: style, property: property), buildExpression(of: level, style: style, property: property), actionDetail1)
         default:
             return super.localizedDetail(of: level, property: property, style: style)

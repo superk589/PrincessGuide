@@ -185,6 +185,12 @@
 "Birthday" = "生日";
 
 /* No comment provided by engineer. */
+"Blind" = "暗黑";
+
+/* No comment provided by engineer. */
+"Blind %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss." = "[%2$@]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒，物理攻击会有 %4$d%% 几率丢失。";
+
+/* No comment provided by engineer. */
 "Blood Type" = "血型";
 
 /* No comment provided by engineer. */
@@ -284,6 +290,30 @@
 "Condition: if defeat target by the last effect then use %d." = "条件分支：上一个效果成功击杀目标则使用 %d。";
 
 /* No comment provided by engineer. */
+"Condition: if target is blinded then use %d, otherwise %d." = "条件分支：如果目标处于黑暗状态则使用 %1$d，否则使用 %2$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target is blinded then use %d." = "条件分支：如果目标处于黑暗状态则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target is burned then use %d, otherwise %d." = "条件分支：如果目标处于燃烧状态则使用 %1$d，否则使用 %2$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target is burned then use %d." = "条件分支：如果目标处于燃烧状态则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target is charmed then use %d, otherwise %d." = "条件分支：如果目标处于魅惑状态则使用 %1$d，否则使用 %2$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target is charmed then use %d." = "条件分支：如果目标处于魅惑状态则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target is controlled then use %d, otherwise %d." = "条件分支：如果目标处于被控制状态则使用 %1$d，否则使用 %2$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target is controlled then use %d." = "条件分支：如果目标处于被控制状态则使用 %1$d。";
+
+/* No comment provided by engineer. */
 "Crafted" = "制作";
 
 /* No comment provided by engineer. */
@@ -291,12 +321,6 @@
 
 /* No comment provided by engineer. */
 "CV" = "声优";
-
-/* No comment provided by engineer. */
-"Darken" = "暗黑";
-
-/* No comment provided by engineer. */
-"Darken %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss." = "[%2$@]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒，物理攻击会有 %4$d%% 几率丢失。";
 
 /* No comment provided by engineer. */
 "Data Version" = "数据版本";

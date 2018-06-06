@@ -340,6 +340,16 @@
         <target>生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Blind">
+        <source>Blind</source>
+        <target>暗黑</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Blind %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss.">
+        <source>Blind %1$@ with [%2$@]%% chance for %3$@s, physical attack has %4$d%% chance to miss.</source>
+        <target>[%2$@]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒，物理攻击会有 %4$d%% 几率丢失。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Blood Type">
         <source>Blood Type</source>
         <target>血型</target>
@@ -510,6 +520,46 @@
         <target>条件分支：上一个效果成功击杀目标则使用 %d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Condition: if target is blinded then use %d, otherwise %d.">
+        <source>Condition: if target is blinded then use %1$d, otherwise %2$d.</source>
+        <target>条件分支：如果目标处于黑暗状态则使用 %1$d，否则使用 %2$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is blinded then use %d.">
+        <source>Condition: if target is blinded then use %d.</source>
+        <target>条件分支：如果目标处于黑暗状态则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is burned then use %d, otherwise %d.">
+        <source>Condition: if target is burned then use %1$d, otherwise %2$d.</source>
+        <target>条件分支：如果目标处于燃烧状态则使用 %1$d，否则使用 %2$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is burned then use %d.">
+        <source>Condition: if target is burned then use %d.</source>
+        <target>条件分支：如果目标处于燃烧状态则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is charmed then use %d, otherwise %d.">
+        <source>Condition: if target is charmed then use %1$d, otherwise %2$d.</source>
+        <target>条件分支：如果目标处于魅惑状态则使用 %1$d，否则使用 %2$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is charmed then use %d.">
+        <source>Condition: if target is charmed then use %d.</source>
+        <target>条件分支：如果目标处于魅惑状态则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is controlled then use %d, otherwise %d.">
+        <source>Condition: if target is controlled then use %1$d, otherwise %2$d.</source>
+        <target>条件分支：如果目标处于被控制状态则使用 %1$d，否则使用 %2$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is controlled then use %d.">
+        <source>Condition: if target is controlled then use %d.</source>
+        <target>条件分支：如果目标处于被控制状态则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Crafted">
         <source>Crafted</source>
         <target>制作</target>
@@ -523,16 +573,6 @@
       <trans-unit id="DEF">
         <source>DEF</source>
         <target>物理防御力</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Darken">
-        <source>Darken</source>
-        <target>暗黑</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Darken %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss.">
-        <source>Darken %1$@ with [%2$@]%% chance for %3$@s, physical attack has %4$d%% chance to miss.</source>
-        <target>[%2$@]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒，物理攻击会有 %4$d%% 几率丢失。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Data Version">

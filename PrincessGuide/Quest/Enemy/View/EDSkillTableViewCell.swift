@@ -43,7 +43,7 @@ class EDSkillTableViewCell: UITableViewCell, EnemyDetailConfigurable {
             themeable.subtitleLabel.textColor = theme.color.title
             themeable.subtitleLabel2.textColor = theme.color.title
             themeable.levelTitleLabel.textColor = theme.color.title
-            themeable.skillLevelLabel.textColor = theme.color.title
+            themeable.skillLevelLabel.textColor = theme.color.body
             themeable.actionLabel.textColor = theme.color.body
             themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themeable.backgroundColor = theme.color.tableViewCell.background

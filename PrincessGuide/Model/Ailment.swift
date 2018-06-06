@@ -104,7 +104,7 @@ enum AilmentType: Int, CustomStringConvertible {
         case .charm:
             return NSLocalizedString("Charm", comment: "")
         case .darken:
-            return NSLocalizedString("Darken", comment: "")
+            return NSLocalizedString("Blind", comment: "")
         case .silence:
             return NSLocalizedString("Silence", comment: "")
         case .instantDeath:
