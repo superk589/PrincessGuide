@@ -1,3 +1,16 @@
+# 1.0.4
+
+1. 增加卡片筛选、分组和搜索的功能。
+2. 提供四种可选的技能数值风格。
+3. 更加精确的技能描述。
+4. 其他细节优化。
+
+## English version
+1. Support for cards filtering, sorting and searching.
+2. Add four expression styles for skill values.
+3. More accurate skill description.
+4. Other minor improvements.
+
 # 1.0.3
 
 修复保存图片时闪退的 Bug。
