@@ -202,163 +202,125 @@ class ActionParameter {
         switch style {
         case .short:
             
-            var expression = ""
-            var fixedValue = 0.0
-            var hasLevelCoefficient = false
-            
-            for value in actionValues ?? self.actionValues {
-                if let value = Double(value.value), value == 0 { continue }
-                switch value.key {
-                case .atk:
-                    expression += "\(value.value) * \(PropertyKey.atk)"
-                case .magicStr:
-                    expression += "\(value.value) * \(PropertyKey.magicStr)"
-                case .def:
-                    expression += "\(value.value) * \(PropertyKey.def)"
-                case .skillLevel:
-                    fixedValue += Double(level) * (Double(value.value) ?? 0)
-                    if Double(value.value) != 0 {
-                        hasLevelCoefficient = true
+            let expression = (actionValues ?? self.actionValues).map { value in
+                var part = ""
+                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
+                    let roundingRule = value.key == nil ? roundingRule : nil
+                    switch (initialValue, perLevelValue) {
+                    case (0, 0):
+                        break
+                    case (0, _):
+                        part = "\((perLevelValue * Double(level)).roundedValueString(roundingRule))@\(level)"
+                    case (_, 0):
+                        part = "\(initialValue.roundedValueString(roundingRule))"
+                    case (_, _):
+                        part = "\((perLevelValue * Double(level) + initialValue).roundedValueString(roundingRule))@\(level)"
                     }
-                case .initialValue:
-                    fixedValue += Double(value.value) ?? 0
+                    if let key = value.key {
+                        switch (initialValue, perLevelValue) {
+                        case (0, 0):
+                            break
+                        case (0, _), (_, 0):
+                            part += " * \(key.description)"
+                        case (_, _):
+                            part = "(\(part) * \(key.description)"
+                        }
+                    }
                 }
+                return part
             }
+            .filter { $0 != "" }
+            .joined(separator: " + ")
             
-            let valueString: String
-            if let roundingRule = roundingRule {
-                valueString = String(Int(fixedValue.rounded(roundingRule)))
-            } else {
-                valueString = String(fixedValue)
-            }
-            
-            if expression != "" {
-                if fixedValue != 0 {
-                    expression += " + \(valueString)"
-                }
-            } else {
-                expression = "\(valueString)"
-            }
-            
-            if hasLevelCoefficient {
-                expression += "@\(level)"
-            }
-            
-            return expression
-        case .full:
-            
-            let actionValues = actionValues ?? self.actionValues
-            let part1 = actionValues.compactMap { (value: ActionValue) -> String? in
-                if let value = Double(value.value), value == 0 { return nil }
-                switch value.key {
-                case .atk:
-                    return "\(value.value) * \(PropertyKey.atk)"
-                case .magicStr:
-                    return "\(value.value) * \(PropertyKey.magicStr)"
-                case .def:
-                    return "\(value.value) * \(PropertyKey.def)"
-                default:
-                    return nil
-                }
-            }
-            
-            let part2 = actionValues.compactMap { (value: ActionValue) -> String? in
-                if let value = Double(value.value), value == 0 { return nil }
-                switch value.key {
-                case .initialValue:
-                    return "\(value.value)"
-                case .skillLevel:
-                    return "\(value.value) * \(NSLocalizedString("SLv.", comment: ""))"
-                default:
-                    return nil
-                }
-            }
-            
-            let expression = (part1 + part2).joined(separator: " + ")
             if expression == "" {
                 return "0"
             } else {
                 return expression
             }
+        case .full:
+            
+            let expression = (actionValues ?? self.actionValues).map { value in
+                var part = ""
+                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
+                    switch (initialValue, perLevelValue) {
+                    case (0, 0):
+                        break
+                    case (0, _):
+                        part = "\(perLevelValue) * \(NSLocalizedString("SLv.", comment: ""))"
+                    case (_, 0):
+                        part = "\(initialValue)"
+                    case (_, _):
+                        part = "\(initialValue) + \(perLevelValue) * \(NSLocalizedString("SLv.", comment: ""))"
+                    }
+                    if let key = value.key {
+                        switch (initialValue, perLevelValue) {
+                        case (0, 0):
+                            break
+                        case (0, _), (_, 0):
+                            part += " * \(key.description)"
+                        case (_, _):
+                            part = "(\(part)) * \(key.description)"
+                        }
+                    }
+                }
+                return part
+            }
+            .filter { $0 != "" }
+            .joined(separator: " + ")
+            
+            if expression == "" {
+                return "0"
+            } else {
+                return expression
+            }
+            
         case .valueOnly:
             
             var fixedValue = 0.0
             
             for value in actionValues ?? self.actionValues {
-                let key = value.key
-                guard let value = Double(value.value), value != 0 else { continue }
-                switch key {
-                case .atk:
-                    fixedValue += value * property.atk
-                case .magicStr:
-                    fixedValue += value * property.magicStr
-                case .def:
-                    fixedValue += value * property.def
-                case .skillLevel:
-                    fixedValue += Double(level) * value
-                case .initialValue:
-                    fixedValue += value
+                var part = 0.0
+                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
+                    part = initialValue + perLevelValue * Double(level)
                 }
+                if let key = value.key {
+                    part = part * property.item(for: key).value
+                }
+                fixedValue += part
             }
             
-            let valueString: String
-            if let roundingRule = roundingRule {
-                valueString = String(Int(fixedValue.rounded(roundingRule)))
-            } else {
-                valueString = String(fixedValue)
-            }
+            return fixedValue.roundedValueString(roundingRule)
             
-            return valueString
         case .valueInCombat:
             
             var fixedValue = 0.0
             
             for value in actionValues ?? self.actionValues {
-                let key = value.key
-                guard let value = Double(value.value), value != 0 else { continue }
-                switch key {
-                case .atk:
-                    fixedValue += value * property.atk
-                case .magicStr:
-                    fixedValue += value * property.magicStr
-                case .def:
-                    fixedValue += value * property.def
-                case .skillLevel:
-                    fixedValue += Double(level) * value
-                case .initialValue:
-                    fixedValue += value
+                var part = 0.0
+                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
+                    part = initialValue + perLevelValue * Double(level)
                 }
+                if let key = value.key {
+                    part = part * property.item(for: key).value
+                }
+                fixedValue += part
             }
             
             if isHealingAction {
                 fixedValue *= (property.hpRecoveryRate / 100 + 1)
             }
             
-            let valueString: String
-            if let roundingRule = roundingRule {
-                valueString = String(Int(fixedValue.rounded(roundingRule)))
-            } else {
-                valueString = String(fixedValue)
-            }
-            
-            return valueString
+            return fixedValue.roundedValueString(roundingRule)
         }
         
     }
     
 }
 
-enum ActionKey: String {
-    case atk
-    case magicStr
-    case def
-    case skillLevel
-    case initialValue
-}
-
 struct ActionValue {
-    let key: ActionKey
-    let value: String
+    let initial: String
+    let perLevel: String
+    let key: PropertyKey?
 }
 
 enum PercentModifier: CustomStringConvertible {
@@ -454,4 +416,16 @@ enum ActionType: Int {
     case hot
     case ex = 90
     case exPlus
+}
+
+extension Double {
+    
+    func roundedValueString(_ roundingRule: FloatingPointRoundingRule? = nil) -> String {
+        if let roundingRule = roundingRule {
+            return String(Int(self.rounded(roundingRule)))
+        } else {
+            return String(self)
+        }
+    }
+    
 }

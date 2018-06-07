@@ -12,14 +12,19 @@ class AccumulativeDamageAction: ActionParameter {
  
     override var actionValues: [ActionValue] {
         return [
-            ActionValue(key: .initialValue, value: String(actionValue2)),
-            ActionValue(key: .skillLevel, value: String(actionValue3))
+            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil)
+        ]
+    }
+    
+    var stackValues: [ActionValue] {
+        return [
+            ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: nil)
         ]
     }
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("Add additional [%@] damage per attack with max %d stacks to current target.", comment: "")
-        return String(format: format, buildExpression(of: level, style: style, property: property), Int(actionValue4))
+        let format = NSLocalizedString("Add additional [%@] damage per attack with max [%@] stacks to current target.", comment: "")
+        return String(format: format, buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: stackValues, roundingRule: .down, style: style, property: property))
     }
     
 }

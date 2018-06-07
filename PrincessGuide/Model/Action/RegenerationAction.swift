@@ -18,23 +18,27 @@ class RegenerationAction: ActionParameter {
         switch healClass {
         case .magical:
             return [
-                ActionValue(key: .initialValue, value: String(actionValue1)),
-                ActionValue(key: .skillLevel, value: String(actionValue2)),
-                ActionValue(key: .magicStr, value: String(actionValue3))
+                ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: .magicStr),
+                ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil)
             ]
         case .physical:
             return [
-                ActionValue(key: .initialValue, value: String(actionValue1)),
-                ActionValue(key: .skillLevel, value: String(actionValue2)),
-                ActionValue(key: .atk, value: String(actionValue3))
+                ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: .atk),
+                ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil)
             ]
         default:
             return []
         }
     }
     
+    var durationValues: [ActionValue] {
+        return [
+            ActionValue(initial: String(actionValue5), perLevel: String(actionValue6), key: nil)
+        ]
+    }
+    
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("Restore %@ [%@] HP per second for %@s.", comment: "")
-        return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue5.description)
+        let format = NSLocalizedString("Restore %@ [%@] HP per second for [%@]s.", comment: "")
+        return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
     }
 }

@@ -16,8 +16,13 @@ class AuraAction: ActionParameter {
     
     override var actionValues: [ActionValue] {
         return [
-            ActionValue(key: .initialValue, value: String(actionValue2)),
-            ActionValue(key: .skillLevel, value: String(actionValue3))
+            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil)
+        ]
+    }
+    
+    var durationValues: [ActionValue] {
+        return [
+            ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: nil)
         ]
     }
     
@@ -97,7 +102,7 @@ class AuraAction: ActionParameter {
     }
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("%@ %@ [%@]%@ %@ for %@s.", comment: "")
-        return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .up, style: style, property: property), percentModifier.description, auraType.description, actionValue4.description)
+        let format = NSLocalizedString("%@ %@ [%@]%@ %@ for [%@]s.", comment: "")
+        return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .up, style: style, property: property), percentModifier.description, auraType.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
     }
 }

@@ -1,5 +1,5 @@
 /* No comment provided by engineer. */
-"%@ %@ [%@]%@ %@ for %@s." = "%1$@%2$@ [%3$@]%4$@ %5$@，持续 %6$@ 秒。";
+"%@ %@ [%@]%@ %@ for [%@]s." = "%1$@%2$@ [%3$@]%4$@ %5$@，持续 [%6$@] 秒。";
 
 /* [the farthest two] [enemy] [targets]
    [the second to fourth farthest] [enemy] [targets] */
@@ -10,10 +10,10 @@
 "%@ %@ %@ in range %d" = "范围 %4$d 内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
-"%@ %@ and deal [%@] damage per second for %@s." = "%1$@%2$@并每秒造成 [%3$@] 伤害，持续 %4$@ 秒。";
+"%@ %@ and deal [%@] damage per second for [%@]s." = "%1$@%2$@并每秒造成 [%3$@] 伤害，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
-"%@ %@ for %@s." = "%1$@%2$@，持续 %3$@ 秒。";
+"%@ %@ for [%@]s." = "%1$@%2$@，持续 [%3$@] 秒。";
 
 /* [the nearest] [enemy] target
    [the second nearest] [enemy] target */
@@ -131,10 +131,10 @@
 "Add [%d] to the counter." = "使计数器加 [%d]。";
 
 /* No comment provided by engineer. */
-"Add additional [%@] %@ to %@ for next attack within %@s." = "使%3$@ %4$@ 秒内的下一次攻击附加 [%1$@] %2$@。";
+"Add additional [%@] %@ to %@ for next [%@] attacks." = "使%3$@的下 [%4$@] 次攻击附加 [%1$@] %2$@。";
 
 /* No comment provided by engineer. */
-"Add additional [%@] damage per attack with max %d stacks to current target." = "对当前目标的每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 %2$d 层。";
+"Add additional [%@] damage per attack with max [%@] stacks to current target." = "对当前目标的每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 [%2$@] 层。";
 
 /* No comment provided by engineer. */
 "Age" = "年龄";
@@ -188,7 +188,7 @@
 "Blind" = "暗黑";
 
 /* No comment provided by engineer. */
-"Blind %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss." = "[%2$@]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒，物理攻击会有 %4$d%% 几率丢失。";
+"Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss." = "[%2$@]%% 几率使%1$@进入黑暗状态，持续 [%3$@] 秒，物理攻击会有 %4$d%% 几率丢失。";
 
 /* No comment provided by engineer. */
 "Blood Type" = "血型";
@@ -203,25 +203,25 @@
 "Cards" = "卡片";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to absorb [%@] magical damage for %@s." = "对%1$@释放一个护盾，吸收 [%2$@] 魔法伤害，持续 %3$@ 秒。";
+"Cast a barrier on %@ to absorb [%@] magical damage for [%@]s." = "对%1$@释放一个护盾，吸收 [%2$@] 魔法伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to absorb [%@] physical and magical damage for %@s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 %3$@ 秒。";
+"Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to absorb [%@] physical damage for %@s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 %3$@ 秒。";
+"Cast a barrier on %@ to absorb [%@] physical damage for [%@]s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] magical damage for %@s." = "对%1$@释放一个护盾，无效 [%2$@] 魔法伤害，持续 %3$@ 秒。";
+"Cast a barrier on %@ to nullify [%@] magical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 魔法伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical and magical damage for %@s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 %3$@ 秒。";
+"Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical damage for %@s" = "对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 %3$@ 秒。";
+"Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast an unknown barrier %d on %@ for %@s." = "对%2$@释放一个护盾，类型 %1$d，持续 %3$@ 秒。";
+"Cast an unknown barrier %d on %@ for [%@]s." = "对%2$@释放一个护盾，类型 %1$d，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Cast Time" = "释放时间";
@@ -254,7 +254,7 @@
 "Charm" = "魅惑";
 
 /* No comment provided by engineer. */
-"Charm %@ with [%d]%% chance for %@s." = "[%2$d]%% 几率魅惑%1$@，持续 %3$@ 秒。";
+"Charm %@ with [%@]%% chance for [%@]s." = "[%2$@]%% 几率魅惑%1$@，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Check for Updates at Launch" = "启动时检查更新";
@@ -536,7 +536,7 @@
 "Main %d" = "Main %d";
 
 /* No comment provided by engineer. */
-"Make %@ fall asleep for %@s." = "使%1$@入睡，持续 %2$@ 秒。";
+"Make %@ fall asleep for [%@]s." = "使%1$@入睡，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
 "Make %@ lose [%@] TP." = "使%1$@失去 [%2$@] TP。";
@@ -605,7 +605,7 @@
 "Poison" = "Poison";
 
 /* No comment provided by engineer. */
-"Poison %@ and deal [%@] damage per second for %@s." = "使%1$@中毒并每秒造成 [%2$@] 伤害，持续 %3$@ 秒。";
+"Poison %@ and deal [%@] damage per second for [%@]s." = "使%1$@中毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Position" = "位置";
@@ -626,7 +626,7 @@
 "Raise [%@] %@." = "提高 [%1$@] %2$@。";
 
 /* No comment provided by engineer. */
-"Raise %@ %d%% attack speed for %@s." = "提高%1$@ %2$d%% 攻击速度，持续 %3$@ 秒。";
+"Raise %@ %d%% attack speed for [%@]s." = "提高%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
 
 /* target type */
 "random" = "随机";
@@ -659,10 +659,10 @@
 "Reduce" = "降低";
 
 /* No comment provided by engineer. */
-"Reduce %@ %d%% attack speed for %@s." = "降低%1$@ %2$d%% 攻击速度，持续 %3$@ 秒。";
+"Reduce %@ %d%% attack speed for [%@]s." = "降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Restore %@ [%@] HP per second for %@s." = "每秒恢复%1$@ [%2$@] HP，持续 %3$@ 秒。";
+"Restore %@ [%@] HP per second for [%@]s." = "每秒恢复%1$@ [%2$@] HP，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Restore %@ [%@] TP." = "恢复%1$@ [%2$@] TP。";
@@ -692,7 +692,7 @@
 "Silence" = "沉默";
 
 /* No comment provided by engineer. */
-"Silence %@ with [%d]%% chance for %@s." = "[%2$d]%% 几率沉默%1$@，持续 %3$@ 秒。";
+"Silence %@ with [%@]%% chance for [%@]s." = "[%2$@]%% 几率沉默%1$@，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Skill" = "技能";
@@ -737,10 +737,10 @@
 "Stun" = "击晕";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d to %@ %@ [%@]%@ %@ for %@s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 %7$@ 秒。";
+"Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for %@s." = "在%2$@位置展开一片半径为 %1$d 的治疗区域，每秒治疗其中的友方目标 [%3$@] HP，持续 %4$@ 秒。";
+"Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的治疗区域，每秒治疗其中的友方目标 [%3$@] HP，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
 "Summon a minion of ID: %d at the position of %@." = "在%2$@的位置召唤 ID 为 %1$d 的随从。";

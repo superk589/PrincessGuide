@@ -71,19 +71,19 @@
         <note>[the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ [%@]%@ %@ for %@s.">
-        <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for %6$@s.</source>
-        <target>%2$@に%5$@を[%3$@]%4$@%1$@、%6$@秒継続する。</target>
+      <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s.">
+        <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for [%6$@]s.</source>
+        <target>%2$@に%5$@を[%3$@]%4$@%1$@、[%6$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ and deal [%@] damage per second for %@s.">
-        <source>%1$@ %2$@ and deal [%3$@] damage per second for %4$@s.</source>
-        <target>%2$@に%1$@状態付与、毎秒[%3$@]のダメージを与える、%4$@秒継続する。</target>
+      <trans-unit id="%@ %@ and deal [%@] damage per second for [%@]s.">
+        <source>%1$@ %2$@ and deal [%3$@] damage per second for [%4$@]s.</source>
+        <target>%2$@に%1$@状態付与、毎秒[%3$@]のダメージを与える、[%4$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ for %@s.">
-        <source>%1$@ %2$@ for %3$@s.</source>
-        <target>%2$@に%1$@状態付与、%3$@秒継続する。</target>
+      <trans-unit id="%@ %@ for [%@]s.">
+        <source>%1$@ %2$@ for [%3$@]s.</source>
+        <target>%2$@に%1$@状態付与、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ target">
@@ -267,13 +267,13 @@
         <source>Add [%d] to the counter.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add additional [%@] %@ to %@ for next attack within %@s.">
-        <source>Add additional [%1$@] %2$@ to %3$@ for next attack within %4$@s.</source>
+      <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks.">
+        <source>Add additional [%1$@] %2$@ to %3$@ for next [%4$@] attacks.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add additional [%@] damage per attack with max %d stacks to current target.">
-        <source>Add additional [%1$@] damage per attack with max %2$d stacks to current target.</source>
-        <target>攻撃する度にダメージ[%1$@]増加、最大%2$@回まで累積する。</target>
+      <trans-unit id="Add additional [%@] damage per attack with max [%@] stacks to current target.">
+        <source>Add additional [%1$@] damage per attack with max [%2$@] stacks to current target.</source>
+        <target>攻撃する度にダメージ[%1$@]増加、最大[%2$@]回まで累積する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Age">
@@ -334,8 +334,8 @@
         <target>暗闇</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Blind %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss.">
-        <source>Blind %1$@ with [%2$@]%% chance for %3$@s, physical attack has %4$d%% chance to miss.</source>
+      <trans-unit id="Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss.">
+        <source>Blind %1$@ with [%2$@]%% chance for [%3$@]s, physical attack has %4$d%% chance to miss.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Blood Type">
@@ -368,39 +368,39 @@
         <target>発動時間</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for %@s.">
-        <source>Cast a barrier on %1$@ to absorb [%2$@] magical damage for %3$@s.</source>
-        <target>%1$@に[%2$@]ダメージ分の魔法吸収バリアを展開する、%3$@秒継続する。</target>
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to absorb [%2$@] magical damage for [%3$@]s.</source>
+        <target>%1$@に[%2$@]ダメージ分の魔法吸収バリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for %@s.">
-        <source>Cast a barrier on %1$@ to absorb [%2$@] physical and magical damage for %3$@s.</source>
-        <target>%1$@に[%2$@]ダメージ分の物理・魔法吸収バリアを展開する、%3$@秒継続する。</target>
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to absorb [%2$@] physical and magical damage for [%3$@]s.</source>
+        <target>%1$@に[%2$@]ダメージ分の物理・魔法吸収バリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for %@s.">
-        <source>Cast a barrier on %1$@ to absorb [%2$@] physical damage for %3$@s.</source>
-        <target>%1$@に[%2$@]ダメージ分の物理吸収バリアを展開する、%3$@秒継続する。</target>
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to absorb [%2$@] physical damage for [%3$@]s.</source>
+        <target>%1$@に[%2$@]ダメージ分の物理吸収バリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] magical damage for %@s.">
-        <source>Cast a barrier on %1$@ to nullify [%2$@] magical damage for %3$@s.</source>
-        <target>%1$@に[%2$@]ダメージ分の魔法無効にするバリアを展開する、%3$@秒継続する。</target>
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] magical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to nullify [%2$@] magical damage for [%3$@]s.</source>
+        <target>%1$@に[%2$@]ダメージ分の魔法無効にするバリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for %@s.">
-        <source>Cast a barrier on %1$@ to nullify [%2$@] physical and magical damage for %3$@s.</source>
-        <target>%1$@に[%2$@]ダメージ分の物理・魔法無効にするバリアを展開する、%3$@秒継続する。</target>
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to nullify [%2$@] physical and magical damage for [%3$@]s.</source>
+        <target>%1$@に[%2$@]ダメージ分の物理・魔法無効にするバリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for %@s">
-        <source>Cast a barrier on %1$@ to nullify [%2$@] physical damage for %3$@s</source>
-        <target>%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、%3$@秒継続する。</target>
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to nullify [%2$@] physical damage for [%3$@]s.</source>
+        <target>%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast an unknown barrier %d on %@ for %@s.">
-        <source>Cast an unknown barrier %1$d on %2$@ for %3$@s.</source>
-        <target>%2$@に未知バリア %1$d を展開する、%3$@秒継続する。</target>
+      <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s.">
+        <source>Cast an unknown barrier %1$d on %2$@ for [%3$@]s.</source>
+        <target>%2$@に未知バリア %1$d を展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Catch Copy">
@@ -444,9 +444,9 @@
         <target>魅了</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charm %@ with [%d]%% chance for %@s.">
-        <source>Charm %1$@ with [%2$d]%% chance for %3$@s.</source>
-        <target>[%2$d]%%の確率で%1$@に魅了状態付与、%3$@秒継続する。</target>
+      <trans-unit id="Charm %@ with [%@]%% chance for [%@]s.">
+        <source>Charm %1$@ with [%2$@]%% chance for [%3$@]s.</source>
+        <target>[%2$@]%%の確率で%1$@に魅了状態付与、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Check for Updates at Launch">
@@ -818,9 +818,9 @@
         <target>メイン %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make %@ fall asleep for %@s.">
-        <source>Make %1$@ fall asleep for %2$@s.</source>
-        <target>%1$@を睡眠状態にする、%2$@秒継続する。</target>
+      <trans-unit id="Make %@ fall asleep for [%@]s.">
+        <source>Make %1$@ fall asleep for [%2$@]s.</source>
+        <target>%1$@を睡眠状態にする、[%2$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Make %@ lose [%@] TP.">
@@ -909,9 +909,9 @@
         <target>毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Poison %@ and deal [%@] damage per second for %@s.">
-        <source>Poison %1$@ and deal [%2$@] damage per second for %3$@s.</source>
-        <target>%1$@に毒状態にして、[%2$@]のダメージを与える、%3$@秒継続する。</target>
+      <trans-unit id="Poison %@ and deal [%@] damage per second for [%@]s.">
+        <source>Poison %1$@ and deal [%2$@] damage per second for [%3$@]s.</source>
+        <target>%1$@に毒状態にして、[%2$@]のダメージを与える、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Position">
@@ -939,9 +939,9 @@
         <target>アップ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise %@ %d%% attack speed for %@s.">
-        <source>Raise %1$@ %2$d%% attack speed for %3$@s.</source>
-        <target>%1$@の行動速度を%2$d%%アップ、%3$@秒継続する。</target>
+      <trans-unit id="Raise %@ %d%% attack speed for [%@]s.">
+        <source>Raise %1$@ %2$d%% attack speed for [%3$@]s.</source>
+        <target>%1$@の行動速度を%2$d%%アップ、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raise [%@] %@.">
@@ -977,14 +977,14 @@
         <target>ダウン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Reduce %@ %d%% attack speed for %@s.">
-        <source>Reduce %1$@ %2$d%% attack speed for %3$@s.</source>
-        <target>%1$@の行動速度を%2$d%%ダウン、%3$@秒継続する。</target>
+      <trans-unit id="Reduce %@ %d%% attack speed for [%@]s.">
+        <source>Reduce %1$@ %2$d%% attack speed for [%3$@]s.</source>
+        <target>%1$@の行動速度を%2$d%%ダウン、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore %@ [%@] HP per second for %@s.">
-        <source>Restore %1$@ [%2$@] HP per second for %3$@s.</source>
-        <target>%1$@に毎秒HPを[%2$@]回復、%3$@秒継続する。</target>
+      <trans-unit id="Restore %@ [%@] HP per second for [%@]s.">
+        <source>Restore %1$@ [%2$@] HP per second for [%3$@]s.</source>
+        <target>%1$@に毎秒HPを[%2$@]回復、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Restore %@ [%@] TP.">
@@ -1027,8 +1027,9 @@
         <target>沈黙</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Silence %@ with [%d]%% chance for %@s.">
-        <source>Silence %1$@ with [%2$d]%% chance for %3$@s.</source>
+      <trans-unit id="Silence %@ with [%@]%% chance for [%@]s.">
+        <source>Silence %1$@ with [%2$@]%% chance for [%3$@]s.</source>
+        <target>[%2$@]%%の確率で%1$@に沈黙状態付与、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Skill">
@@ -1087,12 +1088,12 @@
         <target>スタン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for %@s.">
-        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for %7$@s.</source>
+      <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s.">
+        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for %@s.">
-        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@] HP per second for %4$@s.</source>
+      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for [%@]s.">
+        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@] HP per second for [%4$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a minion of ID: %d at the position of %@.">

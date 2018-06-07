@@ -71,19 +71,19 @@
         <note>[the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ [%@]%@ %@ for %@s.">
-        <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for %6$@s.</source>
-        <target>%1$@%2$@ [%3$@]%4$@ %5$@，持续 %6$@ 秒。</target>
+      <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s.">
+        <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for [%6$@]s.</source>
+        <target>%1$@%2$@ [%3$@]%4$@ %5$@，持续 [%6$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ and deal [%@] damage per second for %@s.">
-        <source>%1$@ %2$@ and deal [%3$@] damage per second for %4$@s.</source>
-        <target>%1$@%2$@并每秒造成 [%3$@] 伤害，持续 %4$@ 秒。</target>
+      <trans-unit id="%@ %@ and deal [%@] damage per second for [%@]s.">
+        <source>%1$@ %2$@ and deal [%3$@] damage per second for [%4$@]s.</source>
+        <target>%1$@%2$@并每秒造成 [%3$@] 伤害，持续 [%4$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ for %@s.">
-        <source>%1$@ %2$@ for %3$@s.</source>
-        <target>%1$@%2$@，持续 %3$@ 秒。</target>
+      <trans-unit id="%@ %@ for [%@]s.">
+        <source>%1$@ %2$@ for [%3$@]s.</source>
+        <target>%1$@%2$@，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ target">
@@ -275,14 +275,14 @@
         <target>使计数器加 [%d]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add additional [%@] %@ to %@ for next attack within %@s.">
-        <source>Add additional [%1$@] %2$@ to %3$@ for next attack within %4$@s.</source>
-        <target>使%3$@ %4$@ 秒内的下一次攻击附加 [%1$@] %2$@。</target>
+      <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks.">
+        <source>Add additional [%1$@] %2$@ to %3$@ for next [%4$@] attacks.</source>
+        <target>使%3$@的下 [%4$@] 次攻击附加 [%1$@] %2$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add additional [%@] damage per attack with max %d stacks to current target.">
-        <source>Add additional [%1$@] damage per attack with max %2$d stacks to current target.</source>
-        <target>对当前目标的每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 %2$d 层。</target>
+      <trans-unit id="Add additional [%@] damage per attack with max [%@] stacks to current target.">
+        <source>Add additional [%1$@] damage per attack with max [%2$@] stacks to current target.</source>
+        <target>对当前目标的每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 [%2$@] 层。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Age">
@@ -345,9 +345,9 @@
         <target>暗黑</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Blind %@ with [%@]%% chance for %@s, physical attack has %d%% chance to miss.">
-        <source>Blind %1$@ with [%2$@]%% chance for %3$@s, physical attack has %4$d%% chance to miss.</source>
-        <target>[%2$@]%% 几率使%1$@进入黑暗状态，持续 %3$@ 秒，物理攻击会有 %4$d%% 几率丢失。</target>
+      <trans-unit id="Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss.">
+        <source>Blind %1$@ with [%2$@]%% chance for [%3$@]s, physical attack has %4$d%% chance to miss.</source>
+        <target>[%2$@]%% 几率使%1$@进入黑暗状态，持续 [%3$@] 秒，物理攻击会有 %4$d%% 几率丢失。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Blood Type">
@@ -380,39 +380,39 @@
         <target>释放时间</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for %@s.">
-        <source>Cast a barrier on %1$@ to absorb [%2$@] magical damage for %3$@s.</source>
-        <target>对%1$@释放一个护盾，吸收 [%2$@] 魔法伤害，持续 %3$@ 秒。</target>
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to absorb [%2$@] magical damage for [%3$@]s.</source>
+        <target>对%1$@释放一个护盾，吸收 [%2$@] 魔法伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for %@s.">
-        <source>Cast a barrier on %1$@ to absorb [%2$@] physical and magical damage for %3$@s.</source>
-        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 %3$@ 秒。</target>
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to absorb [%2$@] physical and magical damage for [%3$@]s.</source>
+        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for %@s.">
-        <source>Cast a barrier on %1$@ to absorb [%2$@] physical damage for %3$@s.</source>
-        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 %3$@ 秒。</target>
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to absorb [%2$@] physical damage for [%3$@]s.</source>
+        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] magical damage for %@s.">
-        <source>Cast a barrier on %1$@ to nullify [%2$@] magical damage for %3$@s.</source>
-        <target>对%1$@释放一个护盾，无效 [%2$@] 魔法伤害，持续 %3$@ 秒。</target>
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] magical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to nullify [%2$@] magical damage for [%3$@]s.</source>
+        <target>对%1$@释放一个护盾，无效 [%2$@] 魔法伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for %@s.">
-        <source>Cast a barrier on %1$@ to nullify [%2$@] physical and magical damage for %3$@s.</source>
-        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 %3$@ 秒。</target>
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to nullify [%2$@] physical and magical damage for [%3$@]s.</source>
+        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for %@s">
-        <source>Cast a barrier on %1$@ to nullify [%2$@] physical damage for %3$@s</source>
-        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 %3$@ 秒。</target>
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for [%@]s.">
+        <source>Cast a barrier on %1$@ to nullify [%2$@] physical damage for [%3$@]s.</source>
+        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast an unknown barrier %d on %@ for %@s.">
-        <source>Cast an unknown barrier %1$d on %2$@ for %3$@s.</source>
-        <target>对%2$@释放一个护盾，类型 %1$d，持续 %3$@ 秒。</target>
+      <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s.">
+        <source>Cast an unknown barrier %1$d on %2$@ for [%3$@]s.</source>
+        <target>对%2$@释放一个护盾，类型 %1$d，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Catch Copy">
@@ -460,9 +460,9 @@
         <target>魅惑</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charm %@ with [%d]%% chance for %@s.">
-        <source>Charm %1$@ with [%2$d]%% chance for %3$@s.</source>
-        <target>[%2$d]%% 几率魅惑%1$@，持续 %3$@ 秒。</target>
+      <trans-unit id="Charm %@ with [%@]%% chance for [%@]s.">
+        <source>Charm %1$@ with [%2$@]%% chance for [%3$@]s.</source>
+        <target>[%2$@]%% 几率魅惑%1$@，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Check for Updates at Launch">
@@ -855,9 +855,9 @@
         <target>Main %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make %@ fall asleep for %@s.">
-        <source>Make %1$@ fall asleep for %2$@s.</source>
-        <target>使%1$@入睡，持续 %2$@ 秒。</target>
+      <trans-unit id="Make %@ fall asleep for [%@]s.">
+        <source>Make %1$@ fall asleep for [%2$@]s.</source>
+        <target>使%1$@入睡，持续 [%2$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Make %@ lose [%@] TP.">
@@ -950,9 +950,9 @@
         <target>Poison</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Poison %@ and deal [%@] damage per second for %@s.">
-        <source>Poison %1$@ and deal [%2$@] damage per second for %3$@s.</source>
-        <target>使%1$@中毒并每秒造成 [%2$@] 伤害，持续 %3$@ 秒。</target>
+      <trans-unit id="Poison %@ and deal [%@] damage per second for [%@]s.">
+        <source>Poison %1$@ and deal [%2$@] damage per second for [%3$@]s.</source>
+        <target>使%1$@中毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Position">
@@ -980,9 +980,9 @@
         <target>提高</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise %@ %d%% attack speed for %@s.">
-        <source>Raise %1$@ %2$d%% attack speed for %3$@s.</source>
-        <target>提高%1$@ %2$d%% 攻击速度，持续 %3$@ 秒。</target>
+      <trans-unit id="Raise %@ %d%% attack speed for [%@]s.">
+        <source>Raise %1$@ %2$d%% attack speed for [%3$@]s.</source>
+        <target>提高%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raise [%@] %@.">
@@ -1020,14 +1020,14 @@
         <target>降低</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Reduce %@ %d%% attack speed for %@s.">
-        <source>Reduce %1$@ %2$d%% attack speed for %3$@s.</source>
-        <target>降低%1$@ %2$d%% 攻击速度，持续 %3$@ 秒。</target>
+      <trans-unit id="Reduce %@ %d%% attack speed for [%@]s.">
+        <source>Reduce %1$@ %2$d%% attack speed for [%3$@]s.</source>
+        <target>降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore %@ [%@] HP per second for %@s.">
-        <source>Restore %1$@ [%2$@] HP per second for %3$@s.</source>
-        <target>每秒恢复%1$@ [%2$@] HP，持续 %3$@ 秒。</target>
+      <trans-unit id="Restore %@ [%@] HP per second for [%@]s.">
+        <source>Restore %1$@ [%2$@] HP per second for [%3$@]s.</source>
+        <target>每秒恢复%1$@ [%2$@] HP，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Restore %@ [%@] TP.">
@@ -1070,9 +1070,9 @@
         <target>沉默</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Silence %@ with [%d]%% chance for %@s.">
-        <source>Silence %1$@ with [%2$d]%% chance for %3$@s.</source>
-        <target>[%2$d]%% 几率沉默%1$@，持续 %3$@ 秒。</target>
+      <trans-unit id="Silence %@ with [%@]%% chance for [%@]s.">
+        <source>Silence %1$@ with [%2$@]%% chance for [%3$@]s.</source>
+        <target>[%2$@]%% 几率沉默%1$@，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Skill">
@@ -1135,14 +1135,14 @@
         <target>击晕</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for %@s.">
-        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for %7$@s.</source>
-        <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 %7$@ 秒。</target>
+      <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s.">
+        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
+        <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for %@s.">
-        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@] HP per second for %4$@s.</source>
-        <target>在%2$@位置展开一片半径为 %1$d 的治疗区域，每秒治疗其中的友方目标 [%3$@] HP，持续 %4$@ 秒。</target>
+      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for [%@]s.">
+        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@] HP per second for [%4$@]s.</source>
+        <target>在%2$@位置展开一片半径为 %1$d 的治疗区域，每秒治疗其中的友方目标 [%3$@] HP，持续 [%4$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a minion of ID: %d at the position of %@.">

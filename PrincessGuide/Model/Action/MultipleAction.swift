@@ -12,8 +12,7 @@ class MultipleAction: ActionParameter {
     
     override var actionValues: [ActionValue] {
         return [
-            ActionValue(key: .initialValue, value: String(actionValue2)),
-            ActionValue(key: .skillLevel, value: String(actionValue3))
+            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil)
         ]
     }
     

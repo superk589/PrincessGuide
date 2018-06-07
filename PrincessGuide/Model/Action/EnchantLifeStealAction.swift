@@ -12,14 +12,21 @@ class EnchantLifeStealAction: ActionParameter {
     
     override var actionValues: [ActionValue] {
         return [
-            ActionValue(key: .initialValue, value: String(actionValue2)),
-            ActionValue(key: .skillLevel, value: String(actionValue3))
+            ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil)
+        ]
+    }
+    
+    var stackValues: [ActionValue] {
+        return [
+            ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: nil)
         ]
     }
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("Add additional [%@] %@ to %@ for next attack within %@s.", comment: "")
-        return String(format: format, buildExpression(of: level, style: style, property: property), PropertyKey.lifeSteal.description, targetParameter.buildTargetClause(), actionValue1.description)
-        
+        // FIXME: need more info for the meaning of action values
+        return super.localizedDetail(of: level, property: property, style: style)
+//        let format = NSLocalizedString("Add additional [%@] %@ to %@ for next [%@] attacks.", comment: "")
+//        return String(format: format, buildExpression(of: level, style: style, property: property), PropertyKey.lifeSteal.description, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: stackValues, roundingRule: .down, style: style, property: property))
+
     }
 }

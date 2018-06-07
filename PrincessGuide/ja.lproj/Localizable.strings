@@ -1,5 +1,5 @@
 /* No comment provided by engineer. */
-"%@ %@ [%@]%@ %@ for %@s." = "%2$@に%5$@を[%3$@]%4$@%1$@、%6$@秒継続する。";
+"%@ %@ [%@]%@ %@ for [%@]s." = "%2$@に%5$@を[%3$@]%4$@%1$@、[%6$@]秒継続する。";
 
 /* [the farthest two] [enemy] [targets]
    [the second to fourth farthest] [enemy] [targets] */
@@ -10,10 +10,10 @@
 "%@ %@ %@ in range %d" = "%4$d範囲内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
-"%@ %@ and deal [%@] damage per second for %@s." = "%2$@に%1$@状態付与、毎秒[%3$@]のダメージを与える、%4$@秒継続する。";
+"%@ %@ and deal [%@] damage per second for [%@]s." = "%2$@に%1$@状態付与、毎秒[%3$@]のダメージを与える、[%4$@]秒継続する。";
 
 /* No comment provided by engineer. */
-"%@ %@ for %@s." = "%2$@に%1$@状態付与、%3$@秒継続する。";
+"%@ %@ for [%@]s." = "%2$@に%1$@状態付与、[%3$@]秒継続する。";
 
 /* [the nearest] [enemy] target
    [the second nearest] [enemy] target */
@@ -104,7 +104,7 @@
 "Action" = "行動";
 
 /* No comment provided by engineer. */
-"Add additional [%@] damage per attack with max %d stacks to current target." = "攻撃する度にダメージ[%1$@]増加、最大%2$@回まで累積する。";
+"Add additional [%@] damage per attack with max [%@] stacks to current target." = "攻撃する度にダメージ[%1$@]増加、最大[%2$@]回まで累積する。";
 
 /* target modifier */
 "all" = "全体";
@@ -146,6 +146,9 @@
 "Birthday" = "誕生日";
 
 /* No comment provided by engineer. */
+"Blind" = "暗闇";
+
+/* No comment provided by engineer. */
 "Blood Type" = "血液型";
 
 /* No comment provided by engineer. */
@@ -158,25 +161,25 @@
 "Cards" = "キャラクター";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to absorb [%@] magical damage for %@s." = "%1$@に[%2$@]ダメージ分の魔法吸収バリアを展開する、%3$@秒継続する。";
+"Cast a barrier on %@ to absorb [%@] magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の魔法吸収バリアを展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to absorb [%@] physical and magical damage for %@s." = "%1$@に[%2$@]ダメージ分の物理・魔法吸収バリアを展開する、%3$@秒継続する。";
+"Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理・魔法吸収バリアを展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to absorb [%@] physical damage for %@s." = "%1$@に[%2$@]ダメージ分の物理吸収バリアを展開する、%3$@秒継続する。";
+"Cast a barrier on %@ to absorb [%@] physical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理吸収バリアを展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] magical damage for %@s." = "%1$@に[%2$@]ダメージ分の魔法無効にするバリアを展開する、%3$@秒継続する。";
+"Cast a barrier on %@ to nullify [%@] magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の魔法無効にするバリアを展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical and magical damage for %@s." = "%1$@に[%2$@]ダメージ分の物理・魔法無効にするバリアを展開する、%3$@秒継続する。";
+"Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理・魔法無効にするバリアを展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical damage for %@s" = "%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、%3$@秒継続する。";
+"Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
-"Cast an unknown barrier %d on %@ for %@s." = "%2$@に未知バリア %1$d を展開する、%3$@秒継続する。";
+"Cast an unknown barrier %d on %@ for [%@]s." = "%2$@に未知バリア %1$d を展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
 "Cast Time" = "発動時間";
@@ -197,7 +200,7 @@
 "Charm" = "魅了";
 
 /* No comment provided by engineer. */
-"Charm %@ with [%d]%% chance for %@s." = "[%2$d]%%の確率で%1$@に魅了状態付与、%3$@秒継続する。";
+"Charm %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に魅了状態付与、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
 "Check for Updates at Launch" = "起動時に更新を確認";
@@ -228,9 +231,6 @@
 
 /* No comment provided by engineer. */
 "CV" = "CV";
-
-/* No comment provided by engineer. */
-"Blind" = "暗闇";
 
 /* No comment provided by engineer. */
 "Data Version" = "データバージョン";
@@ -410,7 +410,7 @@
 "Main %d" = "メイン %d";
 
 /* No comment provided by engineer. */
-"Make %@ fall asleep for %@s." = "%1$@を睡眠状態にする、%2$@秒継続する。";
+"Make %@ fall asleep for [%@]s." = "%1$@を睡眠状態にする、[%2$@]秒継続する。";
 
 /* No comment provided by engineer. */
 "Make %@ lose [%@] TP." = "%1$@のTPを[%2$@]失わせる。";
@@ -464,7 +464,7 @@
 "Poison" = "毒";
 
 /* No comment provided by engineer. */
-"Poison %@ and deal [%@] damage per second for %@s." = "%1$@に毒状態にして、[%2$@]のダメージを与える、%3$@秒継続する。";
+"Poison %@ and deal [%@] damage per second for [%@]s." = "%1$@に毒状態にして、[%2$@]のダメージを与える、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
 "Position" = "ボジション";
@@ -485,7 +485,7 @@
 "Raise [%@] %@." = "%2$@を[%1$@]アップ。";
 
 /* No comment provided by engineer. */
-"Raise %@ %d%% attack speed for %@s." = "%1$@の行動速度を%2$d%%アップ、%3$@秒継続する。";
+"Raise %@ %d%% attack speed for [%@]s." = "%1$@の行動速度を%2$d%%アップ、[%3$@]秒継続する。";
 
 /* target type */
 "random" = "ランダム";
@@ -503,10 +503,10 @@
 "Reduce" = "ダウン";
 
 /* No comment provided by engineer. */
-"Reduce %@ %d%% attack speed for %@s." = "%1$@の行動速度を%2$d%%ダウン、%3$@秒継続する。";
+"Reduce %@ %d%% attack speed for [%@]s." = "%1$@の行動速度を%2$d%%ダウン、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
-"Restore %@ [%@] HP per second for %@s." = "%1$@に毎秒HPを[%2$@]回復、%3$@秒継続する。";
+"Restore %@ [%@] HP per second for [%@]s." = "%1$@に毎秒HPを[%2$@]回復、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
 "Restore %@ [%@] TP." = "%1$@のTPを[%2$@]回復。";
@@ -534,6 +534,9 @@
 
 /* No comment provided by engineer. */
 "Silence" = "沈黙";
+
+/* No comment provided by engineer. */
+"Silence %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に沈黙状態付与、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
 "Skill" = "スキル";

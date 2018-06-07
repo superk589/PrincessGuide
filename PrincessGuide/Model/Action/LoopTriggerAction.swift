@@ -22,8 +22,7 @@ class LoopTriggerAction: ActionParameter {
     
     override var actionValues: [ActionValue] {
         return [
-            ActionValue(key: .initialValue, value: String(actionValue1)),
-            ActionValue(key: .skillLevel, value: String(actionValue2))
+            ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil)
         ]
     }
     
