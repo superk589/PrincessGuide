@@ -1109,9 +1109,9 @@
         <target>通常攻撃間隔</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Taunt all enemy targets for %@s.">
-        <source>Taunt all enemy targets for %@s.</source>
-        <target>敵全体を挑発する、%@秒継続する。</target>
+      <trans-unit id="Taunt all enemy targets for [%@]s.">
+        <source>Taunt all enemy targets for [%@]s.</source>
+        <target>敵全体を挑発する、[%@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="There aren't any Mail accounts">

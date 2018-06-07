@@ -1160,9 +1160,9 @@
         <target>普通攻击间隔</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Taunt all enemy targets for %@s.">
-        <source>Taunt all enemy targets for %@s.</source>
-        <target>嘲讽所有敌方单位，持续 %@ 秒。</target>
+      <trans-unit id="Taunt all enemy targets for [%@]s.">
+        <source>Taunt all enemy targets for [%@]s.</source>
+        <target>嘲讽所有敌方单位，持续 [%@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="There aren't any Mail accounts">

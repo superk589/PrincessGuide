@@ -767,7 +767,7 @@
 "targets of last effect or the %@ nearest" = "上一个效果或%@近的";
 
 /* No comment provided by engineer. */
-"Taunt all enemy targets for %@s." = "嘲讽所有敌方单位，持续 %@ 秒。";
+"Taunt all enemy targets for [%@]s." = "嘲讽所有敌方单位，持续 [%@] 秒。";
 
 /* target type */
 "the %@ farthest" = "%@远的";
