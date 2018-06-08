@@ -21,7 +21,7 @@ class PrincessGuideTests: XCTestCase {
         super.tearDown()
     }
     
-    func testProperty() {
+    func testPropertyCaculation() {
         var p1 = Property.zero
         p1 += Property.Item(key: .atk, value: 5)
         XCTAssert(p1.atk == 5)
@@ -31,6 +31,22 @@ class PrincessGuideTests: XCTestCase {
         p2 += Property.Item(key: .atk, value: 40)
         let p3 = p1 + p2
         XCTAssert(p3.atk == 65)
+    }
+    
+    func testSkillActionFormat() {
+        let cards = DispatchSemaphore.sync { (closure) in
+            Master.shared.getCards(callback: closure)
+        }
+        let details = cards?.flatMap {
+            $0.mainSkills.flatMap {
+                $0.actions.map {
+                    $0.parameter.localizedDetail(of: Constant.presetMaxPlayerLevel)
+                }
+            }
+        }
+        details?.forEach {
+            XCTAssert($0 != "")
+        }
     }
     
     func testPerformanceExample() {

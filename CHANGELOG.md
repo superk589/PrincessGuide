@@ -1,3 +1,10 @@
+# 1.0.5
+
+修复一部分技能描述错误。
+
+## English version
+Fix some mistakes in skill detail.
+
 # 1.0.4
 
 1. 增加卡片筛选、分组和搜索的功能。

@@ -22,13 +22,13 @@ class HealAction: ActionParameter {
         switch healClass {
         case .magical:
             return [
-                ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil),
-                ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: .magicStr)
+                ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: .magicStr),
+                ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil)
             ]
         case .physical:
             return [
-                ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil),
-                ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: .atk)
+                ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: .atk),
+                ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil)
             ]
         default:
             return []
