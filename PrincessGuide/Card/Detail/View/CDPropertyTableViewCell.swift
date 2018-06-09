@@ -12,12 +12,24 @@ typealias CDPropertyTableViewCell = CDProfileTableViewCell
 
 extension CDPropertyTableViewCell {
     
+    func configure(for items: [Property.Item], unitLevel: Int, targetLevel: Int) {
+        itemViews.forEach {
+            $0.removeFromSuperview()
+        }
+        itemViews.removeAll()
+        for item in items {
+            let itemView = ProfileItemView()
+            itemView.configure(for: item, unitLevel: unitLevel, targetLevel: targetLevel)
+            itemViews.append(itemView)
+            stackView.addArrangedSubview(itemView)
+        }
+    }
+    
     func configure(for items: [Property.Item]) {
         itemViews.forEach {
             $0.removeFromSuperview()
         }
         itemViews.removeAll()
-        
         for item in items {
             let itemView = ProfileItemView()
             itemView.configure(for: item)
@@ -25,5 +37,4 @@ extension CDPropertyTableViewCell {
             stackView.addArrangedSubview(itemView)
         }
     }
-    
 }

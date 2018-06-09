@@ -46,12 +46,22 @@ class ProfileItemView: UIView {
         contentLabel.text = item.value
     }
     
-    func configure(for item: Property.Item) {
+    func configure(for item: Property.Item, unitLevel: Int, targetLevel: Int) {
         titleLabel.text = item.key.description
-        if let percent = item.percent, percent != 0 {
-            contentLabel.text = String(format: "%d(%.2f%%)", Int(item.value), percent)
+        if let percent = item.percent(selfLevel: unitLevel, targetLevel: targetLevel), percent != 0 {
+            if item.hasLevelAssumption {
+                contentLabel.text = String(format: "%d(%.2f%%, %d to %d)", Int(item.value), percent, unitLevel, targetLevel)
+            } else {
+                contentLabel.text = String(format: "%d(%.2f%%)", Int(item.value), percent)
+            }
         } else {
             contentLabel.text = String(Int(item.value))
         }
     }
+    
+    func configure(for item: Property.Item) {
+        titleLabel.text = item.key.description
+        contentLabel.text = String(Int(item.value))
+    }
+    
 }

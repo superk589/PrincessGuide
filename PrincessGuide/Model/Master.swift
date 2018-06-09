@@ -767,6 +767,24 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getMaxEnemyLevel(callback: @escaping FMDBCallBackClosure<Int?>) {
+        var result: Int?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                max(level) max_enemy_level
+            FROM
+                enemy_parameter
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                result = Int(set.int(forColumn: "max_enemy_level"))
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
     func getCoefficient(callback: @escaping FMDBCallBackClosure<Coefficient?>) {
         var result: Coefficient?
         execute({ (db) in

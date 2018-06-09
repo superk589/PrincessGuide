@@ -13,17 +13,19 @@ class EDStatusTableViewController: EDTableViewController {
     override func prepareRows() {
         rows.removeAll()
         let property = enemy.base.property
+        let unitLevel = enemy.base.level
+        let targetLevel = CDSettingsViewController.Setting.default.unitLevel
         rows += [
             Row(type: EDBasicTableViewCell.self, data: .unit(enemy.unit)),
             Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Level", comment: ""), String(enemy.base.level))),
             Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .atk),
-                                                                          property.item(for: .magicStr)])),
+                                                                          property.item(for: .magicStr)], unitLevel, targetLevel)),
             Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .def),
-                                                                          property.item(for: .magicDef)])),
+                                                                          property.item(for: .magicDef)], unitLevel, targetLevel)),
             Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .hp),
-                                                                          property.item(for: .physicalCritical)])),
+                                                                          property.item(for: .physicalCritical)], unitLevel, targetLevel)),
             Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .dodge),
-                                                                          property.item(for: .magicCritical)]))
+                                                                          property.item(for: .magicCritical)], unitLevel, targetLevel))
         ]
         rows += [
             Row(type: CDProfileTextTableViewCell.self, data: .textArray([

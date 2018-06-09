@@ -19,11 +19,12 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             case pattern(AttackPattern, Card, Int?)
             case promotion(Card.Promotion)
             case profileItems([Card.Profile.Item])
-            case propertyItems([Property.Item])
+            case propertyItems([Property.Item], Int, Int)
             case comment(Card.Comment)
             case text(String, String)
             case textArray([(String, String)])
             case album(String, [URL], [URL])
+            case commentText(String)
         }
         var type: UITableViewCell.Type
         var data: Model

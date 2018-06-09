@@ -37,20 +37,27 @@ struct Property: Codable, Equatable {
     struct Item {
         var key: PropertyKey
         var value: Double
-        var percent: Double? {
+        
+        func percent(selfLevel: Int = CDSettingsViewController.Setting.default.unitLevel,
+                     targetLevel: Int = CDSettingsViewController.Setting.default.unitLevel) -> Double? {
             switch key {
             case .lifeSteal:
-                return value * ConsoleVariables.default.coefficient.value(for: key)
+                return 100 * value / (100 + Double(targetLevel) + value)
             case .dodge:
                 return 100 * value / (value + 100)
             case .physicalCritical, .magicCritical:
-                return value * 0.05
-//            case .dodge, .magicCritical, .physicalCritical, .lifeSteal:
-//                return value * ConsoleVariables.default.coefficient.value(for: key) / 10
-//            case .hpRecoveryRate:
-//                return value * ConsoleVariables.default.coefficient.value(for: key)
+                return value * 0.05 * Double(selfLevel) / Double(targetLevel)
             default:
                 return nil
+            }
+        }
+        
+        var hasLevelAssumption: Bool {
+            switch key {
+            case .physicalCritical, .magicCritical, .lifeSteal:
+                return true
+            default:
+                return false
             }
         }
     }

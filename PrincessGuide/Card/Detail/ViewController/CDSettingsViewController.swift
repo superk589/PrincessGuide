@@ -47,6 +47,7 @@ class CDSettingsViewController: FormViewController {
         var bondRank: Int
         var skillLevel: Int
         var unitRarity: Int
+        var targetLevel: Int
         var expressionStyle: ExpressionStyle = .short
         
         func save() {
@@ -80,6 +81,7 @@ class CDSettingsViewController: FormViewController {
             bondRank = Constant.presetMaxBondRank
             unitRank = ConsoleVariables.default.maxEquipmentRank
             unitRarity = Constant.presetMaxRarity
+            targetLevel = unitLevel
         }
     }
 
@@ -202,6 +204,22 @@ class CDSettingsViewController: FormViewController {
                 }
                 row.value = Setting.default.unitRarity
                 
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
+            <<< PickerInlineRow<Int>("target_level") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Target Level", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                let maxLevel = max(ConsoleVariables.default.maxEnemyLevel, ConsoleVariables.default.maxPlayerLevel)
+                for i in 0..<maxLevel {
+                    row.options.append(i + 1)
+                }
+                row.value = Setting.default.targetLevel
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))

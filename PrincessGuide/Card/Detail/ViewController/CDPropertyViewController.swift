@@ -23,23 +23,25 @@ class CDPropertyViewController: CDTableViewController {
         rows.removeAll()
         let settings = CDSettingsViewController.Setting.default
         let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity)
+        let unitLevel = settings.unitLevel
+        let targetLevel = settings.targetLevel
         rows += [
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .atk),
                 property.item(for: .magicStr)
-                ])),
+                ], unitLevel, targetLevel)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .def),
                 property.item(for: .magicDef)
-                ])),
+                ], unitLevel, targetLevel)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .hp),
                 property.item(for: .physicalCritical)
-                ])),
+                ], unitLevel, targetLevel)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .dodge),
                 property.item(for: .magicCritical)
-                ])),
+                ], unitLevel, targetLevel)),
             Row(type: CDProfileTextTableViewCell.self, data: .textArray(
                 [
                     (NSLocalizedString("Swing Time", comment: ""), String(card.base.normalAtkCastTime) + "s"),
@@ -50,27 +52,24 @@ class CDPropertyViewController: CDTableViewController {
             Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Magical HP", comment: ""), String(Int(property.effectiveMagicalHP.rounded())))),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .waveHpRecovery)
-                ])),
+                ], unitLevel, targetLevel)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .waveEnergyRecovery)
-                ])),
+                ], unitLevel, targetLevel)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .lifeSteal)
-                ])),
+                ], unitLevel, targetLevel)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .hpRecoveryRate)
-                ])),
+                ], unitLevel, targetLevel)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .energyRecoveryRate)
-                ])),
+                ], unitLevel, targetLevel)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .energyReduceRate)
-                ]))
+                ], unitLevel, targetLevel))
         ]
         
-        rows += [
-            
-        ]
     }
 
 }

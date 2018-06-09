@@ -1110,6 +1110,11 @@
         <target>通常攻撃間隔</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Target Level">
+        <source>Target Level</source>
+        <target>相手レベル</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Taunt all enemy targets for [%@]s.">
         <source>Taunt all enemy targets for [%@]s.</source>
         <target>敵全体を挑発する、[%@]秒継続する。</target>

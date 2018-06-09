@@ -26,6 +26,8 @@ class ConsoleVariables: Codable {
     
     var coefficient = Coefficient.default { didSet { save() } }
     
+    var maxEnemyLevel = Constant.presetMaxEnemyLevel { didSet { save() } }
+    
     func save() {
         try? JSONEncoder().encode(self).write(to: ConsoleVariables.url)
     }
@@ -51,7 +53,12 @@ class ConsoleVariables: Codable {
             }
         }
         
-//        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+            Master.shared.getMaxEnemyLevel(callback: { (level) in
+                self?.maxEnemyLevel = level ?? Constant.presetMaxEnemyLevel
+            })
+        }
+        //        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
 //            Master.shared.getCoefficient(callback: { (coefficient) in
 //                self?.coefficient = coefficient ?? Coefficient.default
 //            })

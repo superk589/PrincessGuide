@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         VersionManager.shared.executeDocumentReset { (lastVersion) in
             do {
-                if lastVersion < 1 {
+                if lastVersion < 2 {
                     try FileManager.default.removeItem(at: ConsoleVariables.url)
                 }
             } catch (let error) {

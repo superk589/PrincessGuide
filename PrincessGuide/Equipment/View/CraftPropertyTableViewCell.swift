@@ -10,7 +10,7 @@ import UIKit
 
 typealias CraftPropertyTableViewCell = CDProfileTableViewCell
 
-extension CDProfileTableViewCell: CraftDetailConfigurable {
+extension CraftPropertyTableViewCell: CraftDetailConfigurable {
     
     func configure(for item: CraftDetailItem) {
         guard case .properties(let properties) = item else {

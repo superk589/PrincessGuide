@@ -19,7 +19,7 @@ class EDTableViewController: UITableViewController {
             case unit(Enemy.Unit)
             case profile(Enemy.Unit)
             case pattern(AttackPattern, Enemy, Int?)
-            case propertyItems([Property.Item])
+            case propertyItems([Property.Item], Int, Int)
             case text(String, String)
             case textArray([(String, String)])
         }

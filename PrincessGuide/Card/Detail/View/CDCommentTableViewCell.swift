@@ -40,14 +40,19 @@ class CDCommentTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
     func configure(for item: CardDetailItem) {
-        guard case .comment(let comment) = item else {
-            fatalError()
+        if case .comment(let comment) = item {
+            configure(for: comment)
+        } else if case .commentText(let text) = item {
+            configure(for: text)
         }
-        configure(for: comment)
     }
     
     func configure(for comment: Card.Comment) {
         commentLabel.text = comment.description.replacingOccurrences(of: "\\n", with: "\n")
+    }
+    
+    func configure(for text: String) {
+        commentLabel.text = text
     }
     
 }
