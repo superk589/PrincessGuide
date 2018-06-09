@@ -1,9 +1,13 @@
 # 1.0.5
 
-修复一部分技能描述错误。
+1. 修复一部分技能描述错误。
+2. 更新暴击等级和 HP 吸收的公式。
+3. 角色详情的设置页面中可以设定目标等级（用于计算暴击和 HP 吸收的百分比数值）。
 
 ## English version
-Fix some mistakes in skill detail.
+1. Fix some mistakes in skill detail.
+2. Update formula of critical and life steal percent.
+3. You can set target level in chara detail settings(used for calculating critical and life steal percent).
 
 # 1.0.4
 
