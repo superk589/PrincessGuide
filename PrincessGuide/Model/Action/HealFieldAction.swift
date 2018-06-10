@@ -11,7 +11,7 @@ import Foundation
 class HealFieldAction: ActionParameter {
     
     var healClass: ClassModifier {
-        return ClassModifier(rawValue: actionDetail1) ?? .unknown
+        return actionDetail1 % 2 == 0 ? .magical : .physical
     }
     
     override var actionValues: [ActionValue] {

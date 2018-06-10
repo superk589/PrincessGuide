@@ -109,14 +109,14 @@ class ActionParameter {
         }
     }
     
-    var isHealingAction: Bool {
-        switch rawActionType {
-        case 4, 37, 48:
-            return true
-        default:
-            return false
-        }
-    }
+//    var isHealingAction: Bool {
+//        switch rawActionType {
+//        case 4, 37, 48:
+//            return true
+//        default:
+//            return false
+//        }
+//    }
    
     let targetParameter: TargetParameter
     let actionType: ActionType
@@ -197,7 +197,8 @@ class ActionParameter {
                          actionValues: [ActionValue]? = nil,
                          roundingRule: FloatingPointRoundingRule? = .down,
                          style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle,
-                         property: Property = .zero) -> String {
+                         property: Property = .zero,
+                         isHealing: Bool = false) -> String {
 
         switch style {
         case .short:
@@ -306,7 +307,7 @@ class ActionParameter {
                 fixedValue += part
             }
             
-            if isHealingAction {
+            if isHealing {
                 fixedValue *= (property.hpRecoveryRate / 100 + 1)
             }
             
