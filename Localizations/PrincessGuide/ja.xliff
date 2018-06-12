@@ -469,6 +469,11 @@
         <target>クランバトル %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Combat Effectiveness">
+        <source>Combat Effectiveness</source>
+        <target>戦力</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Comic">
         <source>Comic</source>
         <target>ロード画面</target>

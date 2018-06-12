@@ -23,9 +23,11 @@ class CDPropertyViewController: CDTableViewController {
         rows.removeAll()
         let settings = CDSettingsViewController.Setting.default
         let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity)
+        let combatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel)
         let unitLevel = settings.unitLevel
         let targetLevel = settings.targetLevel
         rows += [
+            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Combat Effectiveness", comment: ""), String(combatEffectiveness))),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .atk),
                 property.item(for: .magicStr)

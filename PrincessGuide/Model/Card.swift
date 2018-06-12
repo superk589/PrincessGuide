@@ -385,6 +385,37 @@ extension Card {
         return property.rounded()
     }
     
+    func combatEffectiveness(unitLevel: Int = ConsoleVariables.default.maxPlayerLevel,
+                             unitRank: Int = ConsoleVariables.default.maxEquipmentRank,
+                             bondRank: Int = Constant.presetMaxBondRank,
+                             unitRarity: Int = Constant.presetMaxRarity,
+                             skillLevel: Int = ConsoleVariables.default.maxPlayerLevel) -> Int {
+        
+        let property = self.property(unitLevel: unitLevel, unitRank: unitRank, bondRank: bondRank, unitRarity: unitRarity, addsEx: false)
+        
+        var result = 0.0
+        
+        let coefficient = ConsoleVariables.default.coefficient
+        
+        PropertyKey.all.forEach {
+            result += property.item(for: $0).value * coefficient.value(for: $0)
+        }
+        
+        result += Double(mainSkills.count * skillLevel) * coefficient.skillLvCoefficient
+        
+        if unionBurst != nil {
+            result += Double(skillLevel) * coefficient.skillLvCoefficient
+        }
+        
+        if bondRank >= 7 {
+            if unitRarity >= 5 {
+                result += Double(exSkillEvolutions.count) * coefficient.exskillEvolutionCoefficient * coefficient.skillLvCoefficient
+            }
+            result += Double(exSkills.count * skillLevel) * coefficient.skillLvCoefficient
+        }
+    
+        return Int(result.rounded())
+    }
 }
 
 extension Card {
