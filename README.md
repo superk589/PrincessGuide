@@ -6,17 +6,31 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
 **Hatsune's Notes** is the app name and **PrincessGuide** is the project name.  
 
 ## Features
-1. Chara Skill Effect Analysis
-1. Unit Attack Patterns
-1. Chara Status
-1. Chara Profile
-1. Equipments Drop Rate
-1. Enemy and Boss Status
-1. Enemy and Boss Skill Effect Analysis
-1. Auto Data Updating
+
+1. Chara
+    * Skill Effect
+    * Attack Pattern
+    * Status
+    * Profile
+    * Equipment
+    * Image Viewer
+1. Equipment
+    * Drop Rate
+    * Status
+    * Raw Material
+1. Quest
+    * Normal
+    * Hard
+    * Clan Battle
+    * Story Event
+ 1. Enemy and Boss   
+    * Status
+    * Skill Effect
+    * Attack Pattern 
+1. Game Data Auto Updating
 
 ## How to localize
-By now, **Hatsune's Notes** provides Chinese and English localization fully, and Japanese partically.  
+By now, **Hatsune's Notes** provides Chinese and English localization fully, and Japanese partially.  
 If you want to localize the app, please goto `./Localizations/PrincessGuide/` and edit the .xliff files.  
 If you want to add a new language please tell me.  
 For developers only, if you have macOS and Xcode, please read `./Localizations/README.md` and use those scripts to export or import localization.
