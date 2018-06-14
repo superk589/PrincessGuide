@@ -626,6 +626,30 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getDungeons(callback: @escaping FMDBCallBackClosure<[Dungeon]>) {
+        var dungeons = [Dungeon]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                dungeon_area_id,
+                wave_group_id,
+                dungeon_name
+            FROM
+                dungeon_area_data
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let dungeon = try decoder.decode(Dungeon.self, from: json.rawData())
+                dungeons.append(dungeon)
+            }
+        }) {
+            callback(dungeons)
+        }
+    }
+    
     func getEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Enemy]>) {
         var enemies = [Enemy]()
         execute({ (db) in

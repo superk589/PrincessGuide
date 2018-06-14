@@ -635,6 +635,10 @@
         <target>掉落</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Dungeon">
+        <source>Dungeon</source>
+        <note>No comment provided by engineer.</note>
+      <target>地下城</target></trans-unit>
       <trans-unit id="EX">
         <source>EX</source>
         <target>EX</target>
@@ -1065,6 +1069,10 @@
         <target>SP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Scout and change the perspective on %@.">
+        <source>Scout and change the perspective on %@.</source>
+        <note>No comment provided by engineer.</note>
+      <target>搜寻并将自身视角切换到%@。</target></trans-unit>
       <trans-unit id="Settings">
         <source>Settings</source>
         <target>设置</target>

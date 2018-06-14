@@ -225,6 +225,9 @@ class CardTableViewController: UITableViewController, DataChecking {
         case .weight:
             mode = .text
             text = card.profile.weight
+        case .combatEffectiveness:
+            mode = .text
+            text = String(card.combatEffectiveness())
         }
         return (mode, text)
     }
@@ -303,6 +306,8 @@ extension Array where Element == Card {
             sortingMethod = { Int($0.profile.weight) ?? .max < Int($1.profile.weight) ?? .max }
         case .age:
             sortingMethod = { Int($0.profile.age) ?? .max < Int($1.profile.age) ?? .max }
+        case .combatEffectiveness:
+            sortingMethod = { $0.combatEffectiveness() < $1.combatEffectiveness() }
         }
         
         for index in sections.indices {

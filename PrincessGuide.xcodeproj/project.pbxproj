@@ -60,6 +60,7 @@
 		12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9E2092D174006AC352 /* DeviceInfo.swift */; };
 		12398EA12092D78C006AC352 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA02092D78C006AC352 /* Updater.swift */; };
 		12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA22092F7D4006AC352 /* StringExtension.swift */; };
+		124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124EA0A120D26CA500F46029 /* Dungeon.swift */; };
 		1250190820AF0DBC00D2FBDC /* Still.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1250190720AF0DBC00D2FBDC /* Still.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
@@ -116,6 +117,7 @@
 		12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */; };
 		12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */; };
 		12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */; };
+		12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */; };
 		12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */; };
 		12F125B120AEC069005C9659 /* CDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* CDImageView.swift */; };
 		12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */; };
@@ -244,6 +246,7 @@
 		12398E9E2092D174006AC352 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		12398EA02092D78C006AC352 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		12398EA22092F7D4006AC352 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		124EA0A120D26CA500F46029 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
 		1250190720AF0DBC00D2FBDC /* Still.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Still.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -309,6 +312,7 @@
 		12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPropertyTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDPatternTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewCell.swift; sourceTree = "<group>"; };
+		12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonBossTableViewController.swift; sourceTree = "<group>"; };
 		12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewCell.swift; sourceTree = "<group>"; };
 		12F125B020AEC069005C9659 /* CDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageView.swift; sourceTree = "<group>"; };
 		12F125B220AECD1B005C9659 /* CDImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +429,7 @@
 				129A7F8620A2EE7E00D93996 /* Enemy.swift */,
 				1280DE4020A5CEB2008D9D72 /* ClanBattle.swift */,
 				1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */,
+				124EA0A120D26CA500F46029 /* Dungeon.swift */,
 				1226532220AD626700BB3E56 /* Resist.swift */,
 			);
 			path = Model;
@@ -533,6 +538,7 @@
 				126DECF1209EDC0E004EC56A /* QuestAreaTabViewController.swift */,
 				1280DE4420A5DED5008D9D72 /* ClanBattleTableViewController.swift */,
 				1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */,
+				12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1156,8 +1162,10 @@
 				12F125D420B90E1F005C9659 /* TargetParameter.swift in Sources */,
 				12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */,
 				12F1261120B95498005C9659 /* EnchantStrikeBackAction.swift in Sources */,
+				124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */,
 				1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
+				12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */,
 				12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */,
 				12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */,
 			);

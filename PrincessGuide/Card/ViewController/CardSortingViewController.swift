@@ -62,6 +62,7 @@ class CardSortingViewController: FormViewController {
             case rarity
             case effectivePhysicalHP
             case effectiveMagicalHP
+            case combatEffectiveness
             case swingTime
             case attackRange
             
@@ -98,10 +99,12 @@ class CardSortingViewController: FormViewController {
                     return Card.Profile.ItemKey.height.description
                 case .weight:
                     return Card.Profile.ItemKey.weight.description
+                case .combatEffectiveness:
+                    return NSLocalizedString("Combat Effectiveness", comment: "")
                 }
             }
             
-            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .swingTime, .attackRange, .id, .name, .age, .height, .weight]
+            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .combatEffectiveness, .swingTime, .attackRange, .id, .name, .age, .height, .weight]
         }
         
         var isAscending: Bool = true

@@ -1,3 +1,14 @@
+# 1.0.6
+
+1. 修复一部分技能描述错误。
+2. 增加地下城（塔） Boss 信息。
+3. 新增角色战力信息及排序。
+
+## English version
+1. Fix some mistakes in skill detail.
+2. Add dungeon boss information.
+3. Add chara's combat effectiveness value and sorting by this value.
+
 # 1.0.5
 
 1. 修复一部分技能描述错误。

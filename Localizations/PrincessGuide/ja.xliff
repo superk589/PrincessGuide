@@ -606,6 +606,10 @@
         <target>ドロップ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Dungeon">
+        <source>Dungeon</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="EX">
         <source>EX</source>
         <target>EX</target>
@@ -1020,6 +1024,10 @@
       <trans-unit id="SP">
         <source>SP</source>
         <target>SP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Scout and change the perspective on %@.">
+        <source>Scout and change the perspective on %@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Settings">

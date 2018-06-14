@@ -1,17 +1,17 @@
 //
-//  HatsuneEventAreaTableViewController.swift
+//  DungeonBossTableViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/5/17.
+//  Created by zzk on 2018/6/14.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 import Gestalt
 
-class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
+class DungeonBossTableViewController: UITableViewController, DataChecking {
     
-    private var areas = [HatsuneEventArea]()
+    private var dungeons = [Dungeon]()
     
     let refresher = RefreshHeader()
     
@@ -52,10 +52,10 @@ class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
     private func loadData() {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getHatsuneEventAreas { (areas) in
+            Master.shared.getDungeons { (dungeons) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
-                    self?.areas = areas.sorted { ($0.base.startTime, $0.base.areaId) > ($1.base.startTime, $1.base.areaId) }
+                    self?.dungeons = dungeons.sorted { $0.dungeonAreaId > $1.dungeonAreaId }
                     self?.tableView.reloadData()
                 }
             }
@@ -67,19 +67,33 @@ class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return areas.count
+        return dungeons.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
-        let area = areas[indexPath.row]
-        cell.configure(for: "\(area.wave?.enemies.first?.enemy?.unit.unitName ?? "") \(area.areaType)", subtitle: area.base.title)
+        let dungeon = dungeons[indexPath.row]
+        cell.configure(for: "\(dungeon.wave?.enemies.first?.enemy?.unit.unitName ?? "")", subtitle: dungeon.dungeonName)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let area = areas[indexPath.row]
-        if let enemy = area.wave?.enemies.first?.enemy {
+        let dungeon = dungeons[indexPath.row]
+        
+        /* debug */
+        /*
+        let enemy = DispatchSemaphore.sync { (closure) in
+            Master.shared.getEnemies(enemyID: 501010401, callback: closure)
+        }?.first
+        if let enemy = enemy {
+            let vc = EDTabViewController(enemy: enemy)
+            vc.hidesBottomBarWhenPushed = true
+            vc.navigationItem.title = enemy.unit.unitName
+            navigationController?.pushViewController(vc, animated: true)
+        }
+         */
+        
+        if let enemy = dungeon.wave?.enemies.first?.enemy {
             let vc = EDTabViewController(enemy: enemy)
             vc.hidesBottomBarWhenPushed = true
             vc.navigationItem.title = enemy.unit.unitName

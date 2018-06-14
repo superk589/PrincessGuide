@@ -362,6 +362,9 @@
 "Drops" = "掉落";
 
 /* No comment provided by engineer. */
+"Dungeon" = "地下城";
+
+/* No comment provided by engineer. */
 "Effective Magical HP" = "魔法有效 HP";
 
 /* No comment provided by engineer. */
@@ -678,6 +681,9 @@
 
 /* No comment provided by engineer. */
 "Round %d" = "第 %d 周目";
+
+/* No comment provided by engineer. */
+"Scout and change the perspective on %@." = "搜寻并将自身视角切换到%@。";
 
 /* No comment provided by engineer. */
 "second" = "第二";
