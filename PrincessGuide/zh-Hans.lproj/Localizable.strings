@@ -95,7 +95,7 @@
 "%@ random" = "%@随机";
 
 /* No comment provided by engineer. */
-"%@ random(once)" = "%@随机（仅一次）";
+"%@ random(once)" = "%@随机（仅第一次）";
 
 /* [enemy] targets in range [500] */
 "%@ targets in range %d" = "范围 %2$d 内%1$@目标";
