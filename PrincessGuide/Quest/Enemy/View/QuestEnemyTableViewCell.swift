@@ -20,7 +20,7 @@ class QuestEnemyTableViewCell: UITableViewCell {
     
     let collectionView = TTGTagCollectionView()
     
-    var tagViews = NSCache<NSNumber, EnemyView>()
+    var tagViews = [Int: EnemyView]()
     
     weak var delegate: QuestEnemyTableViewCellDelegate?
     
@@ -79,11 +79,11 @@ class QuestEnemyTableViewCell: UITableViewCell {
 extension QuestEnemyTableViewCell: TTGTagCollectionViewDelegate, TTGTagCollectionViewDataSource {
     
     private func dequeueTagView(for index: Int) -> UIView {
-        if let view = tagViews.object(forKey: NSNumber(value: index)) {
+        if let view = tagViews[index] {
             return view
         } else {
             let view = EnemyView()
-            tagViews.setObject(view, forKey: NSNumber(value: index))
+            tagViews[index] = view
             return view
         }
     }

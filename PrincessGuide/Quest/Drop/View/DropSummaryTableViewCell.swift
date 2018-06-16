@@ -18,7 +18,7 @@ class DropSummaryTableViewCell: UITableViewCell {
 
     let collectionView = TTGTagCollectionView()
     
-    var tagViews = NSCache<NSNumber, DropRewardView>()
+    var tagViews = [Int: DropRewardView]()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -94,11 +94,11 @@ class DropSummaryTableViewCell: UITableViewCell {
 extension DropSummaryTableViewCell: TTGTagCollectionViewDelegate, TTGTagCollectionViewDataSource {
     
     private func dequeueTagView(for index: Int) -> UIView {
-        if let view = tagViews.object(forKey: NSNumber(value: index)) {
+        if let view = tagViews[index] {
             return view
         } else {
             let view = DropRewardView()
-            tagViews.setObject(view, forKey: NSNumber(value: index))
+            tagViews[index] = view
             return view
         }
     }
