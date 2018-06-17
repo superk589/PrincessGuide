@@ -29,8 +29,14 @@ class KnockAction: ActionParameter {
             let format = NSLocalizedString("Knock %@ up %d.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), Int(actionValue1))
         case .back:
-            let format = NSLocalizedString("Knock %@ away %d.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), Int(actionValue1))
+            let format: String
+            if actionValue1 >= 0 {
+                format = NSLocalizedString("Knock %@ away %d.", comment: "")
+                return String(format: format, targetParameter.buildTargetClause(), Int(actionValue1))
+            } else {
+                format = NSLocalizedString("Draw %@ toward self %d.", comment: "")
+                return String(format: format, targetParameter.buildTargetClause(), Int(-actionValue1))
+            }
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }

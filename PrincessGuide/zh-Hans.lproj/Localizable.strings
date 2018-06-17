@@ -356,6 +356,9 @@
 "Dot" = "Dot";
 
 /* No comment provided by engineer. */
+"Draw %@ toward self %d." = "拉近%1$@，距离 %2$d。";
+
+/* No comment provided by engineer. */
 "Dropped" = "掉落";
 
 /* No comment provided by engineer. */

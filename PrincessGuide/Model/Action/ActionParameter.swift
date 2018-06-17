@@ -193,12 +193,22 @@ class ActionParameter {
         return []
     }
     
+    private func bracesIfNeeded(content: String) -> String {
+        if content.contains("+") {
+            return "(\(content))"
+        } else {
+            return content
+        }
+    }
+    
     func buildExpression(of level: Int,
                          actionValues: [ActionValue]? = nil,
                          roundingRule: FloatingPointRoundingRule? = .down,
                          style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle,
                          property: Property = .zero,
-                         isHealing: Bool = false) -> String {
+                         isHealing: Bool = false,
+                         isSelfTPRestoring: Bool = false,
+                         hasBracesIfNeeded: Bool = false) -> String {
 
         switch style {
         case .short:
@@ -236,7 +246,7 @@ class ActionParameter {
             if expression == "" {
                 return "0"
             } else {
-                return expression
+                return hasBracesIfNeeded ? bracesIfNeeded(content: expression) : expression
             }
         case .full:
             
@@ -272,7 +282,7 @@ class ActionParameter {
             if expression == "" {
                 return "0"
             } else {
-                return expression
+                return hasBracesIfNeeded ? bracesIfNeeded(content: expression) : expression
             }
             
         case .valueOnly:
@@ -309,6 +319,10 @@ class ActionParameter {
             
             if isHealing {
                 fixedValue *= (property.hpRecoveryRate / 100 + 1)
+            }
+            
+            if isSelfTPRestoring {
+                fixedValue *= (property.energyRecoveryRate / 100 + 1)
             }
             
             return fixedValue.roundedValueString(roundingRule)

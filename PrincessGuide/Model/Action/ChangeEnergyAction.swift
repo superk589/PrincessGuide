@@ -21,7 +21,11 @@ class ChangeEnergyAction: ActionParameter {
         switch actionDetail1 {
         case 1:
             let format = NSLocalizedString("Restore %@ [%@] TP.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property))
+            if targetParameter.targetType == .`self` {
+                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property, isSelfTPRestoring: true))
+            } else {
+                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property))
+            }
         default:
             let format = NSLocalizedString("Make %@ lose [%@] TP.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property))
