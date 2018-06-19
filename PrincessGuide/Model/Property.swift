@@ -44,7 +44,11 @@ struct Property: Codable, Equatable {
             case .lifeSteal:
                 return 100 * value / (100 + Double(targetLevel) + value)
             case .dodge:
-                return 100 * value / (value + 100)
+                return 100 * value / (100 + value)
+            case .magicDef:
+                return 100 * value / (100 + value)
+            case .def:
+                return 100 * value / (100 + value) 
             case .physicalCritical, .magicCritical:
                 return value * 0.05 * Double(selfLevel) / Double(targetLevel)
             default:
