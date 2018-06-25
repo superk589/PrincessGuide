@@ -49,6 +49,7 @@ class CDSettingsViewController: FormViewController {
         var unitRarity: Int
         var targetLevel: Int
         var expressionStyle: ExpressionStyle = .short
+        var addsEx: Bool
         
         func save() {
             let encoder = JSONEncoder()
@@ -82,6 +83,7 @@ class CDSettingsViewController: FormViewController {
             unitRank = ConsoleVariables.default.maxEquipmentRank
             unitRarity = Constant.presetMaxRarity
             targetLevel = unitLevel
+            addsEx = true
         }
     }
 
@@ -255,6 +257,24 @@ class CDSettingsViewController: FormViewController {
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+        
+            +++ Section(NSLocalizedString("Status", comment: ""))
+            
+            <<< SwitchRow("adds_ex") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Adds Ex Bonus", comment: "")
+                
+                row.value = Setting.default.addsEx
+                
+                }.cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                        themeable.switchControl.onTintColor = theme.color.tint
+                    }
+                }.cellUpdate(cellUpdate(cell:row:))
 
     }
     

@@ -285,6 +285,11 @@
         <target>对当前目标的每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 [%2$@] 层。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Adds Ex Bonus">
+        <source>Adds Ex Bonus</source>
+        <target>计算 EX 技能加成</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Age">
         <source>Age</source>
         <target>年龄</target>

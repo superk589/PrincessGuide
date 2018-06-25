@@ -276,6 +276,10 @@
         <target>攻撃する度にダメージ[%1$@]増加、最大[%2$@]回まで累積する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Adds Ex Bonus">
+        <source>Adds Ex Bonus</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Age">
         <source>Age</source>
         <note>No comment provided by engineer.</note>

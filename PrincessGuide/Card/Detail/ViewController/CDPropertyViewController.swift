@@ -22,7 +22,7 @@ class CDPropertyViewController: CDTableViewController {
     override func prepareRows(for card: Card) {
         rows.removeAll()
         let settings = CDSettingsViewController.Setting.default
-        let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity)
+        let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx)
         let combatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel)
         let unitLevel = settings.unitLevel
         let targetLevel = settings.targetLevel

@@ -352,7 +352,7 @@ extension Card {
                   unitRank: Int = ConsoleVariables.default.maxEquipmentRank,
                   bondRank: Int = Constant.presetMaxBondRank,
                   unitRarity: Int = Constant.presetMaxRarity,
-                  addsEx: Bool = false) -> Property {
+                  addsEx: Bool = true) -> Property {
         var property = Property()
         let storyPropertyItems = charaStorys?.filter { $0.storyID % 1000 <= bondRank }.flatMap { $0.status.map { $0.property() } } ?? []
         for item in storyPropertyItems {

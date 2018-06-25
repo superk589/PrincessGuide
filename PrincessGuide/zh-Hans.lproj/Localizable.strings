@@ -137,6 +137,9 @@
 "Add additional [%@] damage per attack with max [%@] stacks to current target." = "对当前目标的每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 [%2$@] 层。";
 
 /* No comment provided by engineer. */
+"Adds Ex Bonus" = "计算 EX 技能加成";
+
+/* No comment provided by engineer. */
 "Age" = "年龄";
 
 /* target modifier */
