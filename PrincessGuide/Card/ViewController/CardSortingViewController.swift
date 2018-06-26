@@ -105,6 +105,7 @@ class CardSortingViewController: FormViewController {
             }
             
             static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .combatEffectiveness, .swingTime, .attackRange, .id, .name, .age, .height, .weight]
+            
         }
         
         var isAscending: Bool = true
@@ -112,6 +113,8 @@ class CardSortingViewController: FormViewController {
         var sortingMethod: SortingMethod = .name
         
         var groupingMethod: GroupingMethod = .none
+        
+        var addsEx: Bool = true
         
         func save() {
             let encoder = JSONEncoder()
@@ -246,6 +249,22 @@ class CardSortingViewController: FormViewController {
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
+            <<< SwitchRow("adds_ex") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Adds Ex Bonus", comment: "")
+                
+                row.value = Setting.default.addsEx
+                
+                }.cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                        themeable.switchControl.onTintColor = theme.color.tint
+                    }
+                }.cellUpdate(cellUpdate(cell:row:))
         
     }
     

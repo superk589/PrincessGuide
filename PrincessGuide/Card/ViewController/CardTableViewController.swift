@@ -42,7 +42,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFilterChange(_:)), name: .cardSortingSettingsDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFilterChange(_:)), name: .cardDetailSettingsDidChange, object: nil)
+        
         tableView.mj_header = refresher
         refresher.refreshingBlock = { [weak self] in self?.check() }
         
