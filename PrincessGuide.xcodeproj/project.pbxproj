@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120F9B4820E4DA4E003632CA /* ToolboxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4720E4DA4E003632CA /* ToolboxTableViewController.swift */; };
+		120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */; };
+		120F9B4F20E4DC84003632CA /* BoxManagerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4E20E4DC84003632CA /* BoxManagerTableViewController.swift */; };
+		120F9B5320E4DE40003632CA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B5220E4DE40003632CA /* Box.swift */; };
+		120F9B5720E4DEE9003632CA /* PrincessGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B5520E4DEE9003632CA /* PrincessGuide.xcdatamodeld */; };
 		12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */; };
 		12124F462089C9E1001C1A6F /* PropertyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F452089C9E1001C1A6F /* PropertyKey.swift */; };
 		12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4D208EC1A4001C1A6F /* Ailment.swift */; };
@@ -190,6 +195,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120F9B4720E4DA4E003632CA /* ToolboxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxTableViewController.swift; sourceTree = "<group>"; };
+		120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxTableViewCell.swift; sourceTree = "<group>"; };
+		120F9B4E20E4DC84003632CA /* BoxManagerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxManagerTableViewController.swift; sourceTree = "<group>"; };
+		120F9B5220E4DE40003632CA /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		120F9B5620E4DEE9003632CA /* PrincessGuide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrincessGuide.xcdatamodel; sourceTree = "<group>"; };
 		12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSkillTableViewCell.swift; sourceTree = "<group>"; };
 		12124F452089C9E1001C1A6F /* PropertyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKey.swift; sourceTree = "<group>"; };
 		12124F4D208EC1A4001C1A6F /* Ailment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ailment.swift; sourceTree = "<group>"; };
@@ -405,6 +415,57 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		120F9B4920E4DA54003632CA /* Toolbox */ = {
+			isa = PBXGroup;
+			children = (
+				120F9B5020E4DC8F003632CA /* BoxManager */,
+				120F9B4A20E4DA68003632CA /* ViewController */,
+				120F9B4D20E4DA9B003632CA /* View */,
+			);
+			path = Toolbox;
+			sourceTree = "<group>";
+		};
+		120F9B4A20E4DA68003632CA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				120F9B4720E4DA4E003632CA /* ToolboxTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		120F9B4D20E4DA9B003632CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		120F9B5020E4DC8F003632CA /* BoxManager */ = {
+			isa = PBXGroup;
+			children = (
+				120F9B5120E4DCA0003632CA /* ViewController */,
+				120F9B5420E4DE44003632CA /* Model */,
+			);
+			path = BoxManager;
+			sourceTree = "<group>";
+		};
+		120F9B5120E4DCA0003632CA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				120F9B4E20E4DC84003632CA /* BoxManagerTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		120F9B5420E4DE44003632CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				120F9B5220E4DE40003632CA /* Box.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1221CDBA207B9310008F30AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,8 +652,10 @@
 				1221CDC3207B96FF008F30AA /* Card */,
 				12398E7D209158EA006AC352 /* Quest */,
 				12F7500220921D8200E11CC8 /* Equipment */,
+				120F9B4920E4DA54003632CA /* Toolbox */,
 				12398E9220917ECA006AC352 /* Settings */,
 				12659E05205F5DB100A8B9A2 /* AppDelegate.swift */,
+				120F9B5520E4DEE9003632CA /* PrincessGuide.xcdatamodeld */,
 				12659E09205F5DB100A8B9A2 /* Main.storyboard */,
 				12C44140209C92AF00016BDC /* LaunchScreen.storyboard */,
 				1221CDBF207B9541008F30AA /* Assets.xcassets */,
@@ -1021,6 +1084,7 @@
 				129A7F5E20A0364300D93996 /* CDProfileTextTableViewCell.swift in Sources */,
 				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
 				12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */,
+				120F9B5320E4DE40003632CA /* Box.swift in Sources */,
 				12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
 				12F1261320B954C1005C9659 /* AccumulativeDamageAction.swift in Sources */,
@@ -1034,6 +1098,7 @@
 				129A7F6220A0465800D93996 /* CharaStory.swift in Sources */,
 				12F1260320B9536C005C9659 /* AddtivieAction.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
+				120F9B4F20E4DC84003632CA /* BoxManagerTableViewController.swift in Sources */,
 				12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
 				126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */,
@@ -1098,8 +1163,10 @@
 				1280DE3D20A5B673008D9D72 /* EDProfileTextTableViewCell.swift in Sources */,
 				12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */,
 				1280DE4520A5DED5008D9D72 /* ClanBattleTableViewController.swift in Sources */,
+				120F9B5720E4DEE9003632CA /* PrincessGuide.xcdatamodeld in Sources */,
 				12398E8B20917554006AC352 /* DropSummaryTableViewController.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
+				120F9B4820E4DA4E003632CA /* ToolboxTableViewController.swift in Sources */,
 				12F1263B20BC23F5005C9659 /* SearchableCardTableViewController.swift in Sources */,
 				12D3D13D20A586A500034DD6 /* EDTableViewController.swift in Sources */,
 				12F1260B20B953DD005C9659 /* DestroyAction.swift in Sources */,
@@ -1148,6 +1215,7 @@
 				12F125E320B93219005C9659 /* BarrierAction.swift in Sources */,
 				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
+				120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
@@ -1291,7 +1359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1345,7 +1413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1362,7 +1430,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1382,7 +1450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1459,6 +1527,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		120F9B5520E4DEE9003632CA /* PrincessGuide.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				120F9B5620E4DEE9003632CA /* PrincessGuide.xcdatamodel */,
+			);
+			currentVersion = 120F9B5620E4DEE9003632CA /* PrincessGuide.xcdatamodel */;
+			path = PrincessGuide.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 12659DFA205F5DB100A8B9A2 /* Project object */;
 }
