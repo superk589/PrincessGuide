@@ -45,11 +45,13 @@ class HatsuneEventTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(icon.snp.right).offset(10)
             make.centerY.equalToSuperview()
+            make.right.lessThanOrEqualTo(readableContentGuide)
         }
         contentView.addSubview(subtitleLabel)
         subtitleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(icon.snp.right).offset(10)
             make.bottom.equalTo(titleLabel.snp.top)
+            make.right.lessThanOrEqualTo(readableContentGuide)
         }
         subtitleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 14)
     }

@@ -32,6 +32,7 @@ class QuestAreaTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
             make.centerY.equalToSuperview()
+            make.right.lessThanOrEqualTo(readableContentGuide)
         }
     }
     

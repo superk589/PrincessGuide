@@ -38,8 +38,8 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
         refresher.refreshingBlock = { [weak self] in self?.check() }
         
         tableView.keyboardDismissMode = .onDrag
-        tableView.register(QuestAreaTableViewCell.self, forCellReuseIdentifier: QuestAreaTableViewCell.description())
-        tableView.rowHeight = 66
+        tableView.register(HatsuneEventTableViewCell.self, forCellReuseIdentifier: HatsuneEventTableViewCell.description())
+        tableView.rowHeight = 84
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
@@ -72,9 +72,9 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: QuestAreaTableViewCell.description(), for: indexPath) as! QuestAreaTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let clanBattle = clanBattles[indexPath.row]
-        cell.configure(for: clanBattle.name)
+        cell.configure(for: clanBattle.name, subtitle: "", unitID: clanBattle.groups.last?.wave.enemies.first?.enemy?.unit.prefabId)
         return cell
     }
     

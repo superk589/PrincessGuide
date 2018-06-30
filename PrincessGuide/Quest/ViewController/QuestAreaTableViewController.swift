@@ -50,8 +50,8 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
         navigationItem.title = NSLocalizedString("Quests", comment: "")
         
         tableView.keyboardDismissMode = .onDrag
-        tableView.register(QuestAreaTableViewCell.self, forCellReuseIdentifier: QuestAreaTableViewCell.description())
-        tableView.rowHeight = 66
+        tableView.register(HatsuneEventTableViewCell.self, forCellReuseIdentifier: HatsuneEventTableViewCell.description())
+        tableView.rowHeight = 84
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
@@ -84,9 +84,10 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: QuestAreaTableViewCell.description(), for: indexPath) as! QuestAreaTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
+        let area = areas[indexPath.row]
         
-        cell.configure(for: areas[indexPath.row].areaName)
+        cell.configure(for: area.areaName, subtitle: "", unitID: area.quests.last?.waves.last?.enemies.first?.enemy?.unit.prefabId)
         return cell
     }
     
