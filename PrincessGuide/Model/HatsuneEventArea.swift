@@ -23,6 +23,8 @@ class HatsuneEventArea: Codable {
         let startTime: String
         let title: String
         let waveGroupId1: Int
+        let questName: String
+        let difficulty: Int
     }
     
     let base: Base

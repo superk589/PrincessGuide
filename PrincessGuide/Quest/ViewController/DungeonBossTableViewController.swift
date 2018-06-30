@@ -38,7 +38,7 @@ class DungeonBossTableViewController: UITableViewController, DataChecking {
         
         tableView.keyboardDismissMode = .onDrag
         tableView.register(HatsuneEventTableViewCell.self, forCellReuseIdentifier: HatsuneEventTableViewCell.description())
-        tableView.rowHeight = 66
+        tableView.rowHeight = 84
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
@@ -73,7 +73,8 @@ class DungeonBossTableViewController: UITableViewController, DataChecking {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let dungeon = dungeons[indexPath.row]
-        cell.configure(for: "\(dungeon.wave?.enemies.first?.enemy?.unit.unitName ?? "")", subtitle: dungeon.dungeonName)
+        let unit = dungeon.wave?.enemies.first?.enemy?.unit
+        cell.configure(for: "\(unit?.unitName ?? "")", subtitle: dungeon.dungeonName, unitID: unit?.prefabId)
         return cell
     }
     

@@ -603,7 +603,9 @@ class Master: FMDatabaseQueue {
             SELECT
                 a.*,
                 b.title,
-                c.wave_group_id_1
+                c.wave_group_id_1,
+                c.quest_name,
+                c.difficulty
             FROM
                 hatsune_quest_area a,
                 event_story_data b,

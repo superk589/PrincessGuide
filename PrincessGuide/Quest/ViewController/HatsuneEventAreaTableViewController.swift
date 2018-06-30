@@ -38,7 +38,7 @@ class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
         
         tableView.keyboardDismissMode = .onDrag
         tableView.register(HatsuneEventTableViewCell.self, forCellReuseIdentifier: HatsuneEventTableViewCell.description())
-        tableView.rowHeight = 66
+        tableView.rowHeight = 84
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
@@ -55,7 +55,7 @@ class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
             Master.shared.getHatsuneEventAreas { (areas) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
-                    self?.areas = areas.sorted { ($0.base.startTime, $0.base.areaId) > ($1.base.startTime, $1.base.areaId) }
+                    self?.areas = areas.sorted { ($0.base.startTime, $0.base.areaId, $0.base.difficulty) > ($1.base.startTime, $1.base.areaId, $1.base.difficulty) }
                     self?.tableView.reloadData()
                 }
             }
@@ -73,7 +73,7 @@ class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let area = areas[indexPath.row]
-        cell.configure(for: "\(area.wave?.enemies.first?.enemy?.unit.unitName ?? "") \(area.areaType)", subtitle: area.base.title)
+        cell.configure(for: "\(area.base.questName)", subtitle: area.base.title, unitID: area.wave?.enemies.first?.enemy?.unit.prefabId)
         return cell
     }
     

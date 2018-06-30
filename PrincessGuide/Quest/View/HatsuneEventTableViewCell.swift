@@ -15,6 +15,8 @@ class HatsuneEventTableViewCell: UITableViewCell {
     
     let subtitleLabel = UILabel()
     
+    let icon = IconImageView()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -32,14 +34,21 @@ class HatsuneEventTableViewCell: UITableViewCell {
             titleLabel.adjustsFontForContentSizeCategory = true
             subtitleLabel.adjustsFontForContentSizeCategory = true
         }
+        
+        contentView.addSubview(icon)
+        icon.snp.makeConstraints { (make) in
+            make.left.equalTo(readableContentGuide)
+            make.centerY.equalToSuperview()
+        }
+        
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(readableContentGuide)
+            make.left.equalTo(icon.snp.right).offset(10)
             make.centerY.equalToSuperview()
         }
         contentView.addSubview(subtitleLabel)
         subtitleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(readableContentGuide)
+            make.left.equalTo(icon.snp.right).offset(10)
             make.bottom.equalTo(titleLabel.snp.top)
         }
         subtitleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 14)
@@ -49,9 +58,10 @@ class HatsuneEventTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for title: String, subtitle: String) {
+    func configure(for title: String, subtitle: String, unitID: Int?) {
         titleLabel.text = title
         subtitleLabel.text = subtitle
+        icon.unitID = unitID
     }
 
 }
