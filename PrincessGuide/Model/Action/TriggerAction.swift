@@ -28,8 +28,11 @@ class TriggerAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch triggerType {
         case .hp:
-            let format = NSLocalizedString("Condition: HP is below %d%%.", comment: "")
+            let format = NSLocalizedString("Trigger: HP is below %d%%.", comment: "")
             return String(format: format, Int(actionValue3.rounded()))
+        case .limitTime:
+            let format = NSLocalizedString("Trigger: Left time is below %@s.", comment: "")
+            return String(format: format, actionValue3.description)
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }

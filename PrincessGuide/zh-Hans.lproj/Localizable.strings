@@ -290,9 +290,6 @@
 "Condition: counter is greater or equal to %d then use %d." = "条件分支：计数器大于等于 %1$d 则使用 %2$d。";
 
 /* No comment provided by engineer. */
-"Condition: HP is below %d%%." = "触发条件：HP 低于 %d%%。";
-
-/* No comment provided by engineer. */
 "Condition: if defeat target by the last effect then use %d." = "条件分支：上一个效果成功击杀目标则使用 %d。";
 
 /* No comment provided by engineer. */
@@ -873,6 +870,12 @@
 
 /* No comment provided by engineer. */
 "three" = "三个";
+
+/* No comment provided by engineer. */
+"Trigger: HP is below %d%%." = "触发条件：HP 低于 %d%%。";
+
+/* No comment provided by engineer. */
+"Trigger: Left time is below %@s." = "触发条件：战斗时间剩余 %@ 秒。";
 
 /* No comment provided by engineer. */
 "True Name" = "真实姓名";

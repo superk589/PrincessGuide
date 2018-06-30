@@ -505,11 +505,6 @@
         <target>完成</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: HP is below %d%%.">
-        <source>Condition: HP is below %d%%.</source>
-        <target>触发条件：HP 低于 %d%%。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Condition: [%@]%% chance use %d when takes damage within %@s.">
         <source>Condition: [%1$@]%% chance use %2$d when takes damage within %3$@s.</source>
         <target>条件分支：%3$@ 秒内受到伤害时有 [%1$@]%% 几率使用 %2$d。</target>
@@ -1203,6 +1198,16 @@
       <trans-unit id="Third-Party Licenses">
         <source>Third-Party Licenses</source>
         <target>第三方许可</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: HP is below %d%%.">
+        <source>Trigger: HP is below %d%%.</source>
+        <target>触发条件：HP 低于 %d%%。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: Left time is below %@s.">
+        <source>Trigger: Left time is below %@s.</source>
+        <target>触发条件：战斗时间剩余 %@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="True Name">
