@@ -340,6 +340,10 @@ class Card: Codable {
     lazy var stills = DispatchSemaphore.sync { (closure) in
         Master.shared.getStills(storyGroupID: charaID, callback: closure)
     } ?? []
+    
+    lazy var comics = DispatchSemaphore.sync { (closure) in
+        Master.shared.getComics(unitID: base.unitId, callback: closure)
+    } ?? []
 }
 
 extension Card {
@@ -427,9 +431,9 @@ extension Card {
     }
     
     func comicImageURLs(postfix: String = "") -> [URL] {
-        return [
-            URL.image.appendingPathComponent("comic/\(base.prefabId)_01.webp\(postfix)"),
-        ]
+        return comics.map {
+            URL.image.appendingPathComponent("comic/\($0)_01.webp\(postfix)")
+        }
     }
     
     func plateImageURLs(postfix: String = "") -> [URL] {

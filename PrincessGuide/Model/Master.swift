@@ -250,6 +250,28 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getComics(unitID: Int, callback: @escaping FMDBCallBackClosure<[Int]>) {
+        var results = [Int]()
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                value
+            FROM
+                tips
+            WHERE
+                value like '\(String(unitID).prefix(4))%'
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                let id = Int(set.int(forColumn: "value"))
+                results.append(id)
+            }
+        }) {
+            callback(results)
+        }
+    }
+    
     func getAttackPatterns(unitID: Int, callback: @escaping FMDBCallBackClosure<[AttackPattern]>) {
         var results = [AttackPattern]()
         execute({ (db) in
