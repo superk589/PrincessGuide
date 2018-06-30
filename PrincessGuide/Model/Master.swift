@@ -840,6 +840,15 @@ class Master: FMDatabaseQueue {
                 chara_story_status
             WHERE
                 chara_id_1 = \(charaID)
+            OR chara_id_2 = \(charaID)
+            OR chara_id_3 = \(charaID)
+            OR chara_id_4 = \(charaID)
+            OR chara_id_5 = \(charaID)
+            OR chara_id_6 = \(charaID)
+            OR chara_id_7 = \(charaID)
+            OR chara_id_8 = \(charaID)
+            OR chara_id_9 = \(charaID)
+            OR chara_id_10 = \(charaID)
             """
             
             let set = try db.executeQuery(selectSql, values: nil)
