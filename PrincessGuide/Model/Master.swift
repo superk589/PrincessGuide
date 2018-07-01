@@ -859,20 +859,26 @@ class Master: FMDatabaseQueue {
         execute({ (db) in
             let selectSql = """
             SELECT
-                *
+                a.*,
+                b.love_level
             FROM
-                chara_story_status
+                chara_story_status a,
+                story_detail b
             WHERE
+            (
                 chara_id_1 = \(charaID)
-            OR chara_id_2 = \(charaID)
-            OR chara_id_3 = \(charaID)
-            OR chara_id_4 = \(charaID)
-            OR chara_id_5 = \(charaID)
-            OR chara_id_6 = \(charaID)
-            OR chara_id_7 = \(charaID)
-            OR chara_id_8 = \(charaID)
-            OR chara_id_9 = \(charaID)
-            OR chara_id_10 = \(charaID)
+                OR chara_id_2 = \(charaID)
+                OR chara_id_3 = \(charaID)
+                OR chara_id_4 = \(charaID)
+                OR chara_id_5 = \(charaID)
+                OR chara_id_6 = \(charaID)
+                OR chara_id_7 = \(charaID)
+                OR chara_id_8 = \(charaID)
+                OR chara_id_9 = \(charaID)
+                OR chara_id_10 = \(charaID)
+            )
+            AND
+                a.story_id = b.story_id
             """
             
             let set = try db.executeQuery(selectSql, values: nil)
@@ -881,6 +887,7 @@ class Master: FMDatabaseQueue {
                 let json = JSON(set.resultDictionary ?? [:])
                 
                 let storyID = json["story_id"].intValue
+                let loveLevel = json["love_level"].intValue
                 
                 var statuses = [CharaStory.Status]()
                 for i in 1...5 {
@@ -891,7 +898,7 @@ class Master: FMDatabaseQueue {
                     }
                 }
                 
-                results.append(CharaStory(storyID: storyID, charaID: charaID, status: statuses))
+                results.append(CharaStory(storyID: storyID, charaID: charaID, loveLevel: loveLevel, status: statuses))
             }
         }) {
             callback(results)

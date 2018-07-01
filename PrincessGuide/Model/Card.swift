@@ -358,7 +358,7 @@ extension Card {
                   unitRarity: Int = Constant.presetMaxRarity,
                   addsEx: Bool = CardSortingViewController.Setting.default.addsEx) -> Property {
         var property = Property()
-        let storyPropertyItems = charaStorys?.filter { $0.storyID % 1000 <= bondRank }.flatMap { $0.status.map { $0.property() } } ?? []
+        let storyPropertyItems = charaStorys?.filter { $0.loveLevel <= bondRank }.flatMap { $0.status.map { $0.property() } } ?? []
         for item in storyPropertyItems {
             property += item
         }

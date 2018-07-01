@@ -12,6 +12,7 @@ struct CharaStory: Codable {
     
     let storyID: Int
     let charaID: Int
+    let loveLevel: Int
     
     let status: [Status]
     
