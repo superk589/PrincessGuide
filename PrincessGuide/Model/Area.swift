@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Area: Codable {
+class Area: Codable {
     
     let areaId: Int
     let areaName: String
@@ -17,7 +17,20 @@ struct Area: Codable {
     let queId: String
     let sheetId: String
     let startTime: String
+    
+    init(areaId: Int, areaName: String, endTime: String, mapType: Int, queId: String, sheetId: String, startTime: String) {
+        self.areaId = areaId
+        self.areaName = areaName
+        self.endTime = endTime
+        self.mapType = mapType
+        self.queId = queId
+        self.sheetId = sheetId
+        self.startTime = startTime
+    }
 
+    lazy var quests: [Quest] = DispatchSemaphore.sync { (closure) in
+        Master.shared.getQuests(areaID: areaId, callback: closure)
+    } ?? []
 }
 
 enum AreaType: CustomStringConvertible {
@@ -58,9 +71,4 @@ extension Area {
         }
     }
     
-    var quests: [Quest] {
-        return DispatchSemaphore.sync { (closure) in
-            Master.shared.getQuests(areaID: areaId, callback: closure)
-        } ?? []
-    }
 }
