@@ -53,10 +53,14 @@ class DungeonBossTableViewController: UITableViewController, DataChecking {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getDungeons { (dungeons) in
-                DispatchQueue.main.async {
-                    LoadingHUDManager.default.hide()
-                    self?.dungeons = dungeons.sorted { $0.dungeonAreaId > $1.dungeonAreaId }
-                    self?.tableView.reloadData()
+                // preload
+                DispatchQueue.global(qos: .userInitiated).async {
+                    dungeons.forEach { _ = $0.wave?.enemies.first?.enemy }
+                    DispatchQueue.main.async {
+                        LoadingHUDManager.default.hide()
+                        self?.dungeons = dungeons.sorted { $0.dungeonAreaId > $1.dungeonAreaId }
+                        self?.tableView.reloadData()
+                    }
                 }
             }
         }

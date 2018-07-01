@@ -53,10 +53,14 @@ class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getHatsuneEventAreas { (areas) in
-                DispatchQueue.main.async {
-                    LoadingHUDManager.default.hide()
-                    self?.areas = areas.sorted { ($0.base.startTime, $0.base.areaId, $0.base.difficulty) > ($1.base.startTime, $1.base.areaId, $1.base.difficulty) }
-                    self?.tableView.reloadData()
+                // preload
+                DispatchQueue.global(qos: .userInitiated).async {
+                    areas.forEach { _ = $0.wave?.enemies.first?.enemy }
+                    DispatchQueue.main.async {
+                        LoadingHUDManager.default.hide()
+                        self?.areas = areas.sorted { ($0.base.startTime, $0.base.areaId, $0.base.difficulty) > ($1.base.startTime, $1.base.areaId, $1.base.difficulty) }
+                        self?.tableView.reloadData()
+                    }
                 }
             }
         }

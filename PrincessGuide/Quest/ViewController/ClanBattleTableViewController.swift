@@ -54,10 +54,14 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getClanBattles { (clanBattles) in
-                DispatchQueue.main.async {
-                    LoadingHUDManager.default.hide()
-                    self?.clanBattles = clanBattles.sorted { $0.period.startTime > $1.period.startTime }
-                    self?.tableView.reloadData()
+                // preload
+                DispatchQueue.global(qos: .userInitiated).async {
+                    clanBattles.forEach { _ = $0.groups.last?.wave.enemies.first?.enemy }
+                    DispatchQueue.main.async {
+                        LoadingHUDManager.default.hide()
+                        self?.clanBattles = clanBattles.sorted { $0.period.startTime > $1.period.startTime }
+                        self?.tableView.reloadData()
+                    }
                 }
             }
         }
