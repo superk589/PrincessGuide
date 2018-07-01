@@ -38,7 +38,7 @@ class IconImageView: UIImageView {
     var cardID: Int? {
         didSet {
             if let id = cardID {
-                kf.setImage(with: URL.image.appendingPathComponent("icon/unit/\(id + 10).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder_2"))
+                kf.setImage(with: URL.image.appendingPathComponent("icon/unit/\(id).webp"), placeholder: #imageLiteral(resourceName: "icon_placeholder_2"))
             }
         }
     }
@@ -62,4 +62,5 @@ class IconImageView: UIImageView {
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 64, height: 64)
     }
+    
 }

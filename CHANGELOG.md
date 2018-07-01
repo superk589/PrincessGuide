@@ -3,14 +3,16 @@
 
 1. 在防御和魔防属性上现在也显示实际减免百分比数值。
 2. 排序和查看角色属性时现在默认计算 EX 技能加成（可关闭）。
-3. 修复同一角色多张卡牌之间未能共享绊等级加成的问题。
-4. 其他细节优化和修复。
+3. 现在可以自由选择使用三星或一星版本的角色头像。
+4. 修复同一角色多张卡牌之间未能共享绊等级加成的问题。
+5. 其他细节优化和修复。
 
 ## English version
 1. Add def and magical def reducing percent to unit status.
 2. When sorting or viewing unit status, ex skills bonus are added by default (can be closed in options).
-3. Fix a bug that more than one cards of a chara do not share bond rank bonus status.
-4. Other minor fixes and improvements.
+3. Now you can choose to use R3 or R1 chara thumbnails.
+4. Fix a bug that more than one cards of a chara do not share bond rank bonus status.
+5. Other minor fixes and improvements.
 
 # 1.0.6
 

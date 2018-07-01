@@ -13,6 +13,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
     
     struct Row {
         enum Model {
+            case card(Card)
             case skill(Skill, SkillCategory, Property, Int?)
             case base(Card.Base)
             case profile(Card.Profile)

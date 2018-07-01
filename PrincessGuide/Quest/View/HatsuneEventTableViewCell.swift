@@ -54,6 +54,10 @@ class HatsuneEventTableViewCell: UITableViewCell {
             make.right.lessThanOrEqualTo(readableContentGuide)
         }
         subtitleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 14)
+        
+        icon.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        subtitleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     
     required init?(coder aDecoder: NSCoder) {

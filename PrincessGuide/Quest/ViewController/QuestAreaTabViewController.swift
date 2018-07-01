@@ -18,13 +18,13 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Quests", comment: "")
-        viewControllers = [HatsuneEventAreaTableViewController(), ClanBattleTableViewController(), QuestAreaTableViewController(areaType: .normal), QuestAreaTableViewController(areaType: .hard), DungeonBossTableViewController()]
+        viewControllers = [DungeonBossTableViewController(), HatsuneEventAreaTableViewController(), ClanBattleTableViewController(), QuestAreaTableViewController(areaType: .normal), QuestAreaTableViewController(areaType: .hard), ]
         dataSource = self
         bar.items = [
+            Item(title: NSLocalizedString("Dungeon", comment: "")),
             Item(title: NSLocalizedString("Event", comment: "")),
             Item(title: NSLocalizedString("Clan Battle", comment: ""))
             ] + [AreaType.normal, .hard].map { Item(title: $0.description) }
-        bar.items?.append(Item(title: NSLocalizedString("Dungeon", comment: "")))
         
         bar.location = .bottom
 

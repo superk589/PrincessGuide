@@ -780,6 +780,11 @@
         <target>身高</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Icon Style">
+        <source>Icon Style</source>
+        <target>头像风格</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Image">
         <source>Image</source>
         <target>图片</target>
@@ -878,6 +883,11 @@
       <trans-unit id="Make %@ lose [%@] TP.">
         <source>Make %1$@ lose [%2$@] TP.</source>
         <target>使%1$@失去 [%2$@] TP。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Misc">
+        <source>Misc</source>
+        <target>杂项</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Move Speed">
@@ -1120,11 +1130,6 @@
         <target>Slow</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Sort">
-        <source>Sort</source>
-        <target>排序</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Sort by">
         <source>Sort by</source>
         <target>排序方式</target>
@@ -1309,6 +1314,21 @@
         <source>all front(including self) friendly targets</source>
         <target>所有前方的友方目标（包括自己）</target>
         <note>all front(including self) friendly targets</note>
+      </trans-unit>
+      <trans-unit id="always 1★">
+        <source>always 1★</source>
+        <target>固定 1★</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="always 3★">
+        <source>always 3★</source>
+        <target>固定 3★</target>
+        <note>icon style</note>
+      </trans-unit>
+      <trans-unit id="default">
+        <source>default</source>
+        <target>默认</target>
+        <note>icon style</note>
       </trans-unit>
       <trans-unit id="enemy">
         <source>enemy</source>

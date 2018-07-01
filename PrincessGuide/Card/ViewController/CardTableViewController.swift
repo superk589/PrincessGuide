@@ -54,7 +54,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
         navigationItem.title = NSLocalizedString("Cards", comment: "")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Sort", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
         
         loadData()
         
@@ -323,4 +323,24 @@ extension Array where Element == Card {
         
         return sections
     }
+}
+
+extension Card {
+    
+    var iconID: Int {
+        let style = CardSortingViewController.Setting.default.iconStyle
+        switch style {
+        case .default:
+            if base.rarity < 3 {
+                return base.prefabId + 10
+            } else {
+                return base.prefabId + 30
+            }
+        case .r1:
+            return base.prefabId + 10
+        case .r3:
+            return base.prefabId + 30
+        }
+    }
+    
 }

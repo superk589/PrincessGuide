@@ -66,10 +66,14 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getAreas(type: self?.areaType, callback: { (areas) in
-                DispatchQueue.main.async {
-                    LoadingHUDManager.default.hide()
-                    self?.areas = areas.sorted { $0.areaId > $1.areaId }
-                    self?.tableView.reloadData()
+                // preload
+                DispatchQueue.global(qos: .userInitiated).async {
+                    areas.forEach { _ = $0.quests.last?.waves.last?.enemies.first?.enemy }
+                    DispatchQueue.main.async {
+                        LoadingHUDManager.default.hide()
+                        self?.areas = areas.sorted { $0.areaId > $1.areaId }
+                        self?.tableView.reloadData()
+                    }
                 }
             })
         }

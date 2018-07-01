@@ -108,6 +108,25 @@ class CardSortingViewController: FormViewController {
             
         }
         
+        enum IconStyle: String, Codable, CustomStringConvertible {
+            case `default`
+            case r3
+            case r1
+            
+            var description: String {
+                switch self {
+                case .default:
+                    return NSLocalizedString("default", comment: "icon style")
+                case .r3:
+                    return NSLocalizedString("always 3★", comment: "icon style")
+                case .r1:
+                    return NSLocalizedString("always 1★", comment: "")
+                }
+            }
+            
+            static let allLabels = [IconStyle.default, .r3, .r1]
+        }
+        
         var isAscending: Bool = true
         
         var sortingMethod: SortingMethod = .name
@@ -115,6 +134,8 @@ class CardSortingViewController: FormViewController {
         var groupingMethod: GroupingMethod = .none
         
         var addsEx: Bool = true
+        
+        var iconStyle: IconStyle = .default
         
         func save() {
             let encoder = JSONEncoder()
@@ -265,6 +286,21 @@ class CardSortingViewController: FormViewController {
                         themeable.switchControl.onTintColor = theme.color.tint
                     }
                 }.cellUpdate(cellUpdate(cell:row:))
+        
+            +++ Section(NSLocalizedString("Misc", comment: ""))
+            
+            <<< PickerInlineRow<String>("icon_style") { (row : PickerInlineRow<String>) -> Void in
+                row.title = NSLocalizedString("Icon Style", comment: "")
+                row.displayValueFor = { (rowValue: String?) in
+                    return rowValue.flatMap { Setting.IconStyle(rawValue: $0)?.description }
+                }
+                row.options = Setting.IconStyle.allLabels.map { $0.rawValue }
+                row.value = Setting.default.iconStyle.rawValue
+                
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
         
     }
     

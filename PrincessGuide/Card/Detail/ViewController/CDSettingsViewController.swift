@@ -39,7 +39,7 @@ class CDSettingsViewController: FormViewController {
                 }
             }
             
-            static var allLabels = [ExpressionStyle.full, .short, .valueOnly, .valueInCombat]
+            static let allLabels = [ExpressionStyle.full, .short, .valueOnly, .valueInCombat]
         }
         
         var unitLevel: Int

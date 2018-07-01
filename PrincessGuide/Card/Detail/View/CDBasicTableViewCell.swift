@@ -67,23 +67,15 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for base: Card.Base) {
-        nameLabel.text = base.unitName
-        commentLabel.text = base.comment.replacingOccurrences(of: "\\n", with: "\n")
-        cardIcon.cardID = base.unitId
-    }
-    
-    func configure(for profile: Card.Profile) {
-        nameLabel.text = profile.unitName
-        commentLabel.text = profile.selfText.replacingOccurrences(of: "\\n", with: "\n")
-        cardIcon.cardID = profile.unitId
+    func configure(for card: Card) {
+        nameLabel.text = card.base.unitName
+        commentLabel.text = card.base.comment.replacingOccurrences(of: "\\n", with: "\n")
+        cardIcon.cardID = card.iconID
     }
     
     func configure(for item: CardDetailItem) {
-        if case .base(let base) = item {
-            configure(for: base)
-        } else if case .profile(let profile) = item {
-            configure(for: profile)
+        if case .card(let card) = item {
+            configure(for: card)
         } else {
             fatalError()
         }

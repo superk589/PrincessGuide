@@ -155,6 +155,12 @@
 "all front(including self) friendly targets" = "所有前方的友方目标（包括自己）";
 
 /* No comment provided by engineer. */
+"always 1★" = "固定 1★";
+
+/* icon style */
+"always 3★" = "固定 3★";
+
+/* No comment provided by engineer. */
 "App Version" = "程序版本";
 
 /* No comment provided by engineer. */
@@ -337,6 +343,9 @@
 /* No comment provided by engineer. */
 "DEF" = "物理防御力";
 
+/* icon style */
+"default" = "默认";
+
 /* No comment provided by engineer. */
 "Descending" = "降序";
 
@@ -482,6 +491,9 @@
 "HP Recovery Rate" = "恢复量上升";
 
 /* No comment provided by engineer. */
+"Icon Style" = "头像风格";
+
+/* No comment provided by engineer. */
 "Image" = "图片";
 
 /* No comment provided by engineer. */
@@ -552,6 +564,9 @@
 
 /* No comment provided by engineer. */
 "minion" = "随从";
+
+/* No comment provided by engineer. */
+"Misc" = "杂项";
 
 /* No comment provided by engineer. */
 "Move Speed" = "移动速度";
@@ -723,9 +738,6 @@
 
 /* No comment provided by engineer. */
 "SLv." = "技能等级";
-
-/* No comment provided by engineer. */
-"Sort" = "排序";
 
 /* No comment provided by engineer. */
 "Sort by" = "排序方式";

@@ -743,6 +743,10 @@
         <target>身長</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Icon Style">
+        <source>Icon Style</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Image">
         <source>Image</source>
         <target>画像</target>
@@ -838,6 +842,10 @@
       <trans-unit id="Make %@ lose [%@] TP.">
         <source>Make %1$@ lose [%2$@] TP.</source>
         <target>%1$@のTPを[%2$@]失わせる。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Misc">
+        <source>Misc</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Move Speed">
@@ -1072,10 +1080,6 @@
         <target>スロウ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Sort">
-        <source>Sort</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Sort by">
         <source>Sort by</source>
         <note>No comment provided by engineer.</note>
@@ -1251,6 +1255,18 @@
       <trans-unit id="all front(including self) friendly targets">
         <source>all front(including self) friendly targets</source>
         <note>all front(including self) friendly targets</note>
+      </trans-unit>
+      <trans-unit id="always 1★">
+        <source>always 1★</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="always 3★">
+        <source>always 3★</source>
+        <note>icon style</note>
+      </trans-unit>
+      <trans-unit id="default">
+        <source>default</source>
+        <note>icon style</note>
       </trans-unit>
       <trans-unit id="enemy">
         <source>enemy</source>
