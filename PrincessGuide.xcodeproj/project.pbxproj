@@ -9,9 +9,16 @@
 /* Begin PBXBuildFile section */
 		120F9B4820E4DA4E003632CA /* ToolboxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4720E4DA4E003632CA /* ToolboxTableViewController.swift */; };
 		120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */; };
-		120F9B4F20E4DC84003632CA /* BoxManagerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4E20E4DC84003632CA /* BoxManagerTableViewController.swift */; };
-		120F9B5320E4DE40003632CA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B5220E4DE40003632CA /* Box.swift */; };
+		120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */; };
 		120F9B5720E4DEE9003632CA /* PrincessGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B5520E4DEE9003632CA /* PrincessGuide.xcdatamodeld */; };
+		120F9B7320E60F85003632CA /* BoxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7220E60F85003632CA /* BoxTableViewController.swift */; };
+		120F9B7720E60FD4003632CA /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7620E60FD4003632CA /* TeamTableViewController.swift */; };
+		120F9B7A20E624CB003632CA /* ChooseCharaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7920E624CB003632CA /* ChooseCharaViewController.swift */; };
+		120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7B20E62592003632CA /* EditCharaViewController.swift */; };
+		120F9B7E20E62B5E003632CA /* SlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7D20E62B5E003632CA /* SlotCell.swift */; };
+		120F9B8120E9D1BA003632CA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B8020E9D1BA003632CA /* CoreDataStack.swift */; };
+		120F9B8320E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B8220E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift */; };
+		120F9B8520E9F97E003632CA /* CharaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B8420E9F97E003632CA /* CharaTableViewCell.swift */; };
 		12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */; };
 		12124F462089C9E1001C1A6F /* PropertyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F452089C9E1001C1A6F /* PropertyKey.swift */; };
 		12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4D208EC1A4001C1A6F /* Ailment.swift */; };
@@ -197,9 +204,16 @@
 /* Begin PBXFileReference section */
 		120F9B4720E4DA4E003632CA /* ToolboxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxTableViewController.swift; sourceTree = "<group>"; };
 		120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxTableViewCell.swift; sourceTree = "<group>"; };
-		120F9B4E20E4DC84003632CA /* BoxManagerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxManagerTableViewController.swift; sourceTree = "<group>"; };
-		120F9B5220E4DE40003632CA /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaTableViewController.swift; sourceTree = "<group>"; };
 		120F9B5620E4DEE9003632CA /* PrincessGuide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrincessGuide.xcdatamodel; sourceTree = "<group>"; };
+		120F9B7220E60F85003632CA /* BoxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTableViewController.swift; sourceTree = "<group>"; };
+		120F9B7620E60FD4003632CA /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
+		120F9B7920E624CB003632CA /* ChooseCharaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCharaViewController.swift; sourceTree = "<group>"; };
+		120F9B7B20E62592003632CA /* EditCharaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCharaViewController.swift; sourceTree = "<group>"; };
+		120F9B7D20E62B5E003632CA /* SlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotCell.swift; sourceTree = "<group>"; };
+		120F9B8020E9D1BA003632CA /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		120F9B8220E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewController+NSFetchedResultsControllerDelegate.swift"; sourceTree = "<group>"; };
+		120F9B8420E9F97E003632CA /* CharaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaTableViewCell.swift; sourceTree = "<group>"; };
 		12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSkillTableViewCell.swift; sourceTree = "<group>"; };
 		12124F452089C9E1001C1A6F /* PropertyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKey.swift; sourceTree = "<group>"; };
 		12124F4D208EC1A4001C1A6F /* Ailment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ailment.swift; sourceTree = "<group>"; };
@@ -444,8 +458,8 @@
 		120F9B5020E4DC8F003632CA /* BoxManager */ = {
 			isa = PBXGroup;
 			children = (
+				120F9B7F20E62B68003632CA /* View */,
 				120F9B5120E4DCA0003632CA /* ViewController */,
-				120F9B5420E4DE44003632CA /* Model */,
 			);
 			path = BoxManager;
 			sourceTree = "<group>";
@@ -453,17 +467,22 @@
 		120F9B5120E4DCA0003632CA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				120F9B4E20E4DC84003632CA /* BoxManagerTableViewController.swift */,
+				120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */,
+				120F9B7220E60F85003632CA /* BoxTableViewController.swift */,
+				120F9B7620E60FD4003632CA /* TeamTableViewController.swift */,
+				120F9B7920E624CB003632CA /* ChooseCharaViewController.swift */,
+				120F9B7B20E62592003632CA /* EditCharaViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		120F9B5420E4DE44003632CA /* Model */ = {
+		120F9B7F20E62B68003632CA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				120F9B5220E4DE40003632CA /* Box.swift */,
+				120F9B7D20E62B5E003632CA /* SlotCell.swift */,
+				120F9B8420E9F97E003632CA /* CharaTableViewCell.swift */,
 			);
-			path = Model;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1221CDBA207B9310008F30AA /* Model */ = {
@@ -492,6 +511,7 @@
 				1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */,
 				124EA0A120D26CA500F46029 /* Dungeon.swift */,
 				1226532220AD626700BB3E56 /* Resist.swift */,
+				120F9B8020E9D1BA003632CA /* CoreDataStack.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,6 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				123608E6209322EB003E7D11 /* DataChecking.swift */,
+				120F9B8220E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -532,8 +553,8 @@
 			isa = PBXGroup;
 			children = (
 				1221CDC1207B96FA008F30AA /* CardTableViewController.swift */,
-				12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */,
 				12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */,
+				12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */,
 				12901E9820BE859C00697053 /* CardSortingViewController.swift */,
 			);
 			path = ViewController;
@@ -1084,7 +1105,6 @@
 				129A7F5E20A0364300D93996 /* CDProfileTextTableViewCell.swift in Sources */,
 				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
 				12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */,
-				120F9B5320E4DE40003632CA /* Box.swift in Sources */,
 				12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
 				12F1261320B954C1005C9659 /* AccumulativeDamageAction.swift in Sources */,
@@ -1098,10 +1118,11 @@
 				129A7F6220A0465800D93996 /* CharaStory.swift in Sources */,
 				12F1260320B9536C005C9659 /* AddtivieAction.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
-				120F9B4F20E4DC84003632CA /* BoxManagerTableViewController.swift in Sources */,
+				120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */,
 				12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
 				126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */,
+				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,
 				12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */,
 				12F125DB20B92E79005C9659 /* MoveAction.swift in Sources */,
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
@@ -1113,6 +1134,7 @@
 				12398E7A20915781006AC352 /* AttackPatternView.swift in Sources */,
 				12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */,
 				123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */,
+				120F9B8320E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				123608E7209322EB003E7D11 /* DataChecking.swift in Sources */,
 				126DECF2209EDC0E004EC56A /* QuestAreaTabViewController.swift in Sources */,
 				12F125CC20B7E803005C9659 /* CraftTextTableViewCell.swift in Sources */,
@@ -1126,6 +1148,7 @@
 				12F1263120B95684005C9659 /* PassiveAction.swift in Sources */,
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
+				120F9B7320E60F85003632CA /* BoxTableViewController.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
 				12F1261520B954DB005C9659 /* SealAction.swift in Sources */,
@@ -1136,6 +1159,7 @@
 				12F125DF20B931EF005C9659 /* CureAction.swift in Sources */,
 				12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */,
 				12F125F720B9505D005C9659 /* TauntAction.swift in Sources */,
+				120F9B7720E60FD4003632CA /* TeamTableViewController.swift in Sources */,
 				12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */,
 				12F1260520B95377005C9659 /* MultipleAction.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
@@ -1154,6 +1178,7 @@
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
 				12F125E720B93F7E005C9659 /* AilmentAction.swift in Sources */,
 				1250190820AF0DBC00D2FBDC /* Still.swift in Sources */,
+				120F9B7E20E62B5E003632CA /* SlotCell.swift in Sources */,
 				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
 				12D3D13B20A57EB200034DD6 /* CraftPropertyTableViewCell.swift in Sources */,
 				12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */,
@@ -1191,6 +1216,7 @@
 				12398E742091573D006AC352 /* Area.swift in Sources */,
 				1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */,
 				12398E8D20917C1F006AC352 /* DropSummaryTableViewCell.swift in Sources */,
+				120F9B7A20E624CB003632CA /* ChooseCharaViewController.swift in Sources */,
 				126DECE1209E0B2C004EC56A /* CustomAcknowViewController.swift in Sources */,
 				12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */,
 				12F1261B20B95528005C9659 /* ChangeParameterFieldAction.swift in Sources */,
@@ -1219,6 +1245,7 @@
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
+				120F9B8520E9F97E003632CA /* CharaTableViewCell.swift in Sources */,
 				1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */,
 				12F125DD20B92FA7005C9659 /* KnockAction.swift in Sources */,
 				12F125F320B9501F005C9659 /* DamageChargeAction.swift in Sources */,
@@ -1232,6 +1259,7 @@
 				12F1261120B95498005C9659 /* EnchantStrikeBackAction.swift in Sources */,
 				124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */,
 				1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */,
+				120F9B8120E9D1BA003632CA /* CoreDataStack.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
 				12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */,
 				12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */,

@@ -190,11 +190,11 @@
             </objects>
             <point key="canvasLocation" x="633" y="478"/>
         </scene>
-        <!--工具-->
+        <!--Toolbox-->
         <scene sceneID="a5o-nO-MZh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oaL-OG-wfU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="工具" image="product" id="4mz-CZ-4V6"/>
+                    <tabBarItem key="tabBarItem" title="Toolbox" image="product" id="4mz-CZ-4V6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6pl-Er-jXn">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

@@ -1,14 +1,14 @@
 //
-//  BoxManagerTableViewController.swift
+//  BoxTableViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/6/28.
+//  Created by zzk on 2018/6/29.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 
-class BoxManagerTableViewController: UITableViewController {
+class BoxTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,22 +7,37 @@
 //
 
 import UIKit
+import Gestalt
 
 class ToolboxTableViewController: UITableViewController {
     
     struct Row {
         var title: String
-        var iconID: Int
         var vcType: UIViewController.Type
     }
     
     private var rows = [
-        Row(title: NSLocalizedString("Box Manager", comment: ""), iconID: 100131, vcType: BoxManagerTableViewController.self)
+        Row(title: NSLocalizedString("Chara Manager", comment: ""), vcType: CharaTableViewController.self),
+        Row(title: NSLocalizedString("Box Manager", comment: ""), vcType: CharaTableViewController.self),
+        Row(title: NSLocalizedString("Team Manager", comment: ""), vcType: CharaTableViewController.self)
     ]
+    
+    let backgroundImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        tableView.backgroundView = backgroundImageView
+        
+        navigationItem.title = NSLocalizedString("Toolbox", comment: "")
+        
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            let navigationBar = themeable.navigationController?.navigationBar
+            navigationBar?.tintColor = theme.color.tint
+            navigationBar?.barStyle = theme.barStyle
+            themeable.backgroundImageView.image = theme.backgroundImage
+            themeable.tableView.indicatorStyle = theme.indicatorStyle
+        }
     
         tableView.register(ToolboxTableViewCell.self, forCellReuseIdentifier: ToolboxTableViewCell.description())
 
