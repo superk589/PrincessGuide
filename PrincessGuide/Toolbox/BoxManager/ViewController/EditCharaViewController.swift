@@ -24,6 +24,7 @@ class EditCharaViewController: FormViewController {
         self.card = card
         context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
         chara = Chara(context: context)
+        chara?.id = Int32(card.base.unitId)
         parentContext = CoreDataStack.default.viewContext
         super.init(nibName: nil, bundle: nil)
     }
@@ -234,7 +235,7 @@ class EditCharaViewController: FormViewController {
     func saveChara() {
         let values = form.values()
         let json = JSON(values)
-
+        
         chara?.modifiedAt = Date()
         chara?.level = json["unit_level"].int16Value
         chara?.bondRank = json["bond_rank"].int16Value
