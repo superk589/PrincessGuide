@@ -12,6 +12,8 @@ class RarityView: UIView {
     
     private var starViews = [UIImageView]()
     
+    let stackView = UIStackView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -22,12 +24,16 @@ class RarityView: UIView {
             view.snp.makeConstraints { (make) in
                 make.height.equalTo(view.snp.width)
             }
+            view.image = #imageLiteral(resourceName: "loading_star").withRenderingMode(.alwaysTemplate)
         }
         
-        let stackView = UIStackView(arrangedSubviews: starViews)
+        starViews.forEach {
+            stackView.addArrangedSubview($0)
+        }
         stackView.spacing = 0
         stackView.axis = .horizontal
         stackView.alignment = .trailing
+        stackView.distribution = .fillEqually
         
         addSubview(stackView)
         
@@ -40,12 +46,12 @@ class RarityView: UIView {
     }
     
     func setup(stars: Int) {
-        assert(0..<5 ~= stars)
+        assert(1...5 ~= stars)
         starViews[0..<stars].forEach {
-            $0.image = #imageLiteral(resourceName: "loading_star").withRenderingMode(.alwaysTemplate)
+            $0.isHidden = false
         }
         starViews[stars..<5].forEach {
-            $0.image = nil
+            $0.isHidden = true
         }
     }
     

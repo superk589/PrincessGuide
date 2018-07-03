@@ -12,7 +12,7 @@ import Gestalt
 
 class SlotCell: Cell<[Bool]>, CellType {
 
-    let titleLabel = UILabel()
+//    let titleLabel = UILabel()
     
     var icons = [SelectableIconImageView]()
     
@@ -24,52 +24,61 @@ class SlotCell: Cell<[Bool]>, CellType {
         selectedBackgroundView = UIView()
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.titleLabel.textColor = theme.color.title
             themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themeable.backgroundColor = theme.color.tableViewCell.background
         }
         
-        contentView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(readableContentGuide)
-            make.top.equalTo(10)
-        }
-        titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
+//        contentView.addSubview(titleLabel)
+//        titleLabel.snp.makeConstraints { (make) in
+//            make.left.equalTo(readableContentGuide)
+//            make.top.equalTo(10)
+//        }
+//        titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
             make.right.lessThanOrEqualTo(readableContentGuide)
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.bottom.equalTo(-10)
+            make.top.equalTo(10)
             make.width.lessThanOrEqualTo(64 * 6 + 50)
             make.width.equalTo(stackView.snp.height).multipliedBy(6).offset(50)
+            make.height.lessThanOrEqualTo(64)
         }
         stackView.axis = .horizontal
         stackView.spacing = 10
         stackView.distribution = .fillEqually
-        
+
         selectionStyle = .none
         
     }
     
-    func configure(for promotion: Card.Promotion) {
-        titleLabel.text = NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)"
+    func configure(for promotion: Card.Promotion, slots: [Bool]) {
+//        titleLabel.text = NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)"
         icons.forEach {
             $0.removeFromSuperview()
         }
-        promotion.equipSlots.forEach {
+        icons.removeAll()
+        zip(slots, promotion.equipSlots).forEach {
             let icon = SelectableIconImageView()
             icon.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
-            icon.equipmentID = $0
-            icon.isSelected = true
+            icon.equipmentID = $1
+            icon.isSelected = $0
             icon.addGestureRecognizer(tapGesture)
             stackView.addArrangedSubview(icon)
             icons.append(icon)
         }
         
+        stackView.layoutIfNeeded()
         row.value = icons.map { $0.isSelected }
+        
+    }
+    
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        stackView.layoutIfNeeded()
+        var size = stackView.frame.size
+        size.height += 20
+        return size
     }
     
     @objc private func handleTapGestureRecognizer(_ tap: UITapGestureRecognizer) {

@@ -18,10 +18,18 @@ class EditCharaViewController: FormViewController {
     let context: NSManagedObjectContext
     let parentContext: NSManagedObjectContext
     
+    enum Mode {
+        case edit
+        case create
+    }
+    
+    let mode: Mode
+    
     let chara: Chara?
     
     init(card: Card) {
         self.card = card
+        mode = .create
         context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
         chara = Chara(context: context)
         chara?.id = Int32(card.base.unitId)
@@ -30,12 +38,11 @@ class EditCharaViewController: FormViewController {
     }
     
     init(chara: Chara) {
+        mode = .edit
         context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
         parentContext = CoreDataStack.default.viewContext
         self.chara = context.object(with: chara.objectID) as? Chara
-        card = DispatchSemaphore.sync { (closure) in
-            Master.shared.getCards(cardID: Int(chara.id), callback: closure)
-        }?.first
+        card = Card.findByID(Int(chara.id))
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -47,6 +54,11 @@ class EditCharaViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = NSLocalizedString("Edit Chara", comment: "")
+        tableView.cellLayoutMarginsFollowReadableWidth = true
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveChara))
         
         tableView.backgroundView = backgroundImageView
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
@@ -108,6 +120,15 @@ class EditCharaViewController: FormViewController {
         form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
         
         form
+            +++ Section()
+            <<< ImageRow(tag: "image")
+                .cellSetup { [weak self] (cell, row) in
+                    if let card = self?.card {
+                        cell.configure(for: card)
+                    }
+                }
+                .cellUpdate(cellUpdate(cell:row:))
+            
             +++ Section(NSLocalizedString("Unit", comment: ""))
             
             <<< PickerInlineRow<Int>("unit_level") { (row : PickerInlineRow<Int>) -> Void in
@@ -119,7 +140,11 @@ class EditCharaViewController: FormViewController {
                 for i in 0..<ConsoleVariables.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
-                row.value = ConsoleVariables.default.maxPlayerLevel
+                if mode == .create {
+                    row.value = ConsoleVariables.default.maxPlayerLevel
+                } else {
+                    row.value = (chara?.level).flatMap { Int($0) }
+                }
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
@@ -133,8 +158,11 @@ class EditCharaViewController: FormViewController {
                 for i in 0..<ConsoleVariables.default.maxEquipmentRank {
                     row.options.append(i + 1)
                 }
-                row.value = ConsoleVariables.default.maxEquipmentRank
-                
+                if mode == .create {
+                    row.value = ConsoleVariables.default.maxEquipmentRank
+                } else {
+                    row.value = (chara?.rank).flatMap { Int($0) }
+                }
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
@@ -142,7 +170,7 @@ class EditCharaViewController: FormViewController {
                 .onChange { [weak self] (pickerRow) in
                     if let card = self?.card, let row = self?.form.rowBy(tag: "slots") as? SlotRow,
                         let value = pickerRow.value, card.promotions.indices ~= value - 1 {
-                        row.cell.configure(for: card.promotions[value - 1])
+                        row.cell.configure(for: card.promotions[value - 1], slots: [Bool](repeating: true, count: 6))
                     }
                 }
             
@@ -155,8 +183,11 @@ class EditCharaViewController: FormViewController {
                 for i in 0..<Constant.presetMaxBondRank {
                     row.options.append(i + 1)
                 }
-                row.value = Constant.presetMaxBondRank
-                
+                if mode == .create {
+                    row.value = Constant.presetMaxBondRank
+                } else {
+                    row.value = (chara?.bondRank).flatMap { Int($0) }
+                }
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
@@ -170,8 +201,11 @@ class EditCharaViewController: FormViewController {
                 for i in 0..<Constant.presetMaxRarity {
                     row.options.append(i + 1)
                 }
-                row.value = Constant.presetMaxRarity
-                
+                if mode == .create {
+                    row.value = Constant.presetMaxRarity
+                } else {
+                    row.value = (chara?.rarity).flatMap { Int($0) }
+                }
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
@@ -188,8 +222,11 @@ class EditCharaViewController: FormViewController {
                 for i in 0..<ConsoleVariables.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
-                row.value = ConsoleVariables.default.maxPlayerLevel
-                
+                if mode == .create {
+                    row.value = ConsoleVariables.default.maxPlayerLevel
+                } else {
+                    row.value = (chara?.skillLevel).flatMap { Int($0) }
+                }
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
@@ -208,40 +245,43 @@ class EditCharaViewController: FormViewController {
                     }
                     if let card = self?.card, let row = self?.form.rowBy(tag: "unit_rank") as? RowOf<Int>,
                         let value = row.value, card.promotions.indices ~= value - 1 {
-                        cell.configure(for: card.promotions[value - 1])
+                        if self?.mode == .create {
+                            cell.configure(for: card.promotions[value - 1], slots: [Bool](repeating: true, count: 6))
+                        } else {
+                            cell.configure(for: card.promotions[value - 1], slots: self?.chara?.slots ?? [Bool](repeating: true, count: 6))
+                        }
                     }
                 }
             
-            +++ Section()
-            <<< ButtonRow("save") { (row) in
-                row.title = NSLocalizedString("Save", comment: "")
-                }
-                .cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                    }
-                }
-                .cellUpdate(cellUpdate(cell:row:))
-                .onCellSelection { [weak self] (cell, row) in
-                    self?.saveChara()
-                }
+//            +++ Section()
+//            <<< ButtonRow("save") { (row) in
+//                row.title = NSLocalizedString("Save", comment: "")
+//                }
+//                .cellSetup { (cell, row) in
+//                    cell.selectedBackgroundView = UIView()
+//                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+//                        themeable.textLabel?.textColor = theme.color.title
+//                        themeable.detailTextLabel?.textColor = theme.color.tint
+//                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+//                        themeable.backgroundColor = theme.color.tableViewCell.background
+//                    }
+//                }
+//                .onCellSelection { [weak self] (cell, row) in
+//                    self?.saveChara()
+//                }
         
     }
     
-    func saveChara() {
+    @objc func saveChara() {
         let values = form.values()
         let json = JSON(values)
         
         chara?.modifiedAt = Date()
         chara?.level = json["unit_level"].int16Value
         chara?.bondRank = json["bond_rank"].int16Value
-        chara?.rank = json["unit_rand"].int16Value
-        chara?.rarity = json["unit_raraity"].int16Value
-        chara?.skillLevel = json["skill_level"].int16Value
+        chara?.rank = json["unit_rank"].int16Value
+        chara?.rarity = json["unit_rarity"].int16Value
+        chara?.skillLevel = min(json["unit_level"].int16Value, json["skill_level"].int16Value)
         chara?.slot1 = json["slots"].arrayValue[0].boolValue
         chara?.slot2 = json["slots"].arrayValue[1].boolValue
         chara?.slot3 = json["slots"].arrayValue[2].boolValue

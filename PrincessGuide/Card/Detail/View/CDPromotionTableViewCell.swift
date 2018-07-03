@@ -70,6 +70,7 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
         icons.forEach {
             $0.removeFromSuperview()
         }
+        icons.removeAll()
         promotion.equipSlots.forEach {
             let icon = IconImageView()
             icon.isUserInteractionEnabled = true

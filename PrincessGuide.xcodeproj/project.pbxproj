@@ -89,6 +89,7 @@
 		126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */; };
 		1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */; };
 		1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */; };
+		127EEBA120ECDAD300A6B3D4 /* CharaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EEBA020ECDAD300A6B3D4 /* CharaItemView.swift */; };
 		1280DE3320A09278008D9D72 /* CDPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE3220A09278008D9D72 /* CDPropertyViewController.swift */; };
 		1280DE3D20A5B673008D9D72 /* EDProfileTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE3C20A5B673008D9D72 /* EDProfileTextTableViewCell.swift */; };
 		1280DE3F20A5C5A5008D9D72 /* QuestNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1280DE3E20A5C5A5008D9D72 /* QuestNameTableViewCell.swift */; };
@@ -101,6 +102,8 @@
 		1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */; };
 		1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */; };
 		12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12901E9820BE859C00697053 /* CardSortingViewController.swift */; };
+		12973CED20EBA7DC00C83089 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12973CEC20EBA7DC00C83089 /* ImageCell.swift */; };
+		12973CEF20EBBAC500C83089 /* CharaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12973CEE20EBBAC500C83089 /* CharaView.swift */; };
 		129A7F54209FE7A800D93996 /* CDProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */; };
 		129A7F56209FE8D400D93996 /* ProfileItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F55209FE8D400D93996 /* ProfileItemView.swift */; };
 		129A7F5820A0249600D93996 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F5720A0249600D93996 /* Property.swift */; };
@@ -290,6 +293,7 @@
 		126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTabViewController.swift; sourceTree = "<group>"; };
 		1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventArea.swift; sourceTree = "<group>"; };
 		1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventAreaTableViewController.swift; sourceTree = "<group>"; };
+		127EEBA020ECDAD300A6B3D4 /* CharaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaItemView.swift; sourceTree = "<group>"; };
 		1280DE3220A09278008D9D72 /* CDPropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPropertyViewController.swift; sourceTree = "<group>"; };
 		1280DE3C20A5B673008D9D72 /* EDProfileTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDProfileTextTableViewCell.swift; sourceTree = "<group>"; };
 		1280DE3E20A5C5A5008D9D72 /* QuestNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestNameTableViewCell.swift; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 		1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		12901E9820BE859C00697053 /* CardSortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortingViewController.swift; sourceTree = "<group>"; };
+		12973CEC20EBA7DC00C83089 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		12973CEE20EBBAC500C83089 /* CharaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaView.swift; sourceTree = "<group>"; };
 		129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewCell.swift; sourceTree = "<group>"; };
 		129A7F55209FE8D400D93996 /* ProfileItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemView.swift; sourceTree = "<group>"; };
 		129A7F5720A0249600D93996 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
@@ -482,7 +488,10 @@
 			isa = PBXGroup;
 			children = (
 				120F9B7D20E62B5E003632CA /* SlotCell.swift */,
+				12973CEC20EBA7DC00C83089 /* ImageCell.swift */,
 				120F9B8420E9F97E003632CA /* CharaTableViewCell.swift */,
+				12973CEE20EBBAC500C83089 /* CharaView.swift */,
+				127EEBA020ECDAD300A6B3D4 /* CharaItemView.swift */,
 				121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */,
 			);
 			path = View;
@@ -1118,6 +1127,7 @@
 				12F1262B20B9561B005C9659 /* RatioDamageAction.swift in Sources */,
 				12F125F520B95037005C9659 /* ChargeAction.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
+				127EEBA120ECDAD300A6B3D4 /* CharaItemView.swift in Sources */,
 				129A7F6220A0465800D93996 /* CharaStory.swift in Sources */,
 				12F1260320B9536C005C9659 /* AddtivieAction.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
@@ -1226,10 +1236,12 @@
 				12F1261B20B95528005C9659 /* ChangeParameterFieldAction.swift in Sources */,
 				126DECDC209DD78E004EC56A /* Theme.swift in Sources */,
 				12398EA12092D78C006AC352 /* Updater.swift in Sources */,
+				12973CED20EBA7DC00C83089 /* ImageCell.swift in Sources */,
 				129A7F8320A2815400D93996 /* CDSettingsViewController.swift in Sources */,
 				12F125E920B94370005C9659 /* AuraAction.swift in Sources */,
 				12F1260120B95345005C9659 /* ContinuousAttackAction.swift in Sources */,
 				129A7F54209FE7A800D93996 /* CDProfileTableViewCell.swift in Sources */,
+				12973CEF20EBBAC500C83089 /* CharaView.swift in Sources */,
 				1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */,
 				12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */,
 				12F125EF20B94D1D005C9659 /* ChangeEnergyAction.swift in Sources */,

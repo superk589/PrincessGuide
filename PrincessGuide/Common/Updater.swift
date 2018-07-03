@@ -65,6 +65,7 @@ class Updater {
                     }
                     let db = try extractAsset(data: asset.data)
                     try db.write(to: Master.url, options: .atomic)
+                    Card.removeCache()
                     ConsoleVariables.default.handleDataUpdatingEnd()
                     completion(db, nil)
                 } catch(let error) {

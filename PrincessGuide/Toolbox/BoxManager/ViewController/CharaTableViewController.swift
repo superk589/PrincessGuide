@@ -30,12 +30,15 @@ class CharaTableViewController: UITableViewController {
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController?.delegate = self
         try? fetchedResultsController?.performFetch()
+        // preload
+        fetchedResultsController?.fetchedObjects?.forEach { _ = Card.findByID(Int($0.id)) }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = NSLocalizedString("Charas", comment: "")
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         
         tableView.backgroundView = backgroundImageView
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
@@ -45,6 +48,8 @@ class CharaTableViewController: UITableViewController {
 
         tableView.register(CharaTableViewCell.self, forCellReuseIdentifier: CharaTableViewCell.description())
         tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = 103
+        tableView.rowHeight = UITableViewAutomaticDimension
         prepareFetchRequest()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleNavigationRightItem(_:)))
@@ -66,5 +71,19 @@ class CharaTableViewController: UITableViewController {
         let chara = charas[indexPath.row]
         cell.configure(for: chara)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chara = charas[indexPath.row]
+        let vc = EditCharaViewController(chara: chara)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if isEditing {
+            return UITableViewCellEditingStyle(rawValue: 0b11)!
+        } else {
+            return .delete
+        }
     }
 }

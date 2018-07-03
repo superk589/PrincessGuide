@@ -11,12 +11,8 @@ import Gestalt
 
 class CharaTableViewCell: UITableViewCell {
     
-    let icon = IconImageView()
-    
-    let nameLabel = UILabel()
-    
-    var card: Card?
-    
+    let charaView = CharaView()
+        
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView()
@@ -24,22 +20,16 @@ class CharaTableViewCell: UITableViewCell {
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themeable.backgroundColor = theme.color.tableViewCell.background
-            themeable.nameLabel.textColor = theme.color.title
         }
         
-        contentView.addSubview(icon)
-        icon.snp.makeConstraints { (make) in
+        contentView.addSubview(charaView)
+        charaView.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
+            make.right.equalTo(readableContentGuide)
             make.top.equalTo(10)
             make.bottom.equalTo(-10)
         }
         
-        contentView.addSubview(nameLabel)
-        nameLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
-        nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(icon.snp.right).offset(10)
-            make.top.equalTo(icon.snp.top)
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,15 +37,6 @@ class CharaTableViewCell: UITableViewCell {
     }
     
     func configure(for chara: Chara) {
-        card = DispatchSemaphore.sync { (closure) in
-            Master.shared.getCards(cardID: Int(chara.id), callback: closure)
-        }?.first
-        
-        nameLabel.text = card?.base.unitName
-        if let iconID = card?.iconID {
-            icon.unitID = iconID
-        }
-        
-        
+        charaView.configure(for: chara)
     }
 }

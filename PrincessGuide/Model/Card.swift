@@ -10,6 +10,29 @@ import Foundation
 
 class Card: Codable {
     
+    // card cache
+    private static var cache: [Int: Card] = [:]
+    
+    static func findByID(_ id: Int) -> Card? {
+        if let card = cache[id] {
+            return card
+        } else {
+            let card = DispatchSemaphore.sync { (closure) in
+                Master.shared.getCards(cardID: id, callback: closure)
+            }?.first
+            if card != nil {
+                cache[id] = card!
+                return card
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    static func removeCache() {
+        cache.removeAll()
+    }
+    
     let promotions: [Promotion]
     
     let rarities: [Rarity]
