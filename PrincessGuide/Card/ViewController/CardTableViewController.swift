@@ -170,10 +170,14 @@ class CardTableViewController: UITableViewController, DataChecking {
         return sortedAndGroupedCards[section].cards.count
     }
     
+    func cardOf(indexPath: IndexPath) -> Card {
+        return sortedAndGroupedCards[indexPath.section].cards[indexPath.row]
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.description(), for: indexPath) as! CardTableViewCell
         
-        let card = sortedAndGroupedCards[indexPath.section].cards[indexPath.row]
+        let card = cardOf(indexPath: indexPath)
         let (mode, text) = cardViewRightContent(card: card, settings: CardSortingViewController.Setting.default)
         cell.configure(for: card, value: text, mode: mode)
         

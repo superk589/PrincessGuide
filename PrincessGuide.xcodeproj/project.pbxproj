@@ -26,6 +26,7 @@
 		1218E61620A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61420A6D53700D68610 /* InfoPlist.strings */; };
 		1218E61920A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61720A6D53700D68610 /* InfoPlist.strings */; };
 		1218E61C20A6D53700D68610 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61A20A6D53700D68610 /* Localizable.strings */; };
+		121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */; };
 		1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDBF207B9541008F30AA /* Assets.xcassets */; };
 		1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC1207B96FA008F30AA /* CardTableViewController.swift */; };
 		1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC7207B973B008F30AA /* CardTableViewCell.swift */; };
@@ -223,6 +224,7 @@
 		1218E61520A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1218E61820A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1218E61B20A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableIconImageView.swift; sourceTree = "<group>"; };
 		1221CDBF207B9541008F30AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1221CDC1207B96FA008F30AA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
 		1221CDC7207B973B008F30AA /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 			children = (
 				120F9B7D20E62B5E003632CA /* SlotCell.swift */,
 				120F9B8420E9F97E003632CA /* CharaTableViewCell.swift */,
+				121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1120,6 +1123,7 @@
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
 				120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */,
 				12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */,
+				121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
 				126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */,
 				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,

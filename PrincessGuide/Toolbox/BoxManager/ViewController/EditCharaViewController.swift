@@ -10,8 +10,37 @@ import UIKit
 import Eureka
 import Gestalt
 import SwiftyJSON
+import CoreData
 
 class EditCharaViewController: FormViewController {
+    
+    let card: Card?
+    let context: NSManagedObjectContext
+    let parentContext: NSManagedObjectContext
+    
+    let chara: Chara?
+    
+    init(card: Card) {
+        self.card = card
+        context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
+        chara = Chara(context: context)
+        parentContext = CoreDataStack.default.viewContext
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(chara: Chara) {
+        context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
+        parentContext = CoreDataStack.default.viewContext
+        self.chara = context.object(with: chara.objectID) as? Chara
+        card = DispatchSemaphore.sync { (closure) in
+            Master.shared.getCards(cardID: Int(chara.id), callback: closure)
+        }?.first
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     let backgroundImageView = UIImageView()
     
@@ -109,6 +138,13 @@ class EditCharaViewController: FormViewController {
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+                .onChange { [weak self] (pickerRow) in
+                    if let card = self?.card, let row = self?.form.rowBy(tag: "slots") as? SlotRow,
+                        let value = pickerRow.value, card.promotions.indices ~= value - 1 {
+                        row.cell.configure(for: card.promotions[value - 1])
+                    }
+                }
+            
             <<< PickerInlineRow<Int>("bond_rank") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Bond Rank", comment: "")
                 row.displayValueFor = { (rowValue: Int?) in
@@ -158,6 +194,70 @@ class EditCharaViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
         
+            +++ Section(NSLocalizedString("Equipment", comment: ""))
+            
+            <<< SlotRow("slots")
+                .cellSetup{ [weak self] (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                    }
+                    if let card = self?.card, let row = self?.form.rowBy(tag: "unit_rank") as? RowOf<Int>,
+                        let value = row.value, card.promotions.indices ~= value - 1 {
+                        cell.configure(for: card.promotions[value - 1])
+                    }
+                }
+            
+            +++ Section()
+            <<< ButtonRow("save") { (row) in
+                row.title = NSLocalizedString("Save", comment: "")
+                }
+                .cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                    }
+                }
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection { [weak self] (cell, row) in
+                    self?.saveChara()
+                }
+        
+    }
+    
+    func saveChara() {
+        let values = form.values()
+        let json = JSON(values)
+
+        chara?.modifiedAt = Date()
+        chara?.level = json["unit_level"].int16Value
+        chara?.bondRank = json["bond_rank"].int16Value
+        chara?.rank = json["unit_rand"].int16Value
+        chara?.rarity = json["unit_raraity"].int16Value
+        chara?.skillLevel = json["skill_level"].int16Value
+        chara?.slot1 = json["slots"].arrayValue[0].boolValue
+        chara?.slot2 = json["slots"].arrayValue[1].boolValue
+        chara?.slot3 = json["slots"].arrayValue[2].boolValue
+        chara?.slot4 = json["slots"].arrayValue[3].boolValue
+        chara?.slot5 = json["slots"].arrayValue[4].boolValue
+        chara?.slot6 = json["slots"].arrayValue[5].boolValue
+        
+        do {
+            try context.save()
+            try parentContext.save()
+        } catch(let error) {
+            print(error)
+        }
+        
+        if let vc = navigationController?.viewControllers[1] {
+            navigationController?.popToViewController(vc, animated: true)
+        }
     }
     
 }

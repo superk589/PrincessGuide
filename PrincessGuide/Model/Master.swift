@@ -48,10 +48,10 @@ class Master: FMDatabaseQueue {
         return false
     }
     
-    func getCards(callback: @escaping FMDBCallBackClosure<[Card]>) {
+    func getCards(cardID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Card]>) {
         var cards = [Card]()
         execute({ (db) in
-            let selectSql = """
+            var selectSql = """
             SELECT
                 a.*,
                 b.union_burst,
@@ -86,6 +86,11 @@ class Master: FMDatabaseQueue {
             WHERE
                 a.unit_id = b.unit_id
             """
+            
+            if let id = cardID {
+                selectSql.append(" AND a.unit_id = \(id)")
+            }
+            
             let set = try db.executeQuery(selectSql, values: nil)
             while set.next() {
                 let json = JSON(set.resultDictionary ?? [:])

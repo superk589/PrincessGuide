@@ -18,7 +18,10 @@ class ChooseCharaViewController: SearchableCardTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let card = cardOf(indexPath: indexPath)
+        let vc = EditCharaViewController(card: card)
         
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
