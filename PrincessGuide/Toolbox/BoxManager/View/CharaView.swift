@@ -105,7 +105,12 @@ class CharaView: UIView {
         
         bondRankView.configure(for: NSLocalizedString("Bond Rank", comment: ""), content: String(chara.bondRank))
         
-        rankView.configure(for: NSLocalizedString("Rank", comment: ""), content: String(chara.rank))
+        var rankString = "\(chara.rank)"
+        if let currentRankSlotCount = card?.promotions[Int(chara.rank - 1)].equipSlots.filter({ $0 != 999999 }).count {
+            let unslotedCount = chara.slots.filter { !$0 }.count
+            rankString += "(\(currentRankSlotCount - unslotedCount)/\(currentRankSlotCount))"
+        }
+        rankView.configure(for: NSLocalizedString("Rank", comment: ""), content: rankString )
         
         skillLevelView.configure(for: NSLocalizedString("SLv.", comment: ""), content: String(chara.skillLevel))
         
