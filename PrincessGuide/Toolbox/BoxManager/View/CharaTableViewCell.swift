@@ -23,6 +23,7 @@ class CharaTableViewCell: UITableViewCell {
             themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themeable.backgroundColor = theme.color.tableViewCell.background
             themeable.multipleSelectionBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+            themeable.tintColor = theme.color.tint
         }
         
         contentView.addSubview(charaView)

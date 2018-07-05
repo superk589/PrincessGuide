@@ -133,6 +133,7 @@
 		12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */; };
 		12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */; };
 		12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */; };
+		12DC963520EDC366008896D7 /* BatchEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC963420EDC366008896D7 /* BatchEditViewController.swift */; };
 		12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */; };
 		12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */; };
 		12F125B120AEC069005C9659 /* CDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* CDImageView.swift */; };
@@ -344,6 +345,7 @@
 		12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPropertyTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDPatternTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewCell.swift; sourceTree = "<group>"; };
+		12DC963420EDC366008896D7 /* BatchEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchEditViewController.swift; sourceTree = "<group>"; };
 		12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonBossTableViewController.swift; sourceTree = "<group>"; };
 		12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewCell.swift; sourceTree = "<group>"; };
 		12F125B020AEC069005C9659 /* CDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageView.swift; sourceTree = "<group>"; };
@@ -480,6 +482,7 @@
 				120F9B7620E60FD4003632CA /* TeamTableViewController.swift */,
 				120F9B7920E624CB003632CA /* ChooseCharaViewController.swift */,
 				120F9B7B20E62592003632CA /* EditCharaViewController.swift */,
+				12DC963420EDC366008896D7 /* BatchEditViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1152,6 +1155,7 @@
 				123608E7209322EB003E7D11 /* DataChecking.swift in Sources */,
 				126DECF2209EDC0E004EC56A /* QuestAreaTabViewController.swift in Sources */,
 				12F125CC20B7E803005C9659 /* CraftTextTableViewCell.swift in Sources */,
+				12DC963520EDC366008896D7 /* BatchEditViewController.swift in Sources */,
 				12F1260720B9539D005C9659 /* IfForAllAction.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */,

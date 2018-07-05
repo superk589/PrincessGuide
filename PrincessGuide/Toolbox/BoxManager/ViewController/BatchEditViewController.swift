@@ -1,0 +1,252 @@
+//
+//  BatchEditViewController.swift
+//  PrincessGuide
+//
+//  Created by zzk on 2018/7/5.
+//  Copyright © 2018 zzk. All rights reserved.
+//
+
+import UIKit
+import Eureka
+import Gestalt
+import CoreData
+import SwiftyJSON
+
+class BatchEditViewController: FormViewController {
+
+    let context: NSManagedObjectContext
+    let parentContext: NSManagedObjectContext
+    
+    let charas: [Chara]
+    
+    init(charas: [Chara]) {
+        let context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
+        parentContext = CoreDataStack.default.viewContext
+        self.charas = charas.map { context.object(with: $0.objectID) as! Chara }
+        self.context = context
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let backgroundImageView = UIImageView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.title = NSLocalizedString("Batch Edit", comment: "")
+        tableView.cellLayoutMarginsFollowReadableWidth = true
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveCharas))
+        
+        tableView.backgroundView = backgroundImageView
+        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            let navigationBar = themeable.navigationController?.navigationBar
+            navigationBar?.tintColor = theme.color.tint
+            navigationBar?.barStyle = theme.barStyle
+            themeable.backgroundImageView.image = theme.backgroundImage
+            themeable.tableView.indicatorStyle = theme.indicatorStyle
+            themeable.tableView.backgroundColor = theme.color.background
+            themeable.view.tintColor = theme.color.tint
+        }
+        
+        func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                themeable.textLabel?.textColor = theme.color.title
+                themeable.detailTextLabel?.textColor = theme.color.tint
+            }
+        }
+        
+        func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            cell.selectedBackgroundView = UIView()
+            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                themeable.textLabel?.textColor = theme.color.title
+                themeable.detailTextLabel?.textColor = theme.color.tint
+                themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                themeable.backgroundColor = theme.color.tableViewCell.background
+            }
+            if let segmentedControl = (cell as? SegmentedCell<U>)?.segmentedControl {
+                segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
+            }
+        }
+        
+        func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
+            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                themeable.textLabel?.textColor = theme.color.title
+                themeable.detailTextLabel?.textColor = theme.color.tint
+            }
+        }
+        
+        func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
+            pickerRow.cellSetup{ (cell, row) in
+                cell.selectedBackgroundView = UIView()
+                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
+                    themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
+                }
+            }
+            pickerRow.cellUpdate { (cell, row) in
+                cell.picker.showsSelectionIndicator = false
+                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
+                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
+                    themeable.onProvideStringAttributes = {
+                        return [NSAttributedStringKey.foregroundColor: theme.color.body]
+                    }
+                }
+            }
+        }
+        
+        form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
+        
+        form
+            
+            +++ Section(NSLocalizedString("Unit", comment: ""))
+
+            <<< PickerInlineRow<Int>("unit_level") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Level", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                    row.options.append(i + 1)
+                }
+                
+                row.value = (charas.first?.level).flatMap { Int($0) } ?? ConsoleVariables.default.maxPlayerLevel
+                
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
+            <<< PickerInlineRow<Int>("unit_rank") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Rank", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<ConsoleVariables.default.maxEquipmentRank {
+                    row.options.append(i + 1)
+                }
+                
+                row.value = (charas.first?.rank).flatMap { Int($0) } ?? ConsoleVariables.default.maxEquipmentRank
+
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+                .onChange { [weak self] (pickerRow) in
+                    if let card = self?.charas.first?.card, let row = self?.form.rowBy(tag: "slots") as? SlotRow,
+                        let value = pickerRow.value, card.promotions.indices ~= value - 1 {
+                        row.cell.configure(for: card.promotions[value - 1], slots: [Bool](repeating: true, count: 6))
+                    }
+            }
+            
+            <<< PickerInlineRow<Int>("bond_rank") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Bond Rank", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<Constant.presetMaxBondRank {
+                    row.options.append(i + 1)
+                }
+                
+                row.value = (charas.first?.bondRank).flatMap { Int($0) } ?? Constant.presetMaxBondRank
+
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            <<< PickerInlineRow<Int>("unit_rarity") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Star Rank", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<Constant.presetMaxRarity {
+                    row.options.append(i + 1)
+                }
+                
+                row.value = (charas.first?.rarity).flatMap { Int($0) } ?? Constant.presetMaxRarity
+
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
+            +++ Section(NSLocalizedString("Skill", comment: ""))
+            
+            <<< PickerInlineRow<Int>("skill_level") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Level", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                    row.options.append(i + 1)
+                }
+                
+                row.value = (charas.first?.skillLevel).flatMap { Int($0) } ?? ConsoleVariables.default.maxPlayerLevel
+
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
+            +++ Section(NSLocalizedString("Equipment", comment: "")) {
+                $0.footer = HeaderFooterView(title: NSLocalizedString("Only shows the first chara's equipments, but will reflect on all selected charas.", comment: ""))
+            }
+            
+            <<< SlotRow("slots")
+                .cellSetup{ [weak self] (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                    }
+                    if let card = self?.charas.first?.card, let row = self?.form.rowBy(tag: "unit_rank") as? RowOf<Int>,
+                        let value = row.value, card.promotions.indices ~= value - 1 {
+                        cell.configure(for: card.promotions[value - 1], slots: self?.charas.first?.slots ?? [Bool](repeating: true, count: 6))
+                        
+                    }
+            }
+        
+    }
+    
+    @objc func saveCharas() {
+        let values = form.values()
+        let json = JSON(values)
+        
+        charas.forEach {
+            $0.modifiedAt = Date()
+            $0.level = json["unit_level"].int16Value
+            $0.bondRank = json["bond_rank"].int16Value
+            $0.rank = json["unit_rank"].int16Value
+            $0.rarity = json["unit_rarity"].int16Value
+            $0.skillLevel = min(json["unit_level"].int16Value, json["skill_level"].int16Value)
+            $0.slot1 = json["slots"].arrayValue[0].boolValue
+            $0.slot2 = json["slots"].arrayValue[1].boolValue
+            $0.slot3 = json["slots"].arrayValue[2].boolValue
+            $0.slot4 = json["slots"].arrayValue[3].boolValue
+            $0.slot5 = json["slots"].arrayValue[4].boolValue
+            $0.slot6 = json["slots"].arrayValue[5].boolValue
+        }
+        
+        do {
+            try context.save()
+            try parentContext.save()
+        } catch(let error) {
+            print(error)
+        }
+        
+        if let vc = navigationController?.viewControllers[1] {
+            navigationController?.popToViewController(vc, animated: true)
+        }
+    }
+
+}

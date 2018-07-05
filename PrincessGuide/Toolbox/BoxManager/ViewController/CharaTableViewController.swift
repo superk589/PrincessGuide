@@ -66,13 +66,14 @@ class CharaTableViewController: UITableViewController {
     private(set) lazy var copyItem = UIBarButtonItem(title: NSLocalizedString("Copy", comment: ""), style: .plain, target: self, action: #selector(copyCharas(_:)))
     private(set) lazy var spaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     
+    private(set) lazy var batchEditItem = UIBarButtonItem(title: NSLocalizedString("Batch Edit", comment: ""), style: .plain, target: self, action: #selector(batchEdit(_:)))
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         if isEditing {
             navigationItem.rightBarButtonItems = [deleteItem, editButtonItem]
             navigationController?.setToolbarHidden(false, animated: true)
-            toolbarItems = [selectItem, spaceItem, deselectItem, spaceItem, copyItem]
+            toolbarItems = [selectItem, spaceItem, deselectItem, spaceItem, copyItem, spaceItem, batchEditItem]
         } else {
             navigationItem.rightBarButtonItems = [addItem, editButtonItem]
             navigationController?.setToolbarHidden(true, animated: true)
@@ -93,6 +94,7 @@ class CharaTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setToolbarHidden(true, animated: true)
+        setEditing(false, animated: true)
     }
     
     @objc private func addChara(_ item: UIBarButtonItem) {
@@ -138,6 +140,14 @@ class CharaTableViewController: UITableViewController {
             } catch (let error) {
                 print(error)
             }
+        }
+    }
+    
+    @objc private func batchEdit(_ item: UIBarButtonItem) {
+        if let selectedIndexPaths = tableView.indexPathsForSelectedRows, isEditing, selectedIndexPaths.count > 0 {
+            let charas = selectedIndexPaths.map { self.charas[$0.row] }
+            let vc = BatchEditViewController(charas: charas)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 
@@ -212,5 +222,9 @@ extension Chara {
         modifiedAt = Date()
         id = anotherChara.id
         rarity = anotherChara.rarity
+    }
+    
+    var card: Card? {
+        return Card.findByID(Int(id))
     }
 }
