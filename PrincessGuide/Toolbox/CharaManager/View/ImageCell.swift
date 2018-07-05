@@ -47,7 +47,7 @@ class ImageCell: Cell<String>, CellType {
     
     func configure(for card: Card) {
         titleLabel.text = card.base.unitName
-        icon.cardID = card.iconID
+        icon.cardID = card.iconID()
     }
     
     public override func update() {

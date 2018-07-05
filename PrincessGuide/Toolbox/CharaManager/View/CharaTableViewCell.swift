@@ -17,7 +17,7 @@ class CharaTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectedBackgroundView = UIView()
         multipleSelectionBackgroundView = UIView()
-        preservesSuperviewLayoutMargins = true
+//        preservesSuperviewLayoutMargins = true
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground

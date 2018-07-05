@@ -331,8 +331,7 @@ extension Array where Element == Card {
 
 extension Card {
     
-    var iconID: Int {
-        let style = CardSortingViewController.Setting.default.iconStyle
+    func iconID(style: CardSortingViewController.Setting.IconStyle = CardSortingViewController.Setting.default.iconStyle) -> Int {
         switch style {
         case .default:
             if base.rarity < 3 {

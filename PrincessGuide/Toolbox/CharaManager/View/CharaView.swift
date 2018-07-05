@@ -95,8 +95,10 @@ class CharaView: UIView {
     func configure(for chara: Chara) {
         let card = Card.findByID(Int(chara.id))
         
-        if let iconID = card?.iconID {
-            icon.unitID = iconID
+        if chara.rarity >= 3 {
+            icon.cardID = chara.card?.iconID(style: .r3)
+        } else {
+            icon.cardID = chara.card?.iconID(style: .r1)
         }
         
         rarityView.setup(stars: Int(chara.rarity))

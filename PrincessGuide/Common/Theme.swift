@@ -49,6 +49,7 @@ struct Theme: ThemeProtocol {
     let backgroundImage: UIImage
     let indicatorStyle: UIScrollViewIndicatorStyle
     let blurEffectStyle: UIBlurEffectStyle
+    let keyboardAppearance: UIKeyboardAppearance
     
     static let light = Theme(
         color: ThemeColors(
@@ -79,7 +80,8 @@ struct Theme: ThemeProtocol {
         shadowOpacity: 0.0,
         backgroundImage: UIImage(),
         indicatorStyle: .black,
-        blurEffectStyle: .extraLight
+        blurEffectStyle: .extraLight,
+        keyboardAppearance: .light
     )
     
     static let dark = Theme(
@@ -111,6 +113,7 @@ struct Theme: ThemeProtocol {
         shadowOpacity: 1.0,
         backgroundImage: #imageLiteral(resourceName: "sky_background"),
         indicatorStyle: .white,
-        blurEffectStyle: .dark
+        blurEffectStyle: .dark,
+        keyboardAppearance: .dark
     )
 }

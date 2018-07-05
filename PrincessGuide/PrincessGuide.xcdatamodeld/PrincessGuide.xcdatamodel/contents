@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14296.2" systemVersion="18A326g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Box" representedClassName="Box" syncable="YES" codeGenerationType="class">
+        <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="charas" toMany="YES" deletionRule="Nullify" destinationEntity="Chara" inverseName="boxes" inverseEntity="Chara" syncable="YES"/>
     </entity>
     <entity name="Chara" representedClassName="Chara" syncable="YES" codeGenerationType="class">
@@ -21,11 +23,13 @@
         <relationship name="teams" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="charas" inverseEntity="Team" syncable="YES"/>
     </entity>
     <entity name="Team" representedClassName="Team" syncable="YES" codeGenerationType="class">
+        <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="charas" toMany="YES" maxCount="5" deletionRule="Nullify" destinationEntity="Chara" inverseName="teams" inverseEntity="Chara" syncable="YES"/>
     </entity>
     <elements>
         <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="270"/>
-        <element name="Box" positionX="684" positionY="-27" width="128" height="60"/>
-        <element name="Team" positionX="684" positionY="-18" width="128" height="60"/>
+        <element name="Box" positionX="684" positionY="-27" width="128" height="90"/>
+        <element name="Team" positionX="684" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

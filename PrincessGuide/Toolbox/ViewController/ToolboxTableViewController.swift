@@ -17,9 +17,9 @@ class ToolboxTableViewController: UITableViewController {
     }
     
     private var rows = [
-        Row(title: NSLocalizedString("Chara Manager", comment: ""), vcType: CharaTableViewController.self),
-        Row(title: NSLocalizedString("Box Manager", comment: ""), vcType: CharaTableViewController.self),
-        Row(title: NSLocalizedString("Team Manager", comment: ""), vcType: CharaTableViewController.self)
+        Row(title: NSLocalizedString("Chara Management", comment: ""), vcType: CharaTableViewController.self),
+        Row(title: NSLocalizedString("Box Management", comment: ""), vcType: BoxTableViewController.self),
+        Row(title: NSLocalizedString("Team Management", comment: ""), vcType: TeamTableViewController.self)
     ]
     
     let backgroundImageView = UIImageView()

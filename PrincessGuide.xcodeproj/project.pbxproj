@@ -11,8 +11,6 @@
 		120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */; };
 		120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */; };
 		120F9B5720E4DEE9003632CA /* PrincessGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B5520E4DEE9003632CA /* PrincessGuide.xcdatamodeld */; };
-		120F9B7320E60F85003632CA /* BoxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7220E60F85003632CA /* BoxTableViewController.swift */; };
-		120F9B7720E60FD4003632CA /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7620E60FD4003632CA /* TeamTableViewController.swift */; };
 		120F9B7A20E624CB003632CA /* ChooseCharaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7920E624CB003632CA /* ChooseCharaViewController.swift */; };
 		120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7B20E62592003632CA /* EditCharaViewController.swift */; };
 		120F9B7E20E62B5E003632CA /* SlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B7D20E62B5E003632CA /* SlotCell.swift */; };
@@ -75,6 +73,7 @@
 		12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA22092F7D4006AC352 /* StringExtension.swift */; };
 		124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124EA0A120D26CA500F46029 /* Dungeon.swift */; };
 		1250190820AF0DBC00D2FBDC /* Still.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1250190720AF0DBC00D2FBDC /* Still.swift */; };
+		125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
 		126DECDC209DD78E004EC56A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECDB209DD78D004EC56A /* Theme.swift */; };
@@ -134,6 +133,13 @@
 		12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */; };
 		12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */; };
 		12DC963520EDC366008896D7 /* BatchEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC963420EDC366008896D7 /* BatchEditViewController.swift */; };
+		12DC963720EDECFE008896D7 /* BoxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC963620EDECFE008896D7 /* BoxTableViewController.swift */; };
+		12DC963C20EDED44008896D7 /* BoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC963B20EDED44008896D7 /* BoxTableViewCell.swift */; };
+		12DC964120EDEDEB008896D7 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964020EDEDEB008896D7 /* TeamTableViewController.swift */; };
+		12DC964320EDEDFA008896D7 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964220EDEDFA008896D7 /* TeamTableViewCell.swift */; };
+		12DC964520EDFA9D008896D7 /* EditBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */; };
+		12DC964720EDFF34008896D7 /* AddCharaToBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */; };
+		12DC964A20EE1BC1008896D7 /* CharasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964920EE1BC1008896D7 /* CharasCell.swift */; };
 		12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */; };
 		12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */; };
 		12F125B120AEC069005C9659 /* CDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* CDImageView.swift */; };
@@ -211,8 +217,6 @@
 		120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxTableViewCell.swift; sourceTree = "<group>"; };
 		120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaTableViewController.swift; sourceTree = "<group>"; };
 		120F9B5620E4DEE9003632CA /* PrincessGuide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrincessGuide.xcdatamodel; sourceTree = "<group>"; };
-		120F9B7220E60F85003632CA /* BoxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTableViewController.swift; sourceTree = "<group>"; };
-		120F9B7620E60FD4003632CA /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
 		120F9B7920E624CB003632CA /* ChooseCharaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCharaViewController.swift; sourceTree = "<group>"; };
 		120F9B7B20E62592003632CA /* EditCharaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCharaViewController.swift; sourceTree = "<group>"; };
 		120F9B7D20E62B5E003632CA /* SlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotCell.swift; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 		12398EA22092F7D4006AC352 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		124EA0A120D26CA500F46029 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
 		1250190720AF0DBC00D2FBDC /* Still.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Still.swift; sourceTree = "<group>"; };
+		125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaCollectionViewCell.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12659E0A205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -346,6 +351,13 @@
 		12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDPatternTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewCell.swift; sourceTree = "<group>"; };
 		12DC963420EDC366008896D7 /* BatchEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchEditViewController.swift; sourceTree = "<group>"; };
+		12DC963620EDECFE008896D7 /* BoxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTableViewController.swift; sourceTree = "<group>"; };
+		12DC963B20EDED44008896D7 /* BoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTableViewCell.swift; sourceTree = "<group>"; };
+		12DC964020EDEDEB008896D7 /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
+		12DC964220EDEDFA008896D7 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBoxViewController.swift; sourceTree = "<group>"; };
+		12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharaToBoxViewController.swift; sourceTree = "<group>"; };
+		12DC964920EE1BC1008896D7 /* CharasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharasCell.swift; sourceTree = "<group>"; };
 		12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonBossTableViewController.swift; sourceTree = "<group>"; };
 		12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewCell.swift; sourceTree = "<group>"; };
 		12F125B020AEC069005C9659 /* CDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageView.swift; sourceTree = "<group>"; };
@@ -442,6 +454,8 @@
 		120F9B4920E4DA54003632CA /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				12DC963D20EDED8B008896D7 /* TeamManager */,
+				12DC963820EDED0E008896D7 /* BoxManager */,
 				120F9B5020E4DC8F003632CA /* CharaManager */,
 				120F9B4A20E4DA68003632CA /* ViewController */,
 				120F9B4D20E4DA9B003632CA /* View */,
@@ -478,8 +492,6 @@
 			isa = PBXGroup;
 			children = (
 				120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */,
-				120F9B7220E60F85003632CA /* BoxTableViewController.swift */,
-				120F9B7620E60FD4003632CA /* TeamTableViewController.swift */,
 				120F9B7920E624CB003632CA /* ChooseCharaViewController.swift */,
 				120F9B7B20E62592003632CA /* EditCharaViewController.swift */,
 				12DC963420EDC366008896D7 /* BatchEditViewController.swift */,
@@ -822,6 +834,60 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		12DC963820EDED0E008896D7 /* BoxManager */ = {
+			isa = PBXGroup;
+			children = (
+				12DC963A20EDED26008896D7 /* View */,
+				12DC963920EDED18008896D7 /* ViewController */,
+			);
+			path = BoxManager;
+			sourceTree = "<group>";
+		};
+		12DC963920EDED18008896D7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				12DC963620EDECFE008896D7 /* BoxTableViewController.swift */,
+				12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */,
+				12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		12DC963A20EDED26008896D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12DC963B20EDED44008896D7 /* BoxTableViewCell.swift */,
+				12DC964920EE1BC1008896D7 /* CharasCell.swift */,
+				125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12DC963D20EDED8B008896D7 /* TeamManager */ = {
+			isa = PBXGroup;
+			children = (
+				12DC963F20EDEDDC008896D7 /* ViewController */,
+				12DC963E20EDEDD5008896D7 /* View */,
+			);
+			path = TeamManager;
+			sourceTree = "<group>";
+		};
+		12DC963E20EDEDD5008896D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12DC964220EDEDFA008896D7 /* TeamTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12DC963F20EDEDDC008896D7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				12DC964020EDEDEB008896D7 /* TeamTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		12F125D520B92658005C9659 /* Action */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,8 +1202,10 @@
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
 				120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */,
 				12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */,
+				12DC964A20EE1BC1008896D7 /* CharasCell.swift in Sources */,
 				121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
+				125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */,
 				126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */,
 				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,
 				12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */,
@@ -1166,10 +1234,10 @@
 				12F1263120B95684005C9659 /* PassiveAction.swift in Sources */,
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
-				120F9B7320E60F85003632CA /* BoxTableViewController.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
 				12F1261520B954DB005C9659 /* SealAction.swift in Sources */,
+				12DC963720EDECFE008896D7 /* BoxTableViewController.swift in Sources */,
 				12F125F920B950F9005C9659 /* NoDamageAction.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
 				123608E92093234F003E7D11 /* RefreshHeader.swift in Sources */,
@@ -1177,13 +1245,13 @@
 				12F125DF20B931EF005C9659 /* CureAction.swift in Sources */,
 				12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */,
 				12F125F720B9505D005C9659 /* TauntAction.swift in Sources */,
-				120F9B7720E60FD4003632CA /* TeamTableViewController.swift in Sources */,
 				12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */,
 				12F1260520B95377005C9659 /* MultipleAction.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
 				12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */,
 				126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */,
 				12398E89209168A2006AC352 /* Wave.swift in Sources */,
+				12DC964720EDFF34008896D7 /* AddCharaToBoxViewController.swift in Sources */,
 				129A7F8720A2EE7E00D93996 /* Enemy.swift in Sources */,
 				12F1262920B955FC005C9659 /* SkillExecCountAction.swift in Sources */,
 				1221CDE5207DB0BC008F30AA /* LoadingView.swift in Sources */,
@@ -1192,9 +1260,11 @@
 				12B85D3D2089B1DB0088F5FB /* CDPromotionTableViewCell.swift in Sources */,
 				126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */,
 				12F1263D20BCD86B005C9659 /* CDTextItemView.swift in Sources */,
+				12DC964120EDEDEB008896D7 /* TeamTableViewController.swift in Sources */,
 				12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */,
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
 				12F125E720B93F7E005C9659 /* AilmentAction.swift in Sources */,
+				12DC964320EDEDFA008896D7 /* TeamTableViewCell.swift in Sources */,
 				1250190820AF0DBC00D2FBDC /* Still.swift in Sources */,
 				120F9B7E20E62B5E003632CA /* SlotCell.swift in Sources */,
 				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
@@ -1234,6 +1304,7 @@
 				12398E742091573D006AC352 /* Area.swift in Sources */,
 				1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */,
 				12398E8D20917C1F006AC352 /* DropSummaryTableViewCell.swift in Sources */,
+				12DC963C20EDED44008896D7 /* BoxTableViewCell.swift in Sources */,
 				120F9B7A20E624CB003632CA /* ChooseCharaViewController.swift in Sources */,
 				126DECE1209E0B2C004EC56A /* CustomAcknowViewController.swift in Sources */,
 				12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */,
@@ -1257,6 +1328,7 @@
 				1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */,
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
+				12DC964520EDFA9D008896D7 /* EditBoxViewController.swift in Sources */,
 				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
 				12F125E320B93219005C9659 /* BarrierAction.swift in Sources */,
 				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,

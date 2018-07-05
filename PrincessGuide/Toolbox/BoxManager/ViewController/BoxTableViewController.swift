@@ -1,43 +1,41 @@
 //
-//  CharaTableViewController.swift
+//  BoxTableViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/6/28.
+//  Created by zzk on 2018/7/5.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
-import CoreData
 import Gestalt
+import CoreData
 
-class CharaTableViewController: UITableViewController {
+class BoxTableViewController: UITableViewController {
 
-    var fetchedResultsController: NSFetchedResultsController<Chara>?
+    var fetchedResultsController: NSFetchedResultsController<Box>?
     var context: NSManagedObjectContext {
         return CoreDataStack.default.viewContext
     }
     
-    var charas: [Chara] {
+    var boxes: [Box] {
         return fetchedResultsController?.fetchedObjects ?? []
     }
     
     let backgroundImageView = UIImageView()
     
     private func prepareFetchRequest() {
-        let request: NSFetchRequest<Chara> = Chara.fetchRequest()
+        let request: NSFetchRequest<Box> = Box.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "modifiedAt", ascending: false)]
         request.returnsObjectsAsFaults = false
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController?.delegate = self
         try? fetchedResultsController?.performFetch()
-        // preload
-        fetchedResultsController?.fetchedObjects?.forEach { _ = Card.findByID(Int($0.id)) }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("Charas", comment: "")
+        navigationItem.title = NSLocalizedString("Boxes", comment: "")
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
         tableView.backgroundView = backgroundImageView
@@ -47,8 +45,8 @@ class CharaTableViewController: UITableViewController {
             themeable.navigationController?.toolbar.barStyle = theme.barStyle
             themeable.navigationController?.toolbar.tintColor = theme.color.tint
         }
-
-        tableView.register(CharaTableViewCell.self, forCellReuseIdentifier: CharaTableViewCell.description())
+        
+        tableView.register(BoxTableViewCell.self, forCellReuseIdentifier: BoxTableViewCell.description())
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 103
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -66,14 +64,12 @@ class CharaTableViewController: UITableViewController {
     private(set) lazy var copyItem = UIBarButtonItem(title: NSLocalizedString("Copy", comment: ""), style: .plain, target: self, action: #selector(copyCharas(_:)))
     private(set) lazy var spaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     
-    private(set) lazy var batchEditItem = UIBarButtonItem(title: NSLocalizedString("Batch Edit", comment: ""), style: .plain, target: self, action: #selector(batchEdit(_:)))
-    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         if isEditing {
             navigationItem.rightBarButtonItems = [deleteItem, editButtonItem]
             navigationController?.setToolbarHidden(false, animated: true)
-            toolbarItems = [selectItem, spaceItem, deselectItem, spaceItem, copyItem, spaceItem, batchEditItem]
+            toolbarItems = [selectItem, spaceItem, deselectItem, spaceItem, copyItem, spaceItem]
         } else {
             navigationItem.rightBarButtonItems = [addItem, editButtonItem]
             navigationController?.setToolbarHidden(true, animated: true)
@@ -98,13 +94,13 @@ class CharaTableViewController: UITableViewController {
     }
     
     @objc private func addChara(_ item: UIBarButtonItem) {
-        let vc = ChooseCharaViewController()
+        let vc = EditBoxViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func commitDeletion(_ item: UIBarButtonItem) {
         for indexPath in (tableView.indexPathsForSelectedRows ?? [IndexPath]()).sorted(by: { $0.row > $1.row }) {
-            context.delete(charas[indexPath.row])
+            context.delete(boxes[indexPath.row])
         }
         do {
             try context.save()
@@ -116,7 +112,7 @@ class CharaTableViewController: UITableViewController {
     
     @objc private func selectAllCharas(_ item: UIBarButtonItem) {
         if isEditing {
-            for i in 0..<charas.count {
+            for i in 0..<boxes.count {
                 tableView.selectRow(at: IndexPath(row: i, section: 0), animated: false, scrollPosition: .none)
             }
         }
@@ -124,7 +120,7 @@ class CharaTableViewController: UITableViewController {
     
     @objc private func deselectAllCharas(_ item: UIBarButtonItem) {
         if isEditing {
-            for i in 0..<charas.count {
+            for i in 0..<boxes.count {
                 tableView.deselectRow(at: IndexPath(row: i, section: 0), animated: false)
             }
         }
@@ -132,8 +128,8 @@ class CharaTableViewController: UITableViewController {
     
     @objc private func copyCharas(_ item: UIBarButtonItem) {
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows, isEditing {
-            for indexPath in selectedIndexPaths.reversed() {
-                let _ = Chara(anotherChara: charas[indexPath.row], context: context)
+            for indexPath in selectedIndexPaths {
+                let _ = Box(anotherBox: boxes[indexPath.row], context: context)
             }
             do {
                 try context.save()
@@ -143,31 +139,23 @@ class CharaTableViewController: UITableViewController {
         }
     }
     
-    @objc private func batchEdit(_ item: UIBarButtonItem) {
-        if let selectedIndexPaths = tableView.indexPathsForSelectedRows, isEditing, selectedIndexPaths.count > 0 {
-            let charas = selectedIndexPaths.map { self.charas[$0.row] }
-            let vc = BatchEditViewController(charas: charas)
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return charas.count
+        return boxes.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CharaTableViewCell.description(), for: indexPath) as! CharaTableViewCell
-        let chara = charas[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: BoxTableViewCell.description(), for: indexPath) as! BoxTableViewCell
+        let chara = boxes[indexPath.row]
         cell.configure(for: chara)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isEditing { return }
-        let chara = charas[indexPath.row]
-        let vc = EditCharaViewController(chara: chara)
+        let box = boxes[indexPath.row]
+        let vc = EditBoxViewController(box: box)
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -181,7 +169,7 @@ class CharaTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            context.delete(charas[indexPath.row])
+            context.delete(boxes[indexPath.row])
             do {
                 try context.save()
             } catch (let error) {
@@ -203,28 +191,15 @@ class CharaTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
         navigationItem.rightBarButtonItems?[1] = editButtonItem
     }
+
 }
 
-extension Chara {
+extension Box {
     
-    convenience init(anotherChara: Chara, context: NSManagedObjectContext) {
+    convenience init(anotherBox: Box, context: NSManagedObjectContext) {
         self.init(context: context)
-        bondRank = anotherChara.bondRank
-        level = anotherChara.level
-        rank = anotherChara.rank
-        skillLevel = anotherChara.skillLevel
-        slot1 = anotherChara.slot1
-        slot2 = anotherChara.slot2
-        slot3 = anotherChara.slot3
-        slot4 = anotherChara.slot4
-        slot5 = anotherChara.slot5
-        slot6 = anotherChara.slot6
-        modifiedAt = Date()
-        id = anotherChara.id
-        rarity = anotherChara.rarity
-    }
-    
-    var card: Card? {
-        return Card.findByID(Int(id))
+        anotherBox.charas?.forEach {
+            self.addToCharas($0 as! Chara)
+        }
     }
 }

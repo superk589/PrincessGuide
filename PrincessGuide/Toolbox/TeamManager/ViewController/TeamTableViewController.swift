@@ -1,14 +1,14 @@
 //
-//  BoxTableViewController.swift
+//  TeamTableViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/6/29.
+//  Created by zzk on 2018/7/5.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 
-class BoxTableViewController: UITableViewController {
+class TeamTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
