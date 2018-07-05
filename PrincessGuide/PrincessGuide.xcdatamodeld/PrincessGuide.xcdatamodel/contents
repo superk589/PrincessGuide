@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14270.11" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14296.2" systemVersion="18A326g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Box" representedClassName="Box" syncable="YES" codeGenerationType="class">
+        <relationship name="charas" toMany="YES" deletionRule="Nullify" destinationEntity="Chara" inverseName="boxes" inverseEntity="Chara" syncable="YES"/>
+    </entity>
     <entity name="Chara" representedClassName="Chara" syncable="YES" codeGenerationType="class">
         <attribute name="bondRank" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -14,8 +17,15 @@
         <attribute name="slot4" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="slot5" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="slot6" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="boxes" toMany="YES" deletionRule="Nullify" destinationEntity="Box" inverseName="charas" inverseEntity="Box" syncable="YES"/>
+        <relationship name="teams" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="charas" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES" codeGenerationType="class">
+        <relationship name="charas" toMany="YES" maxCount="5" deletionRule="Nullify" destinationEntity="Chara" inverseName="teams" inverseEntity="Chara" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="240"/>
+        <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="270"/>
+        <element name="Box" positionX="684" positionY="-27" width="128" height="60"/>
+        <element name="Team" positionX="684" positionY="-18" width="128" height="60"/>
     </elements>
 </model>

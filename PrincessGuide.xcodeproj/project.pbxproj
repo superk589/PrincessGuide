@@ -442,7 +442,7 @@
 		120F9B4920E4DA54003632CA /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
-				120F9B5020E4DC8F003632CA /* BoxManager */,
+				120F9B5020E4DC8F003632CA /* CharaManager */,
 				120F9B4A20E4DA68003632CA /* ViewController */,
 				120F9B4D20E4DA9B003632CA /* View */,
 			);
@@ -465,13 +465,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		120F9B5020E4DC8F003632CA /* BoxManager */ = {
+		120F9B5020E4DC8F003632CA /* CharaManager */ = {
 			isa = PBXGroup;
 			children = (
 				120F9B7F20E62B68003632CA /* View */,
 				120F9B5120E4DCA0003632CA /* ViewController */,
 			);
-			path = BoxManager;
+			path = CharaManager;
 			sourceTree = "<group>";
 		};
 		120F9B5120E4DCA0003632CA /* ViewController */ = {
