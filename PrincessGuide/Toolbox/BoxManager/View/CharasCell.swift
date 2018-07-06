@@ -10,7 +10,13 @@ import UIKit
 import Eureka
 import Gestalt
 
+protocol CharasCellDelegate: class {
+    func charasCell(_ charasCell: CharasCell, didSelect chara: Chara)
+}
+
 class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    weak var delegate: CharasCellDelegate?
     
     let layout = UICollectionViewFlowLayout()
     
@@ -75,6 +81,10 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
         let chara = charas[indexPath.item]
         cell.configure(for: chara)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.charasCell(self, didSelect: charas[indexPath.item])
     }
     
     override func update() {

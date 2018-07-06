@@ -39,8 +39,8 @@ class EditCharaViewController: FormViewController {
     
     init(chara: Chara) {
         mode = .edit
-        context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
-        parentContext = CoreDataStack.default.viewContext
+        parentContext = chara.managedObjectContext ?? CoreDataStack.default.viewContext
+        context = CoreDataStack.default.newChildContext(parent: parentContext)
         self.chara = context.object(with: chara.objectID) as? Chara
         card = Card.findByID(Int(chara.id))
         super.init(nibName: nil, bundle: nil)
@@ -296,6 +296,10 @@ class EditCharaViewController: FormViewController {
             print(error)
         }
         
+        didSave()
+    }
+    
+    func didSave() {
         if let vc = navigationController?.viewControllers[1] {
             navigationController?.popToViewController(vc, animated: true)
         }

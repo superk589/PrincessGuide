@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Eureka
 import Gestalt
+import SwiftyJSON
 
 class EditBoxViewController: FormViewController {
     
@@ -159,6 +160,7 @@ class EditBoxViewController: FormViewController {
                     themeable.backgroundColor = theme.color.tableViewCell.background
                 }
                 cell.configure(for: self.box)
+                cell.delegate = self
             }
         
             <<< ButtonRow("edit_charas") { (row) in
@@ -178,32 +180,20 @@ class EditBoxViewController: FormViewController {
                     vc.delegate = self
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
-//            +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete], header: NSLocalizedString("Charas", comment: ""), footer: "") {
-//                $0.tag = "charas"
-//                $0.addButtonProvider = { section in
-//                    return ButtonRow() {
-//                        $0.title = "Add New Chara"
-//                        }.cellUpdate { cell, row in
-//                            cell.textLabel?.textAlignment = .left
-//                        }.onCellSelection { (cell, row) in
-//                            let vc = CharaTableViewController()
-//
-//                        }
-//                    }
-//                $0.multivaluedRowToInsertAt = { index in
-//                    return NameRow() {
-//                        $0.placeholder = "Tag Name"
-//                    }
-//                }
-//                $0 <<< NameRow() {
-//                    $0.placeholder = "Tag Name"
-//                }
-//        }
         
     }
 
     @objc private func saveBox() {
-        
+        let json = JSON(form.values())
+        box.modifiedAt = Date()
+        box.name = json["name"].stringValue
+        do {
+            try context.save()
+            try parentContext.save()
+        } catch (let error) {
+            print(error)
+        }
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -214,4 +204,24 @@ extension EditBoxViewController: AddCharaToBoxViewControllerDelegate {
         row?.cell.configure(for: box)
         row?.reload()
     }
+}
+
+extension EditBoxViewController: CharasCellDelegate {
+    
+    func charasCell(_ charasCell: CharasCell, didSelect chara: Chara) {
+        let vc = EditCharaInBoxViewController(chara: chara)
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+extension EditBoxViewController: EditCharaInBoxViewControllerDelegate {
+    
+    func editCharaInBoxViewController(_ editCharaInBoxViewController: EditCharaInBoxViewController, didSave chara: Chara) {
+        let row = form.rowBy(tag: "charas") as? CharasRow
+        row?.cell.configure(for: box)
+        row?.reload()
+    }
+    
 }

@@ -37,12 +37,7 @@ class CharaCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(for chara: Chara) {
-        if chara.rarity >= 3 {
-            icon.cardID = chara.card?.iconID(style: .r3)
-        } else {
-            icon.cardID = chara.card?.iconID(style: .r1)
-        }
-        
+        icon.cardID = chara.iconID
         rarityView.setup(stars: Int(chara.rarity))
     }
 }

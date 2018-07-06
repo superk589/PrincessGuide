@@ -61,7 +61,7 @@ class BoxTableViewController: UITableViewController {
     
     private(set) lazy var selectItem = UIBarButtonItem(title: NSLocalizedString("Select All", comment: ""), style: .plain, target: self, action: #selector(selectAllCharas(_:)))
     private(set) lazy var deselectItem = UIBarButtonItem(title: NSLocalizedString("Deselect All", comment: ""), style: .plain, target: self, action: #selector(deselectAllCharas(_:)))
-    private(set) lazy var copyItem = UIBarButtonItem(title: NSLocalizedString("Copy", comment: ""), style: .plain, target: self, action: #selector(copyCharas(_:)))
+    private(set) lazy var copyItem = UIBarButtonItem(title: NSLocalizedString("Copy", comment: ""), style: .plain, target: self, action: #selector(copyBoxes(_:)))
     private(set) lazy var spaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -69,7 +69,7 @@ class BoxTableViewController: UITableViewController {
         if isEditing {
             navigationItem.rightBarButtonItems = [deleteItem, editButtonItem]
             navigationController?.setToolbarHidden(false, animated: true)
-            toolbarItems = [selectItem, spaceItem, deselectItem, spaceItem, copyItem, spaceItem]
+            toolbarItems = [selectItem, spaceItem, deselectItem, spaceItem, copyItem]
         } else {
             navigationItem.rightBarButtonItems = [addItem, editButtonItem]
             navigationController?.setToolbarHidden(true, animated: true)
@@ -126,9 +126,9 @@ class BoxTableViewController: UITableViewController {
         }
     }
     
-    @objc private func copyCharas(_ item: UIBarButtonItem) {
+    @objc private func copyBoxes(_ item: UIBarButtonItem) {
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows, isEditing {
-            for indexPath in selectedIndexPaths {
+            for indexPath in selectedIndexPaths.reversed() {
                 let _ = Box(anotherBox: boxes[indexPath.row], context: context)
             }
             do {
@@ -192,14 +192,4 @@ class BoxTableViewController: UITableViewController {
         navigationItem.rightBarButtonItems?[1] = editButtonItem
     }
 
-}
-
-extension Box {
-    
-    convenience init(anotherBox: Box, context: NSManagedObjectContext) {
-        self.init(context: context)
-        anotherBox.charas?.forEach {
-            self.addToCharas($0 as! Chara)
-        }
-    }
 }

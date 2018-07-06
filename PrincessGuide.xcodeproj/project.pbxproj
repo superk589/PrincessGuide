@@ -74,6 +74,7 @@
 		124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124EA0A120D26CA500F46029 /* Dungeon.swift */; };
 		1250190820AF0DBC00D2FBDC /* Still.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1250190720AF0DBC00D2FBDC /* Still.swift */; };
 		125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */; };
+		125B663320EFB5D600D15E75 /* Chara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663220EFB5D600D15E75 /* Chara.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
 		126DECDC209DD78E004EC56A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECDB209DD78D004EC56A /* Theme.swift */; };
@@ -132,6 +133,8 @@
 		12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */; };
 		12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */; };
 		12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */; };
+		12DA21EC20EFB932005FD705 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA21EB20EFB932005FD705 /* Box.swift */; };
+		12DA21EF20EFBBE3005FD705 /* EditCharaInBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA21EE20EFBBE3005FD705 /* EditCharaInBoxViewController.swift */; };
 		12DC963520EDC366008896D7 /* BatchEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC963420EDC366008896D7 /* BatchEditViewController.swift */; };
 		12DC963720EDECFE008896D7 /* BoxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC963620EDECFE008896D7 /* BoxTableViewController.swift */; };
 		12DC963C20EDED44008896D7 /* BoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC963B20EDED44008896D7 /* BoxTableViewCell.swift */; };
@@ -283,6 +286,7 @@
 		124EA0A120D26CA500F46029 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
 		1250190720AF0DBC00D2FBDC /* Still.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Still.swift; sourceTree = "<group>"; };
 		125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaCollectionViewCell.swift; sourceTree = "<group>"; };
+		125B663220EFB5D600D15E75 /* Chara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chara.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12659E0A205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 		12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPropertyTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDPatternTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewCell.swift; sourceTree = "<group>"; };
+		12DA21EB20EFB932005FD705 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		12DA21EE20EFBBE3005FD705 /* EditCharaInBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCharaInBoxViewController.swift; sourceTree = "<group>"; };
 		12DC963420EDC366008896D7 /* BatchEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchEditViewController.swift; sourceTree = "<group>"; };
 		12DC963620EDECFE008896D7 /* BoxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTableViewController.swift; sourceTree = "<group>"; };
 		12DC963B20EDED44008896D7 /* BoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTableViewCell.swift; sourceTree = "<group>"; };
@@ -482,6 +488,7 @@
 		120F9B5020E4DC8F003632CA /* CharaManager */ = {
 			isa = PBXGroup;
 			children = (
+				12DA21EA20EFB62C005FD705 /* Model */,
 				120F9B7F20E62B68003632CA /* View */,
 				120F9B5120E4DCA0003632CA /* ViewController */,
 			);
@@ -834,9 +841,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		12DA21EA20EFB62C005FD705 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				125B663220EFB5D600D15E75 /* Chara.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12DA21ED20EFB936005FD705 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12DA21EB20EFB932005FD705 /* Box.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		12DC963820EDED0E008896D7 /* BoxManager */ = {
 			isa = PBXGroup;
 			children = (
+				12DA21ED20EFB936005FD705 /* Model */,
 				12DC963A20EDED26008896D7 /* View */,
 				12DC963920EDED18008896D7 /* ViewController */,
 			);
@@ -849,6 +873,7 @@
 				12DC963620EDECFE008896D7 /* BoxTableViewController.swift */,
 				12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */,
 				12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */,
+				12DA21EE20EFBBE3005FD705 /* EditCharaInBoxViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1178,6 +1203,7 @@
 				129A7F5820A0249600D93996 /* Property.swift in Sources */,
 				1280DE3F20A5C5A5008D9D72 /* QuestNameTableViewCell.swift in Sources */,
 				129A7F8F20A31D1600D93996 /* QuestEnemyTableViewCell.swift in Sources */,
+				125B663320EFB5D600D15E75 /* Chara.swift in Sources */,
 				12F1262720B955D5005C9659 /* WaveStartIdleAction.swift in Sources */,
 				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
@@ -1245,6 +1271,7 @@
 				12F125DF20B931EF005C9659 /* CureAction.swift in Sources */,
 				12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */,
 				12F125F720B9505D005C9659 /* TauntAction.swift in Sources */,
+				12DA21EF20EFBBE3005FD705 /* EditCharaInBoxViewController.swift in Sources */,
 				12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */,
 				12F1260520B95377005C9659 /* MultipleAction.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
@@ -1301,6 +1328,7 @@
 				12F125FB20B952CA005C9659 /* ChangePatternAction.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
 				12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */,
+				12DA21EC20EFB932005FD705 /* Box.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
 				1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */,
 				12398E8D20917C1F006AC352 /* DropSummaryTableViewCell.swift in Sources */,

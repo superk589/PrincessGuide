@@ -204,27 +204,3 @@ class CharaTableViewController: UITableViewController {
         navigationItem.rightBarButtonItems?[1] = editButtonItem
     }
 }
-
-extension Chara {
-    
-    convenience init(anotherChara: Chara, context: NSManagedObjectContext) {
-        self.init(context: context)
-        bondRank = anotherChara.bondRank
-        level = anotherChara.level
-        rank = anotherChara.rank
-        skillLevel = anotherChara.skillLevel
-        slot1 = anotherChara.slot1
-        slot2 = anotherChara.slot2
-        slot3 = anotherChara.slot3
-        slot4 = anotherChara.slot4
-        slot5 = anotherChara.slot5
-        slot6 = anotherChara.slot6
-        modifiedAt = Date()
-        id = anotherChara.id
-        rarity = anotherChara.rarity
-    }
-    
-    var card: Card? {
-        return Card.findByID(Int(id))
-    }
-}

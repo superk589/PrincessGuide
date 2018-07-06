@@ -28,8 +28,8 @@
         <relationship name="charas" toMany="YES" maxCount="5" deletionRule="Nullify" destinationEntity="Chara" inverseName="teams" inverseEntity="Chara" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="270"/>
         <element name="Box" positionX="684" positionY="-27" width="128" height="90"/>
+        <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="270"/>
         <element name="Team" positionX="684" positionY="-18" width="128" height="90"/>
     </elements>
 </model>
