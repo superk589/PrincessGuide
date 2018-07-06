@@ -114,7 +114,7 @@ class CharaTableViewController: UITableViewController {
         setEditing(false, animated: true)
     }
     
-    @objc private func selectAllCharas(_ item: UIBarButtonItem) {
+    @objc func selectAllCharas(_ item: UIBarButtonItem) {
         if isEditing {
             for i in 0..<charas.count {
                 tableView.selectRow(at: IndexPath(row: i, section: 0), animated: false, scrollPosition: .none)
@@ -122,7 +122,7 @@ class CharaTableViewController: UITableViewController {
         }
     }
     
-    @objc private func deselectAllCharas(_ item: UIBarButtonItem) {
+    @objc func deselectAllCharas(_ item: UIBarButtonItem) {
         if isEditing {
             for i in 0..<charas.count {
                 tableView.deselectRow(at: IndexPath(row: i, section: 0), animated: false)

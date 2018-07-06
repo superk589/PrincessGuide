@@ -38,10 +38,18 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
             make.right.equalTo(readableContentGuide)
             make.top.bottom.equalToSuperview()
         }
+        layout.itemSize = CGSize(width: 64, height: 83)
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         
         collectionView.backgroundColor = .clear
         
         selectionStyle = .none
+        
+        height = { [unowned self] in
+            self.layout.invalidateLayout()
+            self.collectionView.layoutIfNeeded()
+            return max(44, self.collectionView.contentSize.height + self.collectionView.contentInset.top + self.collectionView.contentInset.bottom)
+        }
         
     }
     
@@ -67,11 +75,6 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
         let chara = charas[indexPath.item]
         cell.configure(for: chara)
         return cell
-    }
-    
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        collectionView.layoutIfNeeded()
-        return collectionView.contentSize
     }
     
     override func update() {

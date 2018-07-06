@@ -38,6 +38,8 @@ class EditBoxViewController: FormViewController {
         parentContext = CoreDataStack.default.viewContext
         context = CoreDataStack.default.newChildContext(parent: parentContext)
         box = Box(context: context)
+        box.modifiedAt = Date()
+        box.name = NSLocalizedString("My Box", comment: "")
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -172,7 +174,8 @@ class EditBoxViewController: FormViewController {
                     }
                 }
                 .onCellSelection { [unowned self] (cell, row) in
-                    let vc = AddCharaToBoxViewController(box: self.box)
+                    let vc = AddCharaToBoxViewController(box: self.box, parentContext: self.context)
+                    vc.delegate = self
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
 //            +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete], header: NSLocalizedString("Charas", comment: ""), footer: "") {
@@ -201,5 +204,14 @@ class EditBoxViewController: FormViewController {
 
     @objc private func saveBox() {
         
+    }
+}
+
+extension EditBoxViewController: AddCharaToBoxViewControllerDelegate {
+    
+    func addCharaToBoxViewControllerDidSave(_ addCharaToBoxViewController: AddCharaToBoxViewController) {
+        let row = form.rowBy(tag: "charas") as? CharasRow
+        row?.cell.configure(for: box)
+        row?.reload()
     }
 }
