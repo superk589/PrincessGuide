@@ -36,19 +36,21 @@ class CraftTableViewCell: UITableViewCell, CraftDetailConfigurable {
             make.bottom.equalTo(-10)
         }
         
-        contentView.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(icon.snp.right).offset(10)
-            make.centerY.equalToSuperview()
-        }
-        nameLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
-        
         contentView.addSubview(consumeNumberLabel)
         consumeNumberLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         consumeNumberLabel.snp.makeConstraints { (make) in
             make.right.equalTo(readableContentGuide)
             make.centerY.equalToSuperview()
         }
+        
+        contentView.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(icon.snp.right).offset(10)
+            make.centerY.equalToSuperview()
+            make.right.lessThanOrEqualTo(consumeNumberLabel).offset(-5)
+        }
+        nameLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
+        
     }
     
     func configure(for consume: Craft.Consume) {

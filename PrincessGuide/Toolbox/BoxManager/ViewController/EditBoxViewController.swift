@@ -12,7 +12,7 @@ import Eureka
 import Gestalt
 import SwiftyJSON
 
-class EditBoxViewController: FormViewController {
+class EditBoxViewController: FormViewController, BoxDetailConfigurable {
     
     let box: Box
     
@@ -26,7 +26,7 @@ class EditBoxViewController: FormViewController {
     
     let mode: Mode
     
-    init(box: Box) {
+    required init(box: Box) {
         mode = .edit
         parentContext = CoreDataStack.default.viewContext
         context = CoreDataStack.default.newChildContext(parent: parentContext)
@@ -130,6 +130,7 @@ class EditBoxViewController: FormViewController {
                 } else {
                     $0.value = box.name
                 }
+//                $0.add(rule: RuleMaxLength(maxLength: 16, msg: NSLocalizedString("max 16 characters", comment: "")))
                 }.cellSetup { (cell, row) in
                     cell.selectedBackgroundView = UIView()
                     ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
@@ -149,9 +150,25 @@ class EditBoxViewController: FormViewController {
                     }
                 }
         
+            <<< ButtonRow("save_box") { (row) in
+                row.title = NSLocalizedString("Save Box", comment: "")
+                }
+                .cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                    }
+                }
+                .onCellSelection { [unowned self] (cell, row) in
+                    self.saveBox()
+                }
+            
             +++ Section(NSLocalizedString("Charas", comment: ""))
             
-            <<< ButtonRow("edit_charas") { (row) in
+            <<< ButtonRow("select_charas") { (row) in
                 row.title = NSLocalizedString("Select Charas", comment: "")
                 }
                 .cellSetup { (cell, row) in
@@ -165,6 +182,24 @@ class EditBoxViewController: FormViewController {
                 }
                 .onCellSelection { [unowned self] (cell, row) in
                     let vc = AddCharaToBoxViewController(box: self.box, parentContext: self.context)
+                    vc.delegate = self
+                    self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            <<< ButtonRow("batch_edit") { (row) in
+                row.title = NSLocalizedString("Batch Edit", comment: "")
+                }
+                .cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                    }
+                }
+                .onCellSelection { [unowned self] (cell, row) in
+                    let vc = BatchEditCharaInBoxViewController(charas: self.box.charas?.allObjects as? [Chara] ?? [], parentContext: self.context)
                     vc.delegate = self
                     self.navigationController?.pushViewController(vc, animated: true)
             }
@@ -219,6 +254,16 @@ extension EditBoxViewController: CharasCellDelegate {
 extension EditBoxViewController: EditCharaInBoxViewControllerDelegate {
     
     func editCharaInBoxViewController(_ editCharaInBoxViewController: EditCharaInBoxViewController, didSave chara: Chara) {
+        let row = form.rowBy(tag: "charas") as? CharasRow
+        row?.cell.configure(for: box)
+        row?.reload()
+    }
+    
+}
+
+extension EditBoxViewController: BatchEditCharaInBoxViewControllerDelegate {
+    
+    func batchEditCharaInBoxViewController(_ batchEditCharaInBoxViewController: BatchEditCharaInBoxViewController, didSave charas: [Chara]) {
         let row = form.rowBy(tag: "charas") as? CharasRow
         row?.cell.configure(for: box)
         row?.reload()

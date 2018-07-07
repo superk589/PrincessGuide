@@ -248,6 +248,12 @@ class Card: Codable {
                 Master.shared.getEquipments(equipmentID: id, callback: closure)
             }?.first
         }
+        
+        lazy var equipmentsInSlot: [Equipment?] = self.equipSlots.map { id in
+            DispatchSemaphore.sync { (closure) in
+                Master.shared.getEquipments(equipmentID: id, callback: closure)
+            }?.first
+        }
     }
     
     struct Rarity: Codable {

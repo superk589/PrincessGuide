@@ -18,10 +18,10 @@ class BatchEditViewController: FormViewController {
     let parentContext: NSManagedObjectContext
     
     let charas: [Chara]
-    
-    init(charas: [Chara]) {
-        let context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
-        parentContext = CoreDataStack.default.viewContext
+        
+    init(charas: [Chara], parentContext: NSManagedObjectContext = CoreDataStack.default.viewContext) {
+        self.parentContext = parentContext
+        let context = CoreDataStack.default.newChildContext(parent: parentContext)
         self.charas = charas.map { context.object(with: $0.objectID) as! Chara }
         self.context = context
         super.init(nibName: nil, bundle: nil)
@@ -244,6 +244,11 @@ class BatchEditViewController: FormViewController {
             print(error)
         }
         
+        didSave()
+        
+    }
+    
+    func didSave() {
         if let vc = navigationController?.viewControllers[1] {
             navigationController?.popToViewController(vc, animated: true)
         }

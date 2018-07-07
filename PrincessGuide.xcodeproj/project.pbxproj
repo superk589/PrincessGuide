@@ -83,6 +83,10 @@
 		125B663320EFB5D600D15E75 /* Chara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663220EFB5D600D15E75 /* Chara.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
 		12659E0B205F5DB100A8B9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12659E09205F5DB100A8B9A2 /* Main.storyboard */; };
+		126BFBCF20F0FAE70059B4ED /* BDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126BFBCE20F0FAE70059B4ED /* BDTabViewController.swift */; };
+		126BFBD120F0FAF20059B4ED /* BDInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126BFBD020F0FAF20059B4ED /* BDInfoViewController.swift */; };
+		126BFBD320F0FC420059B4ED /* BDEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126BFBD220F0FC420059B4ED /* BDEquipmentViewController.swift */; };
+		126BFBD520F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126BFBD420F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift */; };
 		126DECDC209DD78E004EC56A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECDB209DD78D004EC56A /* Theme.swift */; };
 		126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECDE209E0733004EC56A /* ThirdPartyLibrariesViewController.swift */; };
 		126DECE1209E0B2C004EC56A /* CustomAcknowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECE0209E0B2C004EC56A /* CustomAcknowViewController.swift */; };
@@ -303,6 +307,10 @@
 		12659E05205F5DB100A8B9A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12659E0A205F5DB100A8B9A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12659E11205F5DB100A8B9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		126BFBCE20F0FAE70059B4ED /* BDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDTabViewController.swift; sourceTree = "<group>"; };
+		126BFBD020F0FAF20059B4ED /* BDInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDInfoViewController.swift; sourceTree = "<group>"; };
+		126BFBD220F0FC420059B4ED /* BDEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDEquipmentViewController.swift; sourceTree = "<group>"; };
+		126BFBD420F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchEditCharaInBoxViewController.swift; sourceTree = "<group>"; };
 		126DECDB209DD78D004EC56A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		126DECDE209E0733004EC56A /* ThirdPartyLibrariesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyLibrariesViewController.swift; sourceTree = "<group>"; };
 		126DECE0209E0B2C004EC56A /* CustomAcknowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAcknowViewController.swift; sourceTree = "<group>"; };
@@ -900,6 +908,10 @@
 				12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */,
 				12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */,
 				12DA21EE20EFBBE3005FD705 /* EditCharaInBoxViewController.swift */,
+				126BFBD420F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift */,
+				126BFBCE20F0FAE70059B4ED /* BDTabViewController.swift */,
+				126BFBD020F0FAF20059B4ED /* BDInfoViewController.swift */,
+				126BFBD220F0FC420059B4ED /* BDEquipmentViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1382,16 +1394,19 @@
 				1280DE4320A5D084008D9D72 /* DateExtension.swift in Sources */,
 				12F125ED20B94B11005C9659 /* SummonAction.swift in Sources */,
 				12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */,
+				126BFBCF20F0FAE70059B4ED /* BDTabViewController.swift in Sources */,
 				129A7F9120A3211900D93996 /* EnemyView.swift in Sources */,
 				1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */,
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
 				12DC964520EDFA9D008896D7 /* EditBoxViewController.swift in Sources */,
+				126BFBD120F0FAF20059B4ED /* BDInfoViewController.swift in Sources */,
 				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
 				12F125E320B93219005C9659 /* BarrierAction.swift in Sources */,
 				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
 				120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */,
+				126BFBD320F0FC420059B4ED /* BDEquipmentViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
@@ -1413,6 +1428,7 @@
 				1223A8E820F0A1D600C98BB2 /* CardWithBirthdayCell.swift in Sources */,
 				120F9B8120E9D1BA003632CA /* CoreDataStack.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
+				126BFBD520F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift in Sources */,
 				12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */,
 				12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */,
 				12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */,

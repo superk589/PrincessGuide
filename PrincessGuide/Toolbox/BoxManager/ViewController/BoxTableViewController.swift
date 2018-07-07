@@ -155,7 +155,7 @@ class BoxTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isEditing { return }
         let box = boxes[indexPath.row]
-        let vc = EditBoxViewController(box: box)
+        let vc = BDTabViewController(box: box)
         navigationController?.pushViewController(vc, animated: true)
     }
     
