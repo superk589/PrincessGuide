@@ -233,6 +233,10 @@ class CardTableViewController: UITableViewController, DataChecking {
         case .combatEffectiveness:
             mode = .text
             text = String(card.combatEffectiveness())
+        case .birthday:
+            mode = .text
+            let format = NSLocalizedString("%@/%@", comment: "")
+            text = String(format: format, card.profile.birthMonth, card.profile.birthDay)
         }
         return (mode, text)
     }
@@ -313,6 +317,8 @@ extension Array where Element == Card {
             sortingMethod = { Int($0.profile.age) ?? .max < Int($1.profile.age) ?? .max }
         case .combatEffectiveness:
             sortingMethod = { $0.combatEffectiveness() < $1.combatEffectiveness() }
+        case .birthday:
+            sortingMethod = { (Int($0.profile.birthMonth) ?? .max, Int($0.profile.birthDay) ?? .max) < (Int($1.profile.birthMonth) ?? .max, Int($1.profile.birthDay) ?? .max) }
         }
         
         for index in sections.indices {

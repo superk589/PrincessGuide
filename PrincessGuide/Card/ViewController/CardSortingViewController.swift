@@ -74,6 +74,8 @@ class CardSortingViewController: FormViewController {
             case weight
             case age
             
+            case birthday
+            
             var description: String {
                 switch self {
                 case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate,
@@ -101,10 +103,13 @@ class CardSortingViewController: FormViewController {
                     return Card.Profile.ItemKey.weight.description
                 case .combatEffectiveness:
                     return NSLocalizedString("Combat Effectiveness", comment: "")
+                case .birthday:
+                    return NSLocalizedString("Birthday", comment: "")
                 }
+                
             }
             
-            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .combatEffectiveness, .swingTime, .attackRange, .id, .name, .age, .height, .weight]
+            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .combatEffectiveness, .swingTime, .attackRange, .id, .name, .age, .birthday, .height, .weight]
             
         }
         

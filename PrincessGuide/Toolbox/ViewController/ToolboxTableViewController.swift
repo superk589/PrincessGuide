@@ -17,6 +17,7 @@ class ToolboxTableViewController: UITableViewController {
     }
     
     private var rows = [
+        Row(title: NSLocalizedString("Birthday Notification", comment: ""), vcType: BirthdayViewController.self),
         Row(title: NSLocalizedString("Chara Management", comment: ""), vcType: CharaTableViewController.self),
         Row(title: NSLocalizedString("Box Management", comment: ""), vcType: BoxTableViewController.self),
         Row(title: NSLocalizedString("Team Management", comment: ""), vcType: TeamTableViewController.self)

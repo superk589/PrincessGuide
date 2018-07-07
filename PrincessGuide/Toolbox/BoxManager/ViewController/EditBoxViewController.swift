@@ -150,21 +150,9 @@ class EditBoxViewController: FormViewController {
                 }
         
             +++ Section(NSLocalizedString("Charas", comment: ""))
-        
-            <<< CharasRow("charas").cellSetup{ [unowned self] (cell, row) in
-                cell.selectedBackgroundView = UIView()
-                ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                    themeable.textLabel?.textColor = theme.color.title
-                    themeable.detailTextLabel?.textColor = theme.color.tint
-                    themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                    themeable.backgroundColor = theme.color.tableViewCell.background
-                }
-                cell.configure(for: self.box)
-                cell.delegate = self
-            }
-        
+            
             <<< ButtonRow("edit_charas") { (row) in
-                row.title = NSLocalizedString("Edit Charas", comment: "")
+                row.title = NSLocalizedString("Select Charas", comment: "")
                 }
                 .cellSetup { (cell, row) in
                     cell.selectedBackgroundView = UIView()
@@ -179,7 +167,19 @@ class EditBoxViewController: FormViewController {
                     let vc = AddCharaToBoxViewController(box: self.box, parentContext: self.context)
                     vc.delegate = self
                     self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            <<< CharasRow("charas").cellSetup{ [unowned self] (cell, row) in
+                cell.selectedBackgroundView = UIView()
+                ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                    themeable.textLabel?.textColor = theme.color.title
+                    themeable.detailTextLabel?.textColor = theme.color.tint
+                    themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                    themeable.backgroundColor = theme.color.tableViewCell.background
                 }
+                cell.configure(for: self.box)
+                cell.delegate = self
+            }
         
     }
 

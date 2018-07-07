@@ -11,6 +11,7 @@ import Kingfisher
 import KingfisherWebP
 import Gestalt
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -50,6 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        UNUserNotificationCenter.current().delegate = NotificationHandler.default
+        
+        if BirthdayViewController.Setting.default.schedulesBirthdayNotifications {
+            BirthdayCenter.default.scheduleNotifications()
+        }
+        
         return true
     }
 
@@ -57,4 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Card.removeCache()
     }
     
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        if BirthdayViewController.Setting.default.schedulesBirthdayNotifications {
+            BirthdayCenter.default.scheduleNotifications()
+        }
+    }
 }

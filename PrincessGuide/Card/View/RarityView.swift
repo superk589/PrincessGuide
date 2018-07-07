@@ -43,15 +43,17 @@ class RarityView: UIView {
         }
         
         transform = CGAffineTransform(scaleX: -1, y: 1)
+        
     }
     
     func setup(stars: Int) {
         assert(1...5 ~= stars)
         starViews[0..<stars].forEach {
-            $0.isHidden = false
+            stackView.addArrangedSubview($0)
         }
         starViews[stars..<5].forEach {
-            $0.isHidden = true
+            stackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
         }
     }
     

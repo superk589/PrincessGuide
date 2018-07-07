@@ -40,6 +40,12 @@
 		1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE2207DB076008F30AA /* LoadingHUD.swift */; };
 		1221CDE5207DB0BC008F30AA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE4207DB0BC008F30AA /* LoadingView.swift */; };
 		1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE6207DB350008F30AA /* Debouncer.swift */; };
+		1223A8DF20F08F2300C98BB2 /* BirthdayCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8DE20F08F2300C98BB2 /* BirthdayCenter.swift */; };
+		1223A8E220F0904F00C98BB2 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E120F0904F00C98BB2 /* BirthdayViewController.swift */; };
+		1223A8E420F091DD00C98BB2 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E320F091DD00C98BB2 /* Setting.swift */; };
+		1223A8E820F0A1D600C98BB2 /* CardWithBirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E720F0A1D600C98BB2 /* CardWithBirthdayCell.swift */; };
+		1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E920F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift */; };
+		1223A8EC20F0B4EB00C98BB2 /* NotificationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8EB20F0B4EB00C98BB2 /* NotificationHandle.swift */; };
 		1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */; };
 		1226532320AD626700BB3E56 /* Resist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226532220AD626700BB3E56 /* Resist.swift */; };
 		1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226532420AD68BE00BB3E56 /* EDResistTableViewController.swift */; };
@@ -252,6 +258,12 @@
 		1221CDE2207DB076008F30AA /* LoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
 		1221CDE4207DB0BC008F30AA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1221CDE6207DB350008F30AA /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		1223A8DE20F08F2300C98BB2 /* BirthdayCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCenter.swift; sourceTree = "<group>"; };
+		1223A8E120F0904F00C98BB2 /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		1223A8E320F091DD00C98BB2 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		1223A8E720F0A1D600C98BB2 /* CardWithBirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithBirthdayCell.swift; sourceTree = "<group>"; };
+		1223A8E920F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithBirthdayCollectionViewCell.swift; sourceTree = "<group>"; };
+		1223A8EB20F0B4EB00C98BB2 /* NotificationHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandle.swift; sourceTree = "<group>"; };
 		1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventTableViewCell.swift; sourceTree = "<group>"; };
 		1226532220AD626700BB3E56 /* Resist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resist.swift; sourceTree = "<group>"; };
 		1226532420AD68BE00BB3E56 /* EDResistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDResistTableViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +472,7 @@
 		120F9B4920E4DA54003632CA /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				1223A8E020F08F2700C98BB2 /* BirthdayNotification */,
 				12DC963D20EDED8B008896D7 /* TeamManager */,
 				12DC963820EDED0E008896D7 /* BoxManager */,
 				120F9B5020E4DC8F003632CA /* CharaManager */,
@@ -545,7 +558,6 @@
 				1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */,
 				124EA0A120D26CA500F46029 /* Dungeon.swift */,
 				1226532220AD626700BB3E56 /* Resist.swift */,
-				120F9B8020E9D1BA003632CA /* CoreDataStack.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -555,6 +567,7 @@
 			children = (
 				123608E6209322EB003E7D11 /* DataChecking.swift */,
 				120F9B8220E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift */,
+				1223A8E320F091DD00C98BB2 /* Setting.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -622,8 +635,21 @@
 				12360920209940B2003E7D11 /* Binary.swift */,
 				123609222099410E003E7D11 /* UnityFSUnpacker.swift */,
 				126DECDB209DD78D004EC56A /* Theme.swift */,
+				1223A8EB20F0B4EB00C98BB2 /* NotificationHandle.swift */,
+				120F9B8020E9D1BA003632CA /* CoreDataStack.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		1223A8E020F08F2700C98BB2 /* BirthdayNotification */ = {
+			isa = PBXGroup;
+			children = (
+				1223A8E720F0A1D600C98BB2 /* CardWithBirthdayCell.swift */,
+				1223A8E920F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift */,
+				1223A8DE20F08F2300C98BB2 /* BirthdayCenter.swift */,
+				1223A8E120F0904F00C98BB2 /* BirthdayViewController.swift */,
+			);
+			path = BirthdayNotification;
 			sourceTree = "<group>";
 		};
 		12398E7D209158EA006AC352 /* Quest */ = {
@@ -1236,6 +1262,7 @@
 				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,
 				12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */,
 				12F125DB20B92E79005C9659 /* MoveAction.swift in Sources */,
+				1223A8EC20F0B4EB00C98BB2 /* NotificationHandle.swift in Sources */,
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
 				12F1262D20B95636005C9659 /* UpperLimitAttackAction.swift in Sources */,
@@ -1251,6 +1278,7 @@
 				12F125CC20B7E803005C9659 /* CraftTextTableViewCell.swift in Sources */,
 				12DC963520EDC366008896D7 /* BatchEditViewController.swift in Sources */,
 				12F1260720B9539D005C9659 /* IfForAllAction.swift in Sources */,
+				1223A8E220F0904F00C98BB2 /* BirthdayViewController.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficient.swift in Sources */,
@@ -1258,6 +1286,7 @@
 				12F125D720B92686005C9659 /* DamageAction.swift in Sources */,
 				1280DE3320A09278008D9D72 /* CDPropertyViewController.swift in Sources */,
 				12F1263120B95684005C9659 /* PassiveAction.swift in Sources */,
+				1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */,
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
@@ -1280,6 +1309,7 @@
 				12398E89209168A2006AC352 /* Wave.swift in Sources */,
 				12DC964720EDFF34008896D7 /* AddCharaToBoxViewController.swift in Sources */,
 				129A7F8720A2EE7E00D93996 /* Enemy.swift in Sources */,
+				1223A8DF20F08F2300C98BB2 /* BirthdayCenter.swift in Sources */,
 				12F1262920B955FC005C9659 /* SkillExecCountAction.swift in Sources */,
 				1221CDE5207DB0BC008F30AA /* LoadingView.swift in Sources */,
 				12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */,
@@ -1375,10 +1405,12 @@
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
 				12F125F120B94E2B005C9659 /* TriggerAction.swift in Sources */,
 				12F125D420B90E1F005C9659 /* TargetParameter.swift in Sources */,
+				1223A8E420F091DD00C98BB2 /* Setting.swift in Sources */,
 				12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */,
 				12F1261120B95498005C9659 /* EnchantStrikeBackAction.swift in Sources */,
 				124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */,
 				1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */,
+				1223A8E820F0A1D600C98BB2 /* CardWithBirthdayCell.swift in Sources */,
 				120F9B8120E9D1BA003632CA /* CoreDataStack.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
 				12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */,

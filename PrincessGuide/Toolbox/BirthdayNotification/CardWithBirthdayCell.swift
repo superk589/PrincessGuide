@@ -1,8 +1,8 @@
 //
-//  CharasCell.swift
+//  CardWithBirthdayCell.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/7/5.
+//  Created by zzk on 2018/7/7.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
@@ -10,19 +10,17 @@ import UIKit
 import Eureka
 import Gestalt
 
-protocol CharasCellDelegate: class {
-    func charasCell(_ charasCell: CharasCell, didSelect chara: Chara)
+protocol CardWithBirthdayCellDelegate: class {
+    func cardWithBirthdayCell(_ cardWithBirthdayCell: CardWithBirthdayCell, didSelect card: Card)
 }
 
-class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    weak var delegate: CharasCellDelegate?
-    
+class CardWithBirthdayCell: Cell<String>, CellType, UICollectionViewDelegate, UICollectionViewDataSource {
+        
     let layout = UICollectionViewFlowLayout()
     
-    private(set) lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+    weak var delegate: CardWithBirthdayCellDelegate?
     
-    let charaView = CharaView()
+    private(set) lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
     
     override func setup() {
         super.setup()
@@ -38,7 +36,7 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
         contentView.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(CharaCollectionViewCell.self, forCellWithReuseIdentifier: CharaCollectionViewCell.description())
+        collectionView.register(CardWithBirthdayCollectionViewCell.self, forCellWithReuseIdentifier: CardWithBirthdayCollectionViewCell.description())
         collectionView.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
             make.right.equalTo(readableContentGuide)
@@ -46,8 +44,8 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
         }
         layout.itemSize = CGSize(width: 64, height: 83)
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-        collectionView.scrollsToTop = false
         collectionView.isScrollEnabled = false
+        collectionView.scrollsToTop = false        
         collectionView.backgroundColor = .clear
         
         selectionStyle = .none
@@ -60,12 +58,10 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
         
     }
     
-    private var charas = [Chara]()
+    private var cards = [Card]()
     
-    func configure(for box: Box) {
-        if let set = box.charas, let charas = set.allObjects as? [Chara] {
-            self.charas = charas
-        }
+    func configure(for cards: [Card]) {
+        self.cards = cards
         collectionView.reloadData()
     }
     
@@ -74,18 +70,19 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return charas.count
+        return cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharaCollectionViewCell.description(), for: indexPath) as! CharaCollectionViewCell
-        let chara = charas[indexPath.item]
-        cell.configure(for: chara)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardWithBirthdayCollectionViewCell.description(), for: indexPath) as! CardWithBirthdayCollectionViewCell
+        let card = cards[indexPath.item]
+        cell.configure(for: card)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.charasCell(self, didSelect: charas[indexPath.item])
+        let card = cards[indexPath.item]
+        delegate?.cardWithBirthdayCell(self, didSelect: card)
     }
     
     override func update() {
@@ -95,7 +92,7 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
     
 }
 
-final class CharasRow: Row<CharasCell>, RowType {
+final class CardWithBirthdayRow: Row<CardWithBirthdayCell>, RowType {
     required public init(tag: String?) {
         super.init(tag: tag)
     }
