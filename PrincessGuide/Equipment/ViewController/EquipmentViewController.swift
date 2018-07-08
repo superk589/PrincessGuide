@@ -80,10 +80,6 @@ class EquipmentViewController: UIViewController, DataChecking {
 
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     @objc private func handleUpdateEnd(_ notification: Notification) {
         loadData()
     }

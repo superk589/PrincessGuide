@@ -160,9 +160,9 @@ class BirthdayViewController: FormViewController {
                 self?.openSystemNotificationSettings()
             }
             
-            +++ Section("cards")
+            +++ Section(NSLocalizedString("upcoming Birthdays", comment: ""))
         
-            <<< CardWithBirthdayRow("cards").cellSetup { (cell, row) in
+            <<< CardWithBirthdayRow("upcoming_birthdays").cellSetup { (cell, row) in
                 cell.selectedBackgroundView = UIView()
                 ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
                     themeable.textLabel?.textColor = theme.color.title
@@ -180,7 +180,7 @@ class BirthdayViewController: FormViewController {
     }
     
     @objc private func reloadCards(_ item: Notification) {
-        (form.rowBy(tag: "cards") as? CardWithBirthdayRow)?.cell.configure(for: cards)
+        (form.rowBy(tag: "upcoming_birthdays") as? CardWithBirthdayRow)?.cell.configure(for: cards)
     }
     
     @objc private func reloadSettings(_ item: Notification) {

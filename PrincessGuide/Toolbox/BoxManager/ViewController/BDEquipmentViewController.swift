@@ -10,7 +10,7 @@ import UIKit
 import Gestalt
 import CoreData
 
-class BDEquipmentViewController: UITableViewController, BoxDetailConfigurable {
+class BDEquipmentViewController: UIViewController, BoxDetailConfigurable, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let box: Box
     
@@ -19,6 +19,10 @@ class BDEquipmentViewController: UITableViewController, BoxDetailConfigurable {
     let parentContext: NSManagedObjectContext?
     
     let refresher = RefreshHeader()
+    
+    private var collectionView: UICollectionView!
+    
+    private var layout: UICollectionViewFlowLayout!
     
     required init(box: Box) {
         parentContext = box.managedObjectContext
@@ -37,20 +41,46 @@ class BDEquipmentViewController: UITableViewController, BoxDetailConfigurable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = backgroundImageView
+        
+        view.addSubview(backgroundImageView)
+        backgroundImageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+                
+        layout = UICollectionViewFlowLayout()
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+
+        layout.itemSize = CGSize(width: 64, height: 92)
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
+        
+        collectionView.register(CraftSummaryCollectionViewCell.self, forCellWithReuseIdentifier: CraftSummaryCollectionViewCell.description())
+        collectionView.backgroundColor = .clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.scrollsToTop = false
+
+        collectionView.mj_header = refresher
+        // fix a layout issue of mjrefresh
+        // refresher.bounds.origin.y = collectionView.contentInset.top
+        
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+            let navigationBar = themeable.navigationController?.navigationBar
+            navigationBar?.tintColor = theme.color.tint
+            navigationBar?.barStyle = theme.barStyle
             themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
             themeable.refresher.arrowImage.tintColor = theme.color.indicator
             themeable.refresher.loadingView.color = theme.color.indicator
+            themeable.collectionView.indicatorStyle = theme.indicatorStyle
         }
         
-        tableView.estimatedRowHeight = 84
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.register(CraftTableViewCell.self, forCellReuseIdentifier: CraftTableViewCell.description())
-        tableView.tableFooterView = UIView()
-        
-        tableView.mj_header = refresher
         refresher.refreshingBlock = { [weak self] in self?.loadData() }
         
         loadData()
@@ -100,23 +130,32 @@ class BDEquipmentViewController: UITableViewController, BoxDetailConfigurable {
             DispatchQueue.main.async {
                 LoadingHUDManager.default.hide()
                 self?.consumes = sortedConsumes
-                self?.tableView.reloadData()
+                self?.collectionView.reloadData()
             }
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return consumes.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CraftTableViewCell.description(), for: indexPath) as! CraftTableViewCell
-        let consume = consumes[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CraftSummaryCollectionViewCell.description(), for: indexPath) as! CraftSummaryCollectionViewCell
+        let consume = consumes[indexPath.item]
         cell.configure(for: consume)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let consume = consumes[indexPath.item]
+        if let equipment = consume.equipment {
+            DropSummaryTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
