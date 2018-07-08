@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120BCAF220F20F3C0029A083 /* BDInfoTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */; };
+		120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF320F2564B0029A083 /* ArrayExtension.swift */; };
 		120F9B4820E4DA4E003632CA /* ToolboxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4720E4DA4E003632CA /* ToolboxTableViewController.swift */; };
 		120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */; };
 		120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */; };
@@ -226,6 +228,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDInfoTextCell.swift; sourceTree = "<group>"; };
+		120BCAF320F2564B0029A083 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		120F9B4720E4DA4E003632CA /* ToolboxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxTableViewController.swift; sourceTree = "<group>"; };
 		120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxTableViewCell.swift; sourceTree = "<group>"; };
 		120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaTableViewController.swift; sourceTree = "<group>"; };
@@ -636,6 +640,7 @@
 				12398EA22092F7D4006AC352 /* StringExtension.swift */,
 				12398E9620918572006AC352 /* VersionManager.swift */,
 				1280DE4220A5D084008D9D72 /* DateExtension.swift */,
+				120BCAF320F2564B0029A083 /* ArrayExtension.swift */,
 				12398E9E2092D174006AC352 /* DeviceInfo.swift */,
 				12398EA02092D78C006AC352 /* Updater.swift */,
 				123608E02093105D003E7D11 /* LZ4Decompressor.swift */,
@@ -922,6 +927,7 @@
 				12DC963B20EDED44008896D7 /* BoxTableViewCell.swift */,
 				12DC964920EE1BC1008896D7 /* CharasCell.swift */,
 				125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */,
+				120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1257,6 +1263,7 @@
 				12F1260920B953BD005C9659 /* SearchAreaChangeAction.swift in Sources */,
 				12F1261920B95509005C9659 /* HealFieldAction.swift in Sources */,
 				126DECF6209EEEB4004EC56A /* CDTabViewController.swift in Sources */,
+				120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */,
 				12F1262B20B9561B005C9659 /* RatioDamageAction.swift in Sources */,
 				12F125F520B95037005C9659 /* ChargeAction.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
@@ -1267,6 +1274,7 @@
 				120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */,
 				12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */,
 				12DC964A20EE1BC1008896D7 /* CharasCell.swift in Sources */,
+				120BCAF220F20F3C0029A083 /* BDInfoTextCell.swift in Sources */,
 				121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
 				125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */,

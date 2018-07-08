@@ -49,6 +49,12 @@ class CraftTableViewController: UITableViewController {
         
         rows += craft.consumes.map { Row(type: CraftTableViewCell.self, data: .consume($0)) }
         rows += equipment.property.noneZeroProperties().map { Row(type: CraftPropertyTableViewCell.self, data: .properties([$0])) }
+        
+        let craftCost = equipment.recursiveCraft.reduce(0) { $0 + $1.craftedCost }
+        let enhanceCost = equipment.enhanceCost
+        rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Crafting", comment: ""), String(craftCost)))]
+        rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Enhancing", comment: ""), String(enhanceCost)))]
+
         rows.append(Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Description", comment: ""), equipment.description)))
     }
     

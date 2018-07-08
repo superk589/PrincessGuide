@@ -60,17 +60,23 @@ class SlotCell: Cell<[Bool]>, CellType {
         icons.removeAll()
         zip(slots, promotion.equipSlots).forEach {
             let icon = SelectableIconImageView()
-            icon.isUserInteractionEnabled = true
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
-            icon.equipmentID = $1
-            icon.isSelected = $0
-            icon.addGestureRecognizer(tapGesture)
+            if $1 == 999999 {
+                icon.isUserInteractionEnabled = false
+                icon.equipmentID = $1
+                icon.isSelected = true
+            } else {
+                icon.isUserInteractionEnabled = true
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
+                icon.equipmentID = $1
+                icon.isSelected = $0
+                icon.addGestureRecognizer(tapGesture)
+            }
             stackView.addArrangedSubview(icon)
             icons.append(icon)
         }
         
         stackView.layoutIfNeeded()
-        row.value = icons.map { $0.isSelected }
+        row.value = icons.map { $0.isSelected && $0.equipmentID != 999999 }
         
     }
     
@@ -82,7 +88,7 @@ class SlotCell: Cell<[Bool]>, CellType {
     }
     
     @objc private func handleTapGestureRecognizer(_ tap: UITapGestureRecognizer) {
-        if let imageView = tap.view as? SelectableIconImageView, let id = imageView.equipmentID, id != 999999 {
+        if let imageView = tap.view as? SelectableIconImageView {
             imageView.isSelected = !imageView.isSelected
             if let index = icons.index(of: imageView) {
                 row.value?[index] = imageView.isSelected
@@ -93,7 +99,7 @@ class SlotCell: Cell<[Bool]>, CellType {
     public override func update() {
         super.update()
         icons.enumerated().forEach {
-            if let isSelected = row.value?[$0.offset] {
+            if let isSelected = row.value?[$0.offset], $0.element.equipmentID != 999999  {
                 $0.element.isSelected = isSelected
             }
         }

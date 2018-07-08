@@ -53,6 +53,10 @@ class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
     func configure(for title: String, content: String) {
+        itemViews.forEach {
+            $0.removeFromSuperview()
+        }
+        itemViews.removeAll()
         let itemView = CDTextItemView()
         itemView.configure(for: title, content: content)
         itemViews.append(itemView)
@@ -65,7 +69,10 @@ class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
         }
         itemViews.removeAll()
         for element in elements {
-            configure(for: element.0, content: element.1)
+            let itemView = CDTextItemView()
+            itemView.configure(for: element.0, content: element.1)
+            itemViews.append(itemView)
+            stackView.addArrangedSubview(itemView)
         }
     }
     

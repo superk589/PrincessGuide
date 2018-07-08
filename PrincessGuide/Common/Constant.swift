@@ -18,6 +18,11 @@ struct Constant {
     static let presetMaxEnemyLevel = 100
     static let presetMaxBondRank = 8
     static let presetMaxRarity = 5
+    static let presetManaCostPerPoint = [
+        2: 120,
+        3: 150,
+        4: 200
+    ]
 }
 
 extension URL {

@@ -40,4 +40,52 @@ extension Chara {
         rarity = anotherChara.rarity
     }
 
+    func unequiped() -> [Equipment] {
+        var array = [Equipment]()
+        if let promotions = card?.promotions, promotions.count >= rank {
+            let currentPromotion = promotions[Int(rank - 1)]
+            let higherPromotions = promotions[Int(rank)..<promotions.count]
+            
+            array += currentPromotion.equipmentsInSlot.enumerated().compactMap { (offset, element) -> Equipment? in
+                if slots[safe: offset] ?? false {
+                    return nil
+                } else {
+                    return element
+                }
+            }
+            
+            array += higherPromotions.flatMap {
+                $0.equipmentsInSlot.compactMap { $0 }
+            }
+        }
+        return array
+    }
+    
+    var slots: [Bool] {
+        get {
+            return [slot1, slot2, slot3, slot4, slot5, slot6]
+        }
+        
+        set {
+            guard newValue.count == 6 else {
+                return
+            }
+            slot1 = newValue[0]
+            slot2 = newValue[1]
+            slot3 = newValue[2]
+            slot4 = newValue[3]
+            slot5 = newValue[4]
+            slot6 = newValue[5]
+        }
+    }
+}
+
+extension Card.Promotion {
+    
+    var defaultSlots: [Bool] {
+        return equipSlots.map {
+            $0 != 999999
+        }
+    }
+    
 }

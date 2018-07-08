@@ -44,7 +44,7 @@ class BDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         
         let items = [
             NSLocalizedString("Equipment", comment: ""),
-            NSLocalizedString("Info", comment: ""),
+            NSLocalizedString("Summary", comment: ""),
             NSLocalizedString("Edit", comment: "")
         ].map { Item(title: $0) }
         

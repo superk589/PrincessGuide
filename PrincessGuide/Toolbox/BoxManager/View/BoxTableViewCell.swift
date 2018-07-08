@@ -9,7 +9,7 @@
 import UIKit
 import Gestalt
 
-class BoxTableViewCell: UITableViewCell {
+class BoxTableViewCell: UITableViewCell, BDInfoConfigurable {
     
     let icon = IconImageView()
     
@@ -56,6 +56,19 @@ class BoxTableViewCell: UITableViewCell {
         
         if let chara = box.charas?.first(where: { _ in return true }) as? Chara {
             icon.cardID = chara.iconID
+        } else {
+            icon.equipmentID = 99999
+        }
+    }
+    
+    func configure(for model: BDInfoViewController.Row.Model) {
+        guard case .basic(let iconID, let name) = model else {
+            fatalError()
+        }
+        nameLabel.text = name
+        
+        if let id = iconID {
+            icon.cardID = id
         } else {
             icon.equipmentID = 99999
         }

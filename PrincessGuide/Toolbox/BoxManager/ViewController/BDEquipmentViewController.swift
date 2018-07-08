@@ -106,10 +106,10 @@ class BDEquipmentViewController: UIViewController, BoxDetailConfigurable, UIColl
                     let higherPromotions = promotions[Int(chara.rank)..<promotions.count]
                     
                     array += currentPromotion.equipmentsInSlot.enumerated().flatMap { (offset, element) -> [Craft.Consume] in
-                        if !chara.slots[offset] {
-                            return element?.recursiveConsumes ?? []
-                        } else {
+                        if chara.slots[safe: offset] ?? false {
                             return []
+                        } else {
+                            return element?.recursiveConsumes ?? []
                         }
                     }
                     

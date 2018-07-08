@@ -109,8 +109,8 @@ class CharaView: UIView {
         
         var rankString = "\(chara.rank)"
         if let currentRankSlotCount = card?.promotions[Int(chara.rank - 1)].equipSlots.filter({ $0 != 999999 }).count {
-            let unslotedCount = chara.slots.filter { !$0 }.count
-            rankString += "(\(currentRankSlotCount - unslotedCount)/\(currentRankSlotCount))"
+            let equipedSlotCount = chara.slots.filter { $0 }.count
+            rankString += "(\(equipedSlotCount)/\(currentRankSlotCount))"
         }
         rankView.configure(for: NSLocalizedString("Rank", comment: ""), content: rankString )
         
@@ -133,11 +133,4 @@ class CharaView: UIView {
         
     }
     
-}
-
-extension Chara {
-    
-    var slots: [Bool] {
-        return [slot1, slot2, slot3, slot4, slot5, slot6]
-    }
 }

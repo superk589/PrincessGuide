@@ -170,7 +170,8 @@ class EditCharaViewController: FormViewController {
                 .onChange { [weak self] (pickerRow) in
                     if let card = self?.card, let row = self?.form.rowBy(tag: "slots") as? SlotRow,
                         let value = pickerRow.value, card.promotions.indices ~= value - 1 {
-                        row.cell.configure(for: card.promotions[value - 1], slots: [Bool](repeating: true, count: 6))
+                        let promotion = card.promotions[value - 1]
+                        row.cell.configure(for: promotion, slots: promotion.defaultSlots)
                     }
                 }
             
@@ -245,10 +246,11 @@ class EditCharaViewController: FormViewController {
                     }
                     if let card = self?.card, let row = self?.form.rowBy(tag: "unit_rank") as? RowOf<Int>,
                         let value = row.value, card.promotions.indices ~= value - 1 {
+                        let promotion = card.promotions[value - 1]
                         if self?.mode == .create {
-                            cell.configure(for: card.promotions[value - 1], slots: [Bool](repeating: true, count: 6))
+                            cell.configure(for: promotion, slots: promotion.defaultSlots)
                         } else {
-                            cell.configure(for: card.promotions[value - 1], slots: self?.chara?.slots ?? [Bool](repeating: true, count: 6))
+                            cell.configure(for: promotion, slots: self?.chara?.slots ?? promotion.defaultSlots)
                         }
                     }
                 }
@@ -282,12 +284,8 @@ class EditCharaViewController: FormViewController {
         chara?.rank = json["unit_rank"].int16Value
         chara?.rarity = json["unit_rarity"].int16Value
         chara?.skillLevel = min(json["unit_level"].int16Value, json["skill_level"].int16Value)
-        chara?.slot1 = json["slots"].arrayValue[0].boolValue
-        chara?.slot2 = json["slots"].arrayValue[1].boolValue
-        chara?.slot3 = json["slots"].arrayValue[2].boolValue
-        chara?.slot4 = json["slots"].arrayValue[3].boolValue
-        chara?.slot5 = json["slots"].arrayValue[4].boolValue
-        chara?.slot6 = json["slots"].arrayValue[5].boolValue
+        
+        chara?.slots = json["slots"].arrayValue.map { $0.boolValue }
         
         do {
             try context.save()

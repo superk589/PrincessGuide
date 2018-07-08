@@ -316,14 +316,25 @@ class Master: FMDatabaseQueue {
         execute({ (db) in
             var selectSql = """
             SELECT
-                *
+                a.*,
+                b.total_point
             FROM
-                equipment_data
+                equipment_data a,
+                (
+                    SELECT
+                        promotion_level, max(total_point) total_point
+                    FROM
+                        equipment_enhance_data
+                    GROUP BY
+                        promotion_level
+                ) b
+            WHERE
+                a.promotion_level = b.promotion_level
             """
             if let id = equipmentID {
-                selectSql += " WHERE equipment_id = \(id)"
+                selectSql += " AND equipment_id = \(id)"
             } else if let equipmentType = equipmentType {
-                selectSql += " WHERE craft_flg = \(equipmentType.rawValue)"
+                selectSql += " AND craft_flg = \(equipmentType.rawValue)"
             }
             let set = try db.executeQuery(selectSql, values: nil)
             while set.next() {
@@ -355,7 +366,7 @@ class Master: FMDatabaseQueue {
                 let json = JSON(set.resultDictionary ?? [:])
 
                 let equipmentID = json["equipment_id"].intValue
-                let craftedCost = json["craft_cost"].intValue
+                let craftedCost = json["crafted_cost"].intValue
                 
                 var consumes = [Craft.Consume]()
                 
