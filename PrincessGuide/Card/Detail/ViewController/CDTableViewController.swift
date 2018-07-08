@@ -70,6 +70,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         }
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
     }

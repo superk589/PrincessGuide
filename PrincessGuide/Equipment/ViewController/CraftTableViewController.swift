@@ -62,7 +62,7 @@ class CraftTableViewController: UITableViewController {
             themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
-        
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.estimatedRowHeight = 84
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.register(CraftSummaryTableViewCell.self, forCellReuseIdentifier: CraftSummaryTableViewCell.description())

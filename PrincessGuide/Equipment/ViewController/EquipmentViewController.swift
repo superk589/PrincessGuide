@@ -45,6 +45,9 @@ class EquipmentViewController: UIViewController, DataChecking {
         navigationItem.title = NSLocalizedString("Equipments", comment: "")
         
         layout = UICollectionViewFlowLayout()
+        if #available(iOS 11.0, *) {
+            layout.sectionInsetReference = .fromSafeArea
+        }
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         layout.itemSize = CGSize(width: 64, height: 64)

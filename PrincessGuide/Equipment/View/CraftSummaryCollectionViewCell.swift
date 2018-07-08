@@ -27,6 +27,7 @@ class CraftSummaryCollectionViewCell: UICollectionViewCell {
             make.height.width.equalTo(64)
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
+            make.left.right.equalToSuperview()
         }
         
         contentView.addSubview(numberLabel)

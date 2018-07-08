@@ -70,6 +70,7 @@ class EDTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         reloadAll()
     }
     

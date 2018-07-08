@@ -51,12 +51,16 @@ class BDEquipmentViewController: UIViewController, BoxDetailConfigurable, UIColl
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+        if #available(iOS 11.0, *) {
+            layout.sectionInsetReference = .fromSafeArea
+        }
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
 
-        layout.itemSize = CGSize(width: 64, height: 92)
+        // layout.itemSize = CGSize(width: 64, height: 92)
+        layout.estimatedItemSize = CGSize(width: 64, height: 78)
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
@@ -158,4 +162,5 @@ class BDEquipmentViewController: UIViewController, BoxDetailConfigurable, UIColl
             }
         }
     }
+    
 }
