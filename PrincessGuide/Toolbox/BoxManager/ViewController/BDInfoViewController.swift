@@ -92,31 +92,31 @@ class BDInfoViewController: UITableViewController {
                 .reduce(0) { $0 + $1.craftedCost }
             
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
-                    (NSLocalizedString("Mana Cost of Crafting", comment: ""),
-                     String(craftCost))
-                ])))
+                (NSLocalizedString("Mana Cost of Crafting", comment: ""),
+                 craftCost.formatted)
+            ])))
             
             let enhanceCost = charas.flatMap { $0.maxRankUnequiped() }
                 .reduce(0) { $0 + $1.enhanceCost }
-            
+
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                 (NSLocalizedString("Mana Cost of Enhancing", comment: ""),
-                 String(enhanceCost))
-                ])))
+                 enhanceCost.formatted)
+            ])))
             
             let skillCost = charas.reduce(0) { $0 + $1.skillLevelUpCost }
-            
+
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                 (NSLocalizedString("Mana Cost of Skill Training", comment: ""),
-                 String(skillCost))
-                ])))
+                 skillCost.formatted)
+            ])))
             
             let totalManaCost = craftCost + enhanceCost + skillCost
-            
+
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                 (NSLocalizedString("Total Mana Cost", comment: ""),
-                 String(totalManaCost))
-                ])))
+                 totalManaCost.formatted)
+            ])))
             
             DispatchQueue.main.async {
                 LoadingHUDManager.default.hide()
@@ -135,5 +135,14 @@ class BDInfoViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: row.type.description(), for: indexPath) as! BDInfoConfigurable
         cell.configure(for: row.data)
         return cell as! UITableViewCell
+    }
+}
+
+extension Int {
+    
+    var formatted: String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter.string(for: self) ?? ""
     }
 }
