@@ -10,7 +10,7 @@ import UIKit
 import Gestalt
 import CoreData
 
-class BDEquipmentViewController: UIViewController, BoxDetailConfigurable, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let box: Box
     
@@ -24,7 +24,7 @@ class BDEquipmentViewController: UIViewController, BoxDetailConfigurable, UIColl
     
     private var layout: UICollectionViewFlowLayout!
     
-    required init(box: Box) {
+    init(box: Box) {
         parentContext = box.managedObjectContext
         context = CoreDataStack.default.newChildContext(parent: parentContext ?? CoreDataStack.default.viewContext, concurrencyType: .privateQueueConcurrencyType)
         self.box = box
@@ -60,7 +60,7 @@ class BDEquipmentViewController: UIViewController, BoxDetailConfigurable, UIColl
         }
 
         // layout.itemSize = CGSize(width: 64, height: 92)
-        layout.estimatedItemSize = CGSize(width: 64, height: 78)
+        layout.itemSize = CGSize(width: 64, height: 78)
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10

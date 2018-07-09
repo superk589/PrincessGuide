@@ -14,7 +14,7 @@ protocol BDInfoConfigurable {
     func configure(for model: BDInfoViewController.Row.Model)
 }
 
-class BDInfoViewController: UITableViewController, BoxDetailConfigurable {
+class BDInfoViewController: UITableViewController {
     
     let parentContext: NSManagedObjectContext?
     
@@ -35,7 +35,7 @@ class BDInfoViewController: UITableViewController, BoxDetailConfigurable {
     
     var rows = [Row]()
 
-    required init(box: Box) {
+    init(box: Box) {
         parentContext = box.managedObjectContext
         context = CoreDataStack.default.newChildContext(parent: parentContext ?? CoreDataStack.default.viewContext, concurrencyType: .privateQueueConcurrencyType)
         self.box = box

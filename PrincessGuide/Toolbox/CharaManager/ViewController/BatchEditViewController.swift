@@ -229,17 +229,11 @@ class BatchEditViewController: FormViewController {
             $0.rank = json["unit_rank"].int16Value
             $0.rarity = json["unit_rarity"].int16Value
             $0.skillLevel = min(json["unit_level"].int16Value, json["skill_level"].int16Value)
-            $0.slot1 = json["slots"].arrayValue[0].boolValue
-            $0.slot2 = json["slots"].arrayValue[1].boolValue
-            $0.slot3 = json["slots"].arrayValue[2].boolValue
-            $0.slot4 = json["slots"].arrayValue[3].boolValue
-            $0.slot5 = json["slots"].arrayValue[4].boolValue
-            $0.slot6 = json["slots"].arrayValue[5].boolValue
+            $0.slots = json["slots"].arrayValue.map { $0.boolValue }
         }
         
         do {
             try context.save()
-            try parentContext.save()
         } catch(let error) {
             print(error)
         }
@@ -249,6 +243,11 @@ class BatchEditViewController: FormViewController {
     }
     
     func didSave() {
+        do {
+            try parentContext.save()
+        } catch(let error) {
+            print(error)
+        }
         if let vc = navigationController?.viewControllers[1] {
             navigationController?.popToViewController(vc, animated: true)
         }

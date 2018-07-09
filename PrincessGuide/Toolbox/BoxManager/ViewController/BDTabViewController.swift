@@ -10,19 +10,17 @@ import UIKit
 import Tabman
 import Pageboy
 import Gestalt
-
-protocol BoxDetailConfigurable {
-    init(box: Box)
-}
+import SwiftyJSON
+import CoreData
 
 class BDTabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
     static var defaultTabIndex: Int = 1
     
-    private var viewControllers: [BoxDetailConfigurable & UIViewController]
+    private var viewControllers: [UIViewController]
     
     private var box: Box
-    
+        
     init(box: Box) {
         self.box = box
         viewControllers = [
@@ -87,4 +85,5 @@ class BDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
         BDTabViewController.defaultTabIndex = index
     }
+    
 }

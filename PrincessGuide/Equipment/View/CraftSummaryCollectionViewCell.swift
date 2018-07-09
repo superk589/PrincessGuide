@@ -36,7 +36,8 @@ class CraftSummaryCollectionViewCell: UICollectionViewCell {
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        numberLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
+        numberLabel.font = UIFont.systemFont(ofSize: 12)
+        // UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
     }
     
     func configure(for consume: Craft.Consume) {

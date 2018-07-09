@@ -12,12 +12,12 @@ import Eureka
 import Gestalt
 import SwiftyJSON
 
-class EditBoxViewController: FormViewController, BoxDetailConfigurable {
-    
+class EditBoxViewController: FormViewController {
+ 
     let box: Box
     
     let context: NSManagedObjectContext
-    let parentContext: NSManagedObjectContext
+    let parentContext: NSManagedObjectContext?
     
     enum Mode {
         case edit
@@ -26,18 +26,18 @@ class EditBoxViewController: FormViewController, BoxDetailConfigurable {
     
     let mode: Mode
     
-    required init(box: Box) {
+    init(box: Box) {
         mode = .edit
-        parentContext = CoreDataStack.default.viewContext
-        context = CoreDataStack.default.newChildContext(parent: parentContext)
-        self.box = context.object(with: box.objectID) as! Box
+        context = box.managedObjectContext ?? CoreDataStack.default.viewContext
+        self.parentContext = nil
+        self.box = box
         super.init(nibName: nil, bundle: nil)
     }
     
     init() {
         mode = .create
         parentContext = CoreDataStack.default.viewContext
-        context = CoreDataStack.default.newChildContext(parent: parentContext)
+        context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
         box = Box(context: context)
         box.modifiedAt = Date()
         box.name = NSLocalizedString("My Box", comment: "")
@@ -50,6 +50,8 @@ class EditBoxViewController: FormViewController, BoxDetailConfigurable {
     
     let backgroundImageView = UIImageView()
     
+    lazy var saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAndPop))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,7 +59,7 @@ class EditBoxViewController: FormViewController, BoxDetailConfigurable {
 
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveBox))
+        navigationItem.rightBarButtonItem = saveItem
         
         tableView.backgroundView = backgroundImageView
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
@@ -149,24 +151,31 @@ class EditBoxViewController: FormViewController, BoxDetailConfigurable {
                         themeable.textField.textColor = theme.color.tint
                     }
                 }
+                .onChange { [weak self] (row) in
+                    self?.saveBox()
+                }
         
-            <<< ButtonRow("save_box") { (row) in
-                row.title = NSLocalizedString("Save Box", comment: "")
-                }
-                .cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                    }
-                }
-                .onCellSelection { [unowned self] (cell, row) in
-                    self.saveBox()
-                }
+//            <<< ButtonRow("save_box") { (row) in
+//                row.title = NSLocalizedString("Save Box", comment: "")
+//                }
+//                .cellSetup { (cell, row) in
+//                    cell.selectedBackgroundView = UIView()
+//                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+//                        themeable.textLabel?.textColor = theme.color.title
+//                        themeable.detailTextLabel?.textColor = theme.color.tint
+//                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+//                        themeable.backgroundColor = theme.color.tableViewCell.background
+//                    }
+//                }
+//                .onCellSelection { [unowned self] (cell, row) in
+//                    self.saveBox()
+//                }
             
-            +++ Section(NSLocalizedString("Charas", comment: ""))
+            +++ Section(NSLocalizedString("Charas", comment: "")) {
+                if mode == .edit {
+                    $0.footer = HeaderFooterView(title: NSLocalizedString("After editing charas, you should pull to refresh in other tabs.", comment: ""))
+                }
+            }
             
             <<< ButtonRow("select_charas") { (row) in
                 row.title = NSLocalizedString("Select Charas", comment: "")
@@ -217,19 +226,24 @@ class EditBoxViewController: FormViewController, BoxDetailConfigurable {
             }
         
     }
-
-    @objc private func saveBox() {
+    
+    func saveBox() {
         let json = JSON(form.values())
         box.modifiedAt = Date()
         box.name = json["name"].stringValue
         do {
             try context.save()
-            try parentContext.save()
+            try parentContext?.save()
         } catch (let error) {
             print(error)
         }
+    }
+
+    @objc private func saveAndPop() {
+        saveBox()
         navigationController?.popViewController(animated: true)
     }
+    
 }
 
 extension EditBoxViewController: AddCharaToBoxViewControllerDelegate {
@@ -238,6 +252,9 @@ extension EditBoxViewController: AddCharaToBoxViewControllerDelegate {
         let row = form.rowBy(tag: "charas") as? CharasRow
         row?.cell.configure(for: box)
         row?.reload()
+        if mode == .edit {
+            saveBox()
+        }
     }
 }
 
@@ -257,6 +274,9 @@ extension EditBoxViewController: EditCharaInBoxViewControllerDelegate {
         let row = form.rowBy(tag: "charas") as? CharasRow
         row?.cell.configure(for: box)
         row?.reload()
+        if mode == .edit {
+            saveBox()
+        }
     }
     
 }
@@ -267,6 +287,9 @@ extension EditBoxViewController: BatchEditCharaInBoxViewControllerDelegate {
         let row = form.rowBy(tag: "charas") as? CharasRow
         row?.cell.configure(for: box)
         row?.reload()
+        if mode == .edit {
+            saveBox()
+        }
     }
     
 }

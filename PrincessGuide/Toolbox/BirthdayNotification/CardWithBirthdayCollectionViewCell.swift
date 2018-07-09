@@ -24,11 +24,11 @@ class CardWithBirthdayCollectionViewCell: UICollectionViewCell {
         }
         
         contentView.addSubview(birthdayLabel)
-        birthdayLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
+        birthdayLabel.font = UIFont.systemFont(ofSize: 12)
         birthdayLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(icon)
             make.width.lessThanOrEqualTo(icon)
-            make.top.equalTo(icon.snp.bottom).offset(5)
+            make.top.equalTo(icon.snp.bottom)
             make.bottom.equalToSuperview()
         }
         

@@ -42,11 +42,13 @@ class CardWithBirthdayCell: Cell<String>, CellType, UICollectionViewDelegate, UI
             make.right.equalTo(readableContentGuide)
             make.top.bottom.equalToSuperview()
         }
-        layout.itemSize = CGSize(width: 64, height: 83)
+        layout.itemSize = CGSize(width: 64, height: 78)
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         collectionView.isScrollEnabled = false
         collectionView.scrollsToTop = false        
         collectionView.backgroundColor = .clear
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         
         selectionStyle = .none
         

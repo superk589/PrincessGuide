@@ -289,7 +289,6 @@ class EditCharaViewController: FormViewController {
         
         do {
             try context.save()
-            try parentContext.save()
         } catch(let error) {
             print(error)
         }
@@ -298,6 +297,11 @@ class EditCharaViewController: FormViewController {
     }
     
     func didSave() {
+        do {
+            try parentContext.save()
+        } catch(let error) {
+            print(error)
+        }
         if let vc = navigationController?.viewControllers[1] {
             navigationController?.popToViewController(vc, animated: true)
         }

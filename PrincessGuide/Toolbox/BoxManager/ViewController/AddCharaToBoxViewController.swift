@@ -103,19 +103,10 @@ class AddCharaToBoxViewController: UITableViewController {
     }
     
     @objc private func saveCharas(_ item: UIBarButtonItem) {
-//        let selectedCharas = tableView.indexPathsForSelectedRows?.map { charas[$0.row] } ?? []
-//
-//        box.charas?.forEach {
-//            if !selectedCharas.contains($0 as! Chara) {
-//                box.removeFromCharas($0 as! Chara)
-//            }
-//        }
-//
-//        box.addToCharas(NSSet(array: selectedCharas))
         box.modifiedAt = Date()
         do {
             try context.save()
-            try parentContext.save()
+            // try parentContext.save()
         } catch (let error) {
             print(error)
         }
