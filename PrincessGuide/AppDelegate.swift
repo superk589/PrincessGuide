@@ -46,6 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if lastVersion < 2 {
                     try FileManager.default.removeItem(at: ConsoleVariables.url)
                 }
+                if lastVersion < 3 {
+                    ConsoleVariables.default.rebuild()
+                }
             } catch (let error) {
                 print(error)
             }

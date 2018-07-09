@@ -28,6 +28,8 @@ class ConsoleVariables: Codable {
     
     var maxEnemyLevel = Constant.presetMaxEnemyLevel { didSet { save() } }
     
+    var skillCost = [Int: Int]() { didSet { save() } }
+    
     func save() {
         try? JSONEncoder().encode(self).write(to: ConsoleVariables.url)
     }
@@ -42,6 +44,10 @@ class ConsoleVariables: Codable {
     
     private init() {
 
+    }
+    
+    func rebuild() {
+        handleDataUpdatingEnd()
     }
     
     func handleDataUpdatingEnd() {
@@ -67,6 +73,12 @@ class ConsoleVariables: Codable {
         DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
             Master.shared.getMaxRank(callback: { (rank) in
                 self?.maxEquipmentRank = rank ?? Constant.presetMaxRank
+            })
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+            Master.shared.getSkillCost(callback: { (skillCost) in
+                self?.skillCost = skillCost
             })
         }
         

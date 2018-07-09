@@ -10,7 +10,7 @@ import UIKit
 import FMDB
 import SwiftyJSON
 
-typealias FMDBCallBackClosure<T> = (T) -> Void
+typealias FMDBCallbackClosure<T> = (T) -> Void
 typealias FMDBWrapperClosure = (FMDatabase) throws -> Void
 
 extension FMDatabaseQueue {
@@ -48,7 +48,7 @@ class Master: FMDatabaseQueue {
         return false
     }
     
-    func getCards(cardID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Card]>) {
+    func getCards(cardID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Card]>) {
         var cards = [Card]()
         execute({ (db) in
             var selectSql = """
@@ -230,7 +230,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getStills(storyGroupID: Int, callback: @escaping FMDBCallBackClosure<[Still]>) {
+    func getStills(storyGroupID: Int, callback: @escaping FMDBCallbackClosure<[Still]>) {
         var stills = [Still]()
         execute({ (db) in
             let selectSql = """
@@ -255,7 +255,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getComics(unitID: Int, callback: @escaping FMDBCallBackClosure<[Int]>) {
+    func getComics(unitID: Int, callback: @escaping FMDBCallbackClosure<[Int]>) {
         var results = [Int]()
         execute({ (db) in
             let selectSql = """
@@ -277,7 +277,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getAttackPatterns(unitID: Int, callback: @escaping FMDBCallBackClosure<[AttackPattern]>) {
+    func getAttackPatterns(unitID: Int, callback: @escaping FMDBCallbackClosure<[AttackPattern]>) {
         var results = [AttackPattern]()
         execute({ (db) in
             let selectSql = """
@@ -311,7 +311,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getEquipments(equipmentID: Int? = nil, equipmentType: EquipmentType? = nil, callback: @escaping FMDBCallBackClosure<[Equipment]>) {
+    func getEquipments(equipmentID: Int? = nil, equipmentType: EquipmentType? = nil, callback: @escaping FMDBCallbackClosure<[Equipment]>) {
         var equipments = [Equipment]()
         execute({ (db) in
             var selectSql = """
@@ -350,7 +350,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getCraft(equipmentID: Int, callback: @escaping FMDBCallBackClosure<Craft?>) {
+    func getCraft(equipmentID: Int, callback: @escaping FMDBCallbackClosure<Craft?>) {
         var result: Craft?
         execute({ (db) in
             let sql = """
@@ -389,7 +389,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getEnhance(equipmentID: Int, callback: @escaping FMDBCallBackClosure<Equipment.Enhance?>) {
+    func getEnhance(equipmentID: Int, callback: @escaping FMDBCallbackClosure<Equipment.Enhance?>) {
         var result: Equipment.Enhance?
         execute({ (db) in
             let sql = """
@@ -419,7 +419,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getSkills(skillIDs: [Int], callback: @escaping FMDBCallBackClosure<[Skill]>) {
+    func getSkills(skillIDs: [Int], callback: @escaping FMDBCallbackClosure<[Skill]>) {
         var skills = [Skill]()
         execute({ (db) in
             let sql = """
@@ -475,7 +475,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getAreas(type: AreaType? = nil, callback: @escaping FMDBCallBackClosure<[Area]>) {
+    func getAreas(type: AreaType? = nil, callback: @escaping FMDBCallbackClosure<[Area]>) {
         var areas = [Area]()
         execute({ (db) in
             var sql = """
@@ -581,7 +581,7 @@ class Master: FMDatabaseQueue {
         return waves
     }
     
-    func getWaves(waveIDs: [Int], callback: @escaping FMDBCallBackClosure<[Wave]>) {
+    func getWaves(waveIDs: [Int], callback: @escaping FMDBCallbackClosure<[Wave]>) {
         var waves = [Wave]()
         execute({ [unowned self] (db) in
             waves = try self.getWaves(from: db, waveIDs: waveIDs)
@@ -590,7 +590,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getClanBattles(callback: @escaping FMDBCallBackClosure<[ClanBattle]>) {
+    func getClanBattles(callback: @escaping FMDBCallbackClosure<[ClanBattle]>) {
         var clanBattles = [ClanBattle]()
         execute({ [unowned self] (db) in
             let sql = """
@@ -634,7 +634,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getHatsuneEventAreas(callback: @escaping FMDBCallBackClosure<[HatsuneEventArea]>) {
+    func getHatsuneEventAreas(callback: @escaping FMDBCallbackClosure<[HatsuneEventArea]>) {
         var areas = [HatsuneEventArea]()
         execute({ (db) in
             let sql = """
@@ -666,7 +666,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getDungeons(callback: @escaping FMDBCallBackClosure<[Dungeon]>) {
+    func getDungeons(callback: @escaping FMDBCallbackClosure<[Dungeon]>) {
         var dungeons = [Dungeon]()
         execute({ (db) in
             let sql = """
@@ -690,7 +690,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Enemy]>) {
+    func getEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
         var enemies = [Enemy]()
         execute({ (db) in
             var sql = """
@@ -755,7 +755,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getQuests(areaID: Int? = nil, containsEquipment equipmentID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Quest]>) {
+    func getQuests(areaID: Int? = nil, containsEquipment equipmentID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Quest]>) {
         var quests = [Quest]()
         execute({ [unowned self] (db) in
             var sql = """
@@ -795,7 +795,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getMaxLevel(callback: @escaping FMDBCallBackClosure<Int?>) {
+    func getMaxLevel(callback: @escaping FMDBCallbackClosure<Int?>) {
         var result: Int?
         execute({ (db) in
             let sql = """
@@ -813,7 +813,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getMaxRank(callback: @escaping FMDBCallBackClosure<Int?>) {
+    func getMaxRank(callback: @escaping FMDBCallbackClosure<Int?>) {
         var result: Int?
         execute({ (db) in
             let sql = """
@@ -831,7 +831,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getMaxEnemyLevel(callback: @escaping FMDBCallBackClosure<Int?>) {
+    func getMaxEnemyLevel(callback: @escaping FMDBCallbackClosure<Int?>) {
         var result: Int?
         execute({ (db) in
             let sql = """
@@ -849,7 +849,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getCoefficient(callback: @escaping FMDBCallBackClosure<Coefficient?>) {
+    func getCoefficient(callback: @escaping FMDBCallbackClosure<Coefficient?>) {
         var result: Coefficient?
         execute({ (db) in
             let sql = """
@@ -870,7 +870,7 @@ class Master: FMDatabaseQueue {
         }
     }
 
-    func getCharaStory(charaID: Int, callback: @escaping FMDBCallBackClosure<[CharaStory]>) {
+    func getCharaStory(charaID: Int, callback: @escaping FMDBCallbackClosure<[CharaStory]>) {
         var results = [CharaStory]()
         execute({ (db) in
             let selectSql = """
@@ -921,7 +921,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getResistData(resistID: Int, callback: @escaping FMDBCallBackClosure<Resist?>) {
+    func getResistData(resistID: Int, callback: @escaping FMDBCallbackClosure<Resist?>) {
         var result: Resist?
         let ailments = DispatchSemaphore.sync { (closure) in
             getAilments(callback: closure)
@@ -956,7 +956,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getAilments(ailmentID: Int? = nil, callback: @escaping FMDBCallBackClosure<[Ailment]>) {
+    func getAilments(ailmentID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Ailment]>) {
         var ailments = [Ailment]()
         execute({ (db) in
             var selectSql = """
@@ -981,6 +981,32 @@ class Master: FMDatabaseQueue {
             }
         }) {
             callback(ailments)
+        }
+    }
+    
+    func getSkillCost(callback: @escaping FMDBCallbackClosure<[Int: Int]>) {
+        var skillCost = [Int: Int]()
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                *
+            FROM
+                skill_cost
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                
+                let targetLevel = json["target_level"].intValue
+                let cost = json["cost"].intValue
+                
+                skillCost[targetLevel] = cost
+                
+            }
+        }) {
+            callback(skillCost)
         }
     }
 }

@@ -23,6 +23,7 @@ struct Constant {
         3: 150,
         4: 200
     ]
+    static let presetNeededToLevelUpSkillCount = 4
 }
 
 extension URL {

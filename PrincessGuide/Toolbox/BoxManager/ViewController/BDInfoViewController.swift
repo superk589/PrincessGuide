@@ -22,6 +22,8 @@ class BDInfoViewController: UITableViewController, BoxDetailConfigurable {
     
     let box: Box
     
+    let refresher = RefreshHeader()
+    
     struct Row {
         enum Model {
             case text([(String, String)])
@@ -54,6 +56,8 @@ class BDInfoViewController: UITableViewController, BoxDetailConfigurable {
             themeable.tableView.indicatorStyle = theme.indicatorStyle
             themeable.navigationController?.toolbar.barStyle = theme.barStyle
             themeable.navigationController?.toolbar.tintColor = theme.color.tint
+            themeable.refresher.arrowImage.tintColor = theme.color.indicator
+            themeable.refresher.loadingView.color = theme.color.indicator
         }
         tableView.register(BDInfoTextCell.self, forCellReuseIdentifier: BDInfoTextCell.description())
         tableView.register(BoxTableViewCell.self, forCellReuseIdentifier: BoxTableViewCell.description())
@@ -61,11 +65,15 @@ class BDInfoViewController: UITableViewController, BoxDetailConfigurable {
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
-        
+        tableView.mj_header = refresher
+        refresher.refreshingBlock = { [weak self] in self?.loadData() }
         loadData()
     }
 
     private func loadData() {
+        defer {
+            refresher.endRefreshing()
+        }
         let objectID = box.objectID
         LoadingHUDManager.default.show()
         context.perform { [weak self] in
@@ -88,12 +96,26 @@ class BDInfoViewController: UITableViewController, BoxDetailConfigurable {
                      String(craftCost))
                 ])))
             
-            let enhanceCost = charas.flatMap { $0.unequiped() }
+            let enhanceCost = charas.flatMap { $0.maxRankUnequiped() }
                 .reduce(0) { $0 + $1.enhanceCost }
             
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                 (NSLocalizedString("Mana Cost of Enhancing", comment: ""),
                  String(enhanceCost))
+                ])))
+            
+            let skillCost = charas.reduce(0) { $0 + $1.skillLevelUpCost }
+            
+            rows.append(Row(type: BDInfoTextCell.self, data: .text([
+                (NSLocalizedString("Mana Cost of Skill Training", comment: ""),
+                 String(skillCost))
+                ])))
+            
+            let totalManaCost = craftCost + enhanceCost + skillCost
+            
+            rows.append(Row(type: BDInfoTextCell.self, data: .text([
+                (NSLocalizedString("Total Mana Cost", comment: ""),
+                 String(totalManaCost))
                 ])))
             
             DispatchQueue.main.async {

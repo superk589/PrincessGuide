@@ -61,6 +61,23 @@ extension Chara {
         return array
     }
     
+    func maxRankUnequiped() -> [Equipment] {
+        
+        if let promotions = card?.promotions {
+            if promotions.count == rank {
+                return unequiped()
+            } else {
+                var array = [Equipment]()
+                if let highestPromotion = promotions.last {
+                    array += highestPromotion.equipmentsInSlot.compactMap { $0 }
+                }
+                return array
+            }
+        } else {
+            return []
+        }
+    }
+    
     var slots: [Bool] {
         get {
             return [slot1, slot2, slot3, slot4, slot5, slot6]
@@ -77,6 +94,22 @@ extension Chara {
             slot5 = newValue[4]
             slot6 = newValue[5]
         }
+    }
+    
+    var skillLevelUpCost: Int {
+        let level = Int(skillLevel)
+        let targetLevel = ConsoleVariables.default.maxPlayerLevel
+        
+        guard level < targetLevel else {
+            return 0
+        }
+        
+        var cost = 0
+        for key in (level + 1)...targetLevel {
+            let value = ConsoleVariables.default.skillCost[key] ?? 0
+            cost += value
+        }
+        return cost * Constant.presetNeededToLevelUpSkillCount
     }
 }
 
