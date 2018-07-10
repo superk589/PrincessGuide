@@ -38,8 +38,40 @@ class Preload {
         reload()
     }
     
-    func load() {
+    func asyncLoad() {
         reload()
+    }
+    
+    func syncLoad() {
+        
+        skillCost = DispatchSemaphore.sync { (closure) in
+            Master.shared.getSkillCost(callback: closure)
+        } ?? [:]
+        
+        unitExperience = DispatchSemaphore.sync { (closure) in
+            Master.shared.getUnitExperience(callback: closure)
+        } ?? [:]
+        
+        cards = (DispatchSemaphore.sync { (closure) in
+            Master.shared.getCards(callback: closure)
+        } ?? []).reduce(into: [Int: Card]()) { $0[$1.base.unitId] = $1 }
+        
+        maxPlayerLevel = DispatchSemaphore.sync { (closure) in
+            Master.shared.getMaxLevel(callback: closure)
+        } ?? Constant.presetMaxPlayerLevel
+        
+        maxEnemyLevel = DispatchSemaphore.sync { (closure) in
+            Master.shared.getMaxEnemyLevel(callback: closure)
+        } ?? Constant.presetMaxEnemyLevel
+        
+        coefficient = DispatchSemaphore.sync { (closure) in
+            Master.shared.getCoefficient(callback: closure)
+        } ?? Coefficient.default
+        
+        maxEquipmentRank = DispatchSemaphore.sync { (closure) in
+            Master.shared.getMaxRank(callback: closure)
+        } ?? Constant.presetMaxRank
+        
     }
     
     private func reload() {

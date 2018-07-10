@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootTabBarController
         window?.makeKeyAndVisible()
         
+        ThemeManager.default.theme = Defaults.prefersDarkTheme ? Theme.dark : Theme.light
         ThemeManager.default.apply(theme: Theme.self, to: self) { themeable, theme in
             let tabBar = rootTabBarController.tabBar
             tabBar.tintColor = theme.color.tint
@@ -34,15 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             themeable.window?.backgroundColor = theme.color.background
         }
         
-        ThemeManager.default.theme = Defaults.prefersDarkTheme ? Theme.dark : Theme.light
-        
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
 
         // set Kingfisher cache never expiring
         ImageCache.default.maxCachePeriodInSecond = -1
         
         // prepare for preload master data
-        Preload.default.load()
+        Preload.default.syncLoad()
         
         UNUserNotificationCenter.current().delegate = NotificationHandler.default
         
