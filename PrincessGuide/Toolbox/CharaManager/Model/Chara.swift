@@ -111,6 +111,18 @@ extension Chara {
         }
         return cost * Constant.presetNeededToLevelUpSkillCount
     }
+    
+    var experienceToMaxLevel: Int {
+        let level = Int(self.level)
+        let targetLevel = ConsoleVariables.default.maxPlayerLevel
+        guard level < targetLevel else {
+            return 0
+        }
+        
+        let targetExperience = ConsoleVariables.default.unitExperience[targetLevel] ?? 0
+        let currentExperience = ConsoleVariables.default.unitExperience[level] ?? 0
+        return targetExperience - currentExperience
+    }
 }
 
 extension Card.Promotion {

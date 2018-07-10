@@ -1009,4 +1009,31 @@ class Master: FMDatabaseQueue {
             callback(skillCost)
         }
     }
+    
+    func getUnitExperience(callback: @escaping FMDBCallbackClosure<[Int: Int]>) {
+        var unitExperience = [Int: Int]()
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                *
+            FROM
+                experience_unit
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                
+                let unitLevel = json["unit_level"].intValue
+                let totalExp = json["total_exp"].intValue
+                
+                unitExperience[unitLevel] = totalExp
+                
+            }
+        }) {
+            callback(unitExperience)
+        }
+    }
+    
 }

@@ -90,7 +90,6 @@ class BDInfoViewController: UITableViewController {
             let craftCost = charas.flatMap { $0.unequiped() }
                 .flatMap { $0.recursiveCraft }
                 .reduce(0) { $0 + $1.craftedCost }
-            
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                 (NSLocalizedString("Mana Cost of Crafting", comment: ""),
                  craftCost.formatted)
@@ -98,24 +97,27 @@ class BDInfoViewController: UITableViewController {
             
             let enhanceCost = charas.flatMap { $0.maxRankUnequiped() }
                 .reduce(0) { $0 + $1.enhanceCost }
-
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                 (NSLocalizedString("Mana Cost of Enhancing", comment: ""),
                  enhanceCost.formatted)
             ])))
             
             let skillCost = charas.reduce(0) { $0 + $1.skillLevelUpCost }
-
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                 (NSLocalizedString("Mana Cost of Skill Training", comment: ""),
                  skillCost.formatted)
             ])))
             
             let totalManaCost = craftCost + enhanceCost + skillCost
-
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                 (NSLocalizedString("Total Mana Cost", comment: ""),
                  totalManaCost.formatted)
+            ])))
+            
+            let totalExperience = charas.reduce(0) { $0 + $1.experienceToMaxLevel }
+            rows.append(Row(type: BDInfoTextCell.self, data: .text([
+                (NSLocalizedString("Total Experience Needed", comment: ""),
+                 totalExperience.formatted)
             ])))
             
             DispatchQueue.main.async {

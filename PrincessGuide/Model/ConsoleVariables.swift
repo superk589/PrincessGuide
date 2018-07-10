@@ -30,6 +30,8 @@ class ConsoleVariables: Codable {
     
     var skillCost = [Int: Int]() { didSet { save() } }
     
+    var unitExperience = [Int: Int]() { didSet { save() } }
+    
     func save() {
         try? JSONEncoder().encode(self).write(to: ConsoleVariables.url)
     }
@@ -79,6 +81,12 @@ class ConsoleVariables: Codable {
         DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
             Master.shared.getSkillCost(callback: { (skillCost) in
                 self?.skillCost = skillCost
+            })
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+            Master.shared.getUnitExperience(callback: { (unitExperience) in
+                self?.unitExperience = unitExperience
             })
         }
         
