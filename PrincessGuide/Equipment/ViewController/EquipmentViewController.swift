@@ -40,7 +40,7 @@ class EquipmentViewController: UIViewController, DataChecking {
             make.edges.equalToSuperview()
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
 
         navigationItem.title = NSLocalizedString("Equipments", comment: "")
         

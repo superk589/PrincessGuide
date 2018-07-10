@@ -77,10 +77,10 @@ class CDSettingsViewController: FormViewController {
         }
         
         init() {
-            unitLevel = ConsoleVariables.default.maxPlayerLevel
-            skillLevel = ConsoleVariables.default.maxPlayerLevel
+            unitLevel = Preload.default.maxPlayerLevel
+            skillLevel = Preload.default.maxPlayerLevel
             bondRank = Constant.presetMaxBondRank
-            unitRank = ConsoleVariables.default.maxEquipmentRank
+            unitRank = Preload.default.maxEquipmentRank
             unitRarity = Constant.presetMaxRarity
             targetLevel = unitLevel
             addsEx = true
@@ -158,7 +158,7 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                for i in 0..<Preload.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitLevel
@@ -172,7 +172,7 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxEquipmentRank {
+                for i in 0..<Preload.default.maxEquipmentRank {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitRank
@@ -218,7 +218,7 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                let maxLevel = max(ConsoleVariables.default.maxEnemyLevel, ConsoleVariables.default.maxPlayerLevel)
+                let maxLevel = max(Preload.default.maxEnemyLevel, Preload.default.maxPlayerLevel)
                 for i in 0..<maxLevel {
                     row.options.append(i + 1)
                 }
@@ -236,7 +236,7 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                for i in 0..<Preload.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.skillLevel

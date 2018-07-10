@@ -110,11 +110,11 @@ class BatchEditViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                for i in 0..<Preload.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
                 
-                row.value = (charas.first?.level).flatMap { Int($0) } ?? ConsoleVariables.default.maxPlayerLevel
+                row.value = (charas.first?.level).flatMap { Int($0) } ?? Preload.default.maxPlayerLevel
                 
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
@@ -127,11 +127,11 @@ class BatchEditViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxEquipmentRank {
+                for i in 0..<Preload.default.maxEquipmentRank {
                     row.options.append(i + 1)
                 }
                 
-                row.value = (charas.first?.rank).flatMap { Int($0) } ?? ConsoleVariables.default.maxEquipmentRank
+                row.value = (charas.first?.rank).flatMap { Int($0) } ?? Preload.default.maxEquipmentRank
 
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
@@ -185,11 +185,11 @@ class BatchEditViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                for i in 0..<Preload.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
                 
-                row.value = (charas.first?.skillLevel).flatMap { Int($0) } ?? ConsoleVariables.default.maxPlayerLevel
+                row.value = (charas.first?.skillLevel).flatMap { Int($0) } ?? Preload.default.maxPlayerLevel
 
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))

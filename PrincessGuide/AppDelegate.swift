@@ -41,35 +41,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set Kingfisher cache never expiring
         ImageCache.default.maxCachePeriodInSecond = -1
         
-        VersionManager.shared.executeDocumentReset { (lastVersion) in
-            do {
-                if lastVersion < 2 {
-                    try FileManager.default.removeItem(at: ConsoleVariables.url)
-                }
-                if lastVersion < 3 {
-                    ConsoleVariables.default.rebuild()
-                }
-            } catch (let error) {
-                print(error)
-            }
-        }
+        // prepare for preload master data
+        Preload.default.load()
         
         UNUserNotificationCenter.current().delegate = NotificationHandler.default
         
-        if BirthdayViewController.Setting.default.schedulesBirthdayNotifications {
-            BirthdayCenter.default.scheduleNotifications()
-        }
+        BirthdayCenter.default.scheduleNotifications()
         
         return true
     }
-
-    func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
-        Card.removeCache()
-    }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        if BirthdayViewController.Setting.default.schedulesBirthdayNotifications {
-            BirthdayCenter.default.scheduleNotifications()
-        }
+        BirthdayCenter.default.scheduleNotifications()
     }
 }

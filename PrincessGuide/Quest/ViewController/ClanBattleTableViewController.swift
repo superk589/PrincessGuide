@@ -32,7 +32,7 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
             themeable.tableView.backgroundColor = theme.color.background
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         
         tableView.mj_header = refresher
         refresher.refreshingBlock = { [weak self] in self?.check() }

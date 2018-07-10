@@ -60,13 +60,11 @@ class BirthdayCenter {
     
     private init() {
         reload()
-        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: .preloadEnd, object: nil)
     }
     
     @objc private func reload() {
-        let cards = DispatchSemaphore.sync { (closure) in
-            Master.shared.getCards(callback: closure)
-        } ?? []
+        let cards = Preload.default.cards.values
         
         let sortedCards = cards.filter { $0.nextBirthday != nil }.sorted { $0.profile.unitId > $1.profile.unitId }
         for card in sortedCards {
@@ -80,6 +78,11 @@ class BirthdayCenter {
     }
     
     func scheduleNotifications() {
+        
+        if !Setting.default.schedulesBirthdayNotifications {
+            return
+        }
+        
         removeNotifications()
         DispatchQueue.global(qos: .userInitiated).async { [unowned self] in
             

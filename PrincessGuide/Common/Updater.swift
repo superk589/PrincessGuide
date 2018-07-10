@@ -17,6 +17,10 @@ extension URL {
     }
 }
 
+extension Notification.Name {
+    static let updateEnd = Notification.Name("update_end")
+}
+
 class Updater {
     
     static let shared = Updater()
@@ -65,8 +69,7 @@ class Updater {
                     }
                     let db = try extractAsset(data: asset.data)
                     try db.write(to: Master.url, options: .atomic)
-                    Card.removeCache()
-                    ConsoleVariables.default.handleDataUpdatingEnd()
+                    NotificationCenter.default.post(name: .updateEnd, object: nil)
                     completion(db, nil)
                 } catch(let error) {
                     print(error)

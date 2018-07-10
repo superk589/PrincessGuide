@@ -80,7 +80,7 @@ class SettingsTableViewController: UITableViewController {
         
         navigationItem.title = NSLocalizedString("Settings", comment: "")
         prepareCellData()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         tableView.cellLayoutMarginsFollowReadableWidth = true
     }
     

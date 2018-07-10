@@ -174,7 +174,7 @@ class BirthdayViewController: FormViewController {
                 cell.delegate = self
             }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadCards(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCards(_:)), name: .preloadEnd, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadSettings(_:)), name: .UIApplicationDidBecomeActive, object: nil)
         
     }

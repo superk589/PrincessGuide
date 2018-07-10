@@ -10,27 +10,8 @@ import Foundation
 
 class Card: Codable {
     
-    // card cache
-    private static var cache: [Int: Card] = [:]
-    
     static func findByID(_ id: Int) -> Card? {
-        if let card = cache[id] {
-            return card
-        } else {
-            let card = DispatchSemaphore.sync { (closure) in
-                Master.shared.getCards(cardID: id, callback: closure)
-            }?.first
-            if card != nil {
-                cache[id] = card!
-                return card
-            } else {
-                return nil
-            }
-        }
-    }
-    
-    static func removeCache() {
-        cache.removeAll()
+        return Preload.default.cards[id]
     }
     
     let promotions: [Promotion]
@@ -381,8 +362,8 @@ extension Card {
         return base.unitId / 100
     }
     
-    func property(unitLevel: Int = ConsoleVariables.default.maxPlayerLevel,
-                  unitRank: Int = ConsoleVariables.default.maxEquipmentRank,
+    func property(unitLevel: Int = Preload.default.maxPlayerLevel,
+                  unitRank: Int = Preload.default.maxEquipmentRank,
                   bondRank: Int = Constant.presetMaxBondRank,
                   unitRarity: Int = Constant.presetMaxRarity,
                   addsEx: Bool = CardSortingViewController.Setting.default.addsEx) -> Property {
@@ -418,17 +399,17 @@ extension Card {
         return property.rounded()
     }
     
-    func combatEffectiveness(unitLevel: Int = ConsoleVariables.default.maxPlayerLevel,
-                             unitRank: Int = ConsoleVariables.default.maxEquipmentRank,
+    func combatEffectiveness(unitLevel: Int = Preload.default.maxPlayerLevel,
+                             unitRank: Int = Preload.default.maxEquipmentRank,
                              bondRank: Int = Constant.presetMaxBondRank,
                              unitRarity: Int = Constant.presetMaxRarity,
-                             skillLevel: Int = ConsoleVariables.default.maxPlayerLevel) -> Int {
+                             skillLevel: Int = Preload.default.maxPlayerLevel) -> Int {
         
         let property = self.property(unitLevel: unitLevel, unitRank: unitRank, bondRank: bondRank, unitRarity: unitRarity, addsEx: false)
         
         var result = 0.0
         
-        let coefficient = ConsoleVariables.default.coefficient
+        let coefficient = Preload.default.coefficient
         
         PropertyKey.all.forEach {
             result += property.item(for: $0).value * coefficient.value(for: $0)

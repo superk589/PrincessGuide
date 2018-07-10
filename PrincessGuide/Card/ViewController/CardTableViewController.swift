@@ -40,7 +40,7 @@ class CardTableViewController: UITableViewController, DataChecking {
             themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFilterChange(_:)), name: .cardSortingSettingsDidChange, object: nil)
         
         tableView.mj_header = refresher
@@ -70,60 +70,60 @@ class CardTableViewController: UITableViewController, DataChecking {
     private func loadData() {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getCards(callback: { (cards) in
-                DispatchQueue.main.async {
-                    LoadingHUDManager.default.hide()
-                    self?.cards = cards
-                    self?.sortedAndGroupedCards = cards.filter(settings: CardSortingViewController.Setting.default)
-                    self?.tableView.reloadData()
+            let cards = Array(Preload.default.cards.values)
+            let sortedAndGroupedCards = cards.filter(settings: CardSortingViewController.Setting.default)
+            DispatchQueue.main.async {
+                LoadingHUDManager.default.hide()
+                self?.cards = cards
+                self?.sortedAndGroupedCards = sortedAndGroupedCards
+                self?.tableView.reloadData()
                     
-                    /* debug */
-                    /*let encoder = JSONEncoder()
-                    encoder.outputFormatting = .prettyPrinted
-                    if let data = try? encoder.encode(cards.map { [$0.base.unitName: $0.property()] }) {
-                        try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_property.json"))
-                    }
-                     */
-                    
-                    /*
-                    let encoder = JSONEncoder()
-                    encoder.outputFormatting = .prettyPrinted
-                    let settings = CDSettingsViewController.Setting.default
-                    if let data = try? encoder.encode(cards.map { (card) -> [String: [String: [String]]] in
-                        let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: true)
-                        return [
-                            card.base.unitName: [
-                                "ub": card.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                                "main_1": card.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                                "main_2": card.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                                "ex": card.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                                "ex+": card.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                            ]
-                        ]
-                    }) {
-                        try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills_r9_95_ex.json"))
-                    }
-                     */
-                    
-                    /*
-                    let encoder = JSONEncoder()
-                    encoder.outputFormatting = .prettyPrinted
-                    if let data = try? encoder.encode(cards.map {
-                        [
-                            $0.base.unitName: [
-                                "ub": $0.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                                "main_1": $0.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                                "main_2": $0.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                                "ex": $0.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                                "ex+": $0.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                            ]
-                        ]
-                    }) {
-                        try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills_formula.json"))
-                    }
-                     */
+                /* debug */
+                /*let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                if let data = try? encoder.encode(cards.map { [$0.base.unitName: $0.property()] }) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_property.json"))
                 }
-            })
+                 */
+                
+                /*
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                let settings = CDSettingsViewController.Setting.default
+                if let data = try? encoder.encode(cards.map { (card) -> [String: [String: [String]]] in
+                    let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: true)
+                    return [
+                        card.base.unitName: [
+                            "ub": card.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
+                            "main_1": card.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
+                            "main_2": card.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
+                            "ex": card.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
+                            "ex+": card.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
+                        ]
+                    ]
+                }) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills_r9_95_ex.json"))
+                }
+                 */
+                
+                /*
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                if let data = try? encoder.encode(cards.map {
+                    [
+                        $0.base.unitName: [
+                            "ub": $0.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                            "main_1": $0.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                            "main_2": $0.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                            "ex": $0.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                            "ex+": $0.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                        ]
+                    ]
+                }) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills_formula.json"))
+                }
+                 */
+            }
         }
     }
     

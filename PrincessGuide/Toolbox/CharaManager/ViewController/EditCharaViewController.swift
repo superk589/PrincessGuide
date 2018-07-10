@@ -137,11 +137,11 @@ class EditCharaViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                for i in 0..<Preload.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
                 if mode == .create {
-                    row.value = ConsoleVariables.default.maxPlayerLevel
+                    row.value = Preload.default.maxPlayerLevel
                 } else {
                     row.value = (chara?.level).flatMap { Int($0) }
                 }
@@ -155,11 +155,11 @@ class EditCharaViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxEquipmentRank {
+                for i in 0..<Preload.default.maxEquipmentRank {
                     row.options.append(i + 1)
                 }
                 if mode == .create {
-                    row.value = ConsoleVariables.default.maxEquipmentRank
+                    row.value = Preload.default.maxEquipmentRank
                 } else {
                     row.value = (chara?.rank).flatMap { Int($0) }
                 }
@@ -220,11 +220,11 @@ class EditCharaViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                for i in 0..<Preload.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
                 if mode == .create {
-                    row.value = ConsoleVariables.default.maxPlayerLevel
+                    row.value = Preload.default.maxPlayerLevel
                 } else {
                     row.value = (chara?.skillLevel).flatMap { Int($0) }
                 }

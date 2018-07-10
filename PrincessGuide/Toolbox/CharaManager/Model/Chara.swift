@@ -98,7 +98,7 @@ extension Chara {
     
     var skillLevelUpCost: Int {
         let level = Int(skillLevel)
-        let targetLevel = ConsoleVariables.default.maxPlayerLevel
+        let targetLevel = Preload.default.maxPlayerLevel
         
         guard level < targetLevel else {
             return 0
@@ -106,7 +106,7 @@ extension Chara {
         
         var cost = 0
         for key in (level + 1)...targetLevel {
-            let value = ConsoleVariables.default.skillCost[key] ?? 0
+            let value = Preload.default.skillCost[key] ?? 0
             cost += value
         }
         return cost * Constant.presetNeededToLevelUpSkillCount
@@ -114,13 +114,13 @@ extension Chara {
     
     var experienceToMaxLevel: Int {
         let level = Int(self.level)
-        let targetLevel = ConsoleVariables.default.maxPlayerLevel
+        let targetLevel = Preload.default.maxPlayerLevel
         guard level < targetLevel else {
             return 0
         }
         
-        let targetExperience = ConsoleVariables.default.unitExperience[targetLevel] ?? 0
-        let currentExperience = ConsoleVariables.default.unitExperience[level] ?? 0
+        let targetExperience = Preload.default.unitExperience[targetLevel] ?? 0
+        let currentExperience = Preload.default.unitExperience[level] ?? 0
         return targetExperience - currentExperience
     }
 }
