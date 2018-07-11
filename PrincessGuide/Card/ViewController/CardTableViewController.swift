@@ -244,6 +244,52 @@ class CardTableViewController: UITableViewController, DataChecking {
 
 extension Array where Element == Card {
     
+    mutating func sort(settings: CardSortingViewController.Setting) {
+
+        let sortingMethod: (Card, Card) -> Bool
+        switch settings.sortingMethod {
+        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery:
+            let propertyKey = PropertyKey(rawValue: settings.sortingMethod.rawValue)!
+            sortingMethod = { $0.property().item(for: propertyKey).value < $1.property().item(for: propertyKey).value }
+        case .rarity:
+            sortingMethod = { $0.base.rarity < $1.base.rarity }
+        case .effectivePhysicalHP:
+            sortingMethod = { $0.property().effectivePhysicalHP < $1.property().effectivePhysicalHP }
+        case .effectiveMagicalHP:
+            sortingMethod = { $0.property().effectiveMagicalHP < $1.property().effectiveMagicalHP }
+        case .swingTime:
+            sortingMethod = { $0.base.normalAtkCastTime < $1.base.normalAtkCastTime }
+        case .attackRange:
+            sortingMethod = { $0.base.searchAreaWidth < $1.base.searchAreaWidth }
+        case .id:
+            sortingMethod = { $0.base.unitId < $1.base.unitId }
+        case .name:
+            sortingMethod = { $0.base.unitName < $1.base.unitName }
+        case .height:
+            sortingMethod = { Int($0.profile.height) ?? .max < Int($1.profile.height) ?? .max}
+        case .weight:
+            sortingMethod = { Int($0.profile.weight) ?? .max < Int($1.profile.weight) ?? .max }
+        case .age:
+            sortingMethod = { Int($0.profile.age) ?? .max < Int($1.profile.age) ?? .max }
+        case .combatEffectiveness:
+            sortingMethod = { $0.combatEffectiveness() < $1.combatEffectiveness() }
+        case .birthday:
+            sortingMethod = { (Int($0.profile.birthMonth) ?? .max, Int($0.profile.birthDay) ?? .max) < (Int($1.profile.birthMonth) ?? .max, Int($1.profile.birthDay) ?? .max) }
+        }
+        
+        sort(by: sortingMethod)
+        
+        if !settings.isAscending {
+            reverse()
+        }
+    }
+    
+    func sorted(settings: CardSortingViewController.Setting) -> [Card] {
+        var cards = self
+        cards.sort(settings: settings)
+        return cards
+    }
+    
     func filter(settings: CardSortingViewController.Setting) -> [CardTableViewController.Section] {
         
         typealias Section = CardTableViewController.Section
@@ -290,45 +336,8 @@ extension Array where Element == Card {
             sections = [frontSection, middleSection, backSection]
         }
         
-        let sortingMethod: (Card, Card) -> Bool
-        switch settings.sortingMethod {
-        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery:
-            let propertyKey = PropertyKey(rawValue: settings.sortingMethod.rawValue)!
-            sortingMethod = { $0.property().item(for: propertyKey).value < $1.property().item(for: propertyKey).value }
-        case .rarity:
-            sortingMethod = { $0.base.rarity < $1.base.rarity }
-        case .effectivePhysicalHP:
-            sortingMethod = { $0.property().effectivePhysicalHP < $1.property().effectivePhysicalHP }
-        case .effectiveMagicalHP:
-            sortingMethod = { $0.property().effectiveMagicalHP < $1.property().effectiveMagicalHP }
-        case .swingTime:
-            sortingMethod = { $0.base.normalAtkCastTime < $1.base.normalAtkCastTime }
-        case .attackRange:
-            sortingMethod = { $0.base.searchAreaWidth < $1.base.searchAreaWidth }
-        case .id:
-            sortingMethod = { $0.base.unitId < $1.base.unitId }
-        case .name:
-            sortingMethod = { $0.base.unitName < $1.base.unitName }
-        case .height:
-            sortingMethod = { Int($0.profile.height) ?? .max < Int($1.profile.height) ?? .max}
-        case .weight:
-            sortingMethod = { Int($0.profile.weight) ?? .max < Int($1.profile.weight) ?? .max }
-        case .age:
-            sortingMethod = { Int($0.profile.age) ?? .max < Int($1.profile.age) ?? .max }
-        case .combatEffectiveness:
-            sortingMethod = { $0.combatEffectiveness() < $1.combatEffectiveness() }
-        case .birthday:
-            sortingMethod = { (Int($0.profile.birthMonth) ?? .max, Int($0.profile.birthDay) ?? .max) < (Int($1.profile.birthMonth) ?? .max, Int($1.profile.birthDay) ?? .max) }
-        }
-        
         for index in sections.indices {
-            sections[index].cards.sort(by: sortingMethod)
-        }
-        
-        if !settings.isAscending {
-            for index in sections.indices {
-                sections[index].cards.reverse()
-            }
+            sections[index].cards.sort(settings: settings)
         }
         
         return sections

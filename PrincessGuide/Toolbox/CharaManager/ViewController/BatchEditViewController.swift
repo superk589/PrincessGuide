@@ -138,7 +138,7 @@ class BatchEditViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
                 .onChange { [weak self] (pickerRow) in
-                    if let card = self?.charas.first?.card, let row = self?.form.rowBy(tag: "slots") as? SlotRow,
+                    if let card = self?.charas.first?.card, let row = self?.form.rowBy(tag: "slots") as? SlotsRow,
                         let value = pickerRow.value, card.promotions.indices ~= value - 1 {
                         row.cell.configure(for: card.promotions[value - 1], slots: [Bool](repeating: true, count: 6))
                     }
@@ -200,7 +200,7 @@ class BatchEditViewController: FormViewController {
                 $0.footer = HeaderFooterView(title: NSLocalizedString("Only shows the first chara's equipments, but will reflect on all selected charas.", comment: ""))
             }
             
-            <<< SlotRow("slots")
+            <<< SlotsRow("slots")
                 .cellSetup{ [weak self] (cell, row) in
                     cell.selectedBackgroundView = UIView()
                     ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in

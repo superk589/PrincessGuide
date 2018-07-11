@@ -1,5 +1,5 @@
 //
-//  SlotCell.swift
+//  SlotsCell.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/6/29.
@@ -10,7 +10,7 @@ import UIKit
 import Eureka
 import Gestalt
 
-class SlotCell: Cell<[Bool]>, CellType {
+class SlotsCell: Cell<[Bool]>, CellType {
 
 //    let titleLabel = UILabel()
     
@@ -107,7 +107,7 @@ class SlotCell: Cell<[Bool]>, CellType {
     }
 }
 
-final class SlotRow: Row<SlotCell>, RowType {
+final class SlotsRow: Row<SlotsCell>, RowType {
     required public init(tag: String?) {
         super.init(tag: tag)
     }

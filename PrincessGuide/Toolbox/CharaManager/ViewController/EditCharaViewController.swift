@@ -168,7 +168,7 @@ class EditCharaViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
                 .onChange { [weak self] (pickerRow) in
-                    if let card = self?.card, let row = self?.form.rowBy(tag: "slots") as? SlotRow,
+                    if let card = self?.card, let row = self?.form.rowBy(tag: "slots") as? SlotsRow,
                         let value = pickerRow.value, card.promotions.indices ~= value - 1 {
                         let promotion = card.promotions[value - 1]
                         row.cell.configure(for: promotion, slots: promotion.defaultSlots)
@@ -235,7 +235,7 @@ class EditCharaViewController: FormViewController {
         
             +++ Section(NSLocalizedString("Equipment", comment: ""))
             
-            <<< SlotRow("slots")
+            <<< SlotsRow("slots")
                 .cellSetup{ [weak self] (cell, row) in
                     cell.selectedBackgroundView = UIView()
                     ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
