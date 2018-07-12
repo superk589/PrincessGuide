@@ -26,6 +26,11 @@ class CardCollectionViewController: UIViewController, DataChecking, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(backgroundImageView)
+        backgroundImageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
         layout = UICollectionViewFlowLayout()
         if #available(iOS 11.0, *) {
             layout.sectionInsetReference = .fromSafeArea
@@ -40,6 +45,7 @@ class CardCollectionViewController: UIViewController, DataChecking, UICollection
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 84, right: 0)
 
         collectionView.delegate = self
         collectionView.dataSource = self

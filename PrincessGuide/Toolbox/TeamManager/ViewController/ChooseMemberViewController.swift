@@ -38,7 +38,7 @@ class ChooseCardsViewController: CardCollectionViewController {
     }
     
     @objc private func nextStep(_ item: UIBarButtonItem) {
-        let vc = EditTeamViewController()
+        let vc = EditTeamViewController(cards: selectedCards.map { $0.card })
         navigationController?.pushViewController(vc, animated: true)
     }
     

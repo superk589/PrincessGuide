@@ -152,7 +152,9 @@ class EditBoxViewController: FormViewController {
                     }
                 }
                 .onChange { [weak self] (row) in
-                    self?.saveBox()
+                    if self?.mode == .edit {
+                        self?.saveBox()
+                    }
                 }
         
 //            <<< ButtonRow("save_box") { (row) in

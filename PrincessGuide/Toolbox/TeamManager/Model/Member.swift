@@ -14,8 +14,15 @@ extension Member {
     convenience init(anotherMember: Member, context: NSManagedObjectContext) {
         self.init(context: context)
         id = anotherMember.id
-        rarity = anotherMember.id
+        rarity = anotherMember.rarity
         level = anotherMember.level
+    }
+    
+    convenience init(card: Card, context: NSManagedObjectContext) {
+        self.init(context: context)
+        id = Int32(card.base.unitId)
+        rarity = Int16(card.base.rarity)
+        level = Int16(Preload.default.maxPlayerLevel)
     }
     
     var card: Card? {

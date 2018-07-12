@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14296.2" systemVersion="18A326g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14296.2" systemVersion="18A326h" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Box" representedClassName="Box" syncable="YES" codeGenerationType="class">
         <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -22,7 +22,7 @@
         <relationship name="boxes" toMany="YES" deletionRule="Nullify" destinationEntity="Box" inverseName="charas" inverseEntity="Box" syncable="YES"/>
     </entity>
     <entity name="Member" representedClassName="Member" syncable="YES" codeGenerationType="class">
-        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="level" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="rarity" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="team" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="members" inverseEntity="Team" syncable="YES"/>
@@ -37,7 +37,7 @@
     <elements>
         <element name="Box" positionX="684" positionY="-27" width="128" height="90"/>
         <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="255"/>
-        <element name="Team" positionX="684" positionY="-18" width="128" height="120"/>
         <element name="Member" positionX="693" positionY="-9" width="128" height="105"/>
+        <element name="Team" positionX="684" positionY="-18" width="128" height="120"/>
     </elements>
 </model>
