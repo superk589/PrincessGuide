@@ -114,7 +114,6 @@ class AddCharaToBoxViewController: UITableViewController {
         delegate?.addCharaToBoxViewControllerDidSave(self)
     }
     
-    
     var fetchedResultsController: NSFetchedResultsController<Chara>?
     
     var charas: [Chara] {

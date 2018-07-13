@@ -31,7 +31,8 @@ class MemberView: UIView {
         rarityView.snp.makeConstraints { (make) in
             make.left.equalTo(2)
             make.bottom.equalTo(-2)
-            make.height.equalTo(10)
+            make.height.lessThanOrEqualTo(10)
+            make.right.lessThanOrEqualTo(-2)
         }
         
         levelLabel.snp.makeConstraints { (make) in

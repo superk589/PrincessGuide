@@ -162,8 +162,11 @@ class EditTeamViewController: FormViewController {
                     return rowValue.flatMap { Team.Tag(rawValue: $0)?.description }
                 }
                 row.options = Team.Tag.allLabels.map { $0.rawValue }
-                row.value = Team.Tag.pvp.description
-                
+                if mode == .create {
+                    row.value = Team.Tag.pvp.description
+                } else {
+                    row.value = team?.tag
+                }
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
@@ -180,8 +183,11 @@ class EditTeamViewController: FormViewController {
                     return rowValue.flatMap { Team.Mark(rawValue: $0)?.description }
                 }
                 row.options = Team.Mark.allLabels.map { $0.rawValue }
-                row.value = Team.Mark.attack.description
-                
+                if mode == .create {
+                    row.value = Team.Mark.attack.description
+                } else {
+                    row.value = team?.mark
+                }
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))

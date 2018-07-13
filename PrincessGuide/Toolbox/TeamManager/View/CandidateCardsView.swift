@@ -37,9 +37,9 @@ class CandidateCardsView: UIView {
         
         addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
-            make.left.greaterThanOrEqualToSuperview()
+            make.left.greaterThanOrEqualTo(10)
             make.centerX.equalToSuperview()
-            make.right.lessThanOrEqualToSuperview()
+            make.right.lessThanOrEqualTo(-10)
             make.top.equalTo(10)
             if #available(iOS 11.0, *) {
                 make.bottom.equalTo(safeAreaLayoutGuide).offset(-10)
@@ -50,7 +50,7 @@ class CandidateCardsView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.spacing = 10
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -14,20 +14,20 @@ extension Team {
     enum Mark: String, CustomStringConvertible {
         
         case attack
-        case defense
+        case defend
         
         var description: String {
             
             switch self {
             case .attack:
                 return NSLocalizedString("attack", comment: "")
-            case .defense:
-                return NSLocalizedString("defense", comment: "")
+            case .defend:
+                return NSLocalizedString("defend", comment: "")
             }
         }
         
         static var allLabels: [Mark] {
-            return [Mark.attack, .defense]
+            return [Mark.attack, .defend]
         }
     }
     

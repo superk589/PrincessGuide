@@ -14,13 +14,15 @@ class ToolboxTableViewController: UITableViewController {
     struct Row {
         var title: String
         var vcType: UIViewController.Type
+        var isProFeature: Bool
     }
     
     private var rows = [
-        Row(title: NSLocalizedString("Birthday Notification", comment: ""), vcType: BirthdayViewController.self),
-        Row(title: NSLocalizedString("Chara Management", comment: ""), vcType: CharaTableViewController.self),
-        Row(title: NSLocalizedString("Box Management", comment: ""), vcType: BoxTableViewController.self),
-        Row(title: NSLocalizedString("Team Management", comment: ""), vcType: TeamTableViewController.self)
+        Row(title: NSLocalizedString("Birthday Notification", comment: ""), vcType: BirthdayViewController.self, isProFeature: false),
+        Row(title: NSLocalizedString("Chara Management", comment: ""), vcType: CharaTableViewController.self, isProFeature: true),
+        Row(title: NSLocalizedString("Box Management", comment: ""), vcType: BoxTableViewController.self, isProFeature: true),
+        Row(title: NSLocalizedString("Team Management", comment: ""), vcType: SearchableTeamTableViewController.self, isProFeature: true),
+        Row(title: NSLocalizedString("Battle Management", comment: ""), vcType: BattleTableViewController.self, isProFeature: true)
     ]
     
     let backgroundImageView = UIImageView()

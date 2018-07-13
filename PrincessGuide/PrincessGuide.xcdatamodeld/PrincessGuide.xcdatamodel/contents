@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14296.2" systemVersion="18A326h" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Battle" representedClassName="Battle" syncable="YES" codeGenerationType="class">
+        <attribute name="attackerWins" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="attacker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="attackInBattles" inverseEntity="Team" syncable="YES"/>
+        <relationship name="defender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="defendInBattles" inverseEntity="Team" syncable="YES"/>
+    </entity>
     <entity name="Box" representedClassName="Box" syncable="YES" codeGenerationType="class">
         <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -32,12 +38,15 @@
         <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="tag" attributeType="String" syncable="YES"/>
+        <relationship name="attackInBattles" toMany="YES" deletionRule="Nullify" destinationEntity="Battle" inverseName="attacker" inverseEntity="Battle" syncable="YES"/>
+        <relationship name="defendInBattles" toMany="YES" deletionRule="Nullify" destinationEntity="Battle" inverseName="defender" inverseEntity="Battle" syncable="YES"/>
         <relationship name="members" toMany="YES" minCount="1" maxCount="5" deletionRule="Cascade" destinationEntity="Member" inverseName="team" inverseEntity="Member" syncable="YES"/>
     </entity>
     <elements>
         <element name="Box" positionX="684" positionY="-27" width="128" height="90"/>
         <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="255"/>
         <element name="Member" positionX="693" positionY="-9" width="128" height="105"/>
-        <element name="Team" positionX="684" positionY="-18" width="128" height="120"/>
+        <element name="Team" positionX="684" positionY="-18" width="128" height="150"/>
+        <element name="Battle" positionX="693" positionY="-9" width="128" height="105"/>
     </elements>
 </model>

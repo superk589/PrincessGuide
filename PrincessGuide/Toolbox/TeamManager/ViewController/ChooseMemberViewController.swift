@@ -11,7 +11,7 @@ import CoreData
 import Gestalt
 import SwiftyJSON
 
-class ChooseCardsViewController: CardCollectionViewController {
+class ChooseMemberViewController: CardCollectionViewController {
     
     var selectedCards = [Selected]() {
         didSet {
@@ -83,7 +83,7 @@ class ChooseCardsViewController: CardCollectionViewController {
     
 }
 
-extension ChooseCardsViewController: CandidateCardsViewDelegate {
+extension ChooseMemberViewController: CandidateCardsViewDelegate {
     func candidateCardsView(_ candidateCardsView: CandidateCardsView, didSelect index: Int) {
         let selected = selectedCards.remove(at: index)
         candidateCardsView.configure(for: selectedCards.map { $0.card })

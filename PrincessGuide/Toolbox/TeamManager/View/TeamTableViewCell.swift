@@ -64,9 +64,10 @@ class TeamTableViewCell: UITableViewCell {
         
         tagLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
         
+        stackView.alignment = .leading
         stackView.axis = .horizontal
         stackView.spacing = 10
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         
         (0..<5).forEach { _ in
             let view = MemberView()
@@ -87,7 +88,7 @@ class TeamTableViewCell: UITableViewCell {
         switch team.typedMark {
         case .some(.attack):
             markIcon.image = #imageLiteral(resourceName: "sword").withRenderingMode(.alwaysTemplate)
-        case .some(.defense):
+        case .some(.defend):
             markIcon.image = #imageLiteral(resourceName: "shield").withRenderingMode(.alwaysTemplate)
         default:
             markIcon.image = nil
