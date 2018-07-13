@@ -124,7 +124,8 @@ class EditTeamViewController: FormViewController {
             <<< TextRow("name") {
                 $0.title = NSLocalizedString("Team Name", comment: "")
                 if mode == .create {
-                    $0.value = NSLocalizedString("My Team", comment: "")
+                    $0.placeholder = NSLocalizedString("Enter Name", comment: "")
+                    $0.value = NSLocalizedString("", comment: "")
                 } else {
                     $0.value = team?.name
                 }
@@ -137,6 +138,9 @@ class EditTeamViewController: FormViewController {
                         themeable.backgroundColor = theme.color.tableViewCell.background
                         themeable.textField.textColor = theme.color.tint
                         themeable.textField.keyboardAppearance = theme.keyboardAppearance
+                    }
+                    ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
+                        themeable.placeholderColor = theme.color.lightText
                     }
                 }
                 .cellUpdate { (cell, row) in
@@ -158,7 +162,7 @@ class EditTeamViewController: FormViewController {
                     return rowValue.flatMap { Team.Tag(rawValue: $0)?.description }
                 }
                 row.options = Team.Tag.allLabels.map { $0.rawValue }
-                row.value = Team.Tag.none.description
+                row.value = Team.Tag.pvp.description
                 
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
@@ -170,13 +174,13 @@ class EditTeamViewController: FormViewController {
                     }
             }
         
-            <<< PickerInlineRow<String>("style") { (row : PickerInlineRow<String>) -> Void in
-                row.title = NSLocalizedString("Style", comment: "")
+            <<< PickerInlineRow<String>("mark") { (row : PickerInlineRow<String>) -> Void in
+                row.title = NSLocalizedString("Mark", comment: "")
                 row.displayValueFor = { (rowValue: String?) in
-                    return rowValue.flatMap { Team.Style(rawValue: $0)?.description }
+                    return rowValue.flatMap { Team.Mark(rawValue: $0)?.description }
                 }
-                row.options = Team.Style.allLabels.map { $0.rawValue }
-                row.value = Team.Style.none.description
+                row.options = Team.Mark.allLabels.map { $0.rawValue }
+                row.value = Team.Mark.attack.description
                 
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
@@ -263,7 +267,7 @@ class EditTeamViewController: FormViewController {
         }
         
         team?.modifiedAt = Date()
-        team?.style = json["style"].stringValue
+        team?.mark = json["mark"].stringValue
         team?.tag = json["tag"].stringValue
         team?.name = json["name"].stringValue
         

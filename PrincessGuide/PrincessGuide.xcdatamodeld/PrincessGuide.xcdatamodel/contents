@@ -28,9 +28,9 @@
         <relationship name="team" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="members" inverseEntity="Team" syncable="YES"/>
     </entity>
     <entity name="Team" representedClassName="Team" syncable="YES" codeGenerationType="class">
+        <attribute name="mark" attributeType="String" syncable="YES"/>
         <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="style" attributeType="String" syncable="YES"/>
         <attribute name="tag" attributeType="String" syncable="YES"/>
         <relationship name="members" toMany="YES" minCount="1" maxCount="5" deletionRule="Cascade" destinationEntity="Member" inverseName="team" inverseEntity="Member" syncable="YES"/>
     </entity>

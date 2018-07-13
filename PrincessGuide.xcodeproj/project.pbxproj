@@ -156,13 +156,15 @@
 		12DC963720EDECFE008896D7 /* BoxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC963620EDECFE008896D7 /* BoxTableViewController.swift */; };
 		12DC963C20EDED44008896D7 /* BoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC963B20EDED44008896D7 /* BoxTableViewCell.swift */; };
 		12DC964120EDEDEB008896D7 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964020EDEDEB008896D7 /* TeamTableViewController.swift */; };
-		12DC964320EDEDFA008896D7 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964220EDEDFA008896D7 /* TeamTableViewCell.swift */; };
 		12DC964520EDFA9D008896D7 /* EditBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */; };
 		12DC964720EDFF34008896D7 /* AddCharaToBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */; };
 		12DC964A20EE1BC1008896D7 /* CharasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964920EE1BC1008896D7 /* CharasCell.swift */; };
 		12E3324220F5EAE200844A6A /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324120F5EAE200844A6A /* CardCollectionViewController.swift */; };
 		12E3324420F5ED7600844A6A /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324320F5ED7600844A6A /* CardCollectionViewCell.swift */; };
 		12E3324620F5F9C200844A6A /* CandidateCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324520F5F9C200844A6A /* CandidateCardsView.swift */; };
+		12EBF70B20F7952600120C2A /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70A20F7952600120C2A /* MemberView.swift */; };
+		12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */; };
+		12EBF71120F7BC0500120C2A /* StrokedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF71020F7BC0500120C2A /* StrokedLabel.swift */; };
 		12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */; };
 		12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */; };
 		12F125B120AEC069005C9659 /* CDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* CDImageView.swift */; };
@@ -397,13 +399,15 @@
 		12DC963620EDECFE008896D7 /* BoxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTableViewController.swift; sourceTree = "<group>"; };
 		12DC963B20EDED44008896D7 /* BoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTableViewCell.swift; sourceTree = "<group>"; };
 		12DC964020EDEDEB008896D7 /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
-		12DC964220EDEDFA008896D7 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBoxViewController.swift; sourceTree = "<group>"; };
 		12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharaToBoxViewController.swift; sourceTree = "<group>"; };
 		12DC964920EE1BC1008896D7 /* CharasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharasCell.swift; sourceTree = "<group>"; };
 		12E3324120F5EAE200844A6A /* CardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewController.swift; sourceTree = "<group>"; };
 		12E3324320F5ED7600844A6A /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		12E3324520F5F9C200844A6A /* CandidateCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateCardsView.swift; sourceTree = "<group>"; };
+		12EBF70A20F7952600120C2A /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
+		12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		12EBF71020F7BC0500120C2A /* StrokedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokedLabel.swift; sourceTree = "<group>"; };
 		12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonBossTableViewController.swift; sourceTree = "<group>"; };
 		12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewCell.swift; sourceTree = "<group>"; };
 		12F125B020AEC069005C9659 /* CDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageView.swift; sourceTree = "<group>"; };
@@ -972,8 +976,10 @@
 		12DC963E20EDEDD5008896D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				12DC964220EDEDFA008896D7 /* TeamTableViewCell.swift */,
+				12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */,
 				120BCAFC20F4E6C80029A083 /* MembersCell.swift */,
+				12EBF71020F7BC0500120C2A /* StrokedLabel.swift */,
+				12EBF70A20F7952600120C2A /* MemberView.swift */,
 				12E3324520F5F9C200844A6A /* CandidateCardsView.swift */,
 			);
 			path = View;
@@ -1377,7 +1383,6 @@
 				12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */,
 				1221CDDF207CC4A7008F30AA /* Color.swift in Sources */,
 				12F125E720B93F7E005C9659 /* AilmentAction.swift in Sources */,
-				12DC964320EDEDFA008896D7 /* TeamTableViewCell.swift in Sources */,
 				1250190820AF0DBC00D2FBDC /* Still.swift in Sources */,
 				120F9B7E20E62B5E003632CA /* SlotsCell.swift in Sources */,
 				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
@@ -1427,6 +1432,8 @@
 				126DECDC209DD78E004EC56A /* Theme.swift in Sources */,
 				12398EA12092D78C006AC352 /* Updater.swift in Sources */,
 				12973CED20EBA7DC00C83089 /* ImageCell.swift in Sources */,
+				12EBF70B20F7952600120C2A /* MemberView.swift in Sources */,
+				12EBF71120F7BC0500120C2A /* StrokedLabel.swift in Sources */,
 				129A7F8320A2815400D93996 /* CDSettingsViewController.swift in Sources */,
 				12F125E920B94370005C9659 /* AuraAction.swift in Sources */,
 				12F1260120B95345005C9659 /* ContinuousAttackAction.swift in Sources */,
@@ -1467,6 +1474,7 @@
 				12F125F120B94E2B005C9659 /* TriggerAction.swift in Sources */,
 				12F125D420B90E1F005C9659 /* TargetParameter.swift in Sources */,
 				1223A8E420F091DD00C98BB2 /* Setting.swift in Sources */,
+				12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */,
 				120BCAF820F4DEEC0029A083 /* Team.swift in Sources */,
 				12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */,
 				12F1261120B95498005C9659 /* EnchantStrikeBackAction.swift in Sources */,

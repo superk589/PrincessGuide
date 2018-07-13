@@ -12,6 +12,10 @@ class RarityView: UIView {
     
     private var starViews = [UIImageView]()
     
+    var image: UIImage {
+        return #imageLiteral(resourceName: "loading_star").withRenderingMode(.alwaysTemplate)
+    }
+    
     let stackView = UIStackView()
     
     override init(frame: CGRect) {
@@ -24,7 +28,7 @@ class RarityView: UIView {
             view.snp.makeConstraints { (make) in
                 make.height.equalTo(view.snp.width)
             }
-            view.image = #imageLiteral(resourceName: "loading_star").withRenderingMode(.alwaysTemplate)
+            view.image = image
         }
         
         starViews.forEach {
@@ -39,7 +43,7 @@ class RarityView: UIView {
         
         stackView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-            make.height.equalTo(14)
+            make.height.lessThanOrEqualTo(14)
         }
         
         transform = CGAffineTransform(scaleX: -1, y: 1)
@@ -47,7 +51,7 @@ class RarityView: UIView {
     }
     
     func setup(stars: Int) {
-        assert(1...5 ~= stars)
+        assert(0...5 ~= stars)
         starViews[0..<stars].forEach {
             stackView.addArrangedSubview($0)
         }
@@ -61,4 +65,10 @@ class RarityView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+class ShadowRarityView: RarityView {
+    override var image: UIImage {
+        return #imageLiteral(resourceName: "shadow_star").withRenderingMode(.alwaysOriginal)
+    }
 }

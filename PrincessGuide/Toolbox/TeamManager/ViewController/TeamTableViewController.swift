@@ -44,11 +44,12 @@ class TeamTableViewController: UITableViewController {
             themeable.tableView.indicatorStyle = theme.indicatorStyle
             themeable.navigationController?.toolbar.barStyle = theme.barStyle
             themeable.navigationController?.toolbar.tintColor = theme.color.tint
+            themeable.tableView.backgroundColor = theme.color.background
         }
         
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.description())
         tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = 103
+        tableView.estimatedRowHeight = 104
         tableView.rowHeight = UITableViewAutomaticDimension
         prepareFetchRequest()
         
@@ -146,8 +147,9 @@ class TeamTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.description(), for: indexPath) as! TeamTableViewCell
+        
         let team = teams[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.description(), for: indexPath) as! TeamTableViewCell
         cell.configure(for: team)
         return cell
     }

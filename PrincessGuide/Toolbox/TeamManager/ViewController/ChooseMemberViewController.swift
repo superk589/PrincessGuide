@@ -13,7 +13,11 @@ import SwiftyJSON
 
 class ChooseCardsViewController: CardCollectionViewController {
     
-    var selectedCards = [Selected]()
+    var selectedCards = [Selected]() {
+        didSet {
+            navigationItem.rightBarButtonItem?.isEnabled = selectedCards.count != 0
+        }
+    }
     
     struct Selected {
         var card: Card
@@ -27,6 +31,7 @@ class ChooseCardsViewController: CardCollectionViewController {
         
         navigationItem.title = NSLocalizedString("Create Team", comment: "")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Next", comment: ""), style: .plain, target: self, action: #selector(nextStep(_:)))
+        navigationItem.rightBarButtonItem?.isEnabled = false
         
         view.addSubview(candidateView)
         

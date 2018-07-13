@@ -11,26 +11,23 @@ import CoreData
 
 extension Team {
     
-    enum Style: String, CustomStringConvertible {
+    enum Mark: String, CustomStringConvertible {
         
-        case ally
-        case opponent
-        case none
+        case attack
+        case defense
         
         var description: String {
             
             switch self {
-            case .ally:
-                return NSLocalizedString("ally", comment: "")
-            case .opponent:
-                return NSLocalizedString("opponent", comment: "")
-            case .none:
-                return NSLocalizedString("none", comment: "")
+            case .attack:
+                return NSLocalizedString("attack", comment: "")
+            case .defense:
+                return NSLocalizedString("defense", comment: "")
             }
         }
         
-        static var allLabels: [Style] {
-            return [Style.none, .ally, .opponent]
+        static var allLabels: [Mark] {
+            return [Mark.attack, .defense]
         }
     }
     
@@ -41,7 +38,7 @@ extension Team {
         case princessArena
         case dungeon
         case arena
-        case none
+        case other
         
         var description: String {
             switch self {
@@ -57,13 +54,13 @@ extension Team {
                 return NSLocalizedString("dungeon", comment: "")
             case .arena:
                 return NSLocalizedString("arena", comment: "")
-            case .none:
-                return NSLocalizedString("none", comment: "")
+            case .other:
+                return NSLocalizedString("other", comment: "")
             }
         }
         
         static var allLabels: [Tag] {
-            return [Tag.pvp, .pve, .clanBattle, .dungeon, .princessArena, .arena]
+            return [Tag.pvp, .pve, .princessArena, .arena, .clanBattle, .dungeon, .other]
         }
     }
 
@@ -72,7 +69,7 @@ extension Team {
         tag = anotherTeam.tag
         name = anotherTeam.name
         modifiedAt = Date()
-        style = anotherTeam.style
+        mark = anotherTeam.mark
         anotherTeam.members?.forEach {
             let member = Member(anotherMember: $0 as! Member, context: context)
             addToMembers(member)
@@ -83,8 +80,12 @@ extension Team {
         return tag.flatMap { Tag(rawValue: $0) }
     }
     
-    var typedStyle: Style? {
-        return style.flatMap { Style(rawValue: $0) }
+    var typedMark: Mark? {
+        return mark.flatMap { Mark(rawValue: $0) }
+    }
+    
+    var sortedMembers: [Member] {
+        return (members?.allObjects as? [Member])?.sorted { ($0.card?.base.searchAreaWidth ?? .min) > ($1.card?.base.searchAreaWidth ?? .min) } ?? []
     }
 
 }

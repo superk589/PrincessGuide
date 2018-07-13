@@ -39,8 +39,8 @@ class EditBoxViewController: FormViewController {
         parentContext = CoreDataStack.default.viewContext
         context = CoreDataStack.default.newChildContext(parent: CoreDataStack.default.viewContext)
         box = Box(context: context)
+        box.name = ""
         box.modifiedAt = Date()
-        box.name = NSLocalizedString("My Box", comment: "")
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -128,7 +128,8 @@ class EditBoxViewController: FormViewController {
             <<< TextRow("name") {
                 $0.title = NSLocalizedString("Box Name", comment: "")
                 if mode == .create {
-                    $0.value = NSLocalizedString("My Box", comment: "")
+                    $0.placeholder = NSLocalizedString("Enter Name", comment: "")
+                    $0.value = NSLocalizedString("", comment: "")
                 } else {
                     $0.value = box.name
                 }
@@ -142,6 +143,9 @@ class EditBoxViewController: FormViewController {
                         themeable.backgroundColor = theme.color.tableViewCell.background
                         themeable.textField.textColor = theme.color.tint
                         themeable.textField.keyboardAppearance = theme.keyboardAppearance
+                    }
+                    ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
+                        themeable.placeholderColor = theme.color.lightText
                     }
                 }
                 .cellUpdate { (cell, row) in
