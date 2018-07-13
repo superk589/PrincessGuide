@@ -127,8 +127,8 @@ class EditBoxViewController: FormViewController {
         
             <<< TextRow("name") {
                 $0.title = NSLocalizedString("Box Name", comment: "")
+                $0.placeholder = NSLocalizedString("Enter Name", comment: "")
                 if mode == .create {
-                    $0.placeholder = NSLocalizedString("Enter Name", comment: "")
                     $0.value = NSLocalizedString("", comment: "")
                 } else {
                     $0.value = box.name

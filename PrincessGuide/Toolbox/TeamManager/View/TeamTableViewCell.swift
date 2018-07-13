@@ -94,7 +94,11 @@ class TeamTableViewCell: UITableViewCell {
             break
         }
         
-        tagLabel.text = team.typedTag?.description
+        if team.name == "" {
+            tagLabel.text = team.typedTag?.description
+        } else {
+            tagLabel.text = team.name
+        }
                 
         let members = team.sortedMembers
         (0..<members.count).forEach {

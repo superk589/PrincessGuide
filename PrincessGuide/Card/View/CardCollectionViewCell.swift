@@ -27,11 +27,8 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        selectedBackgroundView = UIView()
-        
+                
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themeable.backgroundColor = theme.color.tableViewCell.background
             themeable.foregroundView.backgroundColor = theme.color.foregroundColor
         }

@@ -122,9 +122,9 @@ class EditTeamViewController: FormViewController {
             +++ Section(NSLocalizedString("General", comment: ""))
             
             <<< TextRow("name") {
-                $0.title = NSLocalizedString("Team Name", comment: "")
+                $0.title = NSLocalizedString("Custom Tag", comment: "")
+                $0.placeholder = NSLocalizedString("Enter Tag", comment: "")
                 if mode == .create {
-                    $0.placeholder = NSLocalizedString("Enter Name", comment: "")
                     $0.value = NSLocalizedString("", comment: "")
                 } else {
                     $0.value = team?.name
@@ -277,7 +277,6 @@ class EditTeamViewController: FormViewController {
             print(error)
         }
         
-        didSave()
     }
     
     func didSave() {
