@@ -14,10 +14,10 @@ import SwiftyJSON
 
 class EditTeamViewController: FormViewController {
     
-    let team: Team?
+    let team: Team
     
     let context: NSManagedObjectContext
-    let parentContext: NSManagedObjectContext
+    let parentContext: NSManagedObjectContext?
     
     enum Mode {
         case edit
@@ -34,15 +34,15 @@ class EditTeamViewController: FormViewController {
         super.init(nibName: nil, bundle: nil)
         cards.forEach {
             let member = Member(card: $0, context: context)
-            team?.addToMembers(member)
+            team.addToMembers(member)
         }
     }
     
     init(team: Team) {
         mode = .edit
-        parentContext = team.managedObjectContext ?? CoreDataStack.default.viewContext
-        context = CoreDataStack.default.newChildContext(parent: parentContext)
-        self.team = context.object(with: team.objectID) as? Team
+        parentContext = nil
+        context = team.managedObjectContext ?? CoreDataStack.default.viewContext
+        self.team = team
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -127,7 +127,7 @@ class EditTeamViewController: FormViewController {
                 if mode == .create {
                     $0.value = NSLocalizedString("", comment: "")
                 } else {
-                    $0.value = team?.name
+                    $0.value = team.name
                 }
                 }.cellSetup { (cell, row) in
                     cell.selectedBackgroundView = UIView()
@@ -165,7 +165,7 @@ class EditTeamViewController: FormViewController {
                 if mode == .create {
                     row.value = Team.Tag.pvp.description
                 } else {
-                    row.value = team?.tag
+                    row.value = team.tag
                 }
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
@@ -186,7 +186,7 @@ class EditTeamViewController: FormViewController {
                 if mode == .create {
                     row.value = Team.Mark.attack.description
                 } else {
-                    row.value = team?.mark
+                    row.value = team.mark
                 }
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
@@ -198,7 +198,43 @@ class EditTeamViewController: FormViewController {
                     }
             }
         
-        let members = team?.members?.allObjects as? [Member] ?? []
+            <<< ButtonRow("select_wins") { (row) in
+                row.title = NSLocalizedString("Select Wins", comment: "")
+                }
+                .cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                    }
+                }
+                .onCellSelection { [unowned self] (cell, row) in
+                    let vc = SearchableAddTeamToTeamViewController(team: self.team, parentContext: self.context, mode: .win)
+                    vc.delegate = self
+                    self.navigationController?.pushViewController(vc, animated: true)
+            }
+        
+            <<< ButtonRow("select_loses") { (row) in
+                row.title = NSLocalizedString("Select Loses", comment: "")
+                }
+                .cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                    }
+                }
+                .onCellSelection { [unowned self] (cell, row) in
+                    let vc = SearchableAddTeamToTeamViewController(team: self.team, parentContext: self.context, mode: .lose)
+                    vc.delegate = self
+                    self.navigationController?.pushViewController(vc, animated: true)
+            }
+        
+        let members = team.members?.allObjects as? [Member] ?? []
         let sortedMembers = members.sorted { ($0.card?.base.searchAreaWidth ?? .min) < ($1.card?.base.searchAreaWidth ?? .min) }
         
         sortedMembers.enumerated().forEach {
@@ -238,7 +274,12 @@ class EditTeamViewController: FormViewController {
                     .cellUpdate(cellUpdate(cell:row:))
                     .onCellSelection(onCellSelection(cell:row:))
                     .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
-                
+                    .onChange { [weak self] (row) in
+                        if self?.mode == .edit {
+                            self?.saveTeam()
+                        }
+                    }
+                        
                 <<< PickerInlineRow<Int>("unit_rarity_\(offset)") { (row : PickerInlineRow<Int>) -> Void in
                     row.title = NSLocalizedString("Star Rank", comment: "")
                     row.displayValueFor = { (rowValue: Int?) in
@@ -257,13 +298,18 @@ class EditTeamViewController: FormViewController {
                     .cellUpdate(cellUpdate(cell:row:))
                     .onCellSelection(onCellSelection(cell:row:))
                     .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+                    .onChange { [weak self] (row) in
+                        if self?.mode == .edit {
+                            self?.saveTeam()
+                        }
+                    }
             
             }
             
     }
     
     private func saveTeam() {
-        let members = team?.members?.allObjects as? [Member] ?? []
+        let members = team.members?.allObjects as? [Member] ?? []
         let sortedMembers = members.sorted { ($0.card?.base.searchAreaWidth ?? .min) < ($1.card?.base.searchAreaWidth ?? .min) }
         let values = form.values()
         let json = JSON(values)
@@ -272,10 +318,10 @@ class EditTeamViewController: FormViewController {
             member.rarity = json["unit_rarity_\(offset)"].int16Value
         }
         
-        team?.modifiedAt = Date()
-        team?.mark = json["mark"].stringValue
-        team?.tag = json["tag"].stringValue
-        team?.name = json["name"].stringValue
+        team.modifiedAt = Date()
+        team.mark = json["mark"].stringValue
+        team.tag = json["tag"].stringValue
+        team.name = json["name"].stringValue
         
         do {
             try context.save()
@@ -287,7 +333,7 @@ class EditTeamViewController: FormViewController {
     
     func didSave() {
         do {
-            try parentContext.save()
+            try parentContext?.save()
         } catch(let error) {
             print(error)
         }
@@ -305,4 +351,12 @@ class EditTeamViewController: FormViewController {
         fatalError("init(coder:) has not been implemented")
     }
         
+}
+
+extension EditTeamViewController: AddTeamToTeamViewControllerDelegate {
+    func addTeamToTeamViewControllerDidSave(_ addTeamToTeamViewController: AddTeamToTeamViewController) {
+        if mode == .edit {
+            saveTeam()
+        }
+    }
 }

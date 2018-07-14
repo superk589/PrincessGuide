@@ -31,11 +31,11 @@
 		1218E61920A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61720A6D53700D68610 /* InfoPlist.strings */; };
 		1218E61C20A6D53700D68610 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61A20A6D53700D68610 /* Localizable.strings */; };
 		121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */; };
-		122071D020F8D63B00554030 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071CF20F8D63B00554030 /* BattleViewController.swift */; };
-		122071D420F8D66C00554030 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071D320F8D66C00554030 /* BattleTableViewCell.swift */; };
-		122071D720F8D6B500554030 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071D620F8D6B500554030 /* Battle.swift */; };
-		122071DA20F8DA8D00554030 /* ChooseTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071D920F8DA8D00554030 /* ChooseTeamViewController.swift */; };
 		122071DC20F8E30800554030 /* SearchableTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071DB20F8E30800554030 /* SearchableTeamTableViewController.swift */; };
+		122071DE20F9D61D00554030 /* TDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071DD20F9D61D00554030 /* TDTabViewController.swift */; };
+		122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E320F9D6AE00554030 /* TDBattleViewController.swift */; };
+		122071E620F9DF7D00554030 /* AddTeamToTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E520F9DF7D00554030 /* AddTeamToTeamViewController.swift */; };
+		122071E820F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E720F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift */; };
 		1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDBF207B9541008F30AA /* Assets.xcassets */; };
 		1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC1207B96FA008F30AA /* CardTableViewController.swift */; };
 		1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC7207B973B008F30AA /* CardTableViewCell.swift */; };
@@ -269,11 +269,11 @@
 		1218E61820A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1218E61B20A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableIconImageView.swift; sourceTree = "<group>"; };
-		122071CF20F8D63B00554030 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
-		122071D320F8D66C00554030 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
-		122071D620F8D6B500554030 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
-		122071D920F8DA8D00554030 /* ChooseTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTeamViewController.swift; sourceTree = "<group>"; };
 		122071DB20F8E30800554030 /* SearchableTeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTeamTableViewController.swift; sourceTree = "<group>"; };
+		122071DD20F9D61D00554030 /* TDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTabViewController.swift; sourceTree = "<group>"; };
+		122071E320F9D6AE00554030 /* TDBattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDBattleViewController.swift; sourceTree = "<group>"; };
+		122071E520F9DF7D00554030 /* AddTeamToTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamToTeamViewController.swift; sourceTree = "<group>"; };
+		122071E720F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableAddTeamToTeamViewController.swift; sourceTree = "<group>"; };
 		1221CDBF207B9541008F30AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1221CDC1207B96FA008F30AA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
 		1221CDC7207B973B008F30AA /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
@@ -527,7 +527,6 @@
 				12DC963D20EDED8B008896D7 /* TeamManager */,
 				12DC963820EDED0E008896D7 /* BoxManager */,
 				120F9B5020E4DC8F003632CA /* CharaManager */,
-				122071D120F8D64000554030 /* BattleManager */,
 				120F9B4A20E4DA68003632CA /* ViewController */,
 				120F9B4D20E4DA9B003632CA /* View */,
 			);
@@ -582,41 +581,6 @@
 				121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		122071D120F8D64000554030 /* BattleManager */ = {
-			isa = PBXGroup;
-			children = (
-				122071D220F8D64D00554030 /* ViewController */,
-				122071D520F8D66F00554030 /* View */,
-				122071D820F8D6B900554030 /* Model */,
-			);
-			path = BattleManager;
-			sourceTree = "<group>";
-		};
-		122071D220F8D64D00554030 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				122071CF20F8D63B00554030 /* BattleViewController.swift */,
-				122071D920F8DA8D00554030 /* ChooseTeamViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		122071D520F8D66F00554030 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				122071D320F8D66C00554030 /* BattleTableViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		122071D820F8D6B900554030 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				122071D620F8D6B500554030 /* Battle.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1221CDBA207B9310008F30AA /* Model */ = {
@@ -1038,6 +1002,10 @@
 				122071DB20F8E30800554030 /* SearchableTeamTableViewController.swift */,
 				12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */,
 				120BCAF520F4DEA20029A083 /* EditTeamViewController.swift */,
+				122071DD20F9D61D00554030 /* TDTabViewController.swift */,
+				122071E320F9D6AE00554030 /* TDBattleViewController.swift */,
+				122071E520F9DF7D00554030 /* AddTeamToTeamViewController.swift */,
+				122071E720F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1344,9 +1312,9 @@
 				12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */,
 				12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */,
 				12398E85209164AC006AC352 /* Quest.swift in Sources */,
-				122071D720F8D6B500554030 /* Battle.swift in Sources */,
 				127FB85920F44BE1009B53CC /* Preload.swift in Sources */,
 				12F1261320B954C1005C9659 /* AccumulativeDamageAction.swift in Sources */,
+				122071E620F9DF7D00554030 /* AddTeamToTeamViewController.swift in Sources */,
 				1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */,
 				12F1260920B953BD005C9659 /* SearchAreaChangeAction.swift in Sources */,
 				12F1261920B95509005C9659 /* HealFieldAction.swift in Sources */,
@@ -1364,6 +1332,7 @@
 				12DC964A20EE1BC1008896D7 /* CharasCell.swift in Sources */,
 				120BCAF220F20F3C0029A083 /* BDInfoTextCell.swift in Sources */,
 				121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */,
+				122071DE20F9D61D00554030 /* TDTabViewController.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
 				125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */,
 				126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */,
@@ -1375,7 +1344,6 @@
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
 				12F1262D20B95636005C9659 /* UpperLimitAttackAction.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
-				122071DA20F8DA8D00554030 /* ChooseTeamViewController.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
 				12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */,
 				12398E7A20915781006AC352 /* AttackPatternView.swift in Sources */,
@@ -1453,7 +1421,6 @@
 				12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */,
 				122071DC20F8E30800554030 /* SearchableTeamTableViewController.swift in Sources */,
 				12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */,
-				122071D420F8D66C00554030 /* BattleTableViewCell.swift in Sources */,
 				12D3D14120A587FF00034DD6 /* EDPropertyTableViewCell.swift in Sources */,
 				12F1260F20B9547B005C9659 /* EnchantLifeStealAction.swift in Sources */,
 				12F1262320B955A2005C9659 /* LoopTriggerAction.swift in Sources */,
@@ -1499,7 +1466,6 @@
 				12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */,
 				126BFBCF20F0FAE70059B4ED /* BDTabViewController.swift in Sources */,
 				129A7F9120A3211900D93996 /* EnemyView.swift in Sources */,
-				122071D020F8D63B00554030 /* BattleViewController.swift in Sources */,
 				1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */,
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
@@ -1515,6 +1481,7 @@
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
 				120F9B8520E9F97E003632CA /* CharaTableViewCell.swift in Sources */,
+				122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */,
 				1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */,
 				12E3324420F5ED7600844A6A /* CardCollectionViewCell.swift in Sources */,
 				12F125DD20B92FA7005C9659 /* KnockAction.swift in Sources */,
@@ -1534,6 +1501,7 @@
 				1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */,
 				1223A8E820F0A1D600C98BB2 /* CardWithBirthdayCell.swift in Sources */,
 				12E3324620F5F9C200844A6A /* CandidateCardsView.swift in Sources */,
+				122071E820F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift in Sources */,
 				120F9B8120E9D1BA003632CA /* CoreDataStack.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
 				126BFBD520F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift in Sources */,

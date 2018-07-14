@@ -20,7 +20,10 @@ class SearchableTeamTableViewController: TeamTableViewController {
         let request: NSFetchRequest<Team> = Team.fetchRequest()
         
         request.sortDescriptors = [NSSortDescriptor(key: "modifiedAt", ascending: false)]
-        request.predicate = NSPredicate(format: "%K CONTAINS[c] %@", #keyPath(Team.tag), searchText)
+        request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [
+            NSPredicate(format: "%K CONTAINS[c] %@", #keyPath(Team.tag), searchText),
+            NSPredicate(format: "%K CONTAINS[c] %@", #keyPath(Team.name), searchText)
+        ])
         request.returnsObjectsAsFaults = false
         do {
             searchedTeams = try context.fetch(request)

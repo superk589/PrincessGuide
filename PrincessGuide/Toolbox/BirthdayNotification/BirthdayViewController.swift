@@ -160,7 +160,7 @@ class BirthdayViewController: FormViewController {
                 self?.openSystemNotificationSettings()
             }
             
-            +++ Section(NSLocalizedString("upcoming Birthdays", comment: ""))
+            +++ Section(NSLocalizedString("Upcoming Birthdays", comment: ""))
         
             <<< CardWithBirthdayRow("upcoming_birthdays").cellSetup { (cell, row) in
                 cell.selectedBackgroundView = UIView()

@@ -161,7 +161,7 @@ class TeamTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isEditing { return }
         let team = teamOf(indexPath: indexPath)
-        let vc = EditTeamViewController(team: team)
+        let vc = TDTabViewController(team: team)
         navigationController?.pushViewController(vc, animated: true)
     }
     

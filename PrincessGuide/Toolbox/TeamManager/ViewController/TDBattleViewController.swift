@@ -1,8 +1,8 @@
 //
-//  ChooseTeamViewController.swift
+//  TDBattleViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/7/13.
+//  Created by zzk on 2018/7/14.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
@@ -10,27 +10,19 @@ import UIKit
 import CoreData
 import Gestalt
 
-protocol ChooseTeamViewControllerDelegate: class {
-    func chooseTeamViewControllerDidSave(_ chooseTeamViewController: ChooseTeamViewController, didChoose team: Team)
-}
-
-class ChooseTeamViewController: UITableViewController {
-    
-    weak var delegate: ChooseTeamViewControllerDelegate?
+class TDBattleViewController: UITableViewController {
     
     var fetchedResultsController: NSFetchedResultsController<Team>?
-    
-    var teams: [Team] {
-        return fetchedResultsController?.fetchedObjects ?? []
+    var context: NSManagedObjectContext {
+        return CoreDataStack.default.viewContext
     }
     
-    let context: NSManagedObjectContext
+    private var team: Team
+    private var predicate: NSPredicate
     
-    var selectedTeams: [Team]
-    
-    init(teams: [Team] = [], context: NSManagedObjectContext) {
-        selectedTeams = teams
-        self.context = context
+    init(team: Team, predicate: NSPredicate) {
+        self.team = team
+        self.predicate = predicate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,12 +30,17 @@ class ChooseTeamViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let backgroundImageView = UIImageView()
+    private var teams: [Team] {
+        return fetchedResultsController?.fetchedObjects ?? []
+    }
+    
+    private let backgroundImageView = UIImageView()
     
     private func prepareFetchRequest() {
         let request: NSFetchRequest<Team> = Team.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "modifiedAt", ascending: false)]
         request.returnsObjectsAsFaults = false
+        request.predicate = predicate
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController?.delegate = self
         try? fetchedResultsController?.performFetch()
@@ -52,7 +49,7 @@ class ChooseTeamViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("Choose Team", comment: "")
+        navigationItem.title = NSLocalizedString("Teams", comment: "")
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
         tableView.backgroundView = backgroundImageView
@@ -61,36 +58,19 @@ class ChooseTeamViewController: UITableViewController {
             themeable.tableView.indicatorStyle = theme.indicatorStyle
             themeable.navigationController?.toolbar.barStyle = theme.barStyle
             themeable.navigationController?.toolbar.tintColor = theme.color.tint
+            themeable.tableView.backgroundColor = theme.color.background
         }
         
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.description())
         tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = 103
+        tableView.estimatedRowHeight = 104
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        tableView.setEditing(true, animated: false)
-        
+        tableView.allowsSelection = false
         prepareFetchRequest()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setToolbarHidden(false, animated: true)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setToolbarHidden(true, animated: true)
-    }
-    
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle(rawValue: 0b11)!
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let team = teams[indexPath.row]
-        selectedTeams.append(team)
-        delegate?.chooseTeamViewControllerDidSave(self, didChoose: team)
+    func teamOf(indexPath: IndexPath) -> Team {
+        return teams[indexPath.row]
     }
     
     // MARK: - Table view data source
@@ -100,9 +80,11 @@ class ChooseTeamViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let team = teamOf(indexPath: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.description(), for: indexPath) as! TeamTableViewCell
-        let team = teams[indexPath.row]
         cell.configure(for: team)
         return cell
     }
+    
 }
