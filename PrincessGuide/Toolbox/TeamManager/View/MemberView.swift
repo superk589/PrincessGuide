@@ -52,7 +52,7 @@ class MemberView: UIView {
     }
     
     func clear() {
-        icon.cardID = nil
+        icon.image = nil
         rarityView.setup(stars: 0)
         levelLabel.text = ""
     }

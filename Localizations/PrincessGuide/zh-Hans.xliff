@@ -12,8 +12,9 @@
       </trans-unit>
       <trans-unit id="4mz-CZ-4V6.title">
         <source>Toolbox</source>
+        <target>工具</target>
         <note>Class = "UITabBarItem"; title = "Toolbox"; ObjectID = "4mz-CZ-4V6";</note>
-      <target>工具</target></trans-unit>
+      </trans-unit>
       <trans-unit id="H57-OB-5Ns.title">
         <source>Equipments</source>
         <target>装备</target>
@@ -226,8 +227,9 @@
       </trans-unit>
       <trans-unit id="%@ receives your blessing.">
         <source>%@ receives your blessing.</source>
+        <target>%@收到了你的祝福。</target>
         <note>No comment provided by engineer.</note>
-      <target>%@收到了你的祝福。</target></trans-unit>
+      </trans-unit>
       <trans-unit id="%@ targets in range %d">
         <source>%1$@ targets in range %2$d</source>
         <target>范围 %2$d 内%1$@目标</target>
@@ -300,8 +302,9 @@
       </trans-unit>
       <trans-unit id="After editing charas, you should pull to refresh in other tabs.">
         <source>After editing charas, you should pull to refresh in other tabs.</source>
+        <target>编辑角色后，在其他分页上需要下拉刷新。</target>
         <note>No comment provided by engineer.</note>
-      <target>编辑角色后，在其他分页上需要下拉刷新。</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Age">
         <source>Age</source>
         <target>年龄</target>
@@ -339,8 +342,9 @@
       </trans-unit>
       <trans-unit id="Authorized">
         <source>Authorized</source>
+        <target>已通过</target>
         <note>No comment provided by engineer.</note>
-      <target>已通过</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Back">
         <source>Back</source>
         <target>后卫</target>
@@ -348,8 +352,9 @@
       </trans-unit>
       <trans-unit id="Batch Edit">
         <source>Batch Edit</source>
+        <target>批量修改</target>
         <note>No comment provided by engineer.</note>
-      <target>批量修改</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Become invulnerable for [%@]s.">
         <source>Become invulnerable for [%@]s.</source>
         <target>进入无敌状态，持续 [%@] 秒。</target>
@@ -367,8 +372,9 @@
       </trans-unit>
       <trans-unit id="Birthday Notification">
         <source>Birthday Notification</source>
+        <target>生日通知</target>
         <note>No comment provided by engineer.</note>
-      <target>生日通知</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Blind">
         <source>Blind</source>
         <target>暗黑</target>
@@ -391,20 +397,24 @@
       </trans-unit>
       <trans-unit id="Box Detail">
         <source>Box Detail</source>
+        <target/>
         <note>No comment provided by engineer.</note>
-      <target></target></trans-unit>
+      </trans-unit>
       <trans-unit id="Box Management">
         <source>Box Management</source>
+        <target>Box 管理</target>
         <note>No comment provided by engineer.</note>
-      <target>Box 管理</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Box Name">
         <source>Box Name</source>
+        <target>Box 名称</target>
         <note>No comment provided by engineer.</note>
-      <target>Box 名称</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Boxes">
         <source>Boxes</source>
+        <target>Boxes</target>
         <note>No comment provided by engineer.</note>
-      <target>Boxes</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Burn">
         <source>Burn</source>
         <target>灼烧</target>
@@ -417,8 +427,9 @@
       </trans-unit>
       <trans-unit id="Cancel">
         <source>Cancel</source>
+        <target>取消</target>
         <note>No comment provided by engineer.</note>
-      <target>取消</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Cards">
         <source>Cards</source>
         <target>卡片</target>
@@ -496,12 +507,14 @@
       </trans-unit>
       <trans-unit id="Chara Birthday">
         <source>Chara Birthday</source>
+        <target>角色生日</target>
         <note>Birthday notification title</note>
-      <target>角色生日</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Chara Management">
         <source>Chara Management</source>
+        <target>角色管理</target>
         <note>No comment provided by engineer.</note>
-      <target>角色管理</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Chara Name">
         <source>Chara Name</source>
         <target>角色名</target>
@@ -509,12 +522,14 @@
       </trans-unit>
       <trans-unit id="Charas">
         <source>Charas</source>
+        <target>角色</target>
         <note>No comment provided by engineer.</note>
-      <target>角色</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Charas Count">
         <source>Charas Count</source>
+        <target>角色数量</target>
         <note>No comment provided by engineer.</note>
-      <target>角色数量</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Charge for %@s and deal [%@ * damage taken] additional damage on the next effect.">
         <source>Charge for %1$@s and deal [%2$@ * damage taken] additional damage on the next effect.</source>
         <target>充能 %1$@ 秒，下一个效果造成 [%2$@ * 所受伤害] 的额外伤害。</target>
@@ -627,8 +642,9 @@
       </trans-unit>
       <trans-unit id="Copy">
         <source>Copy</source>
+        <target>复制</target>
         <note>No comment provided by engineer.</note>
-      <target>复制</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Crafted">
         <source>Crafted</source>
         <target>制作</target>
@@ -636,8 +652,9 @@
       </trans-unit>
       <trans-unit id="Create Team">
         <source>Create Team</source>
+        <target>创建队伍</target>
         <note>No comment provided by engineer.</note>
-      <target>创建队伍</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Curse">
         <source>Curse</source>
         <target>诅咒</target>
@@ -645,8 +662,9 @@
       </trans-unit>
       <trans-unit id="Custom Tag">
         <source>Custom Tag</source>
+        <target>自定义标签</target>
         <note>No comment provided by engineer.</note>
-      <target>自定义标签</target></trans-unit>
+      </trans-unit>
       <trans-unit id="DEF">
         <source>DEF</source>
         <target>物理防御力</target>
@@ -669,8 +687,9 @@
       </trans-unit>
       <trans-unit id="Denied">
         <source>Denied</source>
+        <target>拒绝</target>
         <note>No comment provided by engineer.</note>
-      <target>拒绝</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Descending">
         <source>Descending</source>
         <target>降序</target>
@@ -683,8 +702,9 @@
       </trans-unit>
       <trans-unit id="Deselect All">
         <source>Deselect All</source>
+        <target>取消全选</target>
         <note>No comment provided by engineer.</note>
-      <target>取消全选</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Detain">
         <source>Detain</source>
         <target>拘留</target>
@@ -737,20 +757,24 @@
       </trans-unit>
       <trans-unit id="Edit">
         <source>Edit</source>
+        <target>编辑</target>
         <note>No comment provided by engineer.</note>
-      <target>编辑</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Edit Box">
         <source>Edit Box</source>
+        <target>编辑 Box</target>
         <note>No comment provided by engineer.</note>
-      <target>编辑 Box</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Edit Chara">
         <source>Edit Chara</source>
+        <target>编辑角色</target>
         <note>No comment provided by engineer.</note>
-      <target>编辑角色</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Edit Team">
         <source>Edit Team</source>
+        <target>编辑队伍</target>
         <note>No comment provided by engineer.</note>
-      <target>编辑队伍</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Effective Magical HP">
         <source>Effective Magical HP</source>
         <target>魔法有效 HP</target>
@@ -768,8 +792,9 @@
       </trans-unit>
       <trans-unit id="Enable Notifications">
         <source>Enable Notifications</source>
+        <target>允许通知</target>
         <note>No comment provided by engineer.</note>
-      <target>允许通知</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Energy Recovery Rate">
         <source>Energy Recovery Rate</source>
         <target>TP 上升</target>
@@ -782,12 +807,14 @@
       </trans-unit>
       <trans-unit id="Enter Name">
         <source>Enter Name</source>
+        <target>输入名称</target>
         <note>No comment provided by engineer.</note>
-      <target>输入名称</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Enter Tag">
         <source>Enter Tag</source>
+        <target>输入标签</target>
         <note>No comment provided by engineer.</note>
-      <target>输入标签</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Equipment">
         <source>Equipment</source>
         <target>装备</target>
@@ -875,8 +902,9 @@
       </trans-unit>
       <trans-unit id="Happy Birthday!!">
         <source>Happy Birthday!!</source>
+        <target>生日快乐！</target>
         <note>No comment provided by engineer.</note>
-      <target>生日快乐！</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Hard">
         <source>Hard</source>
         <target>困难</target>
@@ -954,8 +982,9 @@
       </trans-unit>
       <trans-unit id="Loses">
         <source>Loses</source>
+        <target>失败</target>
         <note>No comment provided by engineer.</note>
-      <target>失败</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Magic">
         <source>Magic</source>
         <target>法系</target>
@@ -1003,24 +1032,29 @@
       </trans-unit>
       <trans-unit id="Mana Cost of Crafting">
         <source>Mana Cost of Crafting</source>
+        <target>制作装备所需 Mana</target>
         <note>No comment provided by engineer.</note>
-      <target>制作装备所需 Mana</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Mana Cost of Enhancing">
         <source>Mana Cost of Enhancing</source>
+        <target>强化装备所需 Mana</target>
         <note>No comment provided by engineer.</note>
-      <target>强化装备所需 Mana</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Mana Cost of Skill Training">
         <source>Mana Cost of Skill Training</source>
+        <target>提升技能等级所需 Mana</target>
         <note>No comment provided by engineer.</note>
-      <target>提升技能等级所需 Mana</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Mark">
         <source>Mark</source>
+        <target>标记</target>
         <note>No comment provided by engineer.</note>
-      <target> 标记</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Members">
         <source>Members</source>
+        <target>队员</target>
         <note>No comment provided by engineer.</note>
-      <target>队员</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Misc">
         <source>Misc</source>
         <target>杂项</target>
@@ -1048,8 +1082,9 @@
       </trans-unit>
       <trans-unit id="Next">
         <source>Next</source>
+        <target>下一步</target>
         <note>No comment provided by engineer.</note>
-      <target>下一步</target></trans-unit>
+      </trans-unit>
       <trans-unit id="None">
         <source>None</source>
         <target>无</target>
@@ -1062,12 +1097,14 @@
       </trans-unit>
       <trans-unit id="Not Determined">
         <source>Not Determined</source>
+        <target>未确定</target>
         <note>No comment provided by engineer.</note>
-      <target>未确定</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Notification Permission">
         <source>Notification Permission</source>
+        <target>系统通知权限</target>
         <note>No comment provided by engineer.</note>
-      <target>系统通知权限</target></trans-unit>
+      </trans-unit>
       <trans-unit id="OK">
         <source>OK</source>
         <target>确定</target>
@@ -1075,8 +1112,9 @@
       </trans-unit>
       <trans-unit id="Only shows the first chara's equipments, but will reflect on all selected charas.">
         <source>Only shows the first chara's equipments, but will reflect on all selected charas.</source>
+        <target>虽然只显示第一个角色的装备，但是编辑后会反映到所有选中角色上。</target>
         <note>No comment provided by engineer.</note>
-      <target>虽然只显示第一个角色的装备，但是编辑后会反映到所有选中角色上。</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Options">
         <source>Options</source>
         <target>选项</target>
@@ -1239,12 +1277,14 @@
       </trans-unit>
       <trans-unit id="Save">
         <source>Save</source>
+        <target>保存</target>
         <note>No comment provided by engineer.</note>
-      <target>保存</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Save Box">
         <source>Save Box</source>
+        <target>保存 Box</target>
         <note>No comment provided by engineer.</note>
-      <target>保存 Box</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Scout and change the perspective on %@.">
         <source>Scout and change the perspective on %@.</source>
         <target>搜寻并将自身视角切换到%@。</target>
@@ -1252,24 +1292,29 @@
       </trans-unit>
       <trans-unit id="Select All">
         <source>Select All</source>
+        <target>全选</target>
         <note>No comment provided by engineer.</note>
-      <target>全选</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Select Chara">
         <source>Select Chara</source>
+        <target>选择角色</target>
         <note>No comment provided by engineer.</note>
-      <target>选择角色</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Select Charas">
         <source>Select Charas</source>
+        <target>选择角色</target>
         <note>No comment provided by engineer.</note>
-      <target>选择角色</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Select Loses">
         <source>Select Loses</source>
+        <target>选择失败场次</target>
         <note>No comment provided by engineer.</note>
-      <target>选择失败场次</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Select Wins">
         <source>Select Wins</source>
+        <target>选择胜利场次</target>
         <note>No comment provided by engineer.</note>
-      <target>选择胜利场次</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Settings">
         <source>Settings</source>
         <target>设置</target>
@@ -1342,8 +1387,9 @@
       </trans-unit>
       <trans-unit id="Summary">
         <source>Summary</source>
+        <target>总结</target>
         <note>No comment provided by engineer.</note>
-      <target>总结</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s.">
         <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
         <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。</target>
@@ -1371,8 +1417,9 @@
       </trans-unit>
       <trans-unit id="Tag">
         <source>Tag</source>
+        <target>标签</target>
         <note>No comment provided by engineer.</note>
-      <target>标签</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Target Level">
         <source>Target Level</source>
         <target>目标等级</target>
@@ -1385,20 +1432,24 @@
       </trans-unit>
       <trans-unit id="Team Detail">
         <source>Team Detail</source>
+        <target>队伍详情</target>
         <note>No comment provided by engineer.</note>
-      <target>队伍详情</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Team Management">
         <source>Team Management</source>
+        <target>队伍管理</target>
         <note>No comment provided by engineer.</note>
-      <target>队伍管理</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Team Tag">
         <source>Team Tag</source>
+        <target>队伍标签</target>
         <note>No comment provided by engineer.</note>
-      <target>队伍标签</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Teams">
         <source>Teams</source>
+        <target>队伍</target>
         <note>No comment provided by engineer.</note>
-      <target>队伍</target></trans-unit>
+      </trans-unit>
       <trans-unit id="There aren't any Mail accounts">
         <source>There aren't any Mail accounts</source>
         <target>未设置邮件账户</target>
@@ -1411,24 +1462,29 @@
       </trans-unit>
       <trans-unit id="Time Zone">
         <source>Time Zone</source>
+        <target>时区</target>
         <note>No comment provided by engineer.</note>
-      <target>时区</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Today is %@'s birthday (%@/%@)">
         <source>Today is %1$@'s birthday (%2$@/%3$@)</source>
+        <target>今天是%1$@的生日（%2$@ 月 %3$@ 日）</target>
         <note>Birthday notification body</note>
-      <target>今天是%1$@的生日（%2$@ 月 %3$@ 日）</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Toolbox">
         <source>Toolbox</source>
+        <target>工具</target>
         <note>No comment provided by engineer.</note>
-      <target>工具</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Total Experience Needed">
         <source>Total Experience Needed</source>
+        <target>合计所需经验值</target>
         <note>No comment provided by engineer.</note>
-      <target>合计所需经验值</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Total Mana Cost">
         <source>Total Mana Cost</source>
+        <target>合计所需 Mana</target>
         <note>No comment provided by engineer.</note>
-      <target>合计所需 Mana</target></trans-unit>
+      </trans-unit>
       <trans-unit id="Trigger: HP is below %d%%.">
         <source>Trigger: HP is below %d%%.</source>
         <target>触发条件：HP 低于 %d%%。</target>
@@ -1484,6 +1540,11 @@
         <target>已经是最新版本</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Upcoming Birthdays">
+        <source>Upcoming Birthdays</source>
+        <target>即将到来的生日</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Use Dark Theme">
         <source>Use Dark Theme</source>
         <target>使用深色主题</target>
@@ -1516,8 +1577,9 @@
       </trans-unit>
       <trans-unit id="Wins">
         <source>Wins</source>
+        <target>胜利</target>
         <note>No comment provided by engineer.</note>
-      <target>胜利</target></trans-unit>
+      </trans-unit>
       <trans-unit id="absolute">
         <source>absolute</source>
         <target>绝对位置内</target>
@@ -1543,28 +1605,29 @@
         <target>所有前方的友方目标（包括自己）</target>
         <note>all front(including self) friendly targets</note>
       </trans-unit>
-      <trans-unit id="always 1?">
-        <source>always 1?</source>
-        <target>固定 1★</target>
+      <trans-unit id="always 1★">
+        <source>always 1★</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="always 3?">
-        <source>always 3?</source>
-        <target>固定 3★</target>
+      <trans-unit id="always 3★">
+        <source>always 3★</source>
         <note>icon style</note>
       </trans-unit>
       <trans-unit id="arena">
         <source>arena</source>
+        <target>竞技场</target>
         <note>No comment provided by engineer.</note>
-      <target>竞技场</target></trans-unit>
+      </trans-unit>
       <trans-unit id="attack">
         <source>attack</source>
+        <target>进攻</target>
         <note>No comment provided by engineer.</note>
-      <target>进攻</target></trans-unit>
+      </trans-unit>
       <trans-unit id="clan battle">
         <source>clan battle</source>
+        <target>公会战</target>
         <note>No comment provided by engineer.</note>
-      <target>公会战</target></trans-unit>
+      </trans-unit>
       <trans-unit id="default">
         <source>default</source>
         <target>默认</target>
@@ -1572,12 +1635,14 @@
       </trans-unit>
       <trans-unit id="defend">
         <source>defend</source>
+        <target>防守</target>
         <note>No comment provided by engineer.</note>
-      <target>防守</target></trans-unit>
+      </trans-unit>
       <trans-unit id="dungeon">
         <source>dungeon</source>
+        <target>地下城</target>
         <note>No comment provided by engineer.</note>
-      <target>地下城</target></trans-unit>
+      </trans-unit>
       <trans-unit id="enemy">
         <source>enemy</source>
         <target>敌方</target>
@@ -1650,8 +1715,9 @@
       </trans-unit>
       <trans-unit id="max 16 characters">
         <source>max 16 characters</source>
+        <target>最多 16 个字符</target>
         <note>No comment provided by engineer.</note>
-      <target>最多 16 个字符</target></trans-unit>
+      </trans-unit>
       <trans-unit id="minion">
         <source>minion</source>
         <target>随从</target>
@@ -1664,8 +1730,9 @@
       </trans-unit>
       <trans-unit id="other">
         <source>other</source>
+        <target>其他</target>
         <note>No comment provided by engineer.</note>
-      <target>其他</target></trans-unit>
+      </trans-unit>
       <trans-unit id="physical">
         <source>physical</source>
         <target>物理</target>
@@ -1678,16 +1745,19 @@
       </trans-unit>
       <trans-unit id="princess arena">
         <source>princess arena</source>
+        <target>公主竞技场</target>
         <note>No comment provided by engineer.</note>
-      <target>公主竞技场</target></trans-unit>
+      </trans-unit>
       <trans-unit id="pve">
         <source>pve</source>
+        <target>pve</target>
         <note>No comment provided by engineer.</note>
-      <target>pve</target></trans-unit>
+      </trans-unit>
       <trans-unit id="pvp">
         <source>pvp</source>
+        <target>pvp</target>
         <note>No comment provided by engineer.</note>
-      <target>pvp</target></trans-unit>
+      </trans-unit>
       <trans-unit id="random">
         <source>random</source>
         <target>随机</target>
@@ -1893,10 +1963,6 @@
         <target>未知</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="upcoming Birthdays">
-        <source>upcoming Birthdays</source>
-        <note>No comment provided by engineer.</note>
-      <target>即将到来的生日</target></trans-unit>
       <trans-unit id="value in combat">
         <source>value in combat</source>
         <target>战斗中数值</target>

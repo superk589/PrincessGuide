@@ -34,8 +34,14 @@ class EditTeamViewController: FormViewController {
         super.init(nibName: nil, bundle: nil)
         cards.forEach {
             let member = Member(card: $0, context: context)
+            member.rarity = Int16(Constant.presetMaxRarity)
+            member.level = Int16(Preload.default.maxPlayerLevel)
             team.addToMembers(member)
         }
+        team.modifiedAt = Date()
+        team.mark = Team.Mark.attack.rawValue
+        team.tag = Team.Tag.pvp.rawValue
+        team.name = ""
     }
     
     init(team: Team) {
@@ -124,11 +130,7 @@ class EditTeamViewController: FormViewController {
             <<< TextRow("name") {
                 $0.title = NSLocalizedString("Custom Tag", comment: "")
                 $0.placeholder = NSLocalizedString("Enter Tag", comment: "")
-                if mode == .create {
-                    $0.value = NSLocalizedString("", comment: "")
-                } else {
-                    $0.value = team.name
-                }
+                $0.value = team.name
                 }.cellSetup { (cell, row) in
                     cell.selectedBackgroundView = UIView()
                     ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
@@ -162,11 +164,7 @@ class EditTeamViewController: FormViewController {
                     return rowValue.flatMap { Team.Tag(rawValue: $0)?.description }
                 }
                 row.options = Team.Tag.allLabels.map { $0.rawValue }
-                if mode == .create {
-                    row.value = Team.Tag.pvp.description
-                } else {
-                    row.value = team.tag
-                }
+                row.value = team.tag
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
@@ -183,11 +181,7 @@ class EditTeamViewController: FormViewController {
                     return rowValue.flatMap { Team.Mark(rawValue: $0)?.description }
                 }
                 row.options = Team.Mark.allLabels.map { $0.rawValue }
-                if mode == .create {
-                    row.value = Team.Mark.attack.description
-                } else {
-                    row.value = team.mark
-                }
+                row.value = team.mark
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
@@ -265,11 +259,7 @@ class EditTeamViewController: FormViewController {
                     for i in 0..<Preload.default.maxPlayerLevel {
                         row.options.append(i + 1)
                     }
-                    if mode == .create {
-                        row.value = Preload.default.maxPlayerLevel
-                    } else {
-                        row.value = Int(member.level)
-                    }
+                    row.value = Int(member.level)
                     }.cellSetup(cellSetup(cell:row:))
                     .cellUpdate(cellUpdate(cell:row:))
                     .onCellSelection(onCellSelection(cell:row:))
@@ -289,11 +279,7 @@ class EditTeamViewController: FormViewController {
                     for i in 0..<Constant.presetMaxRarity {
                         row.options.append(i + 1)
                     }
-                    if mode == .create {
-                        row.value = Constant.presetMaxRarity
-                    } else {
-                        row.value = Int(member.rarity)
-                    }
+                    row.value = Int(member.rarity)
                     }.cellSetup(cellSetup(cell:row:))
                     .cellUpdate(cellUpdate(cell:row:))
                     .onCellSelection(onCellSelection(cell:row:))

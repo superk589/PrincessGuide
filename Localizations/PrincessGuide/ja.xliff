@@ -1427,6 +1427,10 @@
         <target>最新バージョンです</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Upcoming Birthdays">
+        <source>Upcoming Birthdays</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Use Dark Theme">
         <source>Use Dark Theme</source>
         <target>ダークテーマに設定する</target>
@@ -1823,10 +1827,6 @@
         <source>unknown</source>
         <target>未知</target>
         <note>target type</note>
-      </trans-unit>
-      <trans-unit id="upcoming Birthdays">
-        <source>upcoming Birthdays</source>
-        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="value in combat">
         <source>value in combat</source>
