@@ -417,7 +417,7 @@
       </trans-unit>
       <trans-unit id="Boxes">
         <source>Boxes</source>
-        <target>Boxes</target>
+        <target>Box 列表</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Burn">
@@ -532,7 +532,7 @@
       </trans-unit>
       <trans-unit id="Charas">
         <source>Charas</source>
-        <target>角色</target>
+        <target>角色列表</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Charas Count">
@@ -890,6 +890,11 @@
         <target>通用</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch off this option, everything will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.">
+        <source>Generally, you only want to batch edit unit level and skill level. If switch off this option, everything will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</source>
+        <target>通常，您可能只想批量修改角色等级和技能等级。如果关掉这个选项，所有内容都会保存到所选角色上。在保存之前，请确认您已经正确理解了这个选项的含义。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Group by">
         <source>Group by</source>
         <target>分组方式</target>
@@ -1133,6 +1138,11 @@
       <trans-unit id="OK">
         <source>OK</source>
         <target>确定</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Only Save Levels">
+        <source>Only Save Levels</source>
+        <target>只保存等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Only shows the first chara's equipments, but will reflect on all selected charas.">
@@ -1482,7 +1492,7 @@
       </trans-unit>
       <trans-unit id="Teams">
         <source>Teams</source>
-        <target>队伍</target>
+        <target>队伍列表</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="There aren't any Mail accounts">

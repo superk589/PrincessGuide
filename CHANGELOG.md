@@ -4,7 +4,7 @@
 2. 新增生日提醒，角色管理，Box 管理，队伍管理。
 
 ## English version
-1. Drop supporting for devices below iOS 10.0.
+1. Drop support for devices below iOS 10.0.
 2. Add birthday notification, chara management, box management and team management.
 
 # 1.0.7

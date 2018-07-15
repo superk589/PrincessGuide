@@ -102,6 +102,26 @@ class BatchEditViewController: FormViewController {
         
         form
             
+            +++ Section(NSLocalizedString("General", comment: "")) {
+                $0.footer = HeaderFooterView(title: NSLocalizedString("Generally, you only want to batch edit unit level and skill level. If switch off this option, everything will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.", comment: ""))
+            }
+            
+            <<< SwitchRow("save_levels") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Only Save Levels", comment: "")
+                
+                row.value = true
+                
+                }.cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                        themeable.switchControl.onTintColor = theme.color.tint
+                    }
+                }.cellUpdate(cellUpdate(cell:row:))
+            
             +++ Section(NSLocalizedString("Unit", comment: ""))
 
             <<< PickerInlineRow<Int>("unit_level") { (row : PickerInlineRow<Int>) -> Void in
@@ -212,7 +232,6 @@ class BatchEditViewController: FormViewController {
                     if let card = self?.charas.first?.card, let row = self?.form.rowBy(tag: "unit_rank") as? RowOf<Int>,
                         let value = row.value, card.promotions.indices ~= value - 1 {
                         cell.configure(for: card.promotions[value - 1], slots: self?.charas.first?.slots ?? [Bool](repeating: true, count: 6))
-                        
                     }
             }
         
@@ -224,12 +243,14 @@ class BatchEditViewController: FormViewController {
         
         charas.forEach {
             $0.modifiedAt = Date()
+            if !json["save_levels"].boolValue {
+                $0.bondRank = json["bond_rank"].int16Value
+                $0.rank = json["unit_rank"].int16Value
+                $0.rarity = json["unit_rarity"].int16Value
+                $0.slots = json["slots"].arrayValue.map { $0.boolValue }
+            }
             $0.level = json["unit_level"].int16Value
-            $0.bondRank = json["bond_rank"].int16Value
-            $0.rank = json["unit_rank"].int16Value
-            $0.rarity = json["unit_rarity"].int16Value
             $0.skillLevel = min(json["unit_level"].int16Value, json["skill_level"].int16Value)
-            $0.slots = json["slots"].arrayValue.map { $0.boolValue }
         }
         
         do {

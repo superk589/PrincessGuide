@@ -825,6 +825,10 @@
         <target>全般</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch off this option, everything will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.">
+        <source>Generally, you only want to batch edit unit level and skill level. If switch off this option, everything will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Group by">
         <source>Group by</source>
         <note>No comment provided by engineer.</note>
@@ -1046,6 +1050,10 @@
       <trans-unit id="OK">
         <source>OK</source>
         <target>はい</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Only Save Levels">
+        <source>Only Save Levels</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Only shows the first chara's equipments, but will reflect on all selected charas.">

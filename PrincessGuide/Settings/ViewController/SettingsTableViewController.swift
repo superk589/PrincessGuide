@@ -63,7 +63,8 @@ class SettingsTableViewController: UITableViewController {
             aboutRows.append(Row(title: NSLocalizedString("Upgrade to Pro Edition", comment: ""), detail: "", hasDisclosure: true, accessoryView: nil, selector: #selector(upgradeToProEdition)))
         }
         aboutRows.append(Row(title: NSLocalizedString("Third-Party Licenses", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
-        aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: VersionManager.shared.appVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
+        let versionInfo = Defaults.proEdition ? VersionManager.shared.appVersion + " (Pro)" : VersionManager.shared.appVersion
+        aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: versionInfo, hasDisclosure: false, accessoryView: nil, selector: nil))
         aboutRows.append(Row(title: NSLocalizedString("Data Version", comment: ""), detail: VersionManager.shared.truthVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
         sections.append(Section(rows: aboutRows, title: NSLocalizedString("About", comment: "")))
     }
