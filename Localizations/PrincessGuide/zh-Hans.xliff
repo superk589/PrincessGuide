@@ -300,11 +300,6 @@
         <target>计算 EX 技能加成</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="After editing charas, you should pull to refresh in other tabs.">
-        <source>After editing charas, you should pull to refresh in other tabs.</source>
-        <target>编辑角色后，在其他分页上需要下拉刷新。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Age">
         <source>Age</source>
         <target>年龄</target>
@@ -1493,6 +1488,11 @@
       <trans-unit id="Teams">
         <source>Teams</source>
         <target>队伍列表</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="The first chara added will be used as cover image.">
+        <source>The first chara added will be used as cover image.</source>
+        <target>第一个添加的角色将会用做封面。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="There aren't any Mail accounts">
