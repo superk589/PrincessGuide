@@ -198,16 +198,20 @@ extension BuyProEditionViewController: SKPaymentTransactionObserver {
     
     func completeTransaction(_ transaction: SKPaymentTransaction) {
         Defaults.proEdition = true
+        UserDefaults.standard.synchronize()
         NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
         didUpgradeToProEdition()
     }
     
     func failedTransaction(_ transaction: SKPaymentTransaction) {
-        
+        if let error = transaction.error {
+            print(error)
+        }
     }
     
     func restoreTransaction(_ transaction: SKPaymentTransaction) {
         Defaults.proEdition = true
+        UserDefaults.standard.synchronize()
         NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
         didUpgradeToProEdition()
     }
