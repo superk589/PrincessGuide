@@ -33,6 +33,7 @@ struct Defaults {
     static var proEdition: Bool {
         set {
             UserDefaults.standard.setValue(newValue, forKey: "pro_edition")
+            UserDefaults.standard.synchronize()
         }
         get {
             return UserDefaults.standard.value(forKey: "pro_edition") as? Bool ?? false

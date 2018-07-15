@@ -239,7 +239,7 @@
 "Box Name" = "Box 名称";
 
 /* No comment provided by engineer. */
-"Boxes" = "Boxes";
+"Boxes" = "Box 列表";
 
 /* No comment provided by engineer. */
 "Burn" = "灼烧";
@@ -305,7 +305,7 @@
 "Chara Name" = "角色名";
 
 /* No comment provided by engineer. */
-"Charas" = "角色";
+"Charas" = "角色列表";
 
 /* No comment provided by engineer. */
 "Charas Count" = "角色数量";
@@ -998,7 +998,7 @@
 "Team Tag" = "队伍标签";
 
 /* No comment provided by engineer. */
-"Teams" = "队伍";
+"Teams" = "队伍列表";
 
 /* target type */
 "the %@ farthest" = "%@远的";

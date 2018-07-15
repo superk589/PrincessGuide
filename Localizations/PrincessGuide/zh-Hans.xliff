@@ -1290,11 +1290,6 @@
         <target>恢复%1$@ [%2$@]%3$@ HP。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore Failed">
-        <source>Restore Failed</source>
-        <target>恢复失败</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Review at App Store">
         <source>Review at App Store</source>
         <target>App Store 评价</target>
@@ -1585,11 +1580,6 @@
         <target>即将到来的生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Upgrade is done. Thank you for your purchase and supporting for our development.">
-        <source>Upgrade is done. Thank you for your purchase and supporting for our development.</source>
-        <target>升级已经完成。感谢您的购买和对本程序的支持！</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Upgrade to Pro Edition">
         <source>Upgrade to Pro Edition</source>
         <target>升级至专业版</target>
@@ -1638,11 +1628,6 @@
       <trans-unit id="You have not bought this product yet.">
         <source>You have not bought this product yet.</source>
         <target>您未曾买过本产品。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Your device does not allow in-app purchasing.">
-        <source>Your device does not allow in-app purchasing.</source>
-        <target>您的设备不允许使用内购。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="absolute">

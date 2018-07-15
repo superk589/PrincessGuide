@@ -12,6 +12,7 @@ import KingfisherWebP
 import Gestalt
 import CoreData
 import UserNotifications
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -46,6 +47,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = NotificationHandler.default
         
         BirthdayCenter.default.scheduleNotifications()
+        
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                    if Constant.iAPProductIDs.contains(purchase.productId) {
+                        Defaults.proEdition = true
+                        NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
+                    }
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                }
+            }
+        }
+        
+        SwiftyStoreKit.shouldAddStorePaymentHandler = { payment, product in
+            return true
+        }
         
         return true
     }

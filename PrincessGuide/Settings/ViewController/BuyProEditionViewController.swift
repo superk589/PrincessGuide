@@ -9,8 +9,9 @@
 import UIKit
 import SnapKit
 import Eureka
-import StoreKit
 import Gestalt
+import StoreKit
+import SwiftyStoreKit
 
 extension Notification.Name {
     
@@ -48,17 +49,10 @@ class BuyProEditionViewController: UITableViewController {
             Row(type: FAQTableViewCell.self, data: .faq($0))
         }
         rows.append(Row(type: ProductTableViewCell.self, data: .button(nil)))
-        SKPaymentQueue.default().add(self)
     }
     
     convenience init() {
         self.init(nibName: nil, bundle: nil)
-    }
-    
-    deinit {
-        request?.delegate = nil
-        request?.cancel()
-        SKPaymentQueue.default().remove(self)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,6 +61,8 @@ class BuyProEditionViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didUpgradeToProEdition(_:)), name: .proEditionPurchased, object: nil)
         
         prepareUI()
         requestData()
@@ -97,25 +93,51 @@ class BuyProEditionViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    private var request: SKProductsRequest?
     func requestData() {
-        request = SKProductsRequest(productIdentifiers: Constant.iAPProductIDs)
-        request?.delegate = self
-        request?.start()
+        SwiftyStoreKit.retrieveProductsInfo(Constant.iAPProductIDs) { [weak self] result in
+            if let product = result.retrievedProducts.first {
+                let priceString = product.localizedPrice!
+                print("Product: \(product.localizedDescription), price: \(priceString)")
+                self?.rows[2].data = .button(product)
+                self?.tableView.reloadData()
+            }
+            else if let invalidProductId = result.invalidProductIDs.first {
+                print("Invalid product identifier: \(invalidProductId)")
+            }
+            else if let error = result.error {
+                print(error)
+                // self?.alert(content: error.localizedDescription)
+            }
+        }
     }
     
     @objc private func restore(_ item: UIBarButtonItem) {
         LoadingHUDManager.default.show()
-        SKPaymentQueue.default().restoreCompletedTransactions()
+        SwiftyStoreKit.restorePurchases(atomically: true) { [weak self] results in
+            LoadingHUDManager.default.hide()
+            if results.restoreFailedPurchases.count > 0 {
+                print("Restore Failed: \(results.restoreFailedPurchases)")
+            }
+            else if results.restoredPurchases.count > 0 {
+                print("Restore Success: \(results.restoredPurchases)")
+                for purchase in results.restoredPurchases {
+                    if Constant.iAPProductIDs.contains(purchase.productId) {
+                        Defaults.proEdition = true
+                        NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
+                        break
+                    }
+                }
+                
+            }
+            else {
+                print("Nothing to Restore")
+                self?.alert(content: NSLocalizedString("You have not bought this product yet.", comment: ""))
+            }
+        }
     }
     
-    private func didUpgradeToProEdition() {
-        let alert = UIAlertController(title: NSLocalizedString("Attention", comment: ""), message: NSLocalizedString("Upgrade is done. Thank you for your purchase and supporting for our development.", comment: ""), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: ""), style: .default, handler: { [weak self] (action) in
-            alert.dismiss(animated: true, completion: nil)
-            self?.navigationController?.popViewController(animated: true)
-        }))
-        present(alert, animated: true, completion: nil)
+    @objc private func didUpgradeToProEdition(_ notification: Notification) {
+        navigationController?.popViewController(animated: true)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -139,109 +161,43 @@ class BuyProEditionViewController: UITableViewController {
         return cell
     }
     
+    private func alert(content: String) {
+        let alert = UIAlertController(title: NSLocalizedString("Attention", comment: ""), message: content, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: ""), style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: ProductTableViewCellDelegate
 
 extension BuyProEditionViewController: ProductTableViewCellDelegate {
     func productTableViewCell(_ productTableViewCell: ProductTableViewCell, didSelect product: SKProduct) {
-        if SKPaymentQueue.canMakePayments() {
-            LoadingHUDManager.default.show()
-            SKPaymentQueue.default().add(SKPayment(product: product))
-        } else {
-            let alert = UIAlertController(title: NSLocalizedString("Attention", comment: ""), message: NSLocalizedString("Your device does not allow in-app purchasing.", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: ""), style: .default, handler: { (action) in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            present(alert, animated: true, completion: nil)
-        }
-    }
-}
-
-
-// MARK: StoreKitDelegate
-
-extension BuyProEditionViewController: SKProductsRequestDelegate {
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if let product = response.products.first {
-            DispatchQueue.main.async { [weak self] in
-                self?.rows[2].data = .button(product)
-                self?.tableView.reloadData()
-            }
-        }
-    }
-}
-
-// MARK: StoreKitTransactionObserver
-
-extension BuyProEditionViewController: SKPaymentTransactionObserver {
-    
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction in transactions {
-            switch transaction.transactionState {
-            case .purchased:
-                completeTransaction(transaction)
-                finishTransaction(transaction)
-            case .failed:
-                failedTransaction(transaction)
-                finishTransaction(transaction)
-            case .restored:
-                restoreTransaction(transaction)
-                finishTransaction(transaction)
-            case .deferred:
-                finishTransaction(transaction)
-            case .purchasing:
-                break
-            }
-        }
-    }
-    
-    func completeTransaction(_ transaction: SKPaymentTransaction) {
-        Defaults.proEdition = true
-        UserDefaults.standard.synchronize()
-        NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
-        didUpgradeToProEdition()
-    }
-    
-    func failedTransaction(_ transaction: SKPaymentTransaction) {
-        if let error = transaction.error {
-            print(error)
-        }
-    }
-    
-    func restoreTransaction(_ transaction: SKPaymentTransaction) {
-        Defaults.proEdition = true
-        UserDefaults.standard.synchronize()
-        NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
-        didUpgradeToProEdition()
-    }
-    
-    func finishTransaction(_ transaction: SKPaymentTransaction) {
-        LoadingHUDManager.default.hide()
-        SKPaymentQueue.default().finishTransaction(transaction)
-    }
-    
-    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        LoadingHUDManager.default.hide()
-        var restored = false
-        label: for transaction in queue.transactions {
-            for id in Constant.iAPProductIDs {
-                if transaction.payment.productIdentifier == id {
-                    restored = true
-                    break label
+        LoadingHUDManager.default.show()
+        SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result in
+            LoadingHUDManager.default.hide()
+            switch result {
+            case .success(let purchase):
+                print("Purchase Success: \(purchase.productId)")
+                if Constant.iAPProductIDs.contains(purchase.productId) {
+                    Defaults.proEdition = true
+                    NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
                 }
+            case .error(let error):
+                switch error.code {
+                case .unknown: print("Unknown error. Please contact support")
+                case .clientInvalid: print("Not allowed to make the payment")
+                case .paymentCancelled: break
+                case .paymentInvalid: print("The purchase identifier was invalid")
+                case .paymentNotAllowed: print("The device is not allowed to make the payment")
+                case .storeProductNotAvailable: print("The product is not available in the current storefront")
+                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
+                }
+                // self?.alert(content: error.localizedDescription)
             }
         }
-        if !restored {
-            let alert = UIAlertController(title: NSLocalizedString("Restore Failed", comment: ""), message: NSLocalizedString("You have not bought this product yet.", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: ""), style: .default, handler: { (action) in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        LoadingHUDManager.default.hide()
     }
 }

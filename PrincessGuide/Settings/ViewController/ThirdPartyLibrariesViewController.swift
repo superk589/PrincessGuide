@@ -12,7 +12,7 @@ import AcknowList
 
 class ThirdPartyLibrariesViewController: AcknowListViewController {
     
-    class func acknowledgementsPlistPath(name:String) -> String? {
+    class func acknowledgementsPlistPath(name: String) -> String? {
         return Bundle.main.path(forResource: name, ofType: "plist")
     }
     
@@ -44,6 +44,7 @@ class ThirdPartyLibrariesViewController: AcknowListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = backgroundImageView
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             themeable.backgroundImageView.image = theme.backgroundImage
             themeable.tableView.indicatorStyle = theme.indicatorStyle

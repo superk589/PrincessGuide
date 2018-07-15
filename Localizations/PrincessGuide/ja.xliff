@@ -1197,10 +1197,6 @@
         <target>%1$@のHPを[%2$@]%3$@回復。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore Failed">
-        <source>Restore Failed</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Review at App Store">
         <source>Review at App Store</source>
         <target>App Storeに評価する</target>
@@ -1463,10 +1459,6 @@
         <source>Upcoming Birthdays</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Upgrade is done. Thank you for your purchase and supporting for our development.">
-        <source>Upgrade is done. Thank you for your purchase and supporting for our development.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Upgrade to Pro Edition">
         <source>Upgrade to Pro Edition</source>
         <note>No comment provided by engineer.</note>
@@ -1511,10 +1503,6 @@
       </trans-unit>
       <trans-unit id="You have not bought this product yet.">
         <source>You have not bought this product yet.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Your device does not allow in-app purchasing.">
-        <source>Your device does not allow in-app purchasing.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="absolute">
