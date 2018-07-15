@@ -103,13 +103,13 @@ class BatchEditViewController: FormViewController {
         form
             
             +++ Section(NSLocalizedString("General", comment: "")) {
-                $0.footer = HeaderFooterView(title: NSLocalizedString("Generally, you only want to batch edit unit level and skill level. If switch off this option, everything will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.", comment: ""))
+                $0.footer = HeaderFooterView(title: NSLocalizedString("Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.", comment: ""))
             }
             
-            <<< SwitchRow("save_levels") { (row : SwitchRow) -> Void in
-                row.title = NSLocalizedString("Only Save Levels", comment: "")
+            <<< SwitchRow("save_all") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Show All Field", comment: "")
                 
-                row.value = true
+                row.value = false
                 
                 }.cellSetup { (cell, row) in
                     cell.selectedBackgroundView = UIView()
@@ -151,6 +151,8 @@ class BatchEditViewController: FormViewController {
                     row.options.append(i + 1)
                 }
                 
+                row.hidden = "$save_all == NO"
+                
                 row.value = (charas.first?.rank).flatMap { Int($0) } ?? Preload.default.maxEquipmentRank
 
                 }.cellSetup(cellSetup(cell:row:))
@@ -173,7 +175,7 @@ class BatchEditViewController: FormViewController {
                 for i in 0..<Constant.presetMaxBondRank {
                     row.options.append(i + 1)
                 }
-                
+                row.hidden = "$save_all == NO"
                 row.value = (charas.first?.bondRank).flatMap { Int($0) } ?? Constant.presetMaxBondRank
 
                 }.cellSetup(cellSetup(cell:row:))
@@ -189,7 +191,7 @@ class BatchEditViewController: FormViewController {
                 for i in 0..<Constant.presetMaxRarity {
                     row.options.append(i + 1)
                 }
-                
+                row.hidden = "$save_all == NO"
                 row.value = (charas.first?.rarity).flatMap { Int($0) } ?? Constant.presetMaxRarity
 
                 }.cellSetup(cellSetup(cell:row:))
@@ -218,6 +220,7 @@ class BatchEditViewController: FormViewController {
             
             +++ Section(NSLocalizedString("Equipment", comment: "")) {
                 $0.footer = HeaderFooterView(title: NSLocalizedString("Only shows the first chara's equipments, but will reflect on all selected charas.", comment: ""))
+                $0.hidden = "$save_all == NO"
             }
             
             <<< SlotsRow("slots")
@@ -243,7 +246,7 @@ class BatchEditViewController: FormViewController {
         
         charas.forEach {
             $0.modifiedAt = Date()
-            if !json["save_levels"].boolValue {
+            if json["save_all"].boolValue {
                 $0.bondRank = json["bond_rank"].int16Value
                 $0.rank = json["unit_rank"].int16Value
                 $0.rarity = json["unit_rarity"].int16Value

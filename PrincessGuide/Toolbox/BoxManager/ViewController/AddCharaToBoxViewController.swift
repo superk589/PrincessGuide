@@ -74,14 +74,14 @@ class AddCharaToBoxViewController: UITableViewController {
         for i in 0..<charas.count {
             tableView.selectRow(at: IndexPath(row: i, section: 0), animated: false, scrollPosition: .none)
         }
-        box.addToCharas(NSSet(array: charas))
+        box.addToCharas(NSOrderedSet(array: charas))
     }
     
     @objc private func deselectAllCharas(_ item: UIBarButtonItem) {
         for i in 0..<charas.count {
             tableView.deselectRow(at: IndexPath(row: i, section: 0), animated: false)
         }
-        box.removeFromCharas(NSSet(array: charas))
+        box.removeFromCharas(NSOrderedSet(array: charas))
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {

@@ -80,7 +80,7 @@ class BDInfoViewController: UITableViewController {
             var rows = [Row]()
             
             let box = self?.context.object(with: objectID) as? Box
-            let charas = box?.charas?.allObjects as? [Chara] ?? []
+            let charas = box?.charas?.array as? [Chara] ?? []
             rows.append(Row(type: BoxTableViewCell.self, data: .basic(charas.first?.iconID, box?.name ?? "")))
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                     (NSLocalizedString("Charas Count", comment: ""),

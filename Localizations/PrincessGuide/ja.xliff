@@ -825,8 +825,8 @@
         <target>全般</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch off this option, everything will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.">
-        <source>Generally, you only want to batch edit unit level and skill level. If switch off this option, everything will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</source>
+      <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.">
+        <source>Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Group by">
@@ -1052,10 +1052,6 @@
         <target>はい</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Only Save Levels">
-        <source>Only Save Levels</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Only shows the first chara's equipments, but will reflect on all selected charas.">
         <source>Only shows the first chara's equipments, but will reflect on all selected charas.</source>
         <note>No comment provided by engineer.</note>
@@ -1260,6 +1256,10 @@
       <trans-unit id="Settings">
         <source>Settings</source>
         <target>設定</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Show All Field">
+        <source>Show All Field</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Silence">

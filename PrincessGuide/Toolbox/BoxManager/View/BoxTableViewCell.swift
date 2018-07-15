@@ -54,7 +54,7 @@ class BoxTableViewCell: UITableViewCell, BDInfoConfigurable {
     func configure(for box: Box) {
         nameLabel.text = box.name
         
-        if let chara = box.charas?.allObjects.first as? Chara {
+        if let chara = box.charas?.firstObject as? Chara {
             icon.cardID = chara.iconID
         } else {
             icon.equipmentID = 99999

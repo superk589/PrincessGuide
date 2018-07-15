@@ -15,7 +15,7 @@ class ChooseMemberViewController: CardCollectionViewController {
     
     var selectedCards = [Selected]() {
         didSet {
-            navigationItem.rightBarButtonItem?.isEnabled = selectedCards.count != 0
+            nextItem.isEnabled = selectedCards.count != 0
         }
     }
     
@@ -26,12 +26,15 @@ class ChooseMemberViewController: CardCollectionViewController {
     
     let candidateView = CandidateCardsView()
     
+    private(set) lazy var nextItem = UIBarButtonItem(title: NSLocalizedString("Next", comment: ""), style: .plain, target: self, action: #selector(nextStep(_:)))
+    private(set) lazy var optionItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(showOptions(_:)))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = NSLocalizedString("Create Team", comment: "")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Next", comment: ""), style: .plain, target: self, action: #selector(nextStep(_:)))
-        navigationItem.rightBarButtonItem?.isEnabled = false
+        nextItem.isEnabled = false
+        navigationItem.rightBarButtonItems = [nextItem, optionItem]
         
         view.addSubview(candidateView)
         
@@ -45,6 +48,13 @@ class ChooseMemberViewController: CardCollectionViewController {
     @objc private func nextStep(_ item: UIBarButtonItem) {
         let vc = EditTeamViewController(cards: selectedCards.map { $0.card })
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func showOptions(_ item: UIBarButtonItem) {
+        let vc = CardSortingViewController()
+        let nc = UINavigationController(rootViewController: vc)
+        nc.modalPresentationStyle = .formSheet
+        present(nc, animated: true, completion: nil)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

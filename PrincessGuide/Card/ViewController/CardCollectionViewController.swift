@@ -65,15 +65,20 @@ class CardCollectionViewController: UIViewController, DataChecking, UICollection
             themeable.refresher.arrowImage.tintColor = theme.color.indicator
             themeable.refresher.loadingView.color = theme.color.indicator
             themeable.collectionView.indicatorStyle = theme.indicatorStyle
+            themeable.view.backgroundColor = theme.color.background
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSortingChange(_:)), name: .cardSortingSettingsDidChange, object: nil)
         loadData()
         
     }
     
     @objc private func handleUpdateEnd(_ notification: Notification) {
+        loadData()
+    }
+    
+    @objc private func handleSortingChange(_ notification: Notification) {
         loadData()
     }
     

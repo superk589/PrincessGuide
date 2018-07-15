@@ -63,7 +63,7 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
     private var charas = [Chara]()
     
     func configure(for box: Box) {
-        if let set = box.charas, let charas = set.allObjects as? [Chara] {
+        if let set = box.charas, let charas = set.array as? [Chara] {
             self.charas = charas
         }
         collectionView.reloadData()

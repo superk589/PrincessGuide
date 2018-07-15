@@ -74,14 +74,21 @@ class ToolboxTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let row = rows[indexPath.row]
-        if row.isProFeature && !Defaults.proEdition {
-            let vc = BuyProEditionViewController()
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
-        } else {
+        
+        #if targetEnvironment(simulator)
             let vc = row.vcType.init()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
-        }
+        #else
+            if row.isProFeature && !Defaults.proEdition {
+                let vc = BuyProEditionViewController()
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let vc = row.vcType.init()
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        #endif
     }
 }

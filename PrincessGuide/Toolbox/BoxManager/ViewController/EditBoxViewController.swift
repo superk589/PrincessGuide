@@ -214,7 +214,7 @@ class EditBoxViewController: FormViewController {
                     }
                 }
                 .onCellSelection { [unowned self] (cell, row) in
-                    let vc = BatchEditCharaInBoxViewController(charas: self.box.charas?.allObjects as? [Chara] ?? [], parentContext: self.context)
+                    let vc = BatchEditCharaInBoxViewController(charas: self.box.charas?.array as? [Chara] ?? [], parentContext: self.context)
                     vc.delegate = self
                     self.navigationController?.pushViewController(vc, animated: true)
             }
