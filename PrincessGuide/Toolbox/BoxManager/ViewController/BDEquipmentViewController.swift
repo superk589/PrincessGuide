@@ -18,17 +18,25 @@ class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UIC
     
     let parentContext: NSManagedObjectContext?
     
-    let refresher = RefreshHeader()
-    
     private var collectionView: UICollectionView!
     
     private var layout: UICollectionViewFlowLayout!
+    
+    private var observer: ManagedObjectObserver?
     
     init(box: Box) {
         parentContext = box.managedObjectContext
         context = CoreDataStack.default.newChildContext(parent: parentContext ?? CoreDataStack.default.viewContext, concurrencyType: .privateQueueConcurrencyType)
         self.box = box
         super.init(nibName: nil, bundle: nil)
+        
+        observer = ManagedObjectObserver(object: box, changeHandler: { [weak self] (type) in
+            if type == .delete {
+                self?.navigationController?.popViewController(animated: true)
+            } else if type == .update {
+                self?.loadData()
+            }
+        })
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,30 +78,19 @@ class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.scrollsToTop = false
-
-        collectionView.mj_header = refresher
-        // fix a layout issue of mjrefresh
-        // refresher.bounds.origin.y = collectionView.contentInset.top
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
             navigationBar?.barStyle = theme.barStyle
             themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.refresher.arrowImage.tintColor = theme.color.indicator
-            themeable.refresher.loadingView.color = theme.color.indicator
             themeable.collectionView.indicatorStyle = theme.indicatorStyle
         }
-        
-        refresher.refreshingBlock = { [weak self] in self?.loadData() }
         
         loadData()
     }
 
     func loadData() {
-        defer {
-            refresher.endRefreshing()
-        }
         let objectID = box.objectID
         LoadingHUDManager.default.show()
         context.perform { [weak self] in

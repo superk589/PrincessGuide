@@ -22,8 +22,6 @@ class BDInfoViewController: UITableViewController {
     
     let box: Box
     
-    let refresher = RefreshHeader()
-    
     struct Row {
         enum Model {
             case text([(String, String)])
@@ -34,12 +32,22 @@ class BDInfoViewController: UITableViewController {
     }
     
     var rows = [Row]()
+    
+    private var observer: ManagedObjectObserver?
 
     init(box: Box) {
         parentContext = box.managedObjectContext
         context = CoreDataStack.default.newChildContext(parent: parentContext ?? CoreDataStack.default.viewContext, concurrencyType: .privateQueueConcurrencyType)
         self.box = box
         super.init(nibName: nil, bundle: nil)
+        
+        observer = ManagedObjectObserver(object: box, changeHandler: { [weak self] (type) in
+            if type == .delete {
+                self?.navigationController?.popViewController(animated: true)
+            } else if type == .update {
+                self?.loadData()
+            }
+        })
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,8 +64,6 @@ class BDInfoViewController: UITableViewController {
             themeable.tableView.indicatorStyle = theme.indicatorStyle
             themeable.navigationController?.toolbar.barStyle = theme.barStyle
             themeable.navigationController?.toolbar.tintColor = theme.color.tint
-            themeable.refresher.arrowImage.tintColor = theme.color.indicator
-            themeable.refresher.loadingView.color = theme.color.indicator
         }
         tableView.register(BDInfoTextCell.self, forCellReuseIdentifier: BDInfoTextCell.description())
         tableView.register(BoxTableViewCell.self, forCellReuseIdentifier: BoxTableViewCell.description())
@@ -65,15 +71,10 @@ class BDInfoViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.mj_header = refresher
-        refresher.refreshingBlock = { [weak self] in self?.loadData() }
         loadData()
     }
 
     private func loadData() {
-        defer {
-            refresher.endRefreshing()
-        }
         let objectID = box.objectID
         LoadingHUDManager.default.show()
         context.perform { [weak self] in

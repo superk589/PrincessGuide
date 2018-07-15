@@ -179,7 +179,7 @@ class EditBoxViewController: FormViewController {
             
             +++ Section(NSLocalizedString("Charas", comment: "")) {
                 if mode == .edit {
-                    $0.footer = HeaderFooterView(title: NSLocalizedString("After editing charas, you should pull to refresh in other tabs.", comment: ""))
+                    $0.footer = HeaderFooterView(title: NSLocalizedString("The first chara added will be used as cover image.", comment: ""))
                 }
             }
             

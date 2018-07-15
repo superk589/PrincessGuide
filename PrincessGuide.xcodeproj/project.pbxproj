@@ -143,6 +143,7 @@
 		129A7F8F20A31D1600D93996 /* QuestEnemyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F8E20A31D1600D93996 /* QuestEnemyTableViewCell.swift */; };
 		129A7F9120A3211900D93996 /* EnemyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F9020A3211900D93996 /* EnemyView.swift */; };
 		12B21F9020F597EE00A04777 /* ChooseMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */; };
+		12B66CF520FB62DB00AB9D2A /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */; };
 		12B85D2B2089840A0088F5FB /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D2A2089840A0088F5FB /* Skill.swift */; };
 		12B85D31208993470088F5FB /* Coefficient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D30208993470088F5FB /* Coefficient.swift */; };
 		12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D32208996FF0088F5FB /* DispatchExtension.swift */; };
@@ -395,6 +396,7 @@
 		129A7F8E20A31D1600D93996 /* QuestEnemyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestEnemyTableViewCell.swift; sourceTree = "<group>"; };
 		129A7F9020A3211900D93996 /* EnemyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyView.swift; sourceTree = "<group>"; };
 		12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMemberViewController.swift; sourceTree = "<group>"; };
+		12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
 		12B85D2A2089840A0088F5FB /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		12B85D30208993470088F5FB /* Coefficient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coefficient.swift; sourceTree = "<group>"; };
 		12B85D32208996FF0088F5FB /* DispatchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchExtension.swift; sourceTree = "<group>"; };
@@ -709,6 +711,7 @@
 				126DECDB209DD78D004EC56A /* Theme.swift */,
 				1223A8EB20F0B4EB00C98BB2 /* NotificationHandle.swift */,
 				120F9B8020E9D1BA003632CA /* CoreDataStack.swift */,
+				12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1493,6 +1496,7 @@
 				12F125EF20B94D1D005C9659 /* ChangeEnergyAction.swift in Sources */,
 				12398E7220915737006AC352 /* AttackPattern.swift in Sources */,
 				1280DE4320A5D084008D9D72 /* DateExtension.swift in Sources */,
+				12B66CF520FB62DB00AB9D2A /* ManagedObjectObserver.swift in Sources */,
 				12F125ED20B94B11005C9659 /* SummonAction.swift in Sources */,
 				12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */,
 				126BFBCF20F0FAE70059B4ED /* BDTabViewController.swift in Sources */,
