@@ -1492,7 +1492,7 @@
       </trans-unit>
       <trans-unit id="The first chara added will be used as cover image.">
         <source>The first chara added will be used as cover image.</source>
-        <target>第一个添加的角色将会用做封面。</target>
+        <target>第一个添加的角色将被用作封面。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="There aren't any Mail accounts">

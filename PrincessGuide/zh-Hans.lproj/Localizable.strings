@@ -1043,7 +1043,7 @@
 "the farthest" = "最远的";
 
 /* No comment provided by engineer. */
-"The first chara added will be used as cover image." = "第一个添加的角色将会用做封面。";
+"The first chara added will be used as cover image." = "第一个添加的角色将被用作封面。";
 
 /* No comment provided by engineer. */
 "the highest ATK" = "物理攻击力最高的";
