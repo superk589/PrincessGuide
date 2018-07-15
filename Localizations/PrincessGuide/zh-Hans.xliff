@@ -340,6 +340,11 @@
         <target>攻击类型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Attention">
+        <source>Attention</source>
+        <target>提示</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Authorized">
         <source>Authorized</source>
         <target>已通过</target>
@@ -397,7 +402,7 @@
       </trans-unit>
       <trans-unit id="Box Detail">
         <source>Box Detail</source>
-        <target/>
+        <target>Box 详情</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Box Management">
@@ -418,6 +423,11 @@
       <trans-unit id="Burn">
         <source>Burn</source>
         <target>灼烧</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.">
+        <source>By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.</source>
+        <target>目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="CV">
@@ -638,6 +648,11 @@
       <trans-unit id="Condition: if target is controlled then use %d.">
         <source>Condition: if target is controlled then use %d.</source>
         <target>条件分支：如果目标处于被控制状态则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Confirm">
+        <source>Confirm</source>
+        <target>确定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Copy">
@@ -920,6 +935,11 @@
         <target>身高</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="How to restore purchasing on a new device?">
+        <source>How to restore purchasing on a new device?</source>
+        <target>如何在一台新设备上恢复您的购买？</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Icon Style">
         <source>Icon Style</source>
         <target>头像风格</target>
@@ -1028,6 +1048,11 @@
       <trans-unit id="Make %@ lose [%@] TP.">
         <source>Make %1$@ lose [%2$@] TP.</source>
         <target>使%1$@失去 [%2$@] TP。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.">
+        <source>Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.</source>
+        <target>确保您已经用同一个 Apple ID 登录了新设备，然后点击右上角的恢复按钮。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Mana Cost of Crafting">
@@ -1175,6 +1200,11 @@
         <target>位置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Pro Edition">
+        <source>Pro Edition</source>
+        <target>专业版</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Profile">
         <source>Profile</source>
         <target>角色</target>
@@ -1240,6 +1270,11 @@
         <target>降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Restore">
+        <source>Restore</source>
+        <target>恢复</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Restore %@ [%@] HP per second for [%@]s.">
         <source>Restore %1$@ [%2$@] HP per second for [%3$@]s.</source>
         <target>每秒恢复%1$@ [%2$@] HP，持续 [%3$@] 秒。</target>
@@ -1253,6 +1288,11 @@
       <trans-unit id="Restore %@ [%@]%@ HP.">
         <source>Restore %1$@ [%2$@]%3$@ HP.</source>
         <target>恢复%1$@ [%2$@]%3$@ HP。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Restore Failed">
+        <source>Restore Failed</source>
+        <target>恢复失败</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Review at App Store">
@@ -1545,6 +1585,16 @@
         <target>即将到来的生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Upgrade is done. Thank you for your purchase and supporting for our development.">
+        <source>Upgrade is done. Thank you for your purchase and supporting for our development.</source>
+        <target>升级已经完成。感谢您的购买和对本程序的支持！</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Upgrade to Pro Edition">
+        <source>Upgrade to Pro Edition</source>
+        <target>升级至专业版</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Use Dark Theme">
         <source>Use Dark Theme</source>
         <target>使用深色主题</target>
@@ -1575,9 +1625,24 @@
         <target>体重</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="What's the features of Pro Edition?">
+        <source>What's the features of Pro Edition?</source>
+        <target>专业版中有哪些功能？</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Wins">
         <source>Wins</source>
         <target>胜利</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You have not bought this product yet.">
+        <source>You have not bought this product yet.</source>
+        <target>您未曾买过本产品。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Your device does not allow in-app purchasing.">
+        <source>Your device does not allow in-app purchasing.</source>
+        <target>您的设备不允许使用内购。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="absolute">
@@ -1607,10 +1672,12 @@
       </trans-unit>
       <trans-unit id="always 1★">
         <source>always 1★</source>
+        <target>固定 1★</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="always 3★">
         <source>always 3★</source>
+        <target>固定 3★</target>
         <note>icon style</note>
       </trans-unit>
       <trans-unit id="arena">

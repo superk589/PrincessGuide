@@ -36,6 +36,10 @@
 		122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E320F9D6AE00554030 /* TDBattleViewController.swift */; };
 		122071E620F9DF7D00554030 /* AddTeamToTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E520F9DF7D00554030 /* AddTeamToTeamViewController.swift */; };
 		122071E820F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E720F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift */; };
+		122071EC20F9F54D00554030 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122071EB20F9F54D00554030 /* StoreKit.framework */; };
+		122071EE20F9F57000554030 /* BuyProEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071ED20F9F57000554030 /* BuyProEditionViewController.swift */; };
+		122071F020F9F5C500554030 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071EF20F9F5C500554030 /* FAQTableViewCell.swift */; };
+		122071F420FA371500554030 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071F320FA371500554030 /* ProductTableViewCell.swift */; };
 		1221CDC0207B9541008F30AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1221CDBF207B9541008F30AA /* Assets.xcassets */; };
 		1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC1207B96FA008F30AA /* CardTableViewController.swift */; };
 		1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDC7207B973B008F30AA /* CardTableViewCell.swift */; };
@@ -274,6 +278,10 @@
 		122071E320F9D6AE00554030 /* TDBattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDBattleViewController.swift; sourceTree = "<group>"; };
 		122071E520F9DF7D00554030 /* AddTeamToTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamToTeamViewController.swift; sourceTree = "<group>"; };
 		122071E720F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableAddTeamToTeamViewController.swift; sourceTree = "<group>"; };
+		122071EB20F9F54D00554030 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		122071ED20F9F57000554030 /* BuyProEditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProEditionViewController.swift; sourceTree = "<group>"; };
+		122071EF20F9F5C500554030 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
+		122071F320FA371500554030 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		1221CDBF207B9541008F30AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1221CDC1207B96FA008F30AA /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
 		1221CDC7207B973B008F30AA /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
@@ -487,6 +495,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122071EC20F9F54D00554030 /* StoreKit.framework in Frameworks */,
 				1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */,
 				BD1F9CD415774DF7E9F1F065 /* Pods_PrincessGuide.framework in Frameworks */,
 			);
@@ -579,6 +588,15 @@
 				12973CEE20EBBAC500C83089 /* CharaView.swift */,
 				127EEBA020ECDAD300A6B3D4 /* CharaItemView.swift */,
 				121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		122071F120F9F5CA00554030 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				122071EF20F9F5C500554030 /* FAQTableViewCell.swift */,
+				122071F320FA371500554030 /* ProductTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -743,6 +761,7 @@
 			isa = PBXGroup;
 			children = (
 				12398E9320917EE0006AC352 /* ViewController */,
+				122071F120F9F5CA00554030 /* View */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -753,6 +772,7 @@
 				12398E9020917EC2006AC352 /* SettingsTableViewController.swift */,
 				126DECDE209E0733004EC56A /* ThirdPartyLibrariesViewController.swift */,
 				126DECE0209E0B2C004EC56A /* CustomAcknowViewController.swift */,
+				122071ED20F9F57000554030 /* BuyProEditionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1100,6 +1120,7 @@
 		C4EE8380F1630D9BF0C1B7E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				122071EB20F9F54D00554030 /* StoreKit.framework */,
 				1221CDCC207C4197008F30AA /* libsqlite3.tbd */,
 				137EBFE7ED3C7564CEF28E58 /* Pods_PrincessGuide.framework */,
 			);
@@ -1160,6 +1181,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					129A7F6620A06DE500D93996 = {
 						CreatedOnToolsVersion = 9.3;
@@ -1295,6 +1321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122071EE20F9F57000554030 /* BuyProEditionViewController.swift in Sources */,
 				12124F462089C9E1001C1A6F /* PropertyKey.swift in Sources */,
 				129A7F56209FE8D400D93996 /* ProfileItemView.swift in Sources */,
 				129A7F5820A0249600D93996 /* Property.swift in Sources */,
@@ -1343,6 +1370,7 @@
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
 				12F1262D20B95636005C9659 /* UpperLimitAttackAction.swift in Sources */,
+				122071F420FA371500554030 /* ProductTableViewCell.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
 				12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */,
@@ -1368,6 +1396,7 @@
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
+				122071F020F9F5C500554030 /* FAQTableViewCell.swift in Sources */,
 				12F1261520B954DB005C9659 /* SealAction.swift in Sources */,
 				12DC963720EDECFE008896D7 /* BoxTableViewController.swift in Sources */,
 				12F125F920B950F9005C9659 /* NoDamageAction.swift in Sources */,

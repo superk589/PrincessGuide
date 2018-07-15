@@ -325,6 +325,10 @@
         <target>攻撃タイプ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Attention">
+        <source>Attention</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Authorized">
         <source>Authorized</source>
         <note>No comment provided by engineer.</note>
@@ -395,6 +399,10 @@
       <trans-unit id="Burn">
         <source>Burn</source>
         <target>火傷</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.">
+        <source>By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="CV">
@@ -594,6 +602,10 @@
       </trans-unit>
       <trans-unit id="Condition: if target is controlled then use %d.">
         <source>Condition: if target is controlled then use %d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Confirm">
+        <source>Confirm</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Copy">
@@ -855,6 +867,10 @@
         <target>身長</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="How to restore purchasing on a new device?">
+        <source>How to restore purchasing on a new device?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Icon Style">
         <source>Icon Style</source>
         <note>No comment provided by engineer.</note>
@@ -958,6 +974,10 @@
       <trans-unit id="Make %@ lose [%@] TP.">
         <source>Make %1$@ lose [%2$@] TP.</source>
         <target>%1$@のTPを[%2$@]失わせる。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.">
+        <source>Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Mana Cost of Crafting">
@@ -1091,6 +1111,10 @@
         <target>ボジション</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Pro Edition">
+        <source>Pro Edition</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Profile">
         <source>Profile</source>
         <target>プロファイル</target>
@@ -1154,6 +1178,10 @@
         <target>%1$@の行動速度を%2$d%%ダウン、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Restore">
+        <source>Restore</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Restore %@ [%@] HP per second for [%@]s.">
         <source>Restore %1$@ [%2$@] HP per second for [%3$@]s.</source>
         <target>%1$@に毎秒HPを[%2$@]回復、[%3$@]秒継続する。</target>
@@ -1167,6 +1195,10 @@
       <trans-unit id="Restore %@ [%@]%@ HP.">
         <source>Restore %1$@ [%2$@]%3$@ HP.</source>
         <target>%1$@のHPを[%2$@]%3$@回復。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Restore Failed">
+        <source>Restore Failed</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Review at App Store">
@@ -1431,6 +1463,14 @@
         <source>Upcoming Birthdays</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Upgrade is done. Thank you for your purchase and supporting for our development.">
+        <source>Upgrade is done. Thank you for your purchase and supporting for our development.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Upgrade to Pro Edition">
+        <source>Upgrade to Pro Edition</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Use Dark Theme">
         <source>Use Dark Theme</source>
         <target>ダークテーマに設定する</target>
@@ -1461,8 +1501,20 @@
         <target>体重</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="What's the features of Pro Edition?">
+        <source>What's the features of Pro Edition?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Wins">
         <source>Wins</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You have not bought this product yet.">
+        <source>You have not bought this product yet.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Your device does not allow in-app purchasing.">
+        <source>Your device does not allow in-app purchasing.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="absolute">

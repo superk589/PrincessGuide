@@ -161,6 +161,12 @@
 "all front(including self) friendly targets" = "所有前方的友方目标（包括自己）";
 
 /* No comment provided by engineer. */
+"always 1★" = "固定 1★";
+
+/* icon style */
+"always 3★" = "固定 3★";
+
+/* No comment provided by engineer. */
 "App Version" = "程序版本";
 
 /* No comment provided by engineer. */
@@ -186,6 +192,9 @@
 
 /* No comment provided by engineer. */
 "Attack Type" = "攻击类型";
+
+/* No comment provided by engineer. */
+"Attention" = "提示";
 
 /* No comment provided by engineer. */
 "Authorized" = "已通过";
@@ -221,7 +230,7 @@
 "Bond Rank" = "绊 Rank";
 
 /* No comment provided by engineer. */
-"Box Detail" = "";
+"Box Detail" = "Box 详情";
 
 /* No comment provided by engineer. */
 "Box Management" = "Box 管理";
@@ -234,6 +243,9 @@
 
 /* No comment provided by engineer. */
 "Burn" = "灼烧";
+
+/* No comment provided by engineer. */
+"By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again." = "目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。";
 
 /* No comment provided by engineer. */
 "Cancel" = "取消";
@@ -366,6 +378,9 @@
 
 /* No comment provided by engineer. */
 "Condition: if target is controlled then use %d." = "条件分支：如果目标处于被控制状态则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"Confirm" = "确定";
 
 /* No comment provided by engineer. */
 "Copy" = "复制";
@@ -575,6 +590,9 @@
 "Height" = "身高";
 
 /* No comment provided by engineer. */
+"How to restore purchasing on a new device?" = "如何在一台新设备上恢复您的购买？";
+
+/* No comment provided by engineer. */
 "HP" = "HP";
 
 /* No comment provided by engineer. */
@@ -654,6 +672,9 @@
 
 /* No comment provided by engineer. */
 "Make %@ lose [%@] TP." = "使%1$@失去 [%2$@] TP。";
+
+/* No comment provided by engineer. */
+"Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page." = "确保您已经用同一个 Apple ID 登录了新设备，然后点击右上角的恢复按钮。";
 
 /* No comment provided by engineer. */
 "Mana Cost of Crafting" = "制作装备所需 Mana";
@@ -764,6 +785,9 @@
 "princess arena" = "公主竞技场";
 
 /* No comment provided by engineer. */
+"Pro Edition" = "专业版";
+
+/* No comment provided by engineer. */
 "Profile" = "角色";
 
 /* No comment provided by engineer. */
@@ -821,6 +845,9 @@
 "Reduce %@ %d%% attack speed for [%@]s." = "降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"Restore" = "恢复";
+
+/* No comment provided by engineer. */
 "Restore %@ [%@] HP per second for [%@]s." = "每秒恢复%1$@ [%2$@] HP，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -828,6 +855,9 @@
 
 /* No comment provided by engineer. */
 "Restore %@ [%@]%@ HP." = "恢复%1$@ [%2$@]%3$@ HP。";
+
+/* No comment provided by engineer. */
+"Restore Failed" = "恢复失败";
 
 /* No comment provided by engineer. */
 "Review at App Store" = "App Store 评价";
@@ -1115,6 +1145,12 @@
 "Upcoming Birthdays" = "即将到来的生日";
 
 /* No comment provided by engineer. */
+"Upgrade is done. Thank you for your purchase and supporting for our development." = "升级已经完成。感谢您的购买和对本程序的支持！";
+
+/* No comment provided by engineer. */
+"Upgrade to Pro Edition" = "升级至专业版";
+
+/* No comment provided by engineer. */
 "Use Dark Theme" = "使用深色主题";
 
 /* expression style */
@@ -1139,5 +1175,14 @@
 "Weight" = "体重";
 
 /* No comment provided by engineer. */
+"What's the features of Pro Edition?" = "专业版中有哪些功能？";
+
+/* No comment provided by engineer. */
 "Wins" = "胜利";
+
+/* No comment provided by engineer. */
+"You have not bought this product yet." = "您未曾买过本产品。";
+
+/* No comment provided by engineer. */
+"Your device does not allow in-app purchasing." = "您的设备不允许使用内购。";
 

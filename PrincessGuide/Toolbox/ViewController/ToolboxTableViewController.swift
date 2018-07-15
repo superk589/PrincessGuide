@@ -48,6 +48,12 @@ class ToolboxTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
+        NotificationCenter.default.addObserver(self, selector: #selector(handleEditionChange(_:)), name: .proEditionPurchased, object: nil)
+        
+    }
+    
+    @objc private func handleEditionChange(_ notification: Notification) {
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,18 +62,26 @@ class ToolboxTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ToolboxTableViewCell.description(), for: indexPath) as! ToolboxTableViewCell
-        
-        cell.configure(for: rows[indexPath.row].title)
+        let row = rows[indexPath.row]
+        if row.isProFeature && !Defaults.proEdition {
+            cell.configure(for: row.title + " (Pro)")
+        } else {
+            cell.configure(for: row.title)
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let row = rows[indexPath.row]
-        let vc = row.vcType.init()
-        
-        vc.hidesBottomBarWhenPushed = true
-        
-        navigationController?.pushViewController(vc, animated: true)
+        if row.isProFeature && !Defaults.proEdition {
+            let vc = BuyProEditionViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = row.vcType.init()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

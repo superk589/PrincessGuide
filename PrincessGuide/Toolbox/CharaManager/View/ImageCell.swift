@@ -61,4 +61,3 @@ final class ImageRow: Row<ImageCell>, RowType {
         super.init(tag: tag)
     }
 }
-

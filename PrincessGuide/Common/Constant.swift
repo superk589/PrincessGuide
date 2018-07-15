@@ -10,6 +10,7 @@ import Foundation
 
 struct Constant {
     static let appID = 1377498032
+    static let iAPProductIDs: Set<String> = ["princess_guide_pro_edition"]
     static let appBundle = "com.zzk.PrincessGuide"
     static let appName = "Hatsune's Notes"
     static let appNameHashtag = "HatsunesNotes"
