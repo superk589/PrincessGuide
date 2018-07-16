@@ -27,6 +27,15 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
     * Status
     * Skill Effect
     * Attack Pattern 
+1. Birthday Notification
+1. Chara Management
+1. Box Management
+    * Equipment Needed
+    * Mana Cost
+    * Experience Needed
+1. Team Management
+    * Recording Wins and Loses
+    * Searching with Tags
 1. Game Data Auto Updating
 
 ## How to localize
@@ -37,7 +46,7 @@ For developers only, if you have macOS and Xcode, please read `./Localizations/R
 
 ## How to build
 ### Requirements
-* iOS 9.0+
+* iOS 10.0+
 * Xcode 9.3+
 * Swift 4.1+
 
@@ -54,6 +63,15 @@ $ pod install
 ```
 $ open PrincessGuide.xcworkspace
 ```
+
+## About Pro Edition
+**Hatsune's Notes** is open-sourced and not aimed to be a commercial software. However, the server cost and the developer account cost are not a small amount of money. We need more support from our users for the future development. Pro edition is only for App Store version. If you want to support us, it's the best way. 
+
+There are still some ways to get pro edition for free.
+* Compile it from source code and run on simulators.
+* Remove the pro edition checking from source code and run on your own devices.
+* Contribute to this project and then contact the developer for an App Store promo code.
+ 
 
 ## Acknowledgement
 * [esterTion](https://github.com/esterTion)
