@@ -43,7 +43,12 @@ class CardCollectionViewController: UIViewController, DataChecking, UICollection
         layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            if #available(iOS 11.0, *) {
+                make.edges.equalToSuperview()
+            } else {
+                make.top.equalTo(topLayoutGuide.snp.bottom)
+                make.left.right.bottom.equalToSuperview()
+            }
         }
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 84, right: 0)
 

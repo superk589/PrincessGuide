@@ -14,9 +14,9 @@ struct Constant {
     static let appBundle = "com.zzk.PrincessGuide"
     static let appName = "Hatsune's Notes"
     static let appNameHashtag = "HatsunesNotes"
-    static let presetMaxRank = 9
-    static let presetMaxPlayerLevel = 95
-    static let presetMaxEnemyLevel = 100
+    static let presetMaxRank = 10
+    static let presetMaxPlayerLevel = 102
+    static let presetMaxEnemyLevel = 120
     static let presetMaxBondRank = 8
     static let presetMaxRarity = 5
     static let presetManaCostPerPoint = [

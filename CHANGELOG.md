@@ -1,3 +1,12 @@
+# 1.1.1
+
+1. 增加对命中属性的支持。
+2. 修复一个页面布局问题。
+
+## English version
+1. Support for accuracy property.
+2. Fix a layout issue.
+
 # 1.1
 
 1. 此版本起不再支持低于 iOS 10.0 的设备。
