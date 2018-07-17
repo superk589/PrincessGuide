@@ -25,14 +25,12 @@ class EDStatusTableViewController: EDTableViewController {
             Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .hp),
                                                                           property.item(for: .physicalCritical)], unitLevel, targetLevel)),
             Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .dodge),
-                                                                          property.item(for: .magicCritical)], unitLevel, targetLevel))
+                                                                          property.item(for: .magicCritical)], unitLevel, targetLevel)),
+            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .accuracy)], unitLevel, targetLevel)),
         ]
-        rows += [
-            Row(type: CDProfileTextTableViewCell.self, data: .textArray([
-                (NSLocalizedString("Swing Time", comment: ""), "\(enemy.unit.normalAtkCastTime)s"),
-                (NSLocalizedString("Attack Range", comment: ""), "\(enemy.unit.searchAreaWidth)")
-            ]))
-        ]
+        
+        rows.append(Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Swing Time", comment: ""), "\(enemy.unit.normalAtkCastTime)s")))
+        rows.append(Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Attack Range", comment: ""), "\(enemy.unit.searchAreaWidth)")))
     }
     
 }

@@ -196,7 +196,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         let mode: CardView.Mode
         let text: String?
         switch settings.sortingMethod {
-        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery:
+        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy:
             let propertyKey = PropertyKey(rawValue: settings.sortingMethod.rawValue)!
             mode = .text
             text = String(Int(card.property().item(for: propertyKey).value))
@@ -248,7 +248,7 @@ extension Array where Element == Card {
 
         let sortingMethod: (Card, Card) -> Bool
         switch settings.sortingMethod {
-        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery:
+        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy:
             let propertyKey = PropertyKey(rawValue: settings.sortingMethod.rawValue)!
             sortingMethod = { $0.property().item(for: propertyKey).value < $1.property().item(for: propertyKey).value }
         case .rarity:

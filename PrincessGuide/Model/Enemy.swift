@@ -74,6 +74,7 @@ class Enemy: Codable {
         let unitId: Int
         let waveEnergyRecovery: Int
         let waveHpRecovery: Int
+        let accuracy: Int
         
         let exSkill1: Int
         let exSkill2: Int
@@ -99,7 +100,7 @@ class Enemy: Codable {
                             magicCritical: Double(magicCritical), magicDef: Double(magicDef),
                             magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
                             physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
-                            waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery))
+                            waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery), accuracy: Double(accuracy))
         }
         
         var exSkillIDs: [Int] {

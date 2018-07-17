@@ -58,6 +58,7 @@ class CardSortingViewController: FormViewController {
             case physicalCritical
             case waveEnergyRecovery
             case waveHpRecovery
+            case accuracy
             
             case rarity
             case effectivePhysicalHP
@@ -79,7 +80,7 @@ class CardSortingViewController: FormViewController {
             var description: String {
                 switch self {
                 case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate,
-                     .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery:
+                     .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy:
                     return PropertyKey(rawValue: rawValue)!.description
                 case .rarity:
                     return NSLocalizedString("Rarity", comment: "")
@@ -109,7 +110,7 @@ class CardSortingViewController: FormViewController {
                 
             }
             
-            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .combatEffectiveness, .swingTime, .attackRange, .id, .name, .age, .birthday, .height, .weight]
+            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .combatEffectiveness, .swingTime, .attackRange, .id, .name, .age, .birthday, .height, .weight]
             
         }
         

@@ -254,6 +254,10 @@
         <target>アプリについて</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Accuracy">
+        <source>Accuracy</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Action">
         <source>Action</source>
         <target>行動</target>

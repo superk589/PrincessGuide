@@ -26,12 +26,13 @@ enum PropertyKey: String, CustomStringConvertible {
     case physicalPenetrate
     case waveEnergyRecovery
     case waveHpRecovery
+    case accuracy
     
     case unknown
 
     static let all = [PropertyKey.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate,
                       .lifeSteal, .magicCritical, .magicDef, .magicPenetrate, .magicStr, .physicalCritical,
-                      .physicalPenetrate, .waveEnergyRecovery, .waveHpRecovery]
+                      .physicalPenetrate, .waveEnergyRecovery, .waveHpRecovery, .accuracy]
     
     var description: String {
         switch self {
@@ -52,6 +53,7 @@ enum PropertyKey: String, CustomStringConvertible {
         case .waveEnergyRecovery: return NSLocalizedString("Wave Energy Recovery", comment: "")
         case .waveHpRecovery: return NSLocalizedString("Wave HP Recovery", comment: "")
         case .unknown: return NSLocalizedString("Unknown", comment: "")
+        case .accuracy: return NSLocalizedString("Accuracy", comment: "")
         }
     }
     

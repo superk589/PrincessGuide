@@ -50,6 +50,7 @@ class CDPropertyViewController: CDTableViewController {
                     (NSLocalizedString("Attack Range", comment: ""), String(card.base.searchAreaWidth))
                 ]
             )),
+            Row(type: CDProfileTableViewCell.self, data: .propertyItems([property.item(for: .accuracy)], unitLevel, targetLevel)),
             Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Physical HP", comment: ""), String(Int(property.effectivePhysicalHP.rounded())))),
             Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Magical HP", comment: ""), String(Int(property.effectiveMagicalHP.rounded())))),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([

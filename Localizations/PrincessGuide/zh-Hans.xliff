@@ -260,6 +260,11 @@
         <target>关于</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Accuracy">
+        <source>Accuracy</source>
+        <target>命中</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Action">
         <source>Action</source>
         <target>Action</target>

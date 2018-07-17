@@ -25,6 +25,7 @@ struct Property: Codable, Equatable {
     var physicalPenetrate: Double
     var waveEnergyRecovery: Double
     var waveHpRecovery: Double
+    var accuracy: Double
     
     var effectivePhysicalHP: Double {
         return hp * (1 + def / 100) * (1 + dodge / 100)
@@ -100,6 +101,8 @@ struct Property: Codable, Equatable {
             return \.waveEnergyRecovery
         case .waveHpRecovery:
             return \.waveHpRecovery
+        case .accuracy:
+            return \.accuracy
         case .unknown:
             return nil
         }
@@ -218,5 +221,6 @@ extension Property {
         physicalPenetrate = 0
         waveEnergyRecovery = 0
         waveHpRecovery = 0
+        accuracy = 0
     }
 }
