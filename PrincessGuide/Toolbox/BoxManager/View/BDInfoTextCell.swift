@@ -16,7 +16,7 @@ extension BDInfoTextCell: BDInfoConfigurable {
         guard case .text(let array) = model else {
             fatalError()
         }
-        configure(for: array)
+        configure(for: array.map { ($0.0, $0.1, false) })
     }
 
 }

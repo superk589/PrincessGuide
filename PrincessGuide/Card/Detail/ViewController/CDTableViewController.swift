@@ -20,10 +20,10 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             case pattern(AttackPattern, Card, Int?)
             case promotion(Card.Promotion)
             case profileItems([Card.Profile.Item])
-            case propertyItems([Property.Item], Int, Int)
+            case propertyItems([Property.Item], Int, Int, Bool)
             case comment(Card.Comment)
-            case text(String, String)
-            case textArray([(String, String)])
+            case text(String, String, Bool)
+            case textArray([(String, String, Bool)])
             case album(String, [URL], [URL])
             case commentText(String)
         }

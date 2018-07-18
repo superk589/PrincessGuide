@@ -14,9 +14,9 @@ extension EDProfileTextTableViewCell: EnemyDetailConfigurable {
     
     func configure(for item: EDTableViewController.Row.Model) {
         if case .text(let title, let content) = item {
-            configure(for: [(title, content)])
+            configure(for: [(title, content, false)])
         } else if case .textArray(let elements) = item {
-            configure(for: elements)
+            configure(for: elements.map { ($0.0, $0.1, false) })
         }
     }
 }

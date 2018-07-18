@@ -45,32 +45,32 @@ class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
     func configure(for item: CardDetailItem) {
-        if case .text(let title, let content) = item {
-            configure(for: [(title, content)])
+        if case .text(let title, let content, let comparisonMode) = item {
+            configure(for: [(title, content, comparisonMode)])
         } else if case .textArray(let elements) = item {
             configure(for: elements)
         }
     }
     
-    func configure(for title: String, content: String) {
+    func configure(for title: String, content: String, comparisonMode: Bool = false) {
         itemViews.forEach {
             $0.removeFromSuperview()
         }
         itemViews.removeAll()
         let itemView = CDTextItemView()
-        itemView.configure(for: title, content: content)
+        itemView.configure(for: title, content: content, comparisonMode: comparisonMode)
         itemViews.append(itemView)
         stackView.addArrangedSubview(itemView)
     }
     
-    func configure(for elements: [(String, String)]) {
+    func configure(for elements: [(String, String, Bool)]) {
         itemViews.forEach {
             $0.removeFromSuperview()
         }
         itemViews.removeAll()
         for element in elements {
             let itemView = CDTextItemView()
-            itemView.configure(for: element.0, content: element.1)
+            itemView.configure(for: element.0, content: element.1, comparisonMode: element.2)
             itemViews.append(itemView)
             stackView.addArrangedSubview(itemView)
         }

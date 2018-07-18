@@ -22,6 +22,8 @@ struct ThemeColors {
     let tableViewCell: ThemeTableViewCell
     let loadingHUD: ThemeLoadingHUD
     let foregroundColor: UIColor
+    let upValue: UIColor
+    let downValue: UIColor
 }
 
 struct ThemeTextfieldColors {
@@ -75,7 +77,9 @@ struct Theme: ThemeProtocol {
                 text: .white,
                 foreground: UIColor.lightGray.withAlphaComponent(0.55)
             ),
-            foregroundColor: .white
+            foregroundColor: .white,
+            upValue: UIColor(hexString: "DC5A5A"),
+            downValue: UIColor(hexString: "528FCC")
         ),
         barStyle: .default,
         lightOpacity: 1.0,
@@ -109,7 +113,9 @@ struct Theme: ThemeProtocol {
                 text: .hatsuneYellow,
                 foreground: UIColor.darkGray.withAlphaComponent(0.55)
             ),
-            foregroundColor: .black
+            foregroundColor: .black,
+            upValue: UIColor(hexString: "DC5A5A"),
+            downValue: UIColor(hexString: "528FCC")
         ),
         barStyle: .black,
         lightOpacity: 0.0,

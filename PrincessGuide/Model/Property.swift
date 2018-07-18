@@ -150,11 +150,31 @@ func + (lhs: Property, rhs: Property.Item) -> Property {
     }
 }
 
+func - (lhs: Property, rhs: Property.Item) -> Property {
+    var property = lhs
+    if let keyPath = property.keyPath(for: rhs.key) {
+        property[keyPath: keyPath] -= rhs.value
+        return property
+    } else {
+        return lhs
+    }
+}
+
 func + (lhs: Property, rhs: Property) -> Property {
     var property = lhs
     PropertyKey.all.forEach {
         if let keyPath = property.keyPath(for: $0) {
             property[keyPath: keyPath] += rhs[keyPath: keyPath]
+        }
+    }
+    return property
+}
+
+func - (lhs: Property, rhs: Property) -> Property {
+    var property = lhs
+    PropertyKey.all.forEach {
+        if let keyPath = property.keyPath(for: $0) {
+            property[keyPath: keyPath] -= rhs[keyPath: keyPath]
         }
     }
     return property

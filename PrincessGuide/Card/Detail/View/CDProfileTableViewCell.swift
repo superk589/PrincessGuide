@@ -61,8 +61,8 @@ class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
     func configure(for item: CardDetailItem) {
         if case .profileItems(let items) = item {
             configure(for: items)
-        } else if case .propertyItems(let items, let unitLevel, let targetLevel) = item {
-            configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel)
+        } else if case .propertyItems(let items, let unitLevel, let targetLevel, let comparisonMode) = item {
+            configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel, comparisonMode: comparisonMode)
         } else {
             fatalError()
         }
