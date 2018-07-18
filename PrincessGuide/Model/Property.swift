@@ -35,7 +35,7 @@ struct Property: Codable, Equatable {
         return hp * (1 + magicDef / 100)
     }
     
-    struct Item {
+    struct Item: Codable {
         var key: PropertyKey
         var value: Double
         

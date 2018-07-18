@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PropertyKey: String, CustomStringConvertible {
+enum PropertyKey: String, CustomStringConvertible, Codable {
     
     case atk
     case def
