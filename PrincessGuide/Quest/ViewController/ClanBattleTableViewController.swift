@@ -78,7 +78,7 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let clanBattle = clanBattles[indexPath.row]
-        cell.configure(for: clanBattle.name, subtitle: "", unitID: clanBattle.groups.last?.wave.enemies.first?.enemy?.unit.prefabId)
+        cell.configure(for: clanBattle.groups.last?.wave.enemies.first?.enemy?.unit.unitName ?? "", subtitle: clanBattle.name, unitID: clanBattle.groups.last?.wave.enemies.first?.enemy?.unit.prefabId)
         return cell
     }
     
