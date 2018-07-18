@@ -25,21 +25,26 @@ class CDPropertyViewController: CDTableViewController {
         let settings = CDSettingsViewController.Setting.default
     
         let property: Property
+        let combatEffectiveness: Int
         
         if settings.statusComparison {
             let fromProperty = card.property(unitLevel: settings.unitLevel, unitRank: settings.rankFrom, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx)
             let toProperty = card.property(unitLevel: settings.unitLevel, unitRank: settings.rankTo, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx)
             property = toProperty - fromProperty
+            
+            let fromCombatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.rankFrom, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel)
+            let toCombatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.rankTo, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel)
+            combatEffectiveness = toCombatEffectiveness - fromCombatEffectiveness
         } else {
             property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx)
+            combatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel)
         }
         
-        let combatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel)
         let unitLevel = settings.unitLevel
         let targetLevel = settings.targetLevel
         
         rows += [
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Combat Effectiveness", comment: ""), String(combatEffectiveness), false)),
+            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Combat Effectiveness", comment: ""), String(combatEffectiveness), settings.statusComparison)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .atk),
                 property.item(for: .magicStr)

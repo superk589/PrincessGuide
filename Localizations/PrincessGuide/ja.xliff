@@ -1162,6 +1162,14 @@
         <target>Rank</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Rank From">
+        <source>Rank From</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Rank To">
+        <source>Rank To</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Rarity">
         <source>Rarity</source>
         <target>レア度</target>
@@ -1312,6 +1320,10 @@
       <trans-unit id="Status">
         <source>Status</source>
         <target>属性</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Status Comparison">
+        <source>Status Comparison</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Still">

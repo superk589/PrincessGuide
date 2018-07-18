@@ -31,6 +31,12 @@ class PrincessGuideTests: XCTestCase {
         p2 += Property.Item(key: .atk, value: 40)
         let p3 = p1 + p2
         XCTAssert(p3.atk == 65)
+        
+        let p4 = p3 - p1
+        XCTAssert(p4.atk == 40)
+        
+        let p5 = p4 - Property.Item(key: .atk, value: 5)
+        XCTAssert(p5.atk == 35)
     }
     
     func testSkillActionFormat() {

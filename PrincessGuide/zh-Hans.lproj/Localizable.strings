@@ -836,6 +836,12 @@
 "Rank" = "Rank";
 
 /* No comment provided by engineer. */
+"Rank From" = "原始 Rank";
+
+/* No comment provided by engineer. */
+"Rank To" = "目标 Rank";
+
+/* No comment provided by engineer. */
 "Rarity" = "稀有度";
 
 /* No comment provided by engineer. */
@@ -942,6 +948,9 @@
 
 /* No comment provided by engineer. */
 "Status" = "属性";
+
+/* No comment provided by engineer. */
+"Status Comparison" = "属性比较模式";
 
 /* No comment provided by engineer. */
 "Still" = "剧情";

@@ -114,8 +114,8 @@ struct Theme: ThemeProtocol {
                 foreground: UIColor.darkGray.withAlphaComponent(0.55)
             ),
             foregroundColor: .black,
-            upValue: UIColor(hexString: "DC5A5A"),
-            downValue: UIColor(hexString: "528FCC")
+            upValue: UIColor(hexString: "E59053"),
+            downValue: UIColor(hexString: "27A79B")
         ),
         barStyle: .black,
         lightOpacity: 0.0,

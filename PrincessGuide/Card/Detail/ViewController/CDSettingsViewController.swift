@@ -336,7 +336,7 @@ class CDSettingsViewController: FormViewController {
     }
     
     @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
-        let json = JSON(form.values())
+        let json = JSON(form.values(includeHidden: true))
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         if let setting = try? decoder.decode(Setting.self, from: json.rawData()) {
