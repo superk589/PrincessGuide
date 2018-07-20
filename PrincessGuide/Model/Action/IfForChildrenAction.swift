@@ -63,6 +63,16 @@ class IfForChildrenAction: ActionParameter {
             } else {
                 return super.localizedDetail(of: level, property: property, style: style)
             }
+        case 901..<1000:
+            if actionDetail2 != 0 && actionDetail3 != 0 {
+                let format = NSLocalizedString("Condition: if target's HP is below %d%% then use %d, otherwise %d.", comment: "")
+                return String(format: format, actionDetail1 % 100, actionDetail2 % 10, actionDetail3 % 10)
+            } else if actionDetail2 != 0 {
+                let format = NSLocalizedString("Condition: if target's HP is below %d%% then use %d.", comment: "")
+                return String(format: format, actionDetail1 % 100, actionDetail2 % 10)
+            } else {
+                return super.localizedDetail(of: level, property: property, style: style)
+            }
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }

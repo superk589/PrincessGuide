@@ -362,10 +362,10 @@
 "Condition: if target is blinded then use %d." = "条件分支：如果目标处于黑暗状态则使用 %1$d。";
 
 /* No comment provided by engineer. */
-"Condition: if target is burned then use %d, otherwise %d." = "条件分支：如果目标处于燃烧状态则使用 %1$d，否则使用 %2$d。";
+"Condition: if target is burned then use %d, otherwise %d." = "条件分支：如果目标处于火伤状态则使用 %1$d，否则使用 %2$d。";
 
 /* No comment provided by engineer. */
-"Condition: if target is burned then use %d." = "条件分支：如果目标处于燃烧状态则使用 %1$d。";
+"Condition: if target is burned then use %d." = "条件分支：如果目标处于火伤状态则使用 %1$d。";
 
 /* No comment provided by engineer. */
 "Condition: if target is charmed then use %d, otherwise %d." = "条件分支：如果目标处于魅惑状态则使用 %1$d，否则使用 %2$d。";
@@ -378,6 +378,12 @@
 
 /* No comment provided by engineer. */
 "Condition: if target is controlled then use %d." = "条件分支：如果目标处于被控制状态则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target's HP is below %d%% then use %d, otherwise %d." = "条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d，否则使用 %3$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target's HP is below %d%% then use %d." = "条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d。";
 
 /* No comment provided by engineer. */
 "Confirm" = "确定";

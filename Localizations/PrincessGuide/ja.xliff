@@ -604,6 +604,14 @@
         <source>Condition: if target is controlled then use %d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Condition: if target's HP is below %d%% then use %d, otherwise %d.">
+        <source>Condition: if target's HP is below %1$d%% then use %2$d, otherwise %3$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target's HP is below %d%% then use %d.">
+        <source>Condition: if target's HP is below %1$d%% then use %2$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Confirm">
         <source>Confirm</source>
         <note>No comment provided by engineer.</note>
