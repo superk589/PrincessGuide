@@ -740,6 +740,11 @@
         <target>拘留</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Detain (Damage)">
+        <source>Detain (Damage)</source>
+        <target>拘留（伤害）</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Die instantly.">
         <source>Die instantly.</source>
         <target>立即死亡。</target>
@@ -947,7 +952,7 @@
       </trans-unit>
       <trans-unit id="Haste">
         <source>Haste</source>
-        <target>Haste</target>
+        <target>加速</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Height">
@@ -972,7 +977,7 @@
       </trans-unit>
       <trans-unit id="Instant Death">
         <source>Instant Death</source>
-        <target>Instant Death</target>
+        <target>即死</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Interest">
@@ -993,6 +998,11 @@
       <trans-unit id="Knock %@ up %d.">
         <source>Knock %1$@ up %2$d.</source>
         <target>击飞%1$@，高度 %2$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Knock Back">
+        <source>Knock Back</source>
+        <target>击退</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Level">
@@ -1207,7 +1217,7 @@
       </trans-unit>
       <trans-unit id="Poison">
         <source>Poison</source>
-        <target>Poison</target>
+        <target>中毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Poison %@ and deal [%@] damage per second for [%@]s.">
@@ -1298,6 +1308,11 @@
       <trans-unit id="Reduce %@ %d%% attack speed for [%@]s.">
         <source>Reduce %1$@ %2$d%% attack speed for [%3$@]s.</source>
         <target>降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Resist">
+        <source>Resist</source>
+        <target>抗性</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Restore">
@@ -1422,7 +1437,7 @@
       </trans-unit>
       <trans-unit id="Slow">
         <source>Slow</source>
-        <target>Slow</target>
+        <target>减速</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Sort by">

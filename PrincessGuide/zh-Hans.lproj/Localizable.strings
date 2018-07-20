@@ -443,6 +443,9 @@
 "Detain" = "拘留";
 
 /* No comment provided by engineer. */
+"Detain (Damage)" = "拘留（伤害）";
+
+/* No comment provided by engineer. */
 "Die instantly." = "立即死亡。";
 
 /* No comment provided by engineer. */
@@ -596,7 +599,7 @@
 "Hard" = "困难";
 
 /* No comment provided by engineer. */
-"Haste" = "Haste";
+"Haste" = "加速";
 
 /* No comment provided by engineer. */
 "Height" = "身高";
@@ -620,7 +623,7 @@
 "inevitable physical" = "无法躲闪的物理";
 
 /* No comment provided by engineer. */
-"Instant Death" = "Instant Death";
+"Instant Death" = "即死";
 
 /* No comment provided by engineer. */
 "Interest" = "兴趣";
@@ -633,6 +636,9 @@
 
 /* No comment provided by engineer. */
 "Knock %@ up %d." = "击飞%1$@，高度 %2$d。";
+
+/* No comment provided by engineer. */
+"Knock Back" = "击退";
 
 /* No comment provided by engineer. */
 "last effect affected or the nearest" = "上一个效果或最近的";
@@ -788,7 +794,7 @@
 "Please wait" = "正在处理";
 
 /* No comment provided by engineer. */
-"Poison" = "Poison";
+"Poison" = "中毒";
 
 /* No comment provided by engineer. */
 "Poison %@ and deal [%@] damage per second for [%@]s." = "使%1$@中毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。";
@@ -866,6 +872,9 @@
 "Reduce %@ %d%% attack speed for [%@]s." = "降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"Resist" = "抗性";
+
+/* No comment provided by engineer. */
 "Restore" = "恢复";
 
 /* No comment provided by engineer. */
@@ -941,7 +950,7 @@
 "Sleep" = "睡眠";
 
 /* No comment provided by engineer. */
-"Slow" = "Slow";
+"Slow" = "减速";
 
 /* No comment provided by engineer. */
 "SLv." = "技能等级";

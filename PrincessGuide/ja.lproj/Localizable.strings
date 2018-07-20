@@ -251,6 +251,9 @@
 "Detain" = "拘留";
 
 /* No comment provided by engineer. */
+"Detain (Damage)" = "拘留(ダメージ)";
+
+/* No comment provided by engineer. */
 "Die instantly." = "即死する。";
 
 /* No comment provided by engineer. */
@@ -366,6 +369,9 @@
 
 /* No comment provided by engineer. */
 "Interest" = "趣味";
+
+/* No comment provided by engineer. */
+"Knock Back" = "ノックバック";
 
 /* No comment provided by engineer. */
 "Level" = "レベル";
@@ -681,6 +687,9 @@
 
 /* No comment provided by engineer. */
 "three" = "３体";
+
+/* No comment provided by engineer. */
+"Toolbox" = "ツール";
 
 /* No comment provided by engineer. */
 "Trigger: HP is below %d%%." = "条件：HP %d%%以下";

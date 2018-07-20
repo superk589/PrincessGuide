@@ -32,7 +32,7 @@ enum DotDetail: Int, CustomStringConvertible {
     var description: String {
         switch self {
         case .detain:
-            return NSLocalizedString("Detain", comment: "")
+            return NSLocalizedString("Detain (Damage)", comment: "")
         case .poison:
             return NSLocalizedString("Poison", comment: "")
         case .burn:
@@ -86,6 +86,7 @@ enum ActionDetail: Int, CustomStringConvertible {
 
 enum AilmentType: Int, CustomStringConvertible {
     
+    case knockBack = 3
     case action = 8
     case dot
     case charm = 11
@@ -96,7 +97,8 @@ enum AilmentType: Int, CustomStringConvertible {
     
     var description: String {
         switch self {
-            
+        case .knockBack:
+            return NSLocalizedString("Knock Back", comment: "")
         case .action:
             return NSLocalizedString("Action", comment: "")
         case .dot:

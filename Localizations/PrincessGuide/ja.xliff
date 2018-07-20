@@ -684,6 +684,11 @@
         <target>拘留</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Detain (Damage)">
+        <source>Detain (Damage)</source>
+        <target>拘留(ダメージ)</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Die instantly.">
         <source>Die instantly.</source>
         <target>即死する。</target>
@@ -916,6 +921,11 @@
       </trans-unit>
       <trans-unit id="Knock %@ up %d.">
         <source>Knock %1$@ up %2$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Knock Back">
+        <source>Knock Back</source>
+        <target>ノックバック</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Level">
@@ -1202,6 +1212,10 @@
         <target>%1$@の行動速度を%2$d%%ダウン、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Resist">
+        <source>Resist</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Restore">
         <source>Restore</source>
         <note>No comment provided by engineer.</note>
@@ -1428,6 +1442,7 @@
       </trans-unit>
       <trans-unit id="Toolbox">
         <source>Toolbox</source>
+        <target>ツール</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Total Experience Needed">

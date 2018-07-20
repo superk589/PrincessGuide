@@ -21,7 +21,7 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     init(enemy: Enemy) {
         self.enemy = enemy
-        viewControllers = [EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy)]
+        viewControllers = [EDResistTableViewController(enemy: enemy), EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy)]
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = enemy.base.name
         print("load enemy, id: \(enemy.unit.unitId)")
@@ -34,7 +34,8 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let items = [NSLocalizedString("Skill", comment: ""),
+        let items = [NSLocalizedString("Resist", comment: ""),
+                     NSLocalizedString("Skill", comment: ""),
                      NSLocalizedString("Status", comment: "")]
             .map { Item(title: $0) }
         
