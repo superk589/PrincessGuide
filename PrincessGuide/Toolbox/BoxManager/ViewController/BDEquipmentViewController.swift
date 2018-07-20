@@ -131,7 +131,7 @@ class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UIC
             DispatchQueue.main.async {
                 LoadingHUDManager.default.hide()
                 self?.consumes = sortedConsumes
-                self?.collectionView.reloadData()
+                self?.collectionView?.reloadData()
             }
         }
     }
