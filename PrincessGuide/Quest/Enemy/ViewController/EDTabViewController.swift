@@ -24,6 +24,7 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         viewControllers = [EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy)]
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = enemy.base.name
+        print("load enemy, id: \(enemy.unit.unitId)")
     }
     
     required init?(coder aDecoder: NSCoder) {

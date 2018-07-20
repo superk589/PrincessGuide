@@ -290,6 +290,9 @@
 "Change self position." = "改变自身位置。";
 
 /* No comment provided by engineer. */
+"Change skill visual effect for %@s." = "改变技能视觉效果，持续 %@ 秒。";
+
+/* No comment provided by engineer. */
 "Change the perspective on %@." = "将自身视角切换到%@。";
 
 /* No comment provided by engineer. */
@@ -612,6 +615,9 @@
 
 /* No comment provided by engineer. */
 "Image" = "图片";
+
+/* No comment provided by engineer. */
+"inevitable physical" = "无法躲闪的物理";
 
 /* No comment provided by engineer. */
 "Instant Death" = "Instant Death";

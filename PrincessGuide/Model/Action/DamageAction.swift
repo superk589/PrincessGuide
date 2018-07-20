@@ -26,6 +26,11 @@ class DamageAction: ActionParameter {
                 ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: .atk),
                 ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil)
             ]
+        case .inevitablePhysical:
+            return [
+                ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: .atk),
+                ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil)
+            ]
         default:
             return []
         }

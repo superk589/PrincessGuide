@@ -478,6 +478,10 @@
         <target>自分のポジションを変える。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Change skill visual effect for %@s.">
+        <source>Change skill visual effect for %@s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Change the perspective on %@.">
         <source>Change the perspective on %@.</source>
         <note>No comment provided by engineer.</note>
@@ -1644,6 +1648,10 @@
         <source>full</source>
         <target>詳細</target>
         <note>expression style</note>
+      </trans-unit>
+      <trans-unit id="inevitable physical">
+        <source>inevitable physical</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="last effect affected or the nearest">
         <source>last effect affected or the nearest</source>

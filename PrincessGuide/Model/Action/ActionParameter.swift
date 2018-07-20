@@ -365,6 +365,7 @@ enum ClassModifier: Int, CustomStringConvertible {
     case unknown = 0
     case physical
     case magical
+    case inevitablePhysical
     
     var description: String {
         switch self {
@@ -372,6 +373,8 @@ enum ClassModifier: Int, CustomStringConvertible {
             return NSLocalizedString("magical", comment: "")
         case .physical:
             return NSLocalizedString("physical", comment: "")
+        case .inevitablePhysical:
+            return NSLocalizedString("inevitable physical", comment: "")
         case .unknown:
             return NSLocalizedString("unknown", comment: "")
         }

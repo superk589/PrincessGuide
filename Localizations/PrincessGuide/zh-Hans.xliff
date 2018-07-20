@@ -505,6 +505,11 @@
         <target>改变自身位置。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Change skill visual effect for %@s.">
+        <source>Change skill visual effect for %@s.</source>
+        <target>改变技能视觉效果，持续 %@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Change the perspective on %@.">
         <source>Change the perspective on %@.</source>
         <target>将自身视角切换到%@。</target>
@@ -1789,6 +1794,11 @@
         <source>full</source>
         <target>完整</target>
         <note>expression style</note>
+      </trans-unit>
+      <trans-unit id="inevitable physical">
+        <source>inevitable physical</source>
+        <target>无法躲闪的物理</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="last effect affected or the nearest">
         <source>last effect affected or the nearest</source>
