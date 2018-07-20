@@ -68,7 +68,7 @@ class BirthdayCenter {
         
         let sortedCards = cards.filter { $0.nextBirthday != nil }.sorted { $0.profile.unitId > $1.profile.unitId }
         for card in sortedCards {
-            if !self.cards.contains(where: { $0.profile.unitName == card.profile.unitName }) {
+            if !self.cards.contains(where: { $0.actualUnit.unitName == card.actualUnit.unitName }) {
                 self.cards.append(card)
             }
         }

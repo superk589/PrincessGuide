@@ -1,3 +1,16 @@
+# 1.1.2
+
+1. 卡片详情页新增属性对比模式，可以快速对比不同 Rank 下属性增减情况，需要在角色详情页面选项中手动打开。
+2. 修复一个导致编辑 Box 内角色时闪退的问题。
+3. 修复生日提醒中同一角色可能提醒多次的问题。
+4. 其他细节优化和改进。
+
+## English version
+1. Add status comparison mode to chara detail page, you can quickly compare status under different ranks. Default is off, you need to switch on it at chara detail options page.
+2. Fix a crash problem when editing charas in box.
+3. Fix a bug that the same chara may appear twice in upcoming birthdays.
+4. Other minor fixes and improvements.
+
 # 1.1.1
 
 1. 增加对命中属性的支持。
