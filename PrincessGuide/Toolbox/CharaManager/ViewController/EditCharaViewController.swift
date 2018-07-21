@@ -128,6 +128,12 @@ class EditCharaViewController: FormViewController {
                     }
                 }
                 .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection { [weak self] (cell, row) in
+                    if let card = self?.card {
+                        let vc = CDTabViewController(card: card)
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
             
             +++ Section(NSLocalizedString("Unit", comment: ""))
             

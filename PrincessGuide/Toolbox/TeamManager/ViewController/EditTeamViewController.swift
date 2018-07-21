@@ -249,6 +249,12 @@ class EditTeamViewController: FormViewController {
                         }
                     }
                     .cellUpdate(cellUpdate(cell:row:))
+                    .onCellSelection { [weak self] (cell, row) in
+                        if let card = member.card {
+                            let vc = CDTabViewController(card: card)
+                            self?.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
                 
                 <<< PickerInlineRow<Int>("unit_level_\(offset)") { (row : PickerInlineRow<Int>) -> Void in
                     row.title = NSLocalizedString("Level", comment: "")

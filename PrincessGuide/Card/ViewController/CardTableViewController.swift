@@ -137,6 +137,23 @@ class CardTableViewController: UITableViewController, DataChecking {
                     try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r10_r9_diff.json"))
                 }
                  */
+                
+                /*
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                if let data = try? encoder.encode(cards.map {
+                    return [
+                        $0.base.unitName: [
+                            "Star 5, Rank 10": $0.combatEffectiveness(),
+                            "Star 5, Rank 9": $0.combatEffectiveness(unitLevel: 102, unitRank: 9, bondRank: 8, unitRarity: 5, skillLevel: 102),
+                            "Star 4, Rank 10": $0.combatEffectiveness(unitLevel: 102, unitRank: 10, bondRank: 8, unitRarity: 4, skillLevel: 102),
+                            "Star 3, Rank 10": $0.combatEffectiveness(unitLevel: 102, unitRank: 10, bondRank: 8, unitRarity: 3, skillLevel: 102),
+                        ]
+                    ]
+                }) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r10_r9_cf.json"))
+                }
+                 */
             }
         }
     }
