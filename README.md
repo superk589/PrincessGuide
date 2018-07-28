@@ -1,6 +1,6 @@
-![Hatsune's Notes](./PrincessGuide/Assets.xcassets/AppIcon.appiconset/icon_76pt%402x.png)  
+# Removed from App Store
+Cygames does not allow this app and it's removed from App Store. Sorry for everyone who has supported for this project.
 
-[![](./badge-download-on-the-app-store.svg)](https://itunes.apple.com/app/id1377498032)  
 # Hatsune's Notes
 An unofficial iOS app for **プリンセスコネクト！Re:Dive**.  
 **Hatsune's Notes** is the app name and **PrincessGuide** is the project name.  
@@ -63,16 +63,7 @@ $ pod install
 ```
 $ open PrincessGuide.xcworkspace
 ```
-
-## About Pro Edition
-**Hatsune's Notes** is open-sourced and not aimed to be a commercial software. However, the server cost and the developer account cost are not a small amount of money. We need more support from our users for the future development. Pro edition is only for App Store version. If you want to support us, it's the best way. 
-
-There are still some ways to get pro edition for free.
-* Compile it from source code and run on simulators.
-* Remove the pro edition checking from source code and run on your own devices.
-* Contribute to this project and then contact the developer for an App Store promo code.
  
-
 ## Acknowledgement
 * [esterTion](https://github.com/esterTion)
 * [CaiMiao](https://github.com/CaiMiao)
