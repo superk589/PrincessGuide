@@ -178,6 +178,7 @@ class EditBoxViewController: FormViewController {
 //                }
             
             +++ Section(NSLocalizedString("Charas", comment: "")) {
+                $0.tag = "charas_section"
                 if mode == .edit {
                     $0.footer = HeaderFooterView(title: NSLocalizedString("The first chara added will be used as cover image.", comment: ""))
                 }
@@ -199,6 +200,47 @@ class EditBoxViewController: FormViewController {
                     let vc = AddCharaToBoxViewController(box: self.box, parentContext: self.context)
                     vc.delegate = self
                     self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            <<< ButtonRow("import_charas") { (row) in
+                row.title = NSLocalizedString("Import All Charas", comment: "")
+                row.hidden = Condition.function([]) {[weak self] form in
+                    return self?.mode == .edit
+                }
+                }
+                .cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                    }
+                }
+                .onCellSelection { [unowned self] (cell, row) in
+                    Preload.default.cards.values.forEach {
+                        let chara = Chara(context: self.context)
+                        
+                        chara.modifiedAt = Date()
+                        chara.level = Int16(Preload.default.maxPlayerLevel)
+                        chara.bondRank = Int16(Constant.presetMaxBondRank)
+                        chara.rank = Int16(Preload.default.maxEquipmentRank)
+                        chara.rarity = Int16(Constant.presetMaxRarity)
+                        chara.skillLevel = Int16(Preload.default.maxPlayerLevel)
+                        chara.id = Int32($0.base.unitId)
+                        chara.slots = $0.promotions.last?.defaultSlots ?? [Bool](repeating: false, count: 6)
+                        self.box.addToCharas(chara)
+                    }
+                    
+                    let charasRow = self.form.rowBy(tag: "charas") as? CharasRow
+                    charasRow?.cell.configure(for: self.box)
+                    charasRow?.reload()
+                    
+                    row.disabled = Condition.function([]) { (form) -> Bool in
+                        return true
+                    }
+                    row.evaluateDisabled()
+                    
             }
             
             <<< ButtonRow("batch_edit") { (row) in

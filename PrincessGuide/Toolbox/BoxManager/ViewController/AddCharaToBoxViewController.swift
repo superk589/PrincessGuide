@@ -129,8 +129,6 @@ class AddCharaToBoxViewController: UITableViewController {
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController?.delegate = self
         try? fetchedResultsController?.performFetch()
-        // preload
-        fetchedResultsController?.fetchedObjects?.forEach { _ = Card.findByID(Int($0.id)) }
     }
     
     private(set) lazy var selectItem = UIBarButtonItem(title: NSLocalizedString("Select All", comment: ""), style: .plain, target: self, action: #selector(selectAllCharas(_:)))

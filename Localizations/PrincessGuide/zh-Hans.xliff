@@ -975,6 +975,11 @@
         <target>图片</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Import All Charas">
+        <source>Import All Charas</source>
+        <target>导入全图鉴 Box</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Instant Death">
         <source>Instant Death</source>
         <target>即死</target>

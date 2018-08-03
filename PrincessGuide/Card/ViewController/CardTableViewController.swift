@@ -87,22 +87,27 @@ class CardTableViewController: UITableViewController, DataChecking {
                  */
                 
                 /*
+                struct CardSkill: Codable {
+                    var name: String
+                    var skills: [String: [String]]
+                }
+                
                 let encoder = JSONEncoder()
                 encoder.outputFormatting = .prettyPrinted
                 let settings = CDSettingsViewController.Setting.default
-                if let data = try? encoder.encode(cards.map { (card) -> [String: [String: [String]]] in
+                let cardSkills = cards.map { (card) -> CardSkill in
                     let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: true)
-                    return [
-                        card.base.unitName: [
-                            "ub": card.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                            "main_1": card.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                            "main_2": card.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                            "ex": card.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                            "ex+": card.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                        ]
-                    ]
-                }) {
-                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills_r9_95_ex.json"))
+                    return CardSkill(name: card.base.unitName, skills: [
+                        "ub": card.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        "main_1": card.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        "main_2": card.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        "ex": card.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        "ex+": card.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        ])
+                }
+                
+                if let data = try? encoder.encode(cardSkills) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills.json"))
                 }
                  */
                 
