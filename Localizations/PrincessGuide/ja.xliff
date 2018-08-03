@@ -1533,6 +1533,10 @@
         <target>Wave %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Wave %d (x%.2f)">
+        <source>Wave %1$d (x%2$.2f)</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Wave Energy Recovery">
         <source>Wave Energy Recovery</source>
         <target>TP自動回復</target>

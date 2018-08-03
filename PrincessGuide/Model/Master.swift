@@ -621,8 +621,9 @@ class Master: FMDatabaseQueue {
                         let groupId = json["clan_battle_boss_group_id"].intValue
                         let waveId = json["wave_group_id"].intValue
                         let orderNum = json["order_num"].intValue
+                        let scoreCoefficient = json["score_coefficient"].doubleValue
                         if let wave = try self.getWaves(from: db, waveIDs: [waveId]).first {
-                            groups.append(ClanBattle.Group(wave: wave, groupId: groupId, orderNum: orderNum))
+                            groups.append(ClanBattle.Group(wave: wave, groupId: groupId, orderNum: orderNum, scoreCoefficient: scoreCoefficient))
                         }
                     }
                     let clanBattle = ClanBattle(period: period, groups: groups)

@@ -32,10 +32,11 @@ class ClanBattle: Codable {
         let wave: Wave
         let groupId: Int
         let orderNum: Int
+        let scoreCoefficient: Double
     }
     
     struct Round {
-        let waves: [Wave]
+        let groups: [Group]
         let groupId: Int
         
         var name: String {
@@ -52,8 +53,7 @@ class ClanBattle: Codable {
         var rounds = [Round]()
         var ids = Set(groups.map { $0.groupId })
         for id in ids {
-            let waves = groups.filter { $0.groupId == id }.map { $0.wave }
-            let round = Round(waves: waves, groupId: id)
+            let round = Round(groups: groups.filter { $0.groupId == id }, groupId: id)
             rounds.append(round)
         }
         return rounds.sorted { $0.groupId < $1.groupId }

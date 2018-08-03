@@ -1662,7 +1662,12 @@
       </trans-unit>
       <trans-unit id="Wave %d">
         <source>Wave %d</source>
-        <target>Wave %d</target>
+        <target>第 %d 波</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Wave %d (x%.2f)">
+        <source>Wave %1$d (x%2$.2f)</source>
+        <target>第 %d 波（x%.2f）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave Energy Recovery">

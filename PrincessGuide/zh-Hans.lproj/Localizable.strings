@@ -1199,7 +1199,10 @@
 "Vanguard" = "前卫";
 
 /* No comment provided by engineer. */
-"Wave %d" = "Wave %d";
+"Wave %d" = "第 %d 波";
+
+/* No comment provided by engineer. */
+"Wave %d (x%.2f)" = "第 %d 波（x%.2f）";
 
 /* No comment provided by engineer. */
 "Wave Energy Recovery" = "TP 自动恢复";

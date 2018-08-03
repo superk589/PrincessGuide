@@ -18,6 +18,7 @@ class QuestEnemyTableViewController: UITableViewController {
         enum Model {
             case quest(String)
             case wave(Wave, Int)
+            case clanBattleWave(Wave, Int, Double)
         }
     }
 
@@ -34,7 +35,7 @@ class QuestEnemyTableViewController: UITableViewController {
     init(clanBattle: ClanBattle) {
         self.rows = clanBattle.rounds.flatMap {
             [Row(type: QuestNameTableViewCell.self, data: .quest($0.name))] +
-                $0.waves.enumerated().map{ Row(type: QuestEnemyTableViewCell.self, data: .wave($0.element, $0.offset)) }
+                $0.groups.enumerated().map{ Row(type: QuestEnemyTableViewCell.self, data: .clanBattleWave($0.element.wave, $0.offset, $0.element.scoreCoefficient)) }
         }
         super.init(nibName: nil, bundle: nil)
     }
@@ -87,7 +88,14 @@ class QuestEnemyTableViewController: UITableViewController {
         switch (cell, row.data) {
         case (let cell as QuestEnemyTableViewCell, .wave(let wave, let index)):
             cell.delegate = self
-            cell.configure(for: wave, index: index)
+            let format = NSLocalizedString("Wave %d", comment: "")
+            let title = String(format: format, index + 1)
+            cell.configure(for: wave, title: title)
+        case (let cell as QuestEnemyTableViewCell, .clanBattleWave(let wave, let index, let coefficient)):
+            cell.delegate = self
+            let format = NSLocalizedString("Wave %d (x%.2f)", comment: "")
+            let title = String(format: format, index + 1, coefficient)
+            cell.configure(for: wave, title: title)
         case (let cell as QuestNameTableViewCell, .quest(let name)):
             cell.configure(for: name)
         default:
