@@ -59,9 +59,9 @@ class SettingsTableViewController: UITableViewController {
         sections.append(Section(rows: feedbackRows, title: NSLocalizedString("Feedback", comment: "")))
         
         var aboutRows = [Row]()
-        if !Defaults.proEdition {
-            aboutRows.append(Row(title: NSLocalizedString("Upgrade to Pro Edition", comment: ""), detail: "", hasDisclosure: true, accessoryView: nil, selector: #selector(upgradeToProEdition)))
-        }
+//        if !Defaults.proEdition {
+//            aboutRows.append(Row(title: NSLocalizedString("Upgrade to Pro Edition", comment: ""), detail: "", hasDisclosure: true, accessoryView: nil, selector: #selector(upgradeToProEdition)))
+//        }
         aboutRows.append(Row(title: NSLocalizedString("Third-Party Licenses", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
         let versionInfo = Defaults.proEdition ? VersionManager.shared.appVersion + " (Pro)" : VersionManager.shared.appVersion
         aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: versionInfo, hasDisclosure: false, accessoryView: nil, selector: nil))

@@ -63,11 +63,11 @@ class ToolboxTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ToolboxTableViewCell.description(), for: indexPath) as! ToolboxTableViewCell
         let row = rows[indexPath.row]
-        if row.isProFeature && !Defaults.proEdition {
-            cell.configure(for: row.title + " (Pro)")
-        } else {
+//        if row.isProFeature && !Defaults.proEdition {
+//            cell.configure(for: row.title + " (Pro)")
+//        } else {
             cell.configure(for: row.title)
-        }
+//        }
         return cell
     }
     
@@ -75,20 +75,20 @@ class ToolboxTableViewController: UITableViewController {
         
         let row = rows[indexPath.row]
         
-        #if targetEnvironment(simulator)
+//        #if targetEnvironment(simulator)
             let vc = row.vcType.init()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
-        #else
-            if row.isProFeature && !Defaults.proEdition {
-                let vc = BuyProEditionViewController()
-                vc.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(vc, animated: true)
-            } else {
-                let vc = row.vcType.init()
-                vc.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(vc, animated: true)
-            }
-        #endif
+//        #else
+//            if row.isProFeature && !Defaults.proEdition {
+//                let vc = BuyProEditionViewController()
+//                vc.hidesBottomBarWhenPushed = true
+//                navigationController?.pushViewController(vc, animated: true)
+//            } else {
+//                let vc = row.vcType.init()
+//                vc.hidesBottomBarWhenPushed = true
+//                navigationController?.pushViewController(vc, animated: true)
+//            }
+//        #endif
     }
 }
