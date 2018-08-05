@@ -432,7 +432,7 @@ extension Card {
     
     func comicImageURLs(postfix: String = "") -> [URL] {
         return comics.map {
-            URL.image.appendingPathComponent("comic/\($0)_01.webp\(postfix)")
+            URL.image.appendingPathComponent("tw/comic/\($0)_01.webp\(postfix)")
         }
     }
     
