@@ -136,7 +136,11 @@ struct Property: Codable, Equatable {
     }
     
     func noneZeroProperties() -> [Property.Item] {
-        return PropertyKey.all.compactMap { item(for: $0) }.filter { $0.value != 0 }
+        return allProperties().filter { $0.value != 0 }
+    }
+    
+    func allProperties() -> [Property.Item] {
+        return PropertyKey.all.compactMap { item(for: $0) }
     }
 }
 

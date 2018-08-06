@@ -1,7 +1,7 @@
 PODS:
   - AcknowList (1.6)
   - Alamofire (4.7.2)
-  - AutoInsetter (1.2.3)
+  - AutoInsetter (1.2.6)
   - DynamicColor (4.0.2)
   - Eureka (4.1.1)
   - FMDB (2.7.2):
@@ -39,12 +39,12 @@ PODS:
   - libwebp/webp (0.6.1)
   - lz4 (128)
   - MJRefresh (3.1.15.3)
-  - Pageboy (2.5.1)
+  - Pageboy (2.5.4)
   - ReachabilitySwift (4.1.0)
   - SnapKit (4.0.0)
   - SwiftyJSON (4.1.0)
   - SwiftyStoreKit (0.13.2)
-  - Tabman (1.8.2):
+  - Tabman (1.9.0):
     - AutoInsetter (~> 1.2.0)
     - Pageboy (~> 2.5.0)
   - Timepiece (1.3.1)
@@ -108,13 +108,13 @@ CHECKOUT OPTIONS:
     :commit: e17c8a76e2d248eaed459a755aecc29b3948c57e
     :git: https://github.com/superk589/ImageViewer.git
   Tabman:
-    :commit: 6c933f1bb6debbb58ceca73a7aa7e16c99794117
+    :commit: 14f0062f5919e6d9c02b3268c79d8d923b118830
     :git: https://github.com/superk589/Tabman.git
 
 SPEC CHECKSUMS:
   AcknowList: 2b27ccc75110be58be37424c4b08b07bdec628b4
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  AutoInsetter: 1a8f8ad5e7da8e993970b3809cfb8e8e330f4db1
+  AutoInsetter: 3713c857f3c0cc4b6265fe55ecf0c14bfe8622ee
   DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
   Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
@@ -125,12 +125,12 @@ SPEC CHECKSUMS:
   libwebp: 0f01098c6c17175391af621b2f14150f3ca16e16
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
+  Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyStoreKit: b7563505440a68c9d9fa70bc43d8a97015519409
-  Tabman: 69ce69b44cec1ad693b82c24cdbdf0c45915668c
+  Tabman: d3da731f3bbb1dc04f2cdcac691fcecfffee7b97
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
 

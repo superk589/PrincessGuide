@@ -130,14 +130,14 @@ class CardTableViewController: UITableViewController, DataChecking {
                  */
                 
                 /*
+                struct CardPropertyDiff: Codable {
+                    var name: String
+                    var properties: [Property.Item]
+                }
                 let encoder = JSONEncoder()
                 encoder.outputFormatting = .prettyPrinted
                 if let data = try? encoder.encode(cards.map {
-                    return [
-                        $0.base.unitName: ($0.property() - $0.property(unitRank: 9)).noneZeroProperties().reduce(into: [:]) {
-                            $0[$1.key.description] = $1.value
-                        }
-                    ]
+                    return CardPropertyDiff(name: $0.base.unitName, properties: ($0.property() - $0.property(unitRank: 9)).allProperties())
                 }) {
                     try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r10_r9_diff.json"))
                 }
