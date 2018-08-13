@@ -9,11 +9,12 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
+import BrotliKit
 
 extension URL {
     static let check = URL(string: "https://redive.estertion.win/last_version.json")!
     static func master(_ hash: String) -> URL {
-        return URL(string: "https://priconne-redive.akamaized.net/dl/pool/AssetBundles/\(hash[0..<2])/\(hash)")!
+        return URL(string: "https://redive.estertion.win/db/redive_jp.db.br")!
     }
 }
 
@@ -63,11 +64,10 @@ class Updater {
                 completion(nil, error)
             case .success(let data):
                 do {
-                    let result = try extractBundle(data: data)
-                    guard let asset = result.first else {
-                        throw UnityFSError.invalidData
+                    guard let db = BrotliCompressor.decompressedData(with: data) else {
+                        completion(nil, NSError())
+                        return
                     }
-                    let db = try extractAsset(data: asset.data)
                     try db.write(to: Master.url, options: .atomic)
                     NotificationCenter.default.post(name: .updateEnd, object: nil)
                     completion(db, nil)

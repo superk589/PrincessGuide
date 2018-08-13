@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0873DCABFBE8D57C7AF3BFF8 /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */; };
 		120BCAF220F20F3C0029A083 /* BDInfoTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */; };
 		120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF320F2564B0029A083 /* ArrayExtension.swift */; };
 		120BCAF620F4DEA20029A083 /* EditTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF520F4DEA20029A083 /* EditTeamViewController.swift */; };
@@ -234,7 +235,6 @@
 		12F1263D20BCD86B005C9659 /* CDTextItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263C20BCD86B005C9659 /* CDTextItemView.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
-		F3C00E4288A17CC17CEB3F7B /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247E7A32C44944662B797336 /* Pods_PrincessGuide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +248,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDInfoTextCell.swift; sourceTree = "<group>"; };
 		120BCAF320F2564B0029A083 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		120BCAF520F4DEA20029A083 /* EditTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTeamViewController.swift; sourceTree = "<group>"; };
@@ -487,9 +488,8 @@
 		12F1263C20BCD86B005C9659 /* CDTextItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextItemView.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
-		247E7A32C44944662B797336 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E3E591FAEA0CFBE04C74E6D /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
-		A20BAB92F88845D6373021AC /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
+		3D97751EC21D0717972B78A6 /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
+		85266E68CCED5C8F4B6EAF5C /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -499,7 +499,7 @@
 			files = (
 				122071EC20F9F54D00554030 /* StoreKit.framework in Frameworks */,
 				1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */,
-				F3C00E4288A17CC17CEB3F7B /* Pods_PrincessGuide.framework in Frameworks */,
+				0873DCABFBE8D57C7AF3BFF8 /* Pods_PrincessGuide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +513,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0701FDC293542EF8848F28EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D97751EC21D0717972B78A6 /* Pods-PrincessGuide.debug.xcconfig */,
+				85266E68CCED5C8F4B6EAF5C /* Pods-PrincessGuide.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		120BCAF920F4DEF30029A083 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,7 +787,7 @@
 				129A7F6820A06DE500D93996 /* PrincessGuideTests */,
 				12659E03205F5DB100A8B9A2 /* Products */,
 				C4EE8380F1630D9BF0C1B7E0 /* Frameworks */,
-				77AFE87E38BBBBEC39F55FCA /* Pods */,
+				0701FDC293542EF8848F28EF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1111,21 +1120,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		77AFE87E38BBBBEC39F55FCA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7E3E591FAEA0CFBE04C74E6D /* Pods-PrincessGuide.debug.xcconfig */,
-				A20BAB92F88845D6373021AC /* Pods-PrincessGuide.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		C4EE8380F1630D9BF0C1B7E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				122071EB20F9F54D00554030 /* StoreKit.framework */,
 				1221CDCC207C4197008F30AA /* libsqlite3.tbd */,
-				247E7A32C44944662B797336 /* Pods_PrincessGuide.framework */,
+				0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1137,11 +1137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12659E14205F5DB100A8B9A2 /* Build configuration list for PBXNativeTarget "PrincessGuide" */;
 			buildPhases = (
-				EFD01C496873A05F255287CC /* [CP] Check Pods Manifest.lock */,
+				5E4574CB3F020CA5CAC83ACF /* [CP] Check Pods Manifest.lock */,
 				12659DFE205F5DB100A8B9A2 /* Sources */,
 				12659DFF205F5DB100A8B9A2 /* Frameworks */,
 				12659E00205F5DB100A8B9A2 /* Resources */,
-				032EC2424CC2A20AC182DE31 /* [CP] Embed Pods Frameworks */,
+				25832C3B065A527BC10EE18E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1243,7 +1243,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		032EC2424CC2A20AC182DE31 /* [CP] Embed Pods Frameworks */ = {
+		25832C3B065A527BC10EE18E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1253,6 +1253,7 @@
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
+				"${BUILT_PRODUCTS_DIR}/BrotliKit/BrotliKit.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
@@ -1277,6 +1278,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrotliKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
@@ -1301,7 +1303,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EFD01C496873A05F255287CC /* [CP] Check Pods Manifest.lock */ = {
+		5E4574CB3F020CA5CAC83ACF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1730,7 +1732,7 @@
 		};
 		12659E15205F5DB100A8B9A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E3E591FAEA0CFBE04C74E6D /* Pods-PrincessGuide.debug.xcconfig */;
+			baseConfigurationReference = 3D97751EC21D0717972B78A6 /* Pods-PrincessGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1750,7 +1752,7 @@
 		};
 		12659E16205F5DB100A8B9A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A20BAB92F88845D6373021AC /* Pods-PrincessGuide.release.xcconfig */;
+			baseConfigurationReference = 85266E68CCED5C8F4B6EAF5C /* Pods-PrincessGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

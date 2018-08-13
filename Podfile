@@ -19,4 +19,5 @@ target 'PrincessGuide' do
   pod 'Eureka', :git => 'https://github.com/superk589/Eureka.git', :branch => 'picker-row-support-attributed-strings'
   pod 'ImageViewer', :git => 'https://github.com/superk589/ImageViewer.git'
   pod 'SwiftyStoreKit'
+  pod 'BrotliKit'
 end
