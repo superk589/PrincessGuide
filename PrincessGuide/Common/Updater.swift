@@ -12,7 +12,7 @@ import Alamofire
 import BrotliKit
 
 extension URL {
-    static let check = URL(string: "https://redive.estertion.win/last_version.json")!
+    static let check = URL(string: "https://redive.estertion.win/last_version_jp.json")!
     static func master(_ hash: String) -> URL {
         return URL(string: "https://redive.estertion.win/db/redive_jp.db.br")!
     }
