@@ -176,6 +176,10 @@
 		12EBF70B20F7952600120C2A /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70A20F7952600120C2A /* MemberView.swift */; };
 		12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */; };
 		12EBF71120F7BC0500120C2A /* StrokedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF71020F7BC0500120C2A /* StrokedLabel.swift */; };
+		12ECB2C22128459500CDAA8E /* VersionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ECB2C12128459500CDAA8E /* VersionLog.swift */; };
+		12ECB2C721284F6600CDAA8E /* VLModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ECB2C621284F6600CDAA8E /* VLModelTests.swift */; };
+		12ECB2C92128502400CDAA8E /* VLModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 12ECB2C82128502400CDAA8E /* VLModel.json */; };
+		12ECB2CB2128542800CDAA8E /* VLModel2.json in Resources */ = {isa = PBXBuildFile; fileRef = 12ECB2CA2128542800CDAA8E /* VLModel2.json */; };
 		12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */; };
 		12F125AD20AEB3C6005C9659 /* CDImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */; };
 		12F125B120AEC069005C9659 /* CDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125B020AEC069005C9659 /* CDImageView.swift */; };
@@ -429,6 +433,10 @@
 		12EBF70A20F7952600120C2A /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 		12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		12EBF71020F7BC0500120C2A /* StrokedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokedLabel.swift; sourceTree = "<group>"; };
+		12ECB2C12128459500CDAA8E /* VersionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionLog.swift; sourceTree = "<group>"; };
+		12ECB2C621284F6600CDAA8E /* VLModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLModelTests.swift; sourceTree = "<group>"; };
+		12ECB2C82128502400CDAA8E /* VLModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VLModel.json; sourceTree = "<group>"; };
+		12ECB2CA2128542800CDAA8E /* VLModel2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VLModel2.json; sourceTree = "<group>"; };
 		12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonBossTableViewController.swift; sourceTree = "<group>"; };
 		12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageTableViewCell.swift; sourceTree = "<group>"; };
 		12F125B020AEC069005C9659 /* CDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageView.swift; sourceTree = "<group>"; };
@@ -540,6 +548,7 @@
 				120F9B5020E4DC8F003632CA /* CharaManager */,
 				120F9B4A20E4DA68003632CA /* ViewController */,
 				120F9B4D20E4DA9B003632CA /* View */,
+				12ECB2BA212843F100CDAA8E /* VersionLog */,
 			);
 			path = Toolbox;
 			sourceTree = "<group>";
@@ -858,6 +867,9 @@
 				129A7F6920A06DE500D93996 /* PrincessGuideTests.swift */,
 				129A7F6B20A06DE500D93996 /* Info.plist */,
 				1218E61720A6D53700D68610 /* InfoPlist.strings */,
+				12ECB2C621284F6600CDAA8E /* VLModelTests.swift */,
+				12ECB2C82128502400CDAA8E /* VLModel.json */,
+				12ECB2CA2128542800CDAA8E /* VLModel2.json */,
 			);
 			path = PrincessGuideTests;
 			sourceTree = "<group>";
@@ -1031,6 +1043,38 @@
 				122071E720F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		12ECB2BA212843F100CDAA8E /* VersionLog */ = {
+			isa = PBXGroup;
+			children = (
+				12ECB2C32128459900CDAA8E /* Model */,
+				12ECB2BB212843FF00CDAA8E /* ViewController */,
+				12ECB2BE2128442100CDAA8E /* View */,
+			);
+			path = VersionLog;
+			sourceTree = "<group>";
+		};
+		12ECB2BB212843FF00CDAA8E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		12ECB2BE2128442100CDAA8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12ECB2C32128459900CDAA8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12ECB2C12128459500CDAA8E /* VersionLog.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		12F125D520B92658005C9659 /* Action */ = {
@@ -1237,6 +1281,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1218E61920A6D53700D68610 /* InfoPlist.strings in Resources */,
+				12ECB2C92128502400CDAA8E /* VLModel.json in Resources */,
+				12ECB2CB2128542800CDAA8E /* VLModel2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,6 +1453,7 @@
 				12F1261520B954DB005C9659 /* SealAction.swift in Sources */,
 				12DC963720EDECFE008896D7 /* BoxTableViewController.swift in Sources */,
 				12F125F920B950F9005C9659 /* NoDamageAction.swift in Sources */,
+				12ECB2C22128459500CDAA8E /* VersionLog.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
 				123608E92093234F003E7D11 /* RefreshHeader.swift in Sources */,
 				120BCAF620F4DEA20029A083 /* EditTeamViewController.swift in Sources */,
@@ -1553,6 +1600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				129A7F6A20A06DE500D93996 /* PrincessGuideTests.swift in Sources */,
+				12ECB2C721284F6600CDAA8E /* VLModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
