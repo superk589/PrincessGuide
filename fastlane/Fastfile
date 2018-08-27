@@ -24,7 +24,7 @@ platform :ios do
       build_number: latest_testflight_build_number + 1,
       xcodeproj: "PrincessGuide.xcodeproj"
     )
-    cocoapods
+    # cocoapods
     build_app(workspace: "PrincessGuide.xcworkspace", scheme: "PrincessGuide")
     upload_to_testflight
   end
