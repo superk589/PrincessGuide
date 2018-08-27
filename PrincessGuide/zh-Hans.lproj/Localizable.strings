@@ -458,6 +458,9 @@
 "Draw %@ toward self %d." = "拉近%1$@，距离 %2$d。";
 
 /* No comment provided by engineer. */
+"Drop" = "掉落";
+
+/* No comment provided by engineer. */
 "Dropped" = "掉落";
 
 /* No comment provided by engineer. */
@@ -701,6 +704,9 @@
 "Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page." = "确保您已经用同一个 Apple ID 登录了新设备，然后点击右上角的恢复按钮。";
 
 /* No comment provided by engineer. */
+"Mana" = "Mana ";
+
+/* No comment provided by engineer. */
 "Mana Cost of Crafting" = "制作装备所需 Mana";
 
 /* No comment provided by engineer. */
@@ -716,6 +722,9 @@
 "max 16 characters" = "最多 16 个字符";
 
 /* No comment provided by engineer. */
+"Max Level to %@" = "最大等级提高至 %@";
+
+/* No comment provided by engineer. */
 "Members" = "队员";
 
 /* No comment provided by engineer. */
@@ -723,6 +732,9 @@
 
 /* No comment provided by engineer. */
 "Misc" = "杂项";
+
+/* No comment provided by engineer. */
+"Mission" = "探索";
 
 /* No comment provided by engineer. */
 "Move Speed" = "移动速度";
@@ -737,7 +749,34 @@
 "Multiple [%@ * lost HP / max HP] to next effect." = "使下一个效果的数值乘以 [%@ * 损失的 HP / 最大 HP]。";
 
 /* No comment provided by engineer. */
+"New Campaign: %@ %@ x%d" = "新奖励事件：%1$@%2$@ x%3$d";
+
+/* No comment provided by engineer. */
+"New Clan Battle: %@" = "新公会战：%@";
+
+/* No comment provided by engineer. */
+"New Dungeon: %@" = "新地下城（塔）：%@";
+
+/* No comment provided by engineer. */
+"New Gacha: %@" = "新卡池：%@";
+
+/* No comment provided by engineer. */
+"New Quest Area: %@" = "新任务区域：%@";
+
+/* No comment provided by engineer. */
+"New Story Event: %@" = "新剧情活动：%@";
+
+/* No comment provided by engineer. */
+"New Story of %@" = "新故事：%@";
+
+/* No comment provided by engineer. */
+"New Unit: %@" = "新角色：%@";
+
+/* No comment provided by engineer. */
 "Next" = "下一步";
+
+/* No comment provided by engineer. */
+"No more data" = "没有更多数据了";
 
 /* No comment provided by engineer. */
 "None" = "无";
@@ -1197,6 +1236,9 @@
 
 /* No comment provided by engineer. */
 "Vanguard" = "前卫";
+
+/* No comment provided by engineer. */
+"Version Log" = "数据更新日志";
 
 /* No comment provided by engineer. */
 "Wave %d" = "第 %d 波";

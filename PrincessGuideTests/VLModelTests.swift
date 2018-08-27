@@ -43,7 +43,7 @@ class VLModelTests: XCTestCase {
     func testModel() {
         XCTAssert(model != nil)
         XCTAssert(model.page == 2)
-        XCTAssert(model.pages == 4)
+        XCTAssert(model.pages == 3)
         XCTAssert(model.data.contains { $0.story != nil } )
         XCTAssert(model.data.contains { $0.event != nil } )
         XCTAssert(model.data.contains { $0.questArea != nil } )
@@ -54,7 +54,7 @@ class VLModelTests: XCTestCase {
         XCTAssert(model.data.contains { $0.gacha != nil } )
 
         XCTAssert(model2 != nil)
-        XCTAssert(model2.pages == 4)
+        XCTAssert(model2.pages == 3)
         XCTAssert(model2.page == 1)
         XCTAssert(model2.data.contains { $0.dungeonArea != nil } )
         XCTAssert(model2.data.contains { $0.maxRank != nil } )

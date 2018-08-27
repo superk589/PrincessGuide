@@ -765,6 +765,11 @@
         <target>拉近%1$@，距离 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Drop">
+        <source>Drop</source>
+        <target>掉落</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Dropped">
         <source>Dropped</source>
         <target>掉落</target>
@@ -1090,6 +1095,11 @@
         <target>确保您已经用同一个 Apple ID 登录了新设备，然后点击右上角的恢复按钮。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Mana">
+        <source>Mana</source>
+        <target>Mana </target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Mana Cost of Crafting">
         <source>Mana Cost of Crafting</source>
         <target>制作装备所需 Mana</target>
@@ -1110,6 +1120,11 @@
         <target>标记</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Max Level to %@">
+        <source>Max Level to %@</source>
+        <target>最大等级提高至 %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Members">
         <source>Members</source>
         <target>队员</target>
@@ -1118,6 +1133,11 @@
       <trans-unit id="Misc">
         <source>Misc</source>
         <target>杂项</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Mission">
+        <source>Mission</source>
+        <target>探索</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Move Speed">
@@ -1140,9 +1160,54 @@
         <target>使下一个效果的数值乘以 [%@ * 损失的 HP / 最大 HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="New Campaign: %@ %@ x%d">
+        <source>New Campaign: %1$@ %2$@ x%3$d</source>
+        <target>新奖励事件：%1$@%2$@ x%3$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Clan Battle: %@">
+        <source>New Clan Battle: %@</source>
+        <target>新公会战：%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Dungeon: %@">
+        <source>New Dungeon: %@</source>
+        <target>新地下城（塔）：%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Gacha: %@">
+        <source>New Gacha: %@</source>
+        <target>新卡池：%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Quest Area: %@">
+        <source>New Quest Area: %@</source>
+        <target>新任务区域：%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Story Event: %@">
+        <source>New Story Event: %@</source>
+        <target>新剧情活动：%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Story of %@">
+        <source>New Story of %@</source>
+        <target>新故事：%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Unit: %@">
+        <source>New Unit: %@</source>
+        <target>新角色：%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Next">
         <source>Next</source>
         <target>下一步</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No more data">
+        <source>No more data</source>
+        <target>没有更多数据了</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="None">
@@ -1658,6 +1723,11 @@
       <trans-unit id="Vanguard">
         <source>Vanguard</source>
         <target>前卫</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Version Log">
+        <source>Version Log</source>
+        <target>数据更新日志</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave %d">

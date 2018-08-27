@@ -62,6 +62,10 @@
 		1223A8E820F0A1D600C98BB2 /* CardWithBirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E720F0A1D600C98BB2 /* CardWithBirthdayCell.swift */; };
 		1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E920F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift */; };
 		1223A8EC20F0B4EB00C98BB2 /* NotificationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8EB20F0B4EB00C98BB2 /* NotificationHandle.swift */; };
+		122552282133977C00CB0D3E /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122552272133977C00CB0D3E /* StatusIndicator.swift */; };
+		1225522A213397B300CB0D3E /* TimeStatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12255229213397B300CB0D3E /* TimeStatusIndicator.swift */; };
+		1225522C2133A1FC00CB0D3E /* RefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225522B2133A1FC00CB0D3E /* RefreshFooter.swift */; };
+		1225522E2133E22300CB0D3E /* VLNoScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225522D2133E22300CB0D3E /* VLNoScheduleTableViewCell.swift */; };
 		1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */; };
 		1226532320AD626700BB3E56 /* Resist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226532220AD626700BB3E56 /* Resist.swift */; };
 		1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226532420AD68BE00BB3E56 /* EDResistTableViewController.swift */; };
@@ -173,6 +177,9 @@
 		12E3324220F5EAE200844A6A /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324120F5EAE200844A6A /* CardCollectionViewController.swift */; };
 		12E3324420F5ED7600844A6A /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324320F5ED7600844A6A /* CardCollectionViewCell.swift */; };
 		12E3324620F5F9C200844A6A /* CandidateCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324520F5F9C200844A6A /* CandidateCardsView.swift */; };
+		12E64A5521313AC50075BE01 /* VLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5421313AC50075BE01 /* VLTableViewController.swift */; };
+		12E64A5721313AD40075BE01 /* VLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5621313AD40075BE01 /* VLTableViewCell.swift */; };
+		12E64A5B213143330075BE01 /* VLTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5A213143330075BE01 /* VLTableViewHeaderFooterView.swift */; };
 		12EBF70B20F7952600120C2A /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70A20F7952600120C2A /* MemberView.swift */; };
 		12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */; };
 		12EBF71120F7BC0500120C2A /* StrokedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF71020F7BC0500120C2A /* StrokedLabel.swift */; };
@@ -310,6 +317,10 @@
 		1223A8E720F0A1D600C98BB2 /* CardWithBirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithBirthdayCell.swift; sourceTree = "<group>"; };
 		1223A8E920F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithBirthdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		1223A8EB20F0B4EB00C98BB2 /* NotificationHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandle.swift; sourceTree = "<group>"; };
+		122552272133977C00CB0D3E /* StatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
+		12255229213397B300CB0D3E /* TimeStatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStatusIndicator.swift; sourceTree = "<group>"; };
+		1225522B2133A1FC00CB0D3E /* RefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFooter.swift; sourceTree = "<group>"; };
+		1225522D2133E22300CB0D3E /* VLNoScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLNoScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventTableViewCell.swift; sourceTree = "<group>"; };
 		1226532220AD626700BB3E56 /* Resist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resist.swift; sourceTree = "<group>"; };
 		1226532420AD68BE00BB3E56 /* EDResistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDResistTableViewController.swift; sourceTree = "<group>"; };
@@ -430,6 +441,9 @@
 		12E3324120F5EAE200844A6A /* CardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewController.swift; sourceTree = "<group>"; };
 		12E3324320F5ED7600844A6A /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		12E3324520F5F9C200844A6A /* CandidateCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateCardsView.swift; sourceTree = "<group>"; };
+		12E64A5421313AC50075BE01 /* VLTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewController.swift; sourceTree = "<group>"; };
+		12E64A5621313AD40075BE01 /* VLTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewCell.swift; sourceTree = "<group>"; };
+		12E64A5A213143330075BE01 /* VLTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		12EBF70A20F7952600120C2A /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 		12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		12EBF71020F7BC0500120C2A /* StrokedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokedLabel.swift; sourceTree = "<group>"; };
@@ -662,6 +676,9 @@
 				12F125C720B7AD8F005C9659 /* CompletionView.swift */,
 				12F125C920B7D42F005C9659 /* ErrorView.swift */,
 				123608E82093234F003E7D11 /* RefreshHeader.swift */,
+				1225522B2133A1FC00CB0D3E /* RefreshFooter.swift */,
+				122552272133977C00CB0D3E /* StatusIndicator.swift */,
+				12255229213397B300CB0D3E /* TimeStatusIndicator.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1045,28 +1062,32 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		12ECB2BA212843F100CDAA8E /* VersionLog */ = {
+		12E64A5821313AD80075BE01 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				12ECB2C32128459900CDAA8E /* Model */,
-				12ECB2BB212843FF00CDAA8E /* ViewController */,
-				12ECB2BE2128442100CDAA8E /* View */,
-			);
-			path = VersionLog;
-			sourceTree = "<group>";
-		};
-		12ECB2BB212843FF00CDAA8E /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
+				12E64A5421313AC50075BE01 /* VLTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		12ECB2BE2128442100CDAA8E /* View */ = {
+		12E64A5921313AE10075BE01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12E64A5621313AD40075BE01 /* VLTableViewCell.swift */,
+				1225522D2133E22300CB0D3E /* VLNoScheduleTableViewCell.swift */,
+				12E64A5A213143330075BE01 /* VLTableViewHeaderFooterView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		12ECB2BA212843F100CDAA8E /* VersionLog */ = {
+			isa = PBXGroup;
+			children = (
+				12ECB2C32128459900CDAA8E /* Model */,
+				12E64A5821313AD80075BE01 /* ViewController */,
+				12E64A5921313AE10075BE01 /* View */,
+			);
+			path = VersionLog;
 			sourceTree = "<group>";
 		};
 		12ECB2C32128459900CDAA8E /* Model */ = {
@@ -1395,6 +1416,7 @@
 				127FB85920F44BE1009B53CC /* Preload.swift in Sources */,
 				12F1261320B954C1005C9659 /* AccumulativeDamageAction.swift in Sources */,
 				122071E620F9DF7D00554030 /* AddTeamToTeamViewController.swift in Sources */,
+				122552282133977C00CB0D3E /* StatusIndicator.swift in Sources */,
 				1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */,
 				12F1260920B953BD005C9659 /* SearchAreaChangeAction.swift in Sources */,
 				12F1261920B95509005C9659 /* HealFieldAction.swift in Sources */,
@@ -1423,6 +1445,7 @@
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
 				12F1262D20B95636005C9659 /* UpperLimitAttackAction.swift in Sources */,
+				1225522E2133E22300CB0D3E /* VLNoScheduleTableViewCell.swift in Sources */,
 				122071F420FA371500554030 /* ProductTableViewCell.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
@@ -1439,7 +1462,9 @@
 				1223A8E220F0904F00C98BB2 /* BirthdayViewController.swift in Sources */,
 				12B85D33208996FF0088F5FB /* DispatchExtension.swift in Sources */,
 				12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */,
+				12E64A5721313AD40075BE01 /* VLTableViewCell.swift in Sources */,
 				12B85D31208993470088F5FB /* Coefficient.swift in Sources */,
+				12E64A5521313AC50075BE01 /* VLTableViewController.swift in Sources */,
 				12F125E520B93D99005C9659 /* ReflexiveAction.swift in Sources */,
 				12F125D720B92686005C9659 /* DamageAction.swift in Sources */,
 				1280DE3320A09278008D9D72 /* CDPropertyViewController.swift in Sources */,
@@ -1490,6 +1515,7 @@
 				12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */,
 				12398E83209158EB006AC352 /* QuestAreaTableViewController.swift in Sources */,
 				120BCAFD20F4E6C80029A083 /* MembersCell.swift in Sources */,
+				1225522A213397B300CB0D3E /* TimeStatusIndicator.swift in Sources */,
 				1281FA52209AE3E900F2D567 /* Craft.swift in Sources */,
 				1280DE3D20A5B673008D9D72 /* EDProfileTextTableViewCell.swift in Sources */,
 				12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */,
@@ -1510,6 +1536,7 @@
 				12F125D920B92C29005C9659 /* HealAction.swift in Sources */,
 				12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */,
 				12F125B120AEC069005C9659 /* CDImageView.swift in Sources */,
+				1225522C2133A1FC00CB0D3E /* RefreshFooter.swift in Sources */,
 				12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */,
 				12F125FD20B952EB005C9659 /* IfForChildrenAction.swift in Sources */,
 				12360921209940B2003E7D11 /* Binary.swift in Sources */,
@@ -1556,6 +1583,7 @@
 				12DC964520EDFA9D008896D7 /* EditBoxViewController.swift in Sources */,
 				126BFBD120F0FAF20059B4ED /* BDInfoViewController.swift in Sources */,
 				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
+				12E64A5B213143330075BE01 /* VLTableViewHeaderFooterView.swift in Sources */,
 				12F125E320B93219005C9659 /* BarrierAction.swift in Sources */,
 				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,

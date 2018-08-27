@@ -21,7 +21,8 @@ class ToolboxTableViewController: UITableViewController {
         Row(title: NSLocalizedString("Birthday Notification", comment: ""), vcType: BirthdayViewController.self, isProFeature: false),
         Row(title: NSLocalizedString("Chara Management", comment: ""), vcType: CharaTableViewController.self, isProFeature: true),
         Row(title: NSLocalizedString("Box Management", comment: ""), vcType: BoxTableViewController.self, isProFeature: true),
-        Row(title: NSLocalizedString("Team Management", comment: ""), vcType: SearchableTeamTableViewController.self, isProFeature: true)
+        Row(title: NSLocalizedString("Team Management", comment: ""), vcType: SearchableTeamTableViewController.self, isProFeature: true),
+        Row(title: NSLocalizedString("Version Log", comment: ""), vcType: VLTableViewController.self, isProFeature: false)
     ]
     
     let backgroundImageView = UIImageView()

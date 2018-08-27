@@ -708,6 +708,10 @@
         <source>Draw %1$@ toward self %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Drop">
+        <source>Drop</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Dropped">
         <source>Dropped</source>
         <target>ドロップ</target>
@@ -1010,6 +1014,10 @@
         <source>Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Mana">
+        <source>Mana</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Mana Cost of Crafting">
         <source>Mana Cost of Crafting</source>
         <note>No comment provided by engineer.</note>
@@ -1026,12 +1034,20 @@
         <source>Mark</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Max Level to %@">
+        <source>Max Level to %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Members">
         <source>Members</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Misc">
         <source>Misc</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Mission">
+        <source>Mission</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Move Speed">
@@ -1051,8 +1067,44 @@
         <source>Multiple [%@ * lost HP / max HP] to next effect.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="New Campaign: %@ %@ x%d">
+        <source>New Campaign: %1$@ %2$@ x%3$d</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Clan Battle: %@">
+        <source>New Clan Battle: %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Dungeon: %@">
+        <source>New Dungeon: %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Gacha: %@">
+        <source>New Gacha: %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Quest Area: %@">
+        <source>New Quest Area: %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Story Event: %@">
+        <source>New Story Event: %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Story of %@">
+        <source>New Story of %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Unit: %@">
+        <source>New Unit: %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Next">
         <source>Next</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No more data">
+        <source>No more data</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="None">
@@ -1526,6 +1578,10 @@
       <trans-unit id="Vanguard">
         <source>Vanguard</source>
         <target>前衛</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Version Log">
+        <source>Version Log</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave %d">
