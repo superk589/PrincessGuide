@@ -1,5 +1,6 @@
 # Removed from App Store
-Cygames does not allow this app and it's removed from App Store. Sorry for everyone who has supported for this project.
+Cygames does not allow this app and it's removed from App Store. Sorry for everyone who has supported for this project.  
+Use this link to join TestFlight external test: https://redive.estertion.win/testflight/
 
 # Hatsune's Notes
 An unofficial iOS app for **プリンセスコネクト！Re:Dive**.  
@@ -26,7 +27,7 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
  1. Enemy and Boss   
     * Status
     * Skill Effect
-    * Attack Pattern 
+    * Attack Pattern
 1. Birthday Notification
 1. Chara Management
 1. Box Management
@@ -36,6 +37,7 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
 1. Team Management
     * Recording Wins and Loses
     * Searching with Tags
+1. Game Version Log and Schedule
 1. Game Data Auto Updating
 
 ## How to localize
@@ -63,7 +65,7 @@ $ pod install
 ```
 $ open PrincessGuide.xcworkspace
 ```
- 
+
 ## Acknowledgement
 * [esterTion](https://github.com/esterTion)
 * [CaiMiao](https://github.com/CaiMiao)
