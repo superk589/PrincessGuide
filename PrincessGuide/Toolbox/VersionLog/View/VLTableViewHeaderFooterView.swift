@@ -34,7 +34,7 @@ class VLTableViewHeaderFooterView: UITableViewHeaderFooterView {
         timeLabel.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
             make.right.lessThanOrEqualTo(readableContentGuide)
-            make.top.equalToSuperview()
+            make.top.equalTo(5)
         }
         
         contentView.addSubview(versionLabel)
@@ -43,7 +43,7 @@ class VLTableViewHeaderFooterView: UITableViewHeaderFooterView {
             make.left.equalTo(readableContentGuide)
             make.right.lessThanOrEqualTo(readableContentGuide)
             make.top.equalTo(timeLabel.snp.bottom)
-            make.bottom.equalToSuperview()
+            make.bottom.equalTo(-5)
         }
     }
     

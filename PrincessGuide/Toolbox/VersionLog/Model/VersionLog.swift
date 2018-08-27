@@ -243,7 +243,7 @@ struct VLStory: Codable, VLElement {
 struct VLGacha: Codable, VLElement {
     var content: String {
         let format = NSLocalizedString("New Gacha: %@", comment: "")
-        return String(format: format, detail)
+        return String(format: format, detail.replacingOccurrences(of: "\\n", with: " "))
     }
     var schedule: Schedule? {
         return Schedule(start: start, end: end)

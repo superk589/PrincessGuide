@@ -47,7 +47,7 @@ class VLTableViewCell: UITableViewCell {
         stackView.distribution = .fillProportionally
         stackView.spacing = 5
         
-        contentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 12)
+        contentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         contentLabel.numberOfLines = 0
         
         contentView.addSubview(stackView)
