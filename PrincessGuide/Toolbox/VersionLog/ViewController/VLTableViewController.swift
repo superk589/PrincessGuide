@@ -17,9 +17,9 @@ class VLTableViewController: UITableViewController {
     
     var models = [VersionLog.DataElement]()
     
-    var currentPage = 0 {
+    var currentPage = 1 {
         didSet {
-            if currentPage == 0 {
+            if currentPage == 1 {
                 models.removeAll()
             }
             requestData(page: currentPage)
