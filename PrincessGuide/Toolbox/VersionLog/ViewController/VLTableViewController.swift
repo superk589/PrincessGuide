@@ -54,6 +54,7 @@ class VLTableViewController: UITableViewController {
         tableView.sectionHeaderHeight = UITableViewAutomaticDimension
         
         tableView.tableFooterView = UIView()
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         
         tableView.register(VLTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: VLTableViewHeaderFooterView.description())
         tableView.register(VLNoScheduleTableViewCell.self, forCellReuseIdentifier: VLNoScheduleTableViewCell.description())

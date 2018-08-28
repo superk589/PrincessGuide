@@ -56,6 +56,8 @@ class VLTableViewCell: UITableViewCell {
             make.top.equalTo(10)
             make.bottom.equalTo(-10)
         }
+        
+        selectionStyle = .none
     }
     
     func configure(for data: VLElement) {

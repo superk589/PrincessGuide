@@ -25,13 +25,15 @@ class VLNoScheduleTableViewCell: UITableViewCell {
         }
         
         contentView.addSubview(contentLabel)
-        contentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 12)
+        contentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         contentLabel.numberOfLines = 0
         contentLabel.snp.makeConstraints { (make) in
             make.left.right.equalTo(readableContentGuide)
             make.top.equalTo(10)
             make.bottom.equalTo(-10)
         }
+        
+        selectionStyle = .none
     }
     
     func configure(for data: VLElement) {
