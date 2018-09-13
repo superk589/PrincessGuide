@@ -20,9 +20,9 @@ class CompletionView: UIView {
         let layer = CAShapeLayer()
         layer.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         layer.path = checkmarkPath.cgPath
-        layer.fillMode = kCAFillModeForwards
-        layer.lineCap = kCALineCapRound
-        layer.lineJoin = kCALineJoinRound
+        layer.fillMode = .forwards
+        layer.lineCap = .round
+        layer.lineJoin = .round
         layer.fillColor = nil
         layer.strokeColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).cgColor
         layer.lineWidth = 6.0

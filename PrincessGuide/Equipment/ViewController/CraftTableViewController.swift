@@ -70,7 +70,7 @@ class CraftTableViewController: UITableViewController {
         
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.estimatedRowHeight = 84
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(CraftSummaryTableViewCell.self, forCellReuseIdentifier: CraftSummaryTableViewCell.description())
         tableView.register(CraftTableViewCell.self, forCellReuseIdentifier: CraftTableViewCell.description())
         tableView.tableFooterView = UIView()

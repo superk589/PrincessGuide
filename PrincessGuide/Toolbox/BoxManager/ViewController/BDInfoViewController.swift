@@ -71,7 +71,7 @@ class BDInfoViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 60
         tableView.allowsSelection = false
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         loadData()
     }
 

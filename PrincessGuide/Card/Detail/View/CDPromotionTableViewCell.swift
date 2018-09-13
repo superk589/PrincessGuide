@@ -22,7 +22,7 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     weak var delegate: CDPromotionTableViewCellDelegate?
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectedBackgroundView = UIView()

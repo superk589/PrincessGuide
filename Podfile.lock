@@ -10,7 +10,7 @@ PODS:
   - FMDB/standard (2.7.2)
   - Gestalt (1.1.0)
   - ImageViewer (5.0.0)
-  - Kingfisher (4.8.1)
+  - Kingfisher (4.9.0)
   - KingfisherWebP (0.4.1):
     - Kingfisher (~> 4.0)
     - libwebp (>= 0.5.0)
@@ -39,9 +39,9 @@ PODS:
     - libwebp/core
   - libwebp/webp (1.0.0)
   - lz4 (128)
-  - MJRefresh (3.1.15.6)
+  - MJRefresh (3.1.15.7)
   - Pageboy (2.5.4)
-  - ReachabilitySwift (4.1.0)
+  - ReachabilitySwift (4.2.1)
   - SnapKit (4.0.0)
   - SwiftyJSON (4.1.0)
   - SwiftyStoreKit (0.13.3)
@@ -124,13 +124,13 @@ SPEC CHECKSUMS:
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   Gestalt: be239fdeee2de30b2468865cf5e24b7923f507c2
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
+  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
   KingfisherWebP: 3cf59fe4c258efc2084fda65eaae950487048259
   libwebp: d7e0c95fe97245c97e08101eba10702ebb0f6101
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
-  MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
-  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  ReachabilitySwift: 35720ffea59c1c76d15f885be77fd33e33985427
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyStoreKit: 9ebd15971e28aa2989825fe8bc092eb5f75dd0b2

@@ -69,7 +69,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()

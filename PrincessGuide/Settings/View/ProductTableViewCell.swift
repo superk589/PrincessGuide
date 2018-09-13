@@ -16,13 +16,13 @@ protocol ProductTableViewCellDelegate: class {
 
 class ProductTableViewCell: UITableViewCell {
 
-    let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    let indicator = UIActivityIndicatorView(style: .gray)
     
     let button = UIButton()
     
     weak var delegate: ProductTableViewCellDelegate?
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(indicator)

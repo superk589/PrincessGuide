@@ -52,7 +52,7 @@ class AddCharaToBoxViewController: UITableViewController {
         tableView.register(CharaTableViewCell.self, forCellReuseIdentifier: CharaTableViewCell.description())
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 103
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         prepareFetchRequest()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveCharas(_:)))
@@ -84,8 +84,8 @@ class AddCharaToBoxViewController: UITableViewController {
         box.removeFromCharas(NSOrderedSet(array: charas))
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-            return UITableViewCellEditingStyle(rawValue: 0b11)!
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+            return UITableViewCell.EditingStyle(rawValue: 0b11)!
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

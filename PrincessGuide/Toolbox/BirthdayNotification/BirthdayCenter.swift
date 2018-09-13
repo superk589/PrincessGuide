@@ -118,7 +118,7 @@ class BirthdayCenter {
                     do {
                         let data = try Data(contentsOf: imageURL)
                         if let image = WebPProcessor.default.process(item: .data(data), options: []) {
-                            let data = UIImagePNGRepresentation(image)
+                            let data = image.pngData()
                             try data?.write(to: newURL)
                         }
                         // try fileManager.copyItem(at: imageURL, to: newURL)

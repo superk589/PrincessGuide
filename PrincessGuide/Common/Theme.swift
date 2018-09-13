@@ -50,8 +50,8 @@ struct Theme: ThemeProtocol {
     let lightOpacity: Float
     let shadowOpacity: Float
     let backgroundImage: UIImage
-    let indicatorStyle: UIScrollViewIndicatorStyle
-    let blurEffectStyle: UIBlurEffectStyle
+    let indicatorStyle: UIScrollView.IndicatorStyle
+    let blurEffectStyle: UIBlurEffect.Style
     let keyboardAppearance: UIKeyboardAppearance
     
     static let light = Theme(

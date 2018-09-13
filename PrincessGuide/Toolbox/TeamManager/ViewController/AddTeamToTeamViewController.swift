@@ -60,7 +60,7 @@ class AddTeamToTeamViewController: UITableViewController {
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.description())
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 104
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         prepareFetchRequest()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTeam(_:)))
@@ -104,8 +104,8 @@ class AddTeamToTeamViewController: UITableViewController {
         return teams[indexPath.row]
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle(rawValue: 0b11)!
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle(rawValue: 0b11)!
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

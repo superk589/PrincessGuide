@@ -49,7 +49,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(CardTableViewCell.self, forCellReuseIdentifier: CardTableViewCell.description())
         tableView.estimatedRowHeight = 84
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         

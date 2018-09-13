@@ -50,7 +50,7 @@ class TeamTableViewController: UITableViewController {
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.description())
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 104
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         prepareFetchRequest()
         
         navigationItem.rightBarButtonItems = [addItem, editButtonItem]
@@ -165,15 +165,15 @@ class TeamTableViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if isEditing {
-            return UITableViewCellEditingStyle(rawValue: 0b11)!
+            return UITableViewCell.EditingStyle(rawValue: 0b11)!
         } else {
             return .delete
         }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             context.delete(teams[indexPath.row])
             do {

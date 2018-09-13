@@ -27,7 +27,7 @@ class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
     
     weak var delegate: CraftSummaryTableViewCellDelegate?
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         super.init(style: style, reuseIdentifier: reuseIdentifier)

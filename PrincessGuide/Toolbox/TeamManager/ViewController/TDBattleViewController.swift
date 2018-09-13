@@ -64,7 +64,7 @@ class TDBattleViewController: UITableViewController {
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.description())
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 104
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
         prepareFetchRequest()
     }

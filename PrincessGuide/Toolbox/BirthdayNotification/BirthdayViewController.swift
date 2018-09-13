@@ -87,7 +87,7 @@ class BirthdayViewController: FormViewController {
                 ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
                     themeable.cell.backgroundColor = theme.color.tableViewCell.background
                     themeable.onProvideStringAttributes = {
-                        return [NSAttributedStringKey.foregroundColor: theme.color.body]
+                        return [NSAttributedString.Key.foregroundColor: theme.color.body]
                     }
                 }
             }
@@ -175,7 +175,7 @@ class BirthdayViewController: FormViewController {
             }
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCards(_:)), name: .preloadEnd, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadSettings(_:)), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadSettings(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
         
     }
     
@@ -188,7 +188,7 @@ class BirthdayViewController: FormViewController {
     }
     
     @objc private func openSystemNotificationSettings() {
-        if let url = URL(string: UIApplicationOpenSettingsURLString), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

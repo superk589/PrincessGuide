@@ -90,7 +90,7 @@ class BuyProEditionViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 40
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     func requestData() {

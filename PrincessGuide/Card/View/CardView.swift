@@ -68,7 +68,7 @@ class CardView: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIViewNoIntrinsicMetric, height: 64)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 64)
     }
     
     required init?(coder aDecoder: NSCoder) {
