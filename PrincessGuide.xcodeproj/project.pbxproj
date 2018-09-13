@@ -155,6 +155,9 @@
 		12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D362089B1DB0088F5FB /* CDBasicTableViewCell.swift */; };
 		12B85D3D2089B1DB0088F5FB /* CDPromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D382089B1DB0088F5FB /* CDPromotionTableViewCell.swift */; };
 		12B85D3E2089B1DB0088F5FB /* CDSkillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D3A2089B1DB0088F5FB /* CDSkillTableViewController.swift */; };
+		12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */; };
+		12B8F58B214A5B3600C039DE /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58A214A5B3600C039DE /* Tower.swift */; };
+		12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */; };
 		12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C44140209C92AF00016BDC /* LaunchScreen.storyboard */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
 		12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */; };
@@ -419,6 +422,9 @@
 		12B85D362089B1DB0088F5FB /* CDBasicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDBasicTableViewCell.swift; sourceTree = "<group>"; };
 		12B85D382089B1DB0088F5FB /* CDPromotionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPromotionTableViewCell.swift; sourceTree = "<group>"; };
 		12B85D3A2089B1DB0088F5FB /* CDSkillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDSkillTableViewController.swift; sourceTree = "<group>"; };
+		12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerTableViewController.swift; sourceTree = "<group>"; };
+		12B8F58A214A5B3600C039DE /* Tower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
+		12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerQuestTabViewController.swift; sourceTree = "<group>"; };
 		12C4413F209C92AF00016BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
 		12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDStatusTableViewController.swift; sourceTree = "<group>"; };
@@ -650,6 +656,7 @@
 				1280DE4020A5CEB2008D9D72 /* ClanBattle.swift */,
 				1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */,
 				124EA0A120D26CA500F46029 /* Dungeon.swift */,
+				12B8F58A214A5B3600C039DE /* Tower.swift */,
 				1226532220AD626700BB3E56 /* Resist.swift */,
 				127FB85820F44BE1009B53CC /* Preload.swift */,
 			);
@@ -776,12 +783,14 @@
 		12398E80209158EA006AC352 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				126DECF1209EDC0E004EC56A /* QuestAreaTabViewController.swift */,
 				12398E81209158EA006AC352 /* QuestAreaTableViewController.swift */,
 				129A7F8820A3108C00D93996 /* QuestTabViewController.swift */,
-				126DECF1209EDC0E004EC56A /* QuestAreaTabViewController.swift */,
 				1280DE4420A5DED5008D9D72 /* ClanBattleTableViewController.swift */,
 				1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */,
 				12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */,
+				12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */,
+				12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1405,6 +1414,7 @@
 				125B663320EFB5D600D15E75 /* Chara.swift in Sources */,
 				12F1262720B955D5005C9659 /* WaveStartIdleAction.swift in Sources */,
 				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
+				12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */,
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
 				12F1261720B954F4005C9659 /* AttackFieldAction.swift in Sources */,
 				120BCAFB20F4DF670029A083 /* Member.swift in Sources */,
@@ -1502,6 +1512,7 @@
 				12B21F9020F597EE00A04777 /* ChooseMemberViewController.swift in Sources */,
 				12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */,
 				1221CDDC207CC39E008F30AA /* Constant.swift in Sources */,
+				12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */,
 				12B85D3D2089B1DB0088F5FB /* CDPromotionTableViewCell.swift in Sources */,
 				126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */,
 				12F1263D20BCD86B005C9659 /* CDTextItemView.swift in Sources */,
@@ -1553,6 +1564,7 @@
 				12398E742091573D006AC352 /* Area.swift in Sources */,
 				1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */,
 				12398E8D20917C1F006AC352 /* DropSummaryTableViewCell.swift in Sources */,
+				12B8F58B214A5B3600C039DE /* Tower.swift in Sources */,
 				12DC963C20EDED44008896D7 /* BoxTableViewCell.swift in Sources */,
 				120F9B7A20E624CB003632CA /* ChooseCharaViewController.swift in Sources */,
 				126DECE1209E0B2C004EC56A /* CustomAcknowViewController.swift in Sources */,
@@ -1816,7 +1828,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 58;
+				CURRENT_PROJECT_VERSION = 59;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1838,7 +1850,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 58;
+				CURRENT_PROJECT_VERSION = 59;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

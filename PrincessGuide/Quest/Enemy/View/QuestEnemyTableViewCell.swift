@@ -74,6 +74,12 @@ class QuestEnemyTableViewCell: UITableViewCell {
         titleLabel.text = title
         collectionView.reload()
     }
+    
+    func configure(for enemies: [Enemy], title: String) {
+        self.enemies = enemies
+        titleLabel.text = title
+        collectionView.reload()
+    }
 }
 
 extension QuestEnemyTableViewCell: TTGTagCollectionViewDelegate, TTGTagCollectionViewDataSource {

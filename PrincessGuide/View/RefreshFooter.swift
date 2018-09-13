@@ -51,6 +51,8 @@ class RefreshFooter: MJRefreshAutoFooter {
         stateLabel.font = UIFont.systemFont(ofSize: 16)
 //        stateLabel.textColor = .gray
         addSubview(stateLabel)
+        
+        ignoredScrollViewContentInsetBottom = 300
     }
     
     override func placeSubviews(){

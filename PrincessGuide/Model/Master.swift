@@ -635,6 +635,86 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getTowers(callback: @escaping FMDBCallbackClosure<[Tower]>) {
+        var towers = [Tower]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                tower_area_data
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let tower = try? decoder.decode(Tower.self, from: json.rawData()) {
+                    towers.append(tower)
+                }
+            }
+        }) {
+            callback(towers)
+        }
+    }
+    
+    func getTowerQuests(towerID: Int, callback: @escaping FMDBCallbackClosure<[Tower.Quest]>) {
+        var quests = [Tower.Quest]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                tower_quest_data a,
+                tower_wave_group_data b
+            WHERE
+                tower_area_id = \(towerID)
+                AND a.wave_group_id = b.wave_group_id
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let quest = try? decoder.decode(Tower.Quest.self, from: json.rawData()) {
+                    quests.append(quest)
+                }
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
+    func getTowerExQuests(towerID: Int, callback: @escaping FMDBCallbackClosure<[Tower.Quest]>) {
+        var quests = [Tower.Quest]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                tower_ex_quest_data a,
+                tower_wave_group_data b
+            WHERE
+                tower_area_id = \(towerID)
+                AND a.wave_group_id = b.wave_group_id
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                do {
+                    let quest = try decoder.decode(Tower.Quest.self, from: json.rawData())
+                    quests.append(quest)
+                } catch let error {
+                    print(error)
+                }
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
     func getHatsuneEventAreas(callback: @escaping FMDBCallbackClosure<[HatsuneEventArea]>) {
         var areas = [HatsuneEventArea]()
         execute({ (db) in
@@ -736,6 +816,71 @@ class Master: FMDatabaseQueue {
                     unit_enemy_data
                 WHERE
                     unit_id = \(unitID)
+                """
+                var unit: Enemy.Unit?
+                let unitSet = try db.executeQuery(unitSql, values: nil)
+                while unitSet.next() {
+                    let json = JSON(unitSet.resultDictionary ?? [:])
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    unit = try? decoder.decode(Enemy.Unit.self, from: json.rawData())
+                }
+                
+                if let base = try? decoder.decode(Enemy.Base.self, from: json.rawData()),
+                    let unit = unit {
+                    enemies.append(Enemy(base: base, unit: unit))
+                }
+            }
+        }) {
+            callback(enemies)
+        }
+    }
+    
+    func getTowerEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
+        var enemies = [Enemy]()
+        execute({ (db) in
+            var sql = """
+            SELECT
+                a.*,
+                b.union_burst,
+                b.main_skill_1,
+                b.main_skill_2,
+                b.main_skill_3,
+                b.main_skill_4,
+                b.main_skill_5,
+                b.main_skill_6,
+                b.main_skill_7,
+                b.main_skill_8,
+                b.main_skill_9,
+                b.main_skill_10,
+                b.ex_skill_1,
+                b.ex_skill_2,
+                b.ex_skill_3,
+                b.ex_skill_4,
+                b.ex_skill_5
+            FROM
+                unit_skill_data b,
+                tower_enemy_parameter a
+            WHERE
+                a.unit_id = b.unit_id
+            """
+            if let id = enemyID {
+                sql.append(" AND a.enemy_id = \(id)")
+            }
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                let unitID = json["unit_id"].intValue
+                let unitSql = """
+                SELECT
+                *
+                FROM
+                unit_enemy_data
+                WHERE
+                unit_id = \(unitID)
                 """
                 var unit: Enemy.Unit?
                 let unitSet = try db.executeQuery(unitSql, values: nil)

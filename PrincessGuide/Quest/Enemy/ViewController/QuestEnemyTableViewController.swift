@@ -19,6 +19,7 @@ class QuestEnemyTableViewController: UITableViewController {
             case quest(String)
             case wave(Wave, Int)
             case clanBattleWave(Wave, Int, Double)
+            case tower([Enemy], Int)
         }
     }
 
@@ -36,6 +37,13 @@ class QuestEnemyTableViewController: UITableViewController {
         self.rows = clanBattle.rounds.flatMap {
             [Row(type: QuestNameTableViewCell.self, data: .quest($0.name))] +
                 $0.groups.enumerated().map{ Row(type: QuestEnemyTableViewCell.self, data: .clanBattleWave($0.element.wave, $0.offset, $0.element.scoreCoefficient)) }
+        }
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(towerQuests: [Tower.Quest]) {
+        self.rows = towerQuests.map {
+            Row(type: QuestEnemyTableViewCell.self, data: .tower($0.enemies, $0.floorNum))
         }
         super.init(nibName: nil, bundle: nil)
     }
@@ -58,6 +66,7 @@ class QuestEnemyTableViewController: UITableViewController {
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.register(QuestEnemyTableViewCell.self, forCellReuseIdentifier: QuestEnemyTableViewCell.description())
         tableView.register(QuestNameTableViewCell.self, forCellReuseIdentifier: QuestNameTableViewCell.description())
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -98,6 +107,9 @@ class QuestEnemyTableViewController: UITableViewController {
             cell.configure(for: wave, title: title)
         case (let cell as QuestNameTableViewCell, .quest(let name)):
             cell.configure(for: name)
+        case (let cell as QuestEnemyTableViewCell, .tower(let enemies, let floor)):
+            cell.configure(for: enemies, title: String(floor))
+            cell.delegate = self
         default:
             break
         }

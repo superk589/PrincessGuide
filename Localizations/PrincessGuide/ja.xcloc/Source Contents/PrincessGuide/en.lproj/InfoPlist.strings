@@ -1,0 +1,8 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "Hatsune's Notes";
+/* Bundle name */
+"CFBundleName" = "$(PRODUCT_NAME)";
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "In order to save the image we will need access to your camera roll.";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "In order to save the image we will need access to your camera roll.";

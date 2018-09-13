@@ -30,6 +30,9 @@
 "%@ absolute" = "%@绝对位置的";
 
 /* No comment provided by engineer. */
+"%@ boss" = "%@首领级";
+
+/* No comment provided by engineer. */
 "%@ Damage is reduced on low level players." = "%@伤害对低等级玩家会减少。";
 
 /* target type */
@@ -228,6 +231,9 @@
 
 /* No comment provided by engineer. */
 "Bond Rank" = "绊 Rank";
+
+/* No comment provided by engineer. */
+"boss" = "首领级";
 
 /* No comment provided by engineer. */
 "Box Detail" = "Box 详情";
@@ -668,6 +674,9 @@
 "Loses" = "失败";
 
 /* No comment provided by engineer. */
+"Luna's Tower %d" = "月神塔 %d";
+
+/* No comment provided by engineer. */
 "magic" = "法系";
 
 /* No comment provided by engineer. */
@@ -749,22 +758,22 @@
 "Multiple [%@ * lost HP / max HP] to next effect." = "使下一个效果的数值乘以 [%@ * 损失的 HP / 最大 HP]。";
 
 /* No comment provided by engineer. */
+"New %@ Event: %@" = "新%1$@活动：%2$@";
+
+/* No comment provided by engineer. */
 "New Campaign: %@ %@ x%d" = "新奖励事件：%1$@%2$@ x%3$d";
 
 /* No comment provided by engineer. */
 "New Clan Battle: %@" = "新公会战：%@";
 
 /* No comment provided by engineer. */
-"New Dungeon: %@" = "新地下城（塔）：%@";
+"New Dungeon: %@" = "新地下城：%@";
 
 /* No comment provided by engineer. */
 "New Gacha: %@" = "新卡池：%@";
 
 /* No comment provided by engineer. */
 "New Quest Area: %@" = "新任务区域：%@";
-
-/* No comment provided by engineer. */
-"New Story Event: %@" = "新剧情活动：%@";
 
 /* No comment provided by engineer. */
 "New Story of %@" = "新故事：%@";
@@ -1019,6 +1028,9 @@
 "Still" = "剧情";
 
 /* No comment provided by engineer. */
+"Story" = "剧情";
+
+/* No comment provided by engineer. */
 "Stun" = "击晕";
 
 /* No comment provided by engineer. */
@@ -1179,6 +1191,9 @@
 
 /* No comment provided by engineer. */
 "Total Mana Cost" = "合计所需 Mana";
+
+/* No comment provided by engineer. */
+"Tower" = "月神塔";
 
 /* No comment provided by engineer. */
 "Trigger: HP is below %d%%." = "触发条件：HP 低于 %d%%。";
