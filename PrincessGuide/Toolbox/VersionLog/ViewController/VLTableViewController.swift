@@ -20,7 +20,8 @@ class VLTableViewController: UITableViewController {
     var currentPage = 1 {
         didSet {
             if currentPage == 1 {
-                models.removeAll()
+                models = []
+                tableView.reloadData()
             }
             requestData(page: currentPage)
         }
