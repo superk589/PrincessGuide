@@ -749,11 +749,6 @@
         <target>拘留（伤害）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Die instantly.">
-        <source>Die instantly.</source>
-        <target>立即死亡。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Dodge">
         <source>Dodge</source>
         <target>回避</target>
@@ -1002,6 +997,11 @@
       <trans-unit id="Internal ID">
         <source>Internal ID</source>
         <target>内部 ID</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Kill %@ instantly.">
+        <source>Kill %@ instantly.</source>
+        <target>对%@释放即死效果。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Knock %@ away %d.">

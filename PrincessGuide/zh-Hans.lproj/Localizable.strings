@@ -452,9 +452,6 @@
 "Detain (Damage)" = "拘留（伤害）";
 
 /* No comment provided by engineer. */
-"Die instantly." = "立即死亡。";
-
-/* No comment provided by engineer. */
 "Dodge" = "回避";
 
 /* No comment provided by engineer. */
@@ -642,6 +639,9 @@
 
 /* No comment provided by engineer. */
 "Internal ID" = "内部 ID";
+
+/* No comment provided by engineer. */
+"Kill %@ instantly." = "对%@释放即死效果。";
 
 /* No comment provided by engineer. */
 "Knock %@ away %d." = "击退%1$@，距离 %2$d。";

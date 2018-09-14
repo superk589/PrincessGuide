@@ -11,7 +11,8 @@ import Foundation
 class DestroyAction: ActionParameter {
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        return NSLocalizedString("Die instantly.", comment: "")
+        let format = NSLocalizedString("Kill %@ instantly.", comment: "")
+        return String(format: format, targetParameter.buildTargetClause())
     }
     
 }
