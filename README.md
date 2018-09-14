@@ -1,5 +1,5 @@
 # Removed from App Store
-Cygames does not allow this app and it's removed from App Store. Sorry for everyone who has supported for this project.  
+Cygames does not allow this app and it has been removed from App Store.  
 Use this link to join TestFlight external test: https://redive.estertion.win/testflight/
 
 # Hatsune's Notes
@@ -24,10 +24,13 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
     * Hard
     * Clan Battle
     * Story Event
+    * Dungeon
+    * Luna's Tower
  1. Enemy and Boss   
     * Status
     * Skill Effect
     * Attack Pattern
+    * Resistance
 1. Birthday Notification
 1. Chara Management
 1. Box Management
@@ -49,8 +52,8 @@ For developers only, if you have macOS and Xcode, please read `./Localizations/R
 ## How to build
 ### Requirements
 * iOS 10.0+
-* Xcode 9.3+
-* Swift 4.1+
+* Xcode 10.0+
+* Swift 4.2+
 
 ### Steps
 * Clone the repository
