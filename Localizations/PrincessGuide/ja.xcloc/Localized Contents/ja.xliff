@@ -1045,6 +1045,10 @@
         <source>Max Level to %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Max Rank to %@">
+        <source>Max Rank to %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Members">
         <source>Members</source>
         <note>No comment provided by engineer.</note>

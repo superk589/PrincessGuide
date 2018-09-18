@@ -1134,6 +1134,11 @@
         <target>最大等级提高至 %@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Max Rank to %@">
+        <source>Max Rank to %@</source>
+        <target>最大 Rank 提高至 %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Members">
         <source>Members</source>
         <target>队员</target>

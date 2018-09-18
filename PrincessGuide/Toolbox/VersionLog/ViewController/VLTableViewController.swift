@@ -19,10 +19,6 @@ class VLTableViewController: UITableViewController {
     
     var currentPage = 1 {
         didSet {
-            if currentPage == 1 {
-                models = []
-                tableView.reloadData()
-            }
             requestData(page: currentPage)
         }
     }
@@ -92,6 +88,9 @@ class VLTableViewController: UITableViewController {
                             self?.footer.state = .noMoreData
                         } else {
                             self?.footer.state = .idle
+                            if currentPage == 1 {
+                                self?.models = []
+                            }
                             self?.models += versionLog.data
                             self?.tableView.reloadData()
                         }

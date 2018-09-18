@@ -51,7 +51,9 @@ struct VersionLog: Codable {
                 questArea,
                 unit,
                 event,
-                gacha
+                gacha,
+                maxLv.flatMap { [$0] },
+                maxRank.flatMap { [VLMaxRank(rank: $0)] }
             ]
             return elements.compactMap { $0 }.flatMap { $0 }
         }
@@ -283,4 +285,17 @@ struct VLMaxLv: Codable, VLElement {
     let exp: String
     let lv: String
     let maxStamina: String
+}
+
+struct VLMaxRank: Codable, VLElement {
+    var content: String {
+        let format = NSLocalizedString("Max Rank to %@", comment: "")
+        return String(format: format, rank)
+    }
+    
+    var schedule: Schedule? {
+        return nil
+    }
+    
+    let rank: String
 }
