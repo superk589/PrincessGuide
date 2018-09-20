@@ -34,6 +34,8 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
+        
         let items = [NSLocalizedString("Resist", comment: ""),
                      NSLocalizedString("Skill", comment: ""),
                      NSLocalizedString("Status", comment: "")]
@@ -77,5 +79,12 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
         EDTabViewController.defaultTabIndex = index
+    }
+    
+    @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
+        let vc = EDSettingsViewController()
+        let nc = UINavigationController(rootViewController: vc)
+        nc.modalPresentationStyle = .formSheet
+        present(nc, animated: true, completion: nil)
     }
 }

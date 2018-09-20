@@ -146,7 +146,7 @@ class EDSkillTableViewCell: UITableViewCell, EnemyDetailConfigurable {
         skillIcon.skillIconID = skill.base.iconType
         actionLabel.text = skill.actions.map {
             let parameter = $0.parameter
-            return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: level, property: property, style: .valueInCombat))"
+            return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: level, property: property, style: EDSettingsViewController.Setting.default.expressionStyle))"
             }.joined(separator: "\n")
     }
     

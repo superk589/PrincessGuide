@@ -9,10 +9,17 @@
 import UIKit
 
 class EDSkillTableViewController: EDTableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSettingsChange(_:)), name: Notification.Name.enemyDetailSettingsDidChange, object: nil)
+    }
 
     override func prepareRows() {
         
         rows.removeAll()
+        
         
         if let patterns = enemy.patterns, patterns.count > 1 {
             enemy.patterns?.enumerated().forEach {
@@ -23,6 +30,8 @@ class EDSkillTableViewController: EDTableViewController {
                 rows.append(Row(type: EDPatternTableViewCell.self, data: .pattern($0.element, enemy, nil)))
             }
         }
+        
+        let setting = EDSettingsViewController.Setting.default
         
         let property = enemy.base.property
         
@@ -49,6 +58,10 @@ class EDSkillTableViewController: EDTableViewController {
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 280
+    }
+    
+    @objc private func handleSettingsChange(_ notification: Notification) {
+        reloadAll()
     }
 
 }
