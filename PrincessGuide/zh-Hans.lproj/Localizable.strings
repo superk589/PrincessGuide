@@ -248,6 +248,9 @@
 "Boxes" = "Box 列表";
 
 /* No comment provided by engineer. */
+"buffs" = "增益";
+
+/* No comment provided by engineer. */
 "Burn" = "灼烧";
 
 /* No comment provided by engineer. */
@@ -344,6 +347,9 @@
 "Clan Battle %d-%d" = "公会战 %1$d 年 %2$d 月";
 
 /* No comment provided by engineer. */
+"Clear all %@ on %@ with chance [%@]%%." = "有 [%3$@]%% 几率清除%2$@上的%1$@。";
+
+/* No comment provided by engineer. */
 "Combat Effectiveness" = "战力";
 
 /* No comment provided by engineer. */
@@ -423,6 +429,9 @@
 
 /* No comment provided by engineer. */
 "Deal damage equal to [%@]%% of target's max HP to %@." = "对%2$@造成其最大 HP [%1$@]%% 的伤害。";
+
+/* No comment provided by engineer. */
+"debuffs" = "减益";
 
 /* No comment provided by engineer. */
 "DEF" = "物理防御力";

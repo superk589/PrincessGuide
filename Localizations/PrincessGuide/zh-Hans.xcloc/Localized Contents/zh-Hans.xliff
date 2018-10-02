@@ -584,6 +584,11 @@
         <target>公会战 %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Clear all %@ on %@ with chance [%@]%%.">
+        <source>Clear all %1$@ on %2$@ with chance [%3$@]%%.</source>
+        <target>有 [%3$@]%% 几率清除%2$@上的%1$@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Combat Effectiveness">
         <source>Combat Effectiveness</source>
         <target>战力</target>
@@ -1844,9 +1849,19 @@
         <target>首领级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="buffs">
+        <source>buffs</source>
+        <target>增益</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="clan battle">
         <source>clan battle</source>
         <target>公会战</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="debuffs">
+        <source>debuffs</source>
+        <target>减益</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="default">

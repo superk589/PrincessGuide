@@ -46,6 +46,7 @@ class ToolboxTableViewController: UITableViewController {
 
         tableView.keyboardDismissMode = .onDrag
         tableView.rowHeight = 66
+        tableView.estimatedRowHeight = 0
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         

@@ -115,7 +115,7 @@ class EDSettingsViewController: FormViewController {
         form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
         
         form
-            +++ Section(NSLocalizedString("Enemy", comment: ""))
+            +++ Section(NSLocalizedString("Status", comment: ""))
             
             <<< PickerInlineRow<Int>("target_level") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Target Level", comment: "")
@@ -132,6 +132,8 @@ class EDSettingsViewController: FormViewController {
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
+            +++ Section(NSLocalizedString("Skill", comment: ""))
             
             <<< PickerInlineRow<String>("expression_style") { (row : PickerInlineRow<String>) -> Void in
                 row.title = NSLocalizedString("Expression Style", comment: "")

@@ -30,9 +30,7 @@ class EDSkillTableViewController: EDTableViewController {
                 rows.append(Row(type: EDPatternTableViewCell.self, data: .pattern($0.element, enemy, nil)))
             }
         }
-        
-        let setting = EDSettingsViewController.Setting.default
-        
+                
         let property = enemy.base.property
         
         if let unionBurst = enemy.unionBurst {

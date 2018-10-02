@@ -40,6 +40,7 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(HatsuneEventTableViewCell.self, forCellReuseIdentifier: HatsuneEventTableViewCell.description())
         tableView.rowHeight = 84
+        tableView.estimatedRowHeight = 0
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         

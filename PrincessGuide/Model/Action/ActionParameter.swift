@@ -100,6 +100,8 @@ class ActionParameter {
             return UpperLimitAttackAction.self
         case 48:
             return RegenerationAction.self
+        case 49:
+            return DispelAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -432,6 +434,7 @@ enum ActionType: Int {
     case gravity
     case upperLimitAttack
     case hot
+    case dispel
     case ex = 90
     case exPlus
 }
