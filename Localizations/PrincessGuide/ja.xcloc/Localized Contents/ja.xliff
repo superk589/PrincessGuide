@@ -414,6 +414,10 @@
         <target>CV</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Campaign">
+        <source>Campaign</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Cancel">
         <source>Cancel</source>
         <note>No comment provided by engineer.</note>
@@ -829,6 +833,14 @@
         <target>フィードバック</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Filter">
+        <source>Filter</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Filter Condition">
+        <source>Filter Condition</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Finished">
         <source>Finished</source>
         <target>更新完了</target>
@@ -842,6 +854,10 @@
       <trans-unit id="Full">
         <source>Full</source>
         <target>★３のイラスト</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Gacha">
+        <source>Gacha</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="General">
@@ -1053,6 +1069,10 @@
         <source>Max Rank to %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Max. lv.">
+        <source>Max. lv.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Members">
         <source>Members</source>
         <note>No comment provided by engineer.</note>
@@ -1215,6 +1235,10 @@
       <trans-unit id="Profile">
         <source>Profile</source>
         <target>プロファイル</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Quest Area">
+        <source>Quest Area</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Quests">

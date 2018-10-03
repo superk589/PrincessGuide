@@ -439,6 +439,11 @@
         <target>声优</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Campaign">
+        <source>Campaign</source>
+        <target>奖励事件</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Cancel">
         <source>Cancel</source>
         <target>取消</target>
@@ -899,6 +904,16 @@
         <target>反馈</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Filter">
+        <source>Filter</source>
+        <target>筛选</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Filter Condition">
+        <source>Filter Condition</source>
+        <target>筛选条件</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Finished">
         <source>Finished</source>
         <target>更新完成</target>
@@ -912,6 +927,11 @@
       <trans-unit id="Full">
         <source>Full</source>
         <target>大图</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Gacha">
+        <source>Gacha</source>
+        <target>卡池</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="General">
@@ -1144,6 +1164,11 @@
         <target>最大 Rank 提高至 %@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Max. lv.">
+        <source>Max. lv.</source>
+        <target>最大等级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Members">
         <source>Members</source>
         <target>队员</target>
@@ -1327,6 +1352,11 @@
       <trans-unit id="Profile">
         <source>Profile</source>
         <target>角色</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Quest Area">
+        <source>Quest Area</source>
+        <target>任务</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Quests">

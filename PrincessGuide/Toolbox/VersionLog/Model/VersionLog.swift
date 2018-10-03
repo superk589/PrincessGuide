@@ -18,7 +18,7 @@ struct VersionLog: Codable {
             let deleted: Int
         }
         
-        let diff: Diff
+        let diff: Diff?
         let ver: String
         let time: Int
         let timeStr: String
@@ -290,7 +290,7 @@ struct VLMaxLv: Codable, VLElement {
 struct VLMaxRank: Codable, VLElement {
     var content: String {
         let format = NSLocalizedString("Max Rank to %@", comment: "")
-        return String(format: format, rank)
+        return String(format: format, rank.description)
     }
     
     var schedule: Schedule? {

@@ -99,6 +99,7 @@
 		12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA22092F7D4006AC352 /* StringExtension.swift */; };
 		124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124EA0A120D26CA500F46029 /* Dungeon.swift */; };
 		1250190820AF0DBC00D2FBDC /* Still.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1250190720AF0DBC00D2FBDC /* Still.swift */; };
+		12512A712163D19A0071B0CC /* VLFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512A702163D19A0071B0CC /* VLFilterViewController.swift */; };
 		125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */; };
 		125B663320EFB5D600D15E75 /* Chara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663220EFB5D600D15E75 /* Chara.swift */; };
 		12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12659E05205F5DB100A8B9A2 /* AppDelegate.swift */; };
@@ -359,6 +360,7 @@
 		12398EA22092F7D4006AC352 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		124EA0A120D26CA500F46029 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
 		1250190720AF0DBC00D2FBDC /* Still.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Still.swift; sourceTree = "<group>"; };
+		12512A702163D19A0071B0CC /* VLFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLFilterViewController.swift; sourceTree = "<group>"; };
 		125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaCollectionViewCell.swift; sourceTree = "<group>"; };
 		125B663220EFB5D600D15E75 /* Chara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chara.swift; sourceTree = "<group>"; };
 		12659E02205F5DB100A8B9A2 /* PrincessGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincessGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1080,6 +1082,7 @@
 			isa = PBXGroup;
 			children = (
 				12E64A5421313AC50075BE01 /* VLTableViewController.swift */,
+				12512A702163D19A0071B0CC /* VLFilterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1332,7 +1335,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
@@ -1383,7 +1386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5E4574CB3F020CA5CAC83ACF /* [CP] Check Pods Manifest.lock */ = {
@@ -1466,6 +1469,7 @@
 				1225522E2133E22300CB0D3E /* VLNoScheduleTableViewCell.swift in Sources */,
 				122071F420FA371500554030 /* ProductTableViewCell.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
+				12512A712163D19A0071B0CC /* VLFilterViewController.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
 				12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */,
 				12398E7A20915781006AC352 /* AttackPatternView.swift in Sources */,

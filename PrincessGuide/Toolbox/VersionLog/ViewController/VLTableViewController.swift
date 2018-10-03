@@ -17,22 +17,22 @@ class VLTableViewController: UITableViewController {
     
     var models = [VersionLog.DataElement]()
     
-    var currentPage = 1 {
-        didSet {
-            requestData(page: currentPage)
-        }
-    }
+    var currentPage = 0
     
     let header = RefreshHeader()
     
     let footer = RefreshFooter()
     
     let backgroundImageView = UIImageView()
+    
+    private lazy var filter = VLFilterViewController.Setting.default.filter
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = NSLocalizedString("Version Log", comment: "")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
+        NotificationCenter.default.addObserver(self, selector: #selector(handleVersionLogSettingsChange(_:)), name: .versionLogFilterDidChange, object: nil)
         
         tableView.backgroundView = backgroundImageView
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
@@ -47,8 +47,8 @@ class VLTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
         
-        tableView.estimatedSectionHeaderHeight = 60
-        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
+        tableView.sectionHeaderHeight = 44
         
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
@@ -58,22 +58,30 @@ class VLTableViewController: UITableViewController {
         tableView.register(VLTableViewCell.self, forCellReuseIdentifier: VLTableViewCell.description())
         
         tableView.mj_header = header
-        header.refreshingBlock = { [weak self] in
-            self?.currentPage = 1
+        header.refreshingBlock = { [unowned self] in
+            self.requestData(page: 1, filter: self.filter)
         }
         
         tableView.mj_footer = footer
-        footer.refreshingBlock = { [weak self] in
-            self?.currentPage += 1
+        footer.refreshingBlock = { [unowned self] in
+            self.requestData(page: self.currentPage + 1, filter: self.filter)
         }
         
         header.beginRefreshing()
     
     }
     
-    func requestData(page: Int) {
-        let currentPage = self.currentPage
-        Alamofire.request(URL.versionLog, method: .get, parameters: ["page": page]).responseData { [weak self] (response) in
+    func requestData(page: Int, filter: VLFilterViewController.Setting.Filter? = nil) {
+        
+        var parameters: [String: Any] = [
+            "page": page
+        ]
+        
+        if filter != .none {
+            parameters["filter"] = filter?.rawValue
+        }
+        
+        Alamofire.request(URL.versionLog, method: .get, parameters: parameters).responseData { [weak self] (response) in
             switch response.result {
             case .failure(let error):
                 print(error)
@@ -84,13 +92,18 @@ class VLTableViewController: UITableViewController {
                 do {
                     let versionLog = try decoder.decode(VersionLog.self, from: data)
                     DispatchQueue.main.async {
-                        if currentPage > versionLog.pages {
+                        if page >= versionLog.pages {
                             self?.footer.state = .noMoreData
                         } else {
                             self?.footer.state = .idle
-                            if currentPage == 1 {
-                                self?.models = []
-                            }
+                        }
+                        
+                        self?.currentPage = page
+    
+                        if page == 1 {
+                            self?.models = versionLog.data
+                            self?.tableView.reloadData()
+                        } else {
                             self?.models += versionLog.data
                             self?.tableView.reloadData()
                         }
@@ -106,6 +119,19 @@ class VLTableViewController: UITableViewController {
                 self?.header.endRefreshing()
             }
         }
+    }
+    
+    @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
+        let vc = VLFilterViewController()
+        vc.modalPresentationStyle = .formSheet
+        let nc = UINavigationController(rootViewController: vc)
+        present(nc, animated: true, completion: nil)
+    }
+    
+    @objc private func handleVersionLogSettingsChange(_ notification: Notification) {
+        filter = VLFilterViewController.Setting.default.filter
+        currentPage = 0
+        requestData(page: 1, filter: filter)
     }
     
     // MARK: - Table view data source

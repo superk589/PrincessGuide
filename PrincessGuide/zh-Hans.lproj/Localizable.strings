@@ -257,6 +257,9 @@
 "By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again." = "目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。";
 
 /* No comment provided by engineer. */
+"Campaign" = "奖励事件";
+
+/* No comment provided by engineer. */
 "Cancel" = "取消";
 
 /* No comment provided by engineer. */
@@ -557,6 +560,12 @@
 "fifth" = "第五";
 
 /* No comment provided by engineer. */
+"Filter" = "筛选";
+
+/* No comment provided by engineer. */
+"Filter Condition" = "筛选条件";
+
+/* No comment provided by engineer. */
 "Finished" = "更新完成";
 
 /* No comment provided by engineer. */
@@ -591,6 +600,9 @@
 
 /* No comment provided by engineer. */
 "Full" = "大图";
+
+/* No comment provided by engineer. */
+"Gacha" = "卡池";
 
 /* No comment provided by engineer. */
 "General" = "通用";
@@ -746,6 +758,9 @@
 "Max Rank to %@" = "最大 Rank 提高至 %@";
 
 /* No comment provided by engineer. */
+"Max. lv." = "最大等级";
+
+/* No comment provided by engineer. */
 "Members" = "队员";
 
 /* No comment provided by engineer. */
@@ -879,6 +894,9 @@
 
 /* No comment provided by engineer. */
 "pvp" = "pvp";
+
+/* No comment provided by engineer. */
+"Quest Area" = "任务";
 
 /* No comment provided by engineer. */
 "Quests" = "关卡";

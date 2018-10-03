@@ -43,7 +43,20 @@ class VLTableViewHeaderFooterView: UITableViewHeaderFooterView {
             make.left.equalTo(readableContentGuide)
             make.right.lessThanOrEqualTo(readableContentGuide)
             make.top.equalTo(timeLabel.snp.bottom)
-            make.bottom.equalTo(-5)
+        }
+    }
+    
+    // reference: https://stackoverflow.com/questions/17581550/uitableviewheaderfooterview-subclass-with-auto-layout-and-section-reloading-won
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set {
+            if newValue == .zero {
+                return
+            } else {
+                super.frame = newValue
+            }
         }
     }
     
