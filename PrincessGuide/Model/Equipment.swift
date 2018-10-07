@@ -35,8 +35,10 @@ class Equipment: Codable {
     let salePrice: Int
     let waveEnergyRecovery: Int
     let waveHpRecovery: Int
+    let totalPoint: Int
+    let accuracy: Int
     
-    init(atk: Int, craftFlg: Int, def: Int, description: String, dodge: Int, enableDonation: Int, energyRecoveryRate: Int, energyReduceRate: Int, equipmentEnhancePoint: Int, equipmentId: Int, equipmentName: String, hp: Int, hpRecoveryRate: Int, lifeSteal: Int, magicCritical: Int, magicDef: Int, magicPenetrate: Int, magicStr: Int, physicalCritical: Int, physicalPenetrate: Int, promotionLevel: Int, requireLevel: Int, salePrice: Int, waveEnergyRecovery: Int, waveHpRecovery: Int) {
+    init(atk: Int, craftFlg: Int, def: Int, description: String, dodge: Int, enableDonation: Int, energyRecoveryRate: Int, energyReduceRate: Int, equipmentEnhancePoint: Int, equipmentId: Int, equipmentName: String, hp: Int, hpRecoveryRate: Int, lifeSteal: Int, magicCritical: Int, magicDef: Int, magicPenetrate: Int, magicStr: Int, physicalCritical: Int, physicalPenetrate: Int, promotionLevel: Int, requireLevel: Int, salePrice: Int, waveEnergyRecovery: Int, waveHpRecovery: Int, totalPoint: Int, accuracy: Int) {
         self.atk = atk
         self.craftFlg = craftFlg
         self.def = def
@@ -62,6 +64,12 @@ class Equipment: Codable {
         self.salePrice = salePrice
         self.waveEnergyRecovery = waveEnergyRecovery
         self.waveHpRecovery = waveHpRecovery
+        self.totalPoint = totalPoint
+        self.accuracy = accuracy
+    }
+    
+    var enhanceCost: Int {
+        return (Constant.presetManaCostPerPoint[promotionLevel] ?? 0) * totalPoint
     }
     
     lazy var craft: Craft? = {
@@ -86,6 +94,19 @@ class Equipment: Codable {
         return consumes
     }()
     
+    lazy var recursiveCraft: [Craft] = {
+        var crafts = [Craft]()
+        if let craft = craft {
+            crafts.append(craft)
+        }
+        for consume in craft?.consumes ?? [] {
+            if let equipment = consume.equipment {
+                crafts += equipment.recursiveCraft
+            }
+        }
+        return crafts
+    }()
+    
     lazy var enhance: Enhance? = DispatchSemaphore.sync { (closure) in
         Master.shared.getEnhance(equipmentID: equipmentId, callback: closure)
     }
@@ -97,7 +118,7 @@ class Equipment: Codable {
                         magicCritical: Double(magicCritical), magicDef: Double(magicDef),
                         magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
                         physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
-                        waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery))
+                        waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery), accuracy: Double(accuracy))
         if let enhance = enhance {
             result += enhance.property * enhance.maxEquipmentEnhanceLevel
         }
@@ -126,6 +147,7 @@ class Equipment: Codable {
         let promotionLevel: Int
         let waveEnergyRecovery: Double
         let waveHpRecovery: Double
+        let accuracy: Double
         
         var property: Property {
             return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
@@ -134,7 +156,7 @@ class Equipment: Codable {
                             magicCritical: Double(magicCritical), magicDef: Double(magicDef),
                             magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
                             physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
-                            waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery))
+                            waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery), accuracy: Double(accuracy))
         }
     }
 }

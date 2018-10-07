@@ -20,7 +20,7 @@ extension EDPropertyTableViewCell: EnemyDetailConfigurable {
         guard case .propertyItems(let items, let unitLevel, let targetLevel) = item else {
             fatalError()
         }
-        configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel)
+        configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel, comparisonMode: false)
     }
 
 }

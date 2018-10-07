@@ -1,6 +1,7 @@
-![Hatsune's Notes](./PrincessGuide/Assets.xcassets/AppIcon.appiconset/icon_76pt%402x.png)  
+# Removed from App Store
+Cygames does not allow this app and it has been removed from App Store.  
+Use this link to join TestFlight external test: https://redive.estertion.win/testflight/
 
-[![](./badge-download-on-the-app-store.svg)](https://itunes.apple.com/app/id1377498032)  
 # Hatsune's Notes
 An unofficial iOS app for **プリンセスコネクト！Re:Dive**.  
 **Hatsune's Notes** is the app name and **PrincessGuide** is the project name.  
@@ -23,10 +24,23 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
     * Hard
     * Clan Battle
     * Story Event
+    * Dungeon
+    * Luna's Tower
  1. Enemy and Boss   
     * Status
     * Skill Effect
-    * Attack Pattern 
+    * Attack Pattern
+    * Resistance
+1. Birthday Notification
+1. Chara Management
+1. Box Management
+    * Equipment Needed
+    * Mana Cost
+    * Experience Needed
+1. Team Management
+    * Recording Wins and Loses
+    * Searching with Tags
+1. Game Version Log and Schedule
 1. Game Data Auto Updating
 
 ## How to localize
@@ -37,9 +51,9 @@ For developers only, if you have macOS and Xcode, please read `./Localizations/R
 
 ## How to build
 ### Requirements
-* iOS 9.0+
-* Xcode 9.3+
-* Swift 4.1+
+* iOS 10.0+
+* Xcode 10.0+
+* Swift 4.2+
 
 ### Steps
 * Clone the repository

@@ -21,9 +21,10 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     init(enemy: Enemy) {
         self.enemy = enemy
-        viewControllers = [EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy)]
+        viewControllers = [EDResistTableViewController(enemy: enemy), EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy)]
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = enemy.base.name
+        print("load enemy, id: \(enemy.unit.unitId)")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,7 +34,10 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let items = [NSLocalizedString("Skill", comment: ""),
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
+        
+        let items = [NSLocalizedString("Resist", comment: ""),
+                     NSLocalizedString("Skill", comment: ""),
                      NSLocalizedString("Status", comment: "")]
             .map { Item(title: $0) }
         
@@ -75,5 +79,12 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
         EDTabViewController.defaultTabIndex = index
+    }
+    
+    @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
+        let vc = EDSettingsViewController()
+        let nc = UINavigationController(rootViewController: vc)
+        nc.modalPresentationStyle = .formSheet
+        present(nc, animated: true, completion: nil)
     }
 }

@@ -20,7 +20,7 @@ class DropSummaryTableViewCell: UITableViewCell {
     
     var tagViews = [Int: DropRewardView]()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectedBackgroundView = UIView()

@@ -58,6 +58,7 @@ class CardSortingViewController: FormViewController {
             case physicalCritical
             case waveEnergyRecovery
             case waveHpRecovery
+            case accuracy
             
             case rarity
             case effectivePhysicalHP
@@ -74,10 +75,12 @@ class CardSortingViewController: FormViewController {
             case weight
             case age
             
+            case birthday
+            
             var description: String {
                 switch self {
                 case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate,
-                     .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery:
+                     .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy:
                     return PropertyKey(rawValue: rawValue)!.description
                 case .rarity:
                     return NSLocalizedString("Rarity", comment: "")
@@ -101,10 +104,13 @@ class CardSortingViewController: FormViewController {
                     return Card.Profile.ItemKey.weight.description
                 case .combatEffectiveness:
                     return NSLocalizedString("Combat Effectiveness", comment: "")
+                case .birthday:
+                    return NSLocalizedString("Birthday", comment: "")
                 }
+                
             }
             
-            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .combatEffectiveness, .swingTime, .attackRange, .id, .name, .age, .height, .weight]
+            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .combatEffectiveness, .swingTime, .attackRange, .id, .name, .age, .birthday, .height, .weight]
             
         }
         
@@ -169,6 +175,7 @@ class CardSortingViewController: FormViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleNavigationRightItem(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleNavigationLeftItem(_:)))
         tableView.backgroundView = backgroundImageView
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
@@ -219,7 +226,7 @@ class CardSortingViewController: FormViewController {
                 ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
                     themeable.cell.backgroundColor = theme.color.tableViewCell.background
                     themeable.onProvideStringAttributes = {
-                        return [NSAttributedStringKey.foregroundColor: theme.color.body]
+                        return [NSAttributedString.Key.foregroundColor: theme.color.body]
                     }
                 }
             }

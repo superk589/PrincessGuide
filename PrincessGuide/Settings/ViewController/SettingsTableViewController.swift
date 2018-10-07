@@ -59,8 +59,12 @@ class SettingsTableViewController: UITableViewController {
         sections.append(Section(rows: feedbackRows, title: NSLocalizedString("Feedback", comment: "")))
         
         var aboutRows = [Row]()
+//        if !Defaults.proEdition {
+//            aboutRows.append(Row(title: NSLocalizedString("Upgrade to Pro Edition", comment: ""), detail: "", hasDisclosure: true, accessoryView: nil, selector: #selector(upgradeToProEdition)))
+//        }
         aboutRows.append(Row(title: NSLocalizedString("Third-Party Licenses", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
-        aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: VersionManager.shared.appVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
+        let versionInfo = Defaults.proEdition ? VersionManager.shared.appVersion + " (Pro)" : VersionManager.shared.appVersion
+        aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: versionInfo, hasDisclosure: false, accessoryView: nil, selector: nil))
         aboutRows.append(Row(title: NSLocalizedString("Data Version", comment: ""), detail: VersionManager.shared.truthVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
         sections.append(Section(rows: aboutRows, title: NSLocalizedString("About", comment: "")))
     }
@@ -80,18 +84,23 @@ class SettingsTableViewController: UITableViewController {
         
         navigationItem.title = NSLocalizedString("Settings", comment: "")
         prepareCellData()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleEditionChange(_:)), name: .proEditionPurchased, object: nil)
         tableView.cellLayoutMarginsFollowReadableWidth = true
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc private func handleUpdateEnd(_ notification: Notification) {
+    private func reload() {
         sections.removeAll()
         prepareCellData()
         tableView.reloadData()
+    }
+    
+    @objc private func handleEditionChange(_ notification: Notification) {
+        reload()
+    }
+    
+    @objc private func handleUpdateEnd(_ notification: Notification) {
+        reload()
     }
     
     @objc private func handleDownloadAtStartSwitch(_ sender: UISwitch) {
@@ -105,6 +114,12 @@ class SettingsTableViewController: UITableViewController {
     @objc private func showAckListViewController() {
         let vc = ThirdPartyLibrariesViewController()
         vc.navigationItem.title = NSLocalizedString("Third-Party Licenses", comment: "")
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func upgradeToProEdition() {
+        let vc = BuyProEditionViewController()
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

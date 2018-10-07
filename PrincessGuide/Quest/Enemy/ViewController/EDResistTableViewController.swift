@@ -14,7 +14,7 @@ class EDResistTableViewController: EDTableViewController {
         rows.removeAll()
         let items = enemy.resist?.items ?? []
         rows += items.map {
-            Row(type: EDProfileTextTableViewCell.self, data: .text($0.ailment.description, String($0.rate)))
+            Row(type: EDProfileTextTableViewCell.self, data: .text($0.ailment.description, String($0.rate) + "%"))
         }
         
     }

@@ -69,6 +69,14 @@ class SearchableCardTableViewController: CardTableViewController {
         }
     }
     
+    override func cardOf(indexPath: IndexPath) -> Card {
+        if searchController.isActive {
+            return filteredCards[indexPath.row]
+        } else {
+            return super.cardOf(indexPath: indexPath)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch searchController.isActive {
         case true:

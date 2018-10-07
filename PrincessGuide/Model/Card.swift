@@ -10,6 +10,10 @@ import Foundation
 
 class Card: Codable {
     
+    static func findByID(_ id: Int) -> Card? {
+        return Preload.default.cards[id]
+    }
+    
     let promotions: [Promotion]
     
     let rarities: [Rarity]
@@ -225,6 +229,12 @@ class Card: Codable {
                 Master.shared.getEquipments(equipmentID: id, callback: closure)
             }?.first
         }
+        
+        lazy var equipmentsInSlot: [Equipment?] = self.equipSlots.map { id in
+            DispatchSemaphore.sync { (closure) in
+                Master.shared.getEquipments(equipmentID: id, callback: closure)
+            }?.first
+        }
     }
     
     struct Rarity: Codable {
@@ -265,13 +275,15 @@ class Card: Codable {
         let waveEnergyRecoveryGrowth: Double
         let waveHpRecovery: Double
         let waveHpRecoveryGrowth: Double
+        let accuracy: Double
+        let accuracyGrowth: Double
 
         var property: Property {
-            return Property(atk: atk, def: def, dodge: dodge, energyRecoveryRate: energyRecoveryRate, energyReduceRate: energyReduceRate, hp: hp, hpRecoveryRate: hpRecoveryRate, lifeSteal: lifeSteal, magicCritical: magicCritical, magicDef: magicDef, magicPenetrate: magicPenetrate, magicStr: magicStr, physicalCritical: physicalCritical, physicalPenetrate: physicalPenetrate, waveEnergyRecovery: waveEnergyRecovery, waveHpRecovery: waveHpRecovery)
+            return Property(atk: atk, def: def, dodge: dodge, energyRecoveryRate: energyRecoveryRate, energyReduceRate: energyReduceRate, hp: hp, hpRecoveryRate: hpRecoveryRate, lifeSteal: lifeSteal, magicCritical: magicCritical, magicDef: magicDef, magicPenetrate: magicPenetrate, magicStr: magicStr, physicalCritical: physicalCritical, physicalPenetrate: physicalPenetrate, waveEnergyRecovery: waveEnergyRecovery, waveHpRecovery: waveHpRecovery, accuracy: accuracy)
         }
         
         var propertyGrowth: Property {
-            return Property(atk: atkGrowth, def: defGrowth, dodge: dodgeGrowth, energyRecoveryRate: energyRecoveryRateGrowth, energyReduceRate: energyReduceRateGrowth, hp: hpGrowth, hpRecoveryRate: hpRecoveryRateGrowth, lifeSteal: lifeStealGrowth, magicCritical: magicCriticalGrowth, magicDef: magicDefGrowth, magicPenetrate: magicPenetrateGrowth, magicStr: magicStrGrowth, physicalCritical: physicalCriticalGrowth, physicalPenetrate: physicalPenetrateGrowth, waveEnergyRecovery: waveEnergyRecoveryGrowth, waveHpRecovery: waveHpRecoveryGrowth)
+            return Property(atk: atkGrowth, def: defGrowth, dodge: dodgeGrowth, energyRecoveryRate: energyRecoveryRateGrowth, energyReduceRate: energyReduceRateGrowth, hp: hpGrowth, hpRecoveryRate: hpRecoveryRateGrowth, lifeSteal: lifeStealGrowth, magicCritical: magicCriticalGrowth, magicDef: magicDefGrowth, magicPenetrate: magicPenetrateGrowth, magicStr: magicStrGrowth, physicalCritical: physicalCriticalGrowth, physicalPenetrate: physicalPenetrateGrowth, waveEnergyRecovery: waveEnergyRecoveryGrowth, waveHpRecovery: waveHpRecoveryGrowth, accuracy: accuracyGrowth)
         }
     }
     
@@ -293,6 +305,7 @@ class Card: Codable {
         let promotionLevel: Int
         let waveEnergyRecovery: Int
         let waveHpRecovery: Int
+        let accuracy: Int
         
         var property: Property {
             return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
@@ -301,7 +314,7 @@ class Card: Codable {
                             magicCritical: Double(magicCritical), magicDef: Double(magicDef),
                             magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
                             physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
-                            waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery))
+                            waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery), accuracy: Double(accuracy))
         }
     }
     
@@ -352,8 +365,8 @@ extension Card {
         return base.unitId / 100
     }
     
-    func property(unitLevel: Int = ConsoleVariables.default.maxPlayerLevel,
-                  unitRank: Int = ConsoleVariables.default.maxEquipmentRank,
+    func property(unitLevel: Int = Preload.default.maxPlayerLevel,
+                  unitRank: Int = Preload.default.maxEquipmentRank,
                   bondRank: Int = Constant.presetMaxBondRank,
                   unitRarity: Int = Constant.presetMaxRarity,
                   addsEx: Bool = CardSortingViewController.Setting.default.addsEx) -> Property {
@@ -389,17 +402,17 @@ extension Card {
         return property.rounded()
     }
     
-    func combatEffectiveness(unitLevel: Int = ConsoleVariables.default.maxPlayerLevel,
-                             unitRank: Int = ConsoleVariables.default.maxEquipmentRank,
+    func combatEffectiveness(unitLevel: Int = Preload.default.maxPlayerLevel,
+                             unitRank: Int = Preload.default.maxEquipmentRank,
                              bondRank: Int = Constant.presetMaxBondRank,
                              unitRarity: Int = Constant.presetMaxRarity,
-                             skillLevel: Int = ConsoleVariables.default.maxPlayerLevel) -> Int {
+                             skillLevel: Int = Preload.default.maxPlayerLevel) -> Int {
         
         let property = self.property(unitLevel: unitLevel, unitRank: unitRank, bondRank: bondRank, unitRarity: unitRarity, addsEx: false)
         
         var result = 0.0
         
-        let coefficient = ConsoleVariables.default.coefficient
+        let coefficient = Preload.default.coefficient
         
         PropertyKey.all.forEach {
             result += property.item(for: $0).value * coefficient.value(for: $0)

@@ -21,6 +21,9 @@ struct ThemeColors {
     let caption: UIColor
     let tableViewCell: ThemeTableViewCell
     let loadingHUD: ThemeLoadingHUD
+    let foregroundColor: UIColor
+    let upValue: UIColor
+    let downValue: UIColor
 }
 
 struct ThemeTextfieldColors {
@@ -47,8 +50,9 @@ struct Theme: ThemeProtocol {
     let lightOpacity: Float
     let shadowOpacity: Float
     let backgroundImage: UIImage
-    let indicatorStyle: UIScrollViewIndicatorStyle
-    let blurEffectStyle: UIBlurEffectStyle
+    let indicatorStyle: UIScrollView.IndicatorStyle
+    let blurEffectStyle: UIBlurEffect.Style
+    let keyboardAppearance: UIKeyboardAppearance
     
     static let light = Theme(
         color: ThemeColors(
@@ -72,14 +76,18 @@ struct Theme: ThemeProtocol {
                 background: UIColor.white.withAlphaComponent(0.45),
                 text: .white,
                 foreground: UIColor.lightGray.withAlphaComponent(0.55)
-            )
+            ),
+            foregroundColor: .white,
+            upValue: UIColor(hexString: "DC5A5A"),
+            downValue: UIColor(hexString: "528FCC")
         ),
         barStyle: .default,
         lightOpacity: 1.0,
         shadowOpacity: 0.0,
         backgroundImage: UIImage(),
         indicatorStyle: .black,
-        blurEffectStyle: .extraLight
+        blurEffectStyle: .extraLight,
+        keyboardAppearance: .light
     )
     
     static let dark = Theme(
@@ -104,13 +112,17 @@ struct Theme: ThemeProtocol {
                 background: UIColor.black.withAlphaComponent(0.45),
                 text: .hatsuneYellow,
                 foreground: UIColor.darkGray.withAlphaComponent(0.55)
-            )
+            ),
+            foregroundColor: .black,
+            upValue: UIColor(hexString: "E59053"),
+            downValue: UIColor(hexString: "27A79B")
         ),
         barStyle: .black,
         lightOpacity: 0.0,
         shadowOpacity: 1.0,
         backgroundImage: #imageLiteral(resourceName: "sky_background"),
         indicatorStyle: .white,
-        blurEffectStyle: .dark
+        blurEffectStyle: .dark,
+        keyboardAppearance: .dark
     )
 }

@@ -25,6 +25,7 @@ struct Property: Codable, Equatable {
     var physicalPenetrate: Double
     var waveEnergyRecovery: Double
     var waveHpRecovery: Double
+    var accuracy: Double
     
     var effectivePhysicalHP: Double {
         return hp * (1 + def / 100) * (1 + dodge / 100)
@@ -34,7 +35,7 @@ struct Property: Codable, Equatable {
         return hp * (1 + magicDef / 100)
     }
     
-    struct Item {
+    struct Item: Codable {
         var key: PropertyKey
         var value: Double
         
@@ -100,6 +101,8 @@ struct Property: Codable, Equatable {
             return \.waveEnergyRecovery
         case .waveHpRecovery:
             return \.waveHpRecovery
+        case .accuracy:
+            return \.accuracy
         case .unknown:
             return nil
         }
@@ -133,7 +136,11 @@ struct Property: Codable, Equatable {
     }
     
     func noneZeroProperties() -> [Property.Item] {
-        return PropertyKey.all.compactMap { item(for: $0) }.filter { $0.value != 0 }
+        return allProperties().filter { $0.value != 0 }
+    }
+    
+    func allProperties() -> [Property.Item] {
+        return PropertyKey.all.compactMap { item(for: $0) }
     }
 }
 
@@ -147,11 +154,31 @@ func + (lhs: Property, rhs: Property.Item) -> Property {
     }
 }
 
+func - (lhs: Property, rhs: Property.Item) -> Property {
+    var property = lhs
+    if let keyPath = property.keyPath(for: rhs.key) {
+        property[keyPath: keyPath] -= rhs.value
+        return property
+    } else {
+        return lhs
+    }
+}
+
 func + (lhs: Property, rhs: Property) -> Property {
     var property = lhs
     PropertyKey.all.forEach {
         if let keyPath = property.keyPath(for: $0) {
             property[keyPath: keyPath] += rhs[keyPath: keyPath]
+        }
+    }
+    return property
+}
+
+func - (lhs: Property, rhs: Property) -> Property {
+    var property = lhs
+    PropertyKey.all.forEach {
+        if let keyPath = property.keyPath(for: $0) {
+            property[keyPath: keyPath] -= rhs[keyPath: keyPath]
         }
     }
     return property
@@ -218,5 +245,6 @@ extension Property {
         physicalPenetrate = 0
         waveEnergyRecovery = 0
         waveHpRecovery = 0
+        accuracy = 0
     }
 }

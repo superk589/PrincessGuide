@@ -10,6 +10,9 @@ import UIKit
 import Kingfisher
 import KingfisherWebP
 import Gestalt
+import CoreData
+import UserNotifications
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let rootTabBarController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController") as! UITabBarController
@@ -25,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootTabBarController
         window?.makeKeyAndVisible()
         
+        ThemeManager.default.theme = Defaults.prefersDarkTheme ? Theme.dark : Theme.light
         ThemeManager.default.apply(theme: Theme.self, to: self) { themeable, theme in
             let tabBar = rootTabBarController.tabBar
             tabBar.tintColor = theme.color.tint
@@ -32,48 +36,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             themeable.window?.backgroundColor = theme.color.background
         }
         
-        ThemeManager.default.theme = Defaults.prefersDarkTheme ? Theme.dark : Theme.light
-        
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
 
         // set Kingfisher cache never expiring
         ImageCache.default.maxCachePeriodInSecond = -1
         
-        VersionManager.shared.executeDocumentReset { (lastVersion) in
-            do {
-                if lastVersion < 2 {
-                    try FileManager.default.removeItem(at: ConsoleVariables.url)
+        // prepare for preload master data
+        Preload.default.syncLoad()
+        
+        UNUserNotificationCenter.current().delegate = NotificationHandler.default
+        
+        BirthdayCenter.default.scheduleNotifications()
+        
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                    if Constant.iAPProductIDs.contains(purchase.productId) {
+                        Defaults.proEdition = true
+                        NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
+                    }
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
                 }
-            } catch (let error) {
-                print(error)
             }
+        }
+        
+        SwiftyStoreKit.shouldAddStorePaymentHandler = { payment, product in
+            return true
         }
         
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        BirthdayCenter.default.scheduleNotifications()
     }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
 }
-

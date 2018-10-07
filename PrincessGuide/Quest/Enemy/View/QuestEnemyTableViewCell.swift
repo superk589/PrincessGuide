@@ -24,7 +24,7 @@ class QuestEnemyTableViewCell: UITableViewCell {
     
     weak var delegate: QuestEnemyTableViewCellDelegate?
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectedBackgroundView = UIView()
@@ -69,9 +69,15 @@ class QuestEnemyTableViewCell: UITableViewCell {
     }
     
     private var enemies = [Enemy]()
-    func configure(for wave: Wave, index: Int) {
+    func configure(for wave: Wave, title: String) {
         enemies = wave.enemies.compactMap { $0.enemy }
-        titleLabel.text = "Wave \(index + 1)"
+        titleLabel.text = title
+        collectionView.reload()
+    }
+    
+    func configure(for enemies: [Enemy], title: String) {
+        self.enemies = enemies
+        titleLabel.text = title
         collectionView.reload()
     }
 }

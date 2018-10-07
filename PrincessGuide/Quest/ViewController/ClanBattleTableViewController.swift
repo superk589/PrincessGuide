@@ -32,7 +32,7 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
             themeable.tableView.backgroundColor = theme.color.background
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         
         tableView.mj_header = refresher
         refresher.refreshingBlock = { [weak self] in self?.check() }
@@ -40,6 +40,7 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(HatsuneEventTableViewCell.self, forCellReuseIdentifier: HatsuneEventTableViewCell.description())
         tableView.rowHeight = 84
+        tableView.estimatedRowHeight = 0
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
@@ -78,7 +79,7 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let clanBattle = clanBattles[indexPath.row]
-        cell.configure(for: clanBattle.name, subtitle: "", unitID: clanBattle.groups.last?.wave.enemies.first?.enemy?.unit.prefabId)
+        cell.configure(for: clanBattle.groups.last?.wave.enemies.first?.enemy?.unit.unitName ?? "", subtitle: clanBattle.name, unitID: clanBattle.groups.last?.wave.enemies.first?.enemy?.unit.prefabId)
         return cell
     }
     

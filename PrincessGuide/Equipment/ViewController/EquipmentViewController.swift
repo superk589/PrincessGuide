@@ -40,11 +40,14 @@ class EquipmentViewController: UIViewController, DataChecking {
             make.edges.equalToSuperview()
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
 
         navigationItem.title = NSLocalizedString("Equipments", comment: "")
         
         layout = UICollectionViewFlowLayout()
+        if #available(iOS 11.0, *) {
+            layout.sectionInsetReference = .fromSafeArea
+        }
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         layout.itemSize = CGSize(width: 64, height: 64)
@@ -78,10 +81,6 @@ class EquipmentViewController: UIViewController, DataChecking {
         
         loadData()
 
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func handleUpdateEnd(_ notification: Notification) {

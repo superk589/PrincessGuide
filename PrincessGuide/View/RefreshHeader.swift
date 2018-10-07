@@ -11,7 +11,7 @@ import MJRefresh
 
 class RefreshHeader: MJRefreshHeader {
     
-    let loadingView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    let loadingView = UIActivityIndicatorView(style: .gray)
     let arrowImage = UIImageView()
     
     override var state: MJRefreshState {

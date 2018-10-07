@@ -214,10 +214,11 @@ enum TargetType: Int, CustomStringConvertible {
     case magic
     case allSummonRandom
     case selfSummonRandom
+    case boss
     
     var isExclusiveWithAll: Bool {
         switch self {
-        case .unknown, .magic, .physics, .summon:
+        case .unknown, .magic, .physics, .summon, .boss:
             return false
         default:
             return true
@@ -281,6 +282,8 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("random minion", comment: "")
         case .selfSummonRandom:
             return NSLocalizedString("random self minion", comment: "")
+        case .boss:
+            return NSLocalizedString("boss", comment: "")
         }
     }
     
@@ -346,6 +349,9 @@ enum TargetType: Int, CustomStringConvertible {
             return String(format: format, localizedModifier)
         case .magic:
             let format = NSLocalizedString("%@ magic", comment: "")
+            return String(format: format, localizedModifier)
+        case .boss:
+            let format = NSLocalizedString("%@ boss", comment: "")
             return String(format: format, localizedModifier)
         default:
             return description

@@ -22,7 +22,7 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     weak var delegate: CDPromotionTableViewCellDelegate?
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectedBackgroundView = UIView()
@@ -70,6 +70,7 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
         icons.forEach {
             $0.removeFromSuperview()
         }
+        icons.removeAll()
         promotion.equipSlots.forEach {
             let icon = IconImageView()
             icon.isUserInteractionEnabled = true

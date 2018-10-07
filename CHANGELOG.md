@@ -1,3 +1,37 @@
+# 1.1.2
+
+1. 卡片详情页新增属性对比模式，可以快速对比不同 Rank 下属性增减情况，需要在角色详情页面选项中手动打开。
+2. 新增敌方单位抗性数据。
+3. 修复一个导致编辑 Box 内角色时闪退的问题。
+4. 修复生日提醒中同一角色可能提醒多次的问题。
+5. 修复一些技能描述错误。
+6. 其他细节优化和改进。
+
+## English version
+1. Add status comparison mode to chara detail page, you can quickly compare status under different ranks. Default is off, you need to switch on it at chara detail options page.
+2. Add enemy resistance data.
+3. Fix a crash problem when editing charas in box.
+4. Fix a bug that the same chara may appear twice in upcoming birthdays.
+5. Fix some mistakes in skill detail.
+6. Other minor fixes and improvements.
+
+# 1.1.1
+
+1. 增加对命中属性的支持。
+2. 修复一个页面布局问题。
+
+## English version
+1. Support for accuracy property.
+2. Fix a layout issue.
+
+# 1.1
+
+1. 此版本起不再支持低于 iOS 10.0 的设备。
+2. 新增生日提醒，角色管理，Box 管理，队伍管理。
+
+## English version
+1. Drop support for devices below iOS 10.0.
+2. Add birthday notification, chara management, box management and team management.
 
 # 1.0.7
 

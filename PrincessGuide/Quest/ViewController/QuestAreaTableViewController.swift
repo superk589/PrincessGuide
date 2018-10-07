@@ -42,7 +42,7 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
             themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         
         tableView.mj_header = refresher
         refresher.refreshingBlock = { [weak self] in self?.check() }
@@ -52,6 +52,7 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(HatsuneEventTableViewCell.self, forCellReuseIdentifier: HatsuneEventTableViewCell.description())
         tableView.rowHeight = 84
+        tableView.estimatedRowHeight = 0
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         

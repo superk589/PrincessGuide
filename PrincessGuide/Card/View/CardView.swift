@@ -61,14 +61,14 @@ class CardView: UIView {
     func configure(for card: Card, value: String?, mode: Mode = .rarity) {
         nameLabel.text = card.base.unitName
         rarityView.setup(stars: card.base.rarity)
-        icon.cardID = card.iconID
+        icon.cardID = card.iconID()
         rightLabel.text = value
         rightLabel.isHidden = mode == .rarity
         rarityView.isHidden = mode == .text
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIViewNoIntrinsicMetric, height: 64)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 64)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -10,13 +10,21 @@ import Foundation
 
 struct Constant {
     static let appID = 1377498032
+    static let iAPProductIDs: Set<String> = ["princess_guide_pro_edition"]
+    static let appBundle = "com.zzk.PrincessGuide"
     static let appName = "Hatsune's Notes"
     static let appNameHashtag = "HatsunesNotes"
-    static let presetMaxRank = 9
-    static let presetMaxPlayerLevel = 95
-    static let presetMaxEnemyLevel = 100
+    static let presetMaxRank = 10
+    static let presetMaxPlayerLevel = 102
+    static let presetMaxEnemyLevel = 120
     static let presetMaxBondRank = 8
     static let presetMaxRarity = 5
+    static let presetManaCostPerPoint = [
+        2: 120,
+        3: 150,
+        4: 200
+    ]
+    static let presetNeededToLevelUpSkillCount = 4
 }
 
 extension URL {

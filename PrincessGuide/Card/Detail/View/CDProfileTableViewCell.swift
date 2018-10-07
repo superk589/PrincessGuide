@@ -15,7 +15,7 @@ class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     var itemViews = [ProfileItemView]()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectedBackgroundView = UIView()
@@ -61,8 +61,8 @@ class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
     func configure(for item: CardDetailItem) {
         if case .profileItems(let items) = item {
             configure(for: items)
-        } else if case .propertyItems(let items, let unitLevel, let targetLevel) = item {
-            configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel)
+        } else if case .propertyItems(let items, let unitLevel, let targetLevel, let comparisonMode) = item {
+            configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel, comparisonMode: comparisonMode)
         } else {
             fatalError()
         }

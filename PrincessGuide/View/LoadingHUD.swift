@@ -106,7 +106,7 @@ class LoadingHUDManager {
             }
             for subview in window.subviews {
                 if subview is UpdatingHUD {
-                    window.bringSubview(toFront: subview)
+                    window.bringSubviewToFront(subview)
                 }
             }
             self.hud.alpha = 1

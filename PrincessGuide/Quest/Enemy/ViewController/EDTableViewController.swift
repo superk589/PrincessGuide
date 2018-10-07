@@ -67,9 +67,10 @@ class EDTableViewController: UITableViewController {
             themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         reloadAll()
     }
     

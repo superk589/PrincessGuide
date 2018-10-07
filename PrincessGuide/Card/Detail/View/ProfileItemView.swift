@@ -46,9 +46,9 @@ class ProfileItemView: UIView {
         contentLabel.text = item.value
     }
     
-    func configure(for item: Property.Item, unitLevel: Int, targetLevel: Int) {
+    func configure(for item: Property.Item, unitLevel: Int, targetLevel: Int, comparisonMode: Bool = false) {
         titleLabel.text = item.key.description
-        if let percent = item.percent(selfLevel: unitLevel, targetLevel: targetLevel), percent != 0 {
+        if let percent = item.percent(selfLevel: unitLevel, targetLevel: targetLevel), percent != 0, !comparisonMode {
             if item.hasLevelAssumption {
                 contentLabel.text = String(format: "%d(%.2f%%, %d to %d)", Int(item.value), percent, unitLevel, targetLevel)
             } else {
@@ -56,6 +56,22 @@ class ProfileItemView: UIView {
             }
         } else {
             contentLabel.text = String(Int(item.value))
+        }
+        
+        if comparisonMode {
+            if item.value > 0 {
+                ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                    themeable.contentLabel.textColor = theme.color.upValue
+                }
+            } else if item.value < 0 {
+                ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                    themeable.contentLabel.textColor = theme.color.downValue
+                }
+            } else {
+                ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                    themeable.contentLabel.textColor = theme.color.body
+                }
+            }
         }
     }
     

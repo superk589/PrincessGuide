@@ -40,7 +40,7 @@ class CardTableViewController: UITableViewController, DataChecking {
             themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateConsoleVariblesEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFilterChange(_:)), name: .cardSortingSettingsDidChange, object: nil)
         
         tableView.mj_header = refresher
@@ -49,7 +49,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(CardTableViewCell.self, forCellReuseIdentifier: CardTableViewCell.description())
         tableView.estimatedRowHeight = 84
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
@@ -70,60 +70,96 @@ class CardTableViewController: UITableViewController, DataChecking {
     private func loadData() {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getCards(callback: { (cards) in
-                DispatchQueue.main.async {
-                    LoadingHUDManager.default.hide()
-                    self?.cards = cards
-                    self?.sortedAndGroupedCards = cards.filter(settings: CardSortingViewController.Setting.default)
-                    self?.tableView.reloadData()
+            let cards = Array(Preload.default.cards.values)
+            let sortedAndGroupedCards = cards.filter(settings: CardSortingViewController.Setting.default)
+            DispatchQueue.main.async {
+                LoadingHUDManager.default.hide()
+                self?.cards = cards
+                self?.sortedAndGroupedCards = sortedAndGroupedCards
+                self?.tableView.reloadData()
                     
-                    /* debug */
-                    /*let encoder = JSONEncoder()
-                    encoder.outputFormatting = .prettyPrinted
-                    if let data = try? encoder.encode(cards.map { [$0.base.unitName: $0.property()] }) {
-                        try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_property.json"))
-                    }
-                     */
-                    
-                    /*
-                    let encoder = JSONEncoder()
-                    encoder.outputFormatting = .prettyPrinted
-                    let settings = CDSettingsViewController.Setting.default
-                    if let data = try? encoder.encode(cards.map { (card) -> [String: [String: [String]]] in
-                        let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: true)
-                        return [
-                            card.base.unitName: [
-                                "ub": card.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                                "main_1": card.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                                "main_2": card.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                                "ex": card.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                                "ex+": card.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 95, property: property, style: .valueInCombat) },
-                            ]
-                        ]
-                    }) {
-                        try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills_r9_95_ex.json"))
-                    }
-                     */
-                    
-                    /*
-                    let encoder = JSONEncoder()
-                    encoder.outputFormatting = .prettyPrinted
-                    if let data = try? encoder.encode(cards.map {
-                        [
-                            $0.base.unitName: [
-                                "ub": $0.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                                "main_1": $0.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                                "main_2": $0.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                                "ex": $0.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                                "ex+": $0.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
-                            ]
-                        ]
-                    }) {
-                        try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills_formula.json"))
-                    }
-                     */
+                /* debug */
+                /*let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                if let data = try? encoder.encode(cards.map { [$0.base.unitName: $0.property()] }) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_property.json"))
                 }
-            })
+                 */
+                
+                /*
+                struct CardSkill: Codable {
+                    var name: String
+                    var skills: [String: [String]]
+                }
+                
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                let settings = CDSettingsViewController.Setting.default
+                let cardSkills = cards.map { (card) -> CardSkill in
+                    let property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: true)
+                    return CardSkill(name: card.base.unitName, skills: [
+                        "ub": card.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        "main_1": card.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        "main_2": card.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        "ex": card.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        "ex+": card.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 102, property: property, style: .valueInCombat) },
+                        ])
+                }
+                
+                if let data = try? encoder.encode(cardSkills) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills.json"))
+                }
+                 */
+                
+                /*
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                if let data = try? encoder.encode(cards.map {
+                    [
+                        $0.base.unitName: [
+                            "ub": $0.unionBurst!.actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                            "main_1": $0.mainSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                            "main_2": $0.mainSkills[1].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                            "ex": $0.exSkills[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                            "ex+": $0.exSkillEvolutions[0].actions.map { $0.parameter.localizedDetail(of: 95, style: .full) },
+                        ]
+                    ]
+                }) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/card_skills_formula.json"))
+                }
+                 */
+                
+                /*
+                struct CardPropertyDiff: Codable {
+                    var name: String
+                    var properties: [Property.Item]
+                }
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                if let data = try? encoder.encode(cards.map {
+                    return CardPropertyDiff(name: $0.base.unitName, properties: ($0.property() - $0.property(unitRank: 9)).allProperties())
+                }) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r10_r9_diff.json"))
+                }
+                 */
+                
+                /*
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                if let data = try? encoder.encode(cards.map {
+                    return [
+                        $0.base.unitName: [
+                            "Star 5, Rank 10": $0.combatEffectiveness(),
+                            "Star 5, Rank 9": $0.combatEffectiveness(unitLevel: 102, unitRank: 9, bondRank: 8, unitRarity: 5, skillLevel: 102),
+                            "Star 4, Rank 10": $0.combatEffectiveness(unitLevel: 102, unitRank: 10, bondRank: 8, unitRarity: 4, skillLevel: 102),
+                            "Star 3, Rank 10": $0.combatEffectiveness(unitLevel: 102, unitRank: 10, bondRank: 8, unitRarity: 3, skillLevel: 102),
+                        ]
+                    ]
+                }) {
+                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r10_r9_cf.json"))
+                }
+                 */
+            }
         }
     }
     
@@ -170,10 +206,14 @@ class CardTableViewController: UITableViewController, DataChecking {
         return sortedAndGroupedCards[section].cards.count
     }
     
+    func cardOf(indexPath: IndexPath) -> Card {
+        return sortedAndGroupedCards[indexPath.section].cards[indexPath.row]
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.description(), for: indexPath) as! CardTableViewCell
         
-        let card = sortedAndGroupedCards[indexPath.section].cards[indexPath.row]
+        let card = cardOf(indexPath: indexPath)
         let (mode, text) = cardViewRightContent(card: card, settings: CardSortingViewController.Setting.default)
         cell.configure(for: card, value: text, mode: mode)
         
@@ -192,7 +232,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         let mode: CardView.Mode
         let text: String?
         switch settings.sortingMethod {
-        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery:
+        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy:
             let propertyKey = PropertyKey(rawValue: settings.sortingMethod.rawValue)!
             mode = .text
             text = String(Int(card.property().item(for: propertyKey).value))
@@ -229,12 +269,62 @@ class CardTableViewController: UITableViewController, DataChecking {
         case .combatEffectiveness:
             mode = .text
             text = String(card.combatEffectiveness())
+        case .birthday:
+            mode = .text
+            let format = NSLocalizedString("%@/%@", comment: "")
+            text = String(format: format, card.profile.birthMonth, card.profile.birthDay)
         }
         return (mode, text)
     }
 }
 
 extension Array where Element == Card {
+    
+    mutating func sort(settings: CardSortingViewController.Setting) {
+
+        let sortingMethod: (Card, Card) -> Bool
+        switch settings.sortingMethod {
+        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy:
+            let propertyKey = PropertyKey(rawValue: settings.sortingMethod.rawValue)!
+            sortingMethod = { $0.property().item(for: propertyKey).value < $1.property().item(for: propertyKey).value }
+        case .rarity:
+            sortingMethod = { $0.base.rarity < $1.base.rarity }
+        case .effectivePhysicalHP:
+            sortingMethod = { $0.property().effectivePhysicalHP < $1.property().effectivePhysicalHP }
+        case .effectiveMagicalHP:
+            sortingMethod = { $0.property().effectiveMagicalHP < $1.property().effectiveMagicalHP }
+        case .swingTime:
+            sortingMethod = { $0.base.normalAtkCastTime < $1.base.normalAtkCastTime }
+        case .attackRange:
+            sortingMethod = { $0.base.searchAreaWidth < $1.base.searchAreaWidth }
+        case .id:
+            sortingMethod = { $0.base.unitId < $1.base.unitId }
+        case .name:
+            sortingMethod = { $0.base.unitName < $1.base.unitName }
+        case .height:
+            sortingMethod = { Int($0.profile.height) ?? .max < Int($1.profile.height) ?? .max}
+        case .weight:
+            sortingMethod = { Int($0.profile.weight) ?? .max < Int($1.profile.weight) ?? .max }
+        case .age:
+            sortingMethod = { Int($0.profile.age) ?? .max < Int($1.profile.age) ?? .max }
+        case .combatEffectiveness:
+            sortingMethod = { $0.combatEffectiveness() < $1.combatEffectiveness() }
+        case .birthday:
+            sortingMethod = { (Int($0.profile.birthMonth) ?? .max, Int($0.profile.birthDay) ?? .max) < (Int($1.profile.birthMonth) ?? .max, Int($1.profile.birthDay) ?? .max) }
+        }
+        
+        sort(by: sortingMethod)
+        
+        if !settings.isAscending {
+            reverse()
+        }
+    }
+    
+    func sorted(settings: CardSortingViewController.Setting) -> [Card] {
+        var cards = self
+        cards.sort(settings: settings)
+        return cards
+    }
     
     func filter(settings: CardSortingViewController.Setting) -> [CardTableViewController.Section] {
         
@@ -282,43 +372,8 @@ extension Array where Element == Card {
             sections = [frontSection, middleSection, backSection]
         }
         
-        let sortingMethod: (Card, Card) -> Bool
-        switch settings.sortingMethod {
-        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery:
-            let propertyKey = PropertyKey(rawValue: settings.sortingMethod.rawValue)!
-            sortingMethod = { $0.property().item(for: propertyKey).value < $1.property().item(for: propertyKey).value }
-        case .rarity:
-            sortingMethod = { $0.base.rarity < $1.base.rarity }
-        case .effectivePhysicalHP:
-            sortingMethod = { $0.property().effectivePhysicalHP < $1.property().effectivePhysicalHP }
-        case .effectiveMagicalHP:
-            sortingMethod = { $0.property().effectiveMagicalHP < $1.property().effectiveMagicalHP }
-        case .swingTime:
-            sortingMethod = { $0.base.normalAtkCastTime < $1.base.normalAtkCastTime }
-        case .attackRange:
-            sortingMethod = { $0.base.searchAreaWidth < $1.base.searchAreaWidth }
-        case .id:
-            sortingMethod = { $0.base.unitId < $1.base.unitId }
-        case .name:
-            sortingMethod = { $0.base.unitName < $1.base.unitName }
-        case .height:
-            sortingMethod = { Int($0.profile.height) ?? .max < Int($1.profile.height) ?? .max}
-        case .weight:
-            sortingMethod = { Int($0.profile.weight) ?? .max < Int($1.profile.weight) ?? .max }
-        case .age:
-            sortingMethod = { Int($0.profile.age) ?? .max < Int($1.profile.age) ?? .max }
-        case .combatEffectiveness:
-            sortingMethod = { $0.combatEffectiveness() < $1.combatEffectiveness() }
-        }
-        
         for index in sections.indices {
-            sections[index].cards.sort(by: sortingMethod)
-        }
-        
-        if !settings.isAscending {
-            for index in sections.indices {
-                sections[index].cards.reverse()
-            }
+            sections[index].cards.sort(settings: settings)
         }
         
         return sections
@@ -327,8 +382,7 @@ extension Array where Element == Card {
 
 extension Card {
     
-    var iconID: Int {
-        let style = CardSortingViewController.Setting.default.iconStyle
+    func iconID(style: CardSortingViewController.Setting.IconStyle = CardSortingViewController.Setting.default.iconStyle) -> Int {
         switch style {
         case .default:
             if base.rarity < 3 {

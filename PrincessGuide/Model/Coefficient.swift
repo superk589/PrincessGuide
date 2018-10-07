@@ -33,7 +33,8 @@ struct Coefficient: Codable {
             "energy_reduce_rate_coefficient": 3.0,
             "skill_lv_coefficient": 10.0,
             "exskill_evolution_coefficient": 15,
-            "overall_coefficient": 1.0
+            "overall_coefficient": 1.0,
+            "accuracy_coefficient": 2.0
         }
         """
         let decoder = JSONDecoder()
@@ -62,7 +63,8 @@ struct Coefficient: Codable {
     let skillLvCoefficient: Double
     let waveEnergyRecoveryCoefficient: Double
     let waveHpRecoveryCoefficient: Double
-
+    let accuracyCoefficient: Double
+    
     func value(for key: PropertyKey) -> Double {
         switch key {
         case .atk: return atkCoefficient
@@ -81,6 +83,7 @@ struct Coefficient: Codable {
         case .physicalPenetrate: return physicalPenetrateCoefficient
         case .waveEnergyRecovery: return waveEnergyRecoveryCoefficient
         case .waveHpRecovery: return waveHpRecoveryCoefficient
+        case .accuracy: return accuracyCoefficient
         case .unknown: return 0
         }
     }

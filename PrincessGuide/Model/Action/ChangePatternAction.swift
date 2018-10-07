@@ -16,8 +16,10 @@ class ChangePatterAction: ActionParameter {
         case 1:
             let format = NSLocalizedString("Change attack pattern to %d for %@s.", comment: "")
             return String(format: format, actionDetail2 % 10, actionValue1.description)
+        case 2:
+            let format = NSLocalizedString("Change skill visual effect for %@s.", comment: "")
+            return String(format: format, actionValue1.description)
         default:
-            /// FIXME: this action seems do nothing but visual effect change
             return super.localizedDetail(of: level, property: property, style: style)
         }
     }

@@ -30,6 +30,9 @@
 "%@ absolute" = "%@绝对位置的";
 
 /* No comment provided by engineer. */
+"%@ boss" = "%@首领级";
+
+/* No comment provided by engineer. */
 "%@ Damage is reduced on low level players." = "%@伤害对低等级玩家会减少。";
 
 /* target type */
@@ -97,6 +100,9 @@
 /* No comment provided by engineer. */
 "%@ random(once)" = "%@随机（仅第一次）";
 
+/* No comment provided by engineer. */
+"%@ receives your blessing." = "%@收到了你的祝福。";
+
 /* [enemy] targets in range [500] */
 "%@ targets in range %d" = "范围 %2$d 内%1$@目标";
 
@@ -114,6 +120,9 @@
 
 /* No comment provided by engineer. */
 "absolute" = "绝对位置内";
+
+/* No comment provided by engineer. */
+"Accuracy" = "命中";
 
 /* No comment provided by engineer. */
 "Action" = "Action";
@@ -167,10 +176,16 @@
 "Appear after %@s since wave start." = "回合开始后 %@ 秒入场。";
 
 /* No comment provided by engineer. */
+"arena" = "竞技场";
+
+/* No comment provided by engineer. */
 "Ascending" = "升序";
 
 /* No comment provided by engineer. */
 "ATK" = "物理攻击力";
+
+/* No comment provided by engineer. */
+"attack" = "进攻";
 
 /* No comment provided by engineer. */
 "Attack Pattern" = "攻击模式";
@@ -182,7 +197,16 @@
 "Attack Type" = "攻击类型";
 
 /* No comment provided by engineer. */
+"Attention" = "提示";
+
+/* No comment provided by engineer. */
+"Authorized" = "已通过";
+
+/* No comment provided by engineer. */
 "Back" = "后卫";
+
+/* No comment provided by engineer. */
+"Batch Edit" = "批量修改";
 
 /* No comment provided by engineer. */
 "Become invulnerable for [%@]s." = "进入无敌状态，持续 [%@] 秒。";
@@ -192,6 +216,9 @@
 
 /* No comment provided by engineer. */
 "Birthday" = "生日";
+
+/* No comment provided by engineer. */
+"Birthday Notification" = "生日通知";
 
 /* No comment provided by engineer. */
 "Blind" = "暗黑";
@@ -206,7 +233,34 @@
 "Bond Rank" = "绊 Rank";
 
 /* No comment provided by engineer. */
+"boss" = "首领级";
+
+/* No comment provided by engineer. */
+"Box Detail" = "Box 详情";
+
+/* No comment provided by engineer. */
+"Box Management" = "Box 管理";
+
+/* No comment provided by engineer. */
+"Box Name" = "Box 名称";
+
+/* No comment provided by engineer. */
+"Boxes" = "Box 列表";
+
+/* No comment provided by engineer. */
+"buffs" = "增益";
+
+/* No comment provided by engineer. */
 "Burn" = "灼烧";
+
+/* No comment provided by engineer. */
+"By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again." = "目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。";
+
+/* No comment provided by engineer. */
+"Campaign" = "奖励事件";
+
+/* No comment provided by engineer. */
+"Cancel" = "取消";
 
 /* No comment provided by engineer. */
 "Cards" = "卡片";
@@ -248,13 +302,28 @@
 "Change self position." = "改变自身位置。";
 
 /* No comment provided by engineer. */
+"Change skill visual effect for %@s." = "改变技能视觉效果，持续 %@ 秒。";
+
+/* No comment provided by engineer. */
 "Change the perspective on %@." = "将自身视角切换到%@。";
 
 /* No comment provided by engineer. */
 "Change the perspective to %@ %d." = "向%1$@移动自身视角，距离 %2$d。";
 
+/* Birthday notification title */
+"Chara Birthday" = "角色生日";
+
+/* No comment provided by engineer. */
+"Chara Management" = "角色管理";
+
 /* No comment provided by engineer. */
 "Chara Name" = "角色名";
+
+/* No comment provided by engineer. */
+"Charas" = "角色列表";
+
+/* No comment provided by engineer. */
+"Charas Count" = "角色数量";
 
 /* No comment provided by engineer. */
 "Charge for %@s and deal [%@ * damage taken] additional damage on the next effect." = "充能 %1$@ 秒，下一个效果造成 [%2$@ * 所受伤害] 的额外伤害。";
@@ -272,10 +341,16 @@
 "Checking" = "正在检查更新";
 
 /* No comment provided by engineer. */
+"clan battle" = "公会战";
+
+/* No comment provided by engineer. */
 "Clan Battle" = "公会战";
 
 /* No comment provided by engineer. */
 "Clan Battle %d-%d" = "公会战 %1$d 年 %2$d 月";
+
+/* No comment provided by engineer. */
+"Clear all %@ on %@ with chance [%@]%%." = "有 [%3$@]%% 几率清除%2$@上的%1$@。";
 
 /* No comment provided by engineer. */
 "Combat Effectiveness" = "战力";
@@ -305,10 +380,10 @@
 "Condition: if target is blinded then use %d." = "条件分支：如果目标处于黑暗状态则使用 %1$d。";
 
 /* No comment provided by engineer. */
-"Condition: if target is burned then use %d, otherwise %d." = "条件分支：如果目标处于燃烧状态则使用 %1$d，否则使用 %2$d。";
+"Condition: if target is burned then use %d, otherwise %d." = "条件分支：如果目标处于火伤状态则使用 %1$d，否则使用 %2$d。";
 
 /* No comment provided by engineer. */
-"Condition: if target is burned then use %d." = "条件分支：如果目标处于燃烧状态则使用 %1$d。";
+"Condition: if target is burned then use %d." = "条件分支：如果目标处于火伤状态则使用 %1$d。";
 
 /* No comment provided by engineer. */
 "Condition: if target is charmed then use %d, otherwise %d." = "条件分支：如果目标处于魅惑状态则使用 %1$d，否则使用 %2$d。";
@@ -323,10 +398,28 @@
 "Condition: if target is controlled then use %d." = "条件分支：如果目标处于被控制状态则使用 %1$d。";
 
 /* No comment provided by engineer. */
+"Condition: if target's HP is below %d%% then use %d, otherwise %d." = "条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d，否则使用 %3$d。";
+
+/* No comment provided by engineer. */
+"Condition: if target's HP is below %d%% then use %d." = "条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d。";
+
+/* No comment provided by engineer. */
+"Confirm" = "确定";
+
+/* No comment provided by engineer. */
+"Copy" = "复制";
+
+/* No comment provided by engineer. */
 "Crafted" = "制作";
 
 /* No comment provided by engineer. */
+"Create Team" = "创建队伍";
+
+/* No comment provided by engineer. */
 "Curse" = "诅咒";
+
+/* No comment provided by engineer. */
+"Custom Tag" = "自定义标签";
 
 /* No comment provided by engineer. */
 "CV" = "声优";
@@ -341,10 +434,19 @@
 "Deal damage equal to [%@]%% of target's max HP to %@." = "对%2$@造成其最大 HP [%1$@]%% 的伤害。";
 
 /* No comment provided by engineer. */
+"debuffs" = "减益";
+
+/* No comment provided by engineer. */
 "DEF" = "物理防御力";
 
 /* icon style */
 "default" = "默认";
+
+/* No comment provided by engineer. */
+"defend" = "防守";
+
+/* No comment provided by engineer. */
+"Denied" = "拒绝";
 
 /* No comment provided by engineer. */
 "Descending" = "降序";
@@ -353,10 +455,13 @@
 "Description" = "描述";
 
 /* No comment provided by engineer. */
+"Deselect All" = "取消全选";
+
+/* No comment provided by engineer. */
 "Detain" = "拘留";
 
 /* No comment provided by engineer. */
-"Die instantly." = "立即死亡。";
+"Detain (Damage)" = "拘留（伤害）";
 
 /* No comment provided by engineer. */
 "Dodge" = "回避";
@@ -368,13 +473,31 @@
 "Draw %@ toward self %d." = "拉近%1$@，距离 %2$d。";
 
 /* No comment provided by engineer. */
+"Drop" = "掉落";
+
+/* No comment provided by engineer. */
 "Dropped" = "掉落";
 
 /* No comment provided by engineer. */
 "Drops" = "掉落";
 
 /* No comment provided by engineer. */
+"dungeon" = "地下城";
+
+/* No comment provided by engineer. */
 "Dungeon" = "地下城";
+
+/* No comment provided by engineer. */
+"Edit" = "编辑";
+
+/* No comment provided by engineer. */
+"Edit Box" = "编辑 Box";
+
+/* No comment provided by engineer. */
+"Edit Chara" = "编辑角色";
+
+/* No comment provided by engineer. */
+"Edit Team" = "编辑队伍";
 
 /* No comment provided by engineer. */
 "Effective Magical HP" = "魔法有效 HP";
@@ -385,6 +508,9 @@
 /* No comment provided by engineer. */
 "Email" = "邮件";
 
+/* No comment provided by engineer. */
+"Enable Notifications" = "允许通知";
+
 /* target modifier */
 "enemy" = "敌方";
 
@@ -393,6 +519,12 @@
 
 /* No comment provided by engineer. */
 "Energy Reduce Rate" = "TP 消费轻减";
+
+/* No comment provided by engineer. */
+"Enter Name" = "输入名称";
+
+/* No comment provided by engineer. */
+"Enter Tag" = "输入标签";
 
 /* No comment provided by engineer. */
 "Equipment" = "装备";
@@ -426,6 +558,12 @@
 
 /* No comment provided by engineer. */
 "fifth" = "第五";
+
+/* No comment provided by engineer. */
+"Filter" = "筛选";
+
+/* No comment provided by engineer. */
+"Filter Condition" = "筛选条件";
 
 /* No comment provided by engineer. */
 "Finished" = "更新完成";
@@ -464,7 +602,13 @@
 "Full" = "大图";
 
 /* No comment provided by engineer. */
+"Gacha" = "卡池";
+
+/* No comment provided by engineer. */
 "General" = "通用";
+
+/* No comment provided by engineer. */
+"Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving." = "通常，您可能只想批量修改角色等级和技能等级。如果打开这个选项，所有字段都会保存到所选角色上。在保存之前，请确认您已经正确理解了这个选项的含义。";
 
 /* No comment provided by engineer. */
 "Group by" = "分组方式";
@@ -476,13 +620,19 @@
 "Guild" = "公会";
 
 /* No comment provided by engineer. */
+"Happy Birthday!!" = "生日快乐！";
+
+/* No comment provided by engineer. */
 "Hard" = "困难";
 
 /* No comment provided by engineer. */
-"Haste" = "Haste";
+"Haste" = "加速";
 
 /* No comment provided by engineer. */
 "Height" = "身高";
+
+/* No comment provided by engineer. */
+"How to restore purchasing on a new device?" = "如何在一台新设备上恢复您的购买？";
 
 /* No comment provided by engineer. */
 "HP" = "HP";
@@ -497,7 +647,13 @@
 "Image" = "图片";
 
 /* No comment provided by engineer. */
-"Instant Death" = "Instant Death";
+"Import All Charas" = "导入全图鉴 Box";
+
+/* No comment provided by engineer. */
+"inevitable physical" = "无法躲闪的物理";
+
+/* No comment provided by engineer. */
+"Instant Death" = "即死";
 
 /* No comment provided by engineer. */
 "Interest" = "兴趣";
@@ -506,10 +662,16 @@
 "Internal ID" = "内部 ID";
 
 /* No comment provided by engineer. */
+"Kill %@ instantly." = "对%@释放即死效果。";
+
+/* No comment provided by engineer. */
 "Knock %@ away %d." = "击退%1$@，距离 %2$d。";
 
 /* No comment provided by engineer. */
 "Knock %@ up %d." = "击飞%1$@，高度 %2$d。";
+
+/* No comment provided by engineer. */
+"Knock Back" = "击退";
 
 /* No comment provided by engineer. */
 "last effect affected or the nearest" = "上一个效果或最近的";
@@ -528,6 +690,12 @@
 
 /* No comment provided by engineer. */
 "Loop start" = "循环开始";
+
+/* No comment provided by engineer. */
+"Loses" = "失败";
+
+/* No comment provided by engineer. */
+"Luna's Tower %d" = "月神塔 %d";
 
 /* No comment provided by engineer. */
 "magic" = "法系";
@@ -563,10 +731,46 @@
 "Make %@ lose [%@] TP." = "使%1$@失去 [%2$@] TP。";
 
 /* No comment provided by engineer. */
+"Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page." = "确保您已经用同一个 Apple ID 登录了新设备，然后点击右上角的恢复按钮。";
+
+/* No comment provided by engineer. */
+"Mana" = "Mana";
+
+/* No comment provided by engineer. */
+"Mana Cost of Crafting" = "制作装备所需 Mana";
+
+/* No comment provided by engineer. */
+"Mana Cost of Enhancing" = "强化装备所需 Mana";
+
+/* No comment provided by engineer. */
+"Mana Cost of Skill Training" = "提升技能等级所需 Mana";
+
+/* No comment provided by engineer. */
+"Mark" = "标记";
+
+/* No comment provided by engineer. */
+"max 16 characters" = "最多 16 个字符";
+
+/* No comment provided by engineer. */
+"Max Level to %@" = "最大等级提高至 %@";
+
+/* No comment provided by engineer. */
+"Max Rank to %@" = "最大 Rank 提高至 %@";
+
+/* No comment provided by engineer. */
+"Max. lv." = "最大等级";
+
+/* No comment provided by engineer. */
+"Members" = "队员";
+
+/* No comment provided by engineer. */
 "minion" = "随从";
 
 /* No comment provided by engineer. */
 "Misc" = "杂项";
+
+/* No comment provided by engineer. */
+"Mission" = "探索";
 
 /* No comment provided by engineer. */
 "Move Speed" = "移动速度";
@@ -581,10 +785,46 @@
 "Multiple [%@ * lost HP / max HP] to next effect." = "使下一个效果的数值乘以 [%@ * 损失的 HP / 最大 HP]。";
 
 /* No comment provided by engineer. */
+"New %@ Event: %@" = "新%1$@活动：%2$@";
+
+/* No comment provided by engineer. */
+"New Campaign: %@ %@ x%d" = "新奖励事件：%1$@%2$@ x%3$d";
+
+/* No comment provided by engineer. */
+"New Clan Battle: %@" = "新公会战：%@";
+
+/* No comment provided by engineer. */
+"New Dungeon: %@" = "新地下城：%@";
+
+/* No comment provided by engineer. */
+"New Gacha: %@" = "新卡池：%@";
+
+/* No comment provided by engineer. */
+"New Quest Area: %@" = "新任务区域：%@";
+
+/* No comment provided by engineer. */
+"New Story of %@" = "新故事：%@";
+
+/* No comment provided by engineer. */
+"New Unit: %@" = "新角色：%@";
+
+/* No comment provided by engineer. */
+"Next" = "下一步";
+
+/* No comment provided by engineer. */
+"No more data" = "没有更多数据了";
+
+/* No comment provided by engineer. */
 "None" = "无";
 
 /* No comment provided by engineer. */
 "Normal" = "普通";
+
+/* No comment provided by engineer. */
+"Not Determined" = "未确定";
+
+/* No comment provided by engineer. */
+"Notification Permission" = "系统通知权限";
 
 /* No comment provided by engineer. */
 "OK" = "确定";
@@ -593,10 +833,16 @@
 "one" = "一个";
 
 /* No comment provided by engineer. */
+"Only shows the first chara's equipments, but will reflect on all selected charas." = "虽然只显示第一个角色的装备，但是编辑后会反映到所有选中角色上。";
+
+/* No comment provided by engineer. */
 "Options" = "选项";
 
 /* No comment provided by engineer. */
 "Order" = "顺序";
+
+/* No comment provided by engineer. */
+"other" = "其他";
 
 /* No comment provided by engineer. */
 "Paralyse" = "麻痹";
@@ -626,7 +872,7 @@
 "Please wait" = "正在处理";
 
 /* No comment provided by engineer. */
-"Poison" = "Poison";
+"Poison" = "中毒";
 
 /* No comment provided by engineer. */
 "Poison %@ and deal [%@] damage per second for [%@]s." = "使%1$@中毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。";
@@ -635,7 +881,22 @@
 "Position" = "位置";
 
 /* No comment provided by engineer. */
+"princess arena" = "公主竞技场";
+
+/* No comment provided by engineer. */
+"Pro Edition" = "专业版";
+
+/* No comment provided by engineer. */
 "Profile" = "角色";
+
+/* No comment provided by engineer. */
+"pve" = "pve";
+
+/* No comment provided by engineer. */
+"pvp" = "pvp";
+
+/* No comment provided by engineer. */
+"Quest Area" = "任务";
 
 /* No comment provided by engineer. */
 "Quests" = "关卡";
@@ -674,6 +935,12 @@
 "Rank" = "Rank";
 
 /* No comment provided by engineer. */
+"Rank From" = "原始 Rank";
+
+/* No comment provided by engineer. */
+"Rank To" = "目标 Rank";
+
+/* No comment provided by engineer. */
 "Rarity" = "稀有度";
 
 /* No comment provided by engineer. */
@@ -684,6 +951,12 @@
 
 /* No comment provided by engineer. */
 "Reduce %@ %d%% attack speed for [%@]s." = "降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
+"Resist" = "抗性";
+
+/* No comment provided by engineer. */
+"Restore" = "恢复";
 
 /* No comment provided by engineer. */
 "Restore %@ [%@] HP per second for [%@]s." = "每秒恢复%1$@ [%2$@] HP，持续 [%3$@] 秒。";
@@ -701,10 +974,31 @@
 "Round %d" = "第 %d 周目";
 
 /* No comment provided by engineer. */
+"Save" = "保存";
+
+/* No comment provided by engineer. */
+"Save Box" = "保存 Box";
+
+/* No comment provided by engineer. */
 "Scout and change the perspective on %@." = "搜寻并将自身视角切换到%@。";
 
 /* No comment provided by engineer. */
 "second" = "第二";
+
+/* No comment provided by engineer. */
+"Select All" = "全选";
+
+/* No comment provided by engineer. */
+"Select Chara" = "选择角色";
+
+/* No comment provided by engineer. */
+"Select Charas" = "选择角色";
+
+/* No comment provided by engineer. */
+"Select Loses" = "选择失败场次";
+
+/* No comment provided by engineer. */
+"Select Wins" = "选择胜利场次";
 
 /* target type */
 "self" = "自身";
@@ -714,6 +1008,9 @@
 
 /* expression style */
 "short" = "简短";
+
+/* No comment provided by engineer. */
+"Show All Field" = "显示所有字段";
 
 /* No comment provided by engineer. */
 "Silence" = "沉默";
@@ -734,7 +1031,7 @@
 "Sleep" = "睡眠";
 
 /* No comment provided by engineer. */
-"Slow" = "Slow";
+"Slow" = "减速";
 
 /* No comment provided by engineer. */
 "SLv." = "技能等级";
@@ -755,10 +1052,19 @@
 "Status" = "属性";
 
 /* No comment provided by engineer. */
+"Status Comparison" = "属性比较模式";
+
+/* No comment provided by engineer. */
 "Still" = "剧情";
 
 /* No comment provided by engineer. */
+"Story" = "剧情";
+
+/* No comment provided by engineer. */
 "Stun" = "击晕";
+
+/* No comment provided by engineer. */
+"Summary" = "总结";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。";
@@ -774,6 +1080,9 @@
 
 /* No comment provided by engineer. */
 "Swing Time" = "普通攻击间隔";
+
+/* No comment provided by engineer. */
+"Tag" = "标签";
 
 /* No comment provided by engineer. */
 "target" = "目标";
@@ -795,6 +1104,18 @@
 
 /* No comment provided by engineer. */
 "Taunt all enemy targets for [%@]s." = "嘲讽所有敌方单位，持续 [%@] 秒。";
+
+/* No comment provided by engineer. */
+"Team Detail" = "队伍详情";
+
+/* No comment provided by engineer. */
+"Team Management" = "队伍管理";
+
+/* No comment provided by engineer. */
+"Team Tag" = "队伍标签";
+
+/* No comment provided by engineer. */
+"Teams" = "队伍列表";
 
 /* target type */
 "the %@ farthest" = "%@远的";
@@ -837,6 +1158,9 @@
 
 /* target type */
 "the farthest" = "最远的";
+
+/* No comment provided by engineer. */
+"The first chara added will be used as cover image." = "第一个添加的角色将被用作封面。";
 
 /* No comment provided by engineer. */
 "the highest ATK" = "物理攻击力最高的";
@@ -884,6 +1208,24 @@
 "three" = "三个";
 
 /* No comment provided by engineer. */
+"Time Zone" = "时区";
+
+/* Birthday notification body */
+"Today is %@'s birthday (%@/%@)" = "今天是%1$@的生日（%2$@ 月 %3$@ 日）";
+
+/* No comment provided by engineer. */
+"Toolbox" = "工具";
+
+/* No comment provided by engineer. */
+"Total Experience Needed" = "合计所需经验值";
+
+/* No comment provided by engineer. */
+"Total Mana Cost" = "合计所需 Mana";
+
+/* No comment provided by engineer. */
+"Tower" = "月神塔";
+
+/* No comment provided by engineer. */
 "Trigger: HP is below %d%%." = "触发条件：HP 低于 %d%%。";
 
 /* No comment provided by engineer. */
@@ -923,6 +1265,12 @@
 "Up to date!" = "已经是最新版本";
 
 /* No comment provided by engineer. */
+"Upcoming Birthdays" = "即将到来的生日";
+
+/* No comment provided by engineer. */
+"Upgrade to Pro Edition" = "升级至专业版";
+
+/* No comment provided by engineer. */
 "Use Dark Theme" = "使用深色主题";
 
 /* expression style */
@@ -935,7 +1283,13 @@
 "Vanguard" = "前卫";
 
 /* No comment provided by engineer. */
-"Wave %d" = "Wave %d";
+"Version Log" = "数据更新日志";
+
+/* No comment provided by engineer. */
+"Wave %d" = "第 %d 波";
+
+/* No comment provided by engineer. */
+"Wave %d (x%.2f)" = "第 %d 波（x%.2f）";
 
 /* No comment provided by engineer. */
 "Wave Energy Recovery" = "TP 自动恢复";
@@ -945,4 +1299,13 @@
 
 /* No comment provided by engineer. */
 "Weight" = "体重";
+
+/* No comment provided by engineer. */
+"What's the features of Pro Edition?" = "专业版中有哪些功能？";
+
+/* No comment provided by engineer. */
+"Wins" = "胜利";
+
+/* No comment provided by engineer. */
+"You have not bought this product yet." = "您未曾买过本产品。";
 

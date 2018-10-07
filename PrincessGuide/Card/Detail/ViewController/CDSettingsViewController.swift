@@ -50,6 +50,9 @@ class CDSettingsViewController: FormViewController {
         var targetLevel: Int
         var expressionStyle: ExpressionStyle = .short
         var addsEx: Bool
+        var statusComparison: Bool
+        var rankFrom: Int
+        var rankTo: Int
         
         func save() {
             let encoder = JSONEncoder()
@@ -77,13 +80,16 @@ class CDSettingsViewController: FormViewController {
         }
         
         init() {
-            unitLevel = ConsoleVariables.default.maxPlayerLevel
-            skillLevel = ConsoleVariables.default.maxPlayerLevel
+            unitLevel = Preload.default.maxPlayerLevel
+            skillLevel = Preload.default.maxPlayerLevel
             bondRank = Constant.presetMaxBondRank
-            unitRank = ConsoleVariables.default.maxEquipmentRank
+            unitRank = Preload.default.maxEquipmentRank
             unitRarity = Constant.presetMaxRarity
             targetLevel = unitLevel
             addsEx = true
+            statusComparison = false
+            rankFrom = max(0, Preload.default.maxEquipmentRank - 1)
+            rankTo = Preload.default.maxEquipmentRank
         }
     }
 
@@ -94,6 +100,7 @@ class CDSettingsViewController: FormViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleNavigationRightItem(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleNavigationLeftItem(_:)))
         tableView.backgroundView = backgroundImageView
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
@@ -140,7 +147,7 @@ class CDSettingsViewController: FormViewController {
                 ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
                     themeable.cell.backgroundColor = theme.color.tableViewCell.background
                     themeable.onProvideStringAttributes = {
-                        return [NSAttributedStringKey.foregroundColor: theme.color.body]
+                        return [NSAttributedString.Key.foregroundColor: theme.color.body]
                     }
                 }
             }
@@ -157,7 +164,7 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                for i in 0..<Preload.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitLevel
@@ -171,7 +178,7 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxEquipmentRank {
+                for i in 0..<Preload.default.maxEquipmentRank {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitRank
@@ -217,7 +224,7 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                let maxLevel = max(ConsoleVariables.default.maxEnemyLevel, ConsoleVariables.default.maxPlayerLevel)
+                let maxLevel = max(Preload.default.maxEnemyLevel, Preload.default.maxPlayerLevel)
                 for i in 0..<maxLevel {
                     row.options.append(i + 1)
                 }
@@ -235,7 +242,7 @@ class CDSettingsViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<ConsoleVariables.default.maxPlayerLevel {
+                for i in 0..<Preload.default.maxPlayerLevel {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.skillLevel
@@ -275,11 +282,61 @@ class CDSettingsViewController: FormViewController {
                         themeable.switchControl.onTintColor = theme.color.tint
                     }
                 }.cellUpdate(cellUpdate(cell:row:))
+        
+            <<< SwitchRow("status_comparison") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Status Comparison", comment: "")
+                
+                row.value = Setting.default.statusComparison
+                
+                }.cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                        themeable.switchControl.onTintColor = theme.color.tint
+                    }
+                }.cellUpdate(cellUpdate(cell:row:))
+        
+            <<< PickerInlineRow<Int>("rank_from") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Rank From", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<Preload.default.maxEquipmentRank {
+                    row.options.append(i + 1)
+                }
+                row.value = Setting.default.rankFrom
+                row.hidden = "$status_comparison == NO"
+                
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+        
+            <<< PickerInlineRow<Int>("rank_to") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Rank To", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<Preload.default.maxEquipmentRank {
+                    row.options.append(i + 1)
+                }
+                row.value = Setting.default.rankTo
+                row.hidden = "$status_comparison == NO"
+                
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
 
     }
     
     @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
-        let json = JSON(form.values())
+        let json = JSON(form.values(includeHidden: true))
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         if let setting = try? decoder.decode(Setting.self, from: json.rawData()) {

@@ -24,7 +24,7 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     let commentLabel = UILabel()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectedBackgroundView = UIView()
@@ -70,7 +70,7 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
     func configure(for card: Card) {
         nameLabel.text = card.base.unitName
         commentLabel.text = card.base.comment.replacingOccurrences(of: "\\n", with: "\n")
-        cardIcon.cardID = card.iconID
+        cardIcon.cardID = card.iconID()
     }
     
     func configure(for item: CardDetailItem) {

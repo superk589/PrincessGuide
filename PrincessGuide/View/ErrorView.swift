@@ -23,11 +23,11 @@ class ErrorView: UIView {
             path.addLine(to: CGPoint(x: 50, y: 25))
             return path.cgPath
         }()
-        dash.lineCap = kCALineCapRound
-        dash.lineJoin = kCALineJoinRound
+        dash.lineCap = CAShapeLayerLineCap.round
+        dash.lineJoin = CAShapeLayerLineJoin.round
         dash.fillColor = nil
         dash.lineWidth = 6
-        dash.fillMode = kCAFillModeForwards
+        dash.fillMode = CAMediaTimingFillMode.forwards
         return dash
     }
     
@@ -56,7 +56,7 @@ class ErrorView: UIView {
         animation.fromValue = 0.0
         animation.toValue = angle * CGFloat(.pi / 180.0)
         animation.duration = 1.0
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         return animation
     }
     
