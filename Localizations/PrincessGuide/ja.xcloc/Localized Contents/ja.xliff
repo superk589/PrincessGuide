@@ -988,10 +988,6 @@
         <source>Loses</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Luna's Tower %d">
-        <source>Luna's Tower %d</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Magic">
         <source>Magic</source>
         <target>魔法系</target>

@@ -12,12 +12,7 @@ class Tower: Codable {
 
     let towerAreaId: Int
     let maxFloorNum: Int
-    
-    var name: String {
-        
-        let format = NSLocalizedString("Luna's Tower %d", comment: "")
-        return String(format: format, towerAreaId)
-    }
+    let title: String
     
     lazy var quests: [Quest] = DispatchSemaphore.sync { (closure) in
         Master.shared.getTowerQuests(towerID: towerAreaId, callback: closure)
