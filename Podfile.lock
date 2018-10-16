@@ -4,7 +4,7 @@ PODS:
   - AutoInsetter (1.2.6)
   - BrotliKit (1.0.1)
   - DynamicColor (4.0.2)
-  - Eureka (4.1.1)
+  - Eureka (4.3.0)
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
@@ -56,7 +56,7 @@ DEPENDENCIES:
   - Alamofire
   - BrotliKit
   - DynamicColor
-  - Eureka (from `https://github.com/superk589/Eureka.git`, branch `picker-row-support-attributed-strings`)
+  - Eureka
   - FMDB
   - Gestalt
   - ImageViewer (from `https://github.com/superk589/ImageViewer.git`)
@@ -79,6 +79,7 @@ SPEC REPOS:
     - AutoInsetter
     - BrotliKit
     - DynamicColor
+    - Eureka
     - FMDB
     - Gestalt
     - Kingfisher
@@ -95,18 +96,12 @@ SPEC REPOS:
     - TTGTagCollectionView
 
 EXTERNAL SOURCES:
-  Eureka:
-    :branch: picker-row-support-attributed-strings
-    :git: https://github.com/superk589/Eureka.git
   ImageViewer:
     :git: https://github.com/superk589/ImageViewer.git
   Tabman:
     :git: https://github.com/superk589/Tabman.git
 
 CHECKOUT OPTIONS:
-  Eureka:
-    :commit: 4c45476c71c59000a809cef2b73fc05139acafc2
-    :git: https://github.com/superk589/Eureka.git
   ImageViewer:
     :commit: e17c8a76e2d248eaed459a755aecc29b3948c57e
     :git: https://github.com/superk589/ImageViewer.git
@@ -120,7 +115,7 @@ SPEC CHECKSUMS:
   AutoInsetter: 3713c857f3c0cc4b6265fe55ecf0c14bfe8622ee
   BrotliKit: b28f7dfde4436acc7e990e73a313ed8c40ba23e7
   DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
-  Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
+  Eureka: 6d711cb30ca333b4bc893110285a722ae3840114
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   Gestalt: be239fdeee2de30b2468865cf5e24b7923f507c2
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
@@ -138,6 +133,6 @@ SPEC CHECKSUMS:
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
 
-PODFILE CHECKSUM: f975cea9e502c6fc5ba69c0db7f21e1cc2caf2ce
+PODFILE CHECKSUM: 3ccef8cc5ac87ffb5799a30e84c274eaeb1888ce
 
 COCOAPODS: 1.6.0.beta.1

@@ -86,9 +86,7 @@ class BirthdayViewController: FormViewController {
                 cell.picker.showsSelectionIndicator = false
                 ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
                     themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                    themeable.onProvideStringAttributes = {
-                        return [NSAttributedString.Key.foregroundColor: theme.color.body]
-                    }
+                    themeable.cell.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: theme.color.body]
                 }
             }
         }

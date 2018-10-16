@@ -113,9 +113,7 @@ class EditBoxViewController: FormViewController {
                 cell.picker.showsSelectionIndicator = false
                 ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
                     themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                    themeable.onProvideStringAttributes = {
-                        return [NSAttributedString.Key.foregroundColor: theme.color.body]
-                    }
+                    themeable.cell.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: theme.color.body]
                 }
             }
         }
@@ -177,9 +175,9 @@ class EditBoxViewController: FormViewController {
 //                    self.saveBox()
 //                }
             
-            +++ Section(NSLocalizedString("Charas", comment: "")) {
+            +++ Section(NSLocalizedString("Charas", comment: "")) { [unowned self] in
                 $0.tag = "charas_section"
-                if mode == .edit {
+                if self.mode == .edit {
                     $0.footer = HeaderFooterView(title: NSLocalizedString("The first chara added will be used as cover image.", comment: ""))
                 }
             }
