@@ -1,5 +1,5 @@
 //
-//  Setting.swift
+//  SettingProtocol.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/7/7.

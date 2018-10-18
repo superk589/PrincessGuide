@@ -22,7 +22,8 @@ struct Constant {
     static let presetManaCostPerPoint = [
         2: 120,
         3: 150,
-        4: 200
+        4: 200,
+        5: 200
     ]
     static let presetNeededToLevelUpSkillCount = 4
 }

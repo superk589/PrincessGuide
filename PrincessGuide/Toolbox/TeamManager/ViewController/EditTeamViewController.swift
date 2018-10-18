@@ -77,47 +77,19 @@ class EditTeamViewController: FormViewController {
         }
         
         func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+            EurekaAppearance.cellUpdate(cell: cell, row: row)
         }
         
         func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
-            cell.selectedBackgroundView = UIView()
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-                themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                themeable.backgroundColor = theme.color.tableViewCell.background
-            }
-            if let segmentedControl = (cell as? SegmentedCell<U>)?.segmentedControl {
-                segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
-            }
+            EurekaAppearance.cellSetup(cell: cell, row: row)
         }
         
         func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+            EurekaAppearance.onCellSelection(cell: cell, row: row)
         }
         
         func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
-            pickerRow.cellSetup{ (cell, row) in
-                cell.selectedBackgroundView = UIView()
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                }
-            }
-            pickerRow.cellUpdate { (cell, row) in
-                cell.picker.showsSelectionIndicator = false
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                    themeable.cell.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: theme.color.body]
-                }
-            }
+            EurekaAppearance.onExpandInlineRow(cell: cell, row: row, pickerRow: pickerRow)
         }
         
         form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
@@ -193,15 +165,7 @@ class EditTeamViewController: FormViewController {
             <<< ButtonRow("select_wins") { (row) in
                 row.title = NSLocalizedString("Select Wins", comment: "")
                 }
-                .cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                    }
-                }
+                .cellSetup(cellSetup(cell:row:))
                 .onCellSelection { [unowned self] (cell, row) in
                     let vc = SearchableAddTeamToTeamViewController(team: self.team, parentContext: self.context, mode: .win)
                     vc.delegate = self
@@ -211,15 +175,7 @@ class EditTeamViewController: FormViewController {
             <<< ButtonRow("select_loses") { (row) in
                 row.title = NSLocalizedString("Select Loses", comment: "")
                 }
-                .cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                    }
-                }
+                .cellSetup(cellSetup(cell:row:))
                 .onCellSelection { [unowned self] (cell, row) in
                     let vc = SearchableAddTeamToTeamViewController(team: self.team, parentContext: self.context, mode: .lose)
                     vc.delegate = self

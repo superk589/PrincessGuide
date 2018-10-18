@@ -69,45 +69,20 @@ class EDSettingsViewController: FormViewController {
             themeable.tableView.backgroundColor = theme.color.background
         }
         
-        func cellUpdate<T: RowType>(cell: T.Cell, row: T) {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+        func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            EurekaAppearance.cellUpdate(cell: cell, row: row)
         }
         
-        func cellSetup<T: RowType>(cell: T.Cell, row: T) {
-            cell.selectedBackgroundView = UIView()
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-                themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                themeable.backgroundColor = theme.color.tableViewCell.background
-            }
+        func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            EurekaAppearance.cellSetup(cell: cell, row: row)
         }
         
         func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+            EurekaAppearance.onCellSelection(cell: cell, row: row)
         }
         
         func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
-            pickerRow.cellSetup{ (cell, row) in
-                cell.selectedBackgroundView = UIView()
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                }
-            }
-            pickerRow.cellUpdate { (cell, row) in
-                cell.picker.showsSelectionIndicator = false
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                    themeable.cell.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: theme.color.body]
-                }
-            }
+            EurekaAppearance.onExpandInlineRow(cell: cell, row: row, pickerRow: pickerRow)
         }
         
         form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
