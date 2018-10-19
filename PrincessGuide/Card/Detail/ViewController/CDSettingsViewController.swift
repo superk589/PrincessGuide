@@ -108,13 +108,14 @@ class CDSettingsViewController: FormViewController {
             themeable.backgroundImageView.image = theme.backgroundImage
             themeable.tableView.indicatorStyle = theme.indicatorStyle
             themeable.tableView.backgroundColor = theme.color.background
+            themeable.view.tintColor = theme.color.tint
         }
         
-        func cellUpdate<T: RowType>(cell: T.Cell, row: T) {
+        func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
             EurekaAppearance.cellUpdate(cell: cell, row: row)
         }
         
-        func cellSetup<T: RowType>(cell: T.Cell, row: T) {
+        func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
             EurekaAppearance.cellSetup(cell: cell, row: row)
         }
         
@@ -306,6 +307,22 @@ class CDSettingsViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
 
+            +++ Section()
+    
+            <<< ButtonRow("reset") { (row) in
+                row.title = NSLocalizedString("Reset", comment: "")
+                }
+                .cellSetup(cellSetup(cell:row:))
+                .onCellSelection { [unowned self] (cell, row) in
+                    let encoder = JSONEncoder()
+                    encoder.keyEncodingStrategy = .convertToSnakeCase
+                    let data = try! encoder.encode(Setting())
+                    let json = try! JSON(data: data)
+                    self.form.setValues(json.dictionaryObject ?? [:])
+                    self.tableView.reloadData()
+                    
+        }
+        
     }
     
     @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
