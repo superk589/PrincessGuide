@@ -1303,6 +1303,10 @@
         <target>%1$@の行動速度を%2$d%%ダウン、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Reset">
+        <source>Reset</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Resist">
         <source>Resist</source>
         <note>No comment provided by engineer.</note>
@@ -1465,12 +1469,16 @@
         <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for [%@]s.">
-        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@] HP per second for [%4$@]s.</source>
+      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s.">
+        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@]%4$@ HP per second for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a minion of ID: %d at the position of %@.">
         <source>Summon a minion of ID: %1$d at the position of %2$@.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s.">
+        <source>Summon an attack field of radius %1$d at %2$@ position to deal all enemy targets [%3$@] %4$@ damage per second for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Swing">

@@ -950,6 +950,9 @@
 "Reduce %@ %d%% attack speed for [%@]s." = "降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"Reset" = "重置";
+
+/* No comment provided by engineer. */
 "Resist" = "抗性";
 
 /* No comment provided by engineer. */
@@ -1067,10 +1070,13 @@
 "Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的治疗区域，每秒治疗其中的友方目标 [%3$@] HP，持续 [%4$@] 秒。";
+"Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的区域，每秒治疗其中的友方目标 [%3$@]%4$@ HP，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
 "Summon a minion of ID: %d at the position of %@." = "在%2$@的位置召唤 ID 为 %1$d 的随从。";
+
+/* No comment provided by engineer. */
+"Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的区域，每秒对其中的敌方目标造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
 "Swing" = "普通攻击";
