@@ -25,6 +25,7 @@ class VoicePlayer {
         player?.stop()
         player = try? AVAudioPlayer(data: voice.data)
         player?.play()
+        print("playing: \(voice.url)")
         currentVoice = voice
         observation = player?.observe(\.currentTime, changeHandler: { [weak self] (player, change) in
             if let newValue = change.newValue {

@@ -16,7 +16,12 @@ class BirthdayViewController: FormViewController {
     
     struct Setting: Codable, Equatable, SettingProtocol {
         
-        static let url = URL(fileURLWithPath: Path.document).appendingPathComponent("birthday_notification_settings.json")
+        static let url = try! FileManager.default.url(
+            for: .applicationSupportDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true
+        ).appendingPathComponent("birthday_notification_settings.json")
 
         var schedulesBirthdayNotifications: Bool = false { didSet { save() } }
         

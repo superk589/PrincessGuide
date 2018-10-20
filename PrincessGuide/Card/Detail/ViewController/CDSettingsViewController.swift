@@ -71,7 +71,12 @@ class CDSettingsViewController: FormViewController {
         }
         
         
-        static let url = URL(fileURLWithPath: Path.document).appendingPathComponent("unit_detail_settings.json")
+        static let url = try! FileManager.default.url(
+            for: .applicationSupportDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true
+        ).appendingPathComponent("unit_detail_settings.json")
         
         static var `default` = Setting.load() ?? Setting() {
             didSet {

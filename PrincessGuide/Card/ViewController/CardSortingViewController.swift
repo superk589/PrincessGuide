@@ -159,7 +159,12 @@ class CardSortingViewController: FormViewController {
             return try? decoder.decode(Setting.self, from: data)
         }
         
-        static let url = URL(fileURLWithPath: Path.document).appendingPathComponent("unit_sorting_settings.json")
+        static let url = try! FileManager.default.url(
+            for: .applicationSupportDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true
+        ).appendingPathComponent("unit_sorting_settings.json")
         
         static var `default` = Setting.load() ?? Setting() {
             didSet {

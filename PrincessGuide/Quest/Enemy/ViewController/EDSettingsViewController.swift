@@ -43,7 +43,12 @@ class EDSettingsViewController: FormViewController {
         }
         
         
-        static let url = URL(fileURLWithPath: Path.document).appendingPathComponent("enemy_detail_settings.json")
+        static let url = try! FileManager.default.url(
+            for: .applicationSupportDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true
+        ).appendingPathComponent("enemy_detail_settings.json")
         
         static var `default` = Setting.load() ?? Setting() {
             didSet {

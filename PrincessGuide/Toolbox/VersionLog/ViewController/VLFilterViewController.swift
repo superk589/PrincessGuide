@@ -78,7 +78,12 @@ class VLFilterViewController: FormViewController {
         }
         
         
-        static let url = URL(fileURLWithPath: Path.document).appendingPathComponent("version_log_filter.json")
+        static let url = try! FileManager.default.url(
+            for: .applicationSupportDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true
+        ).appendingPathComponent("version_log_filter.json")
         
         static var `default` = Setting.load() ?? Setting() {
             didSet {
