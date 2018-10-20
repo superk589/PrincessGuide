@@ -260,6 +260,18 @@ extension EditBoxViewController: CharasCellDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func charasCell(_ charasCell: CharasCell, move fromIndex: Int, to toIndex: Int) {
+        guard var charas = box.charas?.array else {
+            return
+        }
+        let source = charas.remove(at: fromIndex)
+        charas.insert(source, at: toIndex)
+        box.charas = NSOrderedSet(array: charas)
+        if mode == .edit {
+            saveBox()
+        }
+    }
+    
 }
 
 extension EditBoxViewController: EditCharaInBoxViewControllerDelegate {
