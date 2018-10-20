@@ -53,7 +53,14 @@ class AttackFieldAction: ActionParameter {
             return super.localizedDetail(of: level, property: property, style: style)
         case .repeat:
             let format = NSLocalizedString("Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s.", comment: "")
-            return String(format: format, Int(actionValue7), targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), damageClass.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+            return String(
+                format: format,
+                Int(actionValue7),
+                targetParameter.buildTargetClause(),
+                buildExpression(of: level, style: style, property: property),
+                damageClass.description,
+                buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+            )
         }
     }
     

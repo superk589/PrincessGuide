@@ -165,6 +165,8 @@ class Master: FMDatabaseQueue {
                     unit_comments
                 WHERE
                     unit_id = \(json["unit_id"])
+                OR
+                    unit_id = \(json["unit_id"].intValue + 30)
                 """
                 let commentSet = try db.executeQuery(commentSql, values: nil)
                 var comments = [Card.Comment]()

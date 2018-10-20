@@ -439,33 +439,45 @@ extension Card {
     
     func stillImageURLs(postfix: String = "") -> [URL] {
         return stills.map {
-            URL.image.appendingPathComponent("card/story/\($0.stillId).webp\(postfix)")
+            URL.resource.appendingPathComponent("card/story/\($0.stillId).webp\(postfix)")
         }
     }
     
     func comicImageURLs(postfix: String = "") -> [URL] {
         return comics.map {
-            URL.image.appendingPathComponent("comic/\($0)_01.webp\(postfix)")
+            URL.resource.appendingPathComponent("comic/\($0)_01.webp\(postfix)")
         }
     }
     
     func plateImageURLs(postfix: String = "") -> [URL] {
         return [
-            URL.image.appendingPathComponent("icon/plate/\(base.prefabId + 10).webp\(postfix)"),
-            URL.image.appendingPathComponent("icon/plate/\(base.prefabId + 30).webp\(postfix)")
+            URL.resource.appendingPathComponent("icon/plate/\(base.prefabId + 10).webp\(postfix)"),
+            URL.resource.appendingPathComponent("icon/plate/\(base.prefabId + 30).webp\(postfix)")
         ]
     }
     
     func fullImageURL(postfix: String = "") -> URL {
-        return URL.image.appendingPathComponent("card/full/\(base.prefabId + 30).webp\(postfix)")
+        return URL.resource.appendingPathComponent("card/full/\(base.prefabId + 30).webp\(postfix)")
     }
     
     func profileImageURLs(postfix: String = "") -> [URL] {
         return [
-            URL.image.appendingPathComponent("card/profile/\(base.prefabId + 10).webp\(postfix)"),
-            URL.image.appendingPathComponent("card/profile/\(base.prefabId + 30).webp\(postfix)"),
-            URL.image.appendingPathComponent("card/actual_profile/\(actualUnit.unitId).webp\(postfix)")
+            URL.resource.appendingPathComponent("card/profile/\(base.prefabId + 10).webp\(postfix)"),
+            URL.resource.appendingPathComponent("card/profile/\(base.prefabId + 30).webp\(postfix)"),
+            URL.resource.appendingPathComponent("card/actual_profile/\(actualUnit.unitId).webp\(postfix)")
         ]
     }
     
+}
+
+extension Card.Comment {
+    var soundURL: URL {
+        let format = "%06d"
+        let id = String(format: format, voiceId)
+        if unitId / 10 % 10 == 0 {
+            return URL.resource.appendingPathComponent("sound/unit_common/\(unitId + 10)/dat_\(id).m4a")
+        } else {
+            return URL.resource.appendingPathComponent("sound/unit_common/\(unitId)/dat_\(id).m4a")
+        }
+    }
 }

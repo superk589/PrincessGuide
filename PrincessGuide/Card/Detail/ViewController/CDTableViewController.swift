@@ -8,6 +8,7 @@
 
 import UIKit
 import Gestalt
+import AVFoundation
 
 class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate {
     
@@ -45,6 +46,8 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             tableView.reloadData()
         }
     }
+    
+    private var playlist = Playlist()
     
     var rows = [Row]()
     
@@ -100,6 +103,8 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             cell.delegate = self
         } else if let cell = cell as? CDImageTableViewCell {
             cell.delegate = self
+        } else if let cell = cell as? CDCommentTableViewCell {
+            cell.delegate = self
         }
         
         return cell as! UITableViewCell
@@ -133,6 +138,32 @@ extension CDTableViewController: CDPromotionTableViewCellDelegate {
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+}
+
+extension CDTableViewController: CDCommentTableViewCellDelegate {
+    func doubleClick(on cdCommentTableViewCell: CDCommentTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cdCommentTableViewCell) else {
+            return
+        }
+        
+        guard case .comment(let comment) = rows[indexPath.row].data else {
+            return
+        }
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? CDCommentTableViewCell else {
+            return
+        }
+        
+        cell.loadingIndicator.startAnimating()
+        Store.shared.voice(from: comment.soundURL) { [weak self] (voice) in
+            cell.loadingIndicator.stopAnimating()
+            if let voice = voice {
+                self?.playlist.play(voice)
+            }
+        }
+        
     }
     
 }

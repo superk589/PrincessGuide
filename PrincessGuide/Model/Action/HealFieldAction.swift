@@ -59,10 +59,17 @@ class HealFieldAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch fieldType {
         case .normal:
-            return super.localizedDetail(of: level, property: property, style: style)            
+            return super.localizedDetail(of: level, property: property, style: style)
         case .repeat:
             let format = NSLocalizedString("Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s.", comment: "")
-            return String(format: format, Int(actionValue7), targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), percentModifier.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+            return String(
+                format: format,
+                Int(actionValue7),
+                targetParameter.buildTargetClause(),
+                buildExpression(of: level, style: style, property: property),
+                percentModifier.description,
+                buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+            )
         }
     }
 }

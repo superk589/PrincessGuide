@@ -29,7 +29,7 @@ struct Constant {
 }
 
 extension URL {
-    static let image = URL(string: "https://redive.estertion.win")!
+    static let resource = URL(string: "https://redive.estertion.win")!
 }
 
 struct Path {

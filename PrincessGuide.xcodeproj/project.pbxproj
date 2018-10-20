@@ -162,6 +162,9 @@
 		12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */; };
 		12B8F58B214A5B3600C039DE /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58A214A5B3600C039DE /* Tower.swift */; };
 		12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */; };
+		12C24B97217ACCA80079AFE0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B96217ACCA80079AFE0 /* Store.swift */; };
+		12C24B99217ACD4A0079AFE0 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B98217ACD4A0079AFE0 /* Voice.swift */; };
+		12C24B9C217AE7FA0079AFE0 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B9B217AE7FA0079AFE0 /* Playlist.swift */; };
 		12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C44140209C92AF00016BDC /* LaunchScreen.storyboard */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
 		12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */; };
@@ -433,6 +436,9 @@
 		12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerTableViewController.swift; sourceTree = "<group>"; };
 		12B8F58A214A5B3600C039DE /* Tower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
 		12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerQuestTabViewController.swift; sourceTree = "<group>"; };
+		12C24B96217ACCA80079AFE0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		12C24B98217ACD4A0079AFE0 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
+		12C24B9B217AE7FA0079AFE0 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		12C4413F209C92AF00016BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
 		12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDStatusTableViewController.swift; sourceTree = "<group>"; };
@@ -746,6 +752,7 @@
 				120F9B8020E9D1BA003632CA /* CoreDataStack.swift */,
 				12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */,
 				12936B302176CEA000B9531F /* EurekaHelper.swift */,
+				12C24B96217ACCA80079AFE0 /* Store.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -920,6 +927,7 @@
 		12B85D342089B1DB0088F5FB /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				12C24B9A217AE7AD0079AFE0 /* Model */,
 				12B85D352089B1DB0088F5FB /* View */,
 				12B85D392089B1DB0088F5FB /* ViewController */,
 			);
@@ -960,6 +968,15 @@
 				129A7F8220A2815400D93996 /* CDSettingsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		12C24B9A217AE7AD0079AFE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12C24B98217ACD4A0079AFE0 /* Voice.swift */,
+				12C24B9B217AE7FA0079AFE0 /* Playlist.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		12D3D12F20A56F7800034DD6 /* ViewController */ = {
@@ -1351,6 +1368,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/BrotliKit/BrotliKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
@@ -1363,7 +1381,6 @@
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 				"${BUILT_PRODUCTS_DIR}/Timepiece/Timepiece.framework",
@@ -1376,6 +1393,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrotliKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
@@ -1388,7 +1406,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Timepiece.framework",
@@ -1504,6 +1521,7 @@
 				12F1263120B95684005C9659 /* PassiveAction.swift in Sources */,
 				1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */,
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
+				12C24B9C217AE7FA0079AFE0 /* Playlist.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
@@ -1555,6 +1573,7 @@
 				12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */,
 				1280DE4520A5DED5008D9D72 /* ClanBattleTableViewController.swift in Sources */,
 				120F9B5720E4DEE9003632CA /* PrincessGuide.xcdatamodeld in Sources */,
+				12C24B99217ACD4A0079AFE0 /* Voice.swift in Sources */,
 				12398E8B20917554006AC352 /* DropSummaryTableViewController.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				120F9B4820E4DA4E003632CA /* ToolboxTableViewController.swift in Sources */,
@@ -1585,6 +1604,7 @@
 				12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */,
 				12DA21EC20EFB932005FD705 /* Box.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
+				12C24B97217ACCA80079AFE0 /* Store.swift in Sources */,
 				1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */,
 				12398E8D20917C1F006AC352 /* DropSummaryTableViewCell.swift in Sources */,
 				12B8F58B214A5B3600C039DE /* Tower.swift in Sources */,

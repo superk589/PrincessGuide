@@ -18,6 +18,7 @@ target 'PrincessGuide' do
   pod 'Tabman', :git => 'https://github.com/superk589/Tabman.git'
   pod 'Eureka'
   pod 'ImageViewer', :git => 'https://github.com/superk589/ImageViewer.git'
-  pod 'SwiftyStoreKit'
+#  pod 'SwiftyStoreKit'
   pod 'BrotliKit'
+  pod 'Cache'
 end
