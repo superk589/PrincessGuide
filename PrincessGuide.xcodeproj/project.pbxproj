@@ -164,7 +164,7 @@
 		12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */; };
 		12C24B97217ACCA80079AFE0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B96217ACCA80079AFE0 /* Store.swift */; };
 		12C24B99217ACD4A0079AFE0 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B98217ACD4A0079AFE0 /* Voice.swift */; };
-		12C24B9C217AE7FA0079AFE0 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B9B217AE7FA0079AFE0 /* Playlist.swift */; };
+		12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */; };
 		12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C44140209C92AF00016BDC /* LaunchScreen.storyboard */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
 		12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */; };
@@ -438,7 +438,7 @@
 		12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerQuestTabViewController.swift; sourceTree = "<group>"; };
 		12C24B96217ACCA80079AFE0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		12C24B98217ACD4A0079AFE0 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
-		12C24B9B217AE7FA0079AFE0 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePlayer.swift; sourceTree = "<group>"; };
 		12C4413F209C92AF00016BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
 		12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDStatusTableViewController.swift; sourceTree = "<group>"; };
@@ -974,7 +974,7 @@
 			isa = PBXGroup;
 			children = (
 				12C24B98217ACD4A0079AFE0 /* Voice.swift */,
-				12C24B9B217AE7FA0079AFE0 /* Playlist.swift */,
+				12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1521,7 +1521,7 @@
 				12F1263120B95684005C9659 /* PassiveAction.swift in Sources */,
 				1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */,
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
-				12C24B9C217AE7FA0079AFE0 /* Playlist.swift in Sources */,
+				12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,

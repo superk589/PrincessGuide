@@ -172,7 +172,7 @@ class EditBoxViewController: FormViewController {
                 }
                 .cellSetup(cellSetup(cell:row:))
                 .onCellSelection { [unowned self] (cell, row) in
-                    Preload.default.cards.values.forEach {
+                    Array(Preload.default.cards.values).sorted(settings: CardSortingViewController.Setting.default).forEach {
                         let chara = Chara(context: self.context)
                         
                         chara.modifiedAt = Date()

@@ -47,7 +47,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         }
     }
     
-    private var playlist = Playlist()
+    private var voicePlayer = VoicePlayer()
     
     var rows = [Row]()
     
@@ -160,7 +160,7 @@ extension CDTableViewController: CDCommentTableViewCellDelegate {
         Store.shared.voice(from: comment.soundURL) { [weak self] (voice) in
             cell.loadingIndicator.stopAnimating()
             if let voice = voice {
-                self?.playlist.play(voice)
+                self?.voicePlayer.play(voice)
             }
         }
         

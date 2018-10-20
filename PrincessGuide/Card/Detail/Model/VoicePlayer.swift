@@ -1,5 +1,5 @@
 //
-//  Playlist.swift
+//  VoicePlayer.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/10/20.
@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class Playlist {
+class VoicePlayer {
     
     var currentVoice: Voice?
     
