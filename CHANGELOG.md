@@ -1,3 +1,30 @@
+# 1.1.3
+
+1. 新增敌方抗性信息。
+2. 新增公会战得分系数。
+3. 新增导入全部角色到 Box 的功能。
+4. 角色或队伍编辑页面可以通过点击角色图标跳转至角色详情。
+5. 新增数据更新日志页面。
+6. 新增月神塔数据。
+7. 敌方详情页面也可以设置表达式类型和目标等级。
+8. 角色详情和敌方详情的设置页面新增一个重置按钮。
+9. 更新部分技能详情信息。
+10. 角色语音文本现在可以通过双击播放。
+11. Box 编辑页面可以通过长按重排角色顺序。
+
+## English version
+1. Add enemy resistance page.
+2. Add clan battle score coefficient.
+3. Add a feature to import all charas to box.
+4. Navigate from chara or team editing page to card detail page by clicking card icon.
+5. Add version log page.
+6. Add luna's tower enemy info.
+7. Add options for enemy detail page to change expression style and target level.
+8. Add reset button for card detail settings and enemy detail settings.
+9. Update skill action details.
+10. Voice texts on profile page can be played by double clicking.
+11. Box editing page's charas can be rearranged by long press.
+
 # 1.1.2
 
 1. 卡片详情页新增属性对比模式，可以快速对比不同 Rank 下属性增减情况，需要在角色详情页面选项中手动打开。
