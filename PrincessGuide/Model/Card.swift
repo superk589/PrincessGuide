@@ -472,12 +472,12 @@ extension Card {
 
 extension Card.Comment {
     var soundURL: URL {
-        let format = "%06d"
+        let format = "%03d"
         let id = String(format: format, voiceId)
         if unitId / 10 % 10 == 0 {
-            return URL.resource.appendingPathComponent("sound/unit_common/\(unitId + 10)/dat_\(id).m4a")
+            return URL.resource.appendingPathComponent("sound/unit_common/\(unitId + 10)/vo_cmn_\(unitId + 10)_mypage_\(id).m4a")
         } else {
-            return URL.resource.appendingPathComponent("sound/unit_common/\(unitId)/dat_\(id).m4a")
+            return URL.resource.appendingPathComponent("sound/unit_common/\(unitId)/vo_cmn_\(unitId)_mypage_\(id).m4a")
         }
     }
 }
