@@ -75,49 +75,19 @@ class EditBoxViewController: FormViewController {
         }
         
         func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+            EurekaAppearance.cellUpdate(cell: cell, row: row)
         }
         
         func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
-            cell.selectedBackgroundView = UIView()
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-                themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                themeable.backgroundColor = theme.color.tableViewCell.background
-            }
-            if let segmentedControl = (cell as? SegmentedCell<U>)?.segmentedControl {
-                segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
-            }
+            EurekaAppearance.cellSetup(cell: cell, row: row)
         }
         
         func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+            EurekaAppearance.onCellSelection(cell: cell, row: row)
         }
         
         func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
-            pickerRow.cellSetup{ (cell, row) in
-                cell.selectedBackgroundView = UIView()
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                }
-            }
-            pickerRow.cellUpdate { (cell, row) in
-                cell.picker.showsSelectionIndicator = false
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                    themeable.onProvideStringAttributes = {
-                        return [NSAttributedString.Key.foregroundColor: theme.color.body]
-                    }
-                }
-            }
+            EurekaAppearance.onExpandInlineRow(cell: cell, row: row, pickerRow: pickerRow)
         }
         
         form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
@@ -177,9 +147,9 @@ class EditBoxViewController: FormViewController {
 //                    self.saveBox()
 //                }
             
-            +++ Section(NSLocalizedString("Charas", comment: "")) {
+            +++ Section(NSLocalizedString("Charas", comment: "")) { [unowned self] in
                 $0.tag = "charas_section"
-                if mode == .edit {
+                if self.mode == .edit {
                     $0.footer = HeaderFooterView(title: NSLocalizedString("The first chara added will be used as cover image.", comment: ""))
                 }
             }
@@ -187,15 +157,7 @@ class EditBoxViewController: FormViewController {
             <<< ButtonRow("select_charas") { (row) in
                 row.title = NSLocalizedString("Select Charas", comment: "")
                 }
-                .cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                    }
-                }
+                .cellSetup(cellSetup(cell:row:))
                 .onCellSelection { [unowned self] (cell, row) in
                     let vc = AddCharaToBoxViewController(box: self.box, parentContext: self.context)
                     vc.delegate = self
@@ -208,17 +170,9 @@ class EditBoxViewController: FormViewController {
                     return self?.mode == .edit
                 }
                 }
-                .cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                    }
-                }
+                .cellSetup(cellSetup(cell:row:))
                 .onCellSelection { [unowned self] (cell, row) in
-                    Preload.default.cards.values.forEach {
+                    Array(Preload.default.cards.values).sorted(settings: CardSortingViewController.Setting.default).forEach {
                         let chara = Chara(context: self.context)
                         
                         chara.modifiedAt = Date()
@@ -246,15 +200,7 @@ class EditBoxViewController: FormViewController {
             <<< ButtonRow("batch_edit") { (row) in
                 row.title = NSLocalizedString("Batch Edit", comment: "")
                 }
-                .cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                    }
-                }
+                .cellSetup(cellSetup(cell:row:))
                 .onCellSelection { [unowned self] (cell, row) in
                     let vc = BatchEditCharaInBoxViewController(charas: self.box.charas?.array as? [Chara] ?? [], parentContext: self.context)
                     vc.delegate = self
@@ -312,6 +258,18 @@ extension EditBoxViewController: CharasCellDelegate {
         let vc = EditCharaInBoxViewController(chara: chara)
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func charasCell(_ charasCell: CharasCell, move fromIndex: Int, to toIndex: Int) {
+        guard var charas = box.charas?.array else {
+            return
+        }
+        let source = charas.remove(at: fromIndex)
+        charas.insert(source, at: toIndex)
+        box.charas = NSOrderedSet(array: charas)
+        if mode == .edit {
+            saveBox()
+        }
     }
     
 }

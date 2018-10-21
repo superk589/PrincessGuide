@@ -16,7 +16,12 @@ class BirthdayViewController: FormViewController {
     
     struct Setting: Codable, Equatable, SettingProtocol {
         
-        static let url = URL(fileURLWithPath: Path.document).appendingPathComponent("birthday_notification_settings.json")
+        static let url = try! FileManager.default.url(
+            for: .applicationSupportDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true
+        ).appendingPathComponent("birthday_notification_settings.json")
 
         var schedulesBirthdayNotifications: Bool = false { didSet { save() } }
         
@@ -48,49 +53,19 @@ class BirthdayViewController: FormViewController {
         }
         
         func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+            EurekaAppearance.cellUpdate(cell: cell, row: row)
         }
         
         func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
-            cell.selectedBackgroundView = UIView()
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-                themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                themeable.backgroundColor = theme.color.tableViewCell.background
-            }
-            if let segmentedControl = (cell as? SegmentedCell<U>)?.segmentedControl {
-                segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
-            }
+            EurekaAppearance.cellSetup(cell: cell, row: row)
         }
         
         func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+            EurekaAppearance.onCellSelection(cell: cell, row: row)
         }
         
         func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
-            pickerRow.cellSetup{ (cell, row) in
-                cell.selectedBackgroundView = UIView()
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                }
-            }
-            pickerRow.cellUpdate { (cell, row) in
-                cell.picker.showsSelectionIndicator = false
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                    themeable.onProvideStringAttributes = {
-                        return [NSAttributedString.Key.foregroundColor: theme.color.body]
-                    }
-                }
-            }
+            EurekaAppearance.onExpandInlineRow(cell: cell, row: row, pickerRow: pickerRow)
         }
         
         form
@@ -103,16 +78,8 @@ class BirthdayViewController: FormViewController {
                 
                 row.value = Setting.default.schedulesBirthdayNotifications
                 
-                }.cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                        themeable.switchControl.onTintColor = theme.color.tint
-                    }
-                }.cellUpdate(cellUpdate(cell:row:))
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
                 .onChange { [unowned self] (row) in
                     if let value = row.value {
                         Setting.default.schedulesBirthdayNotifications = value

@@ -79,7 +79,8 @@ class TowerTableViewController: UITableViewController, DataChecking {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let tower = towers[indexPath.row]
-        cell.configure(for: tower.name, subtitle: "", unitID: tower.exQuests.last?.enemies.last?.unit.prefabId)
+        let unit = tower.exQuests.last?.enemies.max { $0.base.hp < $1.base.hp }?.unit
+        cell.configure(for: unit?.unitName ?? "", subtitle: tower.title, unitID: unit?.prefabId)
         return cell
     }
     
@@ -93,7 +94,7 @@ class TowerTableViewController: UITableViewController, DataChecking {
                 LoadingHUDManager.default.hide()
                 let vc = TowerQuestTabViewController(quests: tower.quests, exQuests: tower.exQuests)
                 vc.hidesBottomBarWhenPushed = true
-                vc.navigationItem.title = tower.name
+                vc.navigationItem.title = tower.title
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
         }

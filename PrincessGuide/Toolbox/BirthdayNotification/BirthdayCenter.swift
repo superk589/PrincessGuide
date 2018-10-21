@@ -106,7 +106,7 @@ class BirthdayCenter {
                 let userInfo: [String: Any] = ["card_name": card.profile.unitName, "card_id": card.base.unitId]
                 content.userInfo = userInfo
                 
-                let url = URL.image.appendingPathComponent("icon/unit/\(card.iconID()).webp")
+                let url = URL.resource.appendingPathComponent("icon/unit/\(card.iconID()).webp")
 
                 let cachedType = KingfisherManager.shared.cache.imageCachedType(forKey: url.absoluteString, processorIdentifier: WebPProcessor.default.identifier)
                 if cachedType == .disk {

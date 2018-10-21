@@ -8,11 +8,30 @@
 
 import Foundation
 
+enum FieldType {
+    case normal
+    case `repeat`
+}
+
 class HealFieldAction: ActionParameter {
     
     var healClass: ClassModifier {
         return actionDetail1 % 2 == 0 ? .magical : .physical
     }
+    
+    var percentModifier: PercentModifier {
+        return PercentModifier(actionDetail2)
+    }
+    
+    var fieldType: FieldType {
+        if actionDetail1 <= 2 {
+            return .normal
+        } else {
+            return .repeat
+        }
+    }
+    
+//    let repeatNumber = 2
     
     override var actionValues: [ActionValue] {
         switch healClass {
@@ -38,7 +57,19 @@ class HealFieldAction: ActionParameter {
     }
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for [%@]s.", comment: "")
-        return String(format: format, Int(actionValue7), targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+        switch fieldType {
+        case .normal:
+            return super.localizedDetail(of: level, property: property, style: style)
+        case .repeat:
+            let format = NSLocalizedString("Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s.", comment: "")
+            return String(
+                format: format,
+                Int(actionValue7),
+                targetParameter.buildTargetClause(),
+                buildExpression(of: level, style: style, property: property),
+                percentModifier.description,
+                buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+            )
+        }
     }
 }

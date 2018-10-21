@@ -12,6 +12,7 @@ import Gestalt
 
 protocol CharasCellDelegate: class {
     func charasCell(_ charasCell: CharasCell, didSelect chara: Chara)
+    func charasCell(_ charasCell: CharasCell, move fromIndex: Int, to toIndex: Int)
 }
 
 class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -50,6 +51,9 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
         collectionView.isScrollEnabled = false
         collectionView.backgroundColor = .clear
         
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
+        collectionView.addGestureRecognizer(longPress)
+        
         selectionStyle = .none
         
         height = { [unowned self] in
@@ -58,6 +62,22 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
             return max(44, self.collectionView.contentSize.height + self.collectionView.contentInset.top + self.collectionView.contentInset.bottom)
         }
         
+    }
+    
+    @objc private func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
+                break
+            }
+            collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+        case .changed:
+            collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
+        case .ended:
+            collectionView.endInteractiveMovement()
+        default:
+            collectionView.cancelInteractiveMovement()
+        }
     }
     
     private var charas = [Chara]()
@@ -86,6 +106,16 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.charasCell(self, didSelect: charas[indexPath.item])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let source = charas.remove(at: sourceIndexPath.item)
+        charas.insert(source, at: destinationIndexPath.item)
+        delegate?.charasCell(self, move: sourceIndexPath.item, to: destinationIndexPath.item)
     }
     
     override func update() {

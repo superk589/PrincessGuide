@@ -11,7 +11,6 @@ import SnapKit
 import Eureka
 import Gestalt
 import StoreKit
-import SwiftyStoreKit
 
 extension Notification.Name {
     
@@ -94,46 +93,46 @@ class BuyProEditionViewController: UITableViewController {
     }
     
     func requestData() {
-        SwiftyStoreKit.retrieveProductsInfo(Constant.iAPProductIDs) { [weak self] result in
-            if let product = result.retrievedProducts.first {
-                let priceString = product.localizedPrice!
-                print("Product: \(product.localizedDescription), price: \(priceString)")
-                self?.rows[2].data = .button(product)
-                self?.tableView.reloadData()
-            }
-            else if let invalidProductId = result.invalidProductIDs.first {
-                print("Invalid product identifier: \(invalidProductId)")
-            }
-            else if let error = result.error {
-                print(error)
-                // self?.alert(content: error.localizedDescription)
-            }
-        }
+//        SwiftyStoreKit.retrieveProductsInfo(Constant.iAPProductIDs) { [weak self] result in
+//            if let product = result.retrievedProducts.first {
+//                let priceString = product.localizedPrice!
+//                print("Product: \(product.localizedDescription), price: \(priceString)")
+//                self?.rows[2].data = .button(product)
+//                self?.tableView.reloadData()
+//            }
+//            else if let invalidProductId = result.invalidProductIDs.first {
+//                print("Invalid product identifier: \(invalidProductId)")
+//            }
+//            else if let error = result.error {
+//                print(error)
+//                // self?.alert(content: error.localizedDescription)
+//            }
+//        }
     }
     
     @objc private func restore(_ item: UIBarButtonItem) {
         LoadingHUDManager.default.show()
-        SwiftyStoreKit.restorePurchases(atomically: true) { [weak self] results in
-            LoadingHUDManager.default.hide()
-            if results.restoreFailedPurchases.count > 0 {
-                print("Restore Failed: \(results.restoreFailedPurchases)")
-            }
-            else if results.restoredPurchases.count > 0 {
-                print("Restore Success: \(results.restoredPurchases)")
-                for purchase in results.restoredPurchases {
-                    if Constant.iAPProductIDs.contains(purchase.productId) {
-                        Defaults.proEdition = true
-                        NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
-                        break
-                    }
-                }
-                
-            }
-            else {
-                print("Nothing to Restore")
-                self?.alert(content: NSLocalizedString("You have not bought this product yet.", comment: ""))
-            }
-        }
+//        SwiftyStoreKit.restorePurchases(atomically: true) { [weak self] results in
+//            LoadingHUDManager.default.hide()
+//            if results.restoreFailedPurchases.count > 0 {
+//                print("Restore Failed: \(results.restoreFailedPurchases)")
+//            }
+//            else if results.restoredPurchases.count > 0 {
+//                print("Restore Success: \(results.restoredPurchases)")
+//                for purchase in results.restoredPurchases {
+//                    if Constant.iAPProductIDs.contains(purchase.productId) {
+//                        Defaults.proEdition = true
+//                        NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
+//                        break
+//                    }
+//                }
+//
+//            }
+//            else {
+//                print("Nothing to Restore")
+//                self?.alert(content: NSLocalizedString("You have not bought this product yet.", comment: ""))
+//            }
+//        }
     }
     
     @objc private func didUpgradeToProEdition(_ notification: Notification) {
@@ -175,29 +174,29 @@ class BuyProEditionViewController: UITableViewController {
 extension BuyProEditionViewController: ProductTableViewCellDelegate {
     func productTableViewCell(_ productTableViewCell: ProductTableViewCell, didSelect product: SKProduct) {
         LoadingHUDManager.default.show()
-        SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result in
-            LoadingHUDManager.default.hide()
-            switch result {
-            case .success(let purchase):
-                print("Purchase Success: \(purchase.productId)")
-                if Constant.iAPProductIDs.contains(purchase.productId) {
-                    Defaults.proEdition = true
-                    NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
-                }
-            case .error(let error):
-                switch error.code {
-                case .unknown: print("Unknown error. Please contact support")
-                case .clientInvalid: print("Not allowed to make the payment")
-                case .paymentCancelled: break
-                case .paymentInvalid: print("The purchase identifier was invalid")
-                case .paymentNotAllowed: print("The device is not allowed to make the payment")
-                case .storeProductNotAvailable: print("The product is not available in the current storefront")
-                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
-                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
-                case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
-                }
-                // self?.alert(content: error.localizedDescription)
-            }
-        }
+//        SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result in
+//            LoadingHUDManager.default.hide()
+//            switch result {
+//            case .success(let purchase):
+//                print("Purchase Success: \(purchase.productId)")
+//                if Constant.iAPProductIDs.contains(purchase.productId) {
+//                    Defaults.proEdition = true
+//                    NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
+//                }
+//            case .error(let error):
+//                switch error.code {
+//                case .unknown: print("Unknown error. Please contact support")
+//                case .clientInvalid: print("Not allowed to make the payment")
+//                case .paymentCancelled: break
+//                case .paymentInvalid: print("The purchase identifier was invalid")
+//                case .paymentNotAllowed: print("The device is not allowed to make the payment")
+//                case .storeProductNotAvailable: print("The product is not available in the current storefront")
+//                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+//                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+//                case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
+//                }
+//                // self?.alert(content: error.localizedDescription)
+//            }
+//        }
     }
 }

@@ -58,7 +58,7 @@
 		1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221CDE6207DB350008F30AA /* Debouncer.swift */; };
 		1223A8DF20F08F2300C98BB2 /* BirthdayCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8DE20F08F2300C98BB2 /* BirthdayCenter.swift */; };
 		1223A8E220F0904F00C98BB2 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E120F0904F00C98BB2 /* BirthdayViewController.swift */; };
-		1223A8E420F091DD00C98BB2 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E320F091DD00C98BB2 /* Setting.swift */; };
+		1223A8E420F091DD00C98BB2 /* SettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E320F091DD00C98BB2 /* SettingProtocol.swift */; };
 		1223A8E820F0A1D600C98BB2 /* CardWithBirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E720F0A1D600C98BB2 /* CardWithBirthdayCell.swift */; };
 		1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8E920F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift */; };
 		1223A8EC20F0B4EB00C98BB2 /* NotificationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223A8EB20F0B4EB00C98BB2 /* NotificationHandle.swift */; };
@@ -133,6 +133,7 @@
 		1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */; };
 		1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */; };
 		12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12901E9820BE859C00697053 /* CardSortingViewController.swift */; };
+		12936B312176CEA000B9531F /* EurekaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12936B302176CEA000B9531F /* EurekaHelper.swift */; };
 		12973CED20EBA7DC00C83089 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12973CEC20EBA7DC00C83089 /* ImageCell.swift */; };
 		12973CEF20EBBAC500C83089 /* CharaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12973CEE20EBBAC500C83089 /* CharaView.swift */; };
 		129A7F54209FE7A800D93996 /* CDProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */; };
@@ -161,6 +162,9 @@
 		12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */; };
 		12B8F58B214A5B3600C039DE /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58A214A5B3600C039DE /* Tower.swift */; };
 		12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */; };
+		12C24B97217ACCA80079AFE0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B96217ACCA80079AFE0 /* Store.swift */; };
+		12C24B99217ACD4A0079AFE0 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B98217ACD4A0079AFE0 /* Voice.swift */; };
+		12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */; };
 		12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C44140209C92AF00016BDC /* LaunchScreen.storyboard */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
 		12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */; };
@@ -319,7 +323,7 @@
 		1221CDE6207DB350008F30AA /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		1223A8DE20F08F2300C98BB2 /* BirthdayCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCenter.swift; sourceTree = "<group>"; };
 		1223A8E120F0904F00C98BB2 /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
-		1223A8E320F091DD00C98BB2 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		1223A8E320F091DD00C98BB2 /* SettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProtocol.swift; sourceTree = "<group>"; };
 		1223A8E720F0A1D600C98BB2 /* CardWithBirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithBirthdayCell.swift; sourceTree = "<group>"; };
 		1223A8E920F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithBirthdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		1223A8EB20F0B4EB00C98BB2 /* NotificationHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandle.swift; sourceTree = "<group>"; };
@@ -401,6 +405,7 @@
 		1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		12901E9820BE859C00697053 /* CardSortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortingViewController.swift; sourceTree = "<group>"; };
+		12936B302176CEA000B9531F /* EurekaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaHelper.swift; sourceTree = "<group>"; };
 		12973CEC20EBA7DC00C83089 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		12973CEE20EBBAC500C83089 /* CharaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaView.swift; sourceTree = "<group>"; };
 		129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -431,6 +436,9 @@
 		12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerTableViewController.swift; sourceTree = "<group>"; };
 		12B8F58A214A5B3600C039DE /* Tower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
 		12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerQuestTabViewController.swift; sourceTree = "<group>"; };
+		12C24B96217ACCA80079AFE0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		12C24B98217ACD4A0079AFE0 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
+		12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePlayer.swift; sourceTree = "<group>"; };
 		12C4413F209C92AF00016BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
 		12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDStatusTableViewController.swift; sourceTree = "<group>"; };
@@ -673,8 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				123608E6209322EB003E7D11 /* DataChecking.swift */,
-				120F9B8220E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift */,
-				1223A8E320F091DD00C98BB2 /* Setting.swift */,
+				1223A8E320F091DD00C98BB2 /* SettingProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -733,14 +740,7 @@
 			isa = PBXGroup;
 			children = (
 				1221CDDB207CC39E008F30AA /* Constant.swift */,
-				1221CDDE207CC4A7008F30AA /* Color.swift */,
-				1221CDE0207D9709008F30AA /* Font.swift */,
 				1221CDE6207DB350008F30AA /* Debouncer.swift */,
-				12B85D32208996FF0088F5FB /* DispatchExtension.swift */,
-				12398EA22092F7D4006AC352 /* StringExtension.swift */,
-				12398E9620918572006AC352 /* VersionManager.swift */,
-				1280DE4220A5D084008D9D72 /* DateExtension.swift */,
-				120BCAF320F2564B0029A083 /* ArrayExtension.swift */,
 				12398E9E2092D174006AC352 /* DeviceInfo.swift */,
 				12398EA02092D78C006AC352 /* Updater.swift */,
 				123608E02093105D003E7D11 /* LZ4Decompressor.swift */,
@@ -751,6 +751,8 @@
 				1223A8EB20F0B4EB00C98BB2 /* NotificationHandle.swift */,
 				120F9B8020E9D1BA003632CA /* CoreDataStack.swift */,
 				12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */,
+				12936B302176CEA000B9531F /* EurekaHelper.swift */,
+				12C24B96217ACCA80079AFE0 /* Store.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -844,6 +846,7 @@
 		12659E04205F5DB100A8B9A2 /* PrincessGuide */ = {
 			isa = PBXGroup;
 			children = (
+				12936B2F2176CDDE00B9531F /* Extension */,
 				1221CDDD207CC3A3008F30AA /* Common */,
 				1221CDBA207B9310008F30AA /* Model */,
 				1221CDBC207B9373008F30AA /* View */,
@@ -893,6 +896,21 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		12936B2F2176CDDE00B9531F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				120F9B8220E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift */,
+				1221CDE0207D9709008F30AA /* Font.swift */,
+				1221CDDE207CC4A7008F30AA /* Color.swift */,
+				12B85D32208996FF0088F5FB /* DispatchExtension.swift */,
+				12398EA22092F7D4006AC352 /* StringExtension.swift */,
+				12398E9620918572006AC352 /* VersionManager.swift */,
+				1280DE4220A5D084008D9D72 /* DateExtension.swift */,
+				120BCAF320F2564B0029A083 /* ArrayExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		129A7F6820A06DE500D93996 /* PrincessGuideTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -909,6 +927,7 @@
 		12B85D342089B1DB0088F5FB /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				12C24B9A217AE7AD0079AFE0 /* Model */,
 				12B85D352089B1DB0088F5FB /* View */,
 				12B85D392089B1DB0088F5FB /* ViewController */,
 			);
@@ -949,6 +968,15 @@
 				129A7F8220A2815400D93996 /* CDSettingsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		12C24B9A217AE7AD0079AFE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12C24B98217ACD4A0079AFE0 /* Voice.swift */,
+				12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		12D3D12F20A56F7800034DD6 /* ViewController */ = {
@@ -1340,6 +1368,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/BrotliKit/BrotliKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
@@ -1352,7 +1381,6 @@
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 				"${BUILT_PRODUCTS_DIR}/Timepiece/Timepiece.framework",
@@ -1365,6 +1393,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrotliKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
@@ -1377,7 +1406,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Timepiece.framework",
@@ -1493,6 +1521,7 @@
 				12F1263120B95684005C9659 /* PassiveAction.swift in Sources */,
 				1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */,
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
+				12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
@@ -1544,6 +1573,7 @@
 				12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */,
 				1280DE4520A5DED5008D9D72 /* ClanBattleTableViewController.swift in Sources */,
 				120F9B5720E4DEE9003632CA /* PrincessGuide.xcdatamodeld in Sources */,
+				12C24B99217ACD4A0079AFE0 /* Voice.swift in Sources */,
 				12398E8B20917554006AC352 /* DropSummaryTableViewController.swift in Sources */,
 				1221CDE1207D9709008F30AA /* Font.swift in Sources */,
 				120F9B4820E4DA4E003632CA /* ToolboxTableViewController.swift in Sources */,
@@ -1564,6 +1594,7 @@
 				12F125FD20B952EB005C9659 /* IfForChildrenAction.swift in Sources */,
 				12360921209940B2003E7D11 /* Binary.swift in Sources */,
 				129A7F8920A3108C00D93996 /* QuestTabViewController.swift in Sources */,
+				12936B312176CEA000B9531F /* EurekaHelper.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
@@ -1573,6 +1604,7 @@
 				12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */,
 				12DA21EC20EFB932005FD705 /* Box.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
+				12C24B97217ACCA80079AFE0 /* Store.swift in Sources */,
 				1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */,
 				12398E8D20917C1F006AC352 /* DropSummaryTableViewCell.swift in Sources */,
 				12B8F58B214A5B3600C039DE /* Tower.swift in Sources */,
@@ -1629,7 +1661,7 @@
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
 				12F125F120B94E2B005C9659 /* TriggerAction.swift in Sources */,
 				12F125D420B90E1F005C9659 /* TargetParameter.swift in Sources */,
-				1223A8E420F091DD00C98BB2 /* Setting.swift in Sources */,
+				1223A8E420F091DD00C98BB2 /* SettingProtocol.swift in Sources */,
 				12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */,
 				120BCAF820F4DEEC0029A083 /* Team.swift in Sources */,
 				12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */,
@@ -1840,7 +1872,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 63;
+				CURRENT_PROJECT_VERSION = 68;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1862,7 +1894,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 63;
+				CURRENT_PROJECT_VERSION = 68;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

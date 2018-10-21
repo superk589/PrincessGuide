@@ -9,9 +9,17 @@
 import UIKit
 import Gestalt
 
-class CDCommentTableViewCell: UITableViewCell, CardDetailConfigurable {
+protocol CDCommentTableViewCellDelegate: class {
+    func doubleClick(on cdCommentTableViewCell: CDCommentTableViewCell)
+}
+
+class CDCommentTableViewCell: UITableViewCell {
 
     let commentLabel = UILabel()
+    
+    let loadingIndicator = UIActivityIndicatorView()
+        
+    weak var delegate: CDCommentTableViewCellDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,6 +30,7 @@ class CDCommentTableViewCell: UITableViewCell, CardDetailConfigurable {
             themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
             themeable.backgroundColor = theme.color.tableViewCell.background
             themeable.commentLabel.textColor = theme.color.body
+            themeable.loadingIndicator.color = theme.color.indicator
         }
         
         commentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
@@ -33,26 +42,37 @@ class CDCommentTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.right.lessThanOrEqualTo(readableContentGuide)
         }
         commentLabel.numberOfLines = 0
+        
+        contentView.addSubview(loadingIndicator)
+        loadingIndicator.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
+        
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+        doubleTap.numberOfTapsRequired = 2
+        contentView.addGestureRecognizer(doubleTap)
     }
     
+    @objc private func handleDoubleTap(_ tap: UITapGestureRecognizer) {
+        delegate?.doubleClick(on: self)
+    }
+        
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configure(for item: CardDetailItem) {
-        if case .comment(let comment) = item {
-            configure(for: comment)
-        } else if case .commentText(let text) = item {
-            configure(for: text)
-        }
-    }
-    
-    func configure(for comment: Card.Comment) {
-        commentLabel.text = comment.description.replacingOccurrences(of: "\\n", with: "\n")
-    }
-    
+
     func configure(for text: String) {
         commentLabel.text = text
     }
     
+}
+
+extension CDCommentTableViewCell: CardDetailConfigurable {
+    func configure(for item: CardDetailItem) {
+        if case .comment(let comment) = item {
+            configure(for: comment.description.replacingOccurrences(of: "\\n", with: "\n"))
+        } else if case .commentText(let text) = item {
+            configure(for: text)
+        }
+    }
 }

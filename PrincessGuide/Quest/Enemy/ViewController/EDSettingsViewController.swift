@@ -43,7 +43,12 @@ class EDSettingsViewController: FormViewController {
         }
         
         
-        static let url = URL(fileURLWithPath: Path.document).appendingPathComponent("enemy_detail_settings.json")
+        static let url = try! FileManager.default.url(
+            for: .applicationSupportDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true
+        ).appendingPathComponent("enemy_detail_settings.json")
         
         static var `default` = Setting.load() ?? Setting() {
             didSet {
@@ -67,49 +72,23 @@ class EDSettingsViewController: FormViewController {
             themeable.backgroundImageView.image = theme.backgroundImage
             themeable.tableView.indicatorStyle = theme.indicatorStyle
             themeable.tableView.backgroundColor = theme.color.background
+            themeable.view.tintColor = theme.color.tint
         }
         
-        func cellUpdate<T: RowType>(cell: T.Cell, row: T) {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+        func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            EurekaAppearance.cellUpdate(cell: cell, row: row)
         }
         
-        func cellSetup<T: RowType>(cell: T.Cell, row: T) {
-            cell.selectedBackgroundView = UIView()
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-                themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                themeable.backgroundColor = theme.color.tableViewCell.background
-            }
+        func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            EurekaAppearance.cellSetup(cell: cell, row: row)
         }
         
         func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
-            ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                themeable.textLabel?.textColor = theme.color.title
-                themeable.detailTextLabel?.textColor = theme.color.tint
-            }
+            EurekaAppearance.onCellSelection(cell: cell, row: row)
         }
         
         func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
-            pickerRow.cellSetup{ (cell, row) in
-                cell.selectedBackgroundView = UIView()
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                }
-            }
-            pickerRow.cellUpdate { (cell, row) in
-                cell.picker.showsSelectionIndicator = false
-                ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                    themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                    themeable.onProvideStringAttributes = {
-                        return [NSAttributedString.Key.foregroundColor: theme.color.body]
-                    }
-                }
-            }
+            EurekaAppearance.onExpandInlineRow(cell: cell, row: row, pickerRow: pickerRow)
         }
         
         form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
@@ -148,6 +127,21 @@ class EDSettingsViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
         
+            +++ Section()
+            
+            <<< ButtonRow("reset") { (row) in
+                row.title = NSLocalizedString("Reset", comment: "")
+                }
+                .cellSetup(cellSetup(cell:row:))
+                .onCellSelection { [unowned self] (cell, row) in
+                    let encoder = JSONEncoder()
+                    encoder.keyEncodingStrategy = .convertToSnakeCase
+                    let data = try! encoder.encode(Setting())
+                    let json = try! JSON(data: data)
+                    self.form.setValues(json.dictionaryObject ?? [:])
+                    self.tableView.reloadData()
+                    
+        }
     }
     
     @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {

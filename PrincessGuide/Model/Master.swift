@@ -165,6 +165,8 @@ class Master: FMDatabaseQueue {
                     unit_comments
                 WHERE
                     unit_id = \(json["unit_id"])
+                OR
+                    unit_id = \(json["unit_id"].intValue + 30)
                 """
                 let commentSet = try db.executeQuery(commentSql, values: nil)
                 var comments = [Card.Comment]()
@@ -642,7 +644,12 @@ class Master: FMDatabaseQueue {
             SELECT
                 *
             FROM
-                tower_area_data
+                tower_area_data a,
+                tower_schedule b,
+                tower_story_data c
+            WHERE
+                a.tower_area_id = b.max_tower_area_id
+            AND b.opening_story_id / 1000 = c.story_group_id
             """
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {

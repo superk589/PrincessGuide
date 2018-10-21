@@ -1074,11 +1074,6 @@
         <target>失败</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Luna's Tower %d">
-        <source>Luna's Tower %d</source>
-        <target>月神塔 %d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Magic">
         <source>Magic</source>
         <target>法系</target>
@@ -1429,6 +1424,11 @@
         <target>降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Reset">
+        <source>Reset</source>
+        <target>重置</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Resist">
         <source>Resist</source>
         <target>抗性</target>
@@ -1609,14 +1609,19 @@
         <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@] HP per second for [%@]s.">
-        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@] HP per second for [%4$@]s.</source>
-        <target>在%2$@位置展开一片半径为 %1$d 的治疗区域，每秒治疗其中的友方目标 [%3$@] HP，持续 [%4$@] 秒。</target>
+      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s.">
+        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@]%4$@ HP per second for [%5$@]s.</source>
+        <target>在%2$@位置展开一片半径为 %1$d 的区域，每秒治疗其中的友方目标 [%3$@]%4$@ HP，持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a minion of ID: %d at the position of %@.">
         <source>Summon a minion of ID: %1$d at the position of %2$@.</source>
         <target>在%2$@的位置召唤 ID 为 %1$d 的随从。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s.">
+        <source>Summon an attack field of radius %1$d at %2$@ position to deal all enemy targets [%3$@] %4$@ damage per second for [%5$@]s.</source>
+        <target>在%2$@位置展开一片半径为 %1$d 的区域，每秒对其中的敌方目标造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Swing">
