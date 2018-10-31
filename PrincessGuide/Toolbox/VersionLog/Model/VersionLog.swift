@@ -88,8 +88,14 @@ protocol VLElement {
 struct VLCampaign: Codable, VLElement {
     
     var content: String {
-        let format = NSLocalizedString("New Campaign: %@ %@ x%d", comment: "")
-        return String(format: format, categoryType.description, bonusType.description, value / 1000)
+        switch eventType {
+        case .event:
+            let format = NSLocalizedString("New Campaign: %@ %@ %@ x%@", comment: "")
+            return String(format: format, eventType.description, categoryType.description, bonusType.description, String(format: "%.1f", Double(value) / 1000))
+        default:
+            let format = NSLocalizedString("New Campaign: %@ %@ x%@", comment: "")
+            return String(format: format, categoryType.description, bonusType.description, String(format: "%.1f", Double(value) / 1000))
+        }
     }
     
     var schedule: Schedule? {
@@ -100,6 +106,7 @@ struct VLCampaign: Codable, VLElement {
         case unknown = 0
         case drop = 3
         case mana = 4
+        case exp = 5
         
         var description: String {
             switch self {
@@ -109,6 +116,8 @@ struct VLCampaign: Codable, VLElement {
                 return NSLocalizedString("Drop", comment: "")
             case .mana:
                 return NSLocalizedString("Mana", comment: "")
+            case .exp:
+                return NSLocalizedString("Exp.", comment: "")
             }
         }
     }
@@ -136,14 +145,36 @@ struct VLCampaign: Codable, VLElement {
         }
     }
     
+    enum EventType: Int, CustomStringConvertible {
+        case unknown = -1
+        case normal = 0
+        case event = 1
+        
+        var description: String {
+            switch self {
+            case .unknown:
+                return NSLocalizedString("Unknown", comment: "")
+            case .normal:
+                return NSLocalizedString("", comment: "")
+            case .event:
+                return NSLocalizedString("Event", comment: "")
+            }
+        }
+    }
+    
     var categoryType: CategoryType {
         let rawValue = (Int(category) ?? 0) % 10
         return CategoryType(rawValue: rawValue) ?? .unknown
     }
     
     var bonusType: BonusType {
-        let rawValue = (Int(category) ?? 0) / 10
+        let rawValue = (Int(category) ?? 0) / 10 % 10
         return BonusType(rawValue: rawValue) ?? .unknown
+    }
+    
+    var eventType: EventType {
+        let rawValue = (Int(category) ?? 0) / 100
+        return EventType(rawValue: rawValue) ?? .unknown
     }
     
     let category: String

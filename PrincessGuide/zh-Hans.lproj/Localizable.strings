@@ -212,6 +212,9 @@
 "Become invulnerable for [%@]s." = "进入无敌状态，持续 [%@] 秒。";
 
 /* No comment provided by engineer. */
+"Become invulnerable to physical damage for [%@]s." = "免疫物理伤害，持续 [%@] 秒。";
+
+/* No comment provided by engineer. */
 "Bind" = "束缚";
 
 /* No comment provided by engineer. */
@@ -545,6 +548,9 @@
 "EX+" = "EX+";
 
 /* No comment provided by engineer. */
+"Exp." = "经验值";
+
+/* No comment provided by engineer. */
 "Exploration" = "探索";
 
 /* No comment provided by engineer. */
@@ -785,7 +791,10 @@
 "New %@ Event: %@" = "新%1$@活动：%2$@";
 
 /* No comment provided by engineer. */
-"New Campaign: %@ %@ x%d" = "新奖励事件：%1$@%2$@ x%3$d";
+"New Campaign: %@ %@ %@ x%@" = "新奖励事件：%1$@%2$@%3$@ x%4$@";
+
+/* No comment provided by engineer. */
+"New Campaign: %@ %@ x%@" = "新奖励事件：%1$@%2$@ x%3$@";
 
 /* No comment provided by engineer. */
 "New Clan Battle: %@" = "新公会战：%@";
