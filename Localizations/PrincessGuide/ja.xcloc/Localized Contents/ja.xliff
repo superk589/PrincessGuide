@@ -668,6 +668,10 @@
         <target>データバージョン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Deal [%@] %@ damage to %@, and this attack is ensured critical.">
+        <source>Deal [%1$@] %2$@ damage to %3$@, and this attack is ensured critical.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Deal [%@] %@ damage to %@.">
         <source>Deal [%1$@] %2$@ damage to %3$@.</source>
         <target>%3$@に[%1$@]の%2$@ダメージを与える。</target>

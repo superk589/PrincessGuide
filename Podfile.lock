@@ -1,5 +1,5 @@
 PODS:
-  - AcknowList (1.6.1)
+  - AcknowList (1.7)
   - Alamofire (4.7.3)
   - AutoInsetter (1.2.6)
   - BrotliKit (1.0.1)
@@ -110,7 +110,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/superk589/Tabman.git
 
 SPEC CHECKSUMS:
-  AcknowList: c9091be8dd75c95662b56f75e382487a0cbb9a27
+  AcknowList: 286185b24c2c2df63a2bb4137f853e4384b4358b
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AutoInsetter: 3713c857f3c0cc4b6265fe55ecf0c14bfe8622ee
   BrotliKit: b28f7dfde4436acc7e990e73a313ed8c40ba23e7
@@ -135,4 +135,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5fa7b35ba2c2ccc95f39bfc16ee54963c01169f5
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0.beta.2

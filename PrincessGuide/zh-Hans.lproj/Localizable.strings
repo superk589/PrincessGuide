@@ -431,6 +431,9 @@
 "Data Version" = "数据版本";
 
 /* No comment provided by engineer. */
+"Deal [%@] %@ damage to %@, and this attack is ensured critical." = "对%3$@造成 [%1$@] %2$@伤害，并且必定暴击。";
+
+/* No comment provided by engineer. */
 "Deal [%@] %@ damage to %@." = "对%3$@造成 [%1$@] %2$@伤害。";
 
 /* No comment provided by engineer. */
