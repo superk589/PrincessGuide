@@ -12,9 +12,9 @@ class NoDamageAction: ActionParameter {
     
     enum NoDamageType: Int {
         case unknown = 0
-        case noDisplay = 1
-        case display
-        case onlyDamageNum
+        case noDamage = 1
+        case dodgePhysics
+        case dodgeAll
         case abnormal
         case debuff
     }
@@ -31,10 +31,10 @@ class NoDamageAction: ActionParameter {
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch noDamageType {
-        case .noDisplay:
+        case .noDamage:
             let format = NSLocalizedString("Become invulnerable for [%@]s.", comment: "")
             return String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property))
-        case .display:
+        case .dodgePhysics:
             let format = NSLocalizedString("Become invulnerable to physical damage for [%@]s.", comment: "")
             return String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property))
         default:
