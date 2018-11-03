@@ -424,7 +424,7 @@ extension Card {
             result += Double(skillLevel) * coefficient.skillLvCoefficient
         }
         
-        if bondRank >= 7 {
+        if unitRank >= 7 {
             if unitRarity >= 5 {
                 result += Double(exSkillEvolutions.count) * coefficient.exskillEvolutionCoefficient * coefficient.skillLvCoefficient
             }
