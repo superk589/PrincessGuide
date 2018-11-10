@@ -10,34 +10,22 @@ import UIKit
 
 class FixedTabBar: UITabBar {
     
-    var itemFrames = [CGRect]()
-    var tabBarItems = [UIView]()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleOrientationChange(_:)), name: UIDevice.orientationDidChangeNotification, object: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleOrientationChange(_:)), name: UIDevice.orientationDidChangeNotification, object: nil)
-    }
-    
-    @objc private func handleOrientationChange(_ notification: Notification) {
-        itemFrames.removeAll()
-        tabBarItems.removeAll()
-    }
+    var buttonFrames: [CGRect] = []
+    var size: CGSize = .zero
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if itemFrames.isEmpty, let UITabBarButtonClass = NSClassFromString("UITabBarButton") as? NSObject.Type {
-            tabBarItems = subviews.filter({$0.isKind(of: UITabBarButtonClass)})
-            tabBarItems.forEach({itemFrames.append($0.frame)})
-        }
-        
-        if !itemFrames.isEmpty, !tabBarItems.isEmpty, itemFrames.count == items?.count {
-            tabBarItems.enumerated().forEach({$0.element.frame = itemFrames[$0.offset]})
+        if UIDevice.current.systemVersion >= "12.1" {
+            let buttons = subviews.filter {
+                String(describing: type(of: $0)).hasSuffix("Button")
+            }
+            if buttonFrames.count == buttons.count, size == bounds.size {
+                zip(buttons, buttonFrames).forEach { $0.0.frame = $0.1 }
+            } else {
+                buttonFrames = buttons.map { $0.frame }
+                size = bounds.size
+            }
         }
     }
 }
