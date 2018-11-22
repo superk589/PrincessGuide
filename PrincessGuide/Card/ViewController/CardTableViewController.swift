@@ -130,37 +130,42 @@ class CardTableViewController: UITableViewController, DataChecking {
                  */
                 
 
-                /*
-                struct CardPropertyDiff: Codable {
-                    var name: String
-                    var properties: [Property.Item]
-                }
-                let encoder = JSONEncoder()
-                encoder.outputFormatting = .prettyPrinted
-                if let data = try? encoder.encode(cards.map {
-                    return CardPropertyDiff(name: $0.base.unitName, properties: ($0.property(unitRank: 10) - $0.property(unitRank: 9)).allProperties())
-                }) {
-                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r10_r9_diff.json"))
-                }
-                 */
                 
+//                struct CardPropertyDiff: Codable {
+//                    var name: String
+//                    var properties: [Property.Item]
+//                    var imageURL: URL
+//                }
+//                let encoder = JSONEncoder()
+//                encoder.outputFormatting = .prettyPrinted
+//                if let data = try? encoder.encode(cards.map {
+//                    return CardPropertyDiff(name: $0.base.unitName, properties: ($0.property(unitRank: 11) - $0.property(unitRank: 10)).allProperties(), imageURL: URL.resource.appendingPathComponent("icon/unit/\($0.iconID()).webp"))
+//                }) {
+//                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r11_r10_diff.json"))
+//                }
+
+//                struct CardCombatEffectiveness: Codable {
+//                    var name: String
+//                    var properties: [String: Int]
+//                    var imageURL: URL
+//                }
+//                let encoder = JSONEncoder()
+//                encoder.outputFormatting = .prettyPrinted
+//                if let data = try? encoder.encode(cards.map {
+//                    return CardCombatEffectiveness(
+//                        name: $0.base.unitName,
+//                        properties: [
+//                            "Star 5, Rank 11": $0.combatEffectiveness(),
+//                            "Star 5, Rank 10": $0.combatEffectiveness(unitRank: 10),
+//                            "Star 5, Rank 9": $0.combatEffectiveness(unitRank: 9),
+//                            "Star 4, Rank 9": $0.combatEffectiveness(unitRank: 9, unitRarity: 4)
+//                        ],
+//                        imageURL: URL.resource.appendingPathComponent("icon/unit/\($0.iconID()).webp")
+//                    )
+//                }) {
+//                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r11_r10_r9_cf.json"))
+//                }
                 
-                /*
-                let encoder = JSONEncoder()
-                encoder.outputFormatting = .prettyPrinted
-                if let data = try? encoder.encode(cards.map {
-                    return [
-                        $0.base.unitName: [
-                            "Star 5, Rank 10": $0.combatEffectiveness(),
-                            "Star 5, Rank 9": $0.combatEffectiveness(unitLevel: 102, unitRank: 9, bondRank: 8, unitRarity: 5, skillLevel: 102),
-                            "Star 4, Rank 10": $0.combatEffectiveness(unitLevel: 102, unitRank: 10, bondRank: 8, unitRarity: 4, skillLevel: 102),
-                            "Star 3, Rank 10": $0.combatEffectiveness(unitLevel: 102, unitRank: 10, bondRank: 8, unitRarity: 3, skillLevel: 102),
-                        ]
-                    ]
-                }) {
-                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r10_r9_cf.json"))
-                }
-                 */
             }
         }
     }

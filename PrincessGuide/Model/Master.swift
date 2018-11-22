@@ -36,7 +36,7 @@ class Master: FMDatabaseQueue {
     
     static let url = URL(fileURLWithPath: Path.cache).appendingPathComponent("master.db")
     
-    static let shared = Master(path: url.path)
+    static let shared = Master(path: url.path)!
     
     static func checkDatabaseFile() -> Bool {
         if FileManager.default.fileExists(atPath: url.path) {

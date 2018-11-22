@@ -14,6 +14,10 @@ class DamageAction: ActionParameter {
         return ClassModifier(rawValue: actionDetail1) ?? .unknown
     }
     
+    var criticalModifier: CriticalModifier {
+        return CriticalModifier(rawValue: Int(actionValue5)) ?? .normal
+    }
+    
     override var actionValues: [ActionValue] {
         switch damageClass {
         case .magical:
@@ -37,8 +41,14 @@ class DamageAction: ActionParameter {
     }
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("Deal [%@] %@ damage to %@.", comment: "")
-        return String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
+        switch criticalModifier {
+        case .normal:
+            let format = NSLocalizedString("Deal [%@] %@ damage to %@.", comment: "")
+            return String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
+        case .critical:
+            let format = NSLocalizedString("Deal [%@] %@ damage to %@, and this attack is ensured critical.", comment: "")
+            return String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
+        }
     }
     
 }
