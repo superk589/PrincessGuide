@@ -986,6 +986,12 @@
 "Round %d" = "第 %d 周目";
 
 /* No comment provided by engineer. */
+"Round %d ~ %d" = "第 %1$d ~ %2$d 周目";
+
+/* No comment provided by engineer. */
+"Round %d+" = "第 %d+ 周目";
+
+/* No comment provided by engineer. */
 "Save" = "保存";
 
 /* No comment provided by engineer. */

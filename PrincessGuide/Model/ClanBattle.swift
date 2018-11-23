@@ -12,9 +12,7 @@ import Timepiece
 class ClanBattle: Codable {
     
     let period: Period
-    
-    let groups: [Group]
-    
+        
     struct Period: Codable {
         let clanBattleId: Int
         let period: Int
@@ -28,19 +26,35 @@ class ClanBattle: Codable {
         let resultEnd: String
     }
     
-    struct Group: Codable {
-        let wave: Wave
-        let groupId: Int
-        let orderNum: Int
-        let scoreCoefficient: Double
-    }
-    
-    struct Round {
-        let groups: [Group]
-        let groupId: Int
+    class Round: Codable {
+        
+        struct Group: Codable {
+            let wave: Wave
+            let groupId: Int
+            let orderNum: Int
+            let scoreCoefficient: Double
+        }
+        
+        let clanBattleBossGroupId: Int
+        let lapNumFrom: Int
+        let lapNumTo: Int
+        
+        func preload() {
+            _ = groups
+        }
+        
+        lazy var groups: [Group] = DispatchSemaphore.sync { (closure) in
+            return Master.shared.getClanBattleRoundGroups(groupID: clanBattleBossGroupId, callback: closure)
+        } ?? []
         
         var name: String {
-            return String(format: NSLocalizedString("Round %d", comment: ""), groupId % 10)
+            if lapNumFrom == lapNumTo {
+                return String(format: NSLocalizedString("Round %d", comment: ""), lapNumFrom)
+            } else if lapNumTo == -1 {
+                return String(format: NSLocalizedString("Round %d+", comment: ""), lapNumFrom)
+            } else {
+                return String(format: NSLocalizedString("Round %d ~ %d", comment: ""), lapNumFrom, lapNumTo)
+            }
         }
     }
     
@@ -49,19 +63,19 @@ class ClanBattle: Codable {
         return String(format: NSLocalizedString("Clan Battle %d-%d", comment: ""), date.year, date.month)
     }
     
-    lazy var rounds: [Round] = {
-        var rounds = [Round]()
-        var ids = Set(groups.map { $0.groupId })
-        for id in ids {
-            let round = Round(groups: groups.filter { $0.groupId == id }, groupId: id)
-            rounds.append(round)
-        }
-        return rounds.sorted { $0.groupId < $1.groupId }
-    }()
+    lazy var rounds: [Round] = DispatchSemaphore.sync { (closure) in
+        return Master.shared.getClanBattleRounds(clanBattleID: period.clanBattleId, callback: closure)
+    } ?? []
     
-    init(period: Period, groups: [Group]) {
+    func preload() {
+        _ = rounds
+        rounds.forEach {
+            $0.preload()
+        }
+    }
+    
+    init(period: Period) {
         self.period = period
-        self.groups = groups
     }
 
 }
