@@ -1484,6 +1484,16 @@
         <target>第 %d 周目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Round %d ~ %d">
+        <source>Round %1$d ~ %2$d</source>
+        <target>第 %1$d ~ %2$d 周目</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Round %d+">
+        <source>Round %d+</source>
+        <target>第 %d+ 周目</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="SLv.">
         <source>SLv.</source>
         <target>技能等级</target>

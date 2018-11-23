@@ -1356,6 +1356,14 @@
         <target>%d 戦目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Round %d ~ %d">
+        <source>Round %1$d ~ %2$d</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Round %d+">
+        <source>Round %d+</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="SLv.">
         <source>SLv.</source>
         <target>スキルレベル</target>
