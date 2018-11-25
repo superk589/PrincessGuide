@@ -42,6 +42,20 @@ class CDSettingsViewController: FormViewController {
             static let allLabels = [ExpressionStyle.full, .short, .valueOnly, .valueInCombat]
         }
         
+        enum SkillStyle: String, Codable, CustomStringConvertible, CaseIterable {
+            case both = "both"
+            case evolutionFirst = "evolution_first"
+            
+            var description: String {
+                switch self {
+                case .both:
+                    return NSLocalizedString("both", comment: "skill style")
+                case .evolutionFirst:
+                    return NSLocalizedString("evolution first", comment: "skill style")
+                }
+            }
+        }
+        
         var unitLevel: Int
         var unitRank: Int
         var bondRank: Int
@@ -53,6 +67,7 @@ class CDSettingsViewController: FormViewController {
         var statusComparison: Bool
         var rankFrom: Int
         var rankTo: Int
+        var skillStyle: SkillStyle = .evolutionFirst
         
         func save() {
             let encoder = JSONEncoder()
@@ -243,7 +258,20 @@ class CDSettingsViewController: FormViewController {
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
-        
+            
+            <<< PickerInlineRow<String>("skill_style") { (row : PickerInlineRow<String>) -> Void in
+                row.title = NSLocalizedString("Evolution Skill Style", comment: "")
+                row.displayValueFor = { (rowValue: String?) in
+                    return rowValue.flatMap { Setting.SkillStyle(rawValue: $0)?.description }
+                }
+                row.options = Setting.SkillStyle.allCases.map { $0.rawValue }
+                row.value = Setting.default.skillStyle.rawValue
+                
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
             +++ Section(NSLocalizedString("Status", comment: ""))
             
             <<< SwitchRow("adds_ex") { (row : SwitchRow) -> Void in

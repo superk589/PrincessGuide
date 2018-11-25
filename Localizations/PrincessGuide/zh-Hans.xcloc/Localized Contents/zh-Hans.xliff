@@ -894,6 +894,11 @@
         <target>活动</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Evolution Skill Style">
+        <source>Evolution Skill Style</source>
+        <target>进化技能显示风格</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Exp.">
         <source>Exp.</source>
         <target>经验值</target>
@@ -1122,6 +1127,11 @@
       <trans-unit id="Main %d">
         <source>Main %d</source>
         <target>Main %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Main+">
+        <source>Main+</source>
+        <target>Main+</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Make %@ fall asleep for [%@]s.">
@@ -1769,6 +1779,11 @@
         <target>UB</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="UB+">
+        <source>UB+</source>
+        <target>UB+</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Unable to open Mail">
         <source>Unable to open Mail</source>
         <target>无法打开邮件</target>
@@ -1914,6 +1929,11 @@
         <target>首领级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="both">
+        <source>both</source>
+        <target>进化前后</target>
+        <note>skill style</note>
+      </trans-unit>
       <trans-unit id="buffs">
         <source>buffs</source>
         <target>增益</target>
@@ -1948,6 +1968,11 @@
         <source>enemy</source>
         <target>敌方</target>
         <note>target modifier</note>
+      </trans-unit>
+      <trans-unit id="evolution first">
+        <source>evolution first</source>
+        <target>优先进化后</target>
+        <note>skill style</note>
       </trans-unit>
       <trans-unit id="fifth">
         <source>fifth</source>

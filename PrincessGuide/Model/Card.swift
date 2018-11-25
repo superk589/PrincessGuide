@@ -85,6 +85,9 @@ class Card: Codable {
         let unionBurst: Int
         let unitId: Int
         let unitName: String
+        let unionBurstEvolution: Int
+        let mainSkillEvolution1: Int
+        let mainSkillEvolution2: Int
         
         
         var exSkillIDs: [Int] {
@@ -99,6 +102,10 @@ class Card: Codable {
             return Array([mainSkill1, mainSkill2, mainSkill3, mainSkill4, mainSkill5].prefix { $0 != 0 })
         }
         
+        var mainSkillEvolutionIDs: [Int] {
+            return Array([mainSkillEvolution1, mainSkillEvolution2].prefix { $0 != 0 })
+        }
+ 
         var spSkillIDs: [Int] {
             return  Array([spSkill1, spSkill2, spSkill3, spSkill4, spSkill5].prefix { $0 != 0 })
         }
@@ -332,12 +339,20 @@ class Card: Codable {
         Master.shared.getSkills(skillIDs: self.base.mainSkillIDs, callback: closure)
     } ?? []
     
+    lazy var mainSkillEvolutions = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: self.base.mainSkillEvolutionIDs, callback: closure)
+    } ?? []
+    
     lazy var spSkills = DispatchSemaphore.sync { [unowned self] (closure) in
         Master.shared.getSkills(skillIDs: self.base.spSkillIDs, callback: closure)
     } ?? []
     
     lazy var unionBurst = DispatchSemaphore.sync { [unowned self] (closure) in
         Master.shared.getSkills(skillIDs: [self.base.unionBurst], callback: closure)
+    }?.first
+    
+    lazy var unionBurstEvolution = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: [self.base.unionBurstEvolution], callback: closure)
     }?.first
     
     lazy var patterns: [AttackPattern]? = DispatchSemaphore.sync { closure in

@@ -15,6 +15,9 @@ enum SkillCategory: String, Hashable, CustomStringConvertible {
     case exEvolution
     case sp
     
+    case mainEvolution
+    case unionBurstEvolution
+    
     var description: String {
         switch self {
         case .unionBurst:
@@ -27,6 +30,10 @@ enum SkillCategory: String, Hashable, CustomStringConvertible {
             return NSLocalizedString("EX+", comment: "")
         case .sp:
             return NSLocalizedString("SP", comment: "")
+        case .mainEvolution:
+            return NSLocalizedString("Main+", comment: "")
+        case .unionBurstEvolution:
+            return NSLocalizedString("UB+", comment: "")
         }
     }
 }

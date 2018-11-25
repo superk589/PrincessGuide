@@ -822,6 +822,10 @@
         <target>イベント</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Evolution Skill Style">
+        <source>Evolution Skill Style</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Exp.">
         <source>Exp.</source>
         <note>No comment provided by engineer.</note>
@@ -1033,6 +1037,10 @@
       <trans-unit id="Main %d">
         <source>Main %d</source>
         <target>メイン %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Main+">
+        <source>Main+</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Make %@ fall asleep for [%@]s.">
@@ -1608,6 +1616,10 @@
         <target>UB</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="UB+">
+        <source>UB+</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Unable to open Mail">
         <source>Unable to open Mail</source>
         <target>メール起動失敗</target>
@@ -1738,6 +1750,10 @@
         <source>boss</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="both">
+        <source>both</source>
+        <note>skill style</note>
+      </trans-unit>
       <trans-unit id="buffs">
         <source>buffs</source>
         <note>No comment provided by engineer.</note>
@@ -1766,6 +1782,10 @@
         <source>enemy</source>
         <target>敵</target>
         <note>target modifier</note>
+      </trans-unit>
+      <trans-unit id="evolution first">
+        <source>evolution first</source>
+        <note>skill style</note>
       </trans-unit>
       <trans-unit id="fifth">
         <source>fifth</source>

@@ -55,8 +55,11 @@ class Master: FMDatabaseQueue {
             SELECT
                 a.*,
                 b.union_burst,
+                b.union_burst_evolution,
                 b.main_skill_1,
+                b.main_skill_evolution_1,
                 b.main_skill_2,
+                b.main_skill_evolution_2,
                 b.ex_skill_1,
                 b.ex_skill_evolution_1,
                 b.main_skill_3,

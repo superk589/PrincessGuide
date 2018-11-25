@@ -238,6 +238,9 @@
 /* No comment provided by engineer. */
 "boss" = "首领级";
 
+/* skill style */
+"both" = "进化前后";
+
 /* No comment provided by engineer. */
 "Box Detail" = "Box 详情";
 
@@ -544,6 +547,12 @@
 /* No comment provided by engineer. */
 "Event" = "活动";
 
+/* skill style */
+"evolution first" = "优先进化后";
+
+/* No comment provided by engineer. */
+"Evolution Skill Style" = "进化技能显示风格";
+
 /* No comment provided by engineer. */
 "EX" = "EX";
 
@@ -729,6 +738,9 @@
 
 /* No comment provided by engineer. */
 "Main %d" = "Main %d";
+
+/* No comment provided by engineer. */
+"Main+" = "Main+";
 
 /* No comment provided by engineer. */
 "Make %@ fall asleep for [%@]s." = "使%1$@入睡，持续 [%2$@] 秒。";
@@ -1263,6 +1275,9 @@
 
 /* No comment provided by engineer. */
 "UB" = "UB";
+
+/* No comment provided by engineer. */
+"UB+" = "UB+";
 
 /* No comment provided by engineer. */
 "Unable to open Mail" = "无法打开邮件";
