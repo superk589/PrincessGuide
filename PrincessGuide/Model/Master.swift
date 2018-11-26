@@ -126,6 +126,22 @@ class Master: FMDatabaseQueue {
                     promotions.append(promotion)
                 }
                 
+                let uniqueEquipSQL = """
+                SELECT
+                    *
+                FROM
+                    unit_unique_equip
+                WHERE
+                    unit_id = \(json["unit_id"])
+                """
+                let uniqueEquipSet = try db.executeQuery(uniqueEquipSQL, values: nil)
+                
+                var uniqueEquipIDs = [Int]()
+                while uniqueEquipSet.next() {
+                    let id = Int(uniqueEquipSet.int(forColumn: "equip_id"))
+                    uniqueEquipIDs.append(id)
+                }
+                
                 let raritySql = """
                 SELECT
                     *
@@ -226,7 +242,7 @@ class Master: FMDatabaseQueue {
                 
                 if let base = try? decoder.decode(Card.Base.self, from: json.rawData()),
                     let profile = profile, let actualUnit = actualUnit, let unitBackground = unitBackground {
-                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground)
+                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground, uniqueEquipIDs: uniqueEquipIDs)
                     cards.append(card)
                 }
             }
@@ -355,6 +371,39 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getUniqueEquipments(equipmentIDs: [Int], callback: @escaping FMDBCallbackClosure<[UniqueEquipment]>) {
+        var equipments = [UniqueEquipment]()
+        execute({ (db) in
+            var selectSql = """
+            SELECT
+                a.*,
+                b.total_point
+            FROM
+                unique_equipment_data a,
+                (
+                    SELECT
+                        max(total_point) total_point
+                    FROM
+                        unique_equipment_enhance_data
+                ) b
+            """
+            if equipmentIDs.count > 0 {
+                selectSql += " WHERE equipment_id in (\(equipmentIDs.map(String.init).joined(separator: ",")))"
+            }
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let equipment = try? decoder.decode(UniqueEquipment.self, from: json.rawData()) {
+                    equipments.append(equipment)
+                }
+            }
+        }) {
+            callback(equipments)
+        }
+    }
+    
     func getCraft(equipmentID: Int, callback: @escaping FMDBCallbackClosure<Craft?>) {
         var result: Craft?
         execute({ (db) in
@@ -415,6 +464,35 @@ class Master: FMDatabaseQueue {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 if let enhance = try? decoder.decode(Equipment.Enhance.self, from: json.rawData()) {
+                    result = enhance
+                    break
+                }
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
+    func getUniqueEnhance(equipmentID: Int, callback: @escaping FMDBCallbackClosure<UniqueEquipment.Enhance?>) {
+        var result: UniqueEquipment.Enhance?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*,
+                b.max_equipment_enhance_level
+            FROM
+                unique_equipment_enhance_rate a,
+                ( SELECT max( enhance_level ) max_equipment_enhance_level FROM unique_equipment_enhance_data) b
+            WHERE
+                a.equipment_id = \(equipmentID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                if let enhance = try? decoder.decode(UniqueEquipment.Enhance.self, from: json.rawData()) {
                     result = enhance
                     break
                 }
@@ -1040,6 +1118,24 @@ class Master: FMDatabaseQueue {
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
                 result = Int(set.int(forColumn: "max_promotion_level"))
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
+    func getMaxUniqueEquipmentLevel(callback: @escaping FMDBCallbackClosure<Int?>) {
+        var result: Int?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                max(enhance_level) max_level
+            FROM
+                unique_equipment_enhance_data
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                result = Int(set.int(forColumn: "max_level"))
             }
         }) {
             callback(result)

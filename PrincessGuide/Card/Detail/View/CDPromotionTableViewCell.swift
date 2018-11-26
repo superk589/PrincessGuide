@@ -8,6 +8,7 @@
 
 import UIKit
 import Gestalt
+import SnapKit
 
 protocol CDPromotionTableViewCellDelegate: class {
     func cdPromotionTableViewCell(_ cdPromotionTableViewCell: CDPromotionTableViewCell, didSelectEquipmentID equipmentID: Int)
@@ -60,18 +61,31 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
     func configure(for item: CardDetailItem) {
-        guard case .promotion(let promotion) = item else { return }
-        configure(for: promotion)
+        switch item {
+        case .promotion(let promotion):
+            configure(
+                title: NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)",
+                ids: promotion.equipSlots
+            )
+        case .uniqueEquipments(let uniqueEquipIDs):
+            configure(
+                title: NSLocalizedString("Unique Equipments", comment: ""),
+                ids: uniqueEquipIDs
+            )
+        default:
+            break
+        }
     }
     
-    func configure(for promotion: Card.Promotion) {
-        titleLabel.text = NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)"
+    func configure(title: String, ids: [Int]) {
+        titleLabel.text = title
         
         icons.forEach {
             $0.removeFromSuperview()
         }
         icons.removeAll()
-        promotion.equipSlots.forEach {
+        
+        ids.forEach {
             let icon = IconImageView()
             icon.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
@@ -79,6 +93,14 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
             icon.addGestureRecognizer(tapGesture)
             stackView.addArrangedSubview(icon)
             icons.append(icon)
+        }
+        
+        if ids.count < 6 {
+            (ids.count..<6).forEach { _ in
+                let icon = IconImageView()
+                stackView.addArrangedSubview(icon)
+                icons.append(icon)
+            }
         }
     }
     

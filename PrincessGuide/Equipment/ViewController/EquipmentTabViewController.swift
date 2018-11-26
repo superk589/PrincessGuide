@@ -20,7 +20,7 @@ class EquipmentTabViewController: TabmanViewController, PageboyViewControllerDat
         navigationItem.title = NSLocalizedString("Equipments", comment: "")
         viewControllers = [EquipmentViewController(equipmentType: .dropped), EquipmentViewController(equipmentType: .crafted)]
         dataSource = self
-        bar.items = [EquipmentType.dropped, .crafted].map { Item(title: $0.description) }
+        bar.items = EquipmentType.allCases.map { Item(title: $0.description) }
         bar.location = .bottom
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in

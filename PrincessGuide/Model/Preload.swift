@@ -30,6 +30,8 @@ class Preload {
     
     var maxEnemyLevel = Constant.presetMaxEnemyLevel
     
+    var maxUniqueEquipmentLevel = Constant.presetMaxUniqueEquipmentLevel
+    
     private init() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
     }
@@ -71,6 +73,10 @@ class Preload {
         maxEquipmentRank = DispatchSemaphore.sync { (closure) in
             Master.shared.getMaxRank(callback: closure)
         } ?? Constant.presetMaxRank
+        
+        maxUniqueEquipmentLevel = DispatchSemaphore.sync { (closure) in
+            Master.shared.getMaxUniqueEquipmentLevel(callback: closure)
+        } ?? Constant.presetMaxUniqueEquipmentLevel
         
     }
     
@@ -116,6 +122,12 @@ class Preload {
         DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
             Master.shared.getMaxRank(callback: { (rank) in
                 self?.maxEquipmentRank = rank ?? Constant.presetMaxRank
+            })
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+            Master.shared.getMaxUniqueEquipmentLevel(callback: { (level) in
+                self?.maxUniqueEquipmentLevel = level ?? Constant.presetMaxUniqueEquipmentLevel
             })
         }
         

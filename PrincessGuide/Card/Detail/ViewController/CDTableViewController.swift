@@ -27,6 +27,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             case textArray([(String, String, Bool)])
             case album(String, [URL], [URL])
             case commentText(String)
+            case uniqueEquipments([Int])
         }
         var type: UITableViewCell.Type
         var data: Model

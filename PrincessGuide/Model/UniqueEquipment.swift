@@ -1,14 +1,14 @@
 //
-//  Equipment.swift
+//  UniqueEquipment.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/4/10.
+//  Created by zzk on 2018/11/25.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class Equipment: Codable {
+class UniqueEquipment: Codable {
     
     let atk: Int
     let craftFlg: Int
@@ -37,7 +37,7 @@ class Equipment: Codable {
     let waveHpRecovery: Int
     let totalPoint: Int
     let accuracy: Int
-    
+
     init(atk: Int, craftFlg: Int, def: Int, description: String, dodge: Int, enableDonation: Int, energyRecoveryRate: Int, energyReduceRate: Int, equipmentEnhancePoint: Int, equipmentId: Int, equipmentName: String, hp: Int, hpRecoveryRate: Int, lifeSteal: Int, magicCritical: Int, magicDef: Int, magicPenetrate: Int, magicStr: Int, physicalCritical: Int, physicalPenetrate: Int, promotionLevel: Int, requireLevel: Int, salePrice: Int, waveEnergyRecovery: Int, waveHpRecovery: Int, totalPoint: Int, accuracy: Int) {
         self.atk = atk
         self.craftFlg = craftFlg
@@ -67,64 +67,64 @@ class Equipment: Codable {
         self.totalPoint = totalPoint
         self.accuracy = accuracy
     }
-    
-    var enhanceCost: Int {
-        return (Constant.presetManaCostPerPoint[promotionLevel] ?? 0) * totalPoint
-    }
-    
-    lazy var craft: Craft? = {
-        if craftFlg == 1 {
-            return DispatchSemaphore.sync { (closure) in
-                Master.shared.getCraft(equipmentID: equipmentId, callback: closure)
-            }
-        } else {
-            return nil
-        }
-    }()
-    
-    lazy var recursiveConsumes: [Craft.Consume] = {
-        var consumes = [Craft.Consume]()
-        for consume in craft?.consumes ?? [] {
-            if consume.equipment?.craftFlg == 0 {
-                consumes += [consume]
-            } else {
-                consumes += consume.equipment?.recursiveConsumes ?? []
-            }
-        }
-        return consumes
-    }()
-    
-    lazy var recursiveCraft: [Craft] = {
-        var crafts = [Craft]()
-        if let craft = craft {
-            crafts.append(craft)
-        }
-        for consume in craft?.consumes ?? [] {
-            if let equipment = consume.equipment {
-                crafts += equipment.recursiveCraft
-            }
-        }
-        return crafts
-    }()
-    
+
+//    var enhanceCost: Int {
+//        return (Constant.presetManaCostPerPoint[promotionLevel] ?? 0) * totalPoint
+//    }
+//
+//    lazy var craft: Craft? = {
+//        if craftFlg == 1 {
+//            return DispatchSemaphore.sync { (closure) in
+//                Master.shared.getCraft(equipmentID: equipmentId, callback: closure)
+//            }
+//        } else {
+//            return nil
+//        }
+//    }()
+//
+//    lazy var recursiveConsumes: [Craft.Consume] = {
+//        var consumes = [Craft.Consume]()
+//        for consume in craft?.consumes ?? [] {
+//            if consume.equipment?.craftFlg == 0 {
+//                consumes += [consume]
+//            } else {
+//                consumes += consume.equipment?.recursiveConsumes ?? []
+//            }
+//        }
+//        return consumes
+//    }()
+//
+//    lazy var recursiveCraft: [Craft] = {
+//        var crafts = [Craft]()
+//        if let craft = craft {
+//            crafts.append(craft)
+//        }
+//        for consume in craft?.consumes ?? [] {
+//            if let equipment = consume.equipment {
+//                crafts += equipment.recursiveCraft
+//            }
+//        }
+//        return crafts
+//    }()
+//
     lazy var enhance: Enhance? = DispatchSemaphore.sync { (closure) in
-        Master.shared.getEnhance(equipmentID: equipmentId, callback: closure)
+        Master.shared.getUniqueEnhance(equipmentID: equipmentId, callback: closure)
     }
-    
-    var property: Property {
+
+    func property(enhanceLevel: Int) -> Property {
         var result = Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
-                        energyRecoveryRate: Double(energyRecoveryRate), energyReduceRate: Double(energyReduceRate),
-                        hp: Double(hp), hpRecoveryRate: Double(hpRecoveryRate), lifeSteal: Double(lifeSteal),
-                        magicCritical: Double(magicCritical), magicDef: Double(magicDef),
-                        magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
-                        physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
-                        waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery), accuracy: Double(accuracy))
+                              energyRecoveryRate: Double(energyRecoveryRate), energyReduceRate: Double(energyReduceRate),
+                              hp: Double(hp), hpRecoveryRate: Double(hpRecoveryRate), lifeSteal: Double(lifeSteal),
+                              magicCritical: Double(magicCritical), magicDef: Double(magicDef),
+                              magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
+                              physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
+                              waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery), accuracy: Double(accuracy))
         if let enhance = enhance {
-            result += enhance.property * enhance.maxEquipmentEnhanceLevel
+            result += enhance.property * (enhanceLevel - 1)
         }
         return result
     }
-    
+
     struct Enhance: Codable {
         let atk: Double
         let def: Double
@@ -148,7 +148,7 @@ class Equipment: Codable {
         let waveEnergyRecovery: Double
         let waveHpRecovery: Double
         let accuracy: Double
-        
+
         var property: Property {
             return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
                             energyRecoveryRate: Double(energyRecoveryRate), energyReduceRate: Double(energyReduceRate),
@@ -161,39 +161,23 @@ class Equipment: Codable {
     }
 }
 
-extension Equipment {
+extension UniqueEquipment {
     
-    private func mergeConsumes(_ consumes: [Craft.Consume], to another: [Craft.Consume]) -> [Craft.Consume] {
-        var mergedConsumes = [Craft.Consume]()
-        let ids = Set((consumes + another).map { $0.equipmentID })
-        for id in ids {
-            let num1 = consumes
-                .filter { $0.equipmentID == id }
-                .map { $0.consumeNum }
-                .reduce(0, +)
-            let num2 = another
-                .filter { $0.equipmentID == id }
-                .map { $0.consumeNum }
-                .reduce(0, +)
-            mergedConsumes.append(Craft.Consume(equipmentID: id, consumeNum: num1 + num2))
-        }
-        return mergedConsumes
-    }
+//    private func mergeConsumes(_ consumes: [Craft.Consume], to another: [Craft.Consume]) -> [Craft.Consume] {
+//        var mergedConsumes = [Craft.Consume]()
+//        let ids = Set((consumes + another).map { $0.equipmentID })
+//        for id in ids {
+//            let num1 = consumes
+//                .filter { $0.equipmentID == id }
+//                .map { $0.consumeNum }
+//                .reduce(0, +)
+//            let num2 = another
+//                .filter { $0.equipmentID == id }
+//                .map { $0.consumeNum }
+//                .reduce(0, +)
+//            mergedConsumes.append(Craft.Consume(equipmentID: id, consumeNum: num1 + num2))
+//        }
+//        return mergedConsumes
+//    }
     
-}
-
-enum EquipmentType: Int, CustomStringConvertible, CaseIterable {
-    case dropped
-    case crafted
-    case uniqueCrafted
-    var description: String {
-        switch self {
-        case .dropped:
-            return NSLocalizedString("Dropped", comment: "")
-        case .uniqueCrafted:
-            return NSLocalizedString("Unique", comment: "")
-        case .crafted:
-            return NSLocalizedString("Crafted", comment: "")
-        }
-    }
 }

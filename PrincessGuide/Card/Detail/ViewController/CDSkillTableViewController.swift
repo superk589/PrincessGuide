@@ -44,6 +44,9 @@ class CDSkillTableViewController: CDTableViewController {
             }
         }
         
+        
+        // setup union burst
+        
         if settings.skillStyle == .both {
             if let unionBurst = card.unionBurst {
                 rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, property, nil)))
@@ -59,22 +62,25 @@ class CDSkillTableViewController: CDTableViewController {
             }
         }
         
+        // setup main skills
         if settings.skillStyle == .both {
-            rows.append(contentsOf:
-                card.mainSkills
-                    .enumerated()
-                    .map {
-                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, property, $0.offset + 1))
+            rows += zip(card.mainSkills, card.mainSkillEvolutions)
+                .enumerated()
+                .flatMap {
+                    [
+                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element.0, .main, property, $0.offset + 1)),
+                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element.1, .mainEvolution, property, $0.offset + 1))
+                    ]
                 }
-            )
             
-            rows.append(contentsOf:
-                card.mainSkillEvolutions
+            if card.mainSkills.count > card.mainSkillEvolutions.count {
+                
+                rows += card.mainSkills[card.mainSkillEvolutions.count..<card.mainSkills.count]
                     .enumerated()
                     .map {
-                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .mainEvolution, property, $0.offset + 1))
+                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, property, card.mainSkillEvolutions.count + $0.offset + 1))
                 }
-            )
+            }
         } else {
             rows.append(contentsOf:
                 zip(card.mainSkillEvolutions, card.mainSkills)
@@ -89,33 +95,36 @@ class CDSkillTableViewController: CDTableViewController {
                 rows += card.mainSkills[card.mainSkillEvolutions.count..<card.mainSkills.count]
                     .enumerated()
                     .map {
-                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, property, $0.offset + 1))
+                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, property, card.mainSkillEvolutions.count + $0.offset + 1))
                 }
             }
         }
         
+        // setup ex skills
         if settings.skillStyle == .both {
-            rows.append(contentsOf:
-                card.exSkills
-                    .enumerated()
-                    .map {
-                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, property, $0.offset + 1))
-                }
-            )
+            rows += zip(card.exSkills, card.exSkillEvolutions)
+                .enumerated()
+                .flatMap {
+                    [
+                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element.0, .ex, property, nil)),
+                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element.1, .exEvolution, property, nil))
+                    ]
+            }
             
-            rows.append(contentsOf:
-                card.exSkillEvolutions
+            if card.exSkills.count > card.exSkillEvolutions.count {
+                
+                rows += card.exSkills[card.exSkillEvolutions.count..<card.exSkills.count]
                     .enumerated()
                     .map {
-                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .exEvolution, property, $0.offset + 1))
+                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, property, nil))
                 }
-            )
+            }
         } else {
             rows.append(contentsOf:
                 zip(card.exSkillEvolutions, card.exSkills)
                     .enumerated()
                     .map {
-                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element.0, .exEvolution, property, $0.offset + 1))
+                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element.0, .exEvolution, property, nil))
                 }
             )
             
@@ -124,7 +133,7 @@ class CDSkillTableViewController: CDTableViewController {
                 rows += card.mainSkills[card.exSkillEvolutions.count..<card.exSkills.count]
                     .enumerated()
                     .map {
-                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, property, $0.offset + 1))
+                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, property, nil))
                 }
             }
         }

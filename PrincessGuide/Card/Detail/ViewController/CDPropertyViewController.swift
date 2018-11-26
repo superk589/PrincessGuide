@@ -28,16 +28,16 @@ class CDPropertyViewController: CDTableViewController {
         let combatEffectiveness: Int
         
         if settings.statusComparison {
-            let fromProperty = card.property(unitLevel: settings.unitLevel, unitRank: settings.rankFrom, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx)
-            let toProperty = card.property(unitLevel: settings.unitLevel, unitRank: settings.rankTo, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx)
+            let fromProperty = card.property(unitLevel: settings.unitLevel, unitRank: settings.rankFrom, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
+            let toProperty = card.property(unitLevel: settings.unitLevel, unitRank: settings.rankTo, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
             property = toProperty - fromProperty
             
-            let fromCombatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.rankFrom, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel)
-            let toCombatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.rankTo, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel)
+            let fromCombatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.rankFrom, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
+            let toCombatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.rankTo, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
             combatEffectiveness = toCombatEffectiveness - fromCombatEffectiveness
         } else {
-            property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx)
-            combatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel)
+            property = card.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
+            combatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
         }
         
         let unitLevel = settings.unitLevel

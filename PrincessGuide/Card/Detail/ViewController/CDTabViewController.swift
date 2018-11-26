@@ -36,11 +36,13 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         navigationItem.title = card.base.unitName
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
         
-        let items = [NSLocalizedString("Image", comment: ""),
-                     NSLocalizedString("Skill", comment: ""),
-                     NSLocalizedString("Profile", comment: ""),
-                     NSLocalizedString("Status", comment: ""),
-                     NSLocalizedString("Equipment", comment: "")].map { Item(title: $0) }
+        let items = [
+            NSLocalizedString("Image", comment: ""),
+            NSLocalizedString("Skill", comment: ""),
+            NSLocalizedString("Profile", comment: ""),
+            NSLocalizedString("Status", comment: ""),
+            NSLocalizedString("Equipment", comment: "")
+        ].map { Item(title: $0) }
  
         dataSource = self
         bar.items = items
