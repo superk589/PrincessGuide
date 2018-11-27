@@ -565,12 +565,21 @@ class Master: FMDatabaseQueue {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 var actionIDs = [Int]()
+                var dependActionIDs = [Int: Int]()
                 for i in 1...7 {
                     let field = "action_\(i)"
                     let id = json[field].intValue
                     if id != 0 {
                         actionIDs.append(id)
                     }
+                    
+                    let dependActionField = "depend_action_\(i)"
+                    let dependID = json[dependActionField].intValue
+                    
+                    if dependID != 0 && id != 0 {
+                        dependActionIDs[id] = dependID
+                    }
+                    
                 }
                 
                 var actions = [Skill.Action]()
@@ -594,7 +603,7 @@ class Master: FMDatabaseQueue {
                     }
                 }
                 if let base = try? decoder.decode(Skill.Base.self, from: json.rawData()) {
-                    let skill = Skill(actions: actions, base: base)
+                    let skill = Skill(actions: actions, base: base, dependActionIDs: dependActionIDs)
                     skills.append(skill)
                 }
             }

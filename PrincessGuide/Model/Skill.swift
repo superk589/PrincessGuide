@@ -40,12 +40,25 @@ enum SkillCategory: String, Hashable, CustomStringConvertible {
 
 class Skill: Codable {
     
-    let actions: [Action]
+    var actions: [Action]
     let base: Base
     
-    init(actions: [Action], base: Base) {
+    let dependActionIDs: [Int: Int]
+    
+    init(actions: [Action], base: Base, dependActionIDs: [Int: Int]) {
         self.actions = actions
         self.base = base
+        self.dependActionIDs = dependActionIDs
+        
+        for i in actions.indices {
+            let action = actions[i]
+            if let dependID = dependActionIDs[action.actionId], let dependAction = actions.first(where: { $0.actionId == dependID }) {
+                var newAction = action
+                newAction.targetCount = dependAction.targetCount
+                newAction.targetAssignment = dependAction.targetAssignment
+                self.actions[i] = newAction
+            }
+        }
     }
     
     struct Base: Codable {
@@ -83,8 +96,8 @@ class Skill: Codable {
         let description: String
         let levelUpDisp: String
         let targetArea: Int
-        let targetAssignment: Int
-        let targetCount: Int
+        var targetAssignment: Int
+        var targetCount: Int
         let targetNumber: Int
         let targetRange: Int
         let targetType: Int

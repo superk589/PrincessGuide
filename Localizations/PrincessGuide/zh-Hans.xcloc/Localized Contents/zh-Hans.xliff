@@ -1791,22 +1791,22 @@
       </trans-unit>
       <trans-unit id="Unique">
         <source>Unique</source>
-        <target>专武</target>
+        <target>专属装备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Unique Equipment">
         <source>Unique Equipment</source>
-        <target>装备专武</target>
+        <target>计算专属装备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Unique Equipment Level">
         <source>Unique Equipment Level</source>
-        <target>专武等级</target>
+        <target>专属装备等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Unique Equipments">
         <source>Unique Equipments</source>
-        <target>专武</target>
+        <target>专属装备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Unit">
