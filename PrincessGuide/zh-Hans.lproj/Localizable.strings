@@ -548,7 +548,7 @@
 "Event" = "活动";
 
 /* skill style */
-"evolution first" = "优先进化后";
+"evolution only" = "只显示进化后";
 
 /* No comment provided by engineer. */
 "Evolution Skill Style" = "进化技能显示风格";
@@ -1281,6 +1281,18 @@
 
 /* No comment provided by engineer. */
 "Unable to open Mail" = "无法打开邮件";
+
+/* No comment provided by engineer. */
+"Unique" = "专武";
+
+/* No comment provided by engineer. */
+"Unique Equipment" = "装备专武";
+
+/* No comment provided by engineer. */
+"Unique Equipment Level" = "专武等级";
+
+/* No comment provided by engineer. */
+"Unique Equipments" = "专武";
 
 /* No comment provided by engineer. */
 "Unit" = "角色";

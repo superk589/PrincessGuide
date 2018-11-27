@@ -98,6 +98,8 @@
 		12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9E2092D174006AC352 /* DeviceInfo.swift */; };
 		12398EA12092D78C006AC352 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA02092D78C006AC352 /* Updater.swift */; };
 		12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA22092F7D4006AC352 /* StringExtension.swift */; };
+		124BADDB21AD42F5001041F2 /* UniqueEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BADDA21AD42F5001041F2 /* UniqueEquipmentViewController.swift */; };
+		124BADDD21AD43C6001041F2 /* UniqueCraftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BADDC21AD43C6001041F2 /* UniqueCraftTableViewController.swift */; };
 		124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124EA0A120D26CA500F46029 /* Dungeon.swift */; };
 		1250190820AF0DBC00D2FBDC /* Still.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1250190720AF0DBC00D2FBDC /* Still.swift */; };
 		12512A712163D19A0071B0CC /* VLFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512A702163D19A0071B0CC /* VLFilterViewController.swift */; };
@@ -367,6 +369,8 @@
 		12398E9E2092D174006AC352 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		12398EA02092D78C006AC352 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		12398EA22092F7D4006AC352 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		124BADDA21AD42F5001041F2 /* UniqueEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueEquipmentViewController.swift; sourceTree = "<group>"; };
+		124BADDC21AD43C6001041F2 /* UniqueCraftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueCraftTableViewController.swift; sourceTree = "<group>"; };
 		124EA0A120D26CA500F46029 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
 		1250190720AF0DBC00D2FBDC /* Still.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Still.swift; sourceTree = "<group>"; };
 		12512A702163D19A0071B0CC /* VLFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLFilterViewController.swift; sourceTree = "<group>"; };
@@ -1224,6 +1228,8 @@
 			children = (
 				12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */,
 				1281FA4B209AE23D00F2D567 /* CraftTableViewController.swift */,
+				124BADDA21AD42F5001041F2 /* UniqueEquipmentViewController.swift */,
+				124BADDC21AD43C6001041F2 /* UniqueCraftTableViewController.swift */,
 				126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */,
 				12D7A92321AACB64004E22C6 /* UniqueEquipmentTableViewController.swift */,
 			);
@@ -1536,6 +1542,7 @@
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
 				12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
+				124BADDD21AD43C6001041F2 /* UniqueCraftTableViewController.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
 				122071F020F9F5C500554030 /* FAQTableViewCell.swift in Sources */,
@@ -1546,6 +1553,7 @@
 				12ECB2C22128459500CDAA8E /* VersionLog.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
 				123608E92093234F003E7D11 /* RefreshHeader.swift in Sources */,
+				124BADDB21AD42F5001041F2 /* UniqueEquipmentViewController.swift in Sources */,
 				120BCAF620F4DEA20029A083 /* EditTeamViewController.swift in Sources */,
 				12F125D220B90DF3005C9659 /* ActionParameter.swift in Sources */,
 				12F125DF20B931EF005C9659 /* CureAction.swift in Sources */,
@@ -1888,7 +1896,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 76;
+				CURRENT_PROJECT_VERSION = 77;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1910,7 +1918,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 76;
+				CURRENT_PROJECT_VERSION = 77;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

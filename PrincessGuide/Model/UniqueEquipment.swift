@@ -72,27 +72,18 @@ class UniqueEquipment: Codable {
 //        return (Constant.presetManaCostPerPoint[promotionLevel] ?? 0) * totalPoint
 //    }
 //
-//    lazy var craft: Craft? = {
-//        if craftFlg == 1 {
-//            return DispatchSemaphore.sync { (closure) in
-//                Master.shared.getCraft(equipmentID: equipmentId, callback: closure)
-//            }
-//        } else {
-//            return nil
-//        }
-//    }()
-//
-//    lazy var recursiveConsumes: [Craft.Consume] = {
-//        var consumes = [Craft.Consume]()
-//        for consume in craft?.consumes ?? [] {
-//            if consume.equipment?.craftFlg == 0 {
-//                consumes += [consume]
-//            } else {
-//                consumes += consume.equipment?.recursiveConsumes ?? []
-//            }
-//        }
-//        return consumes
-//    }()
+    lazy var craft: UniqueCraft? = {
+        if craftFlg == 1 {
+            return DispatchSemaphore.sync { (closure) in
+                Master.shared.getUniqueCraft(equipmentID: equipmentId, callback: closure)
+            }
+        } else {
+            return nil
+        }
+    }()
+
+    lazy var recursiveConsumes: [UniqueCraft.Consume] = self.craft?.consumes ?? []
+    
 //
 //    lazy var recursiveCraft: [Craft] = {
 //        var crafts = [Craft]()
@@ -111,7 +102,7 @@ class UniqueEquipment: Codable {
         Master.shared.getUniqueEnhance(equipmentID: equipmentId, callback: closure)
     }
 
-    func property(enhanceLevel: Int) -> Property {
+    func property(enhanceLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Property {
         var result = Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
                               energyRecoveryRate: Double(energyRecoveryRate), energyReduceRate: Double(energyReduceRate),
                               hp: Double(hp), hpRecoveryRate: Double(hpRecoveryRate), lifeSteal: Double(lifeSteal),

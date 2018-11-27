@@ -10,9 +10,16 @@ import UIKit
 
 typealias CraftTextTableViewCell = CDProfileTextTableViewCell
 
-extension CraftTextTableViewCell: CraftDetailConfigurable {
+extension CraftTextTableViewCell: CraftDetailConfigurable, UniqueCraftConfigurable {
     
     func configure(for item: CraftDetailItem) {
+        guard case .text(let title, let content) = item else {
+            fatalError()
+        }
+        configure(for: title, content: content)
+    }
+    
+    func configure(for item: UniqueCraftItem) {
         guard case .text(let title, let content) = item else {
             fatalError()
         }

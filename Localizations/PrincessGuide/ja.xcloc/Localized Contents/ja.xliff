@@ -1625,6 +1625,22 @@
         <target>メール起動失敗</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Unique">
+        <source>Unique</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unique Equipment">
+        <source>Unique Equipment</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unique Equipment Level">
+        <source>Unique Equipment Level</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unique Equipments">
+        <source>Unique Equipments</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Unit">
         <source>Unit</source>
         <target>ユニット</target>
@@ -1783,8 +1799,8 @@
         <target>敵</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="evolution first">
-        <source>evolution first</source>
+      <trans-unit id="evolution only">
+        <source>evolution only</source>
         <note>skill style</note>
       </trans-unit>
       <trans-unit id="fifth">

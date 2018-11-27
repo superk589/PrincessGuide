@@ -392,7 +392,7 @@ extension Card {
                   bondRank: Int = Constant.presetMaxBondRank,
                   unitRarity: Int = Constant.presetMaxRarity,
                   addsEx: Bool = CardSortingViewController.Setting.default.addsEx,
-                  hasUniqueEquipment: Bool = true,
+                  hasUniqueEquipment: Bool = CardSortingViewController.Setting.default.equipsUniqueEquipment,
                   uniqueEquipmentLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Property {
         var property = Property()
         let storyPropertyItems = charaStorys?.filter { $0.loveLevel <= bondRank }.flatMap { $0.status.map { $0.property() } } ?? []
@@ -436,10 +436,11 @@ extension Card {
                              bondRank: Int = Constant.presetMaxBondRank,
                              unitRarity: Int = Constant.presetMaxRarity,
                              skillLevel: Int = Preload.default.maxPlayerLevel,
-                             hasUniqueEquipment: Bool = true,
+                             addsEx: Bool = CardSortingViewController.Setting.default.equipsUniqueEquipment,
+                             hasUniqueEquipment: Bool = CardSortingViewController.Setting.default.equipsUniqueEquipment,
                              uniqueEquipmentLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Int {
         
-        let property = self.property(unitLevel: unitLevel, unitRank: unitRank, bondRank: bondRank, unitRarity: unitRarity, addsEx: false, hasUniqueEquipment: hasUniqueEquipment, uniqueEquipmentLevel: uniqueEquipmentLevel)
+        let property = self.property(unitLevel: unitLevel, unitRank: unitRank, bondRank: bondRank, unitRarity: unitRarity, addsEx: addsEx, hasUniqueEquipment: hasUniqueEquipment, uniqueEquipmentLevel: uniqueEquipmentLevel)
         
         var result = 0.0
         

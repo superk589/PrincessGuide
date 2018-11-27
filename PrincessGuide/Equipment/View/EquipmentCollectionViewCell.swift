@@ -20,8 +20,8 @@ class EquipmentCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configure(for equipment: Equipment) {
-        equipmentIcon.equipmentID = equipment.equipmentId
+    func configure(for equipmentID: Int) {
+        equipmentIcon.equipmentID = equipmentID
     }
     
     required init?(coder aDecoder: NSCoder) {

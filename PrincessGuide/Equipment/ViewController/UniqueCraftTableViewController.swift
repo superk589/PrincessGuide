@@ -1,20 +1,25 @@
 //
-//  CraftTableViewController.swift
+//  UniqueCraftTableViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/5/3.
+//  Created by zzk on 2018/11/27.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 import Gestalt
 
-class CraftTableViewController: UITableViewController {
+typealias UniqueCraftItem = UniqueCraftTableViewController.Row.Model
+protocol UniqueCraftConfigurable {
+    func configure(for item: UniqueCraftItem)
+}
+
+class UniqueCraftTableViewController: UITableViewController {
     
     struct Row {
         enum Model {
-            case summary(Equipment)
-            case consume(Craft.Consume)
+            case summary(UniqueEquipment)
+            case consume(UniqueCraft.Consume)
             case properties([Property.Item])
             case text(String, String)
         }
@@ -22,7 +27,7 @@ class CraftTableViewController: UITableViewController {
         var data: Model
     }
     
-    var equipment: Equipment? {
+    var equipment: UniqueEquipment? {
         didSet {
             if let _ = equipment {
                 prepareRows()
@@ -48,13 +53,13 @@ class CraftTableViewController: UITableViewController {
         rows = [Row(type: CraftSummaryTableViewCell.self, data: .summary(equipment))]
         
         rows += craft.consumes.map { Row(type: CraftTableViewCell.self, data: .consume($0)) }
-        rows += equipment.property.noneZeroProperties().map { Row(type: CraftPropertyTableViewCell.self, data: .properties([$0])) }
+        rows += equipment.property().noneZeroProperties().map { Row(type: CraftPropertyTableViewCell.self, data: .properties([$0])) }
         
-        let craftCost = equipment.recursiveCraft.reduce(0) { $0 + $1.craftedCost }
-        let enhanceCost = equipment.enhanceCost
-        rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Crafting", comment: ""), String(craftCost)))]
-        rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Enhancing", comment: ""), String(enhanceCost)))]
-
+//        let craftCost = equipment.recursiveCraft.reduce(0) { $0 + $1.craftedCost }
+//        let enhanceCost = equipment.enhanceCost
+//        rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Crafting", comment: ""), String(craftCost)))]
+//        rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Enhancing", comment: ""), String(enhanceCost)))]
+        
         rows.append(Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Description", comment: ""), equipment.description)))
     }
     
@@ -73,6 +78,7 @@ class CraftTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(CraftSummaryTableViewCell.self, forCellReuseIdentifier: CraftSummaryTableViewCell.description())
         tableView.register(CraftTableViewCell.self, forCellReuseIdentifier: CraftTableViewCell.description())
+        tableView.register(CraftTextTableViewCell.self, forCellReuseIdentifier: CraftTextTableViewCell.description())
         tableView.tableFooterView = UIView()
     }
     
@@ -85,54 +91,15 @@ class CraftTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = rows[indexPath.row]
-        switch row.data {
-        case .consume(let consume):
-            if let equipment = consume.equipment {
-                if equipment.craftFlg == 0 {
-                    DropSummaryTableViewController.configureAsync(equipment: equipment, callback: { [weak self] (vc) in
-                        self?.navigationController?.pushViewController(vc, animated: true)
-                    })
-                } else {
-                    let vc = CraftTableViewController()
-                    vc.navigationItem.title = equipment.equipmentName
-                    vc.equipment = equipment
-                    vc.hidesBottomBarWhenPushed = true
-                    LoadingHUDManager.default.hide()
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-            }
-        default:
-            break
-        }
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let model = rows[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! CraftDetailConfigurable
+        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! UniqueCraftConfigurable
         cell.configure(for: model.data)
-        
-        if let cell = cell as? CraftSummaryTableViewCell {
-            cell.delegate = self
-        }
-        
         return cell as! UITableViewCell
     }
     
-}
-
-extension CraftTableViewController: CraftSummaryTableViewCellDelegate {
-    
-    func craftSummaryTableViewCell(_ craftSummaryTableViewCell: CraftSummaryTableViewCell, didSelect index: Int) {
-        if let indexPath = tableView.indexPath(for: craftSummaryTableViewCell) {
-            let model = rows[indexPath.row]
-            guard case .summary(let equipment) = model.data else {
-                return
-            }
-            DropSummaryTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
-                self?.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
-    }
 }

@@ -371,7 +371,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getUniqueEquipments(equipmentIDs: [Int], callback: @escaping FMDBCallbackClosure<[UniqueEquipment]>) {
+    func getUniqueEquipments(equipmentIDs: [Int]?, callback: @escaping FMDBCallbackClosure<[UniqueEquipment]>) {
         var equipments = [UniqueEquipment]()
         execute({ (db) in
             var selectSql = """
@@ -387,8 +387,13 @@ class Master: FMDatabaseQueue {
                         unique_equipment_enhance_data
                 ) b
             """
-            if equipmentIDs.count > 0 {
-                selectSql += " WHERE equipment_id in (\(equipmentIDs.map(String.init).joined(separator: ",")))"
+            if let ids = equipmentIDs {
+                if ids.count > 0 {
+                    selectSql += " WHERE equipment_id in (\(ids.map(String.init).joined(separator: ",")))"
+                } else {
+                    callback([])
+                    return
+                }
             }
             let set = try db.executeQuery(selectSql, values: nil)
             while set.next() {
@@ -435,6 +440,46 @@ class Master: FMDatabaseQueue {
                 }
                 
                 let craft = Craft(consumes: consumes, craftedCost: craftedCost, equipmentId: equipmentID)
+                result = craft
+                break
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
+    func getUniqueCraft(equipmentID: Int, callback: @escaping FMDBCallbackClosure<UniqueCraft?>) {
+        var result: UniqueCraft?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                unique_equipment_craft
+            WHERE
+                equip_id = \(equipmentID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                
+                let equipmentID = json["equip_id"].intValue
+                let craftedCost = json["crafted_cost"].intValue
+                
+                var consumes = [UniqueCraft.Consume]()
+                
+                for i in 1...10 {
+                    let id = json["item_id_\(i)"].intValue
+                    if id == 0 {
+                        continue
+                    }
+                    let consumeNum = json["consume_num_\(i)"].intValue
+                    let rewardType = json["reward_type_\(i)"].intValue
+                    let consume = UniqueCraft.Consume(itemID: id, consumeNum: consumeNum, rewardType: rewardType)
+                    consumes.append(consume)
+                }
+                
+                let craft = UniqueCraft(consumes: consumes, craftedCost: craftedCost, equipmentId: equipmentID)
                 result = craft
                 break
             }

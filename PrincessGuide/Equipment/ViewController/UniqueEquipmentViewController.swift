@@ -1,17 +1,17 @@
 //
-//  EquipmentViewController.swift
+//  UniqueEquipmentViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/4/26.
+//  Created by zzk on 2018/11/27.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 import Gestalt
 
-class EquipmentViewController: UIViewController, DataChecking {
+class UniqueEquipmentViewController: UIViewController, DataChecking {
     
-    var equipments = [Equipment]()
+    var equipments = [UniqueEquipment]()
     
     let refresher = RefreshHeader()
     
@@ -20,17 +20,6 @@ class EquipmentViewController: UIViewController, DataChecking {
     private var collectionView: UICollectionView!
     
     private var layout: UICollectionViewFlowLayout!
-    
-    let equipmentType: EquipmentType
-    
-    init(equipmentType: EquipmentType) {
-        self.equipmentType = equipmentType
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +30,7 @@ class EquipmentViewController: UIViewController, DataChecking {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
-
+        
         navigationItem.title = NSLocalizedString("Equipments", comment: "")
         
         layout = UICollectionViewFlowLayout()
@@ -58,7 +47,7 @@ class EquipmentViewController: UIViewController, DataChecking {
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-//        collectionView.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
+        //        collectionView.contentInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
@@ -80,7 +69,7 @@ class EquipmentViewController: UIViewController, DataChecking {
         }
         
         loadData()
-
+        
     }
     
     @objc private func handleUpdateEnd(_ notification: Notification) {
@@ -90,7 +79,7 @@ class EquipmentViewController: UIViewController, DataChecking {
     private func loadData() {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getEquipments(equipmentType: self?.equipmentType, callback: { (equipments) in
+            Master.shared.getUniqueEquipments(equipmentIDs: nil, callback: { (equipments) in
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
                     self?.equipments = equipments.sorted { ($0.promotionLevel, $0.salePrice, $0.equipmentId) > ($1.promotionLevel, $1.salePrice, $1.equipmentId) }
@@ -102,7 +91,7 @@ class EquipmentViewController: UIViewController, DataChecking {
     
 }
 
-extension EquipmentViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension UniqueEquipmentViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -114,18 +103,12 @@ extension EquipmentViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let equipment = equipments[indexPath.item]
-        if equipment.craftFlg == 0 {
-            DropSummaryTableViewController.configureAsync(equipment: equipment, callback: { [weak self] (vc) in
-                self?.navigationController?.pushViewController(vc, animated: true)
-            })
-        } else {
-            let vc = CraftTableViewController()
-            vc.navigationItem.title = equipment.equipmentName
-            vc.equipment = equipment
-            vc.hidesBottomBarWhenPushed = true
-            LoadingHUDManager.default.hide()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = UniqueCraftTableViewController()
+        vc.navigationItem.title = equipment.equipmentName
+        vc.equipment = equipment
+        vc.hidesBottomBarWhenPushed = true
+        LoadingHUDManager.default.hide()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -134,3 +117,4 @@ extension EquipmentViewController: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
 }
+

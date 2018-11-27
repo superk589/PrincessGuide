@@ -141,6 +141,8 @@ class CardSortingViewController: FormViewController {
         
         var addsEx: Bool = true
         
+        var equipsUniqueEquipment: Bool = true
+        
         var iconStyle: IconStyle = .default
         
         func save() {
@@ -257,6 +259,14 @@ class CardSortingViewController: FormViewController {
                 row.title = NSLocalizedString("Adds Ex Bonus", comment: "")
                 
                 row.value = Setting.default.addsEx
+                
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+            
+            <<< SwitchRow("equips_unique_equipment") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Unique Equipment", comment: "")
+                
+                row.value = Setting.default.equipsUniqueEquipment
                 
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))

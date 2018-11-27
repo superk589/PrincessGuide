@@ -1789,6 +1789,26 @@
         <target>无法打开邮件</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Unique">
+        <source>Unique</source>
+        <target>专武</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unique Equipment">
+        <source>Unique Equipment</source>
+        <target>装备专武</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unique Equipment Level">
+        <source>Unique Equipment Level</source>
+        <target>专武等级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unique Equipments">
+        <source>Unique Equipments</source>
+        <target>专武</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Unit">
         <source>Unit</source>
         <target>角色</target>
@@ -1969,9 +1989,9 @@
         <target>敌方</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="evolution first">
-        <source>evolution first</source>
-        <target>优先进化后</target>
+      <trans-unit id="evolution only">
+        <source>evolution only</source>
+        <target>只显示进化后</target>
         <note>skill style</note>
       </trans-unit>
       <trans-unit id="fifth">

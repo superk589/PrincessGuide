@@ -10,7 +10,7 @@ import UIKit
 import Gestalt
 
 protocol CraftSummaryTableViewCellDelegate: class {
-    func craftSummaryTableViewCell(_ craftSummaryTableViewCell: CraftSummaryTableViewCell, didSelect consume: Craft.Consume)
+    func craftSummaryTableViewCell(_ craftSummaryTableViewCell: CraftSummaryTableViewCell, didSelect index: Int)
 }
 
 typealias CraftDetailItem = CraftTableViewController.Row.Model
@@ -19,7 +19,7 @@ protocol CraftDetailConfigurable {
     func configure(for item: CraftDetailItem)
 }
 
-class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CraftDetailConfigurable {
+class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CraftDetailConfigurable, UniqueCraftConfigurable {
     
     let titleLabel = UILabel()
     let layout: UICollectionViewFlowLayout
@@ -72,9 +72,15 @@ class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var consumes = [Craft.Consume]()
-    func configure(for equipment: Equipment) {
-        consumes = equipment.recursiveConsumes
+    private struct Item {
+        var number: Int
+        var url: URL
+    }
+    
+    private var items = [Item]()
+    
+    private func configure(for items:[Item]) {
+        self.items = items
         collectionView.reloadData()
     }
     
@@ -82,7 +88,16 @@ class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
         guard case .summary(let equipment) = item else {
             fatalError()
         }
-        configure(for: equipment)
+        let items = equipment.recursiveConsumes.map { Item(number: $0.consumeNum, url: $0.itemURL) }
+        configure(for: items)
+    }
+    
+    func configure(for item: UniqueCraftItem) {
+        guard case .summary(let equipment) = item else {
+            fatalError()
+        }
+        let items = equipment.recursiveConsumes.map { Item(number: $0.consumeNum, url: $0.itemURL) }
+        configure(for: items)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -90,16 +105,17 @@ class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return consumes.count
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.craftSummaryTableViewCell(self, didSelect: consumes[indexPath.item])
+        delegate?.craftSummaryTableViewCell(self, didSelect: indexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CraftSummaryCollectionViewCell.description(), for: indexPath) as! CraftSummaryCollectionViewCell
-        cell.configure(for: consumes[indexPath.item])
+        let item = items[indexPath.item]
+        cell.configure(url: item.url, number: item.number)
         return cell
     }
 }
