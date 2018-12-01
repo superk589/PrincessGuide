@@ -12,7 +12,7 @@ class EDSkillTableViewController: EDTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.allowsSelection = true
         NotificationCenter.default.addObserver(self, selector: #selector(handleSettingsChange(_:)), name: Notification.Name.enemyDetailSettingsDidChange, object: nil)
     }
 
@@ -52,6 +52,20 @@ class EDSkillTableViewController: EDTableViewController {
                     Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .ex, enemy.exSkillLevel(for: $0.element.base.skillId), property, $0.offset + 1))
             }
         )
+        
+        // insert minions
+        let newRows: [Row] = rows.flatMap { row -> [Row] in
+            guard case .skill(let skill, _, _, _, _) = row.data else {
+                return [row]
+            }
+            let actions = skill.actions
+            let minions = actions.compactMap { $0.parameter as? SummonAction }.compactMap { $0.enemyMinion }
+            let rows = minions.map { Row(type: CDMinionTableViewCell.self, data: .minion($0)) }
+            
+            return [row] + rows
+        }
+        
+        self.rows = newRows
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

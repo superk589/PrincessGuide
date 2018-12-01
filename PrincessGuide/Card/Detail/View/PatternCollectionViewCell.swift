@@ -49,11 +49,11 @@ class PatternCollectionViewCell: UICollectionViewCell {
         loopLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
     }
     
-    func configure(for pattern: AttackPattern, index: Int, unit: Card) {
+    func configure(for pattern: AttackPattern, index: Int, atkType: Int, mainSkills: [Skill]) {
         let item = pattern.items[index]
         switch item {
         case 1:
-            if unit.base.atkType == 2 {
+            if atkType == 2 {
                 skillIcon.equipmentID = 101251
             } else {
                 skillIcon.equipmentID = 101011                
@@ -61,8 +61,8 @@ class PatternCollectionViewCell: UICollectionViewCell {
             skillLabel.text = NSLocalizedString("Swing", comment: "")
         case let x where x > 1000:
             let index = x - 1001
-            guard index < unit.mainSkills.count else { fallthrough }
-            skillIcon.skillIconID = unit.mainSkills[index].base.iconType
+            guard index < mainSkills.count else { fallthrough }
+            skillIcon.skillIconID = mainSkills[index].base.iconType
             let format = NSLocalizedString("Main %d", comment: "")
             skillLabel.text = String(format: format, index + 1)
         default:

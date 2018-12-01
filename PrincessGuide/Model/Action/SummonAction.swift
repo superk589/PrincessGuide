@@ -15,4 +15,12 @@ class SummonAction: ActionParameter {
         return String(format: format, actionDetail2, targetParameter.buildTargetClause())
     }
     
+    lazy var minion: Minion? = DispatchSemaphore.sync { (closure) in
+        return Master.shared.getUnitMinion(minionID: actionDetail2, callback: closure)
+    }
+    
+    lazy var enemyMinion: Enemy? = DispatchSemaphore.sync { (closure) in
+        return Master.shared.getEnemyMinion(minionID: actionDetail2, callback: closure)
+    }
+    
 }

@@ -16,6 +16,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         enum Model {
             case card(Card)
             case skill(Skill, SkillCategory, Property, Int?)
+            case minion(Minion)
             case base(Card.Base)
             case profile(Card.Profile)
             case pattern(AttackPattern, Card, Int?)
@@ -109,6 +110,17 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         }
         
         return cell as! UITableViewCell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = rows[indexPath.row].data
+        switch data {
+        case .minion(let minion):
+            let vc = MinionTabViewController(minion: minion)
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
     
     func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL?) {

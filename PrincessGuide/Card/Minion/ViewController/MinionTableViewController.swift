@@ -1,25 +1,27 @@
 //
-//  EDTableViewController.swift
+//  MinionTableViewController.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/5/11.
+//  Created by zzk on 2018/12/1.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 import Gestalt
 
-typealias EnemyDetailItem = EDTableViewController.Row.Model
+typealias MinionDetailItem = MinionTableViewController.Row.Model
 
-class EDTableViewController: UITableViewController {
+protocol MinionDetailConfigurable {
+    func configure(for item: MinionDetailItem)
+}
+
+class MinionTableViewController: UITableViewController {
     
     struct Row {
         enum Model {
-            case skill(Skill, SkillCategory, Int, Property, Int?)
-            case unit(Enemy.Unit)
-            case profile(Enemy.Unit)
-            case pattern(AttackPattern, Enemy, Int?)
-            case minion(Enemy)
+            case skill(Skill, SkillCategory, Property, Int?)
+            case unit(Minion)
+            case pattern(AttackPattern, Minion, Int?)
             case propertyItems([Property.Item], Int, Int)
             case text(String, String)
             case textArray([(String, String)])
@@ -28,10 +30,10 @@ class EDTableViewController: UITableViewController {
         var data: Model
     }
     
-    let enemy: Enemy
+    let minion: Minion
     
-    init(enemy: Enemy) {
-        self.enemy = enemy
+    init(minion: Minion) {
+        self.minion = minion
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,7 +42,7 @@ class EDTableViewController: UITableViewController {
     }
     
     func reloadAll() {
-        navigationItem.title = enemy.base.name
+        navigationItem.title = minion.base.unitName
         prepareRows()
         registerRows()
         tableView.reloadData()
@@ -93,20 +95,9 @@ class EDTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = rows[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! EnemyDetailConfigurable
+        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! MinionDetailConfigurable
         cell.configure(for: model.data)
         
         return cell as! UITableViewCell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = rows[indexPath.row].data
-        switch data {
-        case .minion(let minion):
-            let vc = EDTabViewController(enemy: minion)
-            navigationController?.pushViewController(vc, animated: true)
-        default:
-            break
-        }
     }
 }

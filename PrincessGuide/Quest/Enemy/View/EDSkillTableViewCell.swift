@@ -148,6 +148,8 @@ class EDSkillTableViewCell: UITableViewCell, EnemyDetailConfigurable {
             let parameter = $0.parameter
             return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: level, property: property, style: EDSettingsViewController.Setting.default.expressionStyle))"
             }.joined(separator: "\n")
+        
+        selectionStyle = .none
     }
     
     func configure(for item: EnemyDetailItem) {

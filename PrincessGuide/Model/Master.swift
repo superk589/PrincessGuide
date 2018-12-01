@@ -251,6 +251,149 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    
+    func getUnitMinion(minionID: Int, callback: @escaping FMDBCallbackClosure<Minion?>) {
+        var minion: Minion?
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                a.*,
+                b.union_burst,
+                b.union_burst_evolution,
+                b.main_skill_1,
+                b.main_skill_evolution_1,
+                b.main_skill_2,
+                b.main_skill_evolution_2,
+                b.ex_skill_1,
+                b.ex_skill_evolution_1,
+                b.main_skill_3,
+                b.main_skill_4,
+                b.main_skill_5,
+                b.main_skill_6,
+                b.main_skill_7,
+                b.main_skill_8,
+                b.main_skill_9,
+                b.main_skill_10,
+                b.ex_skill_2,
+                b.ex_skill_evolution_2,
+                b.ex_skill_3,
+                b.ex_skill_evolution_3,
+                b.ex_skill_4,
+                b.ex_skill_evolution_4,
+                b.ex_skill_5,
+                b.sp_skill_1,
+                b.ex_skill_evolution_5,
+                b.sp_skill_2,
+                b.sp_skill_3,
+                b.sp_skill_4,
+                b.sp_skill_5
+            FROM
+                unit_skill_data b,
+                unit_data a
+            WHERE
+                a.unit_id = b.unit_id
+                AND a.unit_id = \(minionID)
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+    
+                let raritySql = """
+                SELECT
+                    *
+                FROM
+                    unit_rarity
+                WHERE
+                    unit_id = \(minionID)
+                """
+                let raritySet = try db.executeQuery(raritySql, values: nil)
+                
+                var rarities = [Card.Rarity]()
+                while raritySet.next() {
+                    let json = JSON(raritySet.resultDictionary ?? [:])
+                    if let rarity = try? decoder.decode(Card.Rarity.self, from: json.rawData()) {
+                        rarities.append(rarity)
+                    }
+                }
+                
+                if let base = try? decoder.decode(Card.Base.self, from: json.rawData()) {
+                    minion = Minion(base: base, rarities: rarities)
+                    break
+                }
+            }
+        }) {
+            callback(minion)
+        }
+    }
+    
+    func getEnemyMinion(minionID: Int, callback: @escaping FMDBCallbackClosure<Enemy?>) {
+        var minion: Enemy?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*,
+                b.union_burst,
+                b.main_skill_1,
+                b.main_skill_2,
+                b.main_skill_3,
+                b.main_skill_4,
+                b.main_skill_5,
+                b.main_skill_6,
+                b.main_skill_7,
+                b.main_skill_8,
+                b.main_skill_9,
+                b.main_skill_10,
+                b.ex_skill_1,
+                b.ex_skill_2,
+                b.ex_skill_3,
+                b.ex_skill_4,
+                b.ex_skill_5
+            FROM
+                unit_skill_data b,
+                enemy_parameter a
+            WHERE
+                a.unit_id = b.unit_id
+                AND a.enemy_id = \(minionID)
+            """
+            
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                let unitID = json["unit_id"].intValue
+                let unitSql = """
+                SELECT
+                    *
+                FROM
+                    unit_enemy_data
+                WHERE
+                    unit_id = \(unitID)
+                """
+                var unit: Enemy.Unit?
+                let unitSet = try db.executeQuery(unitSql, values: nil)
+                while unitSet.next() {
+                    let json = JSON(unitSet.resultDictionary ?? [:])
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    unit = try? decoder.decode(Enemy.Unit.self, from: json.rawData())
+                }
+                
+                if let base = try? decoder.decode(Enemy.Base.self, from: json.rawData()),
+                    let unit = unit {
+                    minion = Enemy(base: base, unit: unit)
+                    break
+                }
+            }
+        }) {
+            callback(minion)
+        }
+    }
+    
     func getStills(storyGroupID: Int, callback: @escaping FMDBCallbackClosure<[Still]>) {
         var stills = [Still]()
         execute({ (db) in

@@ -87,7 +87,8 @@ class CDPropertyViewController: CDTableViewController {
                 ], unitLevel, targetLevel, settings.statusComparison)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
                 property.item(for: .energyReduceRate)
-                ], unitLevel, targetLevel, settings.statusComparison))
+                ], unitLevel, targetLevel, settings.statusComparison)),
+            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Move Speed", comment: ""), String(card.base.moveSpeed), settings.statusComparison)),
         ]
         
     }

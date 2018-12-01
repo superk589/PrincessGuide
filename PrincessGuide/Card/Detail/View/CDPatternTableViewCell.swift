@@ -40,24 +40,33 @@ class CDPatternTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.right.left.equalTo(readableContentGuide)
             make.bottom.equalToSuperview()
         }
+        
+        selectionStyle = .none
     }
     
     func configure(for item: CardDetailItem) {
         guard case .pattern(let pattern, let card, let index) = item else { return }
-        configure(for: pattern, unit: card, index: index)
+        configure(for: pattern, atkType: card.base.atkType, skills: card.mainSkills, index: index)
     }
     
-    func configure(for pattern: AttackPattern, unit: Card, index: Int?) {
+    func configure(for pattern: AttackPattern, atkType: Int, skills: [Skill], index: Int?) {
         if let index = index {
             titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
         } else {
             titleLabel.text = NSLocalizedString("Attack Pattern", comment: "")
         }
-        attackPatternView.configure(for: pattern, unit: unit)
+        attackPatternView.configure(for: pattern, atkType: atkType, skills: skills)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension CDPatternTableViewCell: MinionDetailConfigurable {
+    func configure(for item: MinionDetailItem) {
+        guard case .pattern(let pattern, let minion, let index) = item else { return }
+        configure(for: pattern, atkType: minion.base.atkType, skills: minion.mainSkills, index: index)
+    }
 }

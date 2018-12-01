@@ -60,7 +60,7 @@ class Skill: Codable {
             }
         }
     }
-    
+        
     struct Base: Codable {
         let dependAction1: Int
         let dependAction2: Int

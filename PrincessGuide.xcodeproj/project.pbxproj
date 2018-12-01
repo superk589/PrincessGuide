@@ -136,6 +136,12 @@
 		1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */; };
 		1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */; };
 		128DA48021B24D7B00F7C006 /* ChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA47F21B24D7B00F7C006 /* ChannelAction.swift */; };
+		128DA48221B25E3900F7C006 /* Minion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA48121B25E3900F7C006 /* Minion.swift */; };
+		128DA48421B262DB00F7C006 /* CDMinionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA48321B262DB00F7C006 /* CDMinionTableViewCell.swift */; };
+		128DA48921B2683F00F7C006 /* MinionTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA48821B2683F00F7C006 /* MinionTabViewController.swift */; };
+		128DA48B21B26CC800F7C006 /* MinionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA48A21B26CC800F7C006 /* MinionTableViewController.swift */; };
+		128DA49121B26DDF00F7C006 /* MinionPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA49021B26DDF00F7C006 /* MinionPropertyViewController.swift */; };
+		128DA49321B26DEA00F7C006 /* MinionSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA49221B26DEA00F7C006 /* MinionSkillViewController.swift */; };
 		12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12901E9820BE859C00697053 /* CardSortingViewController.swift */; };
 		12936B312176CEA000B9531F /* EurekaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12936B302176CEA000B9531F /* EurekaHelper.swift */; };
 		12973CED20EBA7DC00C83089 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12973CEC20EBA7DC00C83089 /* ImageCell.swift */; };
@@ -415,6 +421,12 @@
 		1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		128DA47F21B24D7B00F7C006 /* ChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelAction.swift; sourceTree = "<group>"; };
+		128DA48121B25E3900F7C006 /* Minion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minion.swift; sourceTree = "<group>"; };
+		128DA48321B262DB00F7C006 /* CDMinionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMinionTableViewCell.swift; sourceTree = "<group>"; };
+		128DA48821B2683F00F7C006 /* MinionTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionTabViewController.swift; sourceTree = "<group>"; };
+		128DA48A21B26CC800F7C006 /* MinionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionTableViewController.swift; sourceTree = "<group>"; };
+		128DA49021B26DDF00F7C006 /* MinionPropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionPropertyViewController.swift; sourceTree = "<group>"; };
+		128DA49221B26DEA00F7C006 /* MinionSkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionSkillViewController.swift; sourceTree = "<group>"; };
 		12901E9820BE859C00697053 /* CardSortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortingViewController.swift; sourceTree = "<group>"; };
 		12936B302176CEA000B9531F /* EurekaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaHelper.swift; sourceTree = "<group>"; };
 		12973CEC20EBA7DC00C83089 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
@@ -670,6 +682,7 @@
 				1281FA51209AE3E900F2D567 /* Craft.swift */,
 				12D7A91D21AAC76F004E22C6 /* UniqueCraft.swift */,
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
+				128DA48121B25E3900F7C006 /* Minion.swift */,
 				1250190720AF0DBC00D2FBDC /* Still.swift */,
 				12B85D2A2089840A0088F5FB /* Skill.swift */,
 				12F125D520B92658005C9659 /* Action */,
@@ -723,6 +736,7 @@
 		1221CDC3207B96FF008F30AA /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				128DA48521B2681000F7C006 /* Minion */,
 				12B85D342089B1DB0088F5FB /* Detail */,
 				1221CDC6207B9727008F30AA /* ViewController */,
 				1221CDC9207B973F008F30AA /* View */,
@@ -913,6 +927,33 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		128DA48521B2681000F7C006 /* Minion */ = {
+			isa = PBXGroup;
+			children = (
+				128DA48721B2683000F7C006 /* View */,
+				128DA48621B2682500F7C006 /* ViewController */,
+			);
+			path = Minion;
+			sourceTree = "<group>";
+		};
+		128DA48621B2682500F7C006 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				128DA48821B2683F00F7C006 /* MinionTabViewController.swift */,
+				128DA48A21B26CC800F7C006 /* MinionTableViewController.swift */,
+				128DA49021B26DDF00F7C006 /* MinionPropertyViewController.swift */,
+				128DA49221B26DEA00F7C006 /* MinionSkillViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		128DA48721B2683000F7C006 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		12936B2F2176CDDE00B9531F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -962,6 +1003,7 @@
 				12398E7520915765006AC352 /* PatternCollectionViewCell.swift */,
 				129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */,
 				12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */,
+				128DA48321B262DB00F7C006 /* CDMinionTableViewCell.swift */,
 				129A7F55209FE8D400D93996 /* ProfileItemView.swift */,
 				129A7F5B20A02E5400D93996 /* CDCommentTableViewCell.swift */,
 				129A7F5D20A0364300D93996 /* CDProfileTextTableViewCell.swift */,
@@ -1473,6 +1515,7 @@
 				12F1262720B955D5005C9659 /* WaveStartIdleAction.swift in Sources */,
 				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
 				12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */,
+				128DA48921B2683F00F7C006 /* MinionTabViewController.swift in Sources */,
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
 				12F1261720B954F4005C9659 /* AttackFieldAction.swift in Sources */,
 				120BCAFB20F4DF670029A083 /* Member.swift in Sources */,
@@ -1493,6 +1536,7 @@
 				120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */,
 				12F1262B20B9561B005C9659 /* RatioDamageAction.swift in Sources */,
 				12F125F520B95037005C9659 /* ChargeAction.swift in Sources */,
+				128DA48B21B26CC800F7C006 /* MinionTableViewController.swift in Sources */,
 				12A6A7D42163B09F00877074 /* DispelAction.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				127EEBA120ECDAD300A6B3D4 /* CharaItemView.swift in Sources */,
@@ -1507,6 +1551,7 @@
 				122071DE20F9D61D00554030 /* TDTabViewController.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
 				128DA48021B24D7B00F7C006 /* ChannelAction.swift in Sources */,
+				128DA48221B25E3900F7C006 /* Minion.swift in Sources */,
 				125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */,
 				126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */,
 				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,
@@ -1642,6 +1687,7 @@
 				12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */,
 				12A776902153E59E00972187 /* EDSettingsViewController.swift in Sources */,
 				12F1261B20B95528005C9659 /* ChangeParameterFieldAction.swift in Sources */,
+				128DA49121B26DDF00F7C006 /* MinionPropertyViewController.swift in Sources */,
 				126DECDC209DD78E004EC56A /* Theme.swift in Sources */,
 				12398EA12092D78C006AC352 /* Updater.swift in Sources */,
 				12973CED20EBA7DC00C83089 /* ImageCell.swift in Sources */,
@@ -1656,6 +1702,7 @@
 				12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */,
 				12F125EF20B94D1D005C9659 /* ChangeEnergyAction.swift in Sources */,
 				12398E7220915737006AC352 /* AttackPattern.swift in Sources */,
+				128DA48421B262DB00F7C006 /* CDMinionTableViewCell.swift in Sources */,
 				1280DE4320A5D084008D9D72 /* DateExtension.swift in Sources */,
 				12B66CF520FB62DB00AB9D2A /* ManagedObjectObserver.swift in Sources */,
 				12F125ED20B94B11005C9659 /* SummonAction.swift in Sources */,
@@ -1700,6 +1747,7 @@
 				12E3324620F5F9C200844A6A /* CandidateCardsView.swift in Sources */,
 				122071E820F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift in Sources */,
 				120F9B8120E9D1BA003632CA /* CoreDataStack.swift in Sources */,
+				128DA49321B26DEA00F7C006 /* MinionSkillViewController.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
 				126BFBD520F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift in Sources */,
 				12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */,

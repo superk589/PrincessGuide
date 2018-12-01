@@ -20,6 +20,7 @@ class EDStatusTableViewController: EDTableViewController {
         let property = enemy.base.property
         let unitLevel = enemy.base.level
         let targetLevel = EDSettingsViewController.Setting.default.targetLevel
+        
         rows += [
             Row(type: EDBasicTableViewCell.self, data: .unit(enemy.unit)),
             Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Level", comment: ""), String(enemy.base.level))),
@@ -38,6 +39,7 @@ class EDStatusTableViewController: EDTableViewController {
         
         rows.append(Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Swing Time", comment: ""), "\(enemy.unit.normalAtkCastTime)s")))
         rows.append(Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Attack Range", comment: ""), "\(enemy.unit.searchAreaWidth)")))
+        rows.append(Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Move Speed", comment: ""), String(enemy.unit.moveSpeed))))
     }
     
     @objc private func handleSettingsChange(_ notification: Notification) {

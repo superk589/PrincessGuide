@@ -49,7 +49,7 @@ extension PatternCollectionViewCell {
 extension EDPatternTableViewCell: EnemyDetailConfigurable {
     
     func configure(for pattern: AttackPattern, enemy: Enemy, index: Int?) {
-        attackPatternView.configure(for: pattern, enemy: enemy)
+        attackPatternView.configure(for: pattern, atkType: enemy.unit.atkType, skills: enemy.mainSkills)
         if let index = index {
             titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
         } else {

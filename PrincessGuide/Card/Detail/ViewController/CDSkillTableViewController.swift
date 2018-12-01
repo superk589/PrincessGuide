@@ -13,6 +13,7 @@ class CDSkillTableViewController: CDTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.allowsSelection = true
         NotificationCenter.default.addObserver(self, selector: #selector(handleSettingsChange(_:)), name: .cardDetailSettingsDidChange, object: nil)
     }
     
@@ -137,6 +138,20 @@ class CDSkillTableViewController: CDTableViewController {
                 }
             }
         }
+        
+        // insert minions
+        let newRows: [Row] = rows.flatMap { row -> [Row] in
+            guard case .skill(let skill, _, _, _) = row.data else {
+                return [row]
+            }
+            let actions = skill.actions
+            let minions = actions.compactMap { $0.parameter as? SummonAction }.compactMap { $0.minion }
+            let rows = minions.map { Row(type: CDMinionTableViewCell.self, data: .minion($0)) }
+            
+            return [row] + rows
+        }
+        
+        self.rows = newRows
     }
     
 }

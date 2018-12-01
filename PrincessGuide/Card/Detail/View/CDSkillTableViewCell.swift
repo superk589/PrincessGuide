@@ -105,6 +105,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         actionLabel.numberOfLines = 0
         actionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
 
+        selectionStyle = .none
     }
     
     private func createSubTitleLabel(title: String) -> UILabel {
@@ -147,4 +148,13 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension CDSkillTableViewCell: MinionDetailConfigurable {
+    func configure(for item: MinionDetailItem) {
+        guard case .skill(let skill, let category, let property, let index) = item else {
+            return
+        }
+        configure(for: skill, category: category, property: property, index: index)
+    }
 }
