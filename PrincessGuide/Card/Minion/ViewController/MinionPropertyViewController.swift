@@ -9,17 +9,26 @@
 import UIKit
 
 class MinionPropertyViewController: MinionTableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSettingsChange(_:)), name: .cardDetailSettingsDidChange, object: nil)
+    }
+    
+    @objc private func handleSettingsChange(_ notification: Notification) {
+        reloadAll()
+    }
 
     override func prepareRows() {
         
         rows.removeAll()
         let settings = CDSettingsViewController.Setting.default
         
-        let property = minion.property(unitLevel: settings.unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
-        
         // use skill level as minion's unit level here, not owner's unit level
         let unitLevel = settings.skillLevel
         let targetLevel = settings.targetLevel
+        
+        let property = minion.property(unitLevel: unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
         
         rows += [
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([

@@ -103,7 +103,7 @@ class EDTableViewController: UITableViewController {
         let data = rows[indexPath.row].data
         switch data {
         case .minion(let minion):
-            let vc = EDTabViewController(enemy: minion)
+            let vc = EDTabViewController(enemy: minion, isMinion: true)
             navigationController?.pushViewController(vc, animated: true)
         default:
             break

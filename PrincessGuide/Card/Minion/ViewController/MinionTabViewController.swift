@@ -33,7 +33,8 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
+
         let items = [
                  NSLocalizedString("Skill", comment: ""),
                  NSLocalizedString("Status", comment: "")
@@ -63,6 +64,13 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
         
     }
     
+    @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
+        let vc = CDSettingsViewController()
+        let nc = UINavigationController(rootViewController: vc)
+        nc.modalPresentationStyle = .formSheet
+        present(nc, animated: true, completion: nil)
+    }
+    
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return viewControllers.count
     }
@@ -72,7 +80,7 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: EDTabViewController.defaultTabIndex)
+        return .at(index: MinionTabViewController.defaultTabIndex)
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
