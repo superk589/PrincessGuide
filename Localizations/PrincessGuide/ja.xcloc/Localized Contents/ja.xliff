@@ -502,6 +502,10 @@
         <source>Change the perspective to %1$@ %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@.">
+        <source>Channel for [%1$@]s, interruptible by receiving damange, %2$@ %3$@ [%4$@]%5$@ %6$@.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Chara Birthday">
         <source>Chara Birthday</source>
         <note>Birthday notification title</note>
@@ -622,6 +626,14 @@
       </trans-unit>
       <trans-unit id="Condition: if target is controlled then use %d.">
         <source>Condition: if target is controlled then use %d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is cursed then use %d, otherwise %d.">
+        <source>Condition: if target is cursed then use %1$d, otherwise %2$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is cursed then use %d.">
+        <source>Condition: if target is cursed then use %d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Condition: if target's HP is below %d%% then use %d, otherwise %d.">

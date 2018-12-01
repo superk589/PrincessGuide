@@ -102,6 +102,8 @@ class ActionParameter {
             return RegenerationAction.self
         case 49:
             return DispelAction.self
+        case 50:
+            return ChannelAction.self
         case 90:
             return PassiveAction.self
         case 91:

@@ -534,6 +534,11 @@
         <target>向%1$@移动自身视角，距离 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@.">
+        <source>Channel for [%1$@]s, interruptible by receiving damange, %2$@ %3$@ [%4$@]%5$@ %6$@.</source>
+        <target>引导施法 [%1$@] 秒，受到伤害时中断，%2$@%3$@ [%4$@]%5$@ %6$@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Chara Birthday">
         <source>Chara Birthday</source>
         <target>角色生日</target>
@@ -672,6 +677,16 @@
       <trans-unit id="Condition: if target is controlled then use %d.">
         <source>Condition: if target is controlled then use %d.</source>
         <target>条件分支：如果目标处于被控制状态则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is cursed then use %d, otherwise %d.">
+        <source>Condition: if target is cursed then use %1$d, otherwise %2$d.</source>
+        <target>条件分支：如果目标处于诅咒状态则使用 %1$d，否则使用 %2$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if target is cursed then use %d.">
+        <source>Condition: if target is cursed then use %d.</source>
+        <target>条件分支：如果目标处于诅咒状态则使用 %1$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Condition: if target's HP is below %d%% then use %d, otherwise %d.">
