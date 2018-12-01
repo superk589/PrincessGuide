@@ -1105,6 +1105,10 @@
         <source>Members</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Minion: %d">
+        <source>Minion: %d</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Misc">
         <source>Misc</source>
         <note>No comment provided by engineer.</note>

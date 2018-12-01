@@ -794,6 +794,9 @@
 "minion" = "随从";
 
 /* No comment provided by engineer. */
+"Minion: %d" = "随从：%d";
+
+/* No comment provided by engineer. */
 "Misc" = "杂项";
 
 /* No comment provided by engineer. */

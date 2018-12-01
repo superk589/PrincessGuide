@@ -1209,6 +1209,11 @@
         <target>队员</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Minion: %d">
+        <source>Minion: %d</source>
+        <target>随从：%d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Misc">
         <source>Misc</source>
         <target>杂项</target>
