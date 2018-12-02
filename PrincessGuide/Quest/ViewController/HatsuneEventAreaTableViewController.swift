@@ -78,7 +78,8 @@ class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let area = areas[indexPath.row]
-        cell.configure(for: "\(area.base.questName)", subtitle: area.base.title, unitID: area.wave?.enemies.first?.enemy?.unit.prefabId)
+        let unit = area.wave?.enemies.first?.enemy?.unit
+        cell.configure(for: "\(unit?.unitName ?? "") \(area.difficultyType)", subtitle: area.base.title, unitID: unit?.prefabId)
         return cell
     }
     

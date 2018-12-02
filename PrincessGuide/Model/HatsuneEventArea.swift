@@ -33,14 +33,40 @@ class HatsuneEventArea: Codable {
         self.base = base
     }
     
-    var areaType: AreaType {
-        switch base.areaId % 1000 {
-        case 100..<200:
-            return .normal
-        case 200..<300:
-            return .hard
-        default:
-            return .unknown
+    var difficultyType: DifficultyType {
+        return DifficultyType(difficulty: base.difficulty)
+    }
+    
+    enum DifficultyType: CustomStringConvertible {
+        case unknown
+        case normal
+        case hard
+        case veryHard
+        
+        var description: String {
+            switch self {
+            case .normal:
+                return "N"
+            case .hard:
+                return "H"
+            case .veryHard:
+                return "VH"
+            default:
+                return NSLocalizedString("Unknown", comment: "")
+            }
+        }
+        
+        init(difficulty: Int) {
+            switch difficulty {
+            case 1:
+                self = .normal
+            case 2:
+                self = .hard
+            case 3:
+                self = .veryHard
+            default:
+                self = .unknown
+            }
         }
     }
     
