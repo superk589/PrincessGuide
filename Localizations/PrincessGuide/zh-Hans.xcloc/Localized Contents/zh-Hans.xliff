@@ -1909,6 +1909,11 @@
         <target>专业版中有哪些功能？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Who Needs">
+        <source>Who Needs</source>
+        <target>可装备的角色</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Wins">
         <source>Wins</source>
         <target>胜利</target>

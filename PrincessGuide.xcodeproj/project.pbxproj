@@ -142,6 +142,7 @@
 		128DA48B21B26CC800F7C006 /* MinionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA48A21B26CC800F7C006 /* MinionTableViewController.swift */; };
 		128DA49121B26DDF00F7C006 /* MinionPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA49021B26DDF00F7C006 /* MinionPropertyViewController.swift */; };
 		128DA49321B26DEA00F7C006 /* MinionSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA49221B26DEA00F7C006 /* MinionSkillViewController.swift */; };
+		128DA49721B4D54A00F7C006 /* CraftCharaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA49621B4D54A00F7C006 /* CraftCharaTableViewCell.swift */; };
 		12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12901E9820BE859C00697053 /* CardSortingViewController.swift */; };
 		12936B312176CEA000B9531F /* EurekaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12936B302176CEA000B9531F /* EurekaHelper.swift */; };
 		12973CED20EBA7DC00C83089 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12973CEC20EBA7DC00C83089 /* ImageCell.swift */; };
@@ -427,6 +428,7 @@
 		128DA48A21B26CC800F7C006 /* MinionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionTableViewController.swift; sourceTree = "<group>"; };
 		128DA49021B26DDF00F7C006 /* MinionPropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionPropertyViewController.swift; sourceTree = "<group>"; };
 		128DA49221B26DEA00F7C006 /* MinionSkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionSkillViewController.swift; sourceTree = "<group>"; };
+		128DA49621B4D54A00F7C006 /* CraftCharaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftCharaTableViewCell.swift; sourceTree = "<group>"; };
 		12901E9820BE859C00697053 /* CardSortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortingViewController.swift; sourceTree = "<group>"; };
 		12936B302176CEA000B9531F /* EurekaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaHelper.swift; sourceTree = "<group>"; };
 		12973CEC20EBA7DC00C83089 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
@@ -1288,6 +1290,7 @@
 				1281FA4D209AE25700F2D567 /* CraftTableViewCell.swift */,
 				1281FA53209AEA3800F2D567 /* CraftSummaryTableViewCell.swift */,
 				1281FA55209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift */,
+				128DA49621B4D54A00F7C006 /* CraftCharaTableViewCell.swift */,
 				12D3D13A20A57EB200034DD6 /* CraftPropertyTableViewCell.swift */,
 				12F125CB20B7E803005C9659 /* CraftTextTableViewCell.swift */,
 			);
@@ -1738,6 +1741,7 @@
 				12F125D420B90E1F005C9659 /* TargetParameter.swift in Sources */,
 				1223A8E420F091DD00C98BB2 /* SettingProtocol.swift in Sources */,
 				12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */,
+				128DA49721B4D54A00F7C006 /* CraftCharaTableViewCell.swift in Sources */,
 				120BCAF820F4DEEC0029A083 /* Team.swift in Sources */,
 				12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */,
 				12F1261120B95498005C9659 /* EnchantStrikeBackAction.swift in Sources */,

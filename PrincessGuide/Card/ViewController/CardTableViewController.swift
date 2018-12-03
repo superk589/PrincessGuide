@@ -404,4 +404,8 @@ extension Card {
         }
     }
     
+    func iconURL(style: CardSortingViewController.Setting.IconStyle = CardSortingViewController.Setting.default.iconStyle) -> URL {
+        let id = iconID(style: style)
+        return URL.resource.appendingPathComponent("icon/unit/\(id).webp")
+    }
 }

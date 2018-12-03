@@ -245,6 +245,18 @@ class Card: Codable {
                 Master.shared.getEquipments(equipmentID: id, callback: closure)
             }?.first
         }
+        
+        func countOf(_ equipment: Equipment) -> Int {
+            return equipSlots.filter { $0 == equipment.equipmentId }.count
+        }
+    }
+    
+    func countOf(_ equipment: Equipment) -> Int {
+        return promotions.reduce(0) { $0 + $1.countOf(equipment) }
+    }
+    
+    func countOf(_ uniqueEquipment: UniqueEquipment) -> Int {
+        return uniqueEquipIDs.filter { $0 == uniqueEquipment.equipmentId }.count
     }
     
     lazy var uniqueEquipments = DispatchSemaphore.sync { (closure) in
