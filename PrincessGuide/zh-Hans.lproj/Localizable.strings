@@ -116,6 +116,9 @@
 "%@/%@" = "%1$@ 月 %2$@ 日";
 
 /* No comment provided by engineer. */
+"%d in front of %@, summon a minion of ID: %d." = "在%2$@前 %1$d 的位置，召唤 ID 为 %3$d 的随从。";
+
+/* No comment provided by engineer. */
 "About" = "关于";
 
 /* No comment provided by engineer. */
@@ -180,6 +183,9 @@
 
 /* No comment provided by engineer. */
 "Ascending" = "升序";
+
+/* No comment provided by engineer. */
+"At the position of %@, summon a minion of ID: %d." = "在%1$@的位置，召唤 ID 为 %2$d 的随从。";
 
 /* No comment provided by engineer. */
 "ATK" = "物理攻击力";
@@ -854,6 +860,9 @@
 "Normal" = "普通";
 
 /* No comment provided by engineer. */
+"normal type" = "普通类型";
+
+/* No comment provided by engineer. */
 "Not Determined" = "未确定";
 
 /* No comment provided by engineer. */
@@ -869,6 +878,9 @@
 "Only shows the first chara's equipments, but will reflect on all selected charas." = "虽然只显示第一个角色的装备，但是编辑后会反映到所有选中角色上。";
 
 /* No comment provided by engineer. */
+"opposite" = "敌方";
+
+/* No comment provided by engineer. */
 "Options" = "选项";
 
 /* No comment provided by engineer. */
@@ -878,10 +890,16 @@
 "other" = "其他";
 
 /* No comment provided by engineer. */
+"own side" = "己方";
+
+/* No comment provided by engineer. */
 "Paralyse" = "麻痹";
 
 /* No comment provided by engineer. */
 "Petrify" = "石化";
+
+/* No comment provided by engineer. */
+"phantom type" = "幽灵类型";
 
 /* No comment provided by engineer. */
 "physical" = "物理";
@@ -1115,9 +1133,6 @@
 "Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的区域，每秒治疗其中的友方目标 [%3$@]%4$@ HP，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a minion of ID: %d at the position of %@." = "在%2$@的位置召唤 ID 为 %1$d 的随从。";
-
-/* No comment provided by engineer. */
 "Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的区域，每秒对其中的敌方目标造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -1322,6 +1337,12 @@
 "Unknown effect %d to %@ with details [%@], values [%@]." = "未知效果 %1$d，详情 [%3$@]，数值 [%4$@]，释放于%2$@。";
 
 /* No comment provided by engineer. */
+"unknown side" = "未知";
+
+/* No comment provided by engineer. */
+"unknown type" = "未知";
+
+/* No comment provided by engineer. */
 "Up to date!" = "已经是最新版本";
 
 /* No comment provided by engineer. */
@@ -1362,6 +1383,9 @@
 
 /* No comment provided by engineer. */
 "What's the features of Pro Edition?" = "专业版中有哪些功能？";
+
+/* No comment provided by engineer. */
+"Who Needs" = "可装备的角色";
 
 /* No comment provided by engineer. */
 "Wins" = "胜利";

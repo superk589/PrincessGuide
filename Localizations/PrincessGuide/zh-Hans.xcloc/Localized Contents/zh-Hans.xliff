@@ -254,6 +254,11 @@
         <target>%1$@ 月 %2$@ 日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="%d in front of %@, summon a minion of ID: %d.">
+        <source>%1$d in front of %2$@, summon a minion of ID: %3$d.</source>
+        <target>在%2$@前 %1$d 的位置，召唤 ID 为 %3$d 的随从。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="ATK">
         <source>ATK</source>
         <target>物理攻击力</target>
@@ -327,6 +332,11 @@
       <trans-unit id="Ascending">
         <source>Ascending</source>
         <target>升序</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="At the position of %@, summon a minion of ID: %d.">
+        <source>At the position of %1$@, summon a minion of ID: %2$d.</source>
+        <target>在%1$@的位置，召唤 ID 为 %2$d 的随从。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Attack Pattern">
@@ -1674,11 +1684,6 @@
         <target>在%2$@位置展开一片半径为 %1$d 的区域，每秒治疗其中的友方目标 [%3$@]%4$@ HP，持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a minion of ID: %d at the position of %@.">
-        <source>Summon a minion of ID: %1$d at the position of %2$@.</source>
-        <target>在%2$@的位置召唤 ID 为 %1$d 的随从。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s.">
         <source>Summon an attack field of radius %1$d at %2$@ position to deal all enemy targets [%3$@] %4$@ damage per second for [%5$@]s.</source>
         <target>在%2$@位置展开一片半径为 %1$d 的区域，每秒对其中的敌方目标造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。</target>
@@ -2099,14 +2104,34 @@
         <target>随从</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="normal type">
+        <source>normal type</source>
+        <target>普通类型</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="one">
         <source>one</source>
         <target>一个</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="opposite">
+        <source>opposite</source>
+        <target>敌方</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="other">
         <source>other</source>
         <target>其他</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="own side">
+        <source>own side</source>
+        <target>己方</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="phantom type">
+        <source>phantom type</source>
+        <target>幽灵类型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="physical">
@@ -2338,6 +2363,16 @@
         <source>unknown</source>
         <target>未知</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="unknown side">
+        <source>unknown side</source>
+        <target>未知</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="unknown type">
+        <source>unknown type</source>
+        <target>未知</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="value in combat">
         <source>value in combat</source>
