@@ -10,6 +10,9 @@
 "%@ %@ %@ in range %d" = "范围 %4$d 内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
+"%@ %@ %d%@ %@ for [%@]s." = "%1$@%2$@ %3$d%4$@ %5$@，持续 [%6$@] 秒。";
+
+/* No comment provided by engineer. */
 "%@ %@ and deal [%@] damage per second for [%@]s." = "%1$@%2$@并每秒造成 [%3$@] 伤害，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */

@@ -75,6 +75,11 @@
         <note>[the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500]</note>
       </trans-unit>
+      <trans-unit id="%@ %@ %d%@ %@ for [%@]s.">
+        <source>%1$@ %2$@ %3$d%4$@ %5$@ for [%6$@]s.</source>
+        <target>%1$@%2$@ %3$d%4$@ %5$@，持续 [%6$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s.">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for [%6$@]s.</source>
         <target>%1$@%2$@ [%3$@]%4$@ %5$@，持续 [%6$@] 秒。</target>
