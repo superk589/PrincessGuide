@@ -216,17 +216,21 @@ struct VLQuestArea: Codable, VLElement {
 struct VLEvent: Codable, VLElement {
     var content: String {
         let format = NSLocalizedString("New %@ Event: %@", comment: "")
-        return String(format: format, type.description, name)
+        return String(format: format, type.description, name ?? "")
     }
     
     var schedule: Schedule? {
-        return Schedule(start: start, end: end)
+        if let start = start, let end = end {
+            return Schedule(start: start, end: end)
+        } else {
+            return nil
+        }
     }
     
-    let end: String
+    let end: String?
     let id: String
-    let name: String
-    let start: String
+    let name: String?
+    let start: String?
     let type: EventType
     
     enum EventType: String, Codable, CustomStringConvertible {
