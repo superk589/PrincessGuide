@@ -1204,6 +1204,10 @@
         <source>Not Determined</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Notice">
+        <source>Notice</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Notification Permission">
         <source>Notification Permission</source>
         <note>No comment provided by engineer.</note>

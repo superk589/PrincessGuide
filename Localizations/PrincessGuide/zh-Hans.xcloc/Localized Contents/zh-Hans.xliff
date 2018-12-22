@@ -1329,6 +1329,11 @@
         <target>未确定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Notice">
+        <source>Notice</source>
+        <target>通知</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Notification Permission">
         <source>Notification Permission</source>
         <target>系统通知权限</target>
