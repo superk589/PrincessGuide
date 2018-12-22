@@ -38,7 +38,6 @@
 		122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E320F9D6AE00554030 /* TDBattleViewController.swift */; };
 		122071E620F9DF7D00554030 /* AddTeamToTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E520F9DF7D00554030 /* AddTeamToTeamViewController.swift */; };
 		122071E820F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E720F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift */; };
-		122071EC20F9F54D00554030 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122071EB20F9F54D00554030 /* StoreKit.framework */; };
 		122071EE20F9F57000554030 /* BuyProEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071ED20F9F57000554030 /* BuyProEditionViewController.swift */; };
 		122071F020F9F5C500554030 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071EF20F9F5C500554030 /* FAQTableViewCell.swift */; };
 		122071F420FA371500554030 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071F320FA371500554030 /* ProductTableViewCell.swift */; };
@@ -120,6 +119,7 @@
 		126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */; };
 		126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFB209EF289004EC56A /* CDTableViewController.swift */; };
 		126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */; };
+		1273BFC521CE2B5900ECA727 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273BFC421CE2B5900ECA727 /* Notice.swift */; };
 		1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */; };
 		1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */; };
 		127EEBA120ECDAD300A6B3D4 /* CharaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EEBA020ECDAD300A6B3D4 /* CharaItemView.swift */; };
@@ -316,7 +316,6 @@
 		122071E320F9D6AE00554030 /* TDBattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDBattleViewController.swift; sourceTree = "<group>"; };
 		122071E520F9DF7D00554030 /* AddTeamToTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamToTeamViewController.swift; sourceTree = "<group>"; };
 		122071E720F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableAddTeamToTeamViewController.swift; sourceTree = "<group>"; };
-		122071EB20F9F54D00554030 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		122071ED20F9F57000554030 /* BuyProEditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProEditionViewController.swift; sourceTree = "<group>"; };
 		122071EF20F9F5C500554030 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 		122071F320FA371500554030 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -401,6 +400,8 @@
 		126DECF9209EF264004EC56A /* CDProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewController.swift; sourceTree = "<group>"; };
 		126DECFB209EF289004EC56A /* CDTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableViewController.swift; sourceTree = "<group>"; };
 		126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTabViewController.swift; sourceTree = "<group>"; };
+		1273BFC321CE13A200ECA727 /* PrincessGuide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrincessGuide.entitlements; sourceTree = "<group>"; };
+		1273BFC421CE2B5900ECA727 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventArea.swift; sourceTree = "<group>"; };
 		1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventAreaTableViewController.swift; sourceTree = "<group>"; };
 		127EEBA020ECDAD300A6B3D4 /* CharaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaItemView.swift; sourceTree = "<group>"; };
@@ -567,7 +568,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				122071EC20F9F54D00554030 /* StoreKit.framework in Frameworks */,
 				1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */,
 				0873DCABFBE8D57C7AF3BFF8 /* Pods_PrincessGuide.framework in Frameworks */,
 			);
@@ -704,6 +704,7 @@
 				12B8F58A214A5B3600C039DE /* Tower.swift */,
 				1226532220AD626700BB3E56 /* Resist.swift */,
 				127FB85820F44BE1009B53CC /* Preload.swift */,
+				1273BFC421CE2B5900ECA727 /* Notice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -879,6 +880,7 @@
 		12659E04205F5DB100A8B9A2 /* PrincessGuide */ = {
 			isa = PBXGroup;
 			children = (
+				1273BFC321CE13A200ECA727 /* PrincessGuide.entitlements */,
 				12936B2F2176CDDE00B9531F /* Extension */,
 				1221CDDD207CC3A3008F30AA /* Common */,
 				1221CDBA207B9310008F30AA /* Model */,
@@ -1300,7 +1302,6 @@
 		C4EE8380F1630D9BF0C1B7E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				122071EB20F9F54D00554030 /* StoreKit.framework */,
 				1221CDCC207C4197008F30AA /* libsqlite3.tbd */,
 				0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */,
 			);
@@ -1363,7 +1364,10 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
 							};
 						};
 					};
@@ -1593,6 +1597,7 @@
 				1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */,
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
 				12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */,
+				1273BFC521CE2B5900ECA727 /* Notice.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,
 				124BADDD21AD43C6001041F2 /* UniqueCraftTableViewController.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
@@ -1952,7 +1957,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 81;
+				CURRENT_PROJECT_VERSION = 82;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1974,7 +1979,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 81;
+				CURRENT_PROJECT_VERSION = 82;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

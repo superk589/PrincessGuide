@@ -17,6 +17,7 @@ extension URL {
     static func master(_ hash: String) -> URL {
         return URL(string: "https://redive.estertion.win/db/redive_jp.db.br")!
     }
+    static let notice = URL(string: "https://estertion.github.io/hatsunes_notes_notice/hn_notice.json")!
 }
 
 extension Notification.Name {
@@ -78,6 +79,25 @@ class Updater {
                 }
             }
             self.isUpdating = false
+        }
+    }
+    
+    func getNotice(completion: @escaping (_ noticePayload: NoticePayload?) -> Void) {
+        Alamofire.request(URL.notice).validate(statusCode: 200..<300).responseData { (response) in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+                completion(nil)
+            case .success(let data):
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let payload = try jsonDecoder.decode(NoticePayload.self, from: data)
+                    completion(payload)
+                } catch(let error) {
+                    print(error)
+                    completion(nil)
+                }
+            }
         }
     }
     

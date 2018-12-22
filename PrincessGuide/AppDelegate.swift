@@ -47,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         BirthdayCenter.default.scheduleNotifications()
         
+        checkNotice()
 //        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
 //            for purchase in purchases {
 //                switch purchase.transaction.transactionState {
@@ -73,6 +74,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
+        checkNotice()
         BirthdayCenter.default.scheduleNotifications()
     }
+    
+    func checkNotice() {
+        Updater.shared.getNotice { [weak self] (payload) in
+            if let payload = payload, VersionManager.shared.noticeVersion < payload.version {
+                VersionManager.shared.noticeVersion = payload.version
+                let alert = UIAlertController(title: NSLocalizedString("Notice", comment: ""), message: payload.localizedContent, preferredStyle: .alert)
+                let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
+                    alert.dismiss(animated: true, completion: nil)
+                })
+                alert.addAction(action)
+                self?.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
 }
