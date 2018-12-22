@@ -18,6 +18,8 @@ struct NoticePayload: Codable {
     /// { "ja" : "notice content in Japanese" , "zh-Hans" : "notice content in simplified Chinese" }
     var contents: [String: String]
     
+    var titles: [String: String]
+    
 }
 
 extension NoticePayload {
@@ -27,5 +29,12 @@ extension NoticePayload {
             return contents.filter { identifier.hasPrefix($0.key) }.max { $0.key.count < $1.key.count }?.value ?? contents[`default`]
         }
         return contents[`default`]
+    }
+    
+    var localizedTitle: String? {
+        if let identifier = Locale.preferredLanguages.first {
+            return titles.filter { identifier.hasPrefix($0.key) }.max { $0.key.count < $1.key.count }?.value ?? titles[`default`] ?? NSLocalizedString("Notice", comment: "")
+        }
+        return titles[`default`] ?? NSLocalizedString("Notice", comment: "")
     }
 }

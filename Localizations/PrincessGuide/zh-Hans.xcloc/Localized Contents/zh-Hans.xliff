@@ -1604,6 +1604,11 @@
         <target>显示所有字段</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Show the Latest Notice">
+        <source>Show the Latest Notice</source>
+        <target>显示最新通知</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Silence">
         <source>Silence</source>
         <target>沉默</target>

@@ -82,14 +82,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Updater.shared.getNotice { [weak self] (payload) in
             if let payload = payload, VersionManager.shared.noticeVersion < payload.version {
                 VersionManager.shared.noticeVersion = payload.version
-                let alert = UIAlertController(title: NSLocalizedString("Notice", comment: ""), message: payload.localizedContent, preferredStyle: .alert)
-                let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
-                    alert.dismiss(animated: true, completion: nil)
-                })
-                alert.addAction(action)
-                self?.window?.rootViewController?.present(alert, animated: true, completion: nil)
+                self?.showNotice(payload: payload)
             }
         }
+    }
+    
+    func showNotice(payload: NoticePayload) {
+        let alert = UIAlertController(title: payload.localizedTitle, message: payload.localizedContent, preferredStyle: .alert)
+        let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        alert.addAction(action)
+        window?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
 }
