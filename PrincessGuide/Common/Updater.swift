@@ -83,6 +83,7 @@ class Updater {
     }
     
     func getNotice(completion: @escaping (_ noticePayload: NoticePayload?) -> Void) {
+        URLCache.shared.removeAllCachedResponses()
         Alamofire.request(URL.notice).validate(statusCode: 200..<300).responseData { (response) in
             switch response.result {
             case .failure(let error):
