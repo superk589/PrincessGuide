@@ -497,6 +497,30 @@
         <source>Change attack pattern to %1$d for %2$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Change self position %@ backward then return.">
+        <source>Change self position %@ backward then return.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position %@ backward.">
+        <source>Change self position %@ backward.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position %@ forward then return.">
+        <source>Change self position %@ forward then return.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position %@ forward.">
+        <source>Change self position %@ forward.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position to %@ then return.">
+        <source>Change self position to %@ then return.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position to %@.">
+        <source>Change self position to %@.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Change self position.">
         <source>Change self position.</source>
         <target>自分のポジションを変える。</target>
@@ -731,6 +755,10 @@
       <trans-unit id="Detain (Damage)">
         <source>Detain (Damage)</source>
         <target>拘留(ダメージ)</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Do nothing.">
+        <source>Do nothing.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Dodge">
@@ -1134,6 +1162,22 @@
         <target>移動速度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Move backward %@ with velocity %@/s.">
+        <source>Move backward %1$@ with velocity %2$@/s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Move forward %@ with velocity %@/s.">
+        <source>Move forward %1$@ with velocity %2$@/s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Move to %@ behind of %@ with velocity %@/s.">
+        <source>Move to %1$@ behind of %2$@ with velocity %3$@/s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Move to %@ in front of %@ with velocity %@/s.">
+        <source>Move to %1$@ in front of %2$@ with velocity %3$@/s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Multiple [%@ * HP / max HP] to next effect.">
         <source>Multiple [%@ * HP / max HP] to next effect.</source>
         <note>No comment provided by engineer.</note>
@@ -1391,6 +1435,10 @@
         <target>App Storeに評価する</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Revive %@ with %d%% HP.">
+        <source>Revive %1$@ with %2$d%% HP.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Round %d">
         <source>Round %d</source>
         <target>%d 戦目</target>
@@ -1622,6 +1670,14 @@
       </trans-unit>
       <trans-unit id="Tower">
         <source>Tower</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: %d%% on damaged.">
+        <source>Trigger: %d%% on damaged.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: %d%% on dead">
+        <source>Trigger: %d%% on dead</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Trigger: HP is below %d%%.">

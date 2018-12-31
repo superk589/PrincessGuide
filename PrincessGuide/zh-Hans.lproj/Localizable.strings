@@ -314,6 +314,24 @@
 "Change attack pattern to %d for %@s." = "改为使用攻击模式 %1$d，持续 %2$@ 秒。";
 
 /* No comment provided by engineer. */
+"Change self position %@ backward then return." = "改变自身位置，向后移动 %@，技能结束后回原位置。";
+
+/* No comment provided by engineer. */
+"Change self position %@ backward." = "改变自身位置，向后移动 %@。";
+
+/* No comment provided by engineer. */
+"Change self position %@ forward then return." = "改变自身位置，向前移动 %@，技能结束后回原位置。";
+
+/* No comment provided by engineer. */
+"Change self position %@ forward." = "改变自身位置，向前移动 %@。";
+
+/* No comment provided by engineer. */
+"Change self position to %@ then return." = "改变自身位置到%@，技能结束后回原位置。";
+
+/* No comment provided by engineer. */
+"Change self position to %@." = "改变自身位置到%@。";
+
+/* No comment provided by engineer. */
 "Change self position." = "改变自身位置。";
 
 /* No comment provided by engineer. */
@@ -489,6 +507,9 @@
 
 /* No comment provided by engineer. */
 "Detain (Damage)" = "拘留（伤害）";
+
+/* No comment provided by engineer. */
+"Do nothing." = "什么都不做。";
 
 /* No comment provided by engineer. */
 "Dodge" = "回避";
@@ -812,7 +833,19 @@
 "Mission" = "探索";
 
 /* No comment provided by engineer. */
+"Move backward %@ with velocity %@/s." = "向后移动 %1$@，速度 %2$@/s。";
+
+/* No comment provided by engineer. */
+"Move forward %@ with velocity %@/s." = "向前移动 %1$@，速度 %2$@/s。";
+
+/* No comment provided by engineer. */
 "Move Speed" = "移动速度";
+
+/* No comment provided by engineer. */
+"Move to %@ behind of %@ with velocity %@/s." = "移动到%2$@后 %1$@ 的位置，速度 %3$@/s。";
+
+/* No comment provided by engineer. */
+"Move to %@ in front of %@ with velocity %@/s." = "移动到%2$@前 %1$@ 的位置，速度 %3$@/s。";
 
 /* No comment provided by engineer. */
 "Multiple [%@ * defeated enemy count] to next effect." = "使下一个效果的数值乘以 [%@ * 击杀个数]。";
@@ -1029,6 +1062,9 @@
 
 /* No comment provided by engineer. */
 "Review at App Store" = "App Store 评价";
+
+/* No comment provided by engineer. */
+"Revive %@ with %d%% HP." = "复活并恢复%1$@的 HP 至 %2$d%%。";
 
 /* No comment provided by engineer. */
 "Round %d" = "第 %d 周目";
@@ -1293,6 +1329,12 @@
 
 /* No comment provided by engineer. */
 "Tower" = "月神塔";
+
+/* No comment provided by engineer. */
+"Trigger: %d%% on damaged." = "触发条件：受到伤害时 %d%% 触发。";
+
+/* No comment provided by engineer. */
+"Trigger: %d%% on dead" = "触发条件：死亡时 %d%% 触发。";
 
 /* No comment provided by engineer. */
 "Trigger: HP is below %d%%." = "触发条件：HP 低于 %d%%。";

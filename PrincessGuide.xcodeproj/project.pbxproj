@@ -120,7 +120,7 @@
 		126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFB209EF289004EC56A /* CDTableViewController.swift */; };
 		126DECFE209EF90F004EC56A /* EquipmentTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */; };
 		1273BFC521CE2B5900ECA727 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273BFC421CE2B5900ECA727 /* Notice.swift */; };
-		1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */; };
+		1276D4B820AD2D4100805355 /* HatsuneEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276D4B720AD2D4100805355 /* HatsuneEvent.swift */; };
 		1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */; };
 		127EEBA120ECDAD300A6B3D4 /* CharaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EEBA020ECDAD300A6B3D4 /* CharaItemView.swift */; };
 		127FB85920F44BE1009B53CC /* Preload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127FB85820F44BE1009B53CC /* Preload.swift */; };
@@ -177,6 +177,8 @@
 		12C24B99217ACD4A0079AFE0 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B98217ACD4A0079AFE0 /* Voice.swift */; };
 		12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */; };
 		12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C44140209C92AF00016BDC /* LaunchScreen.storyboard */; };
+		12C5D26D21D9FFEE00C99425 /* HatsuneEventQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */; };
+		12C5D26F21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
 		12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */; };
 		12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13820A573B800034DD6 /* EDSkillTableViewController.swift */; };
@@ -402,7 +404,7 @@
 		126DECFD209EF90F004EC56A /* EquipmentTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTabViewController.swift; sourceTree = "<group>"; };
 		1273BFC321CE13A200ECA727 /* PrincessGuide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrincessGuide.entitlements; sourceTree = "<group>"; };
 		1273BFC421CE2B5900ECA727 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
-		1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventArea.swift; sourceTree = "<group>"; };
+		1276D4B720AD2D4100805355 /* HatsuneEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEvent.swift; sourceTree = "<group>"; };
 		1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventAreaTableViewController.swift; sourceTree = "<group>"; };
 		127EEBA020ECDAD300A6B3D4 /* CharaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaItemView.swift; sourceTree = "<group>"; };
 		127FB85820F44BE1009B53CC /* Preload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preload.swift; sourceTree = "<group>"; };
@@ -466,6 +468,8 @@
 		12C24B98217ACD4A0079AFE0 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePlayer.swift; sourceTree = "<group>"; };
 		12C4413F209C92AF00016BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventQuest.swift; sourceTree = "<group>"; };
+		12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventSpecialBattle.swift; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
 		12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDStatusTableViewController.swift; sourceTree = "<group>"; };
 		12D3D13820A573B800034DD6 /* EDSkillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewController.swift; sourceTree = "<group>"; };
@@ -699,7 +703,9 @@
 				129A7F6120A0465800D93996 /* CharaStory.swift */,
 				129A7F8620A2EE7E00D93996 /* Enemy.swift */,
 				1280DE4020A5CEB2008D9D72 /* ClanBattle.swift */,
-				1276D4B720AD2D4100805355 /* HatsuneEventArea.swift */,
+				1276D4B720AD2D4100805355 /* HatsuneEvent.swift */,
+				12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */,
+				12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */,
 				124EA0A120D26CA500F46029 /* Dungeon.swift */,
 				12B8F58A214A5B3600C039DE /* Tower.swift */,
 				1226532220AD626700BB3E56 /* Resist.swift */,
@@ -1571,6 +1577,7 @@
 				1225522E2133E22300CB0D3E /* VLNoScheduleTableViewCell.swift in Sources */,
 				122071F420FA371500554030 /* ProductTableViewCell.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
+				12C5D26D21D9FFEE00C99425 /* HatsuneEventQuest.swift in Sources */,
 				12512A712163D19A0071B0CC /* VLFilterViewController.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
 				12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */,
@@ -1692,6 +1699,7 @@
 				12DC963C20EDED44008896D7 /* BoxTableViewCell.swift in Sources */,
 				120F9B7A20E624CB003632CA /* ChooseCharaViewController.swift in Sources */,
 				126DECE1209E0B2C004EC56A /* CustomAcknowViewController.swift in Sources */,
+				12C5D26F21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift in Sources */,
 				12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */,
 				12A776902153E59E00972187 /* EDSettingsViewController.swift in Sources */,
 				12F1261B20B95528005C9659 /* ChangeParameterFieldAction.swift in Sources */,
@@ -1751,7 +1759,7 @@
 				12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */,
 				12F1261120B95498005C9659 /* EnchantStrikeBackAction.swift in Sources */,
 				124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */,
-				1276D4B820AD2D4100805355 /* HatsuneEventArea.swift in Sources */,
+				1276D4B820AD2D4100805355 /* HatsuneEvent.swift in Sources */,
 				1223A8E820F0A1D600C98BB2 /* CardWithBirthdayCell.swift in Sources */,
 				12E3324620F5F9C200844A6A /* CandidateCardsView.swift in Sources */,
 				122071E820F9E4D100554030 /* SearchableAddTeamToTeamViewController.swift in Sources */,
@@ -1957,7 +1965,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1979,7 +1987,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

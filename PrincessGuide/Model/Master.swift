@@ -1059,37 +1059,81 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getHatsuneEventAreas(callback: @escaping FMDBCallbackClosure<[HatsuneEventArea]>) {
-        var areas = [HatsuneEventArea]()
+    func getHatsuneEvents(callback: @escaping FMDBCallbackClosure<[HatsuneEvent]>) {
+        var events = [HatsuneEvent]()
         execute({ (db) in
             let sql = """
             SELECT
                 a.*,
-                b.title,
-                c.wave_group_id_1,
-                c.quest_name,
-                c.difficulty
+                b.title
             FROM
-                hatsune_quest_area a,
-                event_story_data b,
-                hatsune_boss c
+                hatsune_schedule a,
+                event_story_data b
             WHERE
                 a.event_id = b.value
-                AND a.area_id = c.area_id
             """
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
                 let json = JSON(set.resultDictionary ?? [:])
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let base = try decoder.decode(HatsuneEventArea.Base.self, from: json.rawData())
-                let area = HatsuneEventArea(base: base)
-                areas.append(area)
+                let base = try decoder.decode(HatsuneEvent.Base.self, from: json.rawData())
+                let event = HatsuneEvent(base: base)
+                events.append(event)
             }
         }) {
-            callback(areas)
+            callback(events)
         }
     }
+    
+    func getHatsuneEventQuests(eventID: Int, callback: @escaping FMDBCallbackClosure<[HatsuneEventQuest]>) {
+        var quests = [HatsuneEventQuest]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*
+            FROM
+                hatsune_boss a
+            WHERE
+                event_id = \(eventID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let quest = try decoder.decode(HatsuneEventQuest.self, from: json.rawData())
+                quests.append(quest)
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
+    func getHatsuneEventSpecialBattles(eventID: Int, callback: @escaping FMDBCallbackClosure<[HatsuneEventSpecialBattle]>) {
+        var quests = [HatsuneEventSpecialBattle]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*
+            FROM
+                hatsune_special_battle a
+            WHERE
+                event_id = \(eventID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let quest = try decoder.decode(HatsuneEventSpecialBattle.self, from: json.rawData())
+                quests.append(quest)
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
     
     func getDungeons(callback: @escaping FMDBCallbackClosure<[Dungeon]>) {
         var dungeons = [Dungeon]()

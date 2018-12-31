@@ -1,40 +1,21 @@
 //
-//  HatsuneEventArea.swift
+//  HatsuneEventQuest.swift
 //  PrincessGuide
 //
-//  Created by zzk on 2018/5/17.
+//  Created by zzk on 2018/12/31.
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
 import UIKit
 
-/// HatsuneEventArea represents all the event areas like the first hatsune event, including normal and hard.
-class HatsuneEventArea: Codable {
-  
-    struct Base: Codable {
-        let areaDisp: Int
-        let areaId: Int
-        let areaName: String
-        let endTime: String
-        let eventId: Int
-        let mapType: Int
-        let queId: String
-        let sheetId: String
-        let startTime: String
-        let title: String
-        let waveGroupId1: Int
-        let questName: String
-        let difficulty: Int
-    }
-    
-    let base: Base
-    
-    init(base: Base) {
-        self.base = base
-    }
+class HatsuneEventQuest: Codable {
+
+    let waveGroupId1: Int
+    let questName: String
+    let difficulty: Int
     
     var difficultyType: DifficultyType {
-        return DifficultyType(difficulty: base.difficulty)
+        return DifficultyType(difficulty: difficulty)
     }
     
     enum DifficultyType: CustomStringConvertible {
@@ -70,8 +51,11 @@ class HatsuneEventArea: Codable {
         }
     }
     
-    lazy var wave: Wave? = DispatchSemaphore.sync { (closure) in
-        Master.shared.getWaves(waveIDs: [base.waveGroupId1], callback: closure)
-    }?.first
+    func preload() {
+        _ = wave
+    }
     
+    lazy var wave: Wave? = DispatchSemaphore.sync { (closure) in
+        Master.shared.getWaves(waveIDs: [waveGroupId1], callback: closure)
+    }?.first
 }

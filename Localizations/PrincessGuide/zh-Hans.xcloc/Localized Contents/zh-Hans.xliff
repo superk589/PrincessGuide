@@ -529,6 +529,36 @@
         <target>改为使用攻击模式 %1$d，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Change self position %@ backward then return.">
+        <source>Change self position %@ backward then return.</source>
+        <target>改变自身位置，向后移动 %@，技能结束后回原位置。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position %@ backward.">
+        <source>Change self position %@ backward.</source>
+        <target>改变自身位置，向后移动 %@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position %@ forward then return.">
+        <source>Change self position %@ forward then return.</source>
+        <target>改变自身位置，向前移动 %@，技能结束后回原位置。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position %@ forward.">
+        <source>Change self position %@ forward.</source>
+        <target>改变自身位置，向前移动 %@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position to %@ then return.">
+        <source>Change self position to %@ then return.</source>
+        <target>改变自身位置到%@，技能结束后回原位置。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change self position to %@.">
+        <source>Change self position to %@.</source>
+        <target>改变自身位置到%@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Change self position.">
         <source>Change self position.</source>
         <target>改变自身位置。</target>
@@ -797,6 +827,11 @@
       <trans-unit id="Detain (Damage)">
         <source>Detain (Damage)</source>
         <target>拘留（伤害）</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Do nothing.">
+        <source>Do nothing.</source>
+        <target>什么都不做。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Dodge">
@@ -1244,6 +1279,26 @@
         <target>移动速度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Move backward %@ with velocity %@/s.">
+        <source>Move backward %1$@ with velocity %2$@/s.</source>
+        <target>向后移动 %1$@，速度 %2$@/s。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Move forward %@ with velocity %@/s.">
+        <source>Move forward %1$@ with velocity %2$@/s.</source>
+        <target>向前移动 %1$@，速度 %2$@/s。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Move to %@ behind of %@ with velocity %@/s.">
+        <source>Move to %1$@ behind of %2$@ with velocity %3$@/s.</source>
+        <target>移动到%2$@后 %1$@ 的位置，速度 %3$@/s。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Move to %@ in front of %@ with velocity %@/s.">
+        <source>Move to %1$@ in front of %2$@ with velocity %3$@/s.</source>
+        <target>移动到%2$@前 %1$@ 的位置，速度 %3$@/s。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Multiple [%@ * HP / max HP] to next effect.">
         <source>Multiple [%@ * HP / max HP] to next effect.</source>
         <target>使下一个效果的数值乘以 [%@ * HP / 最大 HP]。</target>
@@ -1529,6 +1584,11 @@
         <target>App Store 评价</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Revive %@ with %d%% HP.">
+        <source>Revive %1$@ with %2$d%% HP.</source>
+        <target>复活并恢复%1$@的 HP 至 %2$d%%。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Round %d">
         <source>Round %d</source>
         <target>第 %d 周目</target>
@@ -1792,6 +1852,16 @@
       <trans-unit id="Tower">
         <source>Tower</source>
         <target>月神塔</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: %d%% on damaged.">
+        <source>Trigger: %d%% on damaged.</source>
+        <target>触发条件：受到伤害时 %d%% 触发。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: %d%% on dead">
+        <source>Trigger: %d%% on dead</source>
+        <target>触发条件：死亡时 %d%% 触发。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Trigger: HP is below %d%%.">

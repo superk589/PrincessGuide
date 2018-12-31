@@ -20,6 +20,8 @@ struct NoticePayload: Codable {
     
     var titles: [String: String]
     
+    var expireDate: String
+    
 }
 
 extension NoticePayload {

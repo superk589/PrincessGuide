@@ -33,6 +33,12 @@ class TriggerAction: ActionParameter {
         case .limitTime:
             let format = NSLocalizedString("Trigger: Left time is below %@s.", comment: "")
             return String(format: format, actionValue3.description)
+        case .damage:
+            let format = NSLocalizedString("Trigger: %d%% on damaged.", comment: "")
+            return String(format: format, Int(actionValue1.rounded()))
+        case .dead:
+            let format = NSLocalizedString("Trigger: %d%% on dead", comment: "")
+            return String(format: format, Int(actionValue1.rounded()))
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }

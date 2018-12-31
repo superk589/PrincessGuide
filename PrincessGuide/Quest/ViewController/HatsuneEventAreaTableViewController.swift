@@ -11,7 +11,7 @@ import Gestalt
 
 class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
     
-    private var areas = [HatsuneEventArea]()
+    private var events = [HatsuneEvent]()
     
     let refresher = RefreshHeader()
     
@@ -53,13 +53,13 @@ class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
     private func loadData() {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            Master.shared.getHatsuneEventAreas { (areas) in
+            Master.shared.getHatsuneEvents { (events) in
                 // preload
                 DispatchQueue.global(qos: .userInitiated).async {
-                    areas.forEach { _ = $0.wave?.enemies.first?.enemy }
+                    events.forEach { _ = $0.quests.first?.wave?.enemies.first?.enemy }
                     DispatchQueue.main.async {
                         LoadingHUDManager.default.hide()
-                        self?.areas = areas.sorted { ($0.base.startTime, $0.base.areaId, $0.base.difficulty) > ($1.base.startTime, $1.base.areaId, $1.base.difficulty) }
+                        self?.events = events.sorted { $0.base.startTime > $1.base.startTime }
                         self?.tableView.reloadData()
                     }
                 }
@@ -72,25 +72,24 @@ class HatsuneEventAreaTableViewController: UITableViewController, DataChecking {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return areas.count
+        return events.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
-        let area = areas[indexPath.row]
-        let unit = area.wave?.enemies.first?.enemy?.unit
-        cell.configure(for: "\(unit?.unitName ?? "") \(area.difficultyType)", subtitle: area.base.title, unitID: unit?.prefabId)
+        let event = events[indexPath.row]
+        let unit = event.quests.first?.wave?.enemies.first?.enemy?.unit
+        cell.configure(for: "\(unit?.unitName ?? "")", subtitle: event.base.title, unitID: unit?.prefabId)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let area = areas[indexPath.row]
-        if let enemy = area.wave?.enemies.first?.enemy {
-            let vc = EDTabViewController(enemy: enemy)
-            vc.hidesBottomBarWhenPushed = true
-            vc.navigationItem.title = enemy.unit.unitName
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let event = events[indexPath.row]
+        let vc = QuestEnemyTableViewController(hatsuneEvent: event)
+        vc.hidesBottomBarWhenPushed = true
+        let unit = event.quests.first?.wave?.enemies.first?.enemy?.unit
+        vc.navigationItem.title = unit?.unitName
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

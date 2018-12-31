@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
 
         // set Kingfisher cache never expiring
-        ImageCache.default.maxCachePeriodInSecond = -1
+        ImageCache.default.diskStorage.config.expiration = .never
         
         // prepare for preload master data
         Preload.default.syncLoad()
@@ -78,22 +78,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BirthdayCenter.default.scheduleNotifications()
     }
     
-    func checkNotice() {
+    func checkNotice(ignoresExpireDate: Bool = false) {
         Updater.shared.getNotice { [weak self] (payload) in
             if let payload = payload, VersionManager.shared.noticeVersion < payload.version {
                 VersionManager.shared.noticeVersion = payload.version
-                self?.showNotice(payload: payload)
+                self?.showNotice(payload: payload, ignoresExpireDate: ignoresExpireDate)
             }
         }
     }
     
-    func showNotice(payload: NoticePayload) {
-        let alert = UIAlertController(title: payload.localizedTitle, message: payload.localizedContent, preferredStyle: .alert)
-        let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
-            alert.dismiss(animated: true, completion: nil)
-        })
-        alert.addAction(action)
-        window?.rootViewController?.present(alert, animated: true, completion: nil)
+    func showNotice(payload: NoticePayload, ignoresExpireDate: Bool = false) {
+        if payload.expireDate < Date().toString(timeZone: .current) || ignoresExpireDate {
+            let alert = UIAlertController(title: payload.localizedTitle, message: payload.localizedContent, preferredStyle: .alert)
+            let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
+                alert.dismiss(animated: true, completion: nil)
+            })
+            alert.addAction(action)
+            window?.rootViewController?.present(alert, animated: true, completion: nil)
+        }
     }
     
 }

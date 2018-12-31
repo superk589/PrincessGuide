@@ -121,7 +121,7 @@ class SettingsTableViewController: UITableViewController {
     
     @objc private func showRecentNotice() {
         VersionManager.shared.noticeVersion = ""
-        (UIApplication.shared.delegate as? AppDelegate)?.checkNotice()
+        (UIApplication.shared.delegate as? AppDelegate)?.checkNotice(ignoresExpireDate: true)
     }
     
     @objc private func upgradeToProEdition() {

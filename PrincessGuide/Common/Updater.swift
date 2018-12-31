@@ -92,6 +92,7 @@ class Updater {
             case .success(let data):
                 do {
                     let jsonDecoder = JSONDecoder()
+                    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                     let payload = try jsonDecoder.decode(NoticePayload.self, from: data)
                     completion(payload)
                 } catch(let error) {
