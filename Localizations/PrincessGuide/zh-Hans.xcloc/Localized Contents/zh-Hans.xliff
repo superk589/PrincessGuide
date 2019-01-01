@@ -137,22 +137,22 @@
         <target>最远的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ front friendly %@">
-        <source>%1$@ front friendly %2$@</source>
-        <target>前方%1$@友方%2$@</target>
-        <note>[the second to fourth farthest] front friendly [targets]</note>
+      <trans-unit id="%@ front %@ %@">
+        <source>%1$@ front %2$@ %3$@</source>
+        <target>前方%1$@%2$@%3$@</target>
+        <note>[the second to fourth farthest] front [enemy] [targets]</note>
       </trans-unit>
-      <trans-unit id="%@ front friendly %@ in range %d">
-        <source>%1$@ front friendly %2$@ in range %3$d</source>
-        <target>前方 %3$d 范围内%1$@友方%2$@</target>
-        <note>[the farthest two] front friendly [targets] in range [500]
-   [the second to fourth farthest] front friendly [targets] in range [500]</note>
+      <trans-unit id="%@ front %@ %@ in range %d">
+        <source>%1$@ front %2$@ %3$@ in range %4$d</source>
+        <target>前方 %4$d 范围内%1$@%2$@%3$@</target>
+        <note>[the farthest two] front [enemy] [targets] in range [500]
+   [the second to fourth farthest] front [enemy] [targets] in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ front friendly target in range %d">
-        <source>%1$@ front friendly target in range %2$d</source>
-        <target>前方 %2$d 范围内%1$@友方目标</target>
-        <note>[the nearest] front friendly target in range [500]
-   [the second nearest] front friendly target in range [500]</note>
+      <trans-unit id="%@ front %@ target in range %d">
+        <source>%1$@ front %2$@ target in range %3$d</source>
+        <target>前方%3$d范围内%1$@%2$@目标</target>
+        <note>[the nearest] front [enemy] target in range [500]
+   [the second nearest] front [enemy] target in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ highest ATK">
         <source>%@ highest ATK</source>
@@ -2034,10 +2034,20 @@
         <target>所有%@目标</target>
         <note>all [enemy] targets</note>
       </trans-unit>
+      <trans-unit id="all front enemy targets">
+        <source>all front enemy targets</source>
+        <target>所有前方敌方目标</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="all front targets">
+        <source>all front targets</source>
+        <target>所有前方目标</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="all front(including self) friendly targets">
         <source>all front(including self) friendly targets</source>
         <target>所有前方的友方目标（包括自己）</target>
-        <note>all front(including self) friendly targets</note>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="always 1★">
         <source>always 1★</source>
@@ -2139,15 +2149,15 @@
         <target>前方 %3$d 范围内%1$@%2$@目标</target>
         <note>front [friendly] [physics] targets in range [500]</note>
       </trans-unit>
+      <trans-unit id="front %@ targets in range %d">
+        <source>front %1$@ targets in range %2$d</source>
+        <target>前方范围 %2$d 内%1$@目标</target>
+        <note>front [enemy] targets in range [500]</note>
+      </trans-unit>
       <trans-unit id="front and back">
         <source>front and back</source>
         <target>前方和后方</target>
         <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="front friendly targets in range %d">
-        <source>front friendly targets in range %d</source>
-        <target>前方 %d 范围内友方目标</target>
-        <note>front friendly targets in range [500]</note>
       </trans-unit>
       <trans-unit id="front(including self)">
         <source>front(including self)</source>

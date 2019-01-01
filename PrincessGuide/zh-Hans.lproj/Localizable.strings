@@ -44,16 +44,16 @@
 /* No comment provided by engineer. */
 "%@ Feedback" = "%@ 反馈";
 
-/* [the second to fourth farthest] front friendly [targets] */
-"%@ front friendly %@" = "前方%1$@友方%2$@";
+/* [the second to fourth farthest] front [enemy] [targets] */
+"%@ front %@ %@" = "前方%1$@%2$@%3$@";
 
-/* [the farthest two] front friendly [targets] in range [500]
-   [the second to fourth farthest] front friendly [targets] in range [500] */
-"%@ front friendly %@ in range %d" = "前方 %3$d 范围内%1$@友方%2$@";
+/* [the farthest two] front [enemy] [targets] in range [500]
+   [the second to fourth farthest] front [enemy] [targets] in range [500] */
+"%@ front %@ %@ in range %d" = "前方 %4$d 范围内%1$@%2$@%3$@";
 
-/* [the nearest] front friendly target in range [500]
-   [the second nearest] front friendly target in range [500] */
-"%@ front friendly target in range %d" = "前方 %2$d 范围内%1$@友方目标";
+/* [the nearest] front [enemy] target in range [500]
+   [the second nearest] front [enemy] target in range [500] */
+"%@ front %@ target in range %d" = "前方%3$d范围内%1$@%2$@目标";
 
 /* No comment provided by engineer. */
 "%@ highest ATK" = "物理攻击力最高的%@";
@@ -166,7 +166,13 @@
 /* all [enemy] targets */
 "all %@ targets" = "所有%@目标";
 
-/* all front(including self) friendly targets */
+/* No comment provided by engineer. */
+"all front enemy targets" = "所有前方敌方目标";
+
+/* No comment provided by engineer. */
+"all front targets" = "所有前方目标";
+
+/* No comment provided by engineer. */
 "all front(including self) friendly targets" = "所有前方的友方目标（包括自己）";
 
 /* No comment provided by engineer. */
@@ -643,11 +649,11 @@
 /* front [friendly] [physics] targets in range [500] */
 "front %@ %@ targets in range %d" = "前方 %3$d 范围内%1$@%2$@目标";
 
+/* front [enemy] targets in range [500] */
+"front %@ targets in range %d" = "前方范围 %2$d 内%1$@目标";
+
 /* No comment provided by engineer. */
 "front and back" = "前方和后方";
-
-/* front friendly targets in range [500] */
-"front friendly targets in range %d" = "前方 %d 范围内友方目标";
 
 /* No comment provided by engineer. */
 "front(including self)" = "前方（包括自己）";

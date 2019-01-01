@@ -32,17 +32,6 @@
 /* No comment provided by engineer. */
 "%@ Feedback" = "%@ フィードバック";
 
-/* [the second to fourth farthest] front friendly [targets] */
-"%@ front friendly %@" = "前方%1$@味方%2$@";
-
-/* [the farthest two] front friendly [targets] in range [500]
-   [the second to fourth farthest] front friendly [targets] in range [500] */
-"%@ front friendly %@ in range %d" = "前方%3$d範囲内%1$@味方%2$@";
-
-/* [the nearest] front friendly target in range [500]
-   [the second nearest] front friendly target in range [500] */
-"%@ front friendly target in range %d" = "前方%2$d範囲内%1$@味方";
-
 /* No comment provided by engineer. */
 "%@ highest ATK" = "物理攻撃力が高い%@";
 
