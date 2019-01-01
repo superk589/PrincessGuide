@@ -501,12 +501,12 @@
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s.">
         <source>Cast a barrier on %1$@ to nullify [%2$@] physical and magical damage for [%3$@]s.</source>
-        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。</target>
+        <target>对%1$@释放一个护盾，无效 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for [%@]s.">
         <source>Cast a barrier on %1$@ to nullify [%2$@] physical damage for [%3$@]s.</source>
-        <target>对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 [%3$@] 秒。</target>
+        <target>对%1$@释放一个护盾，无效 [%2$@] 物理伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s.">

@@ -299,10 +299,10 @@
 "Cast a barrier on %@ to nullify [%@] magical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 魔法伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。";
+"Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 [%3$@] 秒。";
+"Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 物理伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Cast an unknown barrier %d on %@ for [%@]s." = "对%2$@释放一个护盾，类型 %1$d，持续 [%3$@] 秒。";
