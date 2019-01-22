@@ -1574,12 +1574,24 @@
         <source>Summary</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s.">
+        <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s.">
+        <source>Summon a field of radius %1$d at position of %2$@ to deal [%3$@] %4$@ damage per second for [%5$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s.">
         <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.">
         <source>Summon a field of radius %1$d to deal [%2$@] %3$@ damage per second for [%4$@]s to %5$@.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s.">
+        <source>Summon a healing field of radius %1$d at position of %2$@ to heal [%3$@]%4$@ HP per second for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s.">

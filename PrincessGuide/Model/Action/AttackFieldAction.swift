@@ -52,15 +52,27 @@ class AttackFieldAction: ActionParameter {
         case .normal:
             return super.localizedDetail(of: level, property: property, style: style)
         case .repeat:
-            let format = NSLocalizedString("Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.", comment: "")
-            return String(
-                format: format,
-                Int(actionValue7),
-                buildExpression(of: level, style: style, property: property),
-                damageClass.description,
-                buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property),
-                targetParameter.buildTargetClause()
-            )
+            if targetParameter.targetType == .absolute {
+                let format = NSLocalizedString("Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.", comment: "")
+                return String(
+                    format: format,
+                    Int(actionValue7),
+                    buildExpression(of: level, style: style, property: property),
+                    damageClass.description,
+                    buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property),
+                    targetParameter.buildTargetClause()
+                )
+            } else {
+                let format = NSLocalizedString("Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s.", comment: "")
+                return String(
+                    format: format,
+                    Int(actionValue7),
+                    targetParameter.buildTargetClause(),
+                    buildExpression(of: level, style: style, property: property),
+                    damageClass.description,
+                    buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+                )
+            }
         }
     }
     
