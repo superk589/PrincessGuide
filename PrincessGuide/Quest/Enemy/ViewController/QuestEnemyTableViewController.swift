@@ -35,7 +35,7 @@ class QuestEnemyTableViewController: UITableViewController {
     }
     
     init(clanBattle: ClanBattle) {
-        self.rows = clanBattle.rounds.flatMap {
+        self.rows = clanBattle.mergedRounds.flatMap {
             [Row(type: QuestNameTableViewCell.self, data: .quest($0.name))] +
                 $0.groups.enumerated().map{ Row(type: QuestEnemyTableViewCell.self, data: .clanBattleWave($0.element.wave, $0.offset, $0.element.scoreCoefficient)) }
         }
