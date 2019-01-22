@@ -61,7 +61,7 @@ class HealFieldAction: ActionParameter {
         case .normal:
             return super.localizedDetail(of: level, property: property, style: style)
         case .repeat:
-            let format = NSLocalizedString("Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s.", comment: "")
+            let format = NSLocalizedString("Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s.", comment: "")
             return String(
                 format: format,
                 Int(actionValue7),

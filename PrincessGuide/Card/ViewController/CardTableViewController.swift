@@ -139,7 +139,7 @@ class CardTableViewController: UITableViewController, DataChecking {
 //                let encoder = JSONEncoder()
 //                encoder.outputFormatting = .prettyPrinted
 //                if let data = try? encoder.encode(cards.map {
-//                    return CardPropertyDiff(name: $0.base.unitName, properties: ($0.property(unitRank: 11) - $0.property(unitRank: 10)).allProperties(), imageURL: URL.resource.appendingPathComponent("icon/unit/\($0.iconID()).webp"))
+//                    return CardPropertyDiff(name: $0.base.unitName, properties: ($0.property(unitRank: 12) - $0.property(unitRank: 11)).allProperties(), imageURL: URL.resource.appendingPathComponent("icon/unit/\($0.iconID()).webp"))
 //                }) {
 //                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r11_r10_diff.json"))
 //                }

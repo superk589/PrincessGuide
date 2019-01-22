@@ -30,9 +30,6 @@
 "%@ %@ targets in range %d" = "范围 %3$d 内%1$@%2$@目标";
 
 /* No comment provided by engineer. */
-"%@ absolute" = "%@绝对位置的";
-
-/* No comment provided by engineer. */
 "%@ boss" = "%@首领级";
 
 /* No comment provided by engineer. */
@@ -123,9 +120,6 @@
 
 /* No comment provided by engineer. */
 "About" = "关于";
-
-/* No comment provided by engineer. */
-"absolute" = "绝对位置内";
 
 /* No comment provided by engineer. */
 "Accuracy" = "命中";
@@ -1181,10 +1175,10 @@
 "Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的区域，每秒治疗其中的友方目标 [%3$@]%4$@ HP，持续 [%5$@] 秒。";
+"Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." = "展开一片半径为 %1$d 的区域，每秒对%5$@造成 [%2$@] %3$@伤害，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的区域，每秒对其中的敌方目标造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
+"Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s." = "展开一片半径为 %1$d 的区域，每秒治疗%2$@ [%3$@] %4$@ HP，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
 "Swing" = "普通攻击";
@@ -1212,6 +1206,9 @@
 
 /* target type */
 "targets of last effect or the %@ nearest" = "上一个效果或%@近的";
+
+/* No comment provided by engineer. */
+"targets within the scope" = "范围内的目标";
 
 /* No comment provided by engineer. */
 "Taunt all enemy targets for [%@]s." = "嘲讽所有敌方单位，持续 [%@] 秒。";

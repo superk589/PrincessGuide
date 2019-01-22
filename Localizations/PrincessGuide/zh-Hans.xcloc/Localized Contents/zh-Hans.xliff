@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.1" build-num="10B61"/>
@@ -120,11 +121,6 @@
       <trans-unit id="%@ Feedback">
         <source>%@ Feedback</source>
         <target>%@ 反馈</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="%@ absolute">
-        <source>%@ absolute</source>
-        <target>%@绝对位置的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ boss">
@@ -1754,14 +1750,14 @@
         <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s.">
-        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@]%4$@ HP per second for [%5$@]s.</source>
-        <target>在%2$@位置展开一片半径为 %1$d 的区域，每秒治疗其中的友方目标 [%3$@]%4$@ HP，持续 [%5$@] 秒。</target>
+      <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.">
+        <source>Summon a field of radius %1$d to deal [%2$@] %3$@ damage per second for [%4$@]s to %5$@.</source>
+        <target>展开一片半径为 %1$d 的区域，每秒对%5$@造成 [%2$@] %3$@伤害，持续 [%4$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s.">
-        <source>Summon an attack field of radius %1$d at %2$@ position to deal all enemy targets [%3$@] %4$@ damage per second for [%5$@]s.</source>
-        <target>在%2$@位置展开一片半径为 %1$d 的区域，每秒对其中的敌方目标造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。</target>
+      <trans-unit id="Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s.">
+        <source>Summon a healing field of radius %1$d to heal %2$@ [%3$@]%4$@ HP per second for [%5$@]s.</source>
+        <target>展开一片半径为 %1$d 的区域，每秒治疗%2$@ [%3$@] %4$@ HP，持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Swing">
@@ -2012,11 +2008,6 @@
       <trans-unit id="You have not bought this product yet.">
         <source>You have not bought this product yet.</source>
         <target>您未曾买过本产品。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="absolute">
-        <source>absolute</source>
-        <target>绝对位置内</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all">
@@ -2313,6 +2304,11 @@
         <source>targets of last effect or the %@ nearest</source>
         <target>上一个效果或%@近的</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="targets within the scope">
+        <source>targets within the scope</source>
+        <target>范围内的目标</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the %@ farthest">
         <source>the %@ farthest</source>

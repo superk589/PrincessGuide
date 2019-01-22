@@ -120,10 +120,6 @@
         <target>%@ フィードバック</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ absolute">
-        <source>%@ absolute</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="%@ boss">
         <source>%@ boss</source>
         <note>No comment provided by engineer.</note>
@@ -1582,12 +1578,12 @@
         <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s.">
-        <source>Summon a healing field of radius %1$d at %2$@ position to heal all friendly targets [%3$@]%4$@ HP per second for [%5$@]s.</source>
+      <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.">
+        <source>Summon a field of radius %1$d to deal [%2$@] %3$@ damage per second for [%4$@]s to %5$@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s.">
-        <source>Summon an attack field of radius %1$d at %2$@ position to deal all enemy targets [%3$@] %4$@ damage per second for [%5$@]s.</source>
+      <trans-unit id="Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s.">
+        <source>Summon a healing field of radius %1$d to heal %2$@ [%3$@]%4$@ HP per second for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Swing">
@@ -1810,10 +1806,6 @@
       </trans-unit>
       <trans-unit id="You have not bought this product yet.">
         <source>You have not bought this product yet.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="absolute">
-        <source>absolute</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all">
@@ -2077,6 +2069,10 @@
         <source>targets of last effect or the %@ nearest</source>
         <target>同じか%@近い</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="targets within the scope">
+        <source>targets within the scope</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the %@ farthest">
         <source>the %@ farthest</source>

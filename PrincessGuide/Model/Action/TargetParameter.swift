@@ -30,7 +30,8 @@ class TargetParameter {
     }
     
     var hasRelationPhrase: Bool {
-        return targetType != .`self`
+        return targetType != .`self` &&
+            targetType != .absolute
     }
     
     var hasCountPhrase: Bool {
@@ -57,8 +58,8 @@ class TargetParameter {
     
     func buildTargetClause() -> String {
         switch (hasCountPhrase, hasNthModifier, hasRangePhrase, hasRelationPhrase, hasDirectionPhrase) {
-        case (false, false, false, false, _):
-            return TargetType.`self`.description
+        case (_, _, _, false, _):
+            return targetType.description.description
         case (false, false, false, true, _):
             return NSLocalizedString("targets of last effect", comment: "")
         case (true, false, false, true, false):
@@ -267,7 +268,7 @@ enum TargetType: Int, CustomStringConvertible {
         case .backward:
             return NSLocalizedString("the most forward", comment: "target type")
         case .absolute:
-            return NSLocalizedString("absolute", comment: "")
+            return NSLocalizedString("targets within the scope", comment: "")
         case .tpDescending:
             return NSLocalizedString("the highest TP", comment: "target type")
         case .tpAscending, .tpReducing:
@@ -345,9 +346,6 @@ enum TargetType: Int, CustomStringConvertible {
             return String(format: format, localizedModifier)
         case .randomOnce:
             let format = NSLocalizedString("%@ random(once)", comment: "")
-            return String(format: format, localizedModifier)
-        case .absolute:
-            let format = NSLocalizedString("%@ absolute", comment: "")
             return String(format: format, localizedModifier)
         case .summon:
             let format = NSLocalizedString("%@ minion", comment: "")
