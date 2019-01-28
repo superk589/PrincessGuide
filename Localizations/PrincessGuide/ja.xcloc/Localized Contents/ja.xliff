@@ -2067,6 +2067,14 @@
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="targets of effect %d">
+        <source>targets of effect %d</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="targets of effect %d and %@ targets in range %d">
+        <source>targets of effect %1$d and %2$@ targets in range %3$d</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="targets of last effect">
         <source>targets of last effect</source>
         <target>同じ</target>

@@ -1208,6 +1208,12 @@
 "targets" = "目标";
 
 /* No comment provided by engineer. */
+"targets of effect %d" = "效果 %d 的目标";
+
+/* No comment provided by engineer. */
+"targets of effect %d and %@ targets in range %d" = "效果 %1$d 的目标和范围 %3$d 内的%2$@目标";
+
+/* No comment provided by engineer. */
 "targets of last effect" = "上一个效果影响到的目标";
 
 /* target type */

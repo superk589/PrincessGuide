@@ -149,7 +149,7 @@ class ActionParameter {
     let actionDetail1: Int
     let actionDetail2: Int
     let actionDetail3: Int
-    
+        
     lazy var actionDetails = [
         self.actionDetail1,
         self.actionDetail2,
@@ -157,8 +157,8 @@ class ActionParameter {
     ]
     
     required init(id: Int, targetAssignment: Int, targetNth: Int, actionType: Int, targetType: Int, targetRange: Int,
-                  direction: Int, targetCount: Int, actionValue1: Double, actionValue2: Double, actionValue3: Double, actionValue4: Double, actionValue5: Double, actionValue6: Double, actionValue7: Double, actionDetail1: Int, actionDetail2: Int, actionDetail3: Int) {
-        self.targetParameter = TargetParameter(targetAssignment: targetAssignment, targetNth: targetNth, targetType: targetType, targetRange: targetRange, direction: direction, targetCount: targetCount)
+                  direction: Int, targetCount: Int, actionValue1: Double, actionValue2: Double, actionValue3: Double, actionValue4: Double, actionValue5: Double, actionValue6: Double, actionValue7: Double, actionDetail1: Int, actionDetail2: Int, actionDetail3: Int, dependActionID: Int) {
+        self.targetParameter = TargetParameter(targetAssignment: targetAssignment, targetNth: targetNth, targetType: targetType, targetRange: targetRange, direction: direction, targetCount: targetCount, dependActionID: dependActionID)
         self.id = id
         self.rawActionType = actionType
         self.actionType = ActionType(rawValue: actionType) ?? .unknown

@@ -109,8 +109,11 @@ class Skill: Codable {
 extension Skill.Action {
     
     var parameter: ActionParameter {
-        
-        return ActionParameter.type(of: actionType).init(id: actionId, targetAssignment: targetAssignment, targetNth: targetNumber, actionType: actionType, targetType: targetType, targetRange: targetRange, direction: targetArea, targetCount: targetCount, actionValue1: actionValue1, actionValue2: actionValue2, actionValue3: actionValue3, actionValue4: actionValue4, actionValue5: actionValue5, actionValue6: actionValue6, actionValue7: actionValue7, actionDetail1: actionDetail1, actionDetail2: actionDetail2, actionDetail3: actionDetail3)
+        return buildParameter()
+    }
+    
+    func buildParameter(dependActionID: Int = 0) -> ActionParameter {
+        return ActionParameter.type(of: actionType).init(id: actionId, targetAssignment: targetAssignment, targetNth: targetNumber, actionType: actionType, targetType: targetType, targetRange: targetRange, direction: targetArea, targetCount: targetCount, actionValue1: actionValue1, actionValue2: actionValue2, actionValue3: actionValue3, actionValue4: actionValue4, actionValue5: actionValue5, actionValue6: actionValue6, actionValue7: actionValue7, actionDetail1: actionDetail1, actionDetail2: actionDetail2, actionDetail3: actionDetail3, dependActionID: dependActionID)
     }
     
 }
