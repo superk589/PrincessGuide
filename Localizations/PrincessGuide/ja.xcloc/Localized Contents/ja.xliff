@@ -514,11 +514,6 @@
         <source>Change self position to %@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position.">
-        <source>Change self position.</source>
-        <target>自分のポジションを変える。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Change skill visual effect for %@s.">
         <source>Change skill visual effect for %@s.</source>
         <note>No comment provided by engineer.</note>

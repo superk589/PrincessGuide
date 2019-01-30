@@ -554,11 +554,6 @@
         <target>改变自身位置到%@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position.">
-        <source>Change self position.</source>
-        <target>改变自身位置。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Change skill visual effect for %@s.">
         <source>Change skill visual effect for %@s.</source>
         <target>改变技能视觉效果，持续 %@ 秒。</target>
@@ -1276,22 +1271,22 @@
       </trans-unit>
       <trans-unit id="Move backward %@ with velocity %@/s.">
         <source>Move backward %1$@ with velocity %2$@/s.</source>
-        <target>向后移动 %1$@，速度 %2$@/s。</target>
+        <target>向后移动 %1$@，速度 %2$@/秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Move forward %@ with velocity %@/s.">
         <source>Move forward %1$@ with velocity %2$@/s.</source>
-        <target>向前移动 %1$@，速度 %2$@/s。</target>
+        <target>向前移动 %1$@，速度 %2$@/秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Move to %@ behind of %@ with velocity %@/s.">
         <source>Move to %1$@ behind of %2$@ with velocity %3$@/s.</source>
-        <target>移动到%2$@后 %1$@ 的位置，速度 %3$@/s。</target>
+        <target>移动到%2$@后 %1$@ 的位置，速度 %3$@/秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Move to %@ in front of %@ with velocity %@/s.">
         <source>Move to %1$@ in front of %2$@ with velocity %3$@/s.</source>
-        <target>移动到%2$@前 %1$@ 的位置，速度 %3$@/s。</target>
+        <target>移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Multiple [%@ * HP / max HP] to next effect.">

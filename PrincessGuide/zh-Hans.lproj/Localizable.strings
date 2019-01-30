@@ -332,9 +332,6 @@
 "Change self position to %@." = "改变自身位置到%@。";
 
 /* No comment provided by engineer. */
-"Change self position." = "改变自身位置。";
-
-/* No comment provided by engineer. */
 "Change skill visual effect for %@s." = "改变技能视觉效果，持续 %@ 秒。";
 
 /* No comment provided by engineer. */
@@ -833,19 +830,19 @@
 "Mission" = "探索";
 
 /* No comment provided by engineer. */
-"Move backward %@ with velocity %@/s." = "向后移动 %1$@，速度 %2$@/s。";
+"Move backward %@ with velocity %@/s." = "向后移动 %1$@，速度 %2$@/秒。";
 
 /* No comment provided by engineer. */
-"Move forward %@ with velocity %@/s." = "向前移动 %1$@，速度 %2$@/s。";
+"Move forward %@ with velocity %@/s." = "向前移动 %1$@，速度 %2$@/秒。";
 
 /* No comment provided by engineer. */
 "Move Speed" = "移动速度";
 
 /* No comment provided by engineer. */
-"Move to %@ behind of %@ with velocity %@/s." = "移动到%2$@后 %1$@ 的位置，速度 %3$@/s。";
+"Move to %@ behind of %@ with velocity %@/s." = "移动到%2$@后 %1$@ 的位置，速度 %3$@/秒。";
 
 /* No comment provided by engineer. */
-"Move to %@ in front of %@ with velocity %@/s." = "移动到%2$@前 %1$@ 的位置，速度 %3$@/s。";
+"Move to %@ in front of %@ with velocity %@/s." = "移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。";
 
 /* No comment provided by engineer. */
 "Multiple [%@ * defeated enemy count] to next effect." = "使下一个效果的数值乘以 [%@ * 击杀个数]。";
