@@ -266,7 +266,7 @@
 "buffs" = "增益";
 
 /* No comment provided by engineer. */
-"Burn" = "灼烧";
+"Burn" = "烧伤";
 
 /* No comment provided by engineer. */
 "By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again." = "目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。";
@@ -413,10 +413,10 @@
 "Condition: if target is blinded then use %d." = "条件分支：如果目标处于黑暗状态则使用 %1$d。";
 
 /* No comment provided by engineer. */
-"Condition: if target is burned then use %d, otherwise %d." = "条件分支：如果目标处于火伤状态则使用 %1$d，否则使用 %2$d。";
+"Condition: if target is burned then use %d, otherwise %d." = "条件分支：如果目标处于烧伤状态则使用 %1$d，否则使用 %2$d。";
 
 /* No comment provided by engineer. */
-"Condition: if target is burned then use %d." = "条件分支：如果目标处于火伤状态则使用 %1$d。";
+"Condition: if target is burned then use %d." = "条件分支：如果目标处于烧伤状态则使用 %1$d。";
 
 /* No comment provided by engineer. */
 "Condition: if target is charmed then use %d, otherwise %d." = "条件分支：如果目标处于魅惑状态则使用 %1$d，否则使用 %2$d。";
@@ -441,6 +441,12 @@
 
 /* No comment provided by engineer. */
 "Condition: if target's HP is below %d%% then use %d." = "条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d。";
+
+/* No comment provided by engineer. */
+"Condition: if the specific field exists then use %d, otherwise %d." = "条件分支：如果指定的场地效果存在则使用 %1$d，否则使用 %2$d。";
+
+/* No comment provided by engineer. */
+"Condition: if the specific field exists then use %d." = "条件分支：如果指定的场地效果存在则使用 %1$d。";
 
 /* No comment provided by engineer. */
 "Confirm" = "确定";

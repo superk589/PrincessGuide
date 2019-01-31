@@ -64,12 +64,14 @@ class TargetParameter {
     
     func buildTargetClause() -> String {
         switch (hasCountPhrase, hasNthModifier, hasRangePhrase, hasRelationPhrase, hasDirectionPhrase, hasDependAction) {
-        case (_, _, true, _, _, true):
-            let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
-            return String(format: format, dependActionID % 100, targetAssignment.description, targetRange.rawRange)
-        case (_, _, false, _, _, true):
-            let format = NSLocalizedString("targets of effect %d", comment: "")
-            return String(format: format, dependActionID % 100)
+        case (_, _, _, _, _, true):
+            if targetCount == .all && hasRangePhrase {
+                let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
+                return String(format: format, dependActionID % 100, targetAssignment.description, targetRange.rawRange)
+            } else {
+                let format = NSLocalizedString("targets of effect %d", comment: "")
+                return String(format: format, dependActionID % 100)
+            }           
         case (_, _, _, false, _, _):
             return targetType.description.description
         case (false, false, false, true, _, _):

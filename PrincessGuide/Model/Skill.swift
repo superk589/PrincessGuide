@@ -54,7 +54,7 @@ class Skill: Codable {
             let action = actions[i]
             if let dependID = dependActionIDs[action.actionId], let dependAction = actions.first(where: { $0.actionId == dependID }) {
                 var newAction = action
-                newAction.targetCount = dependAction.targetCount
+//                newAction.targetCount = dependAction.targetCount
                 newAction.targetAssignment = dependAction.targetAssignment
                 self.actions[i] = newAction
             }

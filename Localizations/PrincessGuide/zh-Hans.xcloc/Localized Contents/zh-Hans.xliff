@@ -441,7 +441,7 @@
       </trans-unit>
       <trans-unit id="Burn">
         <source>Burn</source>
-        <target>灼烧</target>
+        <target>烧伤</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.">
@@ -686,12 +686,12 @@
       </trans-unit>
       <trans-unit id="Condition: if target is burned then use %d, otherwise %d.">
         <source>Condition: if target is burned then use %1$d, otherwise %2$d.</source>
-        <target>条件分支：如果目标处于火伤状态则使用 %1$d，否则使用 %2$d。</target>
+        <target>条件分支：如果目标处于烧伤状态则使用 %1$d，否则使用 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Condition: if target is burned then use %d.">
         <source>Condition: if target is burned then use %d.</source>
-        <target>条件分支：如果目标处于火伤状态则使用 %1$d。</target>
+        <target>条件分支：如果目标处于烧伤状态则使用 %1$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Condition: if target is charmed then use %d, otherwise %d.">
@@ -732,6 +732,16 @@
       <trans-unit id="Condition: if target's HP is below %d%% then use %d.">
         <source>Condition: if target's HP is below %1$d%% then use %2$d.</source>
         <target>条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if the specific field exists then use %d, otherwise %d.">
+        <source>Condition: if the specific field exists then use %1$d, otherwise %2$d.</source>
+        <target>条件分支：如果指定的场地效果存在则使用 %1$d，否则使用 %2$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: if the specific field exists then use %d.">
+        <source>Condition: if the specific field exists then use %d.</source>
+        <target>条件分支：如果指定的场地效果存在则使用 %1$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Confirm">

@@ -104,6 +104,8 @@ class ActionParameter {
             return DispelAction.self
         case 50:
             return ChannelAction.self
+        case 53:
+            return IFExistsFieldForAllAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -452,6 +454,10 @@ enum ActionType: Int {
     case upperLimitAttack
     case hot
     case dispel
+    case channel = 50
+    case division
+    case changeWidth
+    case ifExistsFieldForAll
     case ex = 90
     case exPlus
 }
