@@ -1252,6 +1252,10 @@
         <source>Notification Permission</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Number of Unique Equipments">
+        <source>Number of Unique Equipments</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="OK">
         <source>OK</source>
         <target>はい</target>

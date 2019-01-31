@@ -377,6 +377,12 @@ extension Array where Element == Card {
                 }
             }
             sections = [frontSection, middleSection, backSection]
+        case .uniqueEquipNumber:
+            sections = reduce(into: [Int: [Card]]()) {
+                $0[$1.uniqueEquipIDs.count, default: [Card]()].append($1)
+                }
+                .map { Section(title: String($0.key), cards: $0.value) }
+                .sorted { $0.title > $1.title }
         }
         
         for index in sections.indices {

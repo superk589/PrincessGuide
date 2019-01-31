@@ -21,10 +21,11 @@ class CardSortingViewController: FormViewController {
 
     struct Setting: Codable, Equatable {
         
-        enum GroupingMethod: String, Codable, CustomStringConvertible {
+        enum GroupingMethod: String, Codable, CustomStringConvertible, CaseIterable {
             case guild
             case position
             case attackType
+            case uniqueEquipNumber
             case none
             
             var description: String {
@@ -35,12 +36,12 @@ class CardSortingViewController: FormViewController {
                     return NSLocalizedString("Position", comment: "")
                 case .attackType:
                     return NSLocalizedString("Attack Type", comment: "")
+                case .uniqueEquipNumber:
+                    return NSLocalizedString("Number of Unique Equipments", comment: "")
                 default:
                     return NSLocalizedString("None", comment: "")
                 }
             }
-            
-            static let allLabels = [GroupingMethod.guild, .position, .attackType, .none]
         }
         
         enum SortingMethod: String, Codable, CustomStringConvertible {
@@ -218,7 +219,7 @@ class CardSortingViewController: FormViewController {
                 row.displayValueFor = { (rowValue: String?) in
                     return rowValue.flatMap { Setting.GroupingMethod(rawValue: $0)?.description }
                 }
-                row.options = Setting.GroupingMethod.allLabels.map { $0.rawValue }
+                row.options = Setting.GroupingMethod.allCases.map { $0.rawValue }
                 row.value = Setting.default.groupingMethod.rawValue
                 
                 }.cellSetup(cellSetup(cell:row:))

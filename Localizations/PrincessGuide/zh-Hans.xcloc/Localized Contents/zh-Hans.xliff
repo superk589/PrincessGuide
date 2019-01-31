@@ -1394,6 +1394,11 @@
         <target>系统通知权限</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Number of Unique Equipments">
+        <source>Number of Unique Equipments</source>
+        <target>专属装备数量</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="OK">
         <source>OK</source>
         <target>确定</target>
