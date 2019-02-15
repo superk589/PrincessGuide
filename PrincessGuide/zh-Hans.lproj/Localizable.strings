@@ -1352,7 +1352,7 @@
 "Total Mana Cost" = "合计所需 Mana";
 
 /* No comment provided by engineer. */
-"Tower" = "月神塔";
+"Tower" = "露娜塔";
 
 /* No comment provided by engineer. */
 "Trigger: %d%% on damaged." = "触发条件：受到伤害时 %d%% 触发。";

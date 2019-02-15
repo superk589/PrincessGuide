@@ -145,7 +145,14 @@ class CDSkillTableViewController: CDTableViewController {
                 return [row]
             }
             let actions = skill.actions
-            let minions = actions.compactMap { $0.parameter as? SummonAction }.compactMap { $0.minion }
+            let minions = actions
+                .compactMap { $0.parameter as? SummonAction }
+                .compactMap { $0.minion }
+                .reduce(into: [Minion]()) { results, minion in
+                    if !results.contains(where: { $0.base.unitId == minion.base.unitId }) {
+                        results.append(minion)
+                    }
+            }
             let rows = minions.map { Row(type: CDMinionTableViewCell.self, data: .minion($0)) }
             
             return [row] + rows

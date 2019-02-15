@@ -59,7 +59,16 @@ class EDSkillTableViewController: EDTableViewController {
                 return [row]
             }
             let actions = skill.actions
-            let minions = actions.compactMap { $0.parameter as? SummonAction }.compactMap { $0.enemyMinion }
+            
+            let minions = actions
+                .compactMap { $0.parameter as? SummonAction }
+                .compactMap { $0.enemyMinion }
+                .reduce(into: [Enemy]()) { results, minion in
+                    if !results.contains(where: { $0.base.unitId == minion.base.unitId }) {
+                        results.append(minion)
+                    }
+            }
+                    
             let rows = minions.map { Row(type: CDMinionTableViewCell.self, data: .minion($0)) }
             
             return [row] + rows
