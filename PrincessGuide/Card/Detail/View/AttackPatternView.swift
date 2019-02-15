@@ -56,7 +56,7 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PatternCollectionViewCell.description(), for: indexPath) as! PatternCollectionViewCell
         
         if let pattern = pattern, let atkType = atkType, let mainSkills = skills {
-            cell.configure(for: pattern, index: indexPath.item, atkType: atkType, mainSkills: mainSkills)
+            cell.configure(for: pattern, index: indexPath.item, atkType: atkType, mainSkills: mainSkills, spSkills: spSkills)
         }
         return cell
     }
@@ -70,11 +70,13 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     private var enemy: Enemy?
     private var atkType: Int?
     private var skills: [Skill]?
+    private var spSkills: [Skill]?
     
-    func configure(for pattern: AttackPattern, atkType: Int, skills: [Skill]) {
+    func configure(for pattern: AttackPattern, atkType: Int, skills: [Skill], spSkills: [Skill]?) {
         self.pattern = pattern
         self.atkType = atkType
         self.skills = skills
+        self.spSkills = spSkills
         collectionView.reloadData()
     }
 }

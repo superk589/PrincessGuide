@@ -311,6 +311,9 @@
 "Center" = "中卫";
 
 /* No comment provided by engineer. */
+"Change attack pattern back to %d after effect over." = "效果结束后，改回攻击模式 %d。";
+
+/* No comment provided by engineer. */
 "Change attack pattern to %d for %@s." = "改为使用攻击模式 %1$d，持续 %2$@ 秒。";
 
 /* No comment provided by engineer. */
@@ -453,6 +456,9 @@
 
 /* No comment provided by engineer. */
 "Copy" = "复制";
+
+/* No comment provided by engineer. */
+"Cost %@ TP/s, change attack pattern to %d until TP is zero." = "消耗 %1$@ TP/秒，TP 耗光前改为使用攻击模式 %2$d。";
 
 /* No comment provided by engineer. */
 "Crafted" = "制作";
@@ -1155,6 +1161,9 @@
 
 /* No comment provided by engineer. */
 "SP" = "SP";
+
+/* No comment provided by engineer. */
+"SP %d" = "SP %d";
 
 /* No comment provided by engineer. */
 "Star Rank" = "星级";

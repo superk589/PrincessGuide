@@ -486,6 +486,10 @@
         <target>中衛</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Change attack pattern back to %d after effect over.">
+        <source>Change attack pattern back to %d after effect over.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Change attack pattern to %d for %@s.">
         <source>Change attack pattern to %1$d for %2$@s.</source>
         <note>No comment provided by engineer.</note>
@@ -682,6 +686,10 @@
       </trans-unit>
       <trans-unit id="Copy">
         <source>Copy</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cost %@ TP/s, change attack pattern to %d until TP is zero.">
+        <source>Cost %1$@ TP/s, change attack pattern to %2$d until TP is zero.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Crafted">
@@ -1460,6 +1468,10 @@
       <trans-unit id="SP">
         <source>SP</source>
         <target>SP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="SP %d">
+        <source>SP %d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Save">

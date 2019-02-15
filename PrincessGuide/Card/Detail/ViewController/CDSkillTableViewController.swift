@@ -101,6 +101,11 @@ class CDSkillTableViewController: CDTableViewController {
             }
         }
         
+        // setup sp skills
+        rows += card.spSkills.enumerated().map {
+            return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .sp, property, $0.offset + 1))
+        }
+        
         // setup ex skills
         if settings.skillStyle == .both {
             rows += zip(card.exSkills, card.exSkillEvolutions)

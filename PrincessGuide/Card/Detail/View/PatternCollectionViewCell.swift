@@ -49,7 +49,7 @@ class PatternCollectionViewCell: UICollectionViewCell {
         loopLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
     }
     
-    func configure(for pattern: AttackPattern, index: Int, atkType: Int, mainSkills: [Skill]) {
+    func configure(for pattern: AttackPattern, index: Int, atkType: Int, mainSkills: [Skill], spSkills: [Skill]?) {
         let item = pattern.items[index]
         switch item {
         case 1:
@@ -59,11 +59,25 @@ class PatternCollectionViewCell: UICollectionViewCell {
                 skillIcon.equipmentID = 101011                
             }
             skillLabel.text = NSLocalizedString("Swing", comment: "")
-        case let x where x > 1000:
+        case let x where 1000..<2000 ~= x:
             let index = x - 1001
-            guard index < mainSkills.count else { fallthrough }
+            guard index < mainSkills.count else {
+                skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
+                skillLabel.text = NSLocalizedString("Unknown", comment: "")
+                break
+            }
             skillIcon.skillIconID = mainSkills[index].base.iconType
             let format = NSLocalizedString("Main %d", comment: "")
+            skillLabel.text = String(format: format, index + 1)
+        case let x where 2000..<3000 ~= x:
+            let index = x - 2001
+            guard let spSkills = spSkills, index < spSkills.count else {
+                skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
+                skillLabel.text = NSLocalizedString("Unknown", comment: "")
+                break
+            }
+            skillIcon.skillIconID = spSkills[index].base.iconType
+            let format = NSLocalizedString("SP %d", comment: "")
             skillLabel.text = String(format: format, index + 1)
         default:
             skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")

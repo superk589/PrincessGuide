@@ -46,16 +46,16 @@ class CDPatternTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     func configure(for item: CardDetailItem) {
         guard case .pattern(let pattern, let card, let index) = item else { return }
-        configure(for: pattern, atkType: card.base.atkType, skills: card.mainSkills, index: index)
+        configure(for: pattern, atkType: card.base.atkType, skills: card.mainSkills, spSkills: card.spSkills, index: index)
     }
     
-    func configure(for pattern: AttackPattern, atkType: Int, skills: [Skill], index: Int?) {
+    func configure(for pattern: AttackPattern, atkType: Int, skills: [Skill], spSkills: [Skill], index: Int?) {
         if let index = index {
             titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
         } else {
             titleLabel.text = NSLocalizedString("Attack Pattern", comment: "")
         }
-        attackPatternView.configure(for: pattern, atkType: atkType, skills: skills)
+        attackPatternView.configure(for: pattern, atkType: atkType, skills: skills, spSkills: spSkills)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,6 +67,6 @@ class CDPatternTableViewCell: UITableViewCell, CardDetailConfigurable {
 extension CDPatternTableViewCell: MinionDetailConfigurable {
     func configure(for item: MinionDetailItem) {
         guard case .pattern(let pattern, let minion, let index) = item else { return }
-        configure(for: pattern, atkType: minion.base.atkType, skills: minion.mainSkills, index: index)
+        configure(for: pattern, atkType: minion.base.atkType, skills: minion.mainSkills, spSkills: minion.spSkills, index: index)
     }
 }

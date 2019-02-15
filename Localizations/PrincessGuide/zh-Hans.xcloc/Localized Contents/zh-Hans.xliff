@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.1" build-num="10B61"/>
@@ -520,6 +519,11 @@
         <target>中卫</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Change attack pattern back to %d after effect over.">
+        <source>Change attack pattern back to %d after effect over.</source>
+        <target>效果结束后，改回攻击模式 %d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Change attack pattern to %d for %@s.">
         <source>Change attack pattern to %1$d for %2$@s.</source>
         <target>改为使用攻击模式 %1$d，持续 %2$@ 秒。</target>
@@ -753,6 +757,11 @@
       <trans-unit id="Copy">
         <source>Copy</source>
         <target>复制</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cost %@ TP/s, change attack pattern to %d until TP is zero.">
+        <source>Cost %1$@ TP/s, change attack pattern to %2$d until TP is zero.</source>
+        <target>消耗 %1$@ TP/秒，TP 耗光前改为使用攻击模式 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Crafted">
@@ -1618,6 +1627,11 @@
       <trans-unit id="SP">
         <source>SP</source>
         <target>SP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="SP %d">
+        <source>SP %d</source>
+        <target>SP %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Save">
