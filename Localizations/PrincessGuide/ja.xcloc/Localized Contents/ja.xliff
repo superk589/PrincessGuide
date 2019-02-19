@@ -249,6 +249,10 @@
         <source>%1$d in front of %2$@, summon a minion of ID: %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id=", ">
+        <source>, </source>
+        <note>clause separator</note>
+      </trans-unit>
       <trans-unit id="ATK">
         <source>ATK</source>
         <target>物理攻撃力</target>
@@ -608,6 +612,10 @@
         <target>完了</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Condition: %@.">
+        <source>Condition: %@.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Condition: [%@]%% chance use %d when takes damage within %@s.">
         <source>Condition: [%1$@]%% chance use %2$d when takes damage within %3$@s.</source>
         <note>No comment provided by engineer.</note>
@@ -622,54 +630,6 @@
       </trans-unit>
       <trans-unit id="Condition: if defeat target by the last effect then use %d.">
         <source>Condition: if defeat target by the last effect then use %d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is blinded then use %d, otherwise %d.">
-        <source>Condition: if target is blinded then use %1$d, otherwise %2$d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is blinded then use %d.">
-        <source>Condition: if target is blinded then use %d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is burned then use %d, otherwise %d.">
-        <source>Condition: if target is burned then use %1$d, otherwise %2$d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is burned then use %d.">
-        <source>Condition: if target is burned then use %d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is charmed then use %d, otherwise %d.">
-        <source>Condition: if target is charmed then use %1$d, otherwise %2$d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is charmed then use %d.">
-        <source>Condition: if target is charmed then use %d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is controlled then use %d, otherwise %d.">
-        <source>Condition: if target is controlled then use %1$d, otherwise %2$d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is controlled then use %d.">
-        <source>Condition: if target is controlled then use %d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is cursed then use %d, otherwise %d.">
-        <source>Condition: if target is cursed then use %1$d, otherwise %2$d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is cursed then use %d.">
-        <source>Condition: if target is cursed then use %d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target's HP is below %d%% then use %d, otherwise %d.">
-        <source>Condition: if target's HP is below %1$d%% then use %2$d, otherwise %3$d.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target's HP is below %d%% then use %d.">
-        <source>Condition: if target's HP is below %1$d%% then use %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Condition: if the specific field exists then use %d, otherwise %d.">
@@ -2264,6 +2224,54 @@
       </trans-unit>
       <trans-unit id="unknown type">
         <source>unknown type</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is blinded">
+        <source>use %1$d to any of %2$@ is blinded</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is burned">
+        <source>use %1$d to any of %2$@ is burned</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is charmed">
+        <source>use %1$d to any of %2$@ is charmed</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is controlled">
+        <source>use %1$d to any of %2$@ is controlled</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is cursed">
+        <source>use %1$d to any of %2$@ is cursed</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not blinded">
+        <source>use %1$d to any of %2$@ is not blinded</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not burned">
+        <source>use %1$d to any of %2$@ is not burned</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not charmed">
+        <source>use %1$d to any of %2$@ is not charmed</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not controlled">
+        <source>use %1$d to any of %2$@ is not controlled</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not cursed">
+        <source>use %1$d to any of %2$@ is not cursed</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ who's HP is below %d%%">
+        <source>use %1$d to any of %2$@ who's HP is below %3$d%%</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ who's HP is not below %d%%">
+        <source>use %1$d to any of %2$@ who's HP is not below %3$d%%</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="value in combat">

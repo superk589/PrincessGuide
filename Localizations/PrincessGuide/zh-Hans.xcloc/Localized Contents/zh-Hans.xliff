@@ -259,6 +259,11 @@
         <target>在%2$@前 %1$d 的位置，召唤 ID 为 %3$d 的随从。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id=", ">
+        <source>, </source>
+        <target>，</target>
+        <note>clause separator</note>
+      </trans-unit>
       <trans-unit id="ATK">
         <source>ATK</source>
         <target>物理攻击力</target>
@@ -659,6 +664,11 @@
         <target>完成</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Condition: %@.">
+        <source>Condition: %@.</source>
+        <target>条件分支：%@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Condition: [%@]%% chance use %d when takes damage within %@s.">
         <source>Condition: [%1$@]%% chance use %2$d when takes damage within %3$@s.</source>
         <target>条件分支：%3$@ 秒内受到伤害时有 [%1$@]%% 几率使用 %2$d。</target>
@@ -677,66 +687,6 @@
       <trans-unit id="Condition: if defeat target by the last effect then use %d.">
         <source>Condition: if defeat target by the last effect then use %d.</source>
         <target>条件分支：上一个效果成功击杀目标则使用 %d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is blinded then use %d, otherwise %d.">
-        <source>Condition: if target is blinded then use %1$d, otherwise %2$d.</source>
-        <target>条件分支：如果目标处于黑暗状态则使用 %1$d，否则使用 %2$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is blinded then use %d.">
-        <source>Condition: if target is blinded then use %d.</source>
-        <target>条件分支：如果目标处于黑暗状态则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is burned then use %d, otherwise %d.">
-        <source>Condition: if target is burned then use %1$d, otherwise %2$d.</source>
-        <target>条件分支：如果目标处于烧伤状态则使用 %1$d，否则使用 %2$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is burned then use %d.">
-        <source>Condition: if target is burned then use %d.</source>
-        <target>条件分支：如果目标处于烧伤状态则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is charmed then use %d, otherwise %d.">
-        <source>Condition: if target is charmed then use %1$d, otherwise %2$d.</source>
-        <target>条件分支：如果目标处于魅惑状态则使用 %1$d，否则使用 %2$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is charmed then use %d.">
-        <source>Condition: if target is charmed then use %d.</source>
-        <target>条件分支：如果目标处于魅惑状态则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is controlled then use %d, otherwise %d.">
-        <source>Condition: if target is controlled then use %1$d, otherwise %2$d.</source>
-        <target>条件分支：如果目标处于被控制状态则使用 %1$d，否则使用 %2$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is controlled then use %d.">
-        <source>Condition: if target is controlled then use %d.</source>
-        <target>条件分支：如果目标处于被控制状态则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is cursed then use %d, otherwise %d.">
-        <source>Condition: if target is cursed then use %1$d, otherwise %2$d.</source>
-        <target>条件分支：如果目标处于诅咒状态则使用 %1$d，否则使用 %2$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target is cursed then use %d.">
-        <source>Condition: if target is cursed then use %d.</source>
-        <target>条件分支：如果目标处于诅咒状态则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target's HP is below %d%% then use %d, otherwise %d.">
-        <source>Condition: if target's HP is below %1$d%% then use %2$d, otherwise %3$d.</source>
-        <target>条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d，否则使用 %3$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if target's HP is below %d%% then use %d.">
-        <source>Condition: if target's HP is below %1$d%% then use %2$d.</source>
-        <target>条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Condition: if the specific field exists then use %d, otherwise %d.">
@@ -2512,6 +2462,66 @@
       <trans-unit id="unknown type">
         <source>unknown type</source>
         <target>未知</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is blinded">
+        <source>use %1$d to any of %2$@ is blinded</source>
+        <target>对%2$@中处于黑暗状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is burned">
+        <source>use %1$d to any of %2$@ is burned</source>
+        <target>对%2$@中处于烧伤状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is charmed">
+        <source>use %1$d to any of %2$@ is charmed</source>
+        <target>对%2$@中处于魅惑状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is controlled">
+        <source>use %1$d to any of %2$@ is controlled</source>
+        <target>对%2$@中处于被控制状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is cursed">
+        <source>use %1$d to any of %2$@ is cursed</source>
+        <target>对%2$@中处于诅咒状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not blinded">
+        <source>use %1$d to any of %2$@ is not blinded</source>
+        <target>对%2$@中未处于黑暗状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not burned">
+        <source>use %1$d to any of %2$@ is not burned</source>
+        <target>对%2$@中未处于烧伤状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not charmed">
+        <source>use %1$d to any of %2$@ is not charmed</source>
+        <target>对%2$@中未处于魅惑状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not controlled">
+        <source>use %1$d to any of %2$@ is not controlled</source>
+        <target>对%2$@中未处于被控制状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not cursed">
+        <source>use %1$d to any of %2$@ is not cursed</source>
+        <target>对%2$@中未处于诅咒状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ who's HP is below %d%%">
+        <source>use %1$d to any of %2$@ who's HP is below %3$d%%</source>
+        <target>对%2$@中 HP 低于 %3$d%% 的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ who's HP is not below %d%%">
+        <source>use %1$d to any of %2$@ who's HP is not below %3$d%%</source>
+        <target>对%2$@中 HP 不低于 %3$d%% 的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="value in combat">

@@ -1,3 +1,6 @@
+/* clause separator */
+", " = "，";
+
 /* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ for [%@]s." = "%1$@%2$@ [%3$@]%4$@ %5$@，持续 [%6$@] 秒。";
 
@@ -401,6 +404,9 @@
 "Condition: [%@]%% chance use %d when takes damage within %@s." = "条件分支：%3$@ 秒内受到伤害时有 [%1$@]%% 几率使用 %2$d。";
 
 /* No comment provided by engineer. */
+"Condition: %@." = "条件分支：%@。";
+
+/* No comment provided by engineer. */
 "Condition: counter is greater or equal to %d then use %d, otherwise %d." = "条件分支：计数器大于等于 %1$d 则使用 %2$d，否则使用 %3$d。";
 
 /* No comment provided by engineer. */
@@ -408,42 +414,6 @@
 
 /* No comment provided by engineer. */
 "Condition: if defeat target by the last effect then use %d." = "条件分支：上一个效果成功击杀目标则使用 %d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is blinded then use %d, otherwise %d." = "条件分支：如果目标处于黑暗状态则使用 %1$d，否则使用 %2$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is blinded then use %d." = "条件分支：如果目标处于黑暗状态则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is burned then use %d, otherwise %d." = "条件分支：如果目标处于烧伤状态则使用 %1$d，否则使用 %2$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is burned then use %d." = "条件分支：如果目标处于烧伤状态则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is charmed then use %d, otherwise %d." = "条件分支：如果目标处于魅惑状态则使用 %1$d，否则使用 %2$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is charmed then use %d." = "条件分支：如果目标处于魅惑状态则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is controlled then use %d, otherwise %d." = "条件分支：如果目标处于被控制状态则使用 %1$d，否则使用 %2$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is controlled then use %d." = "条件分支：如果目标处于被控制状态则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is cursed then use %d, otherwise %d." = "条件分支：如果目标处于诅咒状态则使用 %1$d，否则使用 %2$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is cursed then use %d." = "条件分支：如果目标处于诅咒状态则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target's HP is below %d%% then use %d, otherwise %d." = "条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d，否则使用 %3$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target's HP is below %d%% then use %d." = "条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d。";
 
 /* No comment provided by engineer. */
 "Condition: if the specific field exists then use %d, otherwise %d." = "条件分支：如果指定的场地效果存在则使用 %1$d，否则使用 %2$d。";
@@ -1434,6 +1404,42 @@
 
 /* No comment provided by engineer. */
 "Upgrade to Pro Edition" = "升级至专业版";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is blinded" = "对%2$@中处于黑暗状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is burned" = "对%2$@中处于烧伤状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is charmed" = "对%2$@中处于魅惑状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is controlled" = "对%2$@中处于被控制状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is cursed" = "对%2$@中处于诅咒状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not blinded" = "对%2$@中未处于黑暗状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not burned" = "对%2$@中未处于烧伤状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not charmed" = "对%2$@中未处于魅惑状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not controlled" = "对%2$@中未处于被控制状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not cursed" = "对%2$@中未处于诅咒状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ who's HP is below %d%%" = "对%2$@中 HP 低于 %3$d%% 的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ who's HP is not below %d%%" = "对%2$@中 HP 不低于 %3$d%% 的使用 %1$d";
 
 /* No comment provided by engineer. */
 "Use Dark Theme" = "使用深色主题";

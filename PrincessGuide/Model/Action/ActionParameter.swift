@@ -240,7 +240,7 @@ class ActionParameter {
                         case (0, _), (_, 0):
                             part += " * \(key.description)"
                         case (_, _):
-                            part = "(\(part) * \(key.description)"
+                            part = "\(part) * \(key.description)"
                         }
                     }
                 }
