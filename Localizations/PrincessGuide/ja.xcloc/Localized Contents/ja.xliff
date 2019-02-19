@@ -2266,12 +2266,12 @@
         <source>use %1$d to any of %2$@ is not cursed</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ who's HP is below %d%%">
-        <source>use %1$d to any of %2$@ who's HP is below %3$d%%</source>
+      <trans-unit id="use %d to any of %@ whose HP is below %d%%">
+        <source>use %1$d to any of %2$@ whose HP is below %3$d%%</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ who's HP is not below %d%%">
-        <source>use %1$d to any of %2$@ who's HP is not below %3$d%%</source>
+      <trans-unit id="use %d to any of %@ whose HP is not below %d%%">
+        <source>use %1$d to any of %2$@ whose HP is not below %3$d%%</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="value in combat">

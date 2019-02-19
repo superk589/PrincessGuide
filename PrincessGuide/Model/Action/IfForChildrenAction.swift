@@ -32,7 +32,7 @@ class IfForChildrenAction: ActionParameter {
             let format = NSLocalizedString("use %d to any of %@ is cursed", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
         case 901..<1000:
-            let format = NSLocalizedString("use %d to any of %@ who's HP is below %d%%", comment: "")
+            let format = NSLocalizedString("use %d to any of %@ whose HP is below %d%%", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 900)
         default:
             return nil
@@ -62,7 +62,7 @@ class IfForChildrenAction: ActionParameter {
             let format = NSLocalizedString("use %d to any of %@ is not cursed", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
         case 901..<1000:
-            let format = NSLocalizedString("use %d to any of %@ who's HP is not below %d%%", comment: "")
+            let format = NSLocalizedString("use %d to any of %@ whose HP is not below %d%%", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 900)
         default:
             return nil

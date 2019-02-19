@@ -1436,10 +1436,10 @@
 "use %d to any of %@ is not cursed" = "对%2$@中未处于诅咒状态的使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ who's HP is below %d%%" = "对%2$@中 HP 低于 %3$d%% 的使用 %1$d";
+"use %d to any of %@ whose HP is below %d%%" = "对%2$@中 HP 低于 %3$d%% 的使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ who's HP is not below %d%%" = "对%2$@中 HP 不低于 %3$d%% 的使用 %1$d";
+"use %d to any of %@ whose HP is not below %d%%" = "对%2$@中 HP 不低于 %3$d%% 的使用 %1$d";
 
 /* No comment provided by engineer. */
 "Use Dark Theme" = "使用深色主题";
