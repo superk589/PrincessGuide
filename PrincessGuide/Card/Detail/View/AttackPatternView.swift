@@ -49,15 +49,13 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pattern?.items.count ?? 0
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PatternCollectionViewCell.description(), for: indexPath) as! PatternCollectionViewCell
-        
-        if let pattern = pattern, let atkType = atkType, let mainSkills = skills {
-            cell.configure(for: pattern, index: indexPath.item, atkType: atkType, mainSkills: mainSkills, spSkills: spSkills)
-        }
+        let item = items[indexPath.item]
+        cell.configure(for: item)
         return cell
     }
     
@@ -65,18 +63,28 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var pattern: AttackPattern?
-    private var unit: Card?
-    private var enemy: Enemy?
-    private var atkType: Int?
-    private var skills: [Skill]?
-    private var spSkills: [Skill]?
+    struct Item {
+        enum IconType {
+            case magicalSwing
+            case physicalSwing
+            case skill(Int)
+            case unknown
+        }
+        enum LoopType {
+            case start
+            case end
+            case inPlace
+            case none
+        }
+        let iconType: IconType
+        let loopType: LoopType
+        let text: String
+    }
+    private var items: [Item] = []
     
-    func configure(for pattern: AttackPattern, atkType: Int, skills: [Skill], spSkills: [Skill]?) {
-        self.pattern = pattern
-        self.atkType = atkType
-        self.skills = skills
-        self.spSkills = spSkills
+    func configure(for items: [Item]) {
+        self.items = items
         collectionView.reloadData()
     }
+    
 }

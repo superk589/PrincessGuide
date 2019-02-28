@@ -104,11 +104,14 @@ class Enemy: Codable {
         }
         
         var exSkillIDs: [Int] {
-            return Array([exSkill1, exSkill2, exSkill3, exSkill4, exSkill5].prefix { $0 != 0 })
+            return Array([exSkill1, exSkill2, exSkill3, exSkill4, exSkill5]
+                //.prefix { $0 != 0 }
+            )
         }
         
         var mainSkillIDs: [Int] {
-            return Array([mainSkill1, mainSkill2, mainSkill3, mainSkill4, mainSkill5, mainSkill6, mainSkill7, mainSkill8, mainSkill9, mainSkill10].prefix { $0 != 0 }
+            return Array([mainSkill1, mainSkill2, mainSkill3, mainSkill4, mainSkill5, mainSkill6, mainSkill7, mainSkill8, mainSkill9, mainSkill10]
+                //.prefix { $0 != 0 }
             )
         }
         
@@ -134,7 +137,7 @@ class Enemy: Codable {
     
     lazy var exSkillLevels: [Int: Int] = {
         return zip(base.exSkillLevels, base.exSkillIDs)
-            .prefix { $0.0 != 0 }
+//            .prefix { $0.0 != 0 }
             .reduce(into: [Int: Int]() ) {
                 $0[$1.1] = $1.0
         }
@@ -142,7 +145,7 @@ class Enemy: Codable {
     
     lazy var mainSkillLevels: [Int: Int] = {
         return zip(base.mainSkillLevels, base.mainSkillIDs)
-            .prefix { $0.0 != 0 }
+//            .prefix { $0.0 != 0 }
             .reduce(into: [Int: Int]()) {
                 $0[$1.1] = $1.0
         }

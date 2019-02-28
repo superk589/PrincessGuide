@@ -65,7 +65,9 @@ class CraftTableViewController: UITableViewController {
             .map { CardRequire(card: $0, number: $0.countOf(equipment)) }
             .filter { $0.number > 0 }
             .sorted { $0.number > $1.number }
-        rows.append(Row(type: CraftCharaTableViewCell.self, data: .charas(requires)))
+        if requires.count > 0 {
+            rows.append(Row(type: CraftCharaTableViewCell.self, data: .charas(requires)))
+        }
         rows.append(Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Description", comment: ""), equipment.description)))
     }
     

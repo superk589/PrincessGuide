@@ -11,12 +11,14 @@ import Foundation
 enum AilmentDetail: CustomStringConvertible {
     case dot(DotDetail)
     case action(ActionDetail)
-    
+    case charm(CharmDetail)
     var description: String {
         switch self {
         case .dot(let detail):
             return detail.description
         case .action(let detail):
+            return detail.description
+        case .charm(let detail):
             return detail.description
         }
     }
@@ -41,6 +43,20 @@ enum DotDetail: Int, CustomStringConvertible {
             return NSLocalizedString("Curse", comment: "")
         default:
             return NSLocalizedString("Unknown", comment: "")
+        }
+    }
+}
+
+enum CharmDetail: Int, CustomStringConvertible {
+    case charm = 0
+    case confuse
+    
+    var description: String {
+        switch self {
+        case .charm:
+            return NSLocalizedString("Charm", comment: "")
+        case .confuse:
+            return NSLocalizedString("Confuse", comment: "")
         }
     }
 }
@@ -92,6 +108,7 @@ enum AilmentType: Int, CustomStringConvertible {
     case charm = 11
     case darken
     case silence
+    case confuse = 19
     case instantDeath = 30
     case unknown
     
@@ -113,6 +130,8 @@ enum AilmentType: Int, CustomStringConvertible {
             return NSLocalizedString("Instant Death", comment: "")
         case .unknown:
             return NSLocalizedString("Unknown Effect", comment: "")
+        case .confuse:
+            return NSLocalizedString("Confuse", comment: "")
         }
     }
 }
@@ -131,6 +150,8 @@ struct Ailment: Codable, CustomStringConvertible {
             return .action(ActionDetail(rawValue: detail) ?? .unknown)
         case .dot:
             return .dot(DotDetail(rawValue: detail) ?? .unknown)
+        case .charm:
+            return .charm(CharmDetail(rawValue: detail) ?? .charm)
         default:
             return nil
         }

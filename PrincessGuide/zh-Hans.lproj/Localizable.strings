@@ -154,7 +154,7 @@
 /* No comment provided by engineer. */
 "Age" = "年龄";
 
-/* target modifier */
+/* No comment provided by engineer. */
 "all" = "全部";
 
 /* all [enemy] [physics] targets */
@@ -253,6 +253,9 @@
 /* skill style */
 "both" = "进化前后";
 
+/* target modifier */
+"both sides" = "敌方和友方";
+
 /* No comment provided by engineer. */
 "Box Detail" = "Box 详情";
 
@@ -318,6 +321,9 @@
 
 /* No comment provided by engineer. */
 "Change attack pattern to %d for %@s." = "改为使用攻击模式 %1$d，持续 %2$@ 秒。";
+
+/* No comment provided by engineer. */
+"Change body width to %@." = "改变模型宽度至 %@。";
 
 /* No comment provided by engineer. */
 "Change self position %@ backward then return." = "改变自身位置，向后移动 %@，技能结束后回原位置。";
@@ -423,6 +429,12 @@
 
 /* No comment provided by engineer. */
 "Confirm" = "确定";
+
+/* No comment provided by engineer. */
+"Confuse" = "混乱";
+
+/* No comment provided by engineer. */
+"Confuse %@ with [%@]%% chance for [%@]s." = "[%2$@]%% 几率使%1$@混乱，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Copy" = "复制";
@@ -1100,6 +1112,9 @@
 "Show the Latest Notice" = "显示最新通知";
 
 /* No comment provided by engineer. */
+"Shrine" = "圣迹调查";
+
+/* No comment provided by engineer. */
 "Silence" = "沉默";
 
 /* No comment provided by engineer. */
@@ -1157,13 +1172,14 @@
 "Summary" = "总结";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。";
+"Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@] %5$@，持续 [%6$@] 秒。";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。";
+"Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。
+";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." = "展开一片半径为 %1$d 的区域，每秒对%5$@造成 [%2$@] %3$@伤害，持续 [%4$@] 秒。";

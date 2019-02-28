@@ -498,6 +498,10 @@
         <source>Change attack pattern to %1$d for %2$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Change body width to %@.">
+        <source>Change body width to %@.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Change self position %@ backward then return.">
         <source>Change self position %@ backward then return.</source>
         <note>No comment provided by engineer.</note>
@@ -642,6 +646,14 @@
       </trans-unit>
       <trans-unit id="Confirm">
         <source>Confirm</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Confuse">
+        <source>Confuse</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Confuse %@ with [%@]%% chance for [%@]s.">
+        <source>Confuse %1$@ with [%2$@]%% chance for [%3$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Copy">
@@ -1479,6 +1491,10 @@
         <source>Show the Latest Notice</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Shrine">
+        <source>Shrine</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Silence">
         <source>Silence</source>
         <target>沈黙</target>
@@ -1553,16 +1569,16 @@
         <source>Summary</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s.">
-        <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
+      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s.">
+        <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@] %5$@ for [%6$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s.">
         <source>Summon a field of radius %1$d at position of %2$@ to deal [%3$@] %4$@ damage per second for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s.">
-        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
+      <trans-unit id="Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s.">
+        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@] %5$@ for [%6$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.">
@@ -1802,7 +1818,7 @@
       <trans-unit id="all">
         <source>all</source>
         <target>全体</target>
-        <note>target modifier</note>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all %@ %@ targets">
         <source>all %1$@ %2$@ targets</source>
@@ -1849,6 +1865,10 @@
       <trans-unit id="both">
         <source>both</source>
         <note>skill style</note>
+      </trans-unit>
+      <trans-unit id="both sides">
+        <source>both sides</source>
+        <note>target modifier</note>
       </trans-unit>
       <trans-unit id="buffs">
         <source>buffs</source>

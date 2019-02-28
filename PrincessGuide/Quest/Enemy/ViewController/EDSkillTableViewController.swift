@@ -49,7 +49,7 @@ class EDSkillTableViewController: EDTableViewController {
             enemy.exSkills
                 .enumerated()
                 .map {
-                    Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .ex, enemy.exSkillLevel(for: $0.element.base.skillId), property, $0.offset + 1))
+                    Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .ex, enemy.exSkillLevel(for: $0.element.base.skillId), property, nil))
             }
         )
         

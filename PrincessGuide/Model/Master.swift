@@ -483,22 +483,20 @@ class Master: FMDatabaseQueue {
                 a.*,
                 b.total_point
             FROM
-                equipment_data a,
-                (
+                equipment_data a
+                LEFT JOIN (
                     SELECT
-                        promotion_level, max(total_point) total_point
+                        promotion_level,
+                        max(total_point) total_point
                     FROM
                         equipment_enhance_data
                     GROUP BY
-                        promotion_level
-                ) b
-            WHERE
-                a.promotion_level = b.promotion_level
+                        promotion_level) b ON a.promotion_level = b.promotion_level
             """
             if let id = equipmentID {
-                selectSql += " AND equipment_id = \(id)"
+                selectSql += " WHERE equipment_id = \(id)"
             } else if let equipmentType = equipmentType {
-                selectSql += " AND craft_flg = \(equipmentType.rawValue)"
+                selectSql += " WHERE craft_flg = \(equipmentType.rawValue)"
             }
             let set = try db.executeQuery(selectSql, values: nil)
             while set.next() {
@@ -712,9 +710,10 @@ class Master: FMDatabaseQueue {
                 for i in 1...7 {
                     let field = "action_\(i)"
                     let id = json[field].intValue
-                    if id != 0 {
-                        actionIDs.append(id)
-                    }
+                    actionIDs.append(id)
+//                    if id != 0 {
+//                        actionIDs.append(id)
+//                    }
                     
                     let dependActionField = "depend_action_\(i)"
                     let dependID = json[dependActionField].intValue

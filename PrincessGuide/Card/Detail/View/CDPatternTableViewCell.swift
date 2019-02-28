@@ -46,16 +46,74 @@ class CDPatternTableViewCell: UITableViewCell, CardDetailConfigurable {
     
     func configure(for item: CardDetailItem) {
         guard case .pattern(let pattern, let card, let index) = item else { return }
-        configure(for: pattern, atkType: card.base.atkType, skills: card.mainSkills, spSkills: card.spSkills, index: index)
-    }
-    
-    func configure(for pattern: AttackPattern, atkType: Int, skills: [Skill], spSkills: [Skill], index: Int?) {
         if let index = index {
             titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
         } else {
             titleLabel.text = NSLocalizedString("Attack Pattern", comment: "")
         }
-        attackPatternView.configure(for: pattern, atkType: atkType, skills: skills, spSkills: spSkills)
+        let items: [AttackPatternView.Item] = pattern.items.enumerated().map {
+            let offset = $0.offset
+            let item = $0.element
+            let iconType: AttackPatternView.Item.IconType
+            let loopType: AttackPatternView.Item.LoopType
+            let text: String
+            switch item {
+            case 1:
+                if card.base.atkType == 2 {
+                    iconType = .magicalSwing
+                } else {
+                    iconType = .physicalSwing
+                }
+                text = NSLocalizedString("Swing", comment: "")
+            case 1000..<2000:
+                let index = item - 1001
+                let skillID = card.base.mainSkillIDs[index]
+                if let iconID = card.mainSkills.first (where: {
+                    $0.base.skillId == skillID
+                })?.base.iconType {
+                    iconType = .skill(iconID)
+                } else {
+                    iconType = .unknown
+                }
+                let format = NSLocalizedString("Main %d", comment: "")
+                text = String(format: format, index + 1)
+            case 2000..<3000:
+                let index = item - 2001
+                let skillID = card.base.spSkillIDs[index]
+                if let iconID = card.spSkills.first (where: {
+                    $0.base.skillId == skillID
+                })?.base.iconType {
+                    iconType = .skill(iconID)
+                } else {
+                    iconType = .unknown
+                }
+                let format = NSLocalizedString("SP %d", comment: "")
+                text = String(format: format, index + 1)
+            default:
+                iconType = .unknown
+                text = NSLocalizedString("Unknown", comment: "")
+            }
+            
+            switch offset {
+            case pattern.loopStart - 1:
+                if pattern.loopStart == pattern.loopEnd {
+                    loopType = .inPlace
+                } else {
+                    loopType = .start
+                }
+            case pattern.loopEnd - 1:
+                loopType = .end
+            default:
+                loopType = .none
+            }
+            
+            return AttackPatternView.Item(
+                iconType: iconType,
+                loopType: loopType,
+                text: text
+            )
+        }
+        attackPatternView.configure(for: items)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,6 +125,74 @@ class CDPatternTableViewCell: UITableViewCell, CardDetailConfigurable {
 extension CDPatternTableViewCell: MinionDetailConfigurable {
     func configure(for item: MinionDetailItem) {
         guard case .pattern(let pattern, let minion, let index) = item else { return }
-        configure(for: pattern, atkType: minion.base.atkType, skills: minion.mainSkills, spSkills: minion.spSkills, index: index)
+        if let index = index {
+            titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
+        } else {
+            titleLabel.text = NSLocalizedString("Attack Pattern", comment: "")
+        }
+        let items: [AttackPatternView.Item] = pattern.items.enumerated().map {
+            let offset = $0.offset
+            let item = $0.element
+            let iconType: AttackPatternView.Item.IconType
+            let loopType: AttackPatternView.Item.LoopType
+            let text: String
+            switch item {
+            case 1:
+                if minion.base.atkType == 2 {
+                    iconType = .magicalSwing
+                } else {
+                    iconType = .physicalSwing
+                }
+                text = NSLocalizedString("Swing", comment: "")
+            case 1000..<2000:
+                let index = item - 1001
+                let skillID = minion.base.mainSkillIDs[index]
+                if let iconID = minion.mainSkills.first (where: {
+                    $0.base.skillId == skillID
+                })?.base.iconType {
+                    iconType = .skill(iconID)
+                } else {
+                    iconType = .unknown
+                }
+                let format = NSLocalizedString("Main %d", comment: "")
+                text = String(format: format, index + 1)
+            case 2000..<3000:
+                let index = item - 2001
+                let skillID = minion.base.spSkillIDs[index]
+                if let iconID = minion.spSkills.first (where: {
+                    $0.base.skillId == skillID
+                })?.base.iconType {
+                    iconType = .skill(iconID)
+                } else {
+                    iconType = .unknown
+                }
+                let format = NSLocalizedString("SP %d", comment: "")
+                text = String(format: format, index + 1)
+            default:
+                iconType = .unknown
+                text = NSLocalizedString("Unknown", comment: "")
+            }
+            
+            switch offset {
+            case pattern.loopStart - 1:
+                if pattern.loopStart == pattern.loopEnd {
+                    loopType = .inPlace
+                } else {
+                    loopType = .start
+                }
+            case pattern.loopEnd - 1:
+                loopType = .end
+            default:
+                loopType = .none
+            }
+            
+            return AttackPatternView.Item(
+                iconType: iconType,
+                loopType: loopType,
+                text: text
+            )
+        }
+        attackPatternView.configure(for: items)
+        
     }
 }

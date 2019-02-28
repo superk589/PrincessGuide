@@ -26,10 +26,12 @@ class ActionParameter {
             return BarrierAction.self
         case 7:
             return ReflexiveAction.self
-        case 8, 9, 11, 12, 13:
+        case 8, 9, 12, 13:
             return AilmentAction.self
         case 10:
             return AuraAction.self
+        case 11:
+            return CharmAction.self
         case 14:
             return ModeChangeAction.self
         case 15:
@@ -104,6 +106,8 @@ class ActionParameter {
             return DispelAction.self
         case 50:
             return ChannelAction.self
+        case 52:
+            return ChangeBodyWidthAction.self
         case 53:
             return IFExistsFieldForAllAction.self
         case 90:

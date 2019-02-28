@@ -49,54 +49,30 @@ class PatternCollectionViewCell: UICollectionViewCell {
         loopLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
     }
     
-    func configure(for pattern: AttackPattern, index: Int, atkType: Int, mainSkills: [Skill], spSkills: [Skill]?) {
-        let item = pattern.items[index]
-        switch item {
-        case 1:
-            if atkType == 2 {
-                skillIcon.equipmentID = 101251
-            } else {
-                skillIcon.equipmentID = 101011                
-            }
-            skillLabel.text = NSLocalizedString("Swing", comment: "")
-        case let x where 1000..<2000 ~= x:
-            let index = x - 1001
-            guard index < mainSkills.count else {
-                skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
-                skillLabel.text = NSLocalizedString("Unknown", comment: "")
-                break
-            }
-            skillIcon.skillIconID = mainSkills[index].base.iconType
-            let format = NSLocalizedString("Main %d", comment: "")
-            skillLabel.text = String(format: format, index + 1)
-        case let x where 2000..<3000 ~= x:
-            let index = x - 2001
-            guard let spSkills = spSkills, index < spSkills.count else {
-                skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
-                skillLabel.text = NSLocalizedString("Unknown", comment: "")
-                break
-            }
-            skillIcon.skillIconID = spSkills[index].base.iconType
-            let format = NSLocalizedString("SP %d", comment: "")
-            skillLabel.text = String(format: format, index + 1)
+    func configure(for item: AttackPatternView.Item) {
+        switch item.iconType {
+        case .magicalSwing:
+            skillIcon.equipmentID = 101251
+        case .physicalSwing:
+            skillIcon.equipmentID = 101011
+        case .skill(let id):
+            skillIcon.skillIconID = id
         default:
             skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
-            skillLabel.text = NSLocalizedString("Unknown", comment: "")
         }
-        
-        if pattern.loopStart == index + 1 {
-            if pattern.loopStart == pattern.loopEnd {
-                loopLabel.text = NSLocalizedString("Loop in place", comment: "")
-            } else {
-                loopLabel.text = NSLocalizedString("Loop start", comment: "")
-            }
-        } else if pattern.loopEnd == index + 1 {
+        skillLabel.text = item.text
+        switch item.loopType {
+        case .start:
+            loopLabel.text = NSLocalizedString("Loop start", comment: "")
+        case .end:
             loopLabel.text = NSLocalizedString("Loop end", comment: "")
-        } else {
+        case .inPlace:
+            loopLabel.text = NSLocalizedString("Loop in place", comment: "")
+        case .none:
             loopLabel.text = ""
         }
     }
-    
+ 
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 64, height: 64 + skillLabel.font.lineHeight + loopLabel.font.lineHeight + 30)
     }

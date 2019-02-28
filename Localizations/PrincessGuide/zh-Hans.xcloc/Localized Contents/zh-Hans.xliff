@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.1" build-num="10B61"/>
@@ -535,6 +534,11 @@
         <target>改为使用攻击模式 %1$d，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Change body width to %@.">
+        <source>Change body width to %@.</source>
+        <target>改变模型宽度至 %@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Change self position %@ backward then return.">
         <source>Change self position %@ backward then return.</source>
         <target>改变自身位置，向后移动 %@，技能结束后回原位置。</target>
@@ -703,6 +707,16 @@
       <trans-unit id="Confirm">
         <source>Confirm</source>
         <target>确定</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Confuse">
+        <source>Confuse</source>
+        <target>混乱</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Confuse %@ with [%@]%% chance for [%@]s.">
+        <source>Confuse %1$@ with [%2$@]%% chance for [%3$@]s.</source>
+        <target>[%2$@]%% 几率使%1$@混乱，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Copy">
@@ -1640,6 +1654,11 @@
         <target>显示最新通知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Shrine">
+        <source>Shrine</source>
+        <target>圣迹调查</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Silence">
         <source>Silence</source>
         <target>沉默</target>
@@ -1720,9 +1739,9 @@
         <target>总结</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s.">
-        <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
-        <target>在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。</target>
+      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s.">
+        <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@] %5$@ for [%6$@]s.</source>
+        <target>在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@] %5$@，持续 [%6$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s.">
@@ -1730,9 +1749,10 @@
         <target>在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s.">
-        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
-        <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。</target>
+      <trans-unit id="Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s.">
+        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@] %5$@ for [%6$@]s.</source>
+        <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。
+</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.">
@@ -2003,7 +2023,7 @@
       <trans-unit id="all">
         <source>all</source>
         <target>全部</target>
-        <note>target modifier</note>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all %@ %@ targets">
         <source>all %1$@ %2$@ targets</source>
@@ -2059,6 +2079,11 @@
         <source>both</source>
         <target>进化前后</target>
         <note>skill style</note>
+      </trans-unit>
+      <trans-unit id="both sides">
+        <source>both sides</source>
+        <target>敌方和友方</target>
+        <note>target modifier</note>
       </trans-unit>
       <trans-unit id="buffs">
         <source>buffs</source>

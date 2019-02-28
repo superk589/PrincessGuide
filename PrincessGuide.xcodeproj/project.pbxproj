@@ -98,6 +98,8 @@
 		12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9E2092D174006AC352 /* DeviceInfo.swift */; };
 		12398EA12092D78C006AC352 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA02092D78C006AC352 /* Updater.swift */; };
 		12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA22092F7D4006AC352 /* StringExtension.swift */; };
+		1247127822278EC500A9C2E1 /* CharmAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247127722278EC500A9C2E1 /* CharmAction.swift */; };
+		1247127A22279DF700A9C2E1 /* ChangeBodyWidthAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247127922279DF700A9C2E1 /* ChangeBodyWidthAction.swift */; };
 		124BADDB21AD42F5001041F2 /* UniqueEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BADDA21AD42F5001041F2 /* UniqueEquipmentViewController.swift */; };
 		124BADDD21AD43C6001041F2 /* UniqueCraftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BADDC21AD43C6001041F2 /* UniqueCraftTableViewController.swift */; };
 		124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124EA0A120D26CA500F46029 /* Dungeon.swift */; };
@@ -380,6 +382,8 @@
 		12398E9E2092D174006AC352 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		12398EA02092D78C006AC352 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		12398EA22092F7D4006AC352 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		1247127722278EC500A9C2E1 /* CharmAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharmAction.swift; sourceTree = "<group>"; };
+		1247127922279DF700A9C2E1 /* ChangeBodyWidthAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBodyWidthAction.swift; sourceTree = "<group>"; };
 		124BADDA21AD42F5001041F2 /* UniqueEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueEquipmentViewController.swift; sourceTree = "<group>"; };
 		124BADDC21AD43C6001041F2 /* UniqueCraftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueCraftTableViewController.swift; sourceTree = "<group>"; };
 		124EA0A120D26CA500F46029 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
@@ -1228,6 +1232,7 @@
 				12F125E420B93D99005C9659 /* ReflexiveAction.swift */,
 				12F125E620B93F7E005C9659 /* AilmentAction.swift */,
 				12F125E820B94370005C9659 /* AuraAction.swift */,
+				1247127722278EC500A9C2E1 /* CharmAction.swift */,
 				12F125EA20B94AEE005C9659 /* ModeChangeAction.swift */,
 				12F125EC20B94B11005C9659 /* SummonAction.swift */,
 				12F125EE20B94D1D005C9659 /* ChangeEnergyAction.swift */,
@@ -1265,6 +1270,7 @@
 				12F1262E20B9566A005C9659 /* RegenerationAction.swift */,
 				12A6A7D32163B09F00877074 /* DispelAction.swift */,
 				128DA47F21B24D7B00F7C006 /* ChannelAction.swift */,
+				1247127922279DF700A9C2E1 /* ChangeBodyWidthAction.swift */,
 				12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
@@ -1672,6 +1678,7 @@
 				12F1263B20BC23F5005C9659 /* SearchableCardTableViewController.swift in Sources */,
 				12D3D13D20A586A500034DD6 /* EDTableViewController.swift in Sources */,
 				12F1260B20B953DD005C9659 /* DestroyAction.swift in Sources */,
+				1247127822278EC500A9C2E1 /* CharmAction.swift in Sources */,
 				12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */,
 				122071DC20F8E30800554030 /* SearchableTeamTableViewController.swift in Sources */,
 				12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */,
@@ -1746,6 +1753,7 @@
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
 				120F9B8520E9F97E003632CA /* CharaTableViewCell.swift in Sources */,
 				122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */,
+				1247127A22279DF700A9C2E1 /* ChangeBodyWidthAction.swift in Sources */,
 				1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */,
 				12E3324420F5ED7600844A6A /* CardCollectionViewCell.swift in Sources */,
 				12F125DD20B92FA7005C9659 /* KnockAction.swift in Sources */,
@@ -1969,7 +1977,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 93;
+				CURRENT_PROJECT_VERSION = 94;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1991,7 +1999,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 93;
+				CURRENT_PROJECT_VERSION = 94;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

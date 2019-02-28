@@ -95,7 +95,7 @@
 /* No comment provided by engineer. */
 "Add additional [%@] damage per attack with max [%@] stacks to current target." = "攻撃する度にダメージ[%1$@]増加、最大[%2$@]回まで累積する。";
 
-/* target modifier */
+/* No comment provided by engineer. */
 "all" = "全体";
 
 /* all [enemy] [physics] targets */

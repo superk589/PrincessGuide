@@ -203,7 +203,7 @@ enum TargetAssignment: Int, CustomStringConvertible {
         case .friendly:
             return NSLocalizedString("friendly", comment: "target modifier")
         case .all:
-            return NSLocalizedString("all", comment: "target modifier")
+            return NSLocalizedString("both sides", comment: "target modifier")
         default:
             return ""
         }
