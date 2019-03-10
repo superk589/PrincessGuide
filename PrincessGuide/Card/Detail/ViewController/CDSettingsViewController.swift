@@ -42,6 +42,20 @@ class CDSettingsViewController: FormViewController {
             static let allLabels = [ExpressionStyle.full, .short, .valueOnly, .valueInCombat]
         }
         
+        enum SkillStyle: String, Codable, CustomStringConvertible, CaseIterable {
+            case both = "both"
+            case evolutionFirst = "evolution_only"
+            
+            var description: String {
+                switch self {
+                case .both:
+                    return NSLocalizedString("both", comment: "skill style")
+                case .evolutionFirst:
+                    return NSLocalizedString("evolution only", comment: "skill style")
+                }
+            }
+        }
+        
         var unitLevel: Int
         var unitRank: Int
         var bondRank: Int
@@ -53,6 +67,9 @@ class CDSettingsViewController: FormViewController {
         var statusComparison: Bool
         var rankFrom: Int
         var rankTo: Int
+        var skillStyle: SkillStyle = .evolutionFirst
+        var equipsUniqueEquipment: Bool
+        var uniqueEquipmentLevel: Int
         
         func save() {
             let encoder = JSONEncoder()
@@ -95,6 +112,8 @@ class CDSettingsViewController: FormViewController {
             statusComparison = false
             rankFrom = max(0, Preload.default.maxEquipmentRank - 1)
             rankTo = Preload.default.maxEquipmentRank
+            equipsUniqueEquipment = true
+            uniqueEquipmentLevel = Preload.default.maxUniqueEquipmentLevel
         }
     }
 
@@ -136,6 +155,38 @@ class CDSettingsViewController: FormViewController {
 
         form
             +++ Section(NSLocalizedString("Unit", comment: ""))
+            
+            <<< SwitchRow("equips_unique_equipment") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Unique Equipment", comment: "")
+                
+                row.value = Setting.default.equipsUniqueEquipment
+                
+                }.cellSetup { (cell, row) in
+                    cell.selectedBackgroundView = UIView()
+                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
+                        themeable.textLabel?.textColor = theme.color.title
+                        themeable.detailTextLabel?.textColor = theme.color.tint
+                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
+                        themeable.backgroundColor = theme.color.tableViewCell.background
+                        themeable.switchControl.onTintColor = theme.color.tint
+                    }
+                }.cellUpdate(cellUpdate(cell:row:))
+            
+            <<< PickerInlineRow<Int>("unique_equipment_level") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Unique Equipment Level", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<Preload.default.maxUniqueEquipmentLevel {
+                    row.options.append(i + 1)
+                }
+                row.hidden = "$equips_unique_equipment == NO"
+                row.value = Setting.default.uniqueEquipmentLevel
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             
             <<< PickerInlineRow<Int>("unit_level") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Level", comment: "")
@@ -243,7 +294,20 @@ class CDSettingsViewController: FormViewController {
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
-        
+            
+            <<< PickerInlineRow<String>("skill_style") { (row : PickerInlineRow<String>) -> Void in
+                row.title = NSLocalizedString("Evolution Skill Style", comment: "")
+                row.displayValueFor = { (rowValue: String?) in
+                    return rowValue.flatMap { Setting.SkillStyle(rawValue: $0)?.description }
+                }
+                row.options = Setting.SkillStyle.allCases.map { $0.rawValue }
+                row.value = Setting.default.skillStyle.rawValue
+                
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
             +++ Section(NSLocalizedString("Status", comment: ""))
             
             <<< SwitchRow("adds_ex") { (row : SwitchRow) -> Void in

@@ -11,11 +11,17 @@ import Gestalt
 
 class CraftTableViewController: UITableViewController {
     
+    struct CardRequire {
+        let card: Card
+        let number: Int
+    }
+    
     struct Row {
         enum Model {
             case summary(Equipment)
             case consume(Craft.Consume)
             case properties([Property.Item])
+            case charas([CardRequire])
             case text(String, String)
         }
         var type: UITableViewCell.Type
@@ -55,6 +61,13 @@ class CraftTableViewController: UITableViewController {
         rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Crafting", comment: ""), String(craftCost)))]
         rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Enhancing", comment: ""), String(enhanceCost)))]
 
+        let requires = Preload.default.cards.values
+            .map { CardRequire(card: $0, number: $0.countOf(equipment)) }
+            .filter { $0.number > 0 }
+            .sorted { $0.number > $1.number }
+        if requires.count > 0 {
+            rows.append(Row(type: CraftCharaTableViewCell.self, data: .charas(requires)))
+        }
         rows.append(Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Description", comment: ""), equipment.description)))
     }
     
@@ -73,6 +86,7 @@ class CraftTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(CraftSummaryTableViewCell.self, forCellReuseIdentifier: CraftSummaryTableViewCell.description())
         tableView.register(CraftTableViewCell.self, forCellReuseIdentifier: CraftTableViewCell.description())
+        tableView.register(CraftCharaTableViewCell.self, forCellReuseIdentifier: CraftCharaTableViewCell.description())
         tableView.tableFooterView = UIView()
     }
     
@@ -113,8 +127,13 @@ class CraftTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! CraftDetailConfigurable
         cell.configure(for: model.data)
         
-        if let cell = cell as? CraftSummaryTableViewCell {
+        switch cell {
+        case let cell as CraftSummaryTableViewCell:
             cell.delegate = self
+        case let cell as CraftCharaTableViewCell:
+            cell.delegate = self
+        default:
+            break
         }
         
         return cell as! UITableViewCell
@@ -124,11 +143,29 @@ class CraftTableViewController: UITableViewController {
 
 extension CraftTableViewController: CraftSummaryTableViewCellDelegate {
     
-    func craftSummaryTableViewCell(_ craftSummaryTableViewCell: CraftSummaryTableViewCell, didSelect consume: Craft.Consume) {
-        if let equipment = consume.equipment {
+    func craftSummaryTableViewCell(_ craftSummaryTableViewCell: CraftSummaryTableViewCell, didSelect index: Int) {
+        if let indexPath = tableView.indexPath(for: craftSummaryTableViewCell) {
+            let model = rows[indexPath.row]
+            guard case .summary(let equipment) = model.data else {
+                return
+            }
             DropSummaryTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
                 self?.navigationController?.pushViewController(vc, animated: true)
             }
+        }
+    }
+}
+
+extension CraftTableViewController: CraftCharaTableViewCellDelegate {
+    
+    func craftCharaTableViewCell(_ craftCharaTableViewCell: CraftCharaTableViewCell, didSelect index: Int) {
+        if let indexPath = tableView.indexPath(for: craftCharaTableViewCell) {
+            let model = rows[indexPath.row]
+            guard case .charas(let requires) = model.data else {
+                return
+            }
+            let vc = CDTabViewController(card: requires[index].card)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

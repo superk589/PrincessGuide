@@ -59,9 +59,6 @@ class AilmentAction: ActionParameter {
         case .silence:
             let format = NSLocalizedString("Silence %@ with [%@]%% chance for [%@]s.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: chanceValues, roundingRule: nil, style: style, property: property), buildExpression(of: level, roundingRule: nil, style: style, property: property))
-        case .charm:
-            let format = NSLocalizedString("Charm %@ with [%@]%% chance for [%@]s.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: chanceValues, roundingRule: nil, style: style, property: property), buildExpression(of: level, roundingRule: nil, style: style, property: property))
         case .darken:
             let format = NSLocalizedString("Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: chanceValues, roundingRule: nil, style: style, property: property), buildExpression(of: level, roundingRule: nil, style: style, property: property), 100 - actionDetail1)

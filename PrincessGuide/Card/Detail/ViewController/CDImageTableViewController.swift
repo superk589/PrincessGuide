@@ -19,8 +19,8 @@ class CDImageTableViewController: CDTableViewController {
                 completion(nil)
                 return
             }
-            KingfisherManager.shared.retrieveImage(with: url, options: [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default), .scaleFactor(UIScreen.main.scale)], progressBlock: nil) { image, _, _, _ in
-                completion(image)
+            KingfisherManager.shared.retrieveImage(with: url, options: [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default), .scaleFactor(UIScreen.main.scale)], progressBlock: nil) { result in
+                completion(result.value?.image)
             }
 
         }

@@ -30,3 +30,9 @@ struct Craft {
     let craftedCost: Int
     let equipmentId: Int
 }
+
+extension Craft.Consume {
+    var itemURL: URL {
+        return URL.resource.appendingPathComponent("icon/equipment/\(equipmentID).webp")
+    }
+}

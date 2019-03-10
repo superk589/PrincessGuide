@@ -55,8 +55,11 @@ class Master: FMDatabaseQueue {
             SELECT
                 a.*,
                 b.union_burst,
+                b.union_burst_evolution,
                 b.main_skill_1,
+                b.main_skill_evolution_1,
                 b.main_skill_2,
+                b.main_skill_evolution_2,
                 b.ex_skill_1,
                 b.ex_skill_evolution_1,
                 b.main_skill_3,
@@ -121,6 +124,22 @@ class Master: FMDatabaseQueue {
                     let level = json["promotion_level"].intValue
                     let promotion = Card.Promotion(equipSlots: slots, promotionLevel: level)
                     promotions.append(promotion)
+                }
+                
+                let uniqueEquipSQL = """
+                SELECT
+                    *
+                FROM
+                    unit_unique_equip
+                WHERE
+                    unit_id = \(json["unit_id"])
+                """
+                let uniqueEquipSet = try db.executeQuery(uniqueEquipSQL, values: nil)
+                
+                var uniqueEquipIDs = [Int]()
+                while uniqueEquipSet.next() {
+                    let id = Int(uniqueEquipSet.int(forColumn: "equip_id"))
+                    uniqueEquipIDs.append(id)
                 }
                 
                 let raritySql = """
@@ -223,12 +242,155 @@ class Master: FMDatabaseQueue {
                 
                 if let base = try? decoder.decode(Card.Base.self, from: json.rawData()),
                     let profile = profile, let actualUnit = actualUnit, let unitBackground = unitBackground {
-                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground)
+                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground, uniqueEquipIDs: uniqueEquipIDs)
                     cards.append(card)
                 }
             }
         }) {
             callback(cards)
+        }
+    }
+    
+    
+    func getUnitMinion(minionID: Int, callback: @escaping FMDBCallbackClosure<Minion?>) {
+        var minion: Minion?
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                a.*,
+                b.union_burst,
+                b.union_burst_evolution,
+                b.main_skill_1,
+                b.main_skill_evolution_1,
+                b.main_skill_2,
+                b.main_skill_evolution_2,
+                b.ex_skill_1,
+                b.ex_skill_evolution_1,
+                b.main_skill_3,
+                b.main_skill_4,
+                b.main_skill_5,
+                b.main_skill_6,
+                b.main_skill_7,
+                b.main_skill_8,
+                b.main_skill_9,
+                b.main_skill_10,
+                b.ex_skill_2,
+                b.ex_skill_evolution_2,
+                b.ex_skill_3,
+                b.ex_skill_evolution_3,
+                b.ex_skill_4,
+                b.ex_skill_evolution_4,
+                b.ex_skill_5,
+                b.sp_skill_1,
+                b.ex_skill_evolution_5,
+                b.sp_skill_2,
+                b.sp_skill_3,
+                b.sp_skill_4,
+                b.sp_skill_5
+            FROM
+                unit_skill_data b,
+                unit_data a
+            WHERE
+                a.unit_id = b.unit_id
+                AND a.unit_id = \(minionID)
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+    
+                let raritySql = """
+                SELECT
+                    *
+                FROM
+                    unit_rarity
+                WHERE
+                    unit_id = \(minionID)
+                """
+                let raritySet = try db.executeQuery(raritySql, values: nil)
+                
+                var rarities = [Card.Rarity]()
+                while raritySet.next() {
+                    let json = JSON(raritySet.resultDictionary ?? [:])
+                    if let rarity = try? decoder.decode(Card.Rarity.self, from: json.rawData()) {
+                        rarities.append(rarity)
+                    }
+                }
+                
+                if let base = try? decoder.decode(Card.Base.self, from: json.rawData()) {
+                    minion = Minion(base: base, rarities: rarities)
+                    break
+                }
+            }
+        }) {
+            callback(minion)
+        }
+    }
+    
+    func getEnemyMinion(minionID: Int, callback: @escaping FMDBCallbackClosure<Enemy?>) {
+        var minion: Enemy?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*,
+                b.union_burst,
+                b.main_skill_1,
+                b.main_skill_2,
+                b.main_skill_3,
+                b.main_skill_4,
+                b.main_skill_5,
+                b.main_skill_6,
+                b.main_skill_7,
+                b.main_skill_8,
+                b.main_skill_9,
+                b.main_skill_10,
+                b.ex_skill_1,
+                b.ex_skill_2,
+                b.ex_skill_3,
+                b.ex_skill_4,
+                b.ex_skill_5
+            FROM
+                unit_skill_data b,
+                enemy_parameter a
+            WHERE
+                a.unit_id = b.unit_id
+                AND a.enemy_id = \(minionID)
+            """
+            
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                let unitID = json["unit_id"].intValue
+                let unitSql = """
+                SELECT
+                    *
+                FROM
+                    unit_enemy_data
+                WHERE
+                    unit_id = \(unitID)
+                """
+                var unit: Enemy.Unit?
+                let unitSet = try db.executeQuery(unitSql, values: nil)
+                while unitSet.next() {
+                    let json = JSON(unitSet.resultDictionary ?? [:])
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    unit = try? decoder.decode(Enemy.Unit.self, from: json.rawData())
+                }
+                
+                if let base = try? decoder.decode(Enemy.Base.self, from: json.rawData()),
+                    let unit = unit {
+                    minion = Enemy(base: base, unit: unit)
+                    break
+                }
+            }
+        }) {
+            callback(minion)
         }
     }
     
@@ -321,22 +483,20 @@ class Master: FMDatabaseQueue {
                 a.*,
                 b.total_point
             FROM
-                equipment_data a,
-                (
+                equipment_data a
+                LEFT JOIN (
                     SELECT
-                        promotion_level, max(total_point) total_point
+                        promotion_level,
+                        max(total_point) total_point
                     FROM
                         equipment_enhance_data
                     GROUP BY
-                        promotion_level
-                ) b
-            WHERE
-                a.promotion_level = b.promotion_level
+                        promotion_level) b ON a.promotion_level = b.promotion_level
             """
             if let id = equipmentID {
-                selectSql += " AND equipment_id = \(id)"
+                selectSql += " WHERE equipment_id = \(id)"
             } else if let equipmentType = equipmentType {
-                selectSql += " AND craft_flg = \(equipmentType.rawValue)"
+                selectSql += " WHERE craft_flg = \(equipmentType.rawValue)"
             }
             let set = try db.executeQuery(selectSql, values: nil)
             while set.next() {
@@ -344,6 +504,44 @@ class Master: FMDatabaseQueue {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 if let equipment = try? decoder.decode(Equipment.self, from: json.rawData()) {
+                    equipments.append(equipment)
+                }
+            }
+        }) {
+            callback(equipments)
+        }
+    }
+    
+    func getUniqueEquipments(equipmentIDs: [Int]?, callback: @escaping FMDBCallbackClosure<[UniqueEquipment]>) {
+        var equipments = [UniqueEquipment]()
+        execute({ (db) in
+            var selectSql = """
+            SELECT
+                a.*,
+                b.total_point
+            FROM
+                unique_equipment_data a,
+                (
+                    SELECT
+                        max(total_point) total_point
+                    FROM
+                        unique_equipment_enhance_data
+                ) b
+            """
+            if let ids = equipmentIDs {
+                if ids.count > 0 {
+                    selectSql += " WHERE equipment_id in (\(ids.map(String.init).joined(separator: ",")))"
+                } else {
+                    callback([])
+                    return
+                }
+            }
+            let set = try db.executeQuery(selectSql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let equipment = try? decoder.decode(UniqueEquipment.self, from: json.rawData()) {
                     equipments.append(equipment)
                 }
             }
@@ -391,6 +589,46 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getUniqueCraft(equipmentID: Int, callback: @escaping FMDBCallbackClosure<UniqueCraft?>) {
+        var result: UniqueCraft?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                unique_equipment_craft
+            WHERE
+                equip_id = \(equipmentID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                
+                let equipmentID = json["equip_id"].intValue
+                let craftedCost = json["crafted_cost"].intValue
+                
+                var consumes = [UniqueCraft.Consume]()
+                
+                for i in 1...10 {
+                    let id = json["item_id_\(i)"].intValue
+                    if id == 0 {
+                        continue
+                    }
+                    let consumeNum = json["consume_num_\(i)"].intValue
+                    let rewardType = json["reward_type_\(i)"].intValue
+                    let consume = UniqueCraft.Consume(itemID: id, consumeNum: consumeNum, rewardType: rewardType)
+                    consumes.append(consume)
+                }
+                
+                let craft = UniqueCraft(consumes: consumes, craftedCost: craftedCost, equipmentId: equipmentID)
+                result = craft
+                break
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
     func getEnhance(equipmentID: Int, callback: @escaping FMDBCallbackClosure<Equipment.Enhance?>) {
         var result: Equipment.Enhance?
         execute({ (db) in
@@ -421,6 +659,35 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getUniqueEnhance(equipmentID: Int, callback: @escaping FMDBCallbackClosure<UniqueEquipment.Enhance?>) {
+        var result: UniqueEquipment.Enhance?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*,
+                b.max_equipment_enhance_level
+            FROM
+                unique_equipment_enhance_rate a,
+                ( SELECT max( enhance_level ) max_equipment_enhance_level FROM unique_equipment_enhance_data) b
+            WHERE
+                a.equipment_id = \(equipmentID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                if let enhance = try? decoder.decode(UniqueEquipment.Enhance.self, from: json.rawData()) {
+                    result = enhance
+                    break
+                }
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
     func getSkills(skillIDs: [Int], callback: @escaping FMDBCallbackClosure<[Skill]>) {
         var skills = [Skill]()
         execute({ (db) in
@@ -439,12 +706,22 @@ class Master: FMDatabaseQueue {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 var actionIDs = [Int]()
+                var dependActionIDs = [Int: Int]()
                 for i in 1...7 {
                     let field = "action_\(i)"
                     let id = json[field].intValue
-                    if id != 0 {
-                        actionIDs.append(id)
+                    actionIDs.append(id)
+//                    if id != 0 {
+//                        actionIDs.append(id)
+//                    }
+                    
+                    let dependActionField = "depend_action_\(i)"
+                    let dependID = json[dependActionField].intValue
+                    
+                    if dependID != 0 && id != 0 {
+                        dependActionIDs[id] = dependID
                     }
+                    
                 }
                 
                 var actions = [Skill.Action]()
@@ -468,7 +745,7 @@ class Master: FMDatabaseQueue {
                     }
                 }
                 if let base = try? decoder.decode(Skill.Base.self, from: json.rawData()) {
-                    let skill = Skill(actions: actions, base: base)
+                    let skill = Skill(actions: actions, base: base, dependActionIDs: dependActionIDs)
                     skills.append(skill)
                 }
             }
@@ -781,37 +1058,81 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getHatsuneEventAreas(callback: @escaping FMDBCallbackClosure<[HatsuneEventArea]>) {
-        var areas = [HatsuneEventArea]()
+    func getHatsuneEvents(callback: @escaping FMDBCallbackClosure<[HatsuneEvent]>) {
+        var events = [HatsuneEvent]()
         execute({ (db) in
             let sql = """
             SELECT
                 a.*,
-                b.title,
-                c.wave_group_id_1,
-                c.quest_name,
-                c.difficulty
+                b.title
             FROM
-                hatsune_quest_area a,
-                event_story_data b,
-                hatsune_boss c
+                hatsune_schedule a,
+                event_story_data b
             WHERE
                 a.event_id = b.value
-                AND a.area_id = c.area_id
             """
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
                 let json = JSON(set.resultDictionary ?? [:])
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let base = try decoder.decode(HatsuneEventArea.Base.self, from: json.rawData())
-                let area = HatsuneEventArea(base: base)
-                areas.append(area)
+                let base = try decoder.decode(HatsuneEvent.Base.self, from: json.rawData())
+                let event = HatsuneEvent(base: base)
+                events.append(event)
             }
         }) {
-            callback(areas)
+            callback(events)
         }
     }
+    
+    func getHatsuneEventQuests(eventID: Int, callback: @escaping FMDBCallbackClosure<[HatsuneEventQuest]>) {
+        var quests = [HatsuneEventQuest]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*
+            FROM
+                hatsune_boss a
+            WHERE
+                event_id = \(eventID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let quest = try decoder.decode(HatsuneEventQuest.self, from: json.rawData())
+                quests.append(quest)
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
+    func getHatsuneEventSpecialBattles(eventID: Int, callback: @escaping FMDBCallbackClosure<[HatsuneEventSpecialBattle]>) {
+        var quests = [HatsuneEventSpecialBattle]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*
+            FROM
+                hatsune_special_battle a
+            WHERE
+                event_id = \(eventID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let quest = try decoder.decode(HatsuneEventSpecialBattle.self, from: json.rawData())
+                quests.append(quest)
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
     
     func getDungeons(callback: @escaping FMDBCallbackClosure<[Dungeon]>) {
         var dungeons = [Dungeon]()
@@ -1037,6 +1358,24 @@ class Master: FMDatabaseQueue {
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
                 result = Int(set.int(forColumn: "max_promotion_level"))
+            }
+        }) {
+            callback(result)
+        }
+    }
+    
+    func getMaxUniqueEquipmentLevel(callback: @escaping FMDBCallbackClosure<Int?>) {
+        var result: Int?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                max(enhance_level) max_level
+            FROM
+                unique_equipment_enhance_data
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                result = Int(set.int(forColumn: "max_level"))
             }
         }) {
             callback(result)

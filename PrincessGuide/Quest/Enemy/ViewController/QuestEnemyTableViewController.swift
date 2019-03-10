@@ -20,6 +20,7 @@ class QuestEnemyTableViewController: UITableViewController {
             case wave(Wave, Int)
             case clanBattleWave(Wave, Int, Double)
             case tower([Enemy], Int)
+            case hatsuneEvent(Wave, String)
         }
     }
 
@@ -34,7 +35,7 @@ class QuestEnemyTableViewController: UITableViewController {
     }
     
     init(clanBattle: ClanBattle) {
-        self.rows = clanBattle.rounds.flatMap {
+        self.rows = clanBattle.mergedRounds.flatMap {
             [Row(type: QuestNameTableViewCell.self, data: .quest($0.name))] +
                 $0.groups.enumerated().map{ Row(type: QuestEnemyTableViewCell.self, data: .clanBattleWave($0.element.wave, $0.offset, $0.element.scoreCoefficient)) }
         }
@@ -45,6 +46,20 @@ class QuestEnemyTableViewController: UITableViewController {
         self.rows = towerQuests.map {
             Row(type: QuestEnemyTableViewCell.self, data: .tower($0.enemies, $0.floorNum))
         }
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(hatsuneEvent: HatsuneEvent) {
+        self.rows = hatsuneEvent.quests.compactMap { quest in
+            quest.wave.map {
+                Row(type: QuestEnemyTableViewCell.self, data: .hatsuneEvent($0, quest.difficultyType.description))
+            }
+        } + hatsuneEvent.specialBattles.compactMap { specialBattle in
+            specialBattle.wave.map {
+                Row(type: QuestEnemyTableViewCell.self, data: .hatsuneEvent($0, String(format: "SP Mode %d", specialBattle.mode)))
+            }
+        }
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -109,6 +124,9 @@ class QuestEnemyTableViewController: UITableViewController {
             cell.configure(for: name)
         case (let cell as QuestEnemyTableViewCell, .tower(let enemies, let floor)):
             cell.configure(for: enemies, title: String(floor))
+            cell.delegate = self
+        case (let cell as QuestEnemyTableViewCell, .hatsuneEvent(let wave, let title)):
+            cell.configure(for: wave, title: title)
             cell.delegate = self
         default:
             break

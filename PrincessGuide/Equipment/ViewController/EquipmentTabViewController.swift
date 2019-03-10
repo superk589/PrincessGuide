@@ -18,9 +18,9 @@ class EquipmentTabViewController: TabmanViewController, PageboyViewControllerDat
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Equipments", comment: "")
-        viewControllers = [EquipmentViewController(equipmentType: .dropped), EquipmentViewController(equipmentType: .crafted)]
+        viewControllers = [EquipmentViewController(equipmentType: .dropped), EquipmentViewController(equipmentType: .crafted), UniqueEquipmentViewController()]
         dataSource = self
-        bar.items = [EquipmentType.dropped, .crafted].map { Item(title: $0.description) }
+        bar.items = EquipmentType.allCases.map { Item(title: $0.description) }
         bar.location = .bottom
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in

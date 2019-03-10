@@ -34,7 +34,9 @@ struct Coefficient: Codable {
             "skill_lv_coefficient": 10.0,
             "exskill_evolution_coefficient": 15,
             "overall_coefficient": 1.0,
-            "accuracy_coefficient": 2.0
+            "accuracy_coefficient": 2.0,
+            "skill1_evolution_coefficient": 10.0,
+            "skill1_evolution_slv_coefficient": 1.2
         }
         """
         let decoder = JSONDecoder()
@@ -64,6 +66,8 @@ struct Coefficient: Codable {
     let waveEnergyRecoveryCoefficient: Double
     let waveHpRecoveryCoefficient: Double
     let accuracyCoefficient: Double
+    let skill1EvolutionSlvCoefficient: Double
+    let skill1EvolutionCoefficient: Double
     
     func value(for key: PropertyKey) -> Double {
         switch key {

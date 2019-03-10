@@ -36,7 +36,7 @@ class Area: Codable {
 enum AreaType: CustomStringConvertible {
     case normal
     case hard
-    
+    case shrine
     case exploration
     
     case unknown
@@ -50,6 +50,8 @@ enum AreaType: CustomStringConvertible {
             return NSLocalizedString("Hard", comment: "")
         case .exploration:
             return NSLocalizedString("Exploration", comment: "")
+        case .shrine:
+            return NSLocalizedString("Shrine", comment: "")
         case .unknown:
             return NSLocalizedString("Unknown", comment: "")
         }
@@ -64,6 +66,8 @@ extension Area {
             return .normal
         case 12000..<13000:
             return .hard
+        case 18000..<19000:
+            return .shrine
         case 21000..<22000:
             return .exploration
         default:

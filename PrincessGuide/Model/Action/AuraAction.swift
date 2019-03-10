@@ -102,7 +102,15 @@ class AuraAction: ActionParameter {
     }
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("%@ %@ [%@]%@ %@ for [%@]s.", comment: "")
-        return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .up, style: style, property: property), percentModifier.description, auraType.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+        
+        if actionDetail2 == 2 {
+            let format = NSLocalizedString("%@ %@ %d%@ %@ for [%@]s.", comment: "")
+            return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), Int(actionValue1.rounded()), PercentModifier.percent.description, auraType.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+            
+        } else {
+            let format = NSLocalizedString("%@ %@ [%@]%@ %@ for [%@]s.", comment: "")
+            return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .up, style: style, property: property), percentModifier.description, auraType.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+        }
+
     }
 }

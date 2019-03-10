@@ -16,6 +16,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         enum Model {
             case card(Card)
             case skill(Skill, SkillCategory, Property, Int?)
+            case minion(Minion)
             case base(Card.Base)
             case profile(Card.Profile)
             case pattern(AttackPattern, Card, Int?)
@@ -27,6 +28,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             case textArray([(String, String, Bool)])
             case album(String, [URL], [URL])
             case commentText(String)
+            case uniqueEquipments([Int])
         }
         var type: UITableViewCell.Type
         var data: Model
@@ -110,6 +112,17 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         return cell as! UITableViewCell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = rows[indexPath.row].data
+        switch data {
+        case .minion(let minion):
+            let vc = MinionTabViewController(minion: minion)
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
+    }
+    
     func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL?) {
         
     }
@@ -119,25 +132,51 @@ extension CDTableViewController: CDPromotionTableViewCellDelegate {
     
     func cdPromotionTableViewCell(_ cdPromotionTableViewCell: CDPromotionTableViewCell, didSelectEquipmentID equipmentID: Int) {
         
-        let equipments = DispatchSemaphore.sync { (closure) in
-            Master.shared.getEquipments(equipmentID: equipmentID) { equipments in
-                closure(equipments)
-            }
-        }
-        guard let equipment = equipments?.first else {
+        guard let indexPath = tableView.indexPath(for: cdPromotionTableViewCell) else {
             return
         }
-        if equipment.craftFlg == 0 {
-            DropSummaryTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
-                self?.navigationController?.pushViewController(vc, animated: true)
+        
+        let row = rows[indexPath.row]
+        switch row.data {
+        case .uniqueEquipments:
+            let equipments = DispatchSemaphore.sync { (closure) in
+                Master.shared.getUniqueEquipments(equipmentIDs: [equipmentID]) { equipments in
+                    closure(equipments)
+                }
             }
-        } else {
-            let vc = CraftTableViewController()
+            guard let equipment = equipments?.first else {
+                return
+            }
+
+            let vc = UniqueCraftTableViewController()
             vc.navigationItem.title = equipment.equipmentName
             vc.equipment = equipment
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
+        case .promotion:
+            let equipments = DispatchSemaphore.sync { (closure) in
+                Master.shared.getEquipments(equipmentID: equipmentID) { equipments in
+                    closure(equipments)
+                }
+            }
+            guard let equipment = equipments?.first else {
+                return
+            }
+            if equipment.craftFlg == 0 {
+                DropSummaryTableViewController.configureAsync(equipment: equipment) { [weak self] (vc) in
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+            } else {
+                let vc = CraftTableViewController()
+                vc.navigationItem.title = equipment.equipmentName
+                vc.equipment = equipment
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        default:
+            break
         }
+        
     }
     
 }

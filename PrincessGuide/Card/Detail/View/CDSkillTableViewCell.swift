@@ -105,6 +105,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         actionLabel.numberOfLines = 0
         actionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
 
+        selectionStyle = .none
     }
     
     private func createSubTitleLabel(title: String) -> UILabel {
@@ -124,10 +125,16 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
         skillIcon.skillIconID = skill.base.iconType
-        actionLabel.text = skill.actions.map {
-            let parameter = $0.parameter
-            return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: CDSettingsViewController.Setting.default.skillLevel, property: property))"
-            }.joined(separator: "\n")
+        
+        if skill.actions.count > 0 {
+            actionLabel.text = skill.actions.map {
+                let parameter = $0.buildParameter(dependActionID: skill.dependActionIDs[$0.actionId] ?? 0)
+                return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: CDSettingsViewController.Setting.default.skillLevel, property: property))"
+                }.joined(separator: "\n")
+        } else {
+            actionLabel.text = NSLocalizedString("Do nothing.", comment: "")
+        }
+        
     }
     
     func configure(for item: CardDetailItem) {
@@ -147,4 +154,13 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension CDSkillTableViewCell: MinionDetailConfigurable {
+    func configure(for item: MinionDetailItem) {
+        guard case .skill(let skill, let category, let property, let index) = item else {
+            return
+        }
+        configure(for: skill, category: category, property: property, index: index)
+    }
 }

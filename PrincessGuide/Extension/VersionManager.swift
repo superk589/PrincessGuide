@@ -44,4 +44,13 @@ class VersionManager {
         }
         UserDefaults.standard.set(documentVersion, forKey: "last_document_version")
     }
+    
+    var noticeVersion: String {
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "notice_version")
+        }
+        get {
+            return UserDefaults.standard.value(forKey: "notice_version") as? String ?? ""
+        }
+    }
 }

@@ -40,9 +40,9 @@ class CraftSummaryCollectionViewCell: UICollectionViewCell {
         // UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
     }
     
-    func configure(for consume: Craft.Consume) {
-        icon.equipmentID = consume.equipmentID
-        numberLabel.text = String(consume.consumeNum)
+    func configure(url: URL, number: Int) {
+        icon.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "icon_placeholder"))
+        numberLabel.text = String(number)
     }
     
     required init?(coder aDecoder: NSCoder) {

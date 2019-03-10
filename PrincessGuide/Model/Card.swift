@@ -29,8 +29,10 @@ class Card: Codable {
     let unitBackground: UnitBackground
 
     let comments: [Comment]
-
-    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment], actualUnit: ActualUnit, unitBackground: UnitBackground) {
+    
+    let uniqueEquipIDs: [Int]
+    
+    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment], actualUnit: ActualUnit, unitBackground: UnitBackground, uniqueEquipIDs: [Int]) {
         self.base = base
         self.promotions = promotions
         self.promotionStatuses = promotionStatuses
@@ -39,6 +41,7 @@ class Card: Codable {
         self.comments = comments
         self.actualUnit = actualUnit
         self.unitBackground = unitBackground
+        self.uniqueEquipIDs = uniqueEquipIDs
     }
 
     struct Base: Codable {
@@ -85,8 +88,11 @@ class Card: Codable {
         let unionBurst: Int
         let unitId: Int
         let unitName: String
-
-
+        let unionBurstEvolution: Int
+        let mainSkillEvolution1: Int
+        let mainSkillEvolution2: Int
+        
+        
         var exSkillIDs: [Int] {
             return Array([exSkill1, exSkill2, exSkill3, exSkill4, exSkill5].prefix { $0 != 0 })
         }
@@ -98,7 +104,11 @@ class Card: Codable {
         var mainSkillIDs: [Int] {
             return Array([mainSkill1, mainSkill2, mainSkill3, mainSkill4, mainSkill5].prefix { $0 != 0 })
         }
-
+        
+        var mainSkillEvolutionIDs: [Int] {
+            return Array([mainSkillEvolution1, mainSkillEvolution2].prefix { $0 != 0 })
+        }
+ 
         var spSkillIDs: [Int] {
             return  Array([spSkill1, spSkill2, spSkill3, spSkill4, spSkill5].prefix { $0 != 0 })
         }
@@ -235,8 +245,24 @@ class Card: Codable {
                 Master.shared.getEquipments(equipmentID: id, callback: closure)
             }?.first
         }
+        
+        func countOf(_ equipment: Equipment) -> Int {
+            return equipSlots.filter { $0 == equipment.equipmentId }.count
+        }
     }
-
+    
+    func countOf(_ equipment: Equipment) -> Int {
+        return promotions.reduce(0) { $0 + $1.countOf(equipment) }
+    }
+    
+    func countOf(_ uniqueEquipment: UniqueEquipment) -> Int {
+        return uniqueEquipIDs.filter { $0 == uniqueEquipment.equipmentId }.count
+    }
+    
+    lazy var uniqueEquipments = DispatchSemaphore.sync { (closure) in
+        return Master.shared.getUniqueEquipments(equipmentIDs: uniqueEquipIDs, callback: closure)
+    } ?? []
+    
     struct Rarity: Codable {
 
         let atk: Double
@@ -331,7 +357,11 @@ class Card: Codable {
     lazy var mainSkills = DispatchSemaphore.sync { [unowned self] (closure) in
         Master.shared.getSkills(skillIDs: self.base.mainSkillIDs, callback: closure)
     } ?? []
-
+    
+    lazy var mainSkillEvolutions = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: self.base.mainSkillEvolutionIDs, callback: closure)
+    } ?? []
+    
     lazy var spSkills = DispatchSemaphore.sync { [unowned self] (closure) in
         Master.shared.getSkills(skillIDs: self.base.spSkillIDs, callback: closure)
     } ?? []
@@ -339,7 +369,11 @@ class Card: Codable {
     lazy var unionBurst = DispatchSemaphore.sync { [unowned self] (closure) in
         Master.shared.getSkills(skillIDs: [self.base.unionBurst], callback: closure)
     }?.first
-
+    
+    lazy var unionBurstEvolution = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: [self.base.unionBurstEvolution], callback: closure)
+    }?.first
+    
     lazy var patterns: [AttackPattern]? = DispatchSemaphore.sync { closure in
         Master.shared.getAttackPatterns(unitID: base.unitId, callback: closure)
     }
@@ -369,7 +403,9 @@ extension Card {
                   unitRank: Int = Preload.default.maxEquipmentRank,
                   bondRank: Int = Constant.presetMaxBondRank,
                   unitRarity: Int = Constant.presetMaxRarity,
-                  addsEx: Bool = CardSortingViewController.Setting.default.addsEx) -> Property {
+                  addsEx: Bool = CardSortingViewController.Setting.default.addsEx,
+                  hasUniqueEquipment: Bool = CardSortingViewController.Setting.default.equipsUniqueEquipment,
+                  uniqueEquipmentLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Property {
         var property = Property()
         let storyPropertyItems = charaStorys?.filter { $0.loveLevel <= bondRank }.flatMap { $0.status.map { $0.property() } } ?? []
         for item in storyPropertyItems {
@@ -384,6 +420,11 @@ extension Card {
         if let promotion = promotions.first(where: { $0.promotionLevel == unitRank }) {
             for equipment in promotion.equipments {
                 property += equipment.property.ceiled()
+            }
+        }
+        if hasUniqueEquipment {
+            for equipment in uniqueEquipments {
+                property += equipment.property(enhanceLevel: uniqueEquipmentLevel).ceiled()
             }
         }
         if addsEx && unitRank >= 7 {
@@ -406,10 +447,12 @@ extension Card {
                              unitRank: Int = Preload.default.maxEquipmentRank,
                              bondRank: Int = Constant.presetMaxBondRank,
                              unitRarity: Int = Constant.presetMaxRarity,
-                             skillLevel: Int = Preload.default.maxPlayerLevel) -> Int {
-
-        let property = self.property(unitLevel: unitLevel, unitRank: unitRank, bondRank: bondRank, unitRarity: unitRarity, addsEx: false)
-
+                             skillLevel: Int = Preload.default.maxPlayerLevel,
+                             hasUniqueEquipment: Bool = CardSortingViewController.Setting.default.equipsUniqueEquipment,
+                             uniqueEquipmentLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Int {
+        
+        let property = self.property(unitLevel: unitLevel, unitRank: unitRank, bondRank: bondRank, unitRarity: unitRarity, addsEx: false, hasUniqueEquipment: hasUniqueEquipment, uniqueEquipmentLevel: uniqueEquipmentLevel)
+        
         var result = 0.0
 
         let coefficient = Preload.default.coefficient
@@ -417,11 +460,23 @@ extension Card {
         PropertyKey.all.forEach {
             result += property.item(for: $0).value * coefficient.value(for: $0)
         }
-
-        result += Double(mainSkills.count * skillLevel) * coefficient.skillLvCoefficient
-
+        
+        if hasUniqueEquipment {
+            result += Double(mainSkillEvolutions.count * skillLevel) * coefficient.skill1EvolutionCoefficient * coefficient.skill1EvolutionSlvCoefficient
+            if mainSkills.count > mainSkillEvolutions.count {
+                result += Double((mainSkills.count - mainSkillEvolutions.count) * skillLevel) * coefficient.skillLvCoefficient
+            }
+            result += Double(uniqueEquipIDs.count) * 100
+        } else {
+            result += Double(mainSkills.count * skillLevel) * coefficient.skillLvCoefficient
+        }
+        
         if unionBurst != nil {
-            result += Double(skillLevel) * coefficient.skillLvCoefficient
+            if hasUniqueEquipment && unionBurstEvolution != nil {
+                result += Double(skillLevel) * coefficient.skill1EvolutionCoefficient * coefficient.skill1EvolutionSlvCoefficient
+            } else {
+                result += Double(skillLevel) * coefficient.skillLvCoefficient
+            }
         }
         
         if unitRank >= 7 {

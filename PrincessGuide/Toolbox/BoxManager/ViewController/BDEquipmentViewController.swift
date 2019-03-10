@@ -147,7 +147,7 @@ class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CraftSummaryCollectionViewCell.description(), for: indexPath) as! CraftSummaryCollectionViewCell
         let consume = consumes[indexPath.item]
-        cell.configure(for: consume)
+        cell.configure(url: consume.itemURL, number: consume.consumeNum)
         return cell
     }
     

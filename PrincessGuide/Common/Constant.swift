@@ -17,6 +17,7 @@ struct Constant {
     static let presetMaxRank = 10
     static let presetMaxPlayerLevel = 102
     static let presetMaxEnemyLevel = 120
+    static let presetMaxUniqueEquipmentLevel = 130
     static let presetMaxBondRank = 8
     static let presetMaxRarity = 5
     static let presetManaCostPerPoint = [

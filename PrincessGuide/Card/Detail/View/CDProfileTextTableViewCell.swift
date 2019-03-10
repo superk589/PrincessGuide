@@ -77,3 +77,13 @@ class CDProfileTextTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
 }
+
+extension CDProfileTextTableViewCell: MinionDetailConfigurable {
+    func configure(for item: MinionDetailItem) {
+        if case .text(let title, let content) = item {
+            configure(for: [(title, content, false)])
+        } else if case .textArray(let elements) = item {
+            configure(for: elements.map { ($0.0, $0.1, false) })
+        }
+    }
+}

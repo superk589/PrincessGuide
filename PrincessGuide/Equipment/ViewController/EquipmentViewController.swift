@@ -130,7 +130,7 @@ extension EquipmentViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EquipmentCollectionViewCell.description(), for: indexPath) as! EquipmentCollectionViewCell
-        cell.configure(for: equipments[indexPath.row])
+        cell.configure(for: equipments[indexPath.row].equipmentId)
         return cell
     }
 }

@@ -22,6 +22,10 @@ class VoicePlayer {
     var updateClosure: ((Double) -> Void)?
     
     func play(_ voice: Voice) {
+        
+        // fix a potential crash on iOS 10
+        observation?.invalidate()
+        
         player?.stop()
         player = try? AVAudioPlayer(data: voice.data)
         player?.play()
@@ -34,6 +38,11 @@ class VoicePlayer {
                 self?.updateClosure?(progress)
             }
         })
+    }
+    
+    deinit {
+        // fix a potential crash on iOS 10
+        observation?.invalidate()
     }
 
 }

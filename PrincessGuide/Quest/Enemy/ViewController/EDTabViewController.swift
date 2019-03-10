@@ -19,9 +19,9 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     private var enemy: Enemy
     
-    init(enemy: Enemy) {
+    init(enemy: Enemy, isMinion: Bool = false) {
         self.enemy = enemy
-        viewControllers = [EDResistTableViewController(enemy: enemy), EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy)]
+        viewControllers = [EDResistTableViewController(enemy: enemy), EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy, isMinion: isMinion)]
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = enemy.base.name
         print("load enemy, id: \(enemy.unit.unitId)")

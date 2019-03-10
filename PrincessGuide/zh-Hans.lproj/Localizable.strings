@@ -1,3 +1,6 @@
+/* clause separator */
+", " = "，";
+
 /* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ for [%@]s." = "%1$@%2$@ [%3$@]%4$@ %5$@，持续 [%6$@] 秒。";
 
@@ -8,6 +11,9 @@
 /* [the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500] */
 "%@ %@ %@ in range %d" = "范围 %4$d 内%1$@%2$@%3$@";
+
+/* No comment provided by engineer. */
+"%@ %@ %d%@ %@ for [%@]s." = "%1$@%2$@ %3$d%4$@ %5$@，持续 [%6$@] 秒。";
 
 /* No comment provided by engineer. */
 "%@ %@ and deal [%@] damage per second for [%@]s." = "%1$@%2$@并每秒造成 [%3$@] 伤害，持续 [%4$@] 秒。";
@@ -27,9 +33,6 @@
 "%@ %@ targets in range %d" = "范围 %3$d 内%1$@%2$@目标";
 
 /* No comment provided by engineer. */
-"%@ absolute" = "%@绝对位置的";
-
-/* No comment provided by engineer. */
 "%@ boss" = "%@首领级";
 
 /* No comment provided by engineer. */
@@ -41,16 +44,16 @@
 /* No comment provided by engineer. */
 "%@ Feedback" = "%@ 反馈";
 
-/* [the second to fourth farthest] front friendly [targets] */
-"%@ front friendly %@" = "前方%1$@友方%2$@";
+/* [the second to fourth farthest] front [enemy] [targets] */
+"%@ front %@ %@" = "前方%1$@%2$@%3$@";
 
-/* [the farthest two] front friendly [targets] in range [500]
-   [the second to fourth farthest] front friendly [targets] in range [500] */
-"%@ front friendly %@ in range %d" = "前方 %3$d 范围内%1$@友方%2$@";
+/* [the farthest two] front [enemy] [targets] in range [500]
+   [the second to fourth farthest] front [enemy] [targets] in range [500] */
+"%@ front %@ %@ in range %d" = "前方 %4$d 范围内%1$@%2$@%3$@";
 
-/* [the nearest] front friendly target in range [500]
-   [the second nearest] front friendly target in range [500] */
-"%@ front friendly target in range %d" = "前方 %2$d 范围内%1$@友方目标";
+/* [the nearest] front [enemy] target in range [500]
+   [the second nearest] front [enemy] target in range [500] */
+"%@ front %@ target in range %d" = "前方%3$d范围内%1$@%2$@目标";
 
 /* No comment provided by engineer. */
 "%@ highest ATK" = "物理攻击力最高的%@";
@@ -116,10 +119,10 @@
 "%@/%@" = "%1$@ 月 %2$@ 日";
 
 /* No comment provided by engineer. */
-"About" = "关于";
+"%d in front of %@, summon a minion of ID: %d." = "在%2$@前 %1$d 的位置，召唤 ID 为 %3$d 的随从。";
 
 /* No comment provided by engineer. */
-"absolute" = "绝对位置内";
+"About" = "关于";
 
 /* No comment provided by engineer. */
 "Accuracy" = "命中";
@@ -151,7 +154,7 @@
 /* No comment provided by engineer. */
 "Age" = "年龄";
 
-/* target modifier */
+/* No comment provided by engineer. */
 "all" = "全部";
 
 /* all [enemy] [physics] targets */
@@ -160,7 +163,13 @@
 /* all [enemy] targets */
 "all %@ targets" = "所有%@目标";
 
-/* all front(including self) friendly targets */
+/* No comment provided by engineer. */
+"all front enemy targets" = "所有前方敌方目标";
+
+/* No comment provided by engineer. */
+"all front targets" = "所有前方目标";
+
+/* No comment provided by engineer. */
 "all front(including self) friendly targets" = "所有前方的友方目标（包括自己）";
 
 /* No comment provided by engineer. */
@@ -180,6 +189,9 @@
 
 /* No comment provided by engineer. */
 "Ascending" = "升序";
+
+/* No comment provided by engineer. */
+"At the position of %@, summon a minion of ID: %d." = "在%1$@的位置，召唤 ID 为 %2$d 的随从。";
 
 /* No comment provided by engineer. */
 "ATK" = "物理攻击力";
@@ -238,6 +250,12 @@
 /* No comment provided by engineer. */
 "boss" = "首领级";
 
+/* skill style */
+"both" = "进化前后";
+
+/* target modifier */
+"both sides" = "敌方和友方";
+
 /* No comment provided by engineer. */
 "Box Detail" = "Box 详情";
 
@@ -254,7 +272,7 @@
 "buffs" = "增益";
 
 /* No comment provided by engineer. */
-"Burn" = "灼烧";
+"Burn" = "烧伤";
 
 /* No comment provided by engineer. */
 "By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again." = "目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。";
@@ -281,10 +299,10 @@
 "Cast a barrier on %@ to nullify [%@] magical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 魔法伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。";
+"Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 [%3$@] 秒。";
+"Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 物理伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Cast an unknown barrier %d on %@ for [%@]s." = "对%2$@释放一个护盾，类型 %1$d，持续 [%3$@] 秒。";
@@ -299,10 +317,31 @@
 "Center" = "中卫";
 
 /* No comment provided by engineer. */
+"Change attack pattern back to %d after effect over." = "效果结束后，改回攻击模式 %d。";
+
+/* No comment provided by engineer. */
 "Change attack pattern to %d for %@s." = "改为使用攻击模式 %1$d，持续 %2$@ 秒。";
 
 /* No comment provided by engineer. */
-"Change self position." = "改变自身位置。";
+"Change body width to %@." = "改变模型宽度至 %@。";
+
+/* No comment provided by engineer. */
+"Change self position %@ backward then return." = "改变自身位置，向后移动 %@，技能结束后回原位置。";
+
+/* No comment provided by engineer. */
+"Change self position %@ backward." = "改变自身位置，向后移动 %@。";
+
+/* No comment provided by engineer. */
+"Change self position %@ forward then return." = "改变自身位置，向前移动 %@，技能结束后回原位置。";
+
+/* No comment provided by engineer. */
+"Change self position %@ forward." = "改变自身位置，向前移动 %@。";
+
+/* No comment provided by engineer. */
+"Change self position to %@ then return." = "改变自身位置到%@，技能结束后回原位置。";
+
+/* No comment provided by engineer. */
+"Change self position to %@." = "改变自身位置到%@。";
 
 /* No comment provided by engineer. */
 "Change skill visual effect for %@s." = "改变技能视觉效果，持续 %@ 秒。";
@@ -312,6 +351,9 @@
 
 /* No comment provided by engineer. */
 "Change the perspective to %@ %d." = "向%1$@移动自身视角，距离 %2$d。";
+
+/* No comment provided by engineer. */
+"Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@." = "引导施法 [%1$@] 秒，受到伤害时中断，%2$@%3$@ [%4$@]%5$@ %6$@。";
 
 /* Birthday notification title */
 "Chara Birthday" = "角色生日";
@@ -368,6 +410,9 @@
 "Condition: [%@]%% chance use %d when takes damage within %@s." = "条件分支：%3$@ 秒内受到伤害时有 [%1$@]%% 几率使用 %2$d。";
 
 /* No comment provided by engineer. */
+"Condition: %@." = "条件分支：%@。";
+
+/* No comment provided by engineer. */
 "Condition: counter is greater or equal to %d then use %d, otherwise %d." = "条件分支：计数器大于等于 %1$d 则使用 %2$d，否则使用 %3$d。";
 
 /* No comment provided by engineer. */
@@ -377,40 +422,25 @@
 "Condition: if defeat target by the last effect then use %d." = "条件分支：上一个效果成功击杀目标则使用 %d。";
 
 /* No comment provided by engineer. */
-"Condition: if target is blinded then use %d, otherwise %d." = "条件分支：如果目标处于黑暗状态则使用 %1$d，否则使用 %2$d。";
+"Condition: if the specific field exists then use %d, otherwise %d." = "条件分支：如果指定的场地效果存在则使用 %1$d，否则使用 %2$d。";
 
 /* No comment provided by engineer. */
-"Condition: if target is blinded then use %d." = "条件分支：如果目标处于黑暗状态则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is burned then use %d, otherwise %d." = "条件分支：如果目标处于火伤状态则使用 %1$d，否则使用 %2$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is burned then use %d." = "条件分支：如果目标处于火伤状态则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is charmed then use %d, otherwise %d." = "条件分支：如果目标处于魅惑状态则使用 %1$d，否则使用 %2$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is charmed then use %d." = "条件分支：如果目标处于魅惑状态则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is controlled then use %d, otherwise %d." = "条件分支：如果目标处于被控制状态则使用 %1$d，否则使用 %2$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target is controlled then use %d." = "条件分支：如果目标处于被控制状态则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target's HP is below %d%% then use %d, otherwise %d." = "条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d，否则使用 %3$d。";
-
-/* No comment provided by engineer. */
-"Condition: if target's HP is below %d%% then use %d." = "条件分支：如果目标 HP 低于 %1$d%% 则使用 %2$d。";
+"Condition: if the specific field exists then use %d." = "条件分支：如果指定的场地效果存在则使用 %1$d。";
 
 /* No comment provided by engineer. */
 "Confirm" = "确定";
 
 /* No comment provided by engineer. */
+"Confuse" = "混乱";
+
+/* No comment provided by engineer. */
+"Confuse %@ with [%@]%% chance for [%@]s." = "[%2$@]%% 几率使%1$@混乱，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
 "Copy" = "复制";
+
+/* No comment provided by engineer. */
+"Cost %@ TP/s, change attack pattern to %d until TP is zero." = "消耗 %1$@ TP/秒，TP 耗光前改为使用攻击模式 %2$d。";
 
 /* No comment provided by engineer. */
 "Crafted" = "制作";
@@ -468,6 +498,9 @@
 
 /* No comment provided by engineer. */
 "Detain (Damage)" = "拘留（伤害）";
+
+/* No comment provided by engineer. */
+"Do nothing." = "什么都不做。";
 
 /* No comment provided by engineer. */
 "Dodge" = "回避";
@@ -544,6 +577,12 @@
 /* No comment provided by engineer. */
 "Event" = "活动";
 
+/* skill style */
+"evolution only" = "只显示进化后";
+
+/* No comment provided by engineer. */
+"Evolution Skill Style" = "进化技能显示风格";
+
 /* No comment provided by engineer. */
 "EX" = "EX";
 
@@ -595,11 +634,11 @@
 /* front [friendly] [physics] targets in range [500] */
 "front %@ %@ targets in range %d" = "前方 %3$d 范围内%1$@%2$@目标";
 
+/* front [enemy] targets in range [500] */
+"front %@ targets in range %d" = "前方范围 %2$d 内%1$@目标";
+
 /* No comment provided by engineer. */
 "front and back" = "前方和后方";
-
-/* front friendly targets in range [500] */
-"front friendly targets in range %d" = "前方 %d 范围内友方目标";
 
 /* No comment provided by engineer. */
 "front(including self)" = "前方（包括自己）";
@@ -731,6 +770,9 @@
 "Main %d" = "Main %d";
 
 /* No comment provided by engineer. */
+"Main+" = "Main+";
+
+/* No comment provided by engineer. */
 "Make %@ fall asleep for [%@]s." = "使%1$@入睡，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -773,13 +815,28 @@
 "minion" = "随从";
 
 /* No comment provided by engineer. */
+"Minion: %d" = "随从：%d";
+
+/* No comment provided by engineer. */
 "Misc" = "杂项";
 
 /* No comment provided by engineer. */
 "Mission" = "探索";
 
 /* No comment provided by engineer. */
+"Move backward %@ with velocity %@/s." = "向后移动 %1$@，速度 %2$@/秒。";
+
+/* No comment provided by engineer. */
+"Move forward %@ with velocity %@/s." = "向前移动 %1$@，速度 %2$@/秒。";
+
+/* No comment provided by engineer. */
 "Move Speed" = "移动速度";
+
+/* No comment provided by engineer. */
+"Move to %@ behind of %@ with velocity %@/s." = "移动到%2$@后 %1$@ 的位置，速度 %3$@/秒。";
+
+/* No comment provided by engineer. */
+"Move to %@ in front of %@ with velocity %@/s." = "移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。";
 
 /* No comment provided by engineer. */
 "Multiple [%@ * defeated enemy count] to next effect." = "使下一个效果的数值乘以 [%@ * 击杀个数]。";
@@ -830,10 +887,19 @@
 "Normal" = "普通";
 
 /* No comment provided by engineer. */
+"normal type" = "普通类型";
+
+/* No comment provided by engineer. */
 "Not Determined" = "未确定";
 
 /* No comment provided by engineer. */
+"Notice" = "通知";
+
+/* No comment provided by engineer. */
 "Notification Permission" = "系统通知权限";
+
+/* No comment provided by engineer. */
+"Number of Unique Equipments" = "专属装备数量";
 
 /* No comment provided by engineer. */
 "OK" = "确定";
@@ -845,6 +911,9 @@
 "Only shows the first chara's equipments, but will reflect on all selected charas." = "虽然只显示第一个角色的装备，但是编辑后会反映到所有选中角色上。";
 
 /* No comment provided by engineer. */
+"opposite" = "敌方";
+
+/* No comment provided by engineer. */
 "Options" = "选项";
 
 /* No comment provided by engineer. */
@@ -854,10 +923,16 @@
 "other" = "其他";
 
 /* No comment provided by engineer. */
+"own side" = "己方";
+
+/* No comment provided by engineer. */
 "Paralyse" = "麻痹";
 
 /* No comment provided by engineer. */
 "Petrify" = "石化";
+
+/* No comment provided by engineer. */
+"phantom type" = "幽灵类型";
 
 /* No comment provided by engineer. */
 "physical" = "物理";
@@ -983,6 +1058,9 @@
 "Review at App Store" = "App Store 评价";
 
 /* No comment provided by engineer. */
+"Revive %@ with %d%% HP." = "复活并恢复%1$@的 HP 至 %2$d%%。";
+
+/* No comment provided by engineer. */
 "Round %d" = "第 %d 周目";
 
 /* No comment provided by engineer. */
@@ -1031,6 +1109,12 @@
 "Show All Field" = "显示所有字段";
 
 /* No comment provided by engineer. */
+"Show the Latest Notice" = "显示最新通知";
+
+/* No comment provided by engineer. */
+"Shrine" = "圣迹调查";
+
+/* No comment provided by engineer. */
 "Silence" = "沉默";
 
 /* No comment provided by engineer. */
@@ -1064,6 +1148,9 @@
 "SP" = "SP";
 
 /* No comment provided by engineer. */
+"SP %d" = "SP %d";
+
+/* No comment provided by engineer. */
 "Star Rank" = "星级";
 
 /* No comment provided by engineer. */
@@ -1085,16 +1172,23 @@
 "Summary" = "总结";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。";
+"Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@] %5$@，持续 [%6$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a healing field of radius %d at %@ position to heal all friendly targets [%@]%@ HP per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的区域，每秒治疗其中的友方目标 [%3$@]%4$@ HP，持续 [%5$@] 秒。";
+"Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a minion of ID: %d at the position of %@." = "在%2$@的位置召唤 ID 为 %1$d 的随从。";
+"Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。
+";
 
 /* No comment provided by engineer. */
-"Summon an attack field of radius %d at %@ position to deal all enemy targets [%@] %@ damage per second for [%@]s." = "在%2$@位置展开一片半径为 %1$d 的区域，每秒对其中的敌方目标造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
+"Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." = "展开一片半径为 %1$d 的区域，每秒对%5$@造成 [%2$@] %3$@伤害，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
+"Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒治疗 [%3$@]%4$@ HP，持续 [%5$@] 秒。";
+
+/* No comment provided by engineer. */
+"Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s." = "展开一片半径为 %1$d 的区域，每秒治疗%2$@ [%3$@] %4$@ HP，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
 "Swing" = "普通攻击";
@@ -1115,6 +1209,12 @@
 "targets" = "目标";
 
 /* No comment provided by engineer. */
+"targets of effect %d" = "效果 %d 的目标";
+
+/* No comment provided by engineer. */
+"targets of effect %d and %@ targets in range %d" = "效果 %1$d 的目标和范围 %3$d 内的%2$@目标";
+
+/* No comment provided by engineer. */
 "targets of last effect" = "上一个效果影响到的目标";
 
 /* target type */
@@ -1122,6 +1222,9 @@
 
 /* target type */
 "targets of last effect or the %@ nearest" = "上一个效果或%@近的";
+
+/* No comment provided by engineer. */
+"targets within the scope" = "范围内的目标";
 
 /* No comment provided by engineer. */
 "Taunt all enemy targets for [%@]s." = "嘲讽所有敌方单位，持续 [%@] 秒。";
@@ -1244,7 +1347,13 @@
 "Total Mana Cost" = "合计所需 Mana";
 
 /* No comment provided by engineer. */
-"Tower" = "月神塔";
+"Tower" = "露娜塔";
+
+/* No comment provided by engineer. */
+"Trigger: %d%% on damaged." = "触发条件：受到伤害时 %d%% 触发。";
+
+/* No comment provided by engineer. */
+"Trigger: %d%% on dead" = "触发条件：死亡时 %d%% 触发。";
 
 /* No comment provided by engineer. */
 "Trigger: HP is below %d%%." = "触发条件：HP 低于 %d%%。";
@@ -1265,7 +1374,22 @@
 "UB" = "UB";
 
 /* No comment provided by engineer. */
+"UB+" = "UB+";
+
+/* No comment provided by engineer. */
 "Unable to open Mail" = "无法打开邮件";
+
+/* No comment provided by engineer. */
+"Unique" = "专属装备";
+
+/* No comment provided by engineer. */
+"Unique Equipment" = "计算专属装备";
+
+/* No comment provided by engineer. */
+"Unique Equipment Level" = "专属装备等级";
+
+/* No comment provided by engineer. */
+"Unique Equipments" = "专属装备";
 
 /* No comment provided by engineer. */
 "Unit" = "角色";
@@ -1283,6 +1407,12 @@
 "Unknown effect %d to %@ with details [%@], values [%@]." = "未知效果 %1$d，详情 [%3$@]，数值 [%4$@]，释放于%2$@。";
 
 /* No comment provided by engineer. */
+"unknown side" = "未知";
+
+/* No comment provided by engineer. */
+"unknown type" = "未知";
+
+/* No comment provided by engineer. */
 "Up to date!" = "已经是最新版本";
 
 /* No comment provided by engineer. */
@@ -1290,6 +1420,42 @@
 
 /* No comment provided by engineer. */
 "Upgrade to Pro Edition" = "升级至专业版";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is blinded" = "对%2$@中处于黑暗状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is burned" = "对%2$@中处于烧伤状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is charmed" = "对%2$@中处于魅惑状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is controlled" = "对%2$@中处于被控制状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is cursed" = "对%2$@中处于诅咒状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not blinded" = "对%2$@中未处于黑暗状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not burned" = "对%2$@中未处于烧伤状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not charmed" = "对%2$@中未处于魅惑状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not controlled" = "对%2$@中未处于被控制状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not cursed" = "对%2$@中未处于诅咒状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ whose HP is below %d%%" = "对%2$@中 HP 低于 %3$d%% 的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ whose HP is not below %d%%" = "对%2$@中 HP 不低于 %3$d%% 的使用 %1$d";
 
 /* No comment provided by engineer. */
 "Use Dark Theme" = "使用深色主题";
@@ -1323,6 +1489,9 @@
 
 /* No comment provided by engineer. */
 "What's the features of Pro Edition?" = "专业版中有哪些功能？";
+
+/* No comment provided by engineer. */
+"Who Needs" = "可装备的角色";
 
 /* No comment provided by engineer. */
 "Wins" = "胜利";

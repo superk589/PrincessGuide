@@ -49,19 +49,13 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pattern?.items.count ?? 0
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PatternCollectionViewCell.description(), for: indexPath) as! PatternCollectionViewCell
-        
-        if let pattern = pattern {
-            if let unit = unit {
-                cell.configure(for: pattern, index: indexPath.item, unit: unit)
-            } else if let enemy = enemy {
-                cell.configure(for: pattern, index: indexPath.item, enemy: enemy)
-            }
-        }
+        let item = items[indexPath.item]
+        cell.configure(for: item)
         return cell
     }
     
@@ -69,19 +63,28 @@ class AttackPatternView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var pattern: AttackPattern?
-    private var unit: Card?
-    private var enemy: Enemy?
+    struct Item {
+        enum IconType {
+            case magicalSwing
+            case physicalSwing
+            case skill(Int)
+            case unknown
+        }
+        enum LoopType {
+            case start
+            case end
+            case inPlace
+            case none
+        }
+        let iconType: IconType
+        let loopType: LoopType
+        let text: String
+    }
+    private var items: [Item] = []
     
-    func configure(for pattern: AttackPattern, unit: Card) {
-        self.pattern = pattern
-        self.unit = unit
+    func configure(for items: [Item]) {
+        self.items = items
         collectionView.reloadData()
     }
-
-    func configure(for pattern: AttackPattern, enemy: Enemy) {
-        self.pattern = pattern
-        self.enemy = enemy
-        collectionView.reloadData()
-    }
+    
 }

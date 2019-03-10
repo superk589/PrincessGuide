@@ -57,7 +57,9 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
             Master.shared.getClanBattles { (clanBattles) in
                 // preload
                 DispatchQueue.global(qos: .userInitiated).async {
-                    clanBattles.forEach { $0.preload() }
+                    clanBattles.forEach {
+                        $0.preload()
+                    }
                     clanBattles.forEach { _ = $0.rounds.last?.groups.last?.wave.enemies.first?.enemy }
                     DispatchQueue.main.async {
                         LoadingHUDManager.default.hide()

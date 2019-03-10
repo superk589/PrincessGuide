@@ -37,7 +37,7 @@ class ClanBattle: Codable {
         
         let clanBattleBossGroupId: Int
         let lapNumFrom: Int
-        let lapNumTo: Int
+        var lapNumTo: Int
         
         func preload() {
             _ = groups
@@ -73,6 +73,17 @@ class ClanBattle: Codable {
             $0.preload()
         }
     }
+    
+    lazy var mergedRounds: [Round] = {
+        let newRounds: [Round] = rounds.reduce(into: []) { results, element in
+            if let round = results.first(where: { $0.groups.map { $0.wave.base.waveGroupId } == element.groups.map { $0.wave.base.waveGroupId } }) {
+                round.lapNumTo = element.lapNumTo
+            } else {
+                results.append(element)
+            }
+        }
+        return newRounds
+    }()
     
     init(period: Period) {
         self.period = period

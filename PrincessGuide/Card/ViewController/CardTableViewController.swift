@@ -139,7 +139,7 @@ class CardTableViewController: UITableViewController, DataChecking {
 //                let encoder = JSONEncoder()
 //                encoder.outputFormatting = .prettyPrinted
 //                if let data = try? encoder.encode(cards.map {
-//                    return CardPropertyDiff(name: $0.base.unitName, properties: ($0.property(unitRank: 11) - $0.property(unitRank: 10)).allProperties(), imageURL: URL.resource.appendingPathComponent("icon/unit/\($0.iconID()).webp"))
+//                    return CardPropertyDiff(name: $0.base.unitName, properties: ($0.property(unitRank: 12) - $0.property(unitRank: 11)).allProperties(), imageURL: URL.resource.appendingPathComponent("icon/unit/\($0.iconID()).webp"))
 //                }) {
 //                    try? data.write(to: URL(fileURLWithPath: "/Users/zzk/Desktop/chara_r11_r10_diff.json"))
 //                }
@@ -377,6 +377,12 @@ extension Array where Element == Card {
                 }
             }
             sections = [frontSection, middleSection, backSection]
+        case .uniqueEquipNumber:
+            sections = reduce(into: [Int: [Card]]()) {
+                $0[$1.uniqueEquipIDs.count, default: [Card]()].append($1)
+                }
+                .map { Section(title: String($0.key), cards: $0.value) }
+                .sorted { $0.title > $1.title }
         }
         
         for index in sections.indices {
@@ -404,4 +410,8 @@ extension Card {
         }
     }
     
+    func iconURL(style: CardSortingViewController.Setting.IconStyle = CardSortingViewController.Setting.default.iconStyle) -> URL {
+        let id = iconID(style: style)
+        return URL.resource.appendingPathComponent("icon/unit/\(id).webp")
+    }
 }

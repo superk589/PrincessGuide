@@ -44,7 +44,7 @@ class CDImageView: UIImageView {
     func configure(for url: URL, completion: (() -> Void)? = nil) {
         self.url = url
         indicator.startAnimating()
-        kf.setImage(with: url, options: [.scaleFactor(UIScreen.main.scale)]) { [weak self] _, _, _, _ in
+        kf.setImage(with: url, options: [.scaleFactor(UIScreen.main.scale)]) { [weak self] _ in
             self?.indicator.stopAnimating()
             completion?()
         }

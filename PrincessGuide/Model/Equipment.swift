@@ -35,10 +35,10 @@ class Equipment: Codable {
     let salePrice: Int
     let waveEnergyRecovery: Int
     let waveHpRecovery: Int
-    let totalPoint: Int
+    let totalPoint: Int?
     let accuracy: Int
     
-    init(atk: Int, craftFlg: Int, def: Int, description: String, dodge: Int, enableDonation: Int, energyRecoveryRate: Int, energyReduceRate: Int, equipmentEnhancePoint: Int, equipmentId: Int, equipmentName: String, hp: Int, hpRecoveryRate: Int, lifeSteal: Int, magicCritical: Int, magicDef: Int, magicPenetrate: Int, magicStr: Int, physicalCritical: Int, physicalPenetrate: Int, promotionLevel: Int, requireLevel: Int, salePrice: Int, waveEnergyRecovery: Int, waveHpRecovery: Int, totalPoint: Int, accuracy: Int) {
+    init(atk: Int, craftFlg: Int, def: Int, description: String, dodge: Int, enableDonation: Int, energyRecoveryRate: Int, energyReduceRate: Int, equipmentEnhancePoint: Int, equipmentId: Int, equipmentName: String, hp: Int, hpRecoveryRate: Int, lifeSteal: Int, magicCritical: Int, magicDef: Int, magicPenetrate: Int, magicStr: Int, physicalCritical: Int, physicalPenetrate: Int, promotionLevel: Int, requireLevel: Int, salePrice: Int, waveEnergyRecovery: Int, waveHpRecovery: Int, totalPoint: Int?, accuracy: Int) {
         self.atk = atk
         self.craftFlg = craftFlg
         self.def = def
@@ -69,7 +69,7 @@ class Equipment: Codable {
     }
     
     var enhanceCost: Int {
-        return (Constant.presetManaCostPerPoint[promotionLevel] ?? 0) * totalPoint
+        return (Constant.presetManaCostPerPoint[promotionLevel] ?? 0) * (totalPoint ?? 0)
     }
     
     lazy var craft: Craft? = {
@@ -182,15 +182,17 @@ extension Equipment {
     
 }
 
-enum EquipmentType: Int, CustomStringConvertible {
+enum EquipmentType: Int, CustomStringConvertible, CaseIterable {
     case dropped
     case crafted
-    
+    case uniqueCrafted
     var description: String {
         switch self {
         case .dropped:
             return NSLocalizedString("Dropped", comment: "")
-        default:
+        case .uniqueCrafted:
+            return NSLocalizedString("Unique", comment: "")
+        case .crafted:
             return NSLocalizedString("Crafted", comment: "")
         }
     }

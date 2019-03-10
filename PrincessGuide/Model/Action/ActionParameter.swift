@@ -26,10 +26,12 @@ class ActionParameter {
             return BarrierAction.self
         case 7:
             return ReflexiveAction.self
-        case 8, 9, 11, 12, 13:
+        case 8, 9, 12, 13:
             return AilmentAction.self
         case 10:
             return AuraAction.self
+        case 11:
+            return CharmAction.self
         case 14:
             return ModeChangeAction.self
         case 15:
@@ -102,6 +104,12 @@ class ActionParameter {
             return RegenerationAction.self
         case 49:
             return DispelAction.self
+        case 50:
+            return ChannelAction.self
+        case 52:
+            return ChangeBodyWidthAction.self
+        case 53:
+            return IFExistsFieldForAllAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -147,7 +155,7 @@ class ActionParameter {
     let actionDetail1: Int
     let actionDetail2: Int
     let actionDetail3: Int
-    
+        
     lazy var actionDetails = [
         self.actionDetail1,
         self.actionDetail2,
@@ -155,8 +163,8 @@ class ActionParameter {
     ]
     
     required init(id: Int, targetAssignment: Int, targetNth: Int, actionType: Int, targetType: Int, targetRange: Int,
-                  direction: Int, targetCount: Int, actionValue1: Double, actionValue2: Double, actionValue3: Double, actionValue4: Double, actionValue5: Double, actionValue6: Double, actionValue7: Double, actionDetail1: Int, actionDetail2: Int, actionDetail3: Int) {
-        self.targetParameter = TargetParameter(targetAssignment: targetAssignment, targetNth: targetNth, targetType: targetType, targetRange: targetRange, direction: direction, targetCount: targetCount)
+                  direction: Int, targetCount: Int, actionValue1: Double, actionValue2: Double, actionValue3: Double, actionValue4: Double, actionValue5: Double, actionValue6: Double, actionValue7: Double, actionDetail1: Int, actionDetail2: Int, actionDetail3: Int, dependActionID: Int) {
+        self.targetParameter = TargetParameter(targetAssignment: targetAssignment, targetNth: targetNth, targetType: targetType, targetRange: targetRange, direction: direction, targetCount: targetCount, dependActionID: dependActionID)
         self.id = id
         self.rawActionType = actionType
         self.actionType = ActionType(rawValue: actionType) ?? .unknown
@@ -236,7 +244,7 @@ class ActionParameter {
                         case (0, _), (_, 0):
                             part += " * \(key.description)"
                         case (_, _):
-                            part = "(\(part) * \(key.description)"
+                            part = "\(part) * \(key.description)"
                         }
                     }
                 }
@@ -450,6 +458,10 @@ enum ActionType: Int {
     case upperLimitAttack
     case hot
     case dispel
+    case channel = 50
+    case division
+    case changeWidth
+    case ifExistsFieldForAll
     case ex = 90
     case exPlus
 }

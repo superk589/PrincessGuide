@@ -62,6 +62,7 @@ class SettingsTableViewController: UITableViewController {
 //        if !Defaults.proEdition {
 //            aboutRows.append(Row(title: NSLocalizedString("Upgrade to Pro Edition", comment: ""), detail: "", hasDisclosure: true, accessoryView: nil, selector: #selector(upgradeToProEdition)))
 //        }
+        aboutRows.append(Row(title: NSLocalizedString("Show the Latest Notice", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showRecentNotice)))
         aboutRows.append(Row(title: NSLocalizedString("Third-Party Licenses", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
         let versionInfo = Defaults.proEdition ? VersionManager.shared.appVersion + " (Pro)" : VersionManager.shared.appVersion
         aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: versionInfo, hasDisclosure: false, accessoryView: nil, selector: nil))
@@ -116,6 +117,11 @@ class SettingsTableViewController: UITableViewController {
         vc.navigationItem.title = NSLocalizedString("Third-Party Licenses", comment: "")
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func showRecentNotice() {
+        VersionManager.shared.noticeVersion = ""
+        (UIApplication.shared.delegate as? AppDelegate)?.checkNotice(ignoresExpireDate: true)
     }
     
     @objc private func upgradeToProEdition() {

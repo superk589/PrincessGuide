@@ -17,9 +17,10 @@ class TargetParameter {
     let targetCount: TargetCount
     let direction: DirectionType
     let rawTargetType: Int
+    let dependActionID: Int
     
     init(targetAssignment: Int, targetNth: Int, targetType: Int, targetRange: Int,
-         direction: Int, targetCount: Int) {
+         direction: Int, targetCount: Int ,dependActionID: Int) {
         self.targetAssignment = TargetAssignment(rawValue: targetAssignment) ?? .none
         self.targetNth = TargetNth(rawValue: targetNth) ?? .other
         self.rawTargetType = targetType
@@ -27,10 +28,12 @@ class TargetParameter {
         self.targetRange = TargetRange(range: targetRange)
         self.direction = DirectionType(rawValue: direction) ?? .all
         self.targetCount = TargetCount(rawValue: targetCount) ?? .all
+        self.dependActionID = dependActionID
     }
     
     var hasRelationPhrase: Bool {
-        return targetType != .`self`
+        return targetType != .`self` &&
+            targetType != .absolute
     }
     
     var hasCountPhrase: Bool {
@@ -52,17 +55,28 @@ class TargetParameter {
     
     var hasDirectionPhrase: Bool {
         return direction == .front &&
-            targetAssignment == .friendly &&
             (hasRangePhrase || targetCount == .all)
     }
     
+    var hasDependAction: Bool {
+        return dependActionID != 0 && targetType != .absolute
+    }
+    
     func buildTargetClause() -> String {
-        switch (hasCountPhrase, hasNthModifier, hasRangePhrase, hasRelationPhrase, hasDirectionPhrase) {
-        case (false, false, false, false, _):
-            return TargetType.`self`.description
-        case (false, false, false, true, _):
+        switch (hasCountPhrase, hasNthModifier, hasRangePhrase, hasRelationPhrase, hasDirectionPhrase, hasDependAction) {
+        case (_, _, _, _, _, true):
+            if targetCount == .all && hasRangePhrase {
+                let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
+                return String(format: format, dependActionID % 100, targetAssignment.description, targetRange.rawRange)
+            } else {
+                let format = NSLocalizedString("targets of effect %d", comment: "")
+                return String(format: format, dependActionID % 100)
+            }           
+        case (_, _, _, false, _, _):
+            return targetType.description.description
+        case (false, false, false, true, _, _):
             return NSLocalizedString("targets of last effect", comment: "")
-        case (true, false, false, true, false):
+        case (true, false, false, true, false, _):
             if targetCount == .all {
                 if targetType.isExclusiveWithAll {
                     let format = NSLocalizedString("all %@ targets", comment: "all [enemy] targets")
@@ -78,18 +92,27 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ %@ %@", comment: "[the farthest two] [enemy] [targets]")
                 return String(format: format, targetType.description(with: targetCount), targetAssignment.description, targetCount.pluralModifier.description)
             }
-        case (true, false, false, true, true):
-            let format = NSLocalizedString("all front(including self) friendly targets", comment: "all front(including self) friendly targets")
-            return String(format: format)
-        case (false, false, true, true, false):
+        case (true, false, false, true, true, _):
+            switch targetAssignment {
+            case .enemy:
+                let format = NSLocalizedString("all front enemy targets", comment: "")
+                return String(format: format)
+            case .friendly:
+                let format = NSLocalizedString("all front(including self) friendly targets", comment: "")
+                return String(format: format)
+            default:
+                let format = NSLocalizedString("all front targets", comment: "")
+                return String(format: format)
+            }
+        case (false, false, true, true, false, _):
             let format = NSLocalizedString("%@ targets in range %d", comment: "[enemy] targets in range [500]")
             return String(format: format, targetAssignment.description, targetRange.rawRange)
-        case (false, false, true, true, true):
-            let format = NSLocalizedString("front friendly targets in range %d", comment: "front friendly targets in range [500]")
-            return String(format: format, targetRange.rawRange)
-        case (false, true, true, true, _):
+        case (false, false, true, true, true, _):
+            let format = NSLocalizedString("front %@ targets in range %d", comment: "front [enemy] targets in range [500]")
+            return String(format: format, targetAssignment.description, targetRange.rawRange)
+        case (false, true, true, true, _, _):
             return NSLocalizedString("targets of last effect", comment: "")
-        case (true, false, true, true, false):
+        case (true, false, true, true, false, _):
             if targetCount == .all {
                 if targetType.isExclusiveWithAll {
                     let format = NSLocalizedString("%@ targets in range %d", comment: "[enemy] targets in range [500]")
@@ -105,23 +128,23 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ %@ %@ in range %d", comment: "[the farthest two] [enemy] [targets] in range [500]")
                 return String(format: format, targetType.description(with: targetCount), targetAssignment.description, targetCount.pluralModifier.description, targetRange.rawRange)
             }
-        case (true, false, true, true, true):
+        case (true, false, true, true, true, _):
             if targetCount == .all {
                 if targetType.isExclusiveWithAll {
-                    let format = NSLocalizedString("front friendly targets in range %d", comment: "front friendly targets in range [500]")
-                    return String(format: format, targetRange.rawRange)
+                    let format = NSLocalizedString("front %@ targets in range %d", comment: "front [enemy] targets in range [500]")
+                    return String(format: format, targetAssignment.description, targetRange.rawRange)
                 } else {
                     let format = NSLocalizedString("front %@ %@ targets in range %d", comment: "front [friendly] [physics] targets in range [500]")
                     return String(format: format, targetAssignment.description, targetType.description, targetRange.rawRange)
                 }
             } else if targetCount == .one && targetType.ignoresOne {
-                let format = NSLocalizedString("%@ front friendly target in range %d", comment: "[the nearest] front friendly target in range [500]")
-                return String(format: format, targetType.description, targetRange.rawRange)
+                let format = NSLocalizedString("%@ front %@ target in range %d", comment: "[the nearest] front [enemy] target in range [500]")
+                return String(format: format, targetType.description, targetAssignment.description, targetRange.rawRange)
             } else {
-                let format = NSLocalizedString("%@ front friendly %@ in range %d", comment: "[the farthest two] front friendly [targets] in range [500]")
-                return String(format: format, targetType.description(with: targetCount), targetCount.pluralModifier.description, targetRange.rawRange)
+                let format = NSLocalizedString("%@ front %@ %@ in range %d", comment: "[the farthest two] front [enemy] [targets] in range [500]")
+                return String(format: format, targetType.description(with: targetCount), targetAssignment.description, targetCount.pluralModifier.description, targetRange.rawRange)
             }
-        case (true, true, false, true, false):
+        case (true, true, false, true, false, _):
             if targetCount == .one && targetType.ignoresOne {
                 let format = NSLocalizedString("%@ %@ target", comment: "[the second nearest] [enemy] target")
                 return String(format: format, targetType.description(with: targetNth), targetAssignment.description)
@@ -132,13 +155,13 @@ class TargetParameter {
                 let modifier = String(format: modifierFormat, targetNth.description, targetMth.description)
                 return String(format: format, targetType.description(with: targetNth, localizedNth: modifier), targetAssignment.description, targetCount.pluralModifier.description)
             }
-        case (true, true, false, true, true):
-            let format = NSLocalizedString("%@ front friendly %@", comment: "[the second to fourth farthest] front friendly [targets]")
+        case (true, true, false, true, true, _):
+            let format = NSLocalizedString("%@ front %@ %@", comment: "[the second to fourth farthest] front [enemy] [targets]")
             let targetMth = targetNth.add(targetCount) ?? .fifth
             let modifierFormat = NSLocalizedString("%@ to %@", comment: "")
             let modifier = String(format: modifierFormat, targetNth.description, targetMth.description)
-            return String(format: format, targetType.description(with: targetNth, localizedNth: modifier), targetCount.pluralModifier.description)
-        case (true, true, true, true, false):
+            return String(format: format, targetType.description(with: targetNth, localizedNth: modifier), targetAssignment.description,  targetCount.pluralModifier.description)
+        case (true, true, true, true, false, _):
             if targetCount == .one && targetType.ignoresOne {
                 let format = NSLocalizedString("%@ %@ target in range %d", comment: "[the second nearest] [enemy] target in range [500]")
                 return String(format: format, targetType.description(with: targetNth), targetAssignment.description, targetRange.rawRange)
@@ -149,16 +172,16 @@ class TargetParameter {
                 let modifier = String(format: modifierFormat, targetNth.description, targetMth.description)
                 return String(format: format, targetType.description(with: targetNth, localizedNth: modifier), targetAssignment.description, targetCount.pluralModifier.description, targetRange.rawRange)
             }
-        case (true, true, true, true, true):
+        case (true, true, true, true, true, _):
             if targetCount == .one && targetType.ignoresOne {
-                let format = NSLocalizedString("%@ front friendly target in range %d", comment: "[the second nearest] front friendly target in range [500]")
-                return String(format: format, targetType.description(with: targetNth), targetRange.rawRange)
+                let format = NSLocalizedString("%@ front %@ target in range %d", comment: "[the second nearest] front [enemy] target in range [500]")
+                return String(format: format, targetType.description(with: targetNth), targetAssignment.description, targetRange.rawRange)
             } else {
-                let format = NSLocalizedString("%@ front friendly %@ in range %d", comment: "[the second to fourth farthest] front friendly [targets] in range [500]")
+                let format = NSLocalizedString("%@ front %@ %@ in range %d", comment: "[the second to fourth farthest] front [enemy] [targets] in range [500]")
                 let targetMth = targetNth.add(targetCount) ?? .fifth
                 let modifierFormat = NSLocalizedString("%@ to %@", comment: "")
                 let modifier = String(format: modifierFormat, targetNth.description, targetMth.description)
-                return String(format: format, targetType.description(with: targetNth, localizedNth: modifier), targetCount.pluralModifier.description, targetRange.rawRange)
+                return String(format: format, targetType.description(with: targetNth, localizedNth: modifier), targetAssignment.description,  targetCount.pluralModifier.description, targetRange.rawRange)
             }
         default:
             return ""
@@ -180,7 +203,7 @@ enum TargetAssignment: Int, CustomStringConvertible {
         case .friendly:
             return NSLocalizedString("friendly", comment: "target modifier")
         case .all:
-            return NSLocalizedString("all", comment: "target modifier")
+            return NSLocalizedString("both sides", comment: "target modifier")
         default:
             return ""
         }
@@ -259,7 +282,7 @@ enum TargetType: Int, CustomStringConvertible {
         case .backward:
             return NSLocalizedString("the most forward", comment: "target type")
         case .absolute:
-            return NSLocalizedString("absolute", comment: "")
+            return NSLocalizedString("targets within the scope", comment: "")
         case .tpDescending:
             return NSLocalizedString("the highest TP", comment: "target type")
         case .tpAscending, .tpReducing:
@@ -337,9 +360,6 @@ enum TargetType: Int, CustomStringConvertible {
             return String(format: format, localizedModifier)
         case .randomOnce:
             let format = NSLocalizedString("%@ random(once)", comment: "")
-            return String(format: format, localizedModifier)
-        case .absolute:
-            let format = NSLocalizedString("%@ absolute", comment: "")
             return String(format: format, localizedModifier)
         case .summon:
             let format = NSLocalizedString("%@ minion", comment: "")

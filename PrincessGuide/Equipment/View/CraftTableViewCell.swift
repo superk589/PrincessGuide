@@ -9,7 +9,7 @@
 import UIKit
 import Gestalt
 
-class CraftTableViewCell: UITableViewCell, CraftDetailConfigurable {
+class CraftTableViewCell: UITableViewCell, CraftDetailConfigurable, UniqueCraftConfigurable {
     
     let icon = IconImageView()
     
@@ -53,17 +53,25 @@ class CraftTableViewCell: UITableViewCell, CraftDetailConfigurable {
         
     }
     
-    func configure(for consume: Craft.Consume) {
-        nameLabel.text = consume.equipment?.equipmentName
-        consumeNumberLabel.text = String(consume.consumeNum)
-        icon.equipmentID = consume.equipmentID
+    func configure(name: String?, number: Int, itemURL: URL) {
+        nameLabel.text = name
+        consumeNumberLabel.text = String(number)
+        icon.kf.setImage(with: itemURL, placeholder: #imageLiteral(resourceName: "icon_placeholder"))
     }
     
     func configure(for item: CraftDetailItem) {
         guard case .consume(let consume) = item else {
             fatalError()
         }
-        configure(for: consume)
+        configure(name: consume.equipment?.equipmentName, number: consume.consumeNum, itemURL: consume.itemURL)
+    }
+    
+    func configure(for item: UniqueCraftItem) {
+        guard case .consume(let consume) = item else {
+            fatalError()
+        }
+        configure(name: nil, number: consume.consumeNum, itemURL: consume.itemURL)
+
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -19,6 +19,7 @@ class EDTableViewController: UITableViewController {
             case unit(Enemy.Unit)
             case profile(Enemy.Unit)
             case pattern(AttackPattern, Enemy, Int?)
+            case minion(Enemy)
             case propertyItems([Property.Item], Int, Int)
             case text(String, String)
             case textArray([(String, String)])
@@ -96,5 +97,16 @@ class EDTableViewController: UITableViewController {
         cell.configure(for: model.data)
         
         return cell as! UITableViewCell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = rows[indexPath.row].data
+        switch data {
+        case .minion(let minion):
+            let vc = EDTabViewController(enemy: minion, isMinion: true)
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
 }

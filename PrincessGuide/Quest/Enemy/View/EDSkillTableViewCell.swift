@@ -144,10 +144,17 @@ class EDSkillTableViewCell: UITableViewCell, EnemyDetailConfigurable {
         descLabel.text = skill.base.description
         skillLevelLabel.text = "\(level)"
         skillIcon.skillIconID = skill.base.iconType
-        actionLabel.text = skill.actions.map {
-            let parameter = $0.parameter
-            return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: level, property: property, style: EDSettingsViewController.Setting.default.expressionStyle))"
-            }.joined(separator: "\n")
+        
+        if skill.actions.count > 0 {
+            actionLabel.text = skill.actions.map {
+                let parameter = $0.buildParameter(dependActionID: skill.dependActionIDs[$0.actionId] ?? 0)
+                return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: level, property: property, style: EDSettingsViewController.Setting.default.expressionStyle))"
+                }.joined(separator: "\n")
+        } else {
+            actionLabel.text = NSLocalizedString("Do nothing.", comment: "")
+        }
+        
+        selectionStyle = .none
     }
     
     func configure(for item: EnemyDetailItem) {

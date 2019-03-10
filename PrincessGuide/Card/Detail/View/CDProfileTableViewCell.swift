@@ -69,3 +69,12 @@ class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
 }
+
+extension CDProfileTableViewCell: MinionDetailConfigurable {
+    func configure(for item: MinionDetailItem) {
+        guard case .propertyItems(let items, let unitLevel, let targetLevel) = item else {
+            return
+        }
+        configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel, comparisonMode: false)
+    }
+}

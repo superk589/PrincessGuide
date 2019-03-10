@@ -48,8 +48,8 @@ extension PatternCollectionViewCell {
 
 extension EDPatternTableViewCell: EnemyDetailConfigurable {
     
-    func configure(for pattern: AttackPattern, enemy: Enemy, index: Int?) {
-        attackPatternView.configure(for: pattern, enemy: enemy)
+    func configure(for items: [AttackPatternView.Item], index: Int?) {
+        attackPatternView.configure(for: items)
         if let index = index {
             titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
         } else {
@@ -61,7 +61,63 @@ extension EDPatternTableViewCell: EnemyDetailConfigurable {
         guard case .pattern(let pattern, let enemy, let index) = item else {
             fatalError()
         }
-        configure(for: pattern, enemy: enemy, index: index)
+        
+        let items: [AttackPatternView.Item] = pattern.items.enumerated().map {
+            let offset = $0.offset
+            let item = $0.element
+            let iconType: AttackPatternView.Item.IconType
+            let loopType: AttackPatternView.Item.LoopType
+            let text: String
+            switch item {
+            case 1:
+                if enemy.unit.atkType == 2 {
+                    iconType = .magicalSwing
+                } else {
+                    iconType = .physicalSwing
+                }
+                text = NSLocalizedString("Swing", comment: "")
+            case let x where x > 1000:
+                let index = x - 1001
+                let skillID = enemy.base.mainSkillIDs[index]
+                
+                if let (offset, element) = enemy.mainSkills.enumerated().first (where: {
+                    $0.element.base.skillId == skillID
+                }) {
+                    let iconID = element.base.iconType
+                    iconType = .skill(iconID)
+                    let format = NSLocalizedString("Main %d", comment: "")
+                    text = String(format: format, offset + 1)
+                } else {
+                    iconType = .unknown
+                    text = ""
+                }
+                
+            default:
+                iconType = .unknown
+                text = NSLocalizedString("Unknown", comment: "")
+            }
+    
+            switch offset {
+            case pattern.loopStart - 1:
+                if pattern.loopStart == pattern.loopEnd {
+                    loopType = .inPlace
+                } else {
+                    loopType = .start
+                }
+            case pattern.loopEnd - 1:
+                loopType = .end
+            default:
+                loopType = .none
+            }
+            
+            return AttackPatternView.Item(
+                iconType: iconType,
+                loopType: loopType,
+                text: text
+            )
+        }
+        
+        configure(for: items, index: index)
     }
 }
 
