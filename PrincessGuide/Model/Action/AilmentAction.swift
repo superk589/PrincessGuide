@@ -52,6 +52,9 @@ class AilmentAction: ActionParameter {
             case .some(.dot(.poison)):
                 let format = NSLocalizedString("Poison %@ and deal [%@] damage per second for [%@]s.", comment: "")
                 return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+            case .some(.dot(.violentPoison)):
+                let format = NSLocalizedString("Poison %@ violently and deal [%@] damage per second for [%@]s.", comment: "")
+                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             default:
                 let format = NSLocalizedString("%@ %@ and deal [%@] damage per second for [%@]s.", comment: "")
                 return String(format: format, ailment.description, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))

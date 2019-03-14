@@ -1299,6 +1299,10 @@
         <target>%1$@に毒状態にして、[%2$@]のダメージを与える、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Poison %@ violently and deal [%@] damage per second for [%@]s.">
+        <source>Poison %1$@ violently and deal [%2$@] damage per second for [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Position">
         <source>Position</source>
         <target>ボジション</target>
@@ -1773,6 +1777,10 @@
       </trans-unit>
       <trans-unit id="Version Log">
         <source>Version Log</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Violent Poison">
+        <source>Violent Poison</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave %d">

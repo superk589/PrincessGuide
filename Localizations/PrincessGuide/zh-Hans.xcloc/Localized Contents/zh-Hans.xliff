@@ -1439,6 +1439,11 @@
         <target>使%1$@中毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Poison %@ violently and deal [%@] damage per second for [%@]s.">
+        <source>Poison %1$@ violently and deal [%2$@] damage per second for [%3$@]s.</source>
+        <target>使%1$@中猛毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Position">
         <source>Position</source>
         <target>位置</target>
@@ -1973,6 +1978,11 @@
       <trans-unit id="Version Log">
         <source>Version Log</source>
         <target>数据更新日志</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Violent Poison">
+        <source>Violent Poison</source>
+        <target>猛毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave %d">

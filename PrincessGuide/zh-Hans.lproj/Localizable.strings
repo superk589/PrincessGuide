@@ -962,6 +962,9 @@
 "Poison %@ and deal [%@] damage per second for [%@]s." = "使%1$@中毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"Poison %@ violently and deal [%@] damage per second for [%@]s." = "使%1$@中猛毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
 "Position" = "位置";
 
 /* No comment provided by engineer. */
@@ -1471,6 +1474,9 @@
 
 /* No comment provided by engineer. */
 "Version Log" = "数据更新日志";
+
+/* No comment provided by engineer. */
+"Violent Poison" = "猛毒";
 
 /* No comment provided by engineer. */
 "Wave %d" = "第 %d 波";

@@ -29,6 +29,7 @@ enum DotDetail: Int, CustomStringConvertible {
     case poison
     case burn
     case curse
+    case violentPoison
     case unknown
     
     var description: String {
@@ -41,6 +42,8 @@ enum DotDetail: Int, CustomStringConvertible {
             return NSLocalizedString("Burn", comment: "")
         case .curse:
             return NSLocalizedString("Curse", comment: "")
+        case .violentPoison:
+            return NSLocalizedString("Violent Poison", comment: "")
         default:
             return NSLocalizedString("Unknown", comment: "")
         }
