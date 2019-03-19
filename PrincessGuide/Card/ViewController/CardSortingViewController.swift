@@ -26,6 +26,7 @@ class CardSortingViewController: FormViewController {
             case position
             case attackType
             case uniqueEquipNumber
+            case race
             case none
             
             var description: String {
@@ -38,6 +39,8 @@ class CardSortingViewController: FormViewController {
                     return NSLocalizedString("Attack Type", comment: "")
                 case .uniqueEquipNumber:
                     return NSLocalizedString("Number of Unique Equipments", comment: "")
+                case .race:
+                    return NSLocalizedString("Race", comment: "")
                 default:
                     return NSLocalizedString("None", comment: "")
                 }
