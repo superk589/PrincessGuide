@@ -290,6 +290,20 @@ class CardSortingViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
         
+            +++ Section()
+            
+            <<< ButtonRow("reset") { (row) in
+                row.title = NSLocalizedString("Reset", comment: "")
+                }
+                .cellSetup(cellSetup(cell:row:))
+                .onCellSelection { [unowned self] (cell, row) in
+                    let encoder = JSONEncoder()
+                    encoder.keyEncodingStrategy = .convertToSnakeCase
+                    let data = try! encoder.encode(Setting())
+                    let json = try! JSON(data: data)
+                    self.form.setValues(json.dictionaryObject ?? [:])
+                    self.tableView.reloadData()
+        }
     }
     
     @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
