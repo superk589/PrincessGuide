@@ -272,11 +272,11 @@ enum TargetType: Int, CustomStringConvertible {
         switch self {
         case .unknown:
             return NSLocalizedString("unknown", comment: "target type")
-        case .none:
-            return NSLocalizedString("last effect affected or the nearest", comment: "")
+//        case .none:
+//            return NSLocalizedString("last effect affected or the nearest", comment: "")
         case .random:
             return NSLocalizedString("random", comment: "target type")
-        case .zero, .near:
+        case .zero, .near, .none:
             return NSLocalizedString("the nearest", comment: "target type")
         case .far:
             return NSLocalizedString("the farthest", comment: "target type")
@@ -327,10 +327,10 @@ enum TargetType: Int, CustomStringConvertible {
         case .unknown:
             let format = NSLocalizedString("%@ unknown type", comment: "target type")
             return String(format: format, localizedModifier)
-        case .none:
-            let format = NSLocalizedString("targets of last effect or %@ nearest", comment: "target type")
-            return String(format: format, localizedModifier)
-        case .zero, .near:
+//        case .none:
+//            let format = NSLocalizedString("targets of last effect or %@ nearest", comment: "target type")
+//            return String(format: format, localizedModifier)
+        case .zero, .near, .none:
             let format = NSLocalizedString("%@ nearest", comment: "target type")
             return String(format: format, localizedModifier)
         case .far:
@@ -396,10 +396,10 @@ enum TargetType: Int, CustomStringConvertible {
             case .unknown:
                 let format = NSLocalizedString("the %@ unknown type", comment: "target type")
                 return String(format: format, localizedModifier)
-            case .none:
-                let format = NSLocalizedString("targets of last effect or the %@ nearest", comment: "target type")
-                return String(format: format, localizedModifier)
-            case .zero, .near:
+//            case .none:
+//                let format = NSLocalizedString("targets of last effect or the %@ nearest", comment: "target type")
+//                return String(format: format, localizedModifier)
+            case .zero, .near, .none:
                 let format = NSLocalizedString("the %@ nearest", comment: "target type")
                 return String(format: format, localizedModifier)
             case .far:
