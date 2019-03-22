@@ -164,13 +164,22 @@
 "all %@ targets" = "所有%@目标";
 
 /* No comment provided by engineer. */
+"all front %@ enemy targets" = "所有前方%@敌方目标";
+
+/* No comment provided by engineer. */
+"all front %@ targets" = "所有前方%@目标";
+
+/* No comment provided by engineer. */
 "all front enemy targets" = "所有前方敌方目标";
 
 /* No comment provided by engineer. */
 "all front targets" = "所有前方目标";
 
 /* No comment provided by engineer. */
-"all front(including self) friendly targets" = "所有前方的友方目标（包括自己）";
+"all front(including self) %@ friendly targets" = "所有前方%@友方目标（包括自己）";
+
+/* No comment provided by engineer. */
+"all front(including self) friendly targets" = "所有前方友方目标（包括自己）";
 
 /* No comment provided by engineer. */
 "always 1★" = "固定 1★";
@@ -773,6 +782,9 @@
 "Main+" = "Main+";
 
 /* No comment provided by engineer. */
+"Make %@ attract enemy attacks, last for [%@]s." = "使%1$@吸引敌方的攻击，持续 [%2$@] 秒。";
+
+/* No comment provided by engineer. */
 "Make %@ fall asleep for [%@]s." = "使%1$@入睡，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -1228,9 +1240,6 @@
 
 /* No comment provided by engineer. */
 "targets within the scope" = "范围内的目标";
-
-/* No comment provided by engineer. */
-"Taunt all enemy targets for [%@]s." = "嘲讽所有敌方单位，持续 [%@] 秒。";
 
 /* No comment provided by engineer. */
 "Team Detail" = "队伍详情";

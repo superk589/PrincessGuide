@@ -1071,6 +1071,10 @@
         <source>Main+</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ attract enemy attacks, last for [%@]s.">
+        <source>Make %1$@ attract enemy attacks, last for [%2$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Make %@ fall asleep for [%@]s.">
         <source>Make %1$@ fall asleep for [%2$@]s.</source>
         <target>%1$@を睡眠状態にする、[%2$@]秒継続する。</target>
@@ -1616,11 +1620,6 @@
         <target>相手レベル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Taunt all enemy targets for [%@]s.">
-        <source>Taunt all enemy targets for [%@]s.</source>
-        <target>敵全体を挑発する、[%@]秒継続する。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Team Detail">
         <source>Team Detail</source>
         <note>No comment provided by engineer.</note>
@@ -1838,12 +1837,24 @@
         <target>%@全体</target>
         <note>all [enemy] targets</note>
       </trans-unit>
+      <trans-unit id="all front %@ enemy targets">
+        <source>all front %@ enemy targets</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="all front %@ targets">
+        <source>all front %@ targets</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="all front enemy targets">
         <source>all front enemy targets</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all front targets">
         <source>all front targets</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="all front(including self) %@ friendly targets">
+        <source>all front(including self) %@ friendly targets</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all front(including self) friendly targets">

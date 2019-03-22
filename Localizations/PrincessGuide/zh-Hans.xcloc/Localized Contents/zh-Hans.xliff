@@ -1174,6 +1174,11 @@
         <target>Main+</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ attract enemy attacks, last for [%@]s.">
+        <source>Make %1$@ attract enemy attacks, last for [%2$@]s.</source>
+        <target>使%1$@吸引敌方的攻击，持续 [%2$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Make %@ fall asleep for [%@]s.">
         <source>Make %1$@ fall asleep for [%2$@]s.</source>
         <target>使%1$@入睡，持续 [%2$@] 秒。</target>
@@ -1795,11 +1800,6 @@
         <target>目标等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Taunt all enemy targets for [%@]s.">
-        <source>Taunt all enemy targets for [%@]s.</source>
-        <target>嘲讽所有敌方单位，持续 [%@] 秒。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Team Detail">
         <source>Team Detail</source>
         <target>队伍详情</target>
@@ -2045,6 +2045,16 @@
         <target>所有%@目标</target>
         <note>all [enemy] targets</note>
       </trans-unit>
+      <trans-unit id="all front %@ enemy targets">
+        <source>all front %@ enemy targets</source>
+        <target>所有前方%@敌方目标</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="all front %@ targets">
+        <source>all front %@ targets</source>
+        <target>所有前方%@目标</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="all front enemy targets">
         <source>all front enemy targets</source>
         <target>所有前方敌方目标</target>
@@ -2055,9 +2065,14 @@
         <target>所有前方目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="all front(including self) %@ friendly targets">
+        <source>all front(including self) %@ friendly targets</source>
+        <target>所有前方%@友方目标（包括自己）</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="all front(including self) friendly targets">
         <source>all front(including self) friendly targets</source>
-        <target>所有前方的友方目标（包括自己）</target>
+        <target>所有前方友方目标（包括自己）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="always 1★">

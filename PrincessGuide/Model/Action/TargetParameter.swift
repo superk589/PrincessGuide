@@ -64,14 +64,13 @@ class TargetParameter {
     
     func buildTargetClause() -> String {
         switch (hasCountPhrase, hasNthModifier, hasRangePhrase, hasRelationPhrase, hasDirectionPhrase, hasDependAction) {
-        case (_, _, _, _, _, true):
-            if targetCount == .all && hasRangePhrase {
-                let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
-                return String(format: format, dependActionID % 100, targetAssignment.description, targetRange.rawRange)
-            } else {
-                let format = NSLocalizedString("targets of effect %d", comment: "")
-                return String(format: format, dependActionID % 100)
-            }           
+        case (_, _, true, _, _, true) where targetCount == .all:
+            let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
+            return String(format: format, dependActionID % 100, targetAssignment.description, targetRange.rawRange)
+        case (false, _, _, _, _, true),
+             (true, _, _, _, _, true) where targetCount == .all:
+            let format = NSLocalizedString("targets of effect %d", comment: "")
+            return String(format: format, dependActionID % 100)
         case (_, _, _, false, _, _):
             return targetType.description.description
         case (false, false, false, true, _, _):
@@ -92,7 +91,7 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ %@ %@", comment: "[the farthest two] [enemy] [targets]")
                 return String(format: format, targetType.description(with: targetCount), targetAssignment.description, targetCount.pluralModifier.description)
             }
-        case (true, false, false, true, true, _):
+        case (true, false, false, true, true, _) where targetType.isExclusiveWithAll:
             switch targetAssignment {
             case .enemy:
                 let format = NSLocalizedString("all front enemy targets", comment: "")
@@ -103,6 +102,18 @@ class TargetParameter {
             default:
                 let format = NSLocalizedString("all front targets", comment: "")
                 return String(format: format)
+            }
+        case (true, false, false, true, true, _) where !targetType.isExclusiveWithAll:
+            switch targetAssignment {
+            case .enemy:
+                let format = NSLocalizedString("all front %@ enemy targets", comment: "")
+                return String(format: format, targetType.description)
+            case .friendly:
+                let format = NSLocalizedString("all front(including self) %@ friendly targets", comment: "")
+                return String(format: format, targetType.description)
+            default:
+                let format = NSLocalizedString("all front %@ targets", comment: "")
+                return String(format: format, targetType.description)
             }
         case (false, false, true, true, false, _):
             let format = NSLocalizedString("%@ targets in range %d", comment: "[enemy] targets in range [500]")

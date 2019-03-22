@@ -581,9 +581,6 @@
 /* target type */
 "targets of last effect or the %@ nearest" = "同じか%@近い";
 
-/* No comment provided by engineer. */
-"Taunt all enemy targets for [%@]s." = "敵全体を挑発する、[%@]秒継続する。";
-
 /* target type */
 "the %@ farthest" = "%@遠い";
 

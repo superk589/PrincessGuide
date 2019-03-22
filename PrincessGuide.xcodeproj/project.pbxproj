@@ -240,7 +240,7 @@
 		12F125F120B94E2B005C9659 /* TriggerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F020B94E2B005C9659 /* TriggerAction.swift */; };
 		12F125F320B9501F005C9659 /* DamageChargeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F220B9501F005C9659 /* DamageChargeAction.swift */; };
 		12F125F520B95037005C9659 /* ChargeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F420B95037005C9659 /* ChargeAction.swift */; };
-		12F125F720B9505D005C9659 /* TauntAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F620B9505D005C9659 /* TauntAction.swift */; };
+		12F125F720B9505D005C9659 /* DecoyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F620B9505D005C9659 /* DecoyAction.swift */; };
 		12F125F920B950F9005C9659 /* NoDamageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F820B950F9005C9659 /* NoDamageAction.swift */; };
 		12F125FB20B952CA005C9659 /* ChangePatternAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125FA20B952CA005C9659 /* ChangePatternAction.swift */; };
 		12F125FD20B952EB005C9659 /* IfForChildrenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */; };
@@ -534,7 +534,7 @@
 		12F125F020B94E2B005C9659 /* TriggerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerAction.swift; sourceTree = "<group>"; };
 		12F125F220B9501F005C9659 /* DamageChargeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageChargeAction.swift; sourceTree = "<group>"; };
 		12F125F420B95037005C9659 /* ChargeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeAction.swift; sourceTree = "<group>"; };
-		12F125F620B9505D005C9659 /* TauntAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TauntAction.swift; sourceTree = "<group>"; };
+		12F125F620B9505D005C9659 /* DecoyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoyAction.swift; sourceTree = "<group>"; };
 		12F125F820B950F9005C9659 /* NoDamageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDamageAction.swift; sourceTree = "<group>"; };
 		12F125FA20B952CA005C9659 /* ChangePatternAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePatternAction.swift; sourceTree = "<group>"; };
 		12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfForChildrenAction.swift; sourceTree = "<group>"; };
@@ -1239,7 +1239,7 @@
 				12F125F020B94E2B005C9659 /* TriggerAction.swift */,
 				12F125F220B9501F005C9659 /* DamageChargeAction.swift */,
 				12F125F420B95037005C9659 /* ChargeAction.swift */,
-				12F125F620B9505D005C9659 /* TauntAction.swift */,
+				12F125F620B9505D005C9659 /* DecoyAction.swift */,
 				12F125F820B950F9005C9659 /* NoDamageAction.swift */,
 				12F125FA20B952CA005C9659 /* ChangePatternAction.swift */,
 				12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */,
@@ -1632,7 +1632,7 @@
 				12F125D220B90DF3005C9659 /* ActionParameter.swift in Sources */,
 				12F125DF20B931EF005C9659 /* CureAction.swift in Sources */,
 				12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */,
-				12F125F720B9505D005C9659 /* TauntAction.swift in Sources */,
+				12F125F720B9505D005C9659 /* DecoyAction.swift in Sources */,
 				12DA21EF20EFBBE3005FD705 /* EditCharaInBoxViewController.swift in Sources */,
 				12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */,
 				12F1260520B95377005C9659 /* MultipleAction.swift in Sources */,
@@ -1977,7 +1977,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 95;
+				CURRENT_PROJECT_VERSION = 96;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1999,7 +1999,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 95;
+				CURRENT_PROJECT_VERSION = 96;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

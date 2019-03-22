@@ -45,7 +45,7 @@ class ActionParameter {
         case 19:
             return ChargeAction.self
         case 20:
-            return TauntAction.self
+            return DecoyAction.self
         case 21:
             return NoDamageAction.self
         case 22:
