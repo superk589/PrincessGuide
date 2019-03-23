@@ -274,7 +274,7 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("unknown", comment: "target type")
 //        case .none:
 //            return NSLocalizedString("last effect affected or the nearest", comment: "")
-        case .random:
+        case .random, .randomOnce:
             return NSLocalizedString("random", comment: "target type")
         case .zero, .near, .none:
             return NSLocalizedString("the nearest", comment: "target type")
@@ -286,8 +286,8 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("the highest HP ratio", comment: "target type")
         case .`self`:
             return NSLocalizedString("self", comment: "target type")
-        case .randomOnce:
-            return NSLocalizedString("random(once)", comment: "target type")
+//        case .randomOnce:
+//            return NSLocalizedString("random(once)", comment: "target type")
         case .forward:
             return NSLocalizedString("the most backward", comment: "target type")
         case .backward:
@@ -366,12 +366,12 @@ enum TargetType: Int, CustomStringConvertible {
         case .magicSTRAscending:
             let format = NSLocalizedString("%@ lowest Magic STR", comment: "")
             return String(format: format, localizedModifier)
-        case .random:
+        case .random, .randomOnce:
             let format = NSLocalizedString("%@ random", comment: "")
             return String(format: format, localizedModifier)
-        case .randomOnce:
-            let format = NSLocalizedString("%@ random(once)", comment: "")
-            return String(format: format, localizedModifier)
+//        case .randomOnce:
+//            let format = NSLocalizedString("%@ random(once)", comment: "")
+//            return String(format: format, localizedModifier)
         case .summon:
             let format = NSLocalizedString("%@ minion", comment: "")
             return String(format: format, localizedModifier)
