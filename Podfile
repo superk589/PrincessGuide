@@ -20,5 +20,5 @@ target 'PrincessGuide' do
   pod 'ImageViewer', :git => 'https://github.com/superk589/ImageViewer.git'
 #  pod 'SwiftyStoreKit'
   pod 'BrotliKit'
-  pod 'Cache'
+  pod 'Cache', :git => 'https://github.com/Igor-Palaguta/Cache', :branch => 'Update-MD5'
 end
