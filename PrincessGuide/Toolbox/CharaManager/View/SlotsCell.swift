@@ -90,7 +90,7 @@ class SlotsCell: Cell<[Bool]>, CellType {
     @objc private func handleTapGestureRecognizer(_ tap: UITapGestureRecognizer) {
         if let imageView = tap.view as? SelectableIconImageView {
             imageView.isSelected = !imageView.isSelected
-            if let index = icons.index(of: imageView) {
+            if let index = icons.firstIndex(of: imageView) {
                 row.value?[index] = imageView.isSelected
             }
         }

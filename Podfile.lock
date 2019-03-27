@@ -1,5 +1,5 @@
 PODS:
-  - AcknowList (1.7)
+  - AcknowList (1.8)
   - Alamofire (4.7.3)
   - AutoInsetter (1.3.0)
   - BrotliKit (1.0.1)
@@ -11,7 +11,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - Gestalt (1.1.0)
   - ImageViewer (5.0.0)
-  - Kingfisher (5.0.1)
+  - Kingfisher (5.3.0)
   - KingfisherWebP (0.5.0):
     - Kingfisher (~> 5.0)
     - libwebp (>= 0.5.0)
@@ -49,7 +49,7 @@ PODS:
     - AutoInsetter (~> 1.3.0)
     - Pageboy (~> 2.6.0)
   - Timepiece (1.3.1)
-  - TTGTagCollectionView (1.9.0)
+  - TTGTagCollectionView (1.11.1)
 
 DEPENDENCIES:
   - AcknowList
@@ -110,7 +110,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/superk589/Tabman.git
 
 SPEC CHECKSUMS:
-  AcknowList: 286185b24c2c2df63a2bb4137f853e4384b4358b
+  AcknowList: 5b8820004d019d0a8d6a091ea2392dcb54bd3ad2
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AutoInsetter: 0ea4dddc17042ab45114ec5d5980764efae98584
   BrotliKit: b28f7dfde4436acc7e990e73a313ed8c40ba23e7
@@ -120,7 +120,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Gestalt: be239fdeee2de30b2468865cf5e24b7923f507c2
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  Kingfisher: 4692c783ffb99e9e2e40a6eb3e518c3b96c6fa8c
   KingfisherWebP: 310f69a932151c526a7649de965f57e56918c8d0
   libwebp: d7e0c95fe97245c97e08101eba10702ebb0f6101
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
@@ -131,7 +131,7 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Tabman: c8bc49ed4e2eca020e08d6d7de50bb86f2231b10
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
-  TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
+  TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
 PODFILE CHECKSUM: 5fa7b35ba2c2ccc95f39bfc16ee54963c01169f5
 

@@ -82,7 +82,7 @@ class CandidateCardsView: UIView {
     }
     
     @objc private func handleTapGestureRecognizer(_ tap: UITapGestureRecognizer) {
-        if let view = tap.view as? IconImageView, let index = icons.index(of: view) {
+        if let view = tap.view as? IconImageView, let index = icons.firstIndex(of: view) {
             delegate?.candidateCardsView(self, didSelect: index)
         }
     }

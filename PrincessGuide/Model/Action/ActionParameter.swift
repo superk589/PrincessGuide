@@ -194,7 +194,7 @@ class ActionParameter {
                 .joined(separator: ","),
             rawActionValues
                 .filter { $0 != 0 }
-                .map(String.init)
+                .map(String.init(_:))
                 .joined(separator: ", ")
         )
     }

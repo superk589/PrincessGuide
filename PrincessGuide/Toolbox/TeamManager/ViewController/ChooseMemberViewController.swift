@@ -71,7 +71,7 @@ class ChooseMemberViewController: CardCollectionViewController {
             } else {
                 cell.isEnable = true
                 let card = sortedCards[indexPath.item]
-                if let index = selectedCards.index(where: { $0.card.base.unitId == card.base.unitId }) {
+                if let index = selectedCards.firstIndex(where: { $0.card.base.unitId == card.base.unitId }) {
                     selectedCards.remove(at: index)
                     candidateView.configure(for: selectedCards.map { $0.card })
                 }
@@ -97,7 +97,7 @@ extension ChooseMemberViewController: CandidateCardsViewDelegate {
     func candidateCardsView(_ candidateCardsView: CandidateCardsView, didSelect index: Int) {
         let selected = selectedCards.remove(at: index)
         candidateCardsView.configure(for: selectedCards.map { $0.card })
-        if let index = sortedCards.index(where: { $0.base.unitId == selected.card.base.unitId }) {
+        if let index = sortedCards.firstIndex(where: { $0.base.unitId == selected.card.base.unitId }) {
             collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
         }
     }

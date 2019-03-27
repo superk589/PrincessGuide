@@ -119,7 +119,7 @@ class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UIC
                 return array
             }
             let mergedConsumes = consumes.reduce(into: [Craft.Consume]()) { (result, consume) in
-                if let index = result.index(where: { $0.equipmentID == consume.equipmentID }) {
+                if let index = result.firstIndex(where: { $0.equipmentID == consume.equipmentID }) {
                     let removedConsume = result.remove(at: index)
                     result.append(Craft.Consume(equipmentID: removedConsume.equipmentID, consumeNum: removedConsume.consumeNum + consume.consumeNum))
                 } else {
