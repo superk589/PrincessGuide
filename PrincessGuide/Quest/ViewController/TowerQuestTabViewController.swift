@@ -11,7 +11,7 @@ import Tabman
 import Pageboy
 import Gestalt
 
-class TowerQuestTabViewController: TabmanViewController, PageboyViewControllerDataSource {
+class TowerQuestTabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
     
     private var viewControllers = [UIViewController]()
     
@@ -29,11 +29,12 @@ class TowerQuestTabViewController: TabmanViewController, PageboyViewControllerDa
         fatalError("init(coder:) has not been implemented")
     }
     
+    private var items = [TMBarItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var vcs = [UIViewController]()
-        var items = [Item]()
         
         for i in 0... {
             let lowerBound = i * 10
@@ -41,7 +42,7 @@ class TowerQuestTabViewController: TabmanViewController, PageboyViewControllerDa
             let subQuests = Array(exQuests[lowerBound..<upperBound])
             let vc = QuestEnemyTableViewController(towerQuests: subQuests)
             let title = "Ex \(subQuests.first?.floorNum ?? 0) - \(subQuests.last?.floorNum ?? 0)"
-            items.append(Item(title: title))
+            items.append(TMBarItem(title: title))
             vcs.append(vc)
             if upperBound == exQuests.count { break }
         }
@@ -52,15 +53,18 @@ class TowerQuestTabViewController: TabmanViewController, PageboyViewControllerDa
             let subQuests = Array(quests[lowerBound..<upperBound])
             let vc = QuestEnemyTableViewController(towerQuests: Array(subQuests))
             let title = "\(subQuests.first?.floorNum ?? 0) - \(subQuests.last?.floorNum ?? 0)"
-            items.append(Item(title: title))
+            items.append(TMBarItem(title: title))
             vcs.append(vc)
             if upperBound == quests.count { break }
         }
         
         viewControllers = vcs
-        bar.items = items
         dataSource = self
-        bar.location = .bottom
+        let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>()
+        let systemBar = bar.systemBar()
+        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        bar.layout.transitionStyle = .progressive
+        addBar(systemBar, dataSource: self, at: .bottom)
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             let navigationBar = themeable.navigationController?.navigationBar
@@ -68,14 +72,12 @@ class TowerQuestTabViewController: TabmanViewController, PageboyViewControllerDa
             navigationBar?.barStyle = theme.barStyle
             
             themeable.view.backgroundColor = theme.color.background
-            themeable.bar.appearance = TabmanBar.Appearance({ (appearance) in
-                appearance.indicator.color = theme.color.tint
-                appearance.state.selectedColor = theme.color.tint
-                appearance.state.color = theme.color.lightText
-                appearance.layout.itemDistribution = .centered
-                appearance.style.background = .blur(style: theme.blurEffectStyle)
-                appearance.indicator.preferredStyle = .clear
+            bar.indicator.tintColor = theme.color.tint
+            bar.buttons.customize({ (button) in
+                button.selectedTintColor = theme.color.tint
+                button.tintColor = theme.color.lightText
             })
+            systemBar.backgroundStyle = .blur(style: theme.blurEffectStyle)
         }
         
     }
@@ -90,5 +92,9 @@ class TowerQuestTabViewController: TabmanViewController, PageboyViewControllerDa
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return .at(index: 0)
+    }
+    
+    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
+        return items[index]
     }
 }

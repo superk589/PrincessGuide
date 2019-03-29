@@ -15,7 +15,7 @@ target 'PrincessGuide' do
   pod 'MJRefresh'
   pod 'Gestalt', :git => 'https://github.com/superk589/Gestalt.git', :branch => 'swift5'
   pod 'Timepiece'
-  pod 'Tabman', :git => 'https://github.com/superk589/Tabman.git'
+  pod 'Tabman'
   pod 'Eureka'
   pod 'ImageViewer', :git => 'https://github.com/superk589/ImageViewer.git'
 #  pod 'SwiftyStoreKit'
