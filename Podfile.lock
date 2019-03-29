@@ -11,7 +11,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - Gestalt (1.1.0)
   - ImageViewer (5.0.0)
-  - Kingfisher (5.3.0)
+  - Kingfisher (5.3.1)
   - KingfisherWebP (0.5.0):
     - Kingfisher (~> 5.0)
     - libwebp (>= 0.5.0)
@@ -42,7 +42,7 @@ PODS:
   - lz4 (128)
   - MJRefresh (3.1.16)
   - Pageboy (2.6.1)
-  - ReachabilitySwift (4.3.0)
+  - ReachabilitySwift (4.3.1)
   - SnapKit (4.2.0)
   - SwiftyJSON (4.2.0)
   - Tabman (1.10.2):
@@ -59,7 +59,7 @@ DEPENDENCIES:
   - DynamicColor
   - Eureka
   - FMDB
-  - Gestalt
+  - Gestalt (from `https://github.com/superk589/Gestalt.git`, branch `swift5`)
   - ImageViewer (from `https://github.com/superk589/ImageViewer.git`)
   - Kingfisher
   - KingfisherWebP
@@ -81,7 +81,6 @@ SPEC REPOS:
     - DynamicColor
     - Eureka
     - FMDB
-    - Gestalt
     - Kingfisher
     - KingfisherWebP
     - libwebp
@@ -98,6 +97,9 @@ EXTERNAL SOURCES:
   Cache:
     :branch: Update-MD5
     :git: https://github.com/Igor-Palaguta/Cache
+  Gestalt:
+    :branch: swift5
+    :git: https://github.com/superk589/Gestalt.git
   ImageViewer:
     :git: https://github.com/superk589/ImageViewer.git
   Tabman:
@@ -107,8 +109,11 @@ CHECKOUT OPTIONS:
   Cache:
     :commit: 560f00a9a9549db161ca70d96eed74fc580b03e3
     :git: https://github.com/Igor-Palaguta/Cache
+  Gestalt:
+    :commit: e080f1c889070af28525c087b35b3fdb47594d14
+    :git: https://github.com/superk589/Gestalt.git
   ImageViewer:
-    :commit: e17c8a76e2d248eaed459a755aecc29b3948c57e
+    :commit: 2d8d732f34b89e6c1ac37584dafa4a60300bd444
     :git: https://github.com/superk589/ImageViewer.git
   Tabman:
     :commit: 2a74059ec2c997957e54b4d2432c4c9b38a0d283
@@ -125,19 +130,19 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Gestalt: be239fdeee2de30b2468865cf5e24b7923f507c2
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kingfisher: 4692c783ffb99e9e2e40a6eb3e518c3b96c6fa8c
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   KingfisherWebP: 310f69a932151c526a7649de965f57e56918c8d0
   libwebp: d7e0c95fe97245c97e08101eba10702ebb0f6101
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   Pageboy: c2a25d1c280e9b622014b692626f1ff9298e0ad2
-  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Tabman: c8bc49ed4e2eca020e08d6d7de50bb86f2231b10
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: d82d68057d626b1a06c5503baf8c49143a9a9d1a
+PODFILE CHECKSUM: 5597d227bca2ce8f1d47a7178581130911a50039
 
-COCOAPODS: 1.7.0.beta.2
+COCOAPODS: 1.7.0.beta.3

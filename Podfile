@@ -13,7 +13,7 @@ target 'PrincessGuide' do
   pod 'Alamofire'
   pod 'lz4'
   pod 'MJRefresh'
-  pod 'Gestalt'
+  pod 'Gestalt', :git => 'https://github.com/superk589/Gestalt.git', :branch => 'swift5'
   pod 'Timepiece'
   pod 'Tabman', :git => 'https://github.com/superk589/Tabman.git'
   pod 'Eureka'
