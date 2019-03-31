@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func showNotice(payload: NoticePayload, ignoresExpireDate: Bool = false) {
-        if payload.expireDate < Date().toString(timeZone: .current) || ignoresExpireDate {
+        if payload.expireDate > Date().toString(format: "yyyy/MM/dd HH:mm:ss", timeZone: .current) || ignoresExpireDate {
             let alert = UIAlertController(title: payload.localizedTitle, message: payload.localizedContent, preferredStyle: .alert)
             let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
                 alert.dismiss(animated: true, completion: nil)
