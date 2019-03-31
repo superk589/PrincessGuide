@@ -29,6 +29,7 @@
 		12124F462089C9E1001C1A6F /* PropertyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F452089C9E1001C1A6F /* PropertyKey.swift */; };
 		12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4D208EC1A4001C1A6F /* Ailment.swift */; };
 		12125EEE2202C06600A5CEB9 /* IFExistsFieldForAllAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */; };
+		1213373A225113D000BB701B /* RaidBossTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12133739225113D000BB701B /* RaidBossTableViewController.swift */; };
 		1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */; };
 		1218E61620A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61420A6D53700D68610 /* InfoPlist.strings */; };
 		1218E61920A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61720A6D53700D68610 /* InfoPlist.strings */; };
@@ -310,6 +311,7 @@
 		12124F452089C9E1001C1A6F /* PropertyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKey.swift; sourceTree = "<group>"; };
 		12124F4D208EC1A4001C1A6F /* Ailment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ailment.swift; sourceTree = "<group>"; };
 		12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExistsFieldForAllAction.swift; sourceTree = "<group>"; };
+		12133739225113D000BB701B /* RaidBossTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidBossTableViewController.swift; sourceTree = "<group>"; };
 		1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDBasicTableViewCell.swift; sourceTree = "<group>"; };
 		1218E61220A6C3F500D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		1218E61320A6C3F500D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -845,6 +847,7 @@
 				12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */,
 				12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */,
 				12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */,
+				12133739225113D000BB701B /* RaidBossTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1701,6 +1704,7 @@
 				12E3324220F5EAE200844A6A /* CardCollectionViewController.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
 				12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */,
+				1213373A225113D000BB701B /* RaidBossTableViewController.swift in Sources */,
 				12DA21EC20EFB932005FD705 /* Box.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
 				12C24B97217ACCA80079AFE0 /* Store.swift in Sources */,

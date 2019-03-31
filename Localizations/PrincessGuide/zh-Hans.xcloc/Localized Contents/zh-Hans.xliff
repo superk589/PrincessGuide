@@ -1524,6 +1524,11 @@
         <target>种族</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Raid">
+        <source>Raid</source>
+        <target>Raid</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Raise">
         <source>Raise</source>
         <target>提高</target>
@@ -1806,8 +1811,7 @@
       </trans-unit>
       <trans-unit id="Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s.">
         <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@] %5$@ for [%6$@]s.</source>
-        <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。
-</target>
+        <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.">

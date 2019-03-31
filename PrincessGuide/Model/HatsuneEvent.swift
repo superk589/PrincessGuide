@@ -6,7 +6,7 @@
 //  Copyright © 2018 zzk. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /// HatsuneEvent represents all the event areas like the first hatsune event, including normal and hard.
 class HatsuneEvent: Codable {

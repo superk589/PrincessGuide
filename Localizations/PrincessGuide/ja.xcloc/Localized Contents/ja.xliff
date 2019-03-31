@@ -1371,6 +1371,10 @@
         <target>種族</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Raid">
+        <source>Raid</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Raise">
         <source>Raise</source>
         <target>アップ</target>
