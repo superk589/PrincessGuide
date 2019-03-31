@@ -20,11 +20,12 @@ class CDSettingsViewController: FormViewController {
     
     struct Setting: Codable, Equatable {
         
-        enum ExpressionStyle: String, Codable, CustomStringConvertible {
+        enum ExpressionStyle: String, Codable, CustomStringConvertible, CaseIterable {
             case full = "full"
             case short = "short"
             case valueOnly = "value_only"
             case valueInCombat = "value_in_combat"
+            case rawValueID = "raw_value_id"
             
             var description: String {
                 switch self {
@@ -36,10 +37,11 @@ class CDSettingsViewController: FormViewController {
                     return NSLocalizedString("value only", comment: "expression style")
                 case .valueInCombat:
                     return NSLocalizedString("value in combat", comment: "expression style")
+                case .rawValueID:
+                    return NSLocalizedString("raw value id", comment: "expression style")
                 }
             }
             
-            static let allLabels = [ExpressionStyle.full, .short, .valueOnly, .valueInCombat]
         }
         
         enum SkillStyle: String, Codable, CustomStringConvertible, CaseIterable {
@@ -287,7 +289,7 @@ class CDSettingsViewController: FormViewController {
                 row.displayValueFor = { (rowValue: String?) in
                     return rowValue.flatMap { Setting.ExpressionStyle(rawValue: $0)?.description }
                 }
-                row.options = Setting.ExpressionStyle.allLabels.map { $0.rawValue }
+                row.options = Setting.ExpressionStyle.allCases.map { $0.rawValue }
                 row.value = Setting.default.expressionStyle.rawValue
                 
                 }.cellSetup(cellSetup(cell:row:))

@@ -24,7 +24,7 @@ class Card: Codable {
     
     let profile: Profile
     
-    let actualUnit: ActualUnit
+    let actualUnit: ActualUnit?
     
     let unitBackground: UnitBackground
     
@@ -32,7 +32,7 @@ class Card: Codable {
     
     let uniqueEquipIDs: [Int]
     
-    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment], actualUnit: ActualUnit, unitBackground: UnitBackground, uniqueEquipIDs: [Int]) {
+    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment], actualUnit: ActualUnit?, unitBackground: UnitBackground, uniqueEquipIDs: [Int]) {
         self.base = base
         self.promotions = promotions
         self.promotionStatuses = promotionStatuses
@@ -516,11 +516,14 @@ extension Card {
     }
     
     func profileImageURLs(postfix: String = "") -> [URL] {
-        return [
+        var urls = [
             URL.resource.appendingPathComponent("card/profile/\(base.prefabId + 10).webp\(postfix)"),
-            URL.resource.appendingPathComponent("card/profile/\(base.prefabId + 30).webp\(postfix)"),
-            URL.resource.appendingPathComponent("card/actual_profile/\(actualUnit.unitId).webp\(postfix)")
+            URL.resource.appendingPathComponent("card/profile/\(base.prefabId + 30).webp\(postfix)")
         ]
+        if let actualUnitID = actualUnit?.unitId {
+            urls.append(URL.resource.appendingPathComponent("card/actual_profile/\(actualUnitID).webp\(postfix)"))
+        }
+        return urls
     }
     
 }

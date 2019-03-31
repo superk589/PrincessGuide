@@ -295,6 +295,26 @@ class ActionParameter {
                 return hasBracesIfNeeded ? bracesIfNeeded(content: expression) : expression
             }
             
+        case .rawValueID:
+            
+            let expression = (actionValues ?? self.actionValues).map { value in
+                var part = ""
+                let initialValue = String(format: "value %d", value.startIndex)
+                let perLevelValue = String(format: "value %d", value.startIndex + 1)
+                part = "\(initialValue) + \(perLevelValue) * \(NSLocalizedString("SLv.", comment: ""))"
+                if let key = value.key {
+                    part = "(\(part)) * \(key.description)"
+                }
+                return part
+                }
+                .filter { $0 != "" }
+                .joined(separator: " + ")
+            
+            if expression == "" {
+                return "0"
+            } else {
+                return hasBracesIfNeeded ? bracesIfNeeded(content: expression) : expression
+            }
         case .valueOnly:
             
             var fixedValue = 0.0
@@ -346,6 +366,7 @@ struct ActionValue {
     let initial: String
     let perLevel: String
     let key: PropertyKey?
+    let startIndex: Int
 }
 
 enum PercentModifier: CustomStringConvertible {

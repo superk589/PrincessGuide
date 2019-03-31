@@ -28,13 +28,13 @@ class AttackFieldAction: ActionParameter {
         switch damageClass {
         case .magical:
             return [
-                ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: .magicStr),
-                ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil)
+                ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: .magicStr, startIndex: 3),
+                ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil, startIndex: 1)
             ]
         case .physical:
             return [
-                ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: .atk),
-                ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil)
+                ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: .atk, startIndex: 3),
+                ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil, startIndex: 1)
             ]
         default:
             return []
@@ -43,7 +43,7 @@ class AttackFieldAction: ActionParameter {
     
     var durationValues: [ActionValue] {
         return [
-            ActionValue(initial: String(actionValue5), perLevel: String(actionValue6), key: nil),
+            ActionValue(initial: String(actionValue5), perLevel: String(actionValue6), key: nil, startIndex: 5),
         ]
     }
     

@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.1" build-num="10B61"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2" build-num="10E125"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title">
@@ -32,9 +31,9 @@
       </trans-unit>
     </body>
   </file>
-  <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
+  <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.1" build-num="10B61"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2" build-num="10E125"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
@@ -43,7 +42,7 @@
         <note>Bundle display name</note>
       </trans-unit>
       <trans-unit id="CFBundleName">
-        <source>$(PRODUCT_NAME)</source>
+        <source>PrincessGuide</source>
         <target>$(PRODUCT_NAME)</target>
         <note>Bundle name</note>
       </trans-unit>
@@ -59,9 +58,9 @@
       </trans-unit>
     </body>
   </file>
-  <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
+  <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.1" build-num="10B61"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2" build-num="10E125"/>
     </header>
     <body>
       <trans-unit id="%@ %@ %@">
@@ -285,19 +284,29 @@
         <target>Action</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * HP] to next effect.">
-        <source>Add [%@ * HP] to next effect.</source>
-        <target>使下一个效果的数值提高 [%@ * HP]。</target>
+      <trans-unit id="Add [%@ * HP] to next effect's value %d.">
+        <source>Add [%1$@ * HP] to next effect's value %2$d.</source>
+        <target>使下一个效果的数值 %2$d 提高 [%1$@ * HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * defeated enemy count] to next effect.">
-        <source>Add [%@ * defeated enemy count] to next effect.</source>
-        <target>使下一个效果的数值提高 [%@ * 击杀个数]。</target>
+      <trans-unit id="Add [%@ * count of defeated enemies] to next effect's value %d.">
+        <source>Add [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
+        <target>使下一个效果的数值 %2$d 提高 [%1$@ * 击杀个数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * lost HP] to next effect.">
-        <source>Add [%@ * lost HP] to next effect.</source>
-        <target>使下一个效果的数值提高 [%@ * 损失的 HP]。</target>
+      <trans-unit id="Add [%@ * count of omemes] to next effect's value %d.">
+        <source>Add [%1$@ * count of omemes] to next effect's value %2$d.</source>
+        <target>使下一个效果的数值 %2$d 提高 [%1$@ * オメメ个数] 。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add [%@ * count of targets] to next effect's value %d.">
+        <source>Add [%1$@ * count of targets] to next effect's value %2$d.</source>
+        <target>使下一个效果的数值 %2$d 提高 [%1$@ * 目标个数]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add [%@ * lost HP] to next effect's value %d.">
+        <source>Add [%1$@ * lost HP] to next effect's value %2$d.</source>
+        <target>使下一个效果的数值 %2$d 提高 [%1$@ * 损失的 HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add [%d] to the counter.">
@@ -508,6 +517,36 @@
       <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for [%@]s.">
         <source>Cast a barrier on %1$@ to nullify [%2$@] physical damage for [%3$@]s.</source>
         <target>对%1$@释放一个护盾，无效 [%2$@] 物理伤害，持续 [%3$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage.">
+        <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking damage.</source>
+        <target>对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking magical damage.">
+        <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking magical damage.</source>
+        <target>对%1$@释放一个护盾，受到魔法伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking physical damage.">
+        <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking physical damage.</source>
+        <target>对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking damage.">
+        <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking damage.</source>
+        <target>对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking magical damage.">
+        <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking magical damage.</source>
+        <target>对%1$@释放一个护盾，受到魔法伤害时反击 [%2$@] 伤害。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking physical damage.">
+        <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking physical damage.</source>
+        <target>对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s.">
@@ -1220,6 +1259,11 @@
         <target>标记</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Mark %@ with state of ID: %@ with max stacks of %@ for %@s.">
+        <source>Mark %1$@ with state of ID: %2$@ with max stacks of %3$@ for %4$@s.</source>
+        <target>对 %1$@ 标记 ID 为 %2$@ 的状态，最大层数 %3$@，持续 %4$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Max Level to %@">
         <source>Max Level to %@</source>
         <target>最大等级提高至 %@</target>
@@ -1280,19 +1324,19 @@
         <target>移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * HP / max HP] to next effect.">
-        <source>Multiple [%@ * HP / max HP] to next effect.</source>
-        <target>使下一个效果的数值乘以 [%@ * HP / 最大 HP]。</target>
+      <trans-unit id="Multiple [%@ * HP / max HP] to next effect's value %d.">
+        <source>Multiple [%1$@ * HP / max HP] to next effect's value %2$d.</source>
+        <target>使下一个效果的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * defeated enemy count] to next effect.">
-        <source>Multiple [%@ * defeated enemy count] to next effect.</source>
-        <target>使下一个效果的数值乘以 [%@ * 击杀个数]。</target>
+      <trans-unit id="Multiple [%@ * count of defeated enemies] to next effect's value %d.">
+        <source>Multiple [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
+        <target>使下一个效果的数值 %2$d 乘以 [%1$@ * 击杀个数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * lost HP / max HP] to next effect.">
-        <source>Multiple [%@ * lost HP / max HP] to next effect.</source>
-        <target>使下一个效果的数值乘以 [%@ * 损失的 HP / 最大 HP]。</target>
+      <trans-unit id="Multiple [%@ * lost HP / max HP] to next effect's value %d.">
+        <source>Multiple [%1$@ * lost HP / max HP] to next effect's value %2$d.</source>
+        <target>使下一个效果的数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="New %@ Event: %@">
@@ -2306,6 +2350,11 @@
         <target>随机（仅第一次）</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="raw value id">
+        <source>raw value id</source>
+        <target>原始数值 ID</target>
+        <note>expression style</note>
+      </trans-unit>
       <trans-unit id="second">
         <source>second</source>
         <target>第二</target>
@@ -2541,6 +2590,11 @@
         <target>对%2$@中处于诅咒状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d to any of %@ is in state of ID: %d">
+        <source>use %1$d to any of %2$@ is in state of ID: %3$d</source>
+        <target>对%2$@中处于 ID 为 %3$d 的状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d to any of %@ is not blinded">
         <source>use %1$d to any of %2$@ is not blinded</source>
         <target>对%2$@中未处于黑暗状态的使用 %1$d</target>
@@ -2564,6 +2618,31 @@
       <trans-unit id="use %d to any of %@ is not cursed">
         <source>use %1$d to any of %2$@ is not cursed</source>
         <target>对%2$@中未处于诅咒状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not in state of ID: %d">
+        <source>use %1$d to any of %2$@ is not in state of ID: %3$d</source>
+        <target>对%2$@中未处于 ID 为 %3$d 的状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not poisoned">
+        <source>use %1$d to any of %2$@ is not poisoned</source>
+        <target>对%2$@中未处于中毒状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is not violently poisoned">
+        <source>use %1$d to any of %2$@ is not violently poisoned</source>
+        <target>对%2$@中未处于中猛毒状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is poisoned">
+        <source>use %1$d to any of %2$@ is poisoned</source>
+        <target>对%2$@中处于中毒状态的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to any of %@ is violently poisoned">
+        <source>use %1$d to any of %2$@ is violently poisoned</source>
+        <target>对%2$@中处于中猛毒状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to any of %@ whose HP is below %d%%">

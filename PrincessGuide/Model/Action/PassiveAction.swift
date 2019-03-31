@@ -29,7 +29,7 @@ class PassiveAction: ActionParameter {
     
     override var actionValues: [ActionValue] {
         return [
-            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil)
+            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil, startIndex: 2)
         ]
     }
     

@@ -16,13 +16,13 @@ class AuraAction: ActionParameter {
     
     override var actionValues: [ActionValue] {
         return [
-            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil)
+            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil, startIndex: 2)
         ]
     }
     
     var durationValues: [ActionValue] {
         return [
-            ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: nil)
+            ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: nil, startIndex: 4)
         ]
     }
     

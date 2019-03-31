@@ -109,7 +109,10 @@ extension SearchableCardTableViewController: UISearchResultsUpdating, UISearchCo
     
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text ?? ""
-        filteredCards = cards.filter { $0.base.unitName.contains(searchText) || $0.actualUnit.unitName.contains(searchText) }
+        filteredCards = cards.filter { $0.base.kana.contains(searchText) ||
+            $0.base.unitName.contains(searchText) ||
+            ($0.actualUnit?.unitName.contains(searchText) ?? false)
+        }
         
         tableView.reloadData()
     }

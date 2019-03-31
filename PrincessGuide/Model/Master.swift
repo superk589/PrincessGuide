@@ -241,7 +241,7 @@ class Master: FMDatabaseQueue {
                 }
                 
                 if let base = try? decoder.decode(Card.Base.self, from: json.rawData()),
-                    let profile = profile, let actualUnit = actualUnit, let unitBackground = unitBackground {
+                    let profile = profile, let unitBackground = unitBackground {
                     let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground, uniqueEquipIDs: uniqueEquipIDs)
                     cards.append(card)
                 }

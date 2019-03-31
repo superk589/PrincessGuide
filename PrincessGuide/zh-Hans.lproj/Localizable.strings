@@ -131,13 +131,19 @@
 "Action" = "Action";
 
 /* No comment provided by engineer. */
-"Add [%@ * defeated enemy count] to next effect." = "使下一个效果的数值提高 [%@ * 击杀个数]。";
+"Add [%@ * count of defeated enemies] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 击杀个数]。";
 
 /* No comment provided by engineer. */
-"Add [%@ * HP] to next effect." = "使下一个效果的数值提高 [%@ * HP]。";
+"Add [%@ * count of omemes] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * オメメ个数] 。";
 
 /* No comment provided by engineer. */
-"Add [%@ * lost HP] to next effect." = "使下一个效果的数值提高 [%@ * 损失的 HP]。";
+"Add [%@ * count of targets] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 目标个数]。";
+
+/* No comment provided by engineer. */
+"Add [%@ * HP] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * HP]。";
+
+/* No comment provided by engineer. */
+"Add [%@ * lost HP] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 损失的 HP]。";
 
 /* No comment provided by engineer. */
 "Add [%d] to the counter." = "使计数器加 [%d]。";
@@ -312,6 +318,24 @@
 
 /* No comment provided by engineer. */
 "Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 物理伤害，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." = "对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking magical damage." = "对%1$@释放一个护盾，受到魔法伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking physical damage." = "对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage when taking damage." = "对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage when taking magical damage." = "对%1$@释放一个护盾，受到魔法伤害时反击 [%2$@] 伤害。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage when taking physical damage." = "对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害。";
 
 /* No comment provided by engineer. */
 "Cast an unknown barrier %d on %@ for [%@]s." = "对%2$@释放一个护盾，类型 %1$d，持续 [%3$@] 秒。";
@@ -809,6 +833,9 @@
 "Mark" = "标记";
 
 /* No comment provided by engineer. */
+"Mark %@ with state of ID: %@ with max stacks of %@ for %@s." = "对 %1$@ 标记 ID 为 %2$@ 的状态，最大层数 %3$@，持续 %4$@ 秒。";
+
+/* No comment provided by engineer. */
 "max 16 characters" = "最多 16 个字符";
 
 /* No comment provided by engineer. */
@@ -851,13 +878,13 @@
 "Move to %@ in front of %@ with velocity %@/s." = "移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。";
 
 /* No comment provided by engineer. */
-"Multiple [%@ * defeated enemy count] to next effect." = "使下一个效果的数值乘以 [%@ * 击杀个数]。";
+"Multiple [%@ * count of defeated enemies] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * 击杀个数]。";
 
 /* No comment provided by engineer. */
-"Multiple [%@ * HP / max HP] to next effect." = "使下一个效果的数值乘以 [%@ * HP / 最大 HP]。";
+"Multiple [%@ * HP / max HP] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。";
 
 /* No comment provided by engineer. */
-"Multiple [%@ * lost HP / max HP] to next effect." = "使下一个效果的数值乘以 [%@ * 损失的 HP / 最大 HP]。";
+"Multiple [%@ * lost HP / max HP] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。";
 
 /* No comment provided by engineer. */
 "New %@ Event: %@" = "新%1$@活动：%2$@";
@@ -1045,6 +1072,9 @@
 /* No comment provided by engineer. */
 "Raw Materials" = "原始材料";
 
+/* expression style */
+"raw value id" = "原始数值 ID";
+
 /* No comment provided by engineer. */
 "Reduce" = "降低";
 
@@ -1193,8 +1223,7 @@
 "Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。
-";
+"Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。\n";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." = "展开一片半径为 %1$d 的区域，每秒对%5$@造成 [%2$@] %3$@伤害，持续 [%4$@] 秒。";
@@ -1449,6 +1478,9 @@
 "use %d to any of %@ is cursed" = "对%2$@中处于诅咒状态的使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d to any of %@ is in state of ID: %d" = "对%2$@中处于 ID 为 %3$d 的状态的使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d to any of %@ is not blinded" = "对%2$@中未处于黑暗状态的使用 %1$d";
 
 /* No comment provided by engineer. */
@@ -1462,6 +1494,21 @@
 
 /* No comment provided by engineer. */
 "use %d to any of %@ is not cursed" = "对%2$@中未处于诅咒状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not in state of ID: %d" = "对%2$@中未处于 ID 为 %3$d 的状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not poisoned" = "对%2$@中未处于中毒状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is not violently poisoned" = "对%2$@中未处于中猛毒状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is poisoned" = "对%2$@中处于中毒状态的使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to any of %@ is violently poisoned" = "对%2$@中处于中猛毒状态的使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d to any of %@ whose HP is below %d%%" = "对%2$@中 HP 低于 %3$d%% 的使用 %1$d";

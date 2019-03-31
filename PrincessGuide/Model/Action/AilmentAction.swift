@@ -16,13 +16,13 @@ class AilmentAction: ActionParameter {
     
     override var actionValues: [ActionValue] {
         return [
-            ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil)
+            ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil, startIndex: 1)
         ]
     }
     
     var chanceValues: [ActionValue] {
         return [
-            ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: nil)
+            ActionValue(initial: String(actionValue3), perLevel: String(actionValue4), key: nil, startIndex: 3)
         ]
     }
     

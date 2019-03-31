@@ -31,6 +31,15 @@ class IfForChildrenAction: ActionParameter {
         case 501:
             let format = NSLocalizedString("use %d to any of %@ is cursed", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+        case 502:
+            let format = NSLocalizedString("use %d to any of %@ is poisoned", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+        case 503:
+            let format = NSLocalizedString("use %d to any of %@ is violently poisoned", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+        case 600..<900:
+            let format = NSLocalizedString("use %d to any of %@ is in state of ID: %d", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600)
         case 901..<1000:
             let format = NSLocalizedString("use %d to any of %@ whose HP is below %d%%", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 900)
@@ -61,6 +70,15 @@ class IfForChildrenAction: ActionParameter {
         case 501:
             let format = NSLocalizedString("use %d to any of %@ is not cursed", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+        case 502:
+            let format = NSLocalizedString("use %d to any of %@ is not poisoned", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+        case 503:
+            let format = NSLocalizedString("use %d to any of %@ is not violently poisoned", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+        case 600..<900:
+            let format = NSLocalizedString("use %d to any of %@ is not in state of ID: %d", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600)
         case 901..<1000:
             let format = NSLocalizedString("use %d to any of %@ whose HP is not below %d%%", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 900)
@@ -73,7 +91,7 @@ class IfForChildrenAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         switch actionDetail1 {
-        case 100, 200, 300, 500, 501, 901..<1000:
+        case 100, 200, 300, 500, 501, 502, 503, 600..<900, 901..<1000:
             let format = NSLocalizedString("Condition: %@.", comment: "")
             return String(format: format, [trueClause, falseClause].compactMap { $0 }.joined(separator: NSLocalizedString(", ", comment: "clause separator")))
         case 0..<100:
