@@ -51,13 +51,13 @@ class AilmentAction: ActionParameter {
             switch ailment.ailmentDetail {
             case .some(.dot(.poison)):
                 let format = NSLocalizedString("Poison %@ and deal [%@] damage per second for [%@]s.", comment: "")
-                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             case .some(.dot(.violentPoison)):
                 let format = NSLocalizedString("Poison %@ violently and deal [%@] damage per second for [%@]s.", comment: "")
-                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             default:
                 let format = NSLocalizedString("%@ %@ and deal [%@] damage per second for [%@]s.", comment: "")
-                return String(format: format, ailment.description, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+                return String(format: format, ailment.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             }
         case .silence:
             let format = NSLocalizedString("Silence %@ with [%@]%% chance for [%@]s.", comment: "")

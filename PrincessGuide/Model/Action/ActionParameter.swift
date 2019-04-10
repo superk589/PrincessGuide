@@ -213,7 +213,7 @@ class ActionParameter {
     
     func buildExpression(of level: Int,
                          actionValues: [ActionValue]? = nil,
-                         roundingRule: FloatingPointRoundingRule? = .down,
+                         roundingRule: FloatingPointRoundingRule? = .towardZero,
                          style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle,
                          property: Property = .zero,
                          isHealing: Bool = false,
@@ -225,17 +225,17 @@ class ActionParameter {
             
             let expression = (actionValues ?? self.actionValues).map { value in
                 var part = ""
-                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
+                if let initialValue = Decimal(string: value.initial), let perLevelValue = Decimal(string: value.perLevel) {
                     let roundingRule = value.key == nil ? roundingRule : nil
                     switch (initialValue, perLevelValue) {
                     case (0, 0):
                         break
                     case (0, _):
-                        part = "\((perLevelValue * Double(level)).roundedValueString(roundingRule))@\(level)"
+                        part = "\((perLevelValue * Decimal(level) as NSDecimalNumber).doubleValue.roundedValueString(roundingRule))@\(level)"
                     case (_, 0):
-                        part = "\(initialValue.roundedValueString(roundingRule))"
+                        part = "\((initialValue as NSDecimalNumber).doubleValue.roundedValueString(roundingRule))"
                     case (_, _):
-                        part = "\((perLevelValue * Double(level) + initialValue).roundedValueString(roundingRule))@\(level)"
+                        part = "\(((perLevelValue * Decimal(level) + initialValue) as NSDecimalNumber).doubleValue.roundedValueString(roundingRule))@\(level)"
                     }
                     if let key = value.key {
                         switch (initialValue, perLevelValue) {
@@ -317,45 +317,45 @@ class ActionParameter {
             }
         case .valueOnly:
             
-            var fixedValue = 0.0
+            var fixedValue: Decimal = 0.0
             
             for value in actionValues ?? self.actionValues {
-                var part = 0.0
-                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
-                    part = initialValue + perLevelValue * Double(level)
+                var part: Decimal = 0.0
+                if let initialValue = Decimal(string: value.initial), let perLevelValue = Decimal(string: value.perLevel) {
+                    part = initialValue + perLevelValue * Decimal(level)
                 }
                 if let key = value.key {
-                    part = part * property.item(for: key).value
+                    part = part * Decimal(property.item(for: key).value)
                 }
                 fixedValue += part
             }
             
-            return fixedValue.roundedValueString(roundingRule)
+            return (fixedValue as NSDecimalNumber).doubleValue.roundedValueString(roundingRule)
             
         case .valueInCombat:
             
-            var fixedValue = 0.0
+            var fixedValue: Decimal = 0.0
             
             for value in actionValues ?? self.actionValues {
-                var part = 0.0
-                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
-                    part = initialValue + perLevelValue * Double(level)
+                var part: Decimal = 0.0
+                if let initialValue = Decimal(string: value.initial), let perLevelValue = Decimal(string: value.perLevel) {
+                    part = initialValue + perLevelValue * Decimal(level)
                 }
                 if let key = value.key {
-                    part = part * property.item(for: key).value
+                    part = part * Decimal(property.item(for: key).value)
                 }
                 fixedValue += part
             }
             
             if isHealing {
-                fixedValue *= (property.hpRecoveryRate / 100 + 1)
+                fixedValue *= (Decimal(property.hpRecoveryRate) / 100 + 1)
             }
             
             if isSelfTPRestoring {
-                fixedValue *= (property.energyRecoveryRate / 100 + 1)
+                fixedValue *= (Decimal(property.energyRecoveryRate) / 100 + 1)
             }
             
-            return fixedValue.roundedValueString(roundingRule)
+            return (fixedValue as NSDecimalNumber).doubleValue.roundedValueString(roundingRule)
         }
         
     }

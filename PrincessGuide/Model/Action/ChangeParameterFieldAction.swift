@@ -30,7 +30,7 @@ class ChangeParameterFieldAction: AuraAction {
                 Int(actionValue5),
                 auraActionType.description.lowercased(),
                 targetParameter.buildTargetClause(),
-                buildExpression(of: level, roundingRule: .up, style: style, property: property),
+                buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property),
                 auraType.description,
                 buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
             )
@@ -41,7 +41,7 @@ class ChangeParameterFieldAction: AuraAction {
                 Int(actionValue5),
                 targetParameter.buildTargetClause(),
                 auraActionType.description.lowercased(),
-                buildExpression(of: level, roundingRule: .up, style: style, property: property),
+                buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property),
                 auraType.description,
                 buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
             )
