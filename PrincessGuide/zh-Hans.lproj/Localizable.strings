@@ -833,7 +833,7 @@
 "Mark" = "标记";
 
 /* No comment provided by engineer. */
-"Mark %@ with state of ID: %@ with max stacks of %@ for %@s." = "对 %1$@ 标记 ID 为 %2$@ 的状态，最大层数 %3$@，持续 %4$@ 秒。";
+"Mark %@ with state of ID: %@ with max stacks of %@ for %@s." = "对%1$@标记 ID 为 %2$@ 的状态，最大层数 %3$@，持续 %4$@ 秒。";
 
 /* No comment provided by engineer. */
 "max 16 characters" = "最多 16 个字符";
@@ -1208,6 +1208,9 @@
 "Status Comparison" = "属性比较模式";
 
 /* No comment provided by engineer. */
+"Stealth for %@s." = "潜行 %@ 秒。";
+
+/* No comment provided by engineer. */
 "Still" = "剧情";
 
 /* No comment provided by engineer. */
@@ -1397,7 +1400,10 @@
 "Trigger: %d%% on damaged." = "触发条件：受到伤害时 %d%% 触发。";
 
 /* No comment provided by engineer. */
-"Trigger: %d%% on dead" = "触发条件：死亡时 %d%% 触发。";
+"Trigger: %d%% on dead." = "触发条件：死亡时 %d%% 触发。";
+
+/* No comment provided by engineer. */
+"Trigger: %d%% on stealth." = "触发条件：潜行时 %d%% 触发。";
 
 /* No comment provided by engineer. */
 "Trigger: HP is below %d%%." = "触发条件：HP 低于 %d%%。";
@@ -1521,6 +1527,9 @@
 
 /* No comment provided by engineer. */
 "Use Dark Theme" = "使用深色主题";
+
+/* No comment provided by engineer. */
+"value %d" = "数值 %d";
 
 /* expression style */
 "value in combat" = "战斗中数值";

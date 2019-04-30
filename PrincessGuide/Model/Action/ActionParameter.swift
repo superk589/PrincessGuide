@@ -110,6 +110,8 @@ class ActionParameter {
             return ChangeBodyWidthAction.self
         case 53:
             return IFExistsFieldForAllAction.self
+        case 54:
+            return StealthAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -299,8 +301,9 @@ class ActionParameter {
             
             let expression = (actionValues ?? self.actionValues).map { value in
                 var part = ""
-                let initialValue = String(format: "value %d", value.startIndex)
-                let perLevelValue = String(format: "value %d", value.startIndex + 1)
+                let format = NSLocalizedString("value %d", comment: "")
+                let initialValue = String(format: format, value.startIndex)
+                let perLevelValue = String(format: format, value.startIndex + 1)
                 part = "\(initialValue) + \(perLevelValue) * \(NSLocalizedString("SLv.", comment: ""))"
                 if let key = value.key {
                     part = "(\(part)) * \(key.description)"

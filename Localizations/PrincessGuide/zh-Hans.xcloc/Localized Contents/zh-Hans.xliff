@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2" build-num="10E125"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2" build-num="10E125"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
@@ -60,7 +60,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2" build-num="10E125"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
     </header>
     <body>
       <trans-unit id="%@ %@ %@">
@@ -1261,7 +1261,7 @@
       </trans-unit>
       <trans-unit id="Mark %@ with state of ID: %@ with max stacks of %@ for %@s.">
         <source>Mark %1$@ with state of ID: %2$@ with max stacks of %3$@ for %4$@s.</source>
-        <target>对 %1$@ 标记 ID 为 %2$@ 的状态，最大层数 %3$@，持续 %4$@ 秒。</target>
+        <target>对%1$@标记 ID 为 %2$@ 的状态，最大层数 %3$@，持续 %4$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Max Level to %@">
@@ -1779,6 +1779,11 @@
         <target>属性比较模式</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Stealth for %@s.">
+        <source>Stealth for %@s.</source>
+        <target>潜行 %@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Still">
         <source>Still</source>
         <target>剧情</target>
@@ -1919,9 +1924,14 @@
         <target>触发条件：受到伤害时 %d%% 触发。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on dead">
-        <source>Trigger: %d%% on dead</source>
+      <trans-unit id="Trigger: %d%% on dead.">
+        <source>Trigger: %d%% on dead.</source>
         <target>触发条件：死亡时 %d%% 触发。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: %d%% on stealth.">
+        <source>Trigger: %d%% on stealth.</source>
+        <target>触发条件：潜行时 %d%% 触发。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Trigger: HP is below %d%%.">
@@ -2657,6 +2667,11 @@
       <trans-unit id="use %d to any of %@ whose HP is not below %d%%">
         <source>use %1$d to any of %2$@ whose HP is not below %3$d%%</source>
         <target>对%2$@中 HP 不低于 %3$d%% 的使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="value %d">
+        <source>value %d</source>
+        <target>数值 %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="value in combat">

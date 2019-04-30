@@ -210,6 +210,7 @@
 		12E64A5521313AC50075BE01 /* VLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5421313AC50075BE01 /* VLTableViewController.swift */; };
 		12E64A5721313AD40075BE01 /* VLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5621313AD40075BE01 /* VLTableViewCell.swift */; };
 		12E64A5B213143330075BE01 /* VLTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5A213143330075BE01 /* VLTableViewHeaderFooterView.swift */; };
+		12E6BEE1227800A6000BAADC /* StealthAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6BEE0227800A6000BAADC /* StealthAction.swift */; };
 		12EBF70B20F7952600120C2A /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70A20F7952600120C2A /* MemberView.swift */; };
 		12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */; };
 		12EBF71120F7BC0500120C2A /* StrokedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF71020F7BC0500120C2A /* StrokedLabel.swift */; };
@@ -505,6 +506,7 @@
 		12E64A5421313AC50075BE01 /* VLTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewController.swift; sourceTree = "<group>"; };
 		12E64A5621313AD40075BE01 /* VLTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewCell.swift; sourceTree = "<group>"; };
 		12E64A5A213143330075BE01 /* VLTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		12E6BEE0227800A6000BAADC /* StealthAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StealthAction.swift; sourceTree = "<group>"; };
 		12EBF70A20F7952600120C2A /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 		12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		12EBF71020F7BC0500120C2A /* StrokedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokedLabel.swift; sourceTree = "<group>"; };
@@ -1275,6 +1277,7 @@
 				128DA47F21B24D7B00F7C006 /* ChannelAction.swift */,
 				1247127922279DF700A9C2E1 /* ChangeBodyWidthAction.swift */,
 				12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */,
+				12E6BEE0227800A6000BAADC /* StealthAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
 			);
@@ -1751,6 +1754,7 @@
 				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
 				120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */,
+				12E6BEE1227800A6000BAADC /* StealthAction.swift in Sources */,
 				126BFBD320F0FC420059B4ED /* BDEquipmentViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
@@ -1981,7 +1985,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2003,7 +2007,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 101;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

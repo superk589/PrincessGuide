@@ -278,7 +278,7 @@ struct VLUnit: Codable, VLElement {
     let id: String
     let name: String
     let rarity: String
-    let realName: String
+    let realName: String?
 }
 
 struct VLStory: Codable, VLElement {

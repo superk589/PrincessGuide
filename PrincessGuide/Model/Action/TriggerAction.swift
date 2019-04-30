@@ -19,6 +19,7 @@ class TriggerAction: ActionParameter {
         case critical
         case criticalWithSummon
         case limitTime
+        case stealthFree
     }
     
     var triggerType: TriggerType {
@@ -37,7 +38,10 @@ class TriggerAction: ActionParameter {
             let format = NSLocalizedString("Trigger: %d%% on damaged.", comment: "")
             return String(format: format, Int(actionValue1.rounded()))
         case .dead:
-            let format = NSLocalizedString("Trigger: %d%% on dead", comment: "")
+            let format = NSLocalizedString("Trigger: %d%% on dead.", comment: "")
+            return String(format: format, Int(actionValue1.rounded()))
+        case .stealthFree:
+            let format = NSLocalizedString("Trigger: %d%% on stealth.", comment: "")
             return String(format: format, Int(actionValue1.rounded()))
         default:
             return super.localizedDetail(of: level, property: property, style: style)
