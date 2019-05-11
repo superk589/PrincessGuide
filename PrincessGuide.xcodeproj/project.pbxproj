@@ -181,6 +181,7 @@
 		12C24B99217ACD4A0079AFE0 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B98217ACD4A0079AFE0 /* Voice.swift */; };
 		12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */; };
 		12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C44140209C92AF00016BDC /* LaunchScreen.storyboard */; };
+		12C5992B2286F6EF00875EE4 /* Decimal+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5992A2286F6EF00875EE4 /* Decimal+Rounding.swift */; };
 		12C5D26D21D9FFEE00C99425 /* HatsuneEventQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */; };
 		12C5D26F21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
@@ -477,6 +478,7 @@
 		12C24B98217ACD4A0079AFE0 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePlayer.swift; sourceTree = "<group>"; };
 		12C4413F209C92AF00016BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		12C5992A2286F6EF00875EE4 /* Decimal+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Rounding.swift"; sourceTree = "<group>"; };
 		12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventQuest.swift; sourceTree = "<group>"; };
 		12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventSpecialBattle.swift; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
@@ -986,6 +988,7 @@
 				12398E9620918572006AC352 /* VersionManager.swift */,
 				1280DE4220A5D084008D9D72 /* DateExtension.swift */,
 				120BCAF320F2564B0029A083 /* ArrayExtension.swift */,
+				12C5992A2286F6EF00875EE4 /* Decimal+Rounding.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1704,6 +1707,7 @@
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
 				12F125FB20B952CA005C9659 /* ChangePatternAction.swift in Sources */,
+				12C5992B2286F6EF00875EE4 /* Decimal+Rounding.swift in Sources */,
 				12E3324220F5EAE200844A6A /* CardCollectionViewController.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
 				12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */,

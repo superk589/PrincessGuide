@@ -233,11 +233,11 @@ class ActionParameter {
                     case (0, 0):
                         break
                     case (0, _):
-                        part = "\((perLevelValue * Decimal(level) as NSDecimalNumber).doubleValue.roundedValueString(roundingRule))@\(level)"
+                        part = "\((perLevelValue * Decimal(level)).roundedString(roundingRule: roundingRule))@\(level)"
                     case (_, 0):
-                        part = "\((initialValue as NSDecimalNumber).doubleValue.roundedValueString(roundingRule))"
+                        part = initialValue.roundedString(roundingRule: roundingRule)
                     case (_, _):
-                        part = "\(((perLevelValue * Decimal(level) + initialValue) as NSDecimalNumber).doubleValue.roundedValueString(roundingRule))@\(level)"
+                        part = "\((perLevelValue * Decimal(level) + initialValue).roundedString(roundingRule: roundingRule))@\(level)"
                     }
                     if let key = value.key {
                         switch (initialValue, perLevelValue) {
@@ -333,7 +333,7 @@ class ActionParameter {
                 fixedValue += part
             }
             
-            return (fixedValue as NSDecimalNumber).doubleValue.roundedValueString(roundingRule)
+            return fixedValue.roundedString(roundingRule: roundingRule)
             
         case .valueInCombat:
             
@@ -358,7 +358,7 @@ class ActionParameter {
                 fixedValue *= (Decimal(property.energyRecoveryRate) / 100 + 1)
             }
             
-            return (fixedValue as NSDecimalNumber).doubleValue.roundedValueString(roundingRule)
+            return fixedValue.roundedString(roundingRule: roundingRule)
         }
         
     }
