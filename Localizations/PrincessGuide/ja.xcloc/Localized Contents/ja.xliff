@@ -46,6 +46,10 @@
         <target>$(PRODUCT_NAME)</target>
         <note>Bundle name</note>
       </trans-unit>
+      <trans-unit id="NSCalendarsUsageDescription">
+        <source>In order to save the events we will need access to your calendar.</source>
+        <note>Privacy - Calendars Usage Description</note>
+      </trans-unit>
       <trans-unit id="NSPhotoLibraryAddUsageDescription">
         <source>In order to save the image we will need access to your camera roll.</source>
         <target>画像を保存するためにアルバムへのアクセスが必要です。</target>
@@ -74,6 +78,10 @@
         <target>%4$d範囲内%1$@%2$@%3$@</target>
         <note>[the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ %@ x%@">
+        <source>%1$@ %2$@ %3$@ x%4$@</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ %d%@ %@ for [%@]s.">
         <source>%1$@ %2$@ %3$d%4$@ %5$@ for [%6$@]s.</source>
@@ -110,6 +118,10 @@
         <source>%1$@ %2$@ targets in range %3$d</source>
         <target>%3$d範囲内%2$@%1$@全体</target>
         <note>[friendly] [physics] targets in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ x%@">
+        <source>%1$@ %2$@ x%3$@</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ Damage is reduced on low level players.">
         <source>%@ Damage is reduced on low level players.</source>
@@ -240,6 +252,10 @@
         <target>未知種類%@</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="%@'s birthday">
+        <source>%@'s birthday</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@/%@">
         <source>%1$@/%2$@</source>
         <target>%1$@ 月 %2$@ 日</target>
@@ -320,6 +336,10 @@
       </trans-unit>
       <trans-unit id="Appear after %@s since wave start.">
         <source>Appear after %@s since wave start.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Apply">
+        <source>Apply</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Ascending">
@@ -433,6 +453,14 @@
       <trans-unit id="CV">
         <source>CV</source>
         <target>CV</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Calendar Permission">
+        <source>Calendar Permission</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Calendar Settings">
+        <source>Calendar Settings</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Campaign">
@@ -787,6 +815,10 @@
         <source>Drop</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Drop Rate">
+        <source>Drop Rate</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Dropped">
         <source>Dropped</source>
         <target>ドロップ</target>
@@ -838,6 +870,14 @@
       <trans-unit id="Email">
         <source>Email</source>
         <target>メール</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Enable Birthday Events">
+        <source>Enable Birthday Events</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Enable Game Events">
+        <source>Enable Game Events</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Enable Notifications">
@@ -934,6 +974,14 @@
       </trans-unit>
       <trans-unit id="Gacha">
         <source>Gacha</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Game Event">
+        <source>Game Event</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Game Events Filter">
+        <source>Game Events Filter</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="General">
@@ -1062,6 +1110,10 @@
       </trans-unit>
       <trans-unit id="Loses">
         <source>Loses</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Luna's Tower">
+        <source>Luna's Tower</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Magic">
@@ -1612,6 +1664,10 @@
         <source>Story</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Story Event">
+        <source>Story Event</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Stun">
         <source>Stun</source>
         <target>スタン</target>
@@ -1687,6 +1743,10 @@
       <trans-unit id="There aren't any Mail accounts">
         <source>There aren't any Mail accounts</source>
         <target>メールアカウントを見つかりませんでした。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix &quot;Hatsune's Notes&quot;.">
+        <source>These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix "Hatsune's Notes".</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Third-Party Licenses">

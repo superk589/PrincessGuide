@@ -21,4 +21,5 @@ target 'PrincessGuide' do
 #  pod 'SwiftyStoreKit'
   pod 'BrotliKit'
   pod 'Cache', :git => 'https://github.com/Igor-Palaguta/Cache', :branch => 'Update-MD5'
+  pod 'Klendario'
 end

@@ -32,6 +32,8 @@ class Preload {
     
     var maxUniqueEquipmentLevel = Constant.presetMaxUniqueEquipmentLevel
     
+    var events = [GameEvent]()
+    
     private init() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .updateEnd, object: nil)
     }
@@ -78,56 +80,83 @@ class Preload {
             Master.shared.getMaxUniqueEquipmentLevel(callback: closure)
         } ?? Constant.presetMaxUniqueEquipmentLevel
         
+        events = DispatchSemaphore.sync { (closure) in
+            Master.shared.getGameEvents(callback: closure)
+        } ?? []
     }
     
     private func reload() {
         let group = DispatchGroup()
         
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getSkillCost(callback: { (skillCost) in
                 self?.skillCost = skillCost
+                group.leave()
             })
         }
         
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getUnitExperience(callback: { (unitExperience) in
                 self?.unitExperience = unitExperience
+                group.leave()
             })
         }
         
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getCards(callback: { (cards) in
                 self?.cards = cards.reduce(into: [Int: Card]()) { $0[$1.base.unitId] = $1 }
+                group.leave()
             })
         }
         
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getMaxLevel { (maxLevel) in
                 self?.maxPlayerLevel = maxLevel ?? Constant.presetMaxPlayerLevel
+                group.leave()
             }
         }
         
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getMaxEnemyLevel(callback: { (level) in
                 self?.maxEnemyLevel = level ?? Constant.presetMaxEnemyLevel
+                group.leave()
             })
         }
 
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getCoefficient(callback: { (coefficient) in
                 self?.coefficient = coefficient ?? Coefficient.default
+                group.leave()
             })
         }
 
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getMaxRank(callback: { (rank) in
                 self?.maxEquipmentRank = rank ?? Constant.presetMaxRank
+                group.leave()
             })
         }
         
-        DispatchQueue.global(qos: .userInitiated).async(group: group) { [weak self] in
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getMaxUniqueEquipmentLevel(callback: { (level) in
                 self?.maxUniqueEquipmentLevel = level ?? Constant.presetMaxUniqueEquipmentLevel
+                group.leave()
+            })
+        }
+        
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            Master.shared.getGameEvents(callback: { (events) in
+                self?.events = events
+                group.leave()
             })
         }
         

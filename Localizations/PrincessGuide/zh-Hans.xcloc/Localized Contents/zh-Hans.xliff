@@ -46,6 +46,11 @@
         <target>$(PRODUCT_NAME)</target>
         <note>Bundle name</note>
       </trans-unit>
+      <trans-unit id="NSCalendarsUsageDescription">
+        <source>In order to save the events we will need access to your calendar.</source>
+        <target>为了保存这些事件，我们需要日历的访问权限。</target>
+        <note>Privacy - Calendars Usage Description</note>
+      </trans-unit>
       <trans-unit id="NSPhotoLibraryAddUsageDescription">
         <source>In order to save the image we will need access to your camera roll.</source>
         <target>为了保存这张图片，我们需要相册的访问权限。</target>
@@ -74,6 +79,11 @@
         <target>范围 %4$d 内%1$@%2$@%3$@</target>
         <note>[the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ %@ x%@">
+        <source>%1$@ %2$@ %3$@ x%4$@</source>
+        <target>%1$@%2$@%3$@ x%4$@</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ %d%@ %@ for [%@]s.">
         <source>%1$@ %2$@ %3$d%4$@ %5$@ for [%6$@]s.</source>
@@ -111,6 +121,11 @@
         <source>%1$@ %2$@ targets in range %3$d</source>
         <target>范围 %3$d 内%1$@%2$@目标</target>
         <note>[friendly] [physics] targets in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ %@ x%@">
+        <source>%1$@ %2$@ x%3$@</source>
+        <target>%1$@%2$@ x%3$@</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ Damage is reduced on low level players.">
         <source>%@ Damage is reduced on low level players.</source>
@@ -249,6 +264,11 @@
         <target>%@未知类型</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="%@'s birthday">
+        <source>%@'s birthday</source>
+        <target>%@的生日</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@/%@">
         <source>%1$@/%2$@</source>
         <target>%1$@ 月 %2$@ 日</target>
@@ -342,6 +362,11 @@
       <trans-unit id="Appear after %@s since wave start.">
         <source>Appear after %@s since wave start.</source>
         <target>回合开始后 %@ 秒入场。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Apply">
+        <source>Apply</source>
+        <target>应用</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Ascending">
@@ -467,6 +492,16 @@
       <trans-unit id="CV">
         <source>CV</source>
         <target>声优</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Calendar Permission">
+        <source>Calendar Permission</source>
+        <target>系统日历权限</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Calendar Settings">
+        <source>Calendar Settings</source>
+        <target>日历设置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Campaign">
@@ -869,6 +904,11 @@
         <target>掉落</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Drop Rate">
+        <source>Drop Rate</source>
+        <target>掉率</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Dropped">
         <source>Dropped</source>
         <target>掉落</target>
@@ -927,6 +967,16 @@
       <trans-unit id="Email">
         <source>Email</source>
         <target>邮件</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Enable Birthday Events">
+        <source>Enable Birthday Events</source>
+        <target>打开生日事件</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Enable Game Events">
+        <source>Enable Game Events</source>
+        <target>打开游戏事件</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Enable Notifications">
@@ -1032,6 +1082,16 @@
       <trans-unit id="Gacha">
         <source>Gacha</source>
         <target>卡池</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Game Event">
+        <source>Game Event</source>
+        <target>游戏事件</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Game Events Filter">
+        <source>Game Events Filter</source>
+        <target>游戏事件筛选</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="General">
@@ -1172,6 +1232,11 @@
       <trans-unit id="Loses">
         <source>Loses</source>
         <target>失败</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Luna's Tower">
+        <source>Luna's Tower</source>
+        <target>露娜塔</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Magic">
@@ -1786,12 +1851,17 @@
       </trans-unit>
       <trans-unit id="Still">
         <source>Still</source>
-        <target>剧情</target>
+        <target>剧情插图</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Story">
         <source>Story</source>
         <target>剧情</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Story Event">
+        <source>Story Event</source>
+        <target>剧情活动</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Stun">
@@ -1882,6 +1952,11 @@
       <trans-unit id="There aren't any Mail accounts">
         <source>There aren't any Mail accounts</source>
         <target>未设置邮件账户</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix &quot;Hatsune's Notes&quot;.">
+        <source>These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix "Hatsune's Notes".</source>
+        <target>这些设置的作用是：当本 App 内部数据更新时，自动将事件添加到您的系统日历中。这些事件在系统日历中会被添加到独立的含有前缀“Hatsune's Notes”的分组中。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Third-Party Licenses">

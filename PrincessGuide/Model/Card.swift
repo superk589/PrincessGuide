@@ -92,6 +92,13 @@ class Card: Codable {
         let mainSkillEvolution1: Int
         let mainSkillEvolution2: Int
         
+        var rawName: String {
+            if let substring = unitName.split(separator: "（").first {
+                return String(substring)
+            } else {
+                return unitName
+            }
+        }
         
         var exSkillIDs: [Int] {
             return Array([exSkill1, exSkill2, exSkill3, exSkill4, exSkill5].prefix { $0 != 0 })

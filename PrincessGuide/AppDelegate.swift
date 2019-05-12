@@ -45,7 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = NotificationHandler.default
         
+        BirthdayCenter.default.initialize()
         BirthdayCenter.default.scheduleNotifications()
+        
+        GameEventCenter.default.initialize()
         
         checkNotice()
 //        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in

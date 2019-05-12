@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0873DCABFBE8D57C7AF3BFF8 /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */; };
 		120B71D52196DB6100B45A4A /* FixedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B71D42196DB6100B45A4A /* FixedTabBar.swift */; };
 		120BCAF220F20F3C0029A083 /* BDInfoTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */; };
 		120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF320F2564B0029A083 /* ArrayExtension.swift */; };
@@ -182,6 +181,9 @@
 		12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */; };
 		12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C44140209C92AF00016BDC /* LaunchScreen.storyboard */; };
 		12C5992B2286F6EF00875EE4 /* Decimal+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5992A2286F6EF00875EE4 /* Decimal+Rounding.swift */; };
+		12C5992E2287C92B00875EE4 /* CalendarSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5992D2287C92B00875EE4 /* CalendarSettingViewController.swift */; };
+		12C599302287DC4200875EE4 /* GameEventCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5992F2287DC4200875EE4 /* GameEventCenter.swift */; };
+		12C599322287DE4400875EE4 /* GameEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C599312287DE4400875EE4 /* GameEvent.swift */; };
 		12C5D26D21D9FFEE00C99425 /* HatsuneEventQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */; };
 		12C5D26F21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
@@ -278,6 +280,7 @@
 		12F1263D20BCD86B005C9659 /* CDTextItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263C20BCD86B005C9659 /* CDTextItemView.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
+		94018D168BCD58B74960DD7C /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,7 +294,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		120B71D42196DB6100B45A4A /* FixedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTabBar.swift; sourceTree = "<group>"; };
 		120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDInfoTextCell.swift; sourceTree = "<group>"; };
 		120BCAF320F2564B0029A083 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -479,6 +481,9 @@
 		12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePlayer.swift; sourceTree = "<group>"; };
 		12C4413F209C92AF00016BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12C5992A2286F6EF00875EE4 /* Decimal+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Rounding.swift"; sourceTree = "<group>"; };
+		12C5992D2287C92B00875EE4 /* CalendarSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSettingViewController.swift; sourceTree = "<group>"; };
+		12C5992F2287DC4200875EE4 /* GameEventCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEventCenter.swift; sourceTree = "<group>"; };
+		12C599312287DE4400875EE4 /* GameEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEvent.swift; sourceTree = "<group>"; };
 		12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventQuest.swift; sourceTree = "<group>"; };
 		12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventSpecialBattle.swift; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
@@ -575,8 +580,9 @@
 		12F1263C20BCD86B005C9659 /* CDTextItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextItemView.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
-		3D97751EC21D0717972B78A6 /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
-		85266E68CCED5C8F4B6EAF5C /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
+		3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
+		967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C735B4FA6BCE4F5C07021254 /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -585,7 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */,
-				0873DCABFBE8D57C7AF3BFF8 /* Pods_PrincessGuide.framework in Frameworks */,
+				94018D168BCD58B74960DD7C /* Pods_PrincessGuide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,15 +605,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0701FDC293542EF8848F28EF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3D97751EC21D0717972B78A6 /* Pods-PrincessGuide.debug.xcconfig */,
-				85266E68CCED5C8F4B6EAF5C /* Pods-PrincessGuide.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		120BCAF920F4DEF30029A083 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +617,7 @@
 		120F9B4920E4DA54003632CA /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				12C5992C2287C90B00875EE4 /* Calendar */,
 				1223A8E020F08F2700C98BB2 /* BirthdayNotification */,
 				12DC963D20EDED8B008896D7 /* TeamManager */,
 				12DC963820EDED0E008896D7 /* BoxManager */,
@@ -723,6 +721,7 @@
 				1226532220AD626700BB3E56 /* Resist.swift */,
 				127FB85820F44BE1009B53CC /* Preload.swift */,
 				1273BFC421CE2B5900ECA727 /* Notice.swift */,
+				12C599312287DE4400875EE4 /* GameEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -883,7 +882,7 @@
 				129A7F6820A06DE500D93996 /* PrincessGuideTests */,
 				12659E03205F5DB100A8B9A2 /* Products */,
 				C4EE8380F1630D9BF0C1B7E0 /* Frameworks */,
-				0701FDC293542EF8848F28EF /* Pods */,
+				84F4F887B4935ADF41BE15C5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1060,6 +1059,15 @@
 				12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		12C5992C2287C90B00875EE4 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				12C5992D2287C92B00875EE4 /* CalendarSettingViewController.swift */,
+				12C5992F2287DC4200875EE4 /* GameEventCenter.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		12D3D12F20A56F7800034DD6 /* ViewController */ = {
@@ -1323,11 +1331,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84F4F887B4935ADF41BE15C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C735B4FA6BCE4F5C07021254 /* Pods-PrincessGuide.debug.xcconfig */,
+				3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C4EE8380F1630D9BF0C1B7E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1221CDCC207C4197008F30AA /* libsqlite3.tbd */,
-				0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */,
+				967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1339,11 +1356,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12659E14205F5DB100A8B9A2 /* Build configuration list for PBXNativeTarget "PrincessGuide" */;
 			buildPhases = (
-				5E4574CB3F020CA5CAC83ACF /* [CP] Check Pods Manifest.lock */,
+				F52EC2F9318F9BE75C34C5D7 /* [CP] Check Pods Manifest.lock */,
 				12659DFE205F5DB100A8B9A2 /* Sources */,
 				12659DFF205F5DB100A8B9A2 /* Frameworks */,
 				12659E00205F5DB100A8B9A2 /* Resources */,
-				25832C3B065A527BC10EE18E /* [CP] Embed Pods Frameworks */,
+				855740317354B8206A573486 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1451,7 +1468,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25832C3B065A527BC10EE18E /* [CP] Embed Pods Frameworks */ = {
+		855740317354B8206A573486 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1470,6 +1487,7 @@
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/KingfisherWebP/KingfisherWebP.framework",
+				"${BUILT_PRODUCTS_DIR}/Klendario/Klendario.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
@@ -1495,6 +1513,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KingfisherWebP.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Klendario.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
@@ -1511,16 +1530,20 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5E4574CB3F020CA5CAC83ACF /* [CP] Check Pods Manifest.lock */ = {
+		F52EC2F9318F9BE75C34C5D7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PrincessGuide-checkManifestLockResult.txt",
 			);
@@ -1589,6 +1612,7 @@
 				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,
 				12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */,
 				12F125DB20B92E79005C9659 /* MoveAction.swift in Sources */,
+				12C599302287DC4200875EE4 /* GameEventCenter.swift in Sources */,
 				1223A8EC20F0B4EB00C98BB2 /* NotificationHandle.swift in Sources */,
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
@@ -1705,6 +1729,7 @@
 				12936B312176CEA000B9531F /* EurekaHelper.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
+				12C5992E2287C92B00875EE4 /* CalendarSettingViewController.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
 				12F125FB20B952CA005C9659 /* ChangePatternAction.swift in Sources */,
 				12C5992B2286F6EF00875EE4 /* Decimal+Rounding.swift in Sources */,
@@ -1750,6 +1775,7 @@
 				1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */,
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
+				12C599322287DE4400875EE4 /* GameEvent.swift in Sources */,
 				12DC964520EDFA9D008896D7 /* EditBoxViewController.swift in Sources */,
 				126BFBD120F0FAF20059B4ED /* BDInfoViewController.swift in Sources */,
 				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
@@ -1984,12 +2010,12 @@
 		};
 		12659E15205F5DB100A8B9A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D97751EC21D0717972B78A6 /* Pods-PrincessGuide.debug.xcconfig */;
+			baseConfigurationReference = C735B4FA6BCE4F5C07021254 /* Pods-PrincessGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 103;
+				CURRENT_PROJECT_VERSION = 104;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2006,12 +2032,12 @@
 		};
 		12659E16205F5DB100A8B9A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85266E68CCED5C8F4B6EAF5C /* Pods-PrincessGuide.release.xcconfig */;
+			baseConfigurationReference = 3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 103;
+				CURRENT_PROJECT_VERSION = 104;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

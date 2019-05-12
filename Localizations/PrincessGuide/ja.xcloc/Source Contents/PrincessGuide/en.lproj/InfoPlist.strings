@@ -2,6 +2,8 @@
 "CFBundleDisplayName" = "Hatsune's Notes";
 /* Bundle name */
 "CFBundleName" = "PrincessGuide";
+/* Privacy - Calendars Usage Description */
+"NSCalendarsUsageDescription" = "In order to save the events we will need access to your calendar.";
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "In order to save the image we will need access to your camera roll.";
 /* Privacy - Photo Library Usage Description */

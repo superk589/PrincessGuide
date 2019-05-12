@@ -1655,4 +1655,122 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getGameEvents(callback: @escaping FMDBCallbackClosure<[GameEvent]>) {
+        var events = [GameEvent]()
+        execute({ (db) in
+            let campaignSql = """
+            SELECT
+                *
+            FROM
+                campaign_schedule a
+            """
+            
+            var set = try db.executeQuery(campaignSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let category = json["campaign_category"].intValue
+                let value = json["value"].doubleValue
+                let campaign = CampaignEvent(startDate: startDate, endDate: endDate, category: category, value: value)
+                events.append(campaign)
+            }
+            
+            let storyEventSql = """
+            SELECT
+                a.*,
+                b.title
+            FROM
+                hatsune_schedule a,
+                event_story_data b
+            WHERE
+                a.event_id = b.value
+            """
+            
+            set = try db.executeQuery(storyEventSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let name = json["title"].stringValue
+                let story = StoryEvent(startDate: startDate, endDate: endDate, name: name, type: .story)
+                events.append(story)
+            }
+            
+            let clanBattleEventSql = """
+            SELECT
+                *
+            FROM
+                clan_battle_period a
+            """
+            
+            set = try db.executeQuery(clanBattleEventSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let clanBattle = ClanBattleEvent(startDate: startDate, endDate: endDate, name: "", type: .clanBattle)
+                events.append(clanBattle)
+            }
+            
+            let gachaSql = """
+            SELECT
+                *
+            FROM
+                gacha_data a
+            """
+            
+            set = try db.executeQuery(gachaSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let id = json["gacha_id"].stringValue
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let name = json["description"].stringValue.replacingOccurrences(of: "\\n", with: " ")
+                let gacha = GachaEvent(startDate: startDate, endDate: endDate, name: name, type: .gacha)
+                
+                // ignore the gacha has a very long duration
+                if gacha.endDate.timeIntervalSinceNow > 60 * 60 * 24 * 30 {
+                    continue
+                }
+                
+                // ignore normal gacha
+                if id.starts(with: "1") || id.starts(with: "2") {
+                    continue
+                }
+                
+                events.append(gacha)
+            }
+            
+            let towerSql = """
+            SELECT
+                b.*,
+                c.title
+            FROM
+                tower_schedule b,
+                tower_story_data c
+            WHERE
+                b.opening_story_id / 1000 = c.story_group_id
+            """
+            
+            set = try db.executeQuery(towerSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let name = json["title"].stringValue
+                let tower = TowerEvent(startDate: startDate, endDate: endDate, name: name, type: .tower)
+                events.append(tower)
+            }
+            
+        }) {
+            callback(events)
+        }
+    }
+    
 }

@@ -4,6 +4,9 @@
 /* Bundle name */
 "CFBundleName" = "$(PRODUCT_NAME)";
 
+/* Privacy - Calendars Usage Description */
+"NSCalendarsUsageDescription" = "为了保存这些事件，我们需要日历的访问权限。";
+
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "为了保存这张图片，我们需要相册的访问权限。";
 

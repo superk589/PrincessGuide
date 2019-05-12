@@ -13,6 +13,9 @@
 "%@ %@ %@ in range %d" = "范围 %4$d 内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
+"%@ %@ %@ x%@" = "%1$@%2$@%3$@ x%4$@";
+
+/* No comment provided by engineer. */
 "%@ %@ %d%@ %@ for [%@]s." = "%1$@%2$@ %3$d%4$@ %5$@，持续 [%6$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -31,6 +34,9 @@
 
 /* [friendly] [physics] targets in range [500] */
 "%@ %@ targets in range %d" = "范围 %3$d 内%1$@%2$@目标";
+
+/* No comment provided by engineer. */
+"%@ %@ x%@" = "%1$@%2$@ x%3$@";
 
 /* No comment provided by engineer. */
 "%@ boss" = "%@首领级";
@@ -116,6 +122,9 @@
 "%@ unknown type" = "%@未知类型";
 
 /* No comment provided by engineer. */
+"%@'s birthday" = "%@的生日";
+
+/* No comment provided by engineer. */
 "%@/%@" = "%1$@ 月 %2$@ 日";
 
 /* No comment provided by engineer. */
@@ -198,6 +207,9 @@
 
 /* No comment provided by engineer. */
 "Appear after %@s since wave start." = "回合开始后 %@ 秒入场。";
+
+/* No comment provided by engineer. */
+"Apply" = "应用";
 
 /* No comment provided by engineer. */
 "arena" = "竞技场";
@@ -291,6 +303,12 @@
 
 /* No comment provided by engineer. */
 "By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again." = "目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。";
+
+/* No comment provided by engineer. */
+"Calendar Permission" = "系统日历权限";
+
+/* No comment provided by engineer. */
+"Calendar Settings" = "日历设置";
 
 /* No comment provided by engineer. */
 "Campaign" = "奖励事件";
@@ -548,6 +566,9 @@
 "Drop" = "掉落";
 
 /* No comment provided by engineer. */
+"Drop Rate" = "掉率";
+
+/* No comment provided by engineer. */
 "Dropped" = "掉落";
 
 /* No comment provided by engineer. */
@@ -579,6 +600,12 @@
 
 /* No comment provided by engineer. */
 "Email" = "邮件";
+
+/* No comment provided by engineer. */
+"Enable Birthday Events" = "打开生日事件";
+
+/* No comment provided by engineer. */
+"Enable Game Events" = "打开游戏事件";
 
 /* No comment provided by engineer. */
 "Enable Notifications" = "允许通知";
@@ -686,6 +713,12 @@
 "Gacha" = "卡池";
 
 /* No comment provided by engineer. */
+"Game Event" = "游戏事件";
+
+/* No comment provided by engineer. */
+"Game Events Filter" = "游戏事件筛选";
+
+/* No comment provided by engineer. */
 "General" = "通用";
 
 /* No comment provided by engineer. */
@@ -774,6 +807,9 @@
 
 /* No comment provided by engineer. */
 "Loses" = "失败";
+
+/* No comment provided by engineer. */
+"Luna's Tower" = "露娜塔";
 
 /* No comment provided by engineer. */
 "magic" = "法系";
@@ -1211,10 +1247,13 @@
 "Stealth for %@s." = "潜行 %@ 秒。";
 
 /* No comment provided by engineer. */
-"Still" = "剧情";
+"Still" = "剧情插图";
 
 /* No comment provided by engineer. */
 "Story" = "剧情";
+
+/* No comment provided by engineer. */
+"Story Event" = "剧情活动";
 
 /* No comment provided by engineer. */
 "Stun" = "击晕";
@@ -1368,6 +1407,9 @@
 
 /* No comment provided by engineer. */
 "There aren't any Mail accounts" = "未设置邮件账户";
+
+/* No comment provided by engineer. */
+"These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\"." = "这些设置的作用是：当本 App 内部数据更新时，自动将事件添加到您的系统日历中。这些事件在系统日历中会被添加到独立的含有前缀“Hatsune's Notes”的分组中。";
 
 /* No comment provided by engineer. */
 "third" = "第三";

@@ -15,6 +15,7 @@ PODS:
   - KingfisherWebP (0.5.0):
     - Kingfisher (~> 5.0)
     - libwebp (>= 0.5.0)
+  - Klendario (1.0.1)
   - libwebp (1.0.0):
     - libwebp/core (= 1.0.0)
     - libwebp/dec (= 1.0.0)
@@ -63,6 +64,7 @@ DEPENDENCIES:
   - ImageViewer (from `https://github.com/superk589/ImageViewer.git`)
   - Kingfisher
   - KingfisherWebP
+  - Klendario
   - lz4
   - MJRefresh
   - ReachabilitySwift
@@ -83,6 +85,7 @@ SPEC REPOS:
     - FMDB
     - Kingfisher
     - KingfisherWebP
+    - Klendario
     - libwebp
     - lz4
     - MJRefresh
@@ -128,6 +131,7 @@ SPEC CHECKSUMS:
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
   Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   KingfisherWebP: 310f69a932151c526a7649de965f57e56918c8d0
+  Klendario: ab2ad3b95ae695fd12b9094837bb35899cf0a2d9
   libwebp: d7e0c95fe97245c97e08101eba10702ebb0f6101
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
@@ -139,6 +143,6 @@ SPEC CHECKSUMS:
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: b80f1070d28fba7f06d7946b0b48eb2c003347f0
+PODFILE CHECKSUM: 6b2d35ecb35482604e1820d96f5d8a9588d56b6d
 
 COCOAPODS: 1.7.0.beta.3

@@ -10,8 +10,10 @@ import UIKit
 import UserNotifications
 import Kingfisher
 import KingfisherWebP
+import Klendario
+import EventKit
 
-typealias Setting = BirthdayViewController.Setting
+fileprivate typealias Setting = BirthdayViewController.Setting
 
 extension Card {
     
@@ -59,11 +61,15 @@ class BirthdayCenter {
     var lastReloadDate = Date()
     
     private init() {
-        reload()
+
+    }
+    
+    func initialize() {
+        loadData()
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: .preloadEnd, object: nil)
     }
     
-    @objc private func reload() {
+    func loadData() {
         let cards = Preload.default.cards.values
         
         let sortedCards = cards.filter { $0.nextBirthday != nil }.sorted { $0.profile.unitId > $1.profile.unitId }
@@ -75,6 +81,12 @@ class BirthdayCenter {
         
         self.cards.sort { $0.nextBirthday! < $1.nextBirthday! }
         lastReloadDate = Date()
+    }
+    
+    @objc private func reload() {
+        loadData()
+        scheduleNotifications()
+        scheduleBirthdayEvents()
     }
     
     func scheduleNotifications() {
@@ -96,14 +108,14 @@ class BirthdayCenter {
                 let content = UNMutableNotificationContent()
                 content.title = NSLocalizedString("Chara Birthday", comment: "Birthday notification title")
                 let body = NSLocalizedString("Today is %@'s birthday (%@/%@)", comment: "Birthday notification body")
-                content.body = String(format: body, card.profile.unitName, card.profile.birthMonth, card.profile.birthDay)
+                content.body = String(format: body, card.base.rawName, card.profile.birthMonth, card.profile.birthDay)
                 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: card.nextBirthdayComponents!, repeats: false)
                 
                 let requestIdentifier = Constant.appBundle + ".\(card.profile.unitName)"
                 content.categoryIdentifier = NotificationHandler.UserNotificationCategoryType.birthday
                 
-                let userInfo: [String: Any] = ["card_name": card.profile.unitName, "card_id": card.base.unitId]
+                let userInfo: [String: Any] = ["card_name": card.base.rawName, "card_id": card.base.unitId]
                 content.userInfo = userInfo
                 
                 let url = URL.resource.appendingPathComponent("icon/unit/\(card.iconID()).webp")
@@ -147,5 +159,85 @@ class BirthdayCenter {
     
     func removeNotifications() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
+    func scheduleBirthdayEvents() {
+        if Setting.default.autoAddBirthdaysToEvents {
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.removeBirthdayEvents {
+                    self.addBirthdayEvents()
+                }
+            }
+        }
+    }
+    
+    func addBirthdayEvents() {
+        findOrCreateCalendar { calendar in
+            for card in self.cards {
+                let event = Klendario.newEvent(in: calendar)
+                let titleFormat = NSLocalizedString("%@'s birthday", comment: "")
+                event.title = String(format: titleFormat, card.base.rawName)
+                let recurrenceRule = EKRecurrenceRule(recurrenceWith: .yearly, interval: 1, daysOfTheWeek: nil, daysOfTheMonth: [NSNumber(value: Int(card.profile.birthDay)!)], monthsOfTheYear: [NSNumber(value: Int(card.profile.birthMonth)!)], weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil)
+                event.startDate = Date(year: Date().year, month: Int(card.profile.birthMonth)!, day: Int(card.profile.birthDay)!)
+                event.addRecurrenceRule(recurrenceRule)
+                event.endDate = event.startDate.addingTimeInterval(60 * 60 * 24 - 1)
+                event.isAllDay = true
+                event.save { error in
+                    if let error = error {
+                        print("error: \(error.localizedDescription)")
+                    } else {
+                        print("event successfully created!")
+                    }
+                }
+            }
+        }
+    }
+    
+    private var calendarTitle: String {
+        return Constant.calendarPrefix + NSLocalizedString("Birthday", comment: "")
+    }
+    
+    func removeBirthdayEvents(_ ifGrantedThen: (() -> Void)? = nil) {
+        Klendario.requestAuthorization { granted, status, error in
+            if granted {
+                Klendario.resetStore()
+                let calendars = Klendario.getCalendars()
+                let needToDeleteCalenders = calendars.filter { $0.title == self.calendarTitle }
+                let group = DispatchGroup()
+                for calendar in needToDeleteCalenders {
+                    group.enter()
+                    calendar.delete(commit: false) { error in
+                        if let error = error {
+                            print("error: \(error.localizedDescription)")
+                        } else {
+                            print("calendar successfully deleted!")
+                        }
+                        group.leave()
+                    }
+                }
+                group.notify(queue: .main) {
+                    Klendario.commitChanges()
+                    ifGrantedThen?()
+                }
+            }
+        }
+    }
+    
+    func findOrCreateCalendar(then: ((EKCalendar) -> Void)? = nil) {
+        
+        if let calendar = Klendario.getCalendars().first(where: { $0.title == self.calendarTitle }) {
+            then?(calendar)
+        } else {
+            let calendar = Klendario.newCalendar()
+            calendar.title = calendarTitle
+            calendar.save(commit: true) { error in
+                if let error = error {
+                    print("error: \(error.localizedDescription)")
+                } else {
+                    print("calendar successfully created!")
+                }
+                then?(calendar)
+            }
+        }
     }
 }
