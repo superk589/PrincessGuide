@@ -130,7 +130,7 @@ class CalendarSettingViewController: FormViewController {
                 
         form
             +++ Section(NSLocalizedString("Settings", comment: "")) {
-                $0.footer = HeaderFooterView(title: NSLocalizedString("These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\".\n **IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content." , comment: ""))
+                $0.footer = HeaderFooterView(title: NSLocalizedString("These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\".\\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content." , comment: "").replacingOccurrences(of: "\\n", with: "\n"))
             }
             
             <<< SwitchRow("birthday_events_auto_update") { (row) in
