@@ -18,6 +18,8 @@ class GameEventCenter {
     
     var events = [GameEvent]()
     
+    let queue = DispatchQueue(label: "com.zzk.PrincessGuide.GameEventCenter")
+    
     private init() {
         
     }
@@ -37,7 +39,7 @@ class GameEventCenter {
         self.events = Preload.default.events
     }
     
-    func addGameEvents() {
+    func addGameEvents(then: (() -> Void)? = nil) {
         let filteredEvents = events.filter {
             switch $0 {
             case let event as CampaignEvent:
@@ -75,14 +77,19 @@ class GameEventCenter {
                     }
                 }
             }
+            then?()
         }
     }
     
-    func scheduleGameEvents() {
-        if Setting.default.autoAddGameEvents {
-            DispatchQueue.global(qos: .userInitiated).async {
-                self.removeGameEvents() {
-                    self.addGameEvents()
+    func scheduleGameEvents(completion: (() -> Void)? = nil) {
+        queue.async {
+            self.removeGameEvents() {
+                if Setting.default.autoAddGameEvents {
+                    self.addGameEvents() {
+                        completion?()
+                    }
+                } else {
+                    completion?()
                 }
             }
         }
@@ -110,7 +117,7 @@ class GameEventCenter {
                         group.leave()
                     }
                 }
-                group.notify(queue: .main) {
+                group.notify(queue: self.queue) {
                     Klendario.commitChanges()
                     ifGrantedThen?()
                 }
@@ -131,7 +138,9 @@ class GameEventCenter {
                 } else {
                     print("calendar successfully created!")
                 }
-                then?(calendar)
+                self.queue.async {
+                    then?(calendar)
+                }
             }
         }
     }

@@ -1409,9 +1409,6 @@
 "There aren't any Mail accounts" = "未设置邮件账户";
 
 /* No comment provided by engineer. */
-"These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\"." = "这些设置的作用是：当本 App 内部数据更新时，自动将事件添加到您的系统日历中。这些事件在系统日历中会被添加到独立的含有前缀“Hatsune's Notes”的分组中。";
-
-/* No comment provided by engineer. */
 "third" = "第三";
 
 /* No comment provided by engineer. */

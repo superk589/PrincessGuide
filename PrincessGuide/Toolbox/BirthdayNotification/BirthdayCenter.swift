@@ -60,6 +60,8 @@ class BirthdayCenter {
     
     var lastReloadDate = Date()
     
+    let queue = DispatchQueue(label: "com.zzk.princessGuide.BirthdayCenter")
+    
     private init() {
 
     }
@@ -161,17 +163,21 @@ class BirthdayCenter {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
-    func scheduleBirthdayEvents() {
-        if Setting.default.autoAddBirthdaysToEvents {
-            DispatchQueue.global(qos: .userInitiated).async {
-                self.removeBirthdayEvents {
-                    self.addBirthdayEvents()
+    func scheduleBirthdayEvents(completion: (() -> Void)? = nil) {
+        queue.async {
+            self.removeBirthdayEvents {
+                if CalendarSettingViewController.Setting.default.autoAddBirthdayEvents {
+                    self.addBirthdayEvents() {
+                        completion?()
+                    }
+                } else {
+                    completion?()
                 }
             }
         }
     }
     
-    func addBirthdayEvents() {
+    func addBirthdayEvents(then: (() -> Void)?) {
         findOrCreateCalendar { calendar in
             for card in self.cards {
                 let event = Klendario.newEvent(in: calendar)
@@ -190,6 +196,7 @@ class BirthdayCenter {
                     }
                 }
             }
+            then?()
         }
     }
     
@@ -215,7 +222,7 @@ class BirthdayCenter {
                         group.leave()
                     }
                 }
-                group.notify(queue: .main) {
+                group.notify(queue: self.queue) {
                     Klendario.commitChanges()
                     ifGrantedThen?()
                 }
@@ -236,7 +243,9 @@ class BirthdayCenter {
                 } else {
                     print("calendar successfully created!")
                 }
-                then?(calendar)
+                self.queue.async {
+                    then?(calendar)
+                }
             }
         }
     }

@@ -129,10 +129,46 @@ class CalendarSettingViewController: FormViewController {
         }
                 
         form
-            +++ Section() {
-                $0.footer = HeaderFooterView(title: NSLocalizedString("These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\".", comment: ""))
+            +++ Section(NSLocalizedString("Settings", comment: "")) {
+                $0.footer = HeaderFooterView(title: NSLocalizedString("These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\".\n **IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content." , comment: ""))
             }
             
+            <<< SwitchRow("birthday_events_auto_update") { (row) in
+                row.title = NSLocalizedString("Enable Birthday Events", comment: "")
+                row.value = Setting.default.autoAddBirthdayEvents
+                }
+                .cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onChange { (row) in
+                    if let value = row.value {
+                        Setting.default.autoAddBirthdayEvents = value
+                    }
+                    LoadingHUDManager.default.show()
+                    BirthdayCenter.default.scheduleBirthdayEvents() {
+                        DispatchQueue.main.async {
+                            LoadingHUDManager.default.hide()
+                        }
+                    }
+            }
+            
+            <<< SwitchRow("game_events_auto_update") { (row) in
+                row.title = NSLocalizedString("Enable Game Events", comment: "")
+                row.value = Setting.default.autoAddGameEvents
+                }
+                .cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onChange { row in
+                    if let value = row.value {
+                        Setting.default.autoAddGameEvents = value
+                    }
+                    LoadingHUDManager.default.show()
+                    GameEventCenter.default.scheduleGameEvents() {
+                        DispatchQueue.main.async {
+                            LoadingHUDManager.default.hide()
+                        }
+                    }
+                }
+        
             <<< LabelRow("calendar_status") {
                 $0.title = NSLocalizedString("Calendar Permission", comment: "")
                 }.cellSetup { [unowned self] cell, row in
@@ -156,33 +192,6 @@ class CalendarSettingViewController: FormViewController {
                     self.openSystemSettings()
             }
             
-            <<< SwitchRow("birthday_events_auto_update") { (row) in
-                row.title = NSLocalizedString("Enable Birthday Events", comment: "")
-                row.value = Setting.default.autoAddBirthdayEvents
-                }
-                .cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-                .onChange { [unowned self] (row) in
-                    if let value = row.value {
-                        Setting.default.autoAddBirthdayEvents = value
-                    }
-                    self.rescheduleBirthdayEvents()
-            }
-            
-            <<< SwitchRow("game_events_auto_update") { (row) in
-                row.title = NSLocalizedString("Enable Game Events", comment: "")
-                row.value = Setting.default.autoAddGameEvents
-                }
-                .cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-                .onChange { [unowned self] (row) in
-                    if let value = row.value {
-                        Setting.default.autoAddGameEvents = value
-                    }
-                    self.rescheduleGameEvents()
-                }
-        
-        
             +++ Section(NSLocalizedString("Game Events Filter", comment: "")) {
                 $0.tag = "filter"
                 $0.hidden = "$game_events_auto_update == NO"
@@ -192,9 +201,14 @@ class CalendarSettingViewController: FormViewController {
                 $0.title = NSLocalizedString("Apply", comment: "")
             }
                 .cellSetup(cellSetup(cell:row:))
-                .onCellSelection { [unowned self] _, _ in
-                    self.rescheduleGameEvents()
-            }
+                .onCellSelection { _, _ in
+                    LoadingHUDManager.default.show()
+                    GameEventCenter.default.scheduleGameEvents() {
+                        DispatchQueue.main.async {
+                            LoadingHUDManager.default.hide()
+                        }
+                    }
+        }
         
         let section = form.sectionBy(tag: "filter")
         for (index, label) in Setting.Option.allLabels.enumerated() {
@@ -218,6 +232,7 @@ class CalendarSettingViewController: FormViewController {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadSettings(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleStoreChanged(_:)), name: .EKEventStoreChanged, object: nil)
         
     }
     
@@ -241,34 +256,10 @@ class CalendarSettingViewController: FormViewController {
         }
     }
     
-    private func rescheduleBirthdayEvents() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            BirthdayCenter.default.removeBirthdayEvents {
-                if Setting.default.autoAddBirthdayEvents {
-                    BirthdayCenter.default.addBirthdayEvents()
-                }
-                DispatchQueue.main.async {
-                    let row = self.form.rowBy(tag: "calendar_status") as? LabelRow
-                    row?.value = self.systemCalendarStatusString
-                    row?.reload()
-                }
-            }
-        }
-    }
-    
-    private func rescheduleGameEvents() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            GameEventCenter.default.removeGameEvents() {
-                if Setting.default.autoAddGameEvents {
-                    GameEventCenter.default.addGameEvents()
-                }
-                DispatchQueue.main.async {
-                    let row = self.form.rowBy(tag: "calendar_status") as? LabelRow
-                    row?.value = self.systemCalendarStatusString
-                    row?.reload()
-                }
-            }
-        }
+    @objc private func handleStoreChanged(_ notification: Notification) {
+        let row = self.form.rowBy(tag: "calendar_status") as? LabelRow
+        row?.value = self.systemCalendarStatusString
+        row?.reload()
     }
     
     @objc private func reloadSettings(_ item: Notification) {

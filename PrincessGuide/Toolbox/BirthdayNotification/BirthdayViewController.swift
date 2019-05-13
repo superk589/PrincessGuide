@@ -27,8 +27,6 @@ class BirthdayViewController: FormViewController {
         
         var timeZone: TimeZone = .tokyo { didSet { save() } }
         
-        var autoAddBirthdaysToEvents = false { didSet { save() } }
-        
         static var `default` = Setting.load() ?? Setting() {
             didSet {
                 Setting.default.save()
