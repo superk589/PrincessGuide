@@ -12,6 +12,6 @@ class ChangeBodyWidthAction: ActionParameter {
 
     override func localizedDetail(of level: Int, property: Property, style: CDSettingsViewController.Setting.ExpressionStyle) -> String {
         let format = NSLocalizedString("Change body width to %@.", comment: "")
-        return String(format: format, actionValue1.description)
+        return String(format: format, actionValue1.roundedString(roundingRule: nil))
     }
 }

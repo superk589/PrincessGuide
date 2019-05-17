@@ -34,25 +34,25 @@ class BarrierAction: ActionParameter {
         switch barrierType {
         case .unknown:
             let format = NSLocalizedString("Cast an unknown barrier %d on %@ for [%@]s.", comment: "")
-            return String(format: format, actionDetail1, targetParameter.buildTargetClause(), actionValue3.description)
+            return String(format: format, actionDetail1, targetParameter.buildTargetClause(), actionValue3.roundedString(roundingRule: nil))
         case .physicalGuard:
             let format = NSLocalizedString("Cast a barrier on %@ to nullify [%@] physical damage for [%@]s.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.description)
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.roundedString(roundingRule: nil))
         case .magicalGuard:
             let format = NSLocalizedString("Cast a barrier on %@ to nullify [%@] magical damage for [%@]s.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.description)
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.roundedString(roundingRule: nil))
         case .physicalDrain:
             let format = NSLocalizedString("Cast a barrier on %@ to absorb [%@] physical damage for [%@]s.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.description)
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.roundedString(roundingRule: nil))
         case .magicalDrain:
             let format = NSLocalizedString("Cast a barrier on %@ to absorb [%@] magical damage for [%@]s.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.description)
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.roundedString(roundingRule: nil))
         case .bothDrain:
             let format = NSLocalizedString("Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.description)
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.roundedString(roundingRule: nil))
         case .bothGuard:
             let format = NSLocalizedString("Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s.", comment: "")
-            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.description)
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), actionValue3.roundedString(roundingRule: nil))
         }
     }
 }

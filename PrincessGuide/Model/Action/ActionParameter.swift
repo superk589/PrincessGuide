@@ -489,15 +489,3 @@ enum ActionType: Int {
     case ex = 90
     case exPlus
 }
-
-extension Double {
-    
-    func roundedValueString(_ roundingRule: FloatingPointRoundingRule? = nil) -> String {
-        if let roundingRule = roundingRule {
-            return String(Int(self.rounded(roundingRule)))
-        } else {
-            return String(self)
-        }
-    }
-    
-}

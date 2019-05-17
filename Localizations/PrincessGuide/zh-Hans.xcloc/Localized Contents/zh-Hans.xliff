@@ -68,6 +68,11 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
     </header>
     <body>
+      <trans-unit id=" Critical damage is %@ times as normal damage.">
+        <source> Critical damage is %@ times as normal damage.</source>
+        <target>暴击时将造成 %@ 倍伤害。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ %@ %@">
         <source>%1$@ %2$@ %3$@</source>
         <target>%1$@%2$@%3$@</target>

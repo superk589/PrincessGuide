@@ -18,7 +18,7 @@ class DamageChargeAction: ActionParameter {
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Charge for %@s and deal [%@ * damage taken] additional damage on the next effect.", comment: "")
-        return String(format: format, actionValue3.description, buildExpression(of: level, roundingRule: nil, style: style, property: property))
+        return String(format: format, actionValue3.roundedString(roundingRule: nil), buildExpression(of: level, roundingRule: nil, style: style, property: property))
     }
     
 }

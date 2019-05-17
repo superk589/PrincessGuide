@@ -1,3 +1,6 @@
+/* No comment provided by engineer. */
+" Critical damage is %@ times as normal damage." = "暴击时将造成 %@ 倍伤害。";
+
 /* clause separator */
 ", " = "，";
 

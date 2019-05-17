@@ -12,7 +12,7 @@ class StealthAction: ActionParameter {
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Stealth for %@s.", comment: "")
-        return String(format: format, actionValue1.description)
+        return String(format: format, actionValue1.roundedString(roundingRule: nil))
     }
     
 }

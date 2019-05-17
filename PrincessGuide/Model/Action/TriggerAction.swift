@@ -33,7 +33,7 @@ class TriggerAction: ActionParameter {
             return String(format: format, Int(actionValue3.rounded()))
         case .limitTime:
             let format = NSLocalizedString("Trigger: Left time is below %@s.", comment: "")
-            return String(format: format, actionValue3.description)
+            return String(format: format, actionValue3.roundedString(roundingRule: nil))
         case .damage:
             let format = NSLocalizedString("Trigger: %d%% on damaged.", comment: "")
             return String(format: format, Int(actionValue1.rounded()))

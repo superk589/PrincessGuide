@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
@@ -12,6 +11,7 @@
       </trans-unit>
       <trans-unit id="4mz-CZ-4V6.title">
         <source>Toolbox</source>
+        <target>ツール</target>
         <note>Class = "UITabBarItem"; title = "Toolbox"; ObjectID = "4mz-CZ-4V6";</note>
       </trans-unit>
       <trans-unit id="H57-OB-5Ns.title">
@@ -43,11 +43,12 @@
       </trans-unit>
       <trans-unit id="CFBundleName">
         <source>PrincessGuide</source>
-        <target>$(PRODUCT_NAME)</target>
+        <target>PrincessGuide</target>
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSCalendarsUsageDescription">
         <source>In order to save the events we will need access to your calendar.</source>
+        <target>事件を保存するためにアルバムへのアクセスが必要です。</target>
         <note>Privacy - Calendars Usage Description</note>
       </trans-unit>
       <trans-unit id="NSPhotoLibraryAddUsageDescription">
@@ -67,6 +68,11 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
     </header>
     <body>
+      <trans-unit id=" Critical damage is %@ times as normal damage.">
+        <source> Critical damage is %@ times as normal damage.</source>
+        <target>クリティカルダメージは通常のダメージ%@倍です。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ %@ %@">
         <source>%1$@ %2$@ %3$@</source>
         <target>%1$@%2$@%3$@</target>
@@ -81,10 +87,12 @@
       </trans-unit>
       <trans-unit id="%@ %@ %@ x%@">
         <source>%1$@ %2$@ %3$@ x%4$@</source>
+        <target>%1$@%2$@%3$@ x%4$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ %d%@ %@ for [%@]s.">
         <source>%1$@ %2$@ %3$d%4$@ %5$@ for [%6$@]s.</source>
+        <target>%2$@に%5$@を[%3$@]%4$@%1$@、[%6$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s.">
@@ -121,10 +129,12 @@
       </trans-unit>
       <trans-unit id="%@ %@ x%@">
         <source>%1$@ %2$@ x%3$@</source>
+        <target>%1$@%2$@ x%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ Damage is reduced on low level players.">
         <source>%@ Damage is reduced on low level players.</source>
+        <target>%@低レベルのプレイヤーにダメージが軽減されます。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ Feedback">
@@ -134,6 +144,7 @@
       </trans-unit>
       <trans-unit id="%@ boss">
         <source>%@ boss</source>
+        <target>%@首領</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ farthest">
@@ -143,15 +154,18 @@
       </trans-unit>
       <trans-unit id="%@ front %@ %@">
         <source>%1$@ front %2$@ %3$@</source>
+        <target>前方%1$@%2$@%3$@</target>
         <note>[the second to fourth farthest] front [enemy] [targets]</note>
       </trans-unit>
       <trans-unit id="%@ front %@ %@ in range %d">
         <source>%1$@ front %2$@ %3$@ in range %4$d</source>
+        <target>前方%4$d範囲内%1$@%2$@%3$@</target>
         <note>[the farthest two] front [enemy] [targets] in range [500]
    [the second to fourth farthest] front [enemy] [targets] in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ front %@ target in range %d">
         <source>%1$@ front %2$@ target in range %3$d</source>
+        <target>前方%3$d範囲内%1$@%2$@</target>
         <note>[the nearest] front [enemy] target in range [500]
    [the second nearest] front [enemy] target in range [500]</note>
       </trans-unit>
@@ -202,6 +216,7 @@
       </trans-unit>
       <trans-unit id="%@ minion">
         <source>%@ minion</source>
+        <target>%@ミニオン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ most backward">
@@ -231,10 +246,12 @@
       </trans-unit>
       <trans-unit id="%@ random(once)">
         <source>%@ random(once)</source>
+        <target>ランダム%@（初回のみ）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ receives your blessing.">
         <source>%@ receives your blessing.</source>
+        <target>％@はあなたの祝福を受けました。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ targets in range %d">
@@ -254,6 +271,7 @@
       </trans-unit>
       <trans-unit id="%@'s birthday">
         <source>%@'s birthday</source>
+        <target>％@の誕生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@/%@">
@@ -263,10 +281,12 @@
       </trans-unit>
       <trans-unit id="%d in front of %@, summon a minion of ID: %d.">
         <source>%1$d in front of %2$@, summon a minion of ID: %3$d.</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=", ">
         <source>, </source>
+        <target>、</target>
         <note>clause separator</note>
       </trans-unit>
       <trans-unit id="ATK">
@@ -281,6 +301,7 @@
       </trans-unit>
       <trans-unit id="Accuracy">
         <source>Accuracy</source>
+        <target>命中</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Action">
@@ -294,6 +315,7 @@
       </trans-unit>
       <trans-unit id="Add [%@ * count of defeated enemies] to next effect's value %d.">
         <source>Add [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add [%@ * count of omemes] to next effect's value %d.">
@@ -327,6 +349,7 @@
       </trans-unit>
       <trans-unit id="Age">
         <source>Age</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="App Version">
@@ -336,10 +359,12 @@
       </trans-unit>
       <trans-unit id="Appear after %@s since wave start.">
         <source>Appear after %@s since wave start.</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Apply">
         <source>Apply</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Ascending">
@@ -381,6 +406,7 @@
       </trans-unit>
       <trans-unit id="Batch Edit">
         <source>Batch Edit</source>
+        <target>一括編集</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Become invulnerable for [%@]s.">
@@ -404,6 +430,7 @@
       </trans-unit>
       <trans-unit id="Birthday Notification">
         <source>Birthday Notification</source>
+        <target>誕生日通知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Blind">
@@ -413,6 +440,7 @@
       </trans-unit>
       <trans-unit id="Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss.">
         <source>Blind %1$@ with [%2$@]%% chance for [%3$@]s, physical attack has %4$d%% chance to miss.</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Blood Type">
@@ -427,6 +455,7 @@
       </trans-unit>
       <trans-unit id="Box Detail">
         <source>Box Detail</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Box Management">
@@ -457,18 +486,22 @@
       </trans-unit>
       <trans-unit id="Calendar Permission">
         <source>Calendar Permission</source>
+        <target>カレンダー許可</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Calendar Settings">
         <source>Calendar Settings</source>
+        <target>カレンダー設定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Campaign">
         <source>Campaign</source>
+        <target>キャンペーン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cancel">
         <source>Cancel</source>
+        <target>取消</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cards">
@@ -513,6 +546,7 @@
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage.">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking damage.</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking magical damage.">
@@ -552,6 +586,7 @@
       </trans-unit>
       <trans-unit id="Change attack pattern back to %d after effect over.">
         <source>Change attack pattern back to %d after effect over.</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Change attack pattern to %d for %@s.">
@@ -604,10 +639,12 @@
       </trans-unit>
       <trans-unit id="Chara Birthday">
         <source>Chara Birthday</source>
+        <target>キャラの誕生日</target>
         <note>Birthday notification title</note>
       </trans-unit>
       <trans-unit id="Chara Management">
         <source>Chara Management</source>
+        <target>キャラ管理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Chara Name">
@@ -617,10 +654,12 @@
       </trans-unit>
       <trans-unit id="Charas">
         <source>Charas</source>
+        <target>キャラ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Charas Count">
         <source>Charas Count</source>
+        <target>キャラ数</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Charge for %@s and deal [%@ * damage taken] additional damage on the next effect.">
@@ -1322,6 +1361,7 @@
       </trans-unit>
       <trans-unit id="Notification Permission">
         <source>Notification Permission</source>
+        <target>通知許可</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Number of Unique Equipments">
@@ -2189,12 +2229,12 @@
       </trans-unit>
       <trans-unit id="target">
         <source>target</source>
-        <target/>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets">
         <source>targets</source>
-        <target/>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets of effect %d">

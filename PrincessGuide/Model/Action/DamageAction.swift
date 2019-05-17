@@ -36,14 +36,24 @@ class DamageAction: ActionParameter {
     }
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
+        
+        var string: String
+        
         switch criticalModifier {
         case .normal:
             let format = NSLocalizedString("Deal [%@] %@ damage to %@.", comment: "")
-            return String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
+            string = String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
         case .critical:
             let format = NSLocalizedString("Deal [%@] %@ damage to %@, and this attack is ensured critical.", comment: "")
-            return String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
+            string = String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
         }
+        
+        if actionValue6 != 0 {
+            let format = NSLocalizedString(" Critical damage is %@ times as normal damage.", comment: "")
+            string.append(String(format: format, (2 * actionValue6).roundedString(roundingRule: nil)))
+        }
+        
+        return string
     }
     
 }

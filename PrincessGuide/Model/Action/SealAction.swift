@@ -13,6 +13,6 @@ class SealAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         let format = NSLocalizedString("Mark %@ with state of ID: %@ with max stacks of %@ for %@s.", comment: "")
-        return String(format: format, targetParameter.buildTargetClause(), actionValue2.roundedValueString(.down), actionValue1.roundedValueString(.down), actionValue3.description)
+        return String(format: format, targetParameter.buildTargetClause(), actionValue2.roundedString(roundingRule: .down), actionValue1.roundedString(roundingRule: .down), actionValue3.roundedString(roundingRule: nil))
     }
 }
