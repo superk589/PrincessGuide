@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = NotificationHandler.default
         
         BirthdayCenter.default.initialize()
-        BirthdayCenter.default.scheduleNotifications()
+        BirthdayCenter.default.rescheduleNotifications()
         
         GameEventCenter.default.initialize()
         
@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         checkNotice()
-        BirthdayCenter.default.scheduleNotifications()
+        BirthdayCenter.default.rescheduleNotifications()
     }
     
     func checkNotice(ignoresExpireDate: Bool = false) {

@@ -144,7 +144,7 @@ class CalendarSettingViewController: FormViewController {
                         Setting.default.autoAddBirthdayEvents = value
                     }
                     LoadingHUDManager.default.show()
-                    BirthdayCenter.default.scheduleBirthdayEvents() {
+                    BirthdayCenter.default.rescheduleBirthdayEvents() {
                         DispatchQueue.main.async {
                             LoadingHUDManager.default.hide()
                         }
@@ -162,7 +162,7 @@ class CalendarSettingViewController: FormViewController {
                         Setting.default.autoAddGameEvents = value
                     }
                     LoadingHUDManager.default.show()
-                    GameEventCenter.default.scheduleGameEvents() {
+                    GameEventCenter.default.rescheduleGameEvents() {
                         DispatchQueue.main.async {
                             LoadingHUDManager.default.hide()
                         }
@@ -203,7 +203,7 @@ class CalendarSettingViewController: FormViewController {
                 .cellSetup(cellSetup(cell:row:))
                 .onCellSelection { _, _ in
                     LoadingHUDManager.default.show()
-                    GameEventCenter.default.scheduleGameEvents() {
+                    GameEventCenter.default.rescheduleGameEvents() {
                         DispatchQueue.main.async {
                             LoadingHUDManager.default.hide()
                         }

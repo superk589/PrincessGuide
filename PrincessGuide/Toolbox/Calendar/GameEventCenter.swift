@@ -32,7 +32,9 @@ class GameEventCenter {
     
     @objc private func reload() {
         loadData()
-        scheduleGameEvents()
+        if Setting.default.autoAddGameEvents {
+            rescheduleGameEvents()
+        }
     }
     
     private func loadData() {
@@ -81,7 +83,7 @@ class GameEventCenter {
         }
     }
     
-    func scheduleGameEvents(completion: (() -> Void)? = nil) {
+    func rescheduleGameEvents(completion: (() -> Void)? = nil) {
         queue.async {
             self.removeGameEvents() {
                 if Setting.default.autoAddGameEvents {

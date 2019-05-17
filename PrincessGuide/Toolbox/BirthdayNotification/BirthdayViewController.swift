@@ -182,7 +182,7 @@ class BirthdayViewController: FormViewController {
         if Setting.default.schedulesBirthdayNotifications {
             UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert]) { [weak self] (granted, error) in
                 if error == nil && granted {
-                    BirthdayCenter.default.scheduleNotifications()
+                    BirthdayCenter.default.rescheduleNotifications()
                     DispatchQueue.main.async {
                         let row = self?.form.rowBy(tag: "notification_status") as? LabelRow
                         row?.value = self?.systemNotificationStatusString

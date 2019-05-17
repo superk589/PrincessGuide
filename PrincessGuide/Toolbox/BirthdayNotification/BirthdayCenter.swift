@@ -60,7 +60,7 @@ class BirthdayCenter {
     
     var lastReloadDate = Date()
     
-    let queue = DispatchQueue(label: "com.zzk.princessGuide.BirthdayCenter")
+    let queue = GameEventCenter.default.queue
     
     private init() {
 
@@ -87,11 +87,15 @@ class BirthdayCenter {
     
     @objc private func reload() {
         loadData()
-        scheduleNotifications()
-        scheduleBirthdayEvents()
+        if Setting.default.schedulesBirthdayNotifications {
+            rescheduleNotifications()
+        }
+        if CalendarSettingViewController.Setting.default.autoAddBirthdayEvents {
+            rescheduleBirthdayEvents()
+        }
     }
     
-    func scheduleNotifications() {
+    func rescheduleNotifications() {
         
         if !Setting.default.schedulesBirthdayNotifications {
             return
@@ -163,7 +167,7 @@ class BirthdayCenter {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
-    func scheduleBirthdayEvents(completion: (() -> Void)? = nil) {
+    func rescheduleBirthdayEvents(completion: (() -> Void)? = nil) {
         queue.async {
             self.removeBirthdayEvents {
                 if CalendarSettingViewController.Setting.default.autoAddBirthdayEvents {
