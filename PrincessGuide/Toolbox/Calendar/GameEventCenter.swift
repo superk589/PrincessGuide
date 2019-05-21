@@ -85,8 +85,8 @@ class GameEventCenter {
     
     func rescheduleGameEvents(completion: (() -> Void)? = nil) {
         queue.async {
-            self.removeGameEvents() {
-                if Setting.default.autoAddGameEvents {
+            self.removeGameEvents() { granted in
+                if Setting.default.autoAddGameEvents && granted {
                     self.addGameEvents() {
                         completion?()
                     }
@@ -101,7 +101,7 @@ class GameEventCenter {
         return Constant.calendarPrefix + NSLocalizedString("Game Event", comment: "")
     }
     
-    func removeGameEvents(_ ifGrantedThen: (() -> Void)? = nil) {
+    func removeGameEvents(_ then: ((Bool) -> Void)? = nil) {
         Klendario.requestAuthorization { granted, status, error in
             if granted {
                 Klendario.resetStore()
@@ -121,8 +121,10 @@ class GameEventCenter {
                 }
                 group.notify(queue: self.queue) {
                     Klendario.commitChanges()
-                    ifGrantedThen?()
+                    then?(true)
                 }
+            } else {
+                then?(false)
             }
         }
     }

@@ -169,8 +169,8 @@ class BirthdayCenter {
     
     func rescheduleBirthdayEvents(completion: (() -> Void)? = nil) {
         queue.async {
-            self.removeBirthdayEvents {
-                if CalendarSettingViewController.Setting.default.autoAddBirthdayEvents {
+            self.removeBirthdayEvents { granted in
+                if CalendarSettingViewController.Setting.default.autoAddBirthdayEvents && granted {
                     self.addBirthdayEvents() {
                         completion?()
                     }
@@ -208,7 +208,7 @@ class BirthdayCenter {
         return Constant.calendarPrefix + NSLocalizedString("Birthday", comment: "")
     }
     
-    func removeBirthdayEvents(_ ifGrantedThen: (() -> Void)? = nil) {
+    func removeBirthdayEvents(_ then: ((Bool) -> Void)? = nil) {
         Klendario.requestAuthorization { granted, status, error in
             if granted {
                 Klendario.resetStore()
@@ -228,8 +228,10 @@ class BirthdayCenter {
                 }
                 group.notify(queue: self.queue) {
                     Klendario.commitChanges()
-                    ifGrantedThen?()
+                    then?(true)
                 }
+            } else {
+                then?(false)
             }
         }
     }

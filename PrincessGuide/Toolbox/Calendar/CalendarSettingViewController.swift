@@ -163,8 +163,9 @@ class CalendarSettingViewController: FormViewController {
                     }
                     LoadingHUDManager.default.show()
                     GameEventCenter.default.rescheduleGameEvents() {
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { [unowned self] in
                             LoadingHUDManager.default.hide()
+                            self.updatePermissionStatus()
                         }
                     }
                 }
@@ -204,8 +205,9 @@ class CalendarSettingViewController: FormViewController {
                 .onCellSelection { _, _ in
                     LoadingHUDManager.default.show()
                     GameEventCenter.default.rescheduleGameEvents() {
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { [unowned self] in
                             LoadingHUDManager.default.hide()
+                            self.updatePermissionStatus()
                         }
                     }
         }
@@ -257,6 +259,10 @@ class CalendarSettingViewController: FormViewController {
     }
     
     @objc private func handleStoreChanged(_ notification: Notification) {
+        updatePermissionStatus()
+    }
+    
+    private func updatePermissionStatus() {
         let row = self.form.rowBy(tag: "calendar_status") as? LabelRow
         row?.value = self.systemCalendarStatusString
         row?.reload()
