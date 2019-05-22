@@ -25,10 +25,8 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
             viewControllers.append(EDResistTableViewController(enemy: enemy))
             items.append(TMBarItem(title: NSLocalizedString("Resist", comment: "")))
         }
-        if !enemy.isBossPart {
-            viewControllers.append(EDSkillTableViewController(enemy: enemy))
-            items.append(TMBarItem(title: NSLocalizedString("Skill", comment: "")))
-        }
+        viewControllers.append(EDSkillTableViewController(enemy: enemy))
+        items.append(TMBarItem(title: NSLocalizedString("Skill", comment: "")))
         viewControllers.append(EDStatusTableViewController(enemy: enemy, isMinion: isMinion))
         items.append(TMBarItem(title: NSLocalizedString("Status", comment: "")))
         super.init(nibName: nil, bundle: nil)
@@ -77,7 +75,7 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        if EDTabViewController.defaultTabIndex <= viewControllers.count {
+        if EDTabViewController.defaultTabIndex < viewControllers.count {
             return .at(index: EDTabViewController.defaultTabIndex)
         } else {
             return .last

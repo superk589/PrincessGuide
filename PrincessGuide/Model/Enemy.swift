@@ -16,6 +16,8 @@ class Enemy: Codable {
     
     let isBossPart: Bool
     
+    var owner: Enemy?
+    
     init(base: Base, unit: Unit, isBossPart: Bool = false) {
         self.base = base
         self.unit = unit
@@ -155,7 +157,13 @@ class Enemy: Codable {
     // MARK: lazy vars
     
     lazy var exSkillLevels: [Int: Int] = {
-        return zip(base.exSkillLevels, base.exSkillIDs)
+        let levels: [Int]
+        if let owner = self.owner, self.isBossPart {
+            levels = owner.base.exSkillLevels
+        } else {
+            levels = base.exSkillLevels
+        }
+        return zip(levels, base.exSkillIDs)
 //            .prefix { $0.0 != 0 }
             .reduce(into: [Int: Int]() ) {
                 $0[$1.1] = $1.0
@@ -163,16 +171,24 @@ class Enemy: Codable {
     }()
     
     lazy var parts: [Enemy] = {
-        return base.partIDs.compactMap { id in
+        let parts = base.partIDs.compactMap { id in
             DispatchSemaphore.sync { closure in
                 Master.shared.getEnemies(enemyID: id, isBossPart: true, callback: closure)
             }
         }
         .flatMap { $0 }
+        parts.forEach { $0.owner = self }
+        return parts
     }()
     
     lazy var mainSkillLevels: [Int: Int] = {
-        return zip(base.mainSkillLevels, base.mainSkillIDs)
+        let levels: [Int]
+        if let owner = self.owner, self.isBossPart {
+            levels = owner.base.mainSkillLevels
+        } else {
+            levels = base.mainSkillLevels
+        }
+        return zip(levels, base.mainSkillIDs)
 //            .prefix { $0.0 != 0 }
             .reduce(into: [Int: Int]()) {
                 $0[$1.1] = $1.0

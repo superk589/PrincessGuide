@@ -13,16 +13,6 @@ class EnemyView: UIView {
     
     let enemyIcon = IconImageView()
     
-    let borderLayer: CAShapeLayer = {
-        let layer = CAShapeLayer()
-        layer.lineWidth = 2
-        layer.lineCap = .round
-        layer.strokeColor = UIColor.red.cgColor
-        layer.lineDashPattern = [2, 4]
-        layer.fillColor = nil
-        return layer
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -31,7 +21,6 @@ class EnemyView: UIView {
             make.top.left.equalToSuperview()
             make.height.width.equalTo(64)
         }
-        layer.addSublayer(borderLayer)
     }
     
     func configure(for enemy: Enemy) {
@@ -40,13 +29,17 @@ class EnemyView: UIView {
         } else {
             enemyIcon.unitID = enemy.unit.prefabId
         }
-        borderLayer.isHidden = !enemy.isBossPart
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        borderLayer.frame = bounds
-        borderLayer.path = UIBezierPath(rect: bounds.inset(by: UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0))).cgPath
+        if enemy.isBossPart {
+            enemyIcon.layer.borderColor = UIColor.red.cgColor
+            enemyIcon.layer.borderWidth = 2
+            enemyIcon.layer.cornerRadius = 6
+            enemyIcon.layer.masksToBounds = true
+            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                themeable.enemyIcon.layer.borderColor = theme.color.highlightedText.cgColor
+            }
+        } else {
+            enemyIcon.layer.borderWidth = 0
+        }
     }
     
     override var intrinsicContentSize: CGSize {

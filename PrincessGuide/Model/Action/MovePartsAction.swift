@@ -12,7 +12,7 @@ class MovePartsAction: ActionParameter {
 
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Move Part %d, %d forward then return.", comment: "")
-        return String(format: format, Int(actionValue4 + 1), -Int(actionValue1))
+        return String(format: format, Int(actionValue4), -Int(actionValue1))
     }
     
 }
