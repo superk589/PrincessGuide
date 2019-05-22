@@ -112,6 +112,8 @@ class ActionParameter {
             return IFExistsFieldForAllAction.self
         case 54:
             return StealthAction.self
+        case 55:
+            return MovePartsAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -486,6 +488,8 @@ enum ActionType: Int {
     case division
     case changeWidth
     case ifExistsFieldForAll
+    case stealth
+    case moveParts
     case ex = 90
     case exPlus
 }

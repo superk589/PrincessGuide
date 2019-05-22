@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
@@ -90,9 +91,8 @@
         <target>%1$@%2$@%3$@ x%4$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ %d%@ %@ for [%@]s.">
-        <source>%1$@ %2$@ %3$d%4$@ %5$@ for [%6$@]s.</source>
-        <target>%2$@に%5$@を[%3$@]%4$@%1$@、[%6$@]秒継続する。</target>
+      <trans-unit id="%@ %@ [%@]%@ %@ during break.">
+        <source>%1$@ %2$@ [%3$@]%4$@ %5$@ during break.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s.">
@@ -281,7 +281,7 @@
       </trans-unit>
       <trans-unit id="%d in front of %@, summon a minion of ID: %d.">
         <source>%1$d in front of %2$@, summon a minion of ID: %3$d.</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=", ">
@@ -315,7 +315,7 @@
       </trans-unit>
       <trans-unit id="Add [%@ * count of defeated enemies] to next effect's value %d.">
         <source>Add [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add [%@ * count of omemes] to next effect's value %d.">
@@ -349,7 +349,7 @@
       </trans-unit>
       <trans-unit id="Age">
         <source>Age</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="App Version">
@@ -359,12 +359,12 @@
       </trans-unit>
       <trans-unit id="Appear after %@s since wave start.">
         <source>Appear after %@s since wave start.</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Apply">
         <source>Apply</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Ascending">
@@ -440,7 +440,7 @@
       </trans-unit>
       <trans-unit id="Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss.">
         <source>Blind %1$@ with [%2$@]%% chance for [%3$@]s, physical attack has %4$d%% chance to miss.</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Blood Type">
@@ -455,7 +455,7 @@
       </trans-unit>
       <trans-unit id="Box Detail">
         <source>Box Detail</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Box Management">
@@ -546,7 +546,7 @@
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage.">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking damage.</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking magical damage.">
@@ -586,7 +586,7 @@
       </trans-unit>
       <trans-unit id="Change attack pattern back to %d after effect over.">
         <source>Change attack pattern back to %d after effect over.</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Change attack pattern to %d for %@s.">
@@ -1264,6 +1264,10 @@
         <source>Mission</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Move Part %d, %d forward then return.">
+        <source>Move Part %1$d, %2$d forward then return.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Move Speed">
         <source>Move Speed</source>
         <target>移動速度</target>
@@ -1819,6 +1823,10 @@
         <source>Tower</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Trigger: %d%% on break and last for %@s.">
+        <source>Trigger: %1$d%% on break and last for %2$@s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Trigger: %d%% on damaged.">
         <source>Trigger: %d%% on damaged.</source>
         <note>No comment provided by engineer.</note>
@@ -2229,12 +2237,12 @@
       </trans-unit>
       <trans-unit id="target">
         <source>target</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets">
         <source>targets</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets of effect %d">

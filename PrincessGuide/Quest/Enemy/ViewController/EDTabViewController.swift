@@ -15,13 +15,22 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     static var defaultTabIndex: Int = 1
     
-    private var viewControllers: [UIViewController]
+    private var viewControllers = [UIViewController]()
     
     private var enemy: Enemy
     
     init(enemy: Enemy, isMinion: Bool = false) {
         self.enemy = enemy
-        viewControllers = [EDResistTableViewController(enemy: enemy), EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy, isMinion: isMinion)]
+        if enemy.resist != nil {
+            viewControllers.append(EDResistTableViewController(enemy: enemy))
+            items.append(TMBarItem(title: NSLocalizedString("Resist", comment: "")))
+        }
+        if !enemy.isBossPart {
+            viewControllers.append(EDSkillTableViewController(enemy: enemy))
+            items.append(TMBarItem(title: NSLocalizedString("Skill", comment: "")))
+        }
+        viewControllers.append(EDStatusTableViewController(enemy: enemy, isMinion: isMinion))
+        items.append(TMBarItem(title: NSLocalizedString("Status", comment: "")))
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = enemy.base.name
         print("load enemy, id: \(enemy.unit.unitId)")
@@ -37,12 +46,6 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
         
-        let items = [NSLocalizedString("Resist", comment: ""),
-                     NSLocalizedString("Skill", comment: ""),
-                     NSLocalizedString("Status", comment: "")]
-            .map { TMBarItem(title: $0) }
-        
-        self.items = items
         dataSource = self
         let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>()
         let systemBar = bar.systemBar()
@@ -74,7 +77,11 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: EDTabViewController.defaultTabIndex)
+        if EDTabViewController.defaultTabIndex <= viewControllers.count {
+            return .at(index: EDTabViewController.defaultTabIndex)
+        } else {
+            return .last
+        }
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {

@@ -20,6 +20,7 @@ class TriggerAction: ActionParameter {
         case criticalWithSummon
         case limitTime
         case stealthFree
+        case `break`
     }
     
     var triggerType: TriggerType {
@@ -43,6 +44,9 @@ class TriggerAction: ActionParameter {
         case .stealthFree:
             let format = NSLocalizedString("Trigger: %d%% on stealth.", comment: "")
             return String(format: format, Int(actionValue1.rounded()))
+        case .break:
+            let format = NSLocalizedString("Trigger: %d%% on break and last for %@s.", comment: "")
+            return String(format: format, Int(actionValue1.rounded()), actionValue3.roundedString(roundingRule: nil))
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }

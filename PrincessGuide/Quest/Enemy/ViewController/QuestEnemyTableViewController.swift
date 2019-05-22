@@ -119,7 +119,8 @@ class QuestEnemyTableViewController: UITableViewController {
             cell.delegate = self
             let format = NSLocalizedString("Wave %d (x%.2f)", comment: "")
             let title = String(format: format, index + 1, coefficient)
-            cell.configure(for: wave, title: title)
+            let enemies = wave.enemies.flatMap { [$0.enemy] + ($0.enemy?.parts ?? [])}.compactMap { $0 }
+            cell.configure(for: enemies, title: title)
         case (let cell as QuestNameTableViewCell, .quest(let name)):
             cell.configure(for: name)
         case (let cell as QuestEnemyTableViewCell, .tower(let enemies, let floor)):

@@ -90,9 +90,9 @@
         <target>%1$@%2$@%3$@ x%4$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ %d%@ %@ for [%@]s.">
-        <source>%1$@ %2$@ %3$d%4$@ %5$@ for [%6$@]s.</source>
-        <target>%1$@%2$@ %3$d%4$@ %5$@，持续 [%6$@] 秒。</target>
+      <trans-unit id="%@ %@ [%@]%@ %@ during break.">
+        <source>%1$@ %2$@ [%3$@]%4$@ %5$@ during break.</source>
+        <target>在 Break 期间，%1$@%2$@ [%3$@]%4$@ %5$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s.">
@@ -1369,6 +1369,11 @@
         <target>探索</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Move Part %d, %d forward then return.">
+        <source>Move Part %1$d, %2$d forward then return.</source>
+        <target>向前移动部位 %1$d 然后返回，距离 %2$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Move Speed">
         <source>Move Speed</source>
         <target>移动速度</target>
@@ -1997,6 +2002,11 @@
       <trans-unit id="Tower">
         <source>Tower</source>
         <target>露娜塔</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: %d%% on break and last for %@s.">
+        <source>Trigger: %1$d%% on break and last for %2$@s.</source>
+        <target>触发条件：Break 时 %1$d%% 触发，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Trigger: %d%% on damaged.">

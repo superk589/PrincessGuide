@@ -19,9 +19,6 @@
 "%@ %@ %@ x%@" = "%1$@%2$@%3$@ x%4$@";
 
 /* No comment provided by engineer. */
-"%@ %@ %d%@ %@ for [%@]s." = "%2$@に%5$@を[%3$@]%4$@%1$@、[%6$@]秒継続する。";
-
-/* No comment provided by engineer. */
 "%@ %@ and deal [%@] damage per second for [%@]s." = "%2$@に%1$@状態付与、毎秒[%3$@]のダメージを与える、[%4$@]秒継続する。";
 
 /* No comment provided by engineer. */

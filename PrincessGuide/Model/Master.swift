@@ -350,10 +350,17 @@ class Master: FMDatabaseQueue {
                 b.ex_skill_2,
                 b.ex_skill_3,
                 b.ex_skill_4,
-                b.ex_skill_5
+                b.ex_skill_5,
+                c.child_enemy_parameter_1,
+                c.child_enemy_parameter_2,
+                c.child_enemy_parameter_3,
+                c.child_enemy_parameter_4,
+                c.child_enemy_parameter_5
             FROM
                 unit_skill_data b,
                 enemy_parameter a
+                LEFT JOIN enemy_m_parts c
+                ON a.enemy_id = c.enemy_id
             WHERE
                 a.unit_id = b.unit_id
                 AND a.enemy_id = \(minionID)
@@ -1155,10 +1162,17 @@ class Master: FMDatabaseQueue {
                 b.ex_skill_2,
                 b.ex_skill_3,
                 b.ex_skill_4,
-                b.ex_skill_5
+                b.ex_skill_5,
+                c.child_enemy_parameter_1,
+                c.child_enemy_parameter_2,
+                c.child_enemy_parameter_3,
+                c.child_enemy_parameter_4,
+                c.child_enemy_parameter_5
             FROM
                 unit_skill_data b,
                 sekai_enemy_parameter a
+                LEFT JOIN enemy_m_parts c
+                ON a.enemy_id = c.enemy_id
             WHERE
                 a.unit_id = b.unit_id
             """
@@ -1174,11 +1188,11 @@ class Master: FMDatabaseQueue {
                 let unitID = json["unit_id"].intValue
                 let unitSql = """
                 SELECT
-                *
+                    *
                 FROM
-                unit_enemy_data
+                    unit_enemy_data
                 WHERE
-                unit_id = \(unitID)
+                    unit_id = \(unitID)
                 """
                 var unit: Enemy.Unit?
                 let unitSet = try db.executeQuery(unitSql, values: nil)
@@ -1226,7 +1240,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
+    func getEnemies(enemyID: Int? = nil, isBossPart: Bool = false, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
         var enemies = [Enemy]()
         execute({ (db) in
             var sql = """
@@ -1247,10 +1261,17 @@ class Master: FMDatabaseQueue {
                 b.ex_skill_2,
                 b.ex_skill_3,
                 b.ex_skill_4,
-                b.ex_skill_5
+                b.ex_skill_5,
+                c.child_enemy_parameter_1,
+                c.child_enemy_parameter_2,
+                c.child_enemy_parameter_3,
+                c.child_enemy_parameter_4,
+                c.child_enemy_parameter_5
             FROM
                 unit_skill_data b,
                 enemy_parameter a
+                LEFT JOIN enemy_m_parts c
+                ON a.enemy_id = c.enemy_id
             WHERE
                 a.unit_id = b.unit_id
             """
@@ -1283,7 +1304,7 @@ class Master: FMDatabaseQueue {
                 
                 if let base = try? decoder.decode(Enemy.Base.self, from: json.rawData()),
                     let unit = unit {
-                    enemies.append(Enemy(base: base, unit: unit))
+                    enemies.append(Enemy(base: base, unit: unit, isBossPart: isBossPart))
                 }
             }
         }) {
@@ -1312,10 +1333,17 @@ class Master: FMDatabaseQueue {
                 b.ex_skill_2,
                 b.ex_skill_3,
                 b.ex_skill_4,
-                b.ex_skill_5
+                b.ex_skill_5,
+                c.child_enemy_parameter_1,
+                c.child_enemy_parameter_2,
+                c.child_enemy_parameter_3,
+                c.child_enemy_parameter_4,
+                c.child_enemy_parameter_5
             FROM
                 unit_skill_data b,
                 tower_enemy_parameter a
+                LEFT JOIN enemy_m_parts c
+                ON a.enemy_id = c.enemy_id
             WHERE
                 a.unit_id = b.unit_id
             """
@@ -1331,11 +1359,11 @@ class Master: FMDatabaseQueue {
                 let unitID = json["unit_id"].intValue
                 let unitSql = """
                 SELECT
-                *
+                    *
                 FROM
-                unit_enemy_data
+                    unit_enemy_data
                 WHERE
-                unit_id = \(unitID)
+                    unit_id = \(unitID)
                 """
                 var unit: Enemy.Unit?
                 let unitSet = try db.executeQuery(unitSql, values: nil)
