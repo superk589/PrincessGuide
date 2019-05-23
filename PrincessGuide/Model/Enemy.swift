@@ -16,7 +16,7 @@ class Enemy: Codable {
     
     let isBossPart: Bool
     
-    var owner: Enemy?
+    weak var owner: Enemy?
     
     init(base: Base, unit: Unit, isBossPart: Bool = false) {
         self.base = base
