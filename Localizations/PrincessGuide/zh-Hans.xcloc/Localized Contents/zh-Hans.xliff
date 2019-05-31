@@ -854,6 +854,11 @@
         <target>对%2$@造成其最大 HP [%1$@]%% 的伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Delay event: use %d after %@s.">
+        <source>Delay event: use %1$d after %2$@s.</source>
+        <target>延时事件：%2$@ 秒后触发效果 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Denied">
         <source>Denied</source>
         <target>拒绝</target>
@@ -1172,6 +1177,16 @@
       <trans-unit id="Import All Charas">
         <source>Import All Charas</source>
         <target>导入全图鉴 Box</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="In next [%@] attacks, %@'s physical attacks will miss.">
+        <source>In next [%1$@] attacks, %2$@'s physical attacks will miss.</source>
+        <target>使%2$@的下 [%1$@] 次物理攻击丢失。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="In next [%@]s, %@'s physical attacks will miss.">
+        <source>In next [%1$@]s, %2$@'s physical attacks will miss.</source>
+        <target>使%2$@的攻击丢失，持续 [%1$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Instant Death">

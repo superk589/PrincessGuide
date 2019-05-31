@@ -536,6 +536,9 @@
 "defend" = "防守";
 
 /* No comment provided by engineer. */
+"Delay event: use %d after %@s." = "延时事件：%2$@ 秒后触发效果 %1$d。";
+
+/* No comment provided by engineer. */
 "Denied" = "拒绝";
 
 /* No comment provided by engineer. */
@@ -765,6 +768,12 @@
 
 /* No comment provided by engineer. */
 "Import All Charas" = "导入全图鉴 Box";
+
+/* No comment provided by engineer. */
+"In next [%@] attacks, %@'s physical attacks will miss." = "使%2$@的下 [%1$@] 次物理攻击丢失。";
+
+/* No comment provided by engineer. */
+"In next [%@]s, %@'s physical attacks will miss." = "使%2$@的攻击丢失，持续 [%1$@] 秒。";
 
 /* No comment provided by engineer. */
 "inevitable physical" = "无法躲闪的物理";

@@ -114,6 +114,10 @@ class ActionParameter {
             return StealthAction.self
         case 55:
             return MovePartsAction.self
+        case 56:
+            return CountBlindAction.self
+        case 57:
+            return CountDownAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -490,6 +494,8 @@ enum ActionType: Int {
     case ifExistsFieldForAll
     case stealth
     case moveParts
+    case countBlind
+    case countDown
     case ex = 90
     case exPlus
 }

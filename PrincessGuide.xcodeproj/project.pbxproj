@@ -29,6 +29,8 @@
 		12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4D208EC1A4001C1A6F /* Ailment.swift */; };
 		12125EEE2202C06600A5CEB9 /* IFExistsFieldForAllAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */; };
 		1213373A225113D000BB701B /* RaidBossTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12133739225113D000BB701B /* RaidBossTableViewController.swift */; };
+		12184A7A22A1434C00C3FEA6 /* CountBlindAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12184A7922A1434C00C3FEA6 /* CountBlindAction.swift */; };
+		12184A7C22A14CD000C3FEA6 /* CountDownAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */; };
 		1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */; };
 		1218E61620A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61420A6D53700D68610 /* InfoPlist.strings */; };
 		1218E61920A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61720A6D53700D68610 /* InfoPlist.strings */; };
@@ -318,6 +320,8 @@
 		12124F4D208EC1A4001C1A6F /* Ailment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ailment.swift; sourceTree = "<group>"; };
 		12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExistsFieldForAllAction.swift; sourceTree = "<group>"; };
 		12133739225113D000BB701B /* RaidBossTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidBossTableViewController.swift; sourceTree = "<group>"; };
+		12184A7922A1434C00C3FEA6 /* CountBlindAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountBlindAction.swift; sourceTree = "<group>"; };
+		12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownAction.swift; sourceTree = "<group>"; };
 		1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDBasicTableViewCell.swift; sourceTree = "<group>"; };
 		1218E61220A6C3F500D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		1218E61320A6C3F500D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -1295,6 +1299,8 @@
 				12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */,
 				12E6BEE0227800A6000BAADC /* StealthAction.swift */,
 				12C1131C229578680078BC22 /* MovePartsAction.swift */,
+				12184A7922A1434C00C3FEA6 /* CountBlindAction.swift */,
+				12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
 			);
@@ -1680,6 +1686,7 @@
 				12F1260520B95377005C9659 /* MultipleAction.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
 				12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */,
+				12184A7A22A1434C00C3FEA6 /* CountBlindAction.swift in Sources */,
 				126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */,
 				12398E89209168A2006AC352 /* Wave.swift in Sources */,
 				12DC964720EDFF34008896D7 /* AddCharaToBoxViewController.swift in Sources */,
@@ -1704,6 +1711,7 @@
 				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
 				12D3D13B20A57EB200034DD6 /* CraftPropertyTableViewCell.swift in Sources */,
 				12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */,
+				12184A7C22A14CD000C3FEA6 /* CountDownAction.swift in Sources */,
 				12398E83209158EB006AC352 /* QuestAreaTableViewController.swift in Sources */,
 				120BCAFD20F4E6C80029A083 /* MembersCell.swift in Sources */,
 				1225522A213397B300CB0D3E /* TimeStatusIndicator.swift in Sources */,
@@ -2025,7 +2033,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 109;
+				CURRENT_PROJECT_VERSION = 110;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2047,7 +2055,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 109;
+				CURRENT_PROJECT_VERSION = 110;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

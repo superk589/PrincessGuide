@@ -114,7 +114,8 @@ class QuestEnemyTableViewController: UITableViewController {
             cell.delegate = self
             let format = NSLocalizedString("Wave %d", comment: "")
             let title = String(format: format, index + 1)
-            cell.configure(for: wave, title: title)
+            let enemies = wave.enemies.flatMap { [$0.enemy] + ($0.enemy?.parts ?? [])}.compactMap { $0 }
+            cell.configure(for: enemies, title: title)
         case (let cell as QuestEnemyTableViewCell, .clanBattleWave(let wave, let index, let coefficient)):
             cell.delegate = self
             let format = NSLocalizedString("Wave %d (x%.2f)", comment: "")
@@ -127,7 +128,8 @@ class QuestEnemyTableViewController: UITableViewController {
             cell.configure(for: enemies, title: String(floor))
             cell.delegate = self
         case (let cell as QuestEnemyTableViewCell, .hatsuneEvent(let wave, let title)):
-            cell.configure(for: wave, title: title)
+            let enemies = wave.enemies.flatMap { [$0.enemy] + ($0.enemy?.parts ?? [])}.compactMap { $0 }
+            cell.configure(for: enemies, title: title)
             cell.delegate = self
         default:
             break
