@@ -389,6 +389,12 @@ extension Array where Element == Card {
                 }
                 .map { Section(title: $0, cards: $1) }
                 .sorted { $0.title < $1.title }
+        case .cv:
+            sections = reduce(into: [String: [Card]]()) {
+                $0[$1.profile.voice, default: [Card]()].append($1)
+                }
+                .map { Section(title: $0, cards: $1) }
+                .sorted { $0.title < $1.title }
         }
         
         for index in sections.indices {
