@@ -113,6 +113,7 @@ enum AilmentType: Int, CustomStringConvertible {
     case silence
     case confuse = 19
     case instantDeath = 30
+    case countBlind = 56
     case unknown
     
     var description: String {
@@ -135,6 +136,8 @@ enum AilmentType: Int, CustomStringConvertible {
             return NSLocalizedString("Unknown Effect", comment: "")
         case .confuse:
             return NSLocalizedString("Confuse", comment: "")
+        case .countBlind:
+            return NSLocalizedString("Count Blind", comment: "")
         }
     }
 }

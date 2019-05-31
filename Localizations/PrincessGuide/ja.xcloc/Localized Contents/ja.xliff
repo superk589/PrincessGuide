@@ -763,6 +763,10 @@
         <source>Cost %1$@ TP/s, change attack pattern to %2$d until TP is zero.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Count Blind">
+        <source>Count Blind</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Crafted">
         <source>Crafted</source>
         <target>作成</target>

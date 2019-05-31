@@ -497,6 +497,9 @@
 "Cost %@ TP/s, change attack pattern to %d until TP is zero." = "消耗 %1$@ TP/秒，TP 耗光前改为使用攻击模式 %2$d。";
 
 /* No comment provided by engineer. */
+"Count Blind" = "致盲（指定次数或时间）";
+
+/* No comment provided by engineer. */
 "Crafted" = "制作";
 
 /* No comment provided by engineer. */
