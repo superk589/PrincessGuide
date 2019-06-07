@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Klendario
 import EventKit
 
 fileprivate typealias Setting = CalendarSettingViewController.Setting
@@ -19,6 +18,8 @@ class GameEventCenter {
     var events = [GameEvent]()
     
     let queue = DispatchQueue(label: "com.zzk.PrincessGuide.GameEventCenter")
+    
+    let eventStore = EKEventStore()
     
     private init() {
         
@@ -62,21 +63,19 @@ class GameEventCenter {
             }
             return false
         }
-        findOrCreateCalendar { calendar in
+        findOrCreateCalendar { [unowned self] calendar in
             for gameEvent in filteredEvents {
-                let event = Klendario.newEvent(in: calendar)
-                
+                let event = EKEvent(eventStore: self.eventStore)
+                event.calendar = calendar
                 event.startDate = gameEvent.startDate
                 event.endDate = gameEvent.endDate
                 event.timeZone = .tokyo
                 event.title = gameEvent.title
 
-                event.save { error in
-                    if let error = error {
-                        print("error: \(error.localizedDescription)")
-                    } else {
-                        print("event successfully created!")
-                    }
+                do {
+                    try self.eventStore.save(event, span: .thisEvent)
+                } catch let error {
+                    print("error: \(error.localizedDescription)")
                 }
             }
             then?()
@@ -102,26 +101,20 @@ class GameEventCenter {
     }
     
     func removeGameEvents(_ then: ((Bool) -> Void)? = nil) {
-        Klendario.requestAuthorization { granted, status, error in
+        eventStore.requestAccess(to: .event) { [unowned self] (granted, error) in
             if granted {
-                Klendario.resetStore()
-                let calendars = Klendario.getCalendars()
+                self.eventStore.reset()
+                let calendars = self.eventStore.calendars(for: .event)
                 let needToDeleteCalenders = calendars.filter { $0.title == self.calendarTitle }
-                let group = DispatchGroup()
-                for calendar in needToDeleteCalenders {
-                    group.enter()
-                    calendar.delete(commit: false) { error in
-                        if let error = error {
-                            print("error: \(error.localizedDescription)")
-                        } else {
-                            print("calendar successfully deleted!")
-                        }
-                        group.leave()
+                
+                do {
+                    for calendar in needToDeleteCalenders {
+                        try self.eventStore.removeCalendar(calendar, commit: false)
                     }
-                }
-                group.notify(queue: self.queue) {
-                    Klendario.commitChanges()
+                    try self.eventStore.commit()
                     then?(true)
+                } catch let error {
+                    print(error.localizedDescription)
                 }
             } else {
                 then?(false)
@@ -131,20 +124,19 @@ class GameEventCenter {
     
     func findOrCreateCalendar(then: ((EKCalendar) -> Void)? = nil) {
         
-        if let calendar = Klendario.getCalendars().first(where: { $0.title == calendarTitle }) {
+        if let calendar = eventStore.calendars(for: .event).first(where: { $0.title == self.calendarTitle }) {
             then?(calendar)
         } else {
-            let calendar = Klendario.newCalendar()
+            let calendar = EKCalendar(for: .event, eventStore: eventStore)
+            calendar.source = eventStore.defaultCalendarForNewEvents?.source
             calendar.title = calendarTitle
-            calendar.save(commit: true) { error in
-                if let error = error {
-                    print("error: \(error.localizedDescription)")
-                } else {
-                    print("calendar successfully created!")
-                }
-                self.queue.async {
-                    then?(calendar)
-                }
+            do {
+                try eventStore.saveCalendar(calendar, commit: true)
+            } catch let error {
+                print("error: \(error.localizedDescription)")
+            }
+            self.queue.async {
+                then?(calendar)
             }
         }
     }

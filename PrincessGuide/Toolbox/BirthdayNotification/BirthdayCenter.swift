@@ -10,7 +10,6 @@ import UIKit
 import UserNotifications
 import Kingfisher
 import KingfisherWebP
-import Klendario
 import EventKit
 
 fileprivate typealias Setting = BirthdayViewController.Setting
@@ -60,7 +59,9 @@ class BirthdayCenter {
     
     var lastReloadDate = Date()
     
-    let queue = GameEventCenter.default.queue
+    let queue = DispatchQueue(label: "com.zzk.PrincessGuide.BirthdayCenter")
+    
+    let eventStore = EKEventStore()
     
     private init() {
 
@@ -105,7 +106,8 @@ class BirthdayCenter {
         DispatchQueue.global(qos: .userInitiated).async { [unowned self] in
             
             if self.lastReloadDate.truncateHours(timeZone: Setting.default.timeZone) != Date().truncateHours(timeZone: Setting.default.timeZone) {
-                self.reload()
+                self.loadData()
+                self.rescheduleNotifications()
             }
             
             // iOS supprot max 64 local notifications
@@ -182,9 +184,10 @@ class BirthdayCenter {
     }
     
     func addBirthdayEvents(then: (() -> Void)?) {
-        findOrCreateCalendar { calendar in
+        findOrCreateCalendar { [unowned self] calendar in
             for card in self.cards {
-                let event = Klendario.newEvent(in: calendar)
+                let event = EKEvent(eventStore: self.eventStore)
+                event.calendar = calendar
                 let titleFormat = NSLocalizedString("%@'s birthday", comment: "")
                 event.title = String(format: titleFormat, card.base.rawName)
                 let recurrenceRule = EKRecurrenceRule(recurrenceWith: .yearly, interval: 1, daysOfTheWeek: nil, daysOfTheMonth: [NSNumber(value: Int(card.profile.birthDay)!)], monthsOfTheYear: [NSNumber(value: Int(card.profile.birthMonth)!)], weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil)
@@ -192,12 +195,10 @@ class BirthdayCenter {
                 event.addRecurrenceRule(recurrenceRule)
                 event.endDate = event.startDate.addingTimeInterval(60 * 60 * 24 - 1)
                 event.isAllDay = true
-                event.save { error in
-                    if let error = error {
-                        print("error: \(error.localizedDescription)")
-                    } else {
-                        print("event successfully created!")
-                    }
+                do {
+                    try self.eventStore.save(event, span: .thisEvent)
+                } catch let error {
+                    print("error: \(error.localizedDescription)")
                 }
             }
             then?()
@@ -209,26 +210,20 @@ class BirthdayCenter {
     }
     
     func removeBirthdayEvents(_ then: ((Bool) -> Void)? = nil) {
-        Klendario.requestAuthorization { granted, status, error in
+        eventStore.requestAccess(to: .event) { [unowned self] (granted, error) in
             if granted {
-                Klendario.resetStore()
-                let calendars = Klendario.getCalendars()
+                self.eventStore.reset()
+                let calendars = self.eventStore.calendars(for: .event)
                 let needToDeleteCalenders = calendars.filter { $0.title == self.calendarTitle }
-                let group = DispatchGroup()
-                for calendar in needToDeleteCalenders {
-                    group.enter()
-                    calendar.delete(commit: false) { error in
-                        if let error = error {
-                            print("error: \(error.localizedDescription)")
-                        } else {
-                            print("calendar successfully deleted!")
-                        }
-                        group.leave()
+                
+                do {
+                    for calendar in needToDeleteCalenders {
+                        try self.eventStore.removeCalendar(calendar, commit: false)
                     }
-                }
-                group.notify(queue: self.queue) {
-                    Klendario.commitChanges()
+                    try self.eventStore.commit()
                     then?(true)
+                } catch let error {
+                    print(error.localizedDescription)
                 }
             } else {
                 then?(false)
@@ -238,20 +233,19 @@ class BirthdayCenter {
     
     func findOrCreateCalendar(then: ((EKCalendar) -> Void)? = nil) {
         
-        if let calendar = Klendario.getCalendars().first(where: { $0.title == self.calendarTitle }) {
+        if let calendar = eventStore.calendars(for: .event).first(where: { $0.title == self.calendarTitle }) {
             then?(calendar)
         } else {
-            let calendar = Klendario.newCalendar()
+            let calendar = EKCalendar(for: .event, eventStore: eventStore)
+            calendar.source = eventStore.defaultCalendarForNewEvents?.source
             calendar.title = calendarTitle
-            calendar.save(commit: true) { error in
-                if let error = error {
-                    print("error: \(error.localizedDescription)")
-                } else {
-                    print("calendar successfully created!")
-                }
-                self.queue.async {
-                    then?(calendar)
-                }
+            do {
+                try eventStore.saveCalendar(calendar, commit: true)
+            } catch let error {
+                print("error: \(error.localizedDescription)")
+            }
+            self.queue.async {
+                then?(calendar)
             }
         }
     }

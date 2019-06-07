@@ -10,7 +10,6 @@ import UIKit
 import Eureka
 import Gestalt
 import SwiftyJSON
-import Klendario
 import EventKit
 
 class CalendarSettingViewController: FormViewController {
