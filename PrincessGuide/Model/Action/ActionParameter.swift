@@ -83,7 +83,7 @@ class ActionParameter {
         case 38:
             return ChangeParameterFieldAction.self
         case 39:
-            return DotFieldAction.self
+            return AbnormalStateFieldAction.self
         case 40:
             return ChangeSpeedFieldAction.self
         case 41:
@@ -118,6 +118,10 @@ class ActionParameter {
             return CountBlindAction.self
         case 57:
             return CountDownAction.self
+        case 58:
+            return StopFieldAction.self
+        case 59:
+            return InhibitHealAction.self
         case 90:
             return PassiveAction.self
         case 91:

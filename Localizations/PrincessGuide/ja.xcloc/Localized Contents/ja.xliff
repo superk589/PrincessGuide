@@ -2,30 +2,30 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M337n"/>
     </header>
     <body>
-      <trans-unit id="0Fw-sz-yKe.title">
+      <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
         <source>Cards</source>
         <target>キャラ</target>
         <note>Class = "UITabBarItem"; title = "Cards"; ObjectID = "0Fw-sz-yKe";</note>
       </trans-unit>
-      <trans-unit id="4mz-CZ-4V6.title">
+      <trans-unit id="4mz-CZ-4V6.title" xml:space="preserve">
         <source>Toolbox</source>
         <target>ツール</target>
         <note>Class = "UITabBarItem"; title = "Toolbox"; ObjectID = "4mz-CZ-4V6";</note>
       </trans-unit>
-      <trans-unit id="H57-OB-5Ns.title">
+      <trans-unit id="H57-OB-5Ns.title" xml:space="preserve">
         <source>Equipments</source>
         <target>装備</target>
         <note>Class = "UITabBarItem"; title = "Equipments"; ObjectID = "H57-OB-5Ns";</note>
       </trans-unit>
-      <trans-unit id="Txl-8E-i4X.title">
+      <trans-unit id="Txl-8E-i4X.title" xml:space="preserve">
         <source>Settings</source>
         <target>設定</target>
         <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "Txl-8E-i4X";</note>
       </trans-unit>
-      <trans-unit id="YOs-2y-sHp.title">
+      <trans-unit id="YOs-2y-sHp.title" xml:space="preserve">
         <source>Quests</source>
         <target>クエスト</target>
         <note>Class = "UITabBarItem"; title = "Quests"; ObjectID = "YOs-2y-sHp";</note>
@@ -34,30 +34,30 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M337n"/>
     </header>
     <body>
-      <trans-unit id="CFBundleDisplayName">
+      <trans-unit id="CFBundleDisplayName" xml:space="preserve">
         <source>Hatsune's Notes</source>
         <target>Hatsune's Notes</target>
         <note>Bundle display name</note>
       </trans-unit>
-      <trans-unit id="CFBundleName">
+      <trans-unit id="CFBundleName" xml:space="preserve">
         <source>PrincessGuide</source>
         <target>PrincessGuide</target>
         <note>Bundle name</note>
       </trans-unit>
-      <trans-unit id="NSCalendarsUsageDescription">
+      <trans-unit id="NSCalendarsUsageDescription" xml:space="preserve">
         <source>In order to save the events we will need access to your calendar.</source>
         <target>事件を保存するためにアルバムへのアクセスが必要です。</target>
         <note>Privacy - Calendars Usage Description</note>
       </trans-unit>
-      <trans-unit id="NSPhotoLibraryAddUsageDescription">
+      <trans-unit id="NSPhotoLibraryAddUsageDescription" xml:space="preserve">
         <source>In order to save the image we will need access to your camera roll.</source>
         <target>画像を保存するためにアルバムへのアクセスが必要です。</target>
         <note>Privacy - Photo Library Additions Usage Description</note>
       </trans-unit>
-      <trans-unit id="NSPhotoLibraryUsageDescription">
+      <trans-unit id="NSPhotoLibraryUsageDescription" xml:space="preserve">
         <source>In order to save the image we will need access to your camera roll.</source>
         <target>画像を保存するためにアルバムへのアクセスが必要です。</target>
         <note>Privacy - Photo Library Usage Description</note>
@@ -66,2463 +66,2483 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M337n"/>
     </header>
     <body>
-      <trans-unit id=" Critical damage is %@ times as normal damage.">
+      <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
         <source> Critical damage is %@ times as normal damage.</source>
         <target>クリティカルダメージは通常のダメージ%@倍です。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ %@">
+      <trans-unit id="%@ %@ %@" xml:space="preserve">
         <source>%1$@ %2$@ %3$@</source>
         <target>%1$@%2$@%3$@</target>
         <note>[the farthest two] [enemy] [targets]
    [the second to fourth farthest] [enemy] [targets]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ %@ in range %d">
+      <trans-unit id="%@ %@ %@ in range %d" xml:space="preserve">
         <source>%1$@ %2$@ %3$@ in range %4$d</source>
         <target>%4$d範囲内%1$@%2$@%3$@</target>
         <note>[the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ %@ x%@">
+      <trans-unit id="%@ %@ %@ x%@" xml:space="preserve">
         <source>%1$@ %2$@ %3$@ x%4$@</source>
         <target>%1$@%2$@%3$@ x%4$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ [%@]%@ %@ during break.">
+      <trans-unit id="%@ %@ [%@]%@ %@ during break." xml:space="preserve">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ during break.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s.">
+      <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s." xml:space="preserve">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for [%6$@]s.</source>
         <target>%2$@に%5$@を[%3$@]%4$@%1$@、[%6$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ and deal [%@] damage per second for [%@]s.">
+      <trans-unit id="%@ %@ and deal [%@] damage per second for [%@]s." xml:space="preserve">
         <source>%1$@ %2$@ and deal [%3$@] damage per second for [%4$@]s.</source>
         <target>%2$@に%1$@状態付与、毎秒[%3$@]のダメージを与える、[%4$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ for [%@]s.">
+      <trans-unit id="%@ %@ for [%@]s." xml:space="preserve">
         <source>%1$@ %2$@ for [%3$@]s.</source>
         <target>%2$@に%1$@状態付与、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ target">
+      <trans-unit id="%@ %@ target" xml:space="preserve">
         <source>%1$@ %2$@ target</source>
         <target>%1$@%2$@</target>
         <note>[the nearest] [enemy] target
    [the second nearest] [enemy] target</note>
       </trans-unit>
-      <trans-unit id="%@ %@ target in range %d">
+      <trans-unit id="%@ %@ target in range %d" xml:space="preserve">
         <source>%1$@ %2$@ target in range %3$d</source>
         <target>%3$d範囲内%1$@%2$@</target>
         <note>[the nearest] [enemy] target in range [500]
    [the second nearest] [enemy] target in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ targets in range %d">
+      <trans-unit id="%@ %@ targets in range %d" xml:space="preserve">
         <source>%1$@ %2$@ targets in range %3$d</source>
         <target>%3$d範囲内%2$@%1$@全体</target>
         <note>[friendly] [physics] targets in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ x%@">
+      <trans-unit id="%@ %@ x%@" xml:space="preserve">
         <source>%1$@ %2$@ x%3$@</source>
         <target>%1$@%2$@ x%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ Damage is reduced on low level players.">
+      <trans-unit id="%@ Damage is reduced on low level players." xml:space="preserve">
         <source>%@ Damage is reduced on low level players.</source>
         <target>%@低レベルのプレイヤーにダメージが軽減されます。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ Feedback">
+      <trans-unit id="%@ Feedback" xml:space="preserve">
         <source>%@ Feedback</source>
         <target>%@ フィードバック</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ boss">
+      <trans-unit id="%@ boss" xml:space="preserve">
         <source>%@ boss</source>
         <target>%@首領</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ farthest">
+      <trans-unit id="%@ farthest" xml:space="preserve">
         <source>%@ farthest</source>
         <target>最も遠い%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ front %@ %@">
+      <trans-unit id="%@ front %@ %@" xml:space="preserve">
         <source>%1$@ front %2$@ %3$@</source>
         <target>前方%1$@%2$@%3$@</target>
         <note>[the second to fourth farthest] front [enemy] [targets]</note>
       </trans-unit>
-      <trans-unit id="%@ front %@ %@ in range %d">
+      <trans-unit id="%@ front %@ %@ in range %d" xml:space="preserve">
         <source>%1$@ front %2$@ %3$@ in range %4$d</source>
         <target>前方%4$d範囲内%1$@%2$@%3$@</target>
         <note>[the farthest two] front [enemy] [targets] in range [500]
    [the second to fourth farthest] front [enemy] [targets] in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ front %@ target in range %d">
+      <trans-unit id="%@ front %@ target in range %d" xml:space="preserve">
         <source>%1$@ front %2$@ target in range %3$d</source>
         <target>前方%3$d範囲内%1$@%2$@</target>
         <note>[the nearest] front [enemy] target in range [500]
    [the second nearest] front [enemy] target in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ highest ATK">
+      <trans-unit id="%@ highest ATK" xml:space="preserve">
         <source>%@ highest ATK</source>
         <target>物理攻撃力が高い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ highest HP ratio">
+      <trans-unit id="%@ highest HP ratio" xml:space="preserve">
         <source>%@ highest HP ratio</source>
         <target>HP割合が高い%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ highest Magic STR">
+      <trans-unit id="%@ highest Magic STR" xml:space="preserve">
         <source>%@ highest Magic STR</source>
         <target>魔法攻撃力が高い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ highest TP">
+      <trans-unit id="%@ highest TP" xml:space="preserve">
         <source>%@ highest TP</source>
         <target>TPが高い%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ lowest ATK">
+      <trans-unit id="%@ lowest ATK" xml:space="preserve">
         <source>%@ lowest ATK</source>
         <target>物理攻撃力が低い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ lowest HP ratio">
+      <trans-unit id="%@ lowest HP ratio" xml:space="preserve">
         <source>%@ lowest HP ratio</source>
         <target>HP割合が低い%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ lowest Magic STR">
+      <trans-unit id="%@ lowest Magic STR" xml:space="preserve">
         <source>%@ lowest Magic STR</source>
         <target>魔法攻撃力が低い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ lowest TP">
+      <trans-unit id="%@ lowest TP" xml:space="preserve">
         <source>%@ lowest TP</source>
         <target>TPが低い%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ magic">
+      <trans-unit id="%@ magic" xml:space="preserve">
         <source>%@ magic</source>
         <target>魔法攻撃をする%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ minion">
+      <trans-unit id="%@ minion" xml:space="preserve">
         <source>%@ minion</source>
         <target>%@ミニオン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ most backward">
+      <trans-unit id="%@ most backward" xml:space="preserve">
         <source>%@ most backward</source>
         <target>最も後の%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ most forward">
+      <trans-unit id="%@ most forward" xml:space="preserve">
         <source>%@ most forward</source>
         <target>最も前の%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ nearest">
+      <trans-unit id="%@ nearest" xml:space="preserve">
         <source>%@ nearest</source>
         <target>最も近い%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ physics">
+      <trans-unit id="%@ physics" xml:space="preserve">
         <source>%@ physics</source>
         <target>物理攻撃をする%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ random">
+      <trans-unit id="%@ random" xml:space="preserve">
         <source>%@ random</source>
         <target>ランダム%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ random(once)">
+      <trans-unit id="%@ random(once)" xml:space="preserve">
         <source>%@ random(once)</source>
         <target>ランダム%@（初回のみ）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ receives your blessing.">
+      <trans-unit id="%@ receives your blessing." xml:space="preserve">
         <source>%@ receives your blessing.</source>
         <target>％@はあなたの祝福を受けました。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ targets in range %d">
+      <trans-unit id="%@ targets in range %d" xml:space="preserve">
         <source>%1$@ targets in range %2$d</source>
         <target>%2$d範囲内%1$@全体</target>
         <note>[enemy] targets in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ to %@">
+      <trans-unit id="%@ to %@" xml:space="preserve">
         <source>%1$@ to %2$@</source>
         <target>%@〜%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ unknown type">
+      <trans-unit id="%@ unknown type" xml:space="preserve">
         <source>%@ unknown type</source>
         <target>未知種類%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@'s birthday">
+      <trans-unit id="%@'s birthday" xml:space="preserve">
         <source>%@'s birthday</source>
         <target>％@の誕生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@/%@">
+      <trans-unit id="%@/%@" xml:space="preserve">
         <source>%1$@/%2$@</source>
         <target>%1$@ 月 %2$@ 日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%d in front of %@, summon a minion of ID: %d.">
+      <trans-unit id="%d in front of %@, summon a minion of ID: %d." xml:space="preserve">
         <source>%1$d in front of %2$@, summon a minion of ID: %3$d.</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id=", ">
+      <trans-unit id=", " xml:space="preserve">
         <source>, </source>
         <target>、</target>
         <note>clause separator</note>
       </trans-unit>
-      <trans-unit id="ATK">
+      <trans-unit id="ATK" xml:space="preserve">
         <source>ATK</source>
         <target>物理攻撃力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="About">
+      <trans-unit id="About" xml:space="preserve">
         <source>About</source>
         <target>アプリについて</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Accuracy">
+      <trans-unit id="Accuracy" xml:space="preserve">
         <source>Accuracy</source>
         <target>命中</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Action">
+      <trans-unit id="Action" xml:space="preserve">
         <source>Action</source>
         <target>行動</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * HP] to next effect's value %d.">
+      <trans-unit id="Add [%@ * HP] to next effect's value %d." xml:space="preserve">
         <source>Add [%1$@ * HP] to next effect's value %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * count of defeated enemies] to next effect's value %d.">
+      <trans-unit id="Add [%@ * count of defeated enemies] to next effect's value %d." xml:space="preserve">
         <source>Add [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * count of omemes] to next effect's value %d.">
+      <trans-unit id="Add [%@ * count of omemes] to next effect's value %d." xml:space="preserve">
         <source>Add [%1$@ * count of omemes] to next effect's value %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * count of targets] to next effect's value %d.">
+      <trans-unit id="Add [%@ * count of targets] to next effect's value %d." xml:space="preserve">
         <source>Add [%1$@ * count of targets] to next effect's value %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * lost HP] to next effect's value %d.">
+      <trans-unit id="Add [%@ * lost HP] to next effect's value %d." xml:space="preserve">
         <source>Add [%1$@ * lost HP] to next effect's value %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%d] to the counter.">
+      <trans-unit id="Add [%d] to the counter." xml:space="preserve">
         <source>Add [%d] to the counter.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks.">
+      <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks." xml:space="preserve">
         <source>Add additional [%1$@] %2$@ to %3$@ for next [%4$@] attacks.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add additional [%@] damage per attack with max [%@] stacks to current target.">
+      <trans-unit id="Add additional [%@] damage per attack with max [%@] stacks to current target." xml:space="preserve">
         <source>Add additional [%1$@] damage per attack with max [%2$@] stacks to current target.</source>
         <target>攻撃する度にダメージ[%1$@]増加、最大[%2$@]回まで累積する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Adds Ex Bonus">
+      <trans-unit id="Adds Ex Bonus" xml:space="preserve">
         <source>Adds Ex Bonus</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Age">
+      <trans-unit id="Age" xml:space="preserve">
         <source>Age</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="App Version">
+      <trans-unit id="App Version" xml:space="preserve">
         <source>App Version</source>
         <target>アプリバージョン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Appear after %@s since wave start.">
+      <trans-unit id="Appear after %@s since wave start." xml:space="preserve">
         <source>Appear after %@s since wave start.</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Apply">
+      <trans-unit id="Apply" xml:space="preserve">
         <source>Apply</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Ascending">
+      <trans-unit id="Ascending" xml:space="preserve">
         <source>Ascending</source>
         <target>昇順</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="At the position of %@, summon a minion of ID: %d.">
+      <trans-unit id="At the position of %@, summon a minion of ID: %d." xml:space="preserve">
         <source>At the position of %1$@, summon a minion of ID: %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Attack Pattern">
+      <trans-unit id="Attack Pattern" xml:space="preserve">
         <source>Attack Pattern</source>
         <target>攻撃パターン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Attack Range">
+      <trans-unit id="Attack Range" xml:space="preserve">
         <source>Attack Range</source>
         <target>攻撃範囲</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Attack Type">
+      <trans-unit id="Attack Type" xml:space="preserve">
         <source>Attack Type</source>
         <target>攻撃タイプ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Attention">
+      <trans-unit id="Attention" xml:space="preserve">
         <source>Attention</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Authorized">
+      <trans-unit id="Authorized" xml:space="preserve">
         <source>Authorized</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Back">
+      <trans-unit id="Back" xml:space="preserve">
         <source>Back</source>
         <target>後衛</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Batch Edit">
+      <trans-unit id="Batch Edit" xml:space="preserve">
         <source>Batch Edit</source>
         <target>一括編集</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Become invulnerable for [%@]s.">
+      <trans-unit id="Become invulnerable for [%@]s." xml:space="preserve">
         <source>Become invulnerable for [%@]s.</source>
         <target>無敵状態になる、[%@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Become invulnerable to physical damage for [%@]s.">
+      <trans-unit id="Become invulnerable to physical damage for [%@]s." xml:space="preserve">
         <source>Become invulnerable to physical damage for [%@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Bind">
+      <trans-unit id="Bind" xml:space="preserve">
         <source>Bind</source>
         <target>束縛</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Birthday">
+      <trans-unit id="Birthday" xml:space="preserve">
         <source>Birthday</source>
         <target>誕生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Birthday Notification">
+      <trans-unit id="Birthday Notification" xml:space="preserve">
         <source>Birthday Notification</source>
         <target>誕生日通知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Blind">
+      <trans-unit id="Blind" xml:space="preserve">
         <source>Blind</source>
         <target>暗闇</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss.">
+      <trans-unit id="Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss." xml:space="preserve">
         <source>Blind %1$@ with [%2$@]%% chance for [%3$@]s, physical attack has %4$d%% chance to miss.</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Blood Type">
+      <trans-unit id="Blood Type" xml:space="preserve">
         <source>Blood Type</source>
         <target>血液型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Bond Rank">
+      <trans-unit id="Bond Rank" xml:space="preserve">
         <source>Bond Rank</source>
         <target>绊ランク</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Box Detail">
+      <trans-unit id="Box Detail" xml:space="preserve">
         <source>Box Detail</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Box Management">
+      <trans-unit id="Box Management" xml:space="preserve">
         <source>Box Management</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Box Name">
+      <trans-unit id="Box Name" xml:space="preserve">
         <source>Box Name</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Boxes">
+      <trans-unit id="Boxes" xml:space="preserve">
         <source>Boxes</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Burn">
+      <trans-unit id="Burn" xml:space="preserve">
         <source>Burn</source>
         <target>火傷</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.">
+      <trans-unit id="By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again." xml:space="preserve">
         <source>By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="CV">
+      <trans-unit id="CV" xml:space="preserve">
         <source>CV</source>
         <target>CV</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Calendar Permission">
+      <trans-unit id="Calendar Permission" xml:space="preserve">
         <source>Calendar Permission</source>
         <target>カレンダー許可</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Calendar Settings">
+      <trans-unit id="Calendar Settings" xml:space="preserve">
         <source>Calendar Settings</source>
         <target>カレンダー設定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Campaign">
+      <trans-unit id="Campaign" xml:space="preserve">
         <source>Campaign</source>
         <target>キャンペーン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cancel">
+      <trans-unit id="Cancel" xml:space="preserve">
         <source>Cancel</source>
         <target>取消</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cards">
+      <trans-unit id="Cards" xml:space="preserve">
         <source>Cards</source>
         <target>キャラクター</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast Time">
+      <trans-unit id="Cast Time" xml:space="preserve">
         <source>Cast Time</source>
         <target>発動時間</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for [%@]s.">
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to absorb [%2$@] magical damage for [%3$@]s.</source>
         <target>%1$@に[%2$@]ダメージ分の魔法吸収バリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s.">
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to absorb [%2$@] physical and magical damage for [%3$@]s.</source>
         <target>%1$@に[%2$@]ダメージ分の物理・魔法吸収バリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for [%@]s.">
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to absorb [%2$@] physical damage for [%3$@]s.</source>
         <target>%1$@に[%2$@]ダメージ分の物理吸収バリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] magical damage for [%@]s.">
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] magical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to nullify [%2$@] magical damage for [%3$@]s.</source>
         <target>%1$@に[%2$@]ダメージ分の魔法無効にするバリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s.">
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to nullify [%2$@] physical and magical damage for [%3$@]s.</source>
         <target>%1$@に[%2$@]ダメージ分の物理・魔法無効にするバリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for [%@]s.">
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to nullify [%2$@] physical damage for [%3$@]s.</source>
         <target>%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage.">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking damage.</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking magical damage.">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking magical damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking magical damage.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking physical damage.">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking physical damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking physical damage.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking damage.">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking damage.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking magical damage.">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking magical damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking magical damage.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking physical damage.">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking physical damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking physical damage.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s.">
+      <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s." xml:space="preserve">
         <source>Cast an unknown barrier %1$d on %2$@ for [%3$@]s.</source>
         <target>%2$@に未知バリア %1$d を展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Catch Copy">
+      <trans-unit id="Catch Copy" xml:space="preserve">
         <source>Catch Copy</source>
         <target>キャッチコピー</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Center">
+      <trans-unit id="Center" xml:space="preserve">
         <source>Center</source>
         <target>中衛</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change attack pattern back to %d after effect over.">
+      <trans-unit id="Change attack pattern back to %d after effect over." xml:space="preserve">
         <source>Change attack pattern back to %d after effect over.</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change attack pattern to %d for %@s.">
+      <trans-unit id="Change attack pattern to %d for %@s." xml:space="preserve">
         <source>Change attack pattern to %1$d for %2$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change body width to %@.">
+      <trans-unit id="Change body width to %@." xml:space="preserve">
         <source>Change body width to %@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position %@ backward then return.">
+      <trans-unit id="Change self position %@ backward then return." xml:space="preserve">
         <source>Change self position %@ backward then return.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position %@ backward.">
+      <trans-unit id="Change self position %@ backward." xml:space="preserve">
         <source>Change self position %@ backward.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position %@ forward then return.">
+      <trans-unit id="Change self position %@ forward then return." xml:space="preserve">
         <source>Change self position %@ forward then return.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position %@ forward.">
+      <trans-unit id="Change self position %@ forward." xml:space="preserve">
         <source>Change self position %@ forward.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position to %@ then return.">
+      <trans-unit id="Change self position to %@ then return." xml:space="preserve">
         <source>Change self position to %@ then return.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position to %@.">
+      <trans-unit id="Change self position to %@." xml:space="preserve">
         <source>Change self position to %@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change skill visual effect for %@s.">
+      <trans-unit id="Change skill visual effect for %@s." xml:space="preserve">
         <source>Change skill visual effect for %@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change the perspective on %@.">
+      <trans-unit id="Change the perspective on %@." xml:space="preserve">
         <source>Change the perspective on %@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change the perspective to %@ %d.">
+      <trans-unit id="Change the perspective to %@ %d." xml:space="preserve">
         <source>Change the perspective to %1$@ %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@.">
+      <trans-unit id="Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@." xml:space="preserve">
         <source>Channel for [%1$@]s, interruptible by receiving damange, %2$@ %3$@ [%4$@]%5$@ %6$@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Chara Birthday">
+      <trans-unit id="Chara Birthday" xml:space="preserve">
         <source>Chara Birthday</source>
         <target>キャラの誕生日</target>
         <note>Birthday notification title</note>
       </trans-unit>
-      <trans-unit id="Chara Management">
+      <trans-unit id="Chara Management" xml:space="preserve">
         <source>Chara Management</source>
         <target>キャラ管理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Chara Name">
+      <trans-unit id="Chara Name" xml:space="preserve">
         <source>Chara Name</source>
         <target>キャラ名</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charas">
+      <trans-unit id="Charas" xml:space="preserve">
         <source>Charas</source>
         <target>キャラ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charas Count">
+      <trans-unit id="Charas Count" xml:space="preserve">
         <source>Charas Count</source>
         <target>キャラ数</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charge for %@s and deal [%@ * damage taken] additional damage on the next effect.">
+      <trans-unit id="Charge for %@s and deal [%@ * damage taken] additional damage on the next effect." xml:space="preserve">
         <source>Charge for %1$@s and deal [%2$@ * damage taken] additional damage on the next effect.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charm">
+      <trans-unit id="Charm" xml:space="preserve">
         <source>Charm</source>
         <target>魅了</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charm %@ with [%@]%% chance for [%@]s.">
+      <trans-unit id="Charm %@ with [%@]%% chance for [%@]s." xml:space="preserve">
         <source>Charm %1$@ with [%2$@]%% chance for [%3$@]s.</source>
         <target>[%2$@]%%の確率で%1$@に魅了状態付与、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Check for Updates at Launch">
+      <trans-unit id="Check for Updates at Launch" xml:space="preserve">
         <source>Check for Updates at Launch</source>
         <target>起動時に更新を確認</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Checking">
+      <trans-unit id="Checking" xml:space="preserve">
         <source>Checking</source>
         <target>更新確認中</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Clan Battle">
+      <trans-unit id="Clan Battle" xml:space="preserve">
         <source>Clan Battle</source>
         <target>クランバトル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Clan Battle %d-%d">
+      <trans-unit id="Clan Battle %d-%d" xml:space="preserve">
         <source>Clan Battle %1$d-%2$d</source>
         <target>クランバトル %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Clear all %@ on %@ with chance [%@]%%.">
+      <trans-unit id="Clear all %@ on %@ with chance [%@]%%." xml:space="preserve">
         <source>Clear all %1$@ on %2$@ with chance [%3$@]%%.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Combat Effectiveness">
+      <trans-unit id="Combat Effectiveness" xml:space="preserve">
         <source>Combat Effectiveness</source>
         <target>戦力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Comic">
+      <trans-unit id="Comic" xml:space="preserve">
         <source>Comic</source>
         <target>ロード画面</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Completed">
+      <trans-unit id="Completed" xml:space="preserve">
         <source>Completed</source>
         <target>完了</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: %@.">
+      <trans-unit id="Condition: %@." xml:space="preserve">
         <source>Condition: %@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: [%@]%% chance use %d when takes damage within %@s.">
+      <trans-unit id="Condition: [%@]%% chance use %d when takes damage within %@s." xml:space="preserve">
         <source>Condition: [%1$@]%% chance use %2$d when takes damage within %3$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: counter is greater or equal to %d then use %d, otherwise %d.">
+      <trans-unit id="Condition: counter is greater or equal to %d then use %d, otherwise %d." xml:space="preserve">
         <source>Condition: counter is greater or equal to %1$d then use %2$d, otherwise %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: counter is greater or equal to %d then use %d.">
+      <trans-unit id="Condition: counter is greater or equal to %d then use %d." xml:space="preserve">
         <source>Condition: counter is greater or equal to %1$d then use %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: if defeat target by the last effect then use %d.">
+      <trans-unit id="Condition: if defeat target by the last effect then use %d." xml:space="preserve">
         <source>Condition: if defeat target by the last effect then use %d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: if the specific field exists then use %d, otherwise %d.">
+      <trans-unit id="Condition: if the specific field exists then use %d, otherwise %d." xml:space="preserve">
         <source>Condition: if the specific field exists then use %1$d, otherwise %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: if the specific field exists then use %d.">
+      <trans-unit id="Condition: if the specific field exists then use %d." xml:space="preserve">
         <source>Condition: if the specific field exists then use %d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Confirm">
+      <trans-unit id="Confirm" xml:space="preserve">
         <source>Confirm</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Confuse">
+      <trans-unit id="Confuse" xml:space="preserve">
         <source>Confuse</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Confuse %@ with [%@]%% chance for [%@]s.">
+      <trans-unit id="Confuse %@ with [%@]%% chance for [%@]s." xml:space="preserve">
         <source>Confuse %1$@ with [%2$@]%% chance for [%3$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Copy">
+      <trans-unit id="Copy" xml:space="preserve">
         <source>Copy</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cost %@ TP/s, change attack pattern to %d until TP is zero.">
+      <trans-unit id="Cost %@ TP/s, change attack pattern to %d until TP is zero." xml:space="preserve">
         <source>Cost %1$@ TP/s, change attack pattern to %2$d until TP is zero.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Count Blind">
+      <trans-unit id="Count Blind" xml:space="preserve">
         <source>Count Blind</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Crafted">
+      <trans-unit id="Crafted" xml:space="preserve">
         <source>Crafted</source>
         <target>作成</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Create Team">
+      <trans-unit id="Create Team" xml:space="preserve">
         <source>Create Team</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Curse">
+      <trans-unit id="Curse" xml:space="preserve">
         <source>Curse</source>
         <target>呪い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Custom Tag">
+      <trans-unit id="Custom Tag" xml:space="preserve">
         <source>Custom Tag</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="DEF">
+      <trans-unit id="DEF" xml:space="preserve">
         <source>DEF</source>
         <target>物理防御力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Data Version">
+      <trans-unit id="Data Version" xml:space="preserve">
         <source>Data Version</source>
         <target>データバージョン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deal [%@] %@ damage to %@, and this attack is ensured critical.">
+      <trans-unit id="Deal [%@] %@ damage to %@, and this attack is ensured critical." xml:space="preserve">
         <source>Deal [%1$@] %2$@ damage to %3$@, and this attack is ensured critical.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deal [%@] %@ damage to %@.">
+      <trans-unit id="Deal [%@] %@ damage to %@." xml:space="preserve">
         <source>Deal [%1$@] %2$@ damage to %3$@.</source>
         <target>%3$@に[%1$@]の%2$@ダメージを与える。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@.">
+      <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@." xml:space="preserve">
         <source>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Delay event: use %d after %@s.">
+      <trans-unit id="Delay event: use %d after %@s." xml:space="preserve">
         <source>Delay event: use %1$d after %2$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Denied">
+      <trans-unit id="Denied" xml:space="preserve">
         <source>Denied</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Descending">
+      <trans-unit id="Descending" xml:space="preserve">
         <source>Descending</source>
         <target>降順</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Description">
+      <trans-unit id="Description" xml:space="preserve">
         <source>Description</source>
         <target>説明</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deselect All">
+      <trans-unit id="Deselect All" xml:space="preserve">
         <source>Deselect All</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Detain">
+      <trans-unit id="Detain" xml:space="preserve">
         <source>Detain</source>
         <target>拘留</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Detain (Damage)">
+      <trans-unit id="Detain (Damage)" xml:space="preserve">
         <source>Detain (Damage)</source>
         <target>拘留(ダメージ)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Do nothing.">
+      <trans-unit id="Do nothing." xml:space="preserve">
         <source>Do nothing.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Dodge">
+      <trans-unit id="Dodge" xml:space="preserve">
         <source>Dodge</source>
         <target>回避</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Dot">
+      <trans-unit id="Dot" xml:space="preserve">
         <source>Dot</source>
         <target>Damage over time</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Draw %@ toward self %d.">
+      <trans-unit id="Draw %@ toward self %d." xml:space="preserve">
         <source>Draw %1$@ toward self %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Drop">
+      <trans-unit id="Drop" xml:space="preserve">
         <source>Drop</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Drop Rate">
+      <trans-unit id="Drop Rate" xml:space="preserve">
         <source>Drop Rate</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Dropped">
+      <trans-unit id="Dropped" xml:space="preserve">
         <source>Dropped</source>
         <target>ドロップ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Drops">
+      <trans-unit id="Drops" xml:space="preserve">
         <source>Drops</source>
         <target>ドロップ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Dungeon">
+      <trans-unit id="Dungeon" xml:space="preserve">
         <source>Dungeon</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="EX">
+      <trans-unit id="EX" xml:space="preserve">
         <source>EX</source>
         <target>EX</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="EX+">
+      <trans-unit id="EX+" xml:space="preserve">
         <source>EX+</source>
         <target>EX+</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Edit">
+      <trans-unit id="Edit" xml:space="preserve">
         <source>Edit</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Edit Box">
+      <trans-unit id="Edit Box" xml:space="preserve">
         <source>Edit Box</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Edit Chara">
+      <trans-unit id="Edit Chara" xml:space="preserve">
         <source>Edit Chara</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Edit Team">
+      <trans-unit id="Edit Team" xml:space="preserve">
         <source>Edit Team</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Effective Magical HP">
+      <trans-unit id="Effective Magical HP" xml:space="preserve">
         <source>Effective Magical HP</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Effective Physical HP">
+      <trans-unit id="Effective Physical HP" xml:space="preserve">
         <source>Effective Physical HP</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Email">
+      <trans-unit id="Email" xml:space="preserve">
         <source>Email</source>
         <target>メール</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable Birthday Events">
+      <trans-unit id="Enable Birthday Events" xml:space="preserve">
         <source>Enable Birthday Events</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable Game Events">
+      <trans-unit id="Enable Game Events" xml:space="preserve">
         <source>Enable Game Events</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable Notifications">
+      <trans-unit id="Enable Notifications" xml:space="preserve">
         <source>Enable Notifications</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Energy Recovery Rate">
+      <trans-unit id="Energy Recovery Rate" xml:space="preserve">
         <source>Energy Recovery Rate</source>
         <target>TP上昇</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Energy Reduce Rate">
+      <trans-unit id="Energy Reduce Rate" xml:space="preserve">
         <source>Energy Reduce Rate</source>
         <target>TP消費軽減</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enter Name">
+      <trans-unit id="Enter Name" xml:space="preserve">
         <source>Enter Name</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enter Tag">
+      <trans-unit id="Enter Tag" xml:space="preserve">
         <source>Enter Tag</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Equipment">
+      <trans-unit id="Equipment" xml:space="preserve">
         <source>Equipment</source>
         <target>装備</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Equipments">
+      <trans-unit id="Equipments" xml:space="preserve">
         <source>Equipments</source>
         <target>装備品</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Error">
+      <trans-unit id="Error" xml:space="preserve">
         <source>Error</source>
         <target>エラー</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Event">
+      <trans-unit id="Event" xml:space="preserve">
         <source>Event</source>
         <target>イベント</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Evolution Skill Style">
+      <trans-unit id="Evolution Skill Style" xml:space="preserve">
         <source>Evolution Skill Style</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Exp.">
+      <trans-unit id="Exp." xml:space="preserve">
         <source>Exp.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Exploration">
+      <trans-unit id="Exploration" xml:space="preserve">
         <source>Exploration</source>
         <target>探索</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Expression Style">
+      <trans-unit id="Expression Style" xml:space="preserve">
         <source>Expression Style</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Failed">
+      <trans-unit id="Failed" xml:space="preserve">
         <source>Failed</source>
         <target>更新失敗</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Feedback">
+      <trans-unit id="Feedback" xml:space="preserve">
         <source>Feedback</source>
         <target>フィードバック</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Filter">
+      <trans-unit id="Filter" xml:space="preserve">
         <source>Filter</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Filter Condition">
+      <trans-unit id="Filter Condition" xml:space="preserve">
         <source>Filter Condition</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Finished">
+      <trans-unit id="Finished" xml:space="preserve">
         <source>Finished</source>
         <target>更新完了</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Freeze">
+      <trans-unit id="Freeze" xml:space="preserve">
         <source>Freeze</source>
         <target>凍結</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Full">
+      <trans-unit id="Full" xml:space="preserve">
         <source>Full</source>
         <target>★３のイラスト</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Gacha">
+      <trans-unit id="Gacha" xml:space="preserve">
         <source>Gacha</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Game Event">
+      <trans-unit id="Game Event" xml:space="preserve">
         <source>Game Event</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Game Events Filter">
+      <trans-unit id="Game Events Filter" xml:space="preserve">
         <source>Game Events Filter</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="General">
+      <trans-unit id="General" xml:space="preserve">
         <source>General</source>
         <target>全般</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.">
+      <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving." xml:space="preserve">
         <source>Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Group by">
+      <trans-unit id="Group by" xml:space="preserve">
         <source>Group by</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Grouping">
+      <trans-unit id="Grouping" xml:space="preserve">
         <source>Grouping</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Guild">
+      <trans-unit id="Guild" xml:space="preserve">
         <source>Guild</source>
         <target>ギルド</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="HP">
+      <trans-unit id="HP" xml:space="preserve">
         <source>HP</source>
         <target>HP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="HP Recovery Rate">
+      <trans-unit id="HP Recovery Rate" xml:space="preserve">
         <source>HP Recovery Rate</source>
         <target>回復量上昇</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Happy Birthday!!">
+      <trans-unit id="Happy Birthday!!" xml:space="preserve">
         <source>Happy Birthday!!</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Hard">
+      <trans-unit id="Hard" xml:space="preserve">
         <source>Hard</source>
         <target>HARD</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Haste">
+      <trans-unit id="Haste" xml:space="preserve">
         <source>Haste</source>
         <target>ヘイスト</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Height">
+      <trans-unit id="Height" xml:space="preserve">
         <source>Height</source>
         <target>身長</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="How to restore purchasing on a new device?">
+      <trans-unit id="How to restore purchasing on a new device?" xml:space="preserve">
         <source>How to restore purchasing on a new device?</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Icon Style">
+      <trans-unit id="Icon Style" xml:space="preserve">
         <source>Icon Style</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Image">
+      <trans-unit id="Image" xml:space="preserve">
         <source>Image</source>
         <target>画像</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Import All Charas">
+      <trans-unit id="Import All Charas" xml:space="preserve">
         <source>Import All Charas</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="In next [%@] attacks, %@'s physical attacks will miss.">
+      <trans-unit id="In next [%@] attacks, %@'s physical attacks will miss." xml:space="preserve">
         <source>In next [%1$@] attacks, %2$@'s physical attacks will miss.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="In next [%@]s, %@'s physical attacks will miss.">
+      <trans-unit id="In next [%@]s, %@'s physical attacks will miss." xml:space="preserve">
         <source>In next [%1$@]s, %2$@'s physical attacks will miss.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Instant Death">
+      <trans-unit id="Inhibit Heal" xml:space="preserve">
+        <source>Inhibit Heal</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Instant Death" xml:space="preserve">
         <source>Instant Death</source>
         <target>即死</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Interest">
+      <trans-unit id="Interest" xml:space="preserve">
         <source>Interest</source>
         <target>趣味</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Internal ID">
+      <trans-unit id="Internal ID" xml:space="preserve">
         <source>Internal ID</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Kill %@ instantly.">
+      <trans-unit id="Kill %@ instantly." xml:space="preserve">
         <source>Kill %@ instantly.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Knock %@ away %d.">
+      <trans-unit id="Knock %@ away %d." xml:space="preserve">
         <source>Knock %1$@ away %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Knock %@ up %d.">
+      <trans-unit id="Knock %@ up %d." xml:space="preserve">
         <source>Knock %1$@ up %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Knock Back">
+      <trans-unit id="Knock Back" xml:space="preserve">
         <source>Knock Back</source>
         <target>ノックバック</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Level">
+      <trans-unit id="Level" xml:space="preserve">
         <source>Level</source>
         <target>レベル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Life Steal">
+      <trans-unit id="Life Steal" xml:space="preserve">
         <source>Life Steal</source>
         <target>HP吸収</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Loop end">
+      <trans-unit id="Loop end" xml:space="preserve">
         <source>Loop end</source>
         <target>ループ終了</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Loop in place">
+      <trans-unit id="Loop in place" xml:space="preserve">
         <source>Loop in place</source>
         <target>足踏みループ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Loop start">
+      <trans-unit id="Loop start" xml:space="preserve">
         <source>Loop start</source>
         <target>ループ開始</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Loses">
+      <trans-unit id="Loses" xml:space="preserve">
         <source>Loses</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Luna's Tower">
+      <trans-unit id="Luna's Tower" xml:space="preserve">
         <source>Luna's Tower</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic">
+      <trans-unit id="Magic" xml:space="preserve">
         <source>Magic</source>
         <target>魔法系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic Critical">
+      <trans-unit id="Magic Critical" xml:space="preserve">
         <source>Magic Critical</source>
         <target>魔法クリティカル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic DEF">
+      <trans-unit id="Magic DEF" xml:space="preserve">
         <source>Magic DEF</source>
         <target>魔法防御力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic Penetrate">
+      <trans-unit id="Magic Penetrate" xml:space="preserve">
         <source>Magic Penetrate</source>
         <target>魔法貫通</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic STR">
+      <trans-unit id="Magic STR" xml:space="preserve">
         <source>Magic STR</source>
         <target>魔法攻撃力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Main">
+      <trans-unit id="Main" xml:space="preserve">
         <source>Main</source>
         <target>メイン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Main %d">
+      <trans-unit id="Main %d" xml:space="preserve">
         <source>Main %d</source>
         <target>メイン %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Main+">
+      <trans-unit id="Main+" xml:space="preserve">
         <source>Main+</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make %@ attract enemy attacks, last for [%@]s.">
+      <trans-unit id="Make %@ attract enemy attacks, last for [%@]s." xml:space="preserve">
         <source>Make %1$@ attract enemy attacks, last for [%2$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make %@ fall asleep for [%@]s.">
+      <trans-unit id="Make %@ fall asleep for [%@]s." xml:space="preserve">
         <source>Make %1$@ fall asleep for [%2$@]s.</source>
         <target>%1$@を睡眠状態にする、[%2$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make %@ lose [%@] TP.">
+      <trans-unit id="Make %@ lose [%@] TP." xml:space="preserve">
         <source>Make %1$@ lose [%2$@] TP.</source>
         <target>%1$@のTPを[%2$@]失わせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.">
+      <trans-unit id="Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page." xml:space="preserve">
         <source>Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mana">
+      <trans-unit id="Mana" xml:space="preserve">
         <source>Mana</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mana Cost of Crafting">
+      <trans-unit id="Mana Cost of Crafting" xml:space="preserve">
         <source>Mana Cost of Crafting</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mana Cost of Enhancing">
+      <trans-unit id="Mana Cost of Enhancing" xml:space="preserve">
         <source>Mana Cost of Enhancing</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mana Cost of Skill Training">
+      <trans-unit id="Mana Cost of Skill Training" xml:space="preserve">
         <source>Mana Cost of Skill Training</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mark">
+      <trans-unit id="Mark" xml:space="preserve">
         <source>Mark</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mark %@ with state of ID: %@ with max stacks of %@ for %@s.">
+      <trans-unit id="Mark %@ with state of ID: %@ with max stacks of %@ for %@s." xml:space="preserve">
         <source>Mark %1$@ with state of ID: %2$@ with max stacks of %3$@ for %4$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Max Level to %@">
+      <trans-unit id="Max Level to %@" xml:space="preserve">
         <source>Max Level to %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Max Rank to %@">
+      <trans-unit id="Max Rank to %@" xml:space="preserve">
         <source>Max Rank to %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Max. lv.">
+      <trans-unit id="Max. lv." xml:space="preserve">
         <source>Max. lv.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Members">
+      <trans-unit id="Members" xml:space="preserve">
         <source>Members</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Minion: %d">
+      <trans-unit id="Minion: %d" xml:space="preserve">
         <source>Minion: %d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Misc">
+      <trans-unit id="Misc" xml:space="preserve">
         <source>Misc</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mission">
+      <trans-unit id="Mission" xml:space="preserve">
         <source>Mission</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move Part %d, %d forward then return.">
+      <trans-unit id="Move Part %d, %d forward then return." xml:space="preserve">
         <source>Move Part %1$d, %2$d forward then return.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move Speed">
+      <trans-unit id="Move Speed" xml:space="preserve">
         <source>Move Speed</source>
         <target>移動速度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move backward %@ with velocity %@/s.">
+      <trans-unit id="Move backward %@ with velocity %@/s." xml:space="preserve">
         <source>Move backward %1$@ with velocity %2$@/s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move forward %@ with velocity %@/s.">
+      <trans-unit id="Move forward %@ with velocity %@/s." xml:space="preserve">
         <source>Move forward %1$@ with velocity %2$@/s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move to %@ behind of %@ with velocity %@/s.">
+      <trans-unit id="Move to %@ behind of %@ with velocity %@/s." xml:space="preserve">
         <source>Move to %1$@ behind of %2$@ with velocity %3$@/s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move to %@ in front of %@ with velocity %@/s.">
+      <trans-unit id="Move to %@ in front of %@ with velocity %@/s." xml:space="preserve">
         <source>Move to %1$@ in front of %2$@ with velocity %3$@/s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * HP / max HP] to next effect's value %d.">
+      <trans-unit id="Multiple [%@ * HP / max HP] to next effect's value %d." xml:space="preserve">
         <source>Multiple [%1$@ * HP / max HP] to next effect's value %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * count of defeated enemies] to next effect's value %d.">
+      <trans-unit id="Multiple [%@ * count of defeated enemies] to next effect's value %d." xml:space="preserve">
         <source>Multiple [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * lost HP / max HP] to next effect's value %d.">
+      <trans-unit id="Multiple [%@ * lost HP / max HP] to next effect's value %d." xml:space="preserve">
         <source>Multiple [%1$@ * lost HP / max HP] to next effect's value %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New %@ Event: %@">
+      <trans-unit id="New %@ Event: %@" xml:space="preserve">
         <source>New %1$@ Event: %2$@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Campaign: %@ %@ %@ x%@">
+      <trans-unit id="New Campaign: %@ %@ %@ x%@" xml:space="preserve">
         <source>New Campaign: %1$@ %2$@ %3$@ x%4$@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Campaign: %@ %@ x%@">
+      <trans-unit id="New Campaign: %@ %@ x%@" xml:space="preserve">
         <source>New Campaign: %1$@ %2$@ x%3$@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Clan Battle: %@">
+      <trans-unit id="New Clan Battle: %@" xml:space="preserve">
         <source>New Clan Battle: %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Dungeon: %@">
+      <trans-unit id="New Dungeon: %@" xml:space="preserve">
         <source>New Dungeon: %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Gacha: %@">
+      <trans-unit id="New Gacha: %@" xml:space="preserve">
         <source>New Gacha: %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Quest Area: %@">
+      <trans-unit id="New Quest Area: %@" xml:space="preserve">
         <source>New Quest Area: %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Story of %@">
+      <trans-unit id="New Story of %@" xml:space="preserve">
         <source>New Story of %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Unit: %@">
+      <trans-unit id="New Unit: %@" xml:space="preserve">
         <source>New Unit: %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Next">
+      <trans-unit id="Next" xml:space="preserve">
         <source>Next</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="No more data">
+      <trans-unit id="No more data" xml:space="preserve">
         <source>No more data</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="None">
+      <trans-unit id="None" xml:space="preserve">
         <source>None</source>
         <target>なし</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Normal">
+      <trans-unit id="Normal" xml:space="preserve">
         <source>Normal</source>
         <target>NORMAL</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Not Determined">
+      <trans-unit id="Not Determined" xml:space="preserve">
         <source>Not Determined</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Notice">
+      <trans-unit id="Notice" xml:space="preserve">
         <source>Notice</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Notification Permission">
+      <trans-unit id="Notification Permission" xml:space="preserve">
         <source>Notification Permission</source>
         <target>通知許可</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Number of Unique Equipments">
+      <trans-unit id="Number of Unique Equipments" xml:space="preserve">
         <source>Number of Unique Equipments</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="OK">
+      <trans-unit id="OK" xml:space="preserve">
         <source>OK</source>
         <target>はい</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Only shows the first chara's equipments, but will reflect on all selected charas.">
+      <trans-unit id="Only shows the first chara's equipments, but will reflect on all selected charas." xml:space="preserve">
         <source>Only shows the first chara's equipments, but will reflect on all selected charas.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Options">
+      <trans-unit id="Options" xml:space="preserve">
         <source>Options</source>
         <target>オプション</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Order">
+      <trans-unit id="Order" xml:space="preserve">
         <source>Order</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Paralyse">
+      <trans-unit id="Paralyse" xml:space="preserve">
         <source>Paralyse</source>
         <target>麻痺</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Petrify">
+      <trans-unit id="Petrify" xml:space="preserve">
         <source>Petrify</source>
         <target>石化</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Physical Critical">
+      <trans-unit id="Physical Critical" xml:space="preserve">
         <source>Physical Critical</source>
         <target>物理クリティカル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Physical Penetrate">
+      <trans-unit id="Physical Penetrate" xml:space="preserve">
         <source>Physical Penetrate</source>
         <target>物理穿透</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Physics">
+      <trans-unit id="Physics" xml:space="preserve">
         <source>Physics</source>
         <target>物理系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Plate">
+      <trans-unit id="Plate" xml:space="preserve">
         <source>Plate</source>
         <target>Plate</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Please wait">
+      <trans-unit id="Please wait" xml:space="preserve">
         <source>Please wait</source>
         <target>処理中...</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Poison">
+      <trans-unit id="Poison" xml:space="preserve">
         <source>Poison</source>
         <target>毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Poison %@ and deal [%@] damage per second for [%@]s.">
+      <trans-unit id="Poison %@ and deal [%@] damage per second for [%@]s." xml:space="preserve">
         <source>Poison %1$@ and deal [%2$@] damage per second for [%3$@]s.</source>
         <target>%1$@に毒状態にして、[%2$@]のダメージを与える、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Poison %@ violently and deal [%@] damage per second for [%@]s.">
+      <trans-unit id="Poison %@ violently and deal [%@] damage per second for [%@]s." xml:space="preserve">
         <source>Poison %1$@ violently and deal [%2$@] damage per second for [%3$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Position">
+      <trans-unit id="Position" xml:space="preserve">
         <source>Position</source>
         <target>ボジション</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Pro Edition">
+      <trans-unit id="Pro Edition" xml:space="preserve">
         <source>Pro Edition</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Profile">
+      <trans-unit id="Profile" xml:space="preserve">
         <source>Profile</source>
         <target>プロファイル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Quest Area">
+      <trans-unit id="Quest Area" xml:space="preserve">
         <source>Quest Area</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Quests">
+      <trans-unit id="Quests" xml:space="preserve">
         <source>Quests</source>
         <target>クエスト</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Race">
+      <trans-unit id="Race" xml:space="preserve">
         <source>Race</source>
         <target>種族</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raid">
+      <trans-unit id="Raid" xml:space="preserve">
         <source>Raid</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise">
+      <trans-unit id="Raise" xml:space="preserve">
         <source>Raise</source>
         <target>アップ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise %@ %d%% attack speed for [%@]s.">
+      <trans-unit id="Raise %@ %d%% attack speed for [%@]s." xml:space="preserve">
         <source>Raise %1$@ %2$d%% attack speed for [%3$@]s.</source>
         <target>%1$@の行動速度を%2$d%%アップ、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise [%@] %@.">
+      <trans-unit id="Raise [%@] %@." xml:space="preserve">
         <source>Raise [%1$@] %2$@.</source>
         <target>%2$@を[%1$@]アップ。</target>
         <note>Raise [x] ATK.</note>
       </trans-unit>
-      <trans-unit id="Random event: %d%% chance use %d, otherwise %d.">
+      <trans-unit id="Random event: %d%% chance use %d, otherwise %d." xml:space="preserve">
         <source>Random event: %1$d%% chance use %2$d, otherwise %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Random event: %d%% chance use %d.">
+      <trans-unit id="Random event: %d%% chance use %d." xml:space="preserve">
         <source>Random event: %1$d%% chance use %2$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Rank">
+      <trans-unit id="Rank" xml:space="preserve">
         <source>Rank</source>
         <target>Rank</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Rank From">
+      <trans-unit id="Rank From" xml:space="preserve">
         <source>Rank From</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Rank To">
+      <trans-unit id="Rank To" xml:space="preserve">
         <source>Rank To</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Rarity">
+      <trans-unit id="Rarity" xml:space="preserve">
         <source>Rarity</source>
         <target>レア度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raw Materials">
+      <trans-unit id="Raw Materials" xml:space="preserve">
         <source>Raw Materials</source>
         <target>作成必要素材</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Reduce">
+      <trans-unit id="Reduce" xml:space="preserve">
         <source>Reduce</source>
         <target>ダウン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Reduce %@ %d%% attack speed for [%@]s.">
+      <trans-unit id="Reduce %@ %d%% attack speed for [%@]s." xml:space="preserve">
         <source>Reduce %1$@ %2$d%% attack speed for [%3$@]s.</source>
         <target>%1$@の行動速度を%2$d%%ダウン、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Reset">
+      <trans-unit id="Remove field of skill %d (1 represents the first skill in this list) effect %d." xml:space="preserve">
+        <source>Remove field of skill %1$d (1 represents the first skill in this list) effect %2$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reset" xml:space="preserve">
         <source>Reset</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Resist">
+      <trans-unit id="Resist" xml:space="preserve">
         <source>Resist</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore">
+      <trans-unit id="Restore" xml:space="preserve">
         <source>Restore</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore %@ [%@] HP per second for [%@]s.">
+      <trans-unit id="Restore %@ [%@] HP per second for [%@]s." xml:space="preserve">
         <source>Restore %1$@ [%2$@] HP per second for [%3$@]s.</source>
         <target>%1$@に毎秒HPを[%2$@]回復、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore %@ [%@] TP.">
+      <trans-unit id="Restore %@ [%@] TP." xml:space="preserve">
         <source>Restore %1$@ [%2$@] TP.</source>
         <target>%1$@のTPを[%2$@]回復。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore %@ [%@]%@ HP.">
+      <trans-unit id="Restore %@ [%@]%@ HP." xml:space="preserve">
         <source>Restore %1$@ [%2$@]%3$@ HP.</source>
         <target>%1$@のHPを[%2$@]%3$@回復。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Review at App Store">
+      <trans-unit id="Review at App Store" xml:space="preserve">
         <source>Review at App Store</source>
         <target>App Storeに評価する</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Revive %@ with %d%% HP.">
+      <trans-unit id="Revive %@ with %d%% HP." xml:space="preserve">
         <source>Revive %1$@ with %2$d%% HP.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Round %d">
+      <trans-unit id="Round %d" xml:space="preserve">
         <source>Round %d</source>
         <target>%d 戦目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Round %d ~ %d">
+      <trans-unit id="Round %d ~ %d" xml:space="preserve">
         <source>Round %1$d ~ %2$d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Round %d+">
+      <trans-unit id="Round %d+" xml:space="preserve">
         <source>Round %d+</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SLv.">
+      <trans-unit id="SLv." xml:space="preserve">
         <source>SLv.</source>
         <target>スキルレベル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SP">
+      <trans-unit id="SP" xml:space="preserve">
         <source>SP</source>
         <target>SP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SP %d">
+      <trans-unit id="SP %d" xml:space="preserve">
         <source>SP %d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Save">
+      <trans-unit id="Save" xml:space="preserve">
         <source>Save</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Save Box">
+      <trans-unit id="Save Box" xml:space="preserve">
         <source>Save Box</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Scout and change the perspective on %@.">
+      <trans-unit id="Scout and change the perspective on %@." xml:space="preserve">
         <source>Scout and change the perspective on %@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select All">
+      <trans-unit id="Select All" xml:space="preserve">
         <source>Select All</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select Chara">
+      <trans-unit id="Select Chara" xml:space="preserve">
         <source>Select Chara</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select Charas">
+      <trans-unit id="Select Charas" xml:space="preserve">
         <source>Select Charas</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select Loses">
+      <trans-unit id="Select Loses" xml:space="preserve">
         <source>Select Loses</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select Wins">
+      <trans-unit id="Select Wins" xml:space="preserve">
         <source>Select Wins</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Settings">
+      <trans-unit id="Settings" xml:space="preserve">
         <source>Settings</source>
         <target>設定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Show All Field">
+      <trans-unit id="Show All Field" xml:space="preserve">
         <source>Show All Field</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Show the Latest Notice">
+      <trans-unit id="Show the Latest Notice" xml:space="preserve">
         <source>Show the Latest Notice</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Shrine">
+      <trans-unit id="Shrine" xml:space="preserve">
         <source>Shrine</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Silence">
+      <trans-unit id="Silence" xml:space="preserve">
         <source>Silence</source>
         <target>沈黙</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Silence %@ with [%@]%% chance for [%@]s.">
+      <trans-unit id="Silence %@ with [%@]%% chance for [%@]s." xml:space="preserve">
         <source>Silence %1$@ with [%2$@]%% chance for [%3$@]s.</source>
         <target>[%2$@]%%の確率で%1$@に沈黙状態付与、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Skill">
+      <trans-unit id="Skill" xml:space="preserve">
         <source>Skill</source>
         <target>スキル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Skill Detail">
+      <trans-unit id="Skill Detail" xml:space="preserve">
         <source>Skill Detail</source>
         <target>スキル情報</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Skill Level">
+      <trans-unit id="Skill Level" xml:space="preserve">
         <source>Skill Level</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Sleep">
+      <trans-unit id="Sleep" xml:space="preserve">
         <source>Sleep</source>
         <target>睡眠</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Slow">
+      <trans-unit id="Slow" xml:space="preserve">
         <source>Slow</source>
         <target>スロウ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Sort by">
+      <trans-unit id="Sort by" xml:space="preserve">
         <source>Sort by</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Sorting">
+      <trans-unit id="Sorting" xml:space="preserve">
         <source>Sorting</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Star Rank">
+      <trans-unit id="Star Rank" xml:space="preserve">
         <source>Star Rank</source>
         <target>★の数</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Status">
+      <trans-unit id="Status" xml:space="preserve">
         <source>Status</source>
         <target>属性</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Status Comparison">
+      <trans-unit id="Status Comparison" xml:space="preserve">
         <source>Status Comparison</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Stealth for %@s.">
+      <trans-unit id="Stealth for %@s." xml:space="preserve">
         <source>Stealth for %@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Still">
+      <trans-unit id="Still" xml:space="preserve">
         <source>Still</source>
         <target>絆ストーリー</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Story">
+      <trans-unit id="Story" xml:space="preserve">
         <source>Story</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Story Event">
+      <trans-unit id="Story Event" xml:space="preserve">
         <source>Story Event</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Stun">
+      <trans-unit id="Stun" xml:space="preserve">
         <source>Stun</source>
         <target>スタン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summary">
+      <trans-unit id="Summary" xml:space="preserve">
         <source>Summary</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s.">
+      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s." xml:space="preserve">
         <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@] %5$@ for [%6$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s.">
+      <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." xml:space="preserve">
         <source>Summon a field of radius %1$d at position of %2$@ to deal [%3$@] %4$@ damage per second for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s.">
+      <trans-unit id="Summon a field of radius %d on %@ to cast effect %d for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d on %2$@ to cast effect %3$d for [%4$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." xml:space="preserve">
         <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@] %5$@ for [%6$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.">
+      <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." xml:space="preserve">
         <source>Summon a field of radius %1$d to deal [%2$@] %3$@ damage per second for [%4$@]s to %5$@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s.">
+      <trans-unit id="Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s." xml:space="preserve">
         <source>Summon a healing field of radius %1$d at position of %2$@ to heal [%3$@]%4$@ HP per second for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s.">
+      <trans-unit id="Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s." xml:space="preserve">
         <source>Summon a healing field of radius %1$d to heal %2$@ [%3$@]%4$@ HP per second for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Swing">
+      <trans-unit id="Swing" xml:space="preserve">
         <source>Swing</source>
         <target>通常攻撃</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Swing Time">
+      <trans-unit id="Swing Time" xml:space="preserve">
         <source>Swing Time</source>
         <target>通常攻撃間隔</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Tag">
+      <trans-unit id="Tag" xml:space="preserve">
         <source>Tag</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Target Level">
+      <trans-unit id="Target Level" xml:space="preserve">
         <source>Target Level</source>
         <target>相手レベル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Team Detail">
+      <trans-unit id="Team Detail" xml:space="preserve">
         <source>Team Detail</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Team Management">
+      <trans-unit id="Team Management" xml:space="preserve">
         <source>Team Management</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Team Tag">
+      <trans-unit id="Team Tag" xml:space="preserve">
         <source>Team Tag</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Teams">
+      <trans-unit id="Teams" xml:space="preserve">
         <source>Teams</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="The first chara added will be used as cover image.">
+      <trans-unit id="The first chara added will be used as cover image." xml:space="preserve">
         <source>The first chara added will be used as cover image.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="There aren't any Mail accounts">
+      <trans-unit id="There aren't any Mail accounts" xml:space="preserve">
         <source>There aren't any Mail accounts</source>
         <target>メールアカウントを見つかりませんでした。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix &quot;Hatsune's Notes&quot;.\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content.">
+      <trans-unit id="These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix &quot;Hatsune's Notes&quot;.\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content." xml:space="preserve">
         <source>These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix "Hatsune's Notes".\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Third-Party Licenses">
+      <trans-unit id="Third-Party Licenses" xml:space="preserve">
         <source>Third-Party Licenses</source>
         <target>Third-Party Licenses</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Time Zone">
+      <trans-unit id="Time Zone" xml:space="preserve">
         <source>Time Zone</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Today is %@'s birthday (%@/%@)">
+      <trans-unit id="Today is %@'s birthday (%@/%@)" xml:space="preserve">
         <source>Today is %1$@'s birthday (%2$@/%3$@)</source>
         <note>Birthday notification body</note>
       </trans-unit>
-      <trans-unit id="Toolbox">
+      <trans-unit id="Toolbox" xml:space="preserve">
         <source>Toolbox</source>
         <target>ツール</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Total Experience Needed">
+      <trans-unit id="Total Experience Needed" xml:space="preserve">
         <source>Total Experience Needed</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Total Mana Cost">
+      <trans-unit id="Total Mana Cost" xml:space="preserve">
         <source>Total Mana Cost</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Tower">
+      <trans-unit id="Tower" xml:space="preserve">
         <source>Tower</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on break and last for %@s.">
+      <trans-unit id="Trigger: %d%% on break and last for %@s." xml:space="preserve">
         <source>Trigger: %1$d%% on break and last for %2$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on damaged.">
+      <trans-unit id="Trigger: %d%% on damaged." xml:space="preserve">
         <source>Trigger: %d%% on damaged.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on dead.">
+      <trans-unit id="Trigger: %d%% on dead." xml:space="preserve">
         <source>Trigger: %d%% on dead.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on stealth.">
+      <trans-unit id="Trigger: %d%% on stealth." xml:space="preserve">
         <source>Trigger: %d%% on stealth.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: HP is below %d%%.">
+      <trans-unit id="Trigger: HP is below %d%%." xml:space="preserve">
         <source>Trigger: HP is below %d%%.</source>
         <target>条件：HP %d%%以下</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: Left time is below %@s.">
+      <trans-unit id="Trigger: Left time is below %@s." xml:space="preserve">
         <source>Trigger: Left time is below %@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="True Name">
+      <trans-unit id="True Name" xml:space="preserve">
         <source>True Name</source>
         <target>本名</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Twitter">
+      <trans-unit id="Twitter" xml:space="preserve">
         <source>Twitter</source>
         <target>Twitter</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="UB">
+      <trans-unit id="UB" xml:space="preserve">
         <source>UB</source>
         <target>UB</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="UB+">
+      <trans-unit id="UB+" xml:space="preserve">
         <source>UB+</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unable to open Mail">
+      <trans-unit id="Unable to open Mail" xml:space="preserve">
         <source>Unable to open Mail</source>
         <target>メール起動失敗</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unique">
+      <trans-unit id="Unique" xml:space="preserve">
         <source>Unique</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unique Equipment">
+      <trans-unit id="Unique Equipment" xml:space="preserve">
         <source>Unique Equipment</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unique Equipment Level">
+      <trans-unit id="Unique Equipment Level" xml:space="preserve">
         <source>Unique Equipment Level</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unique Equipments">
+      <trans-unit id="Unique Equipments" xml:space="preserve">
         <source>Unique Equipments</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unit">
+      <trans-unit id="Unit" xml:space="preserve">
         <source>Unit</source>
         <target>ユニット</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unknown">
+      <trans-unit id="Unknown" xml:space="preserve">
         <source>Unknown</source>
         <target>未知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unknown Effect">
+      <trans-unit id="Unknown Effect" xml:space="preserve">
         <source>Unknown Effect</source>
         <target>未知効果</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unknown effect %d to %@ with details [%@], values [%@].">
+      <trans-unit id="Unknown effect %d to %@ with details [%@], values [%@]." xml:space="preserve">
         <source>Unknown effect %1$d to %2$@ with details [%3$@], values [%4$@].</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Up to date!">
+      <trans-unit id="Up to date!" xml:space="preserve">
         <source>Up to date!</source>
         <target>最新バージョンです</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Upcoming Birthdays">
+      <trans-unit id="Upcoming Birthdays" xml:space="preserve">
         <source>Upcoming Birthdays</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Upgrade to Pro Edition">
+      <trans-unit id="Upgrade to Pro Edition" xml:space="preserve">
         <source>Upgrade to Pro Edition</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Use Dark Theme">
+      <trans-unit id="Use Dark Theme" xml:space="preserve">
         <source>Use Dark Theme</source>
         <target>ダークテーマに設定する</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Vanguard">
+      <trans-unit id="Vanguard" xml:space="preserve">
         <source>Vanguard</source>
         <target>前衛</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Version Log">
+      <trans-unit id="Version Log" xml:space="preserve">
         <source>Version Log</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Violent Poison">
+      <trans-unit id="Violent Poison" xml:space="preserve">
         <source>Violent Poison</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wave %d">
+      <trans-unit id="Wave %d" xml:space="preserve">
         <source>Wave %d</source>
         <target>Wave %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wave %d (x%.2f)">
+      <trans-unit id="Wave %d (x%.2f)" xml:space="preserve">
         <source>Wave %1$d (x%2$.2f)</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wave Energy Recovery">
+      <trans-unit id="Wave Energy Recovery" xml:space="preserve">
         <source>Wave Energy Recovery</source>
         <target>TP自動回復</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wave HP Recovery">
+      <trans-unit id="Wave HP Recovery" xml:space="preserve">
         <source>Wave HP Recovery</source>
         <target>HP自動回復</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Weight">
+      <trans-unit id="Weight" xml:space="preserve">
         <source>Weight</source>
         <target>体重</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="What's the features of Pro Edition?">
+      <trans-unit id="What's the features of Pro Edition?" xml:space="preserve">
         <source>What's the features of Pro Edition?</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Who Needs">
+      <trans-unit id="When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." xml:space="preserve">
+        <source>When %1$@ receive healing, deal [%2$@ * healing amount] damage instead, last for [%3$@]s or unlimited time if triggered by field.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Who Needs" xml:space="preserve">
         <source>Who Needs</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wins">
+      <trans-unit id="Wins" xml:space="preserve">
         <source>Wins</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You have not bought this product yet.">
+      <trans-unit id="You have not bought this product yet." xml:space="preserve">
         <source>You have not bought this product yet.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all">
+      <trans-unit id="all" xml:space="preserve">
         <source>all</source>
         <target>全体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all %@ %@ targets">
+      <trans-unit id="all %@ %@ targets" xml:space="preserve">
         <source>all %1$@ %2$@ targets</source>
         <target>%2$@%1$@全体</target>
         <note>all [enemy] [physics] targets</note>
       </trans-unit>
-      <trans-unit id="all %@ targets">
+      <trans-unit id="all %@ targets" xml:space="preserve">
         <source>all %@ targets</source>
         <target>%@全体</target>
         <note>all [enemy] targets</note>
       </trans-unit>
-      <trans-unit id="all front %@ enemy targets">
+      <trans-unit id="all front %@ enemy targets" xml:space="preserve">
         <source>all front %@ enemy targets</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front %@ targets">
+      <trans-unit id="all front %@ targets" xml:space="preserve">
         <source>all front %@ targets</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front enemy targets">
+      <trans-unit id="all front enemy targets" xml:space="preserve">
         <source>all front enemy targets</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front targets">
+      <trans-unit id="all front targets" xml:space="preserve">
         <source>all front targets</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front(including self) %@ friendly targets">
+      <trans-unit id="all front(including self) %@ friendly targets" xml:space="preserve">
         <source>all front(including self) %@ friendly targets</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front(including self) friendly targets">
+      <trans-unit id="all front(including self) friendly targets" xml:space="preserve">
         <source>all front(including self) friendly targets</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="always 1★">
+      <trans-unit id="always 1★" xml:space="preserve">
         <source>always 1★</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="always 3★">
+      <trans-unit id="always 3★" xml:space="preserve">
         <source>always 3★</source>
         <note>icon style</note>
       </trans-unit>
-      <trans-unit id="arena">
+      <trans-unit id="arena" xml:space="preserve">
         <source>arena</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="attack">
+      <trans-unit id="attack" xml:space="preserve">
         <source>attack</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="boss">
+      <trans-unit id="boss" xml:space="preserve">
         <source>boss</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="both">
+      <trans-unit id="both" xml:space="preserve">
         <source>both</source>
         <note>skill style</note>
       </trans-unit>
-      <trans-unit id="both sides">
+      <trans-unit id="both sides" xml:space="preserve">
         <source>both sides</source>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="buffs">
+      <trans-unit id="buffs" xml:space="preserve">
         <source>buffs</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="clan battle">
+      <trans-unit id="clan battle" xml:space="preserve">
         <source>clan battle</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="debuffs">
+      <trans-unit id="debuffs" xml:space="preserve">
         <source>debuffs</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="default">
+      <trans-unit id="default" xml:space="preserve">
         <source>default</source>
         <note>icon style</note>
       </trans-unit>
-      <trans-unit id="defend">
+      <trans-unit id="defend" xml:space="preserve">
         <source>defend</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="dungeon">
+      <trans-unit id="dungeon" xml:space="preserve">
         <source>dungeon</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="enemy">
+      <trans-unit id="enemy" xml:space="preserve">
         <source>enemy</source>
         <target>敵</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="evolution only">
+      <trans-unit id="evolution only" xml:space="preserve">
         <source>evolution only</source>
         <note>skill style</note>
       </trans-unit>
-      <trans-unit id="fifth">
+      <trans-unit id="fifth" xml:space="preserve">
         <source>fifth</source>
         <target>5番目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="four">
+      <trans-unit id="four" xml:space="preserve">
         <source>four</source>
         <target>４体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="fourth">
+      <trans-unit id="fourth" xml:space="preserve">
         <source>fourth</source>
         <target>4番目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="friendly">
+      <trans-unit id="friendly" xml:space="preserve">
         <source>friendly</source>
         <target>味方</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="front">
+      <trans-unit id="front" xml:space="preserve">
         <source>front</source>
         <target>前方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="front %@ %@ targets in range %d">
+      <trans-unit id="front %@ %@ targets in range %d" xml:space="preserve">
         <source>front %1$@ %2$@ targets in range %3$d</source>
         <target>前方%3$d範囲内%2$@%1$@</target>
         <note>front [friendly] [physics] targets in range [500]</note>
       </trans-unit>
-      <trans-unit id="front %@ targets in range %d">
+      <trans-unit id="front %@ targets in range %d" xml:space="preserve">
         <source>front %1$@ targets in range %2$d</source>
         <note>front [enemy] targets in range [500]</note>
       </trans-unit>
-      <trans-unit id="front and back">
+      <trans-unit id="front and back" xml:space="preserve">
         <source>front and back</source>
         <target>front and back</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="front(including self)">
+      <trans-unit id="front(including self)" xml:space="preserve">
         <source>front(including self)</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="full">
+      <trans-unit id="full" xml:space="preserve">
         <source>full</source>
         <target>詳細</target>
         <note>expression style</note>
       </trans-unit>
-      <trans-unit id="inevitable physical">
+      <trans-unit id="inevitable physical" xml:space="preserve">
         <source>inevitable physical</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="last effect affected or the nearest">
+      <trans-unit id="last effect affected or the nearest" xml:space="preserve">
         <source>last effect affected or the nearest</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="magic">
+      <trans-unit id="magic" xml:space="preserve">
         <source>magic</source>
         <target>魔法攻撃をするの</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="magical">
+      <trans-unit id="magical" xml:space="preserve">
         <source>magical</source>
         <target>魔法</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="max 16 characters">
+      <trans-unit id="max 16 characters" xml:space="preserve">
         <source>max 16 characters</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="minion">
+      <trans-unit id="minion" xml:space="preserve">
         <source>minion</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="normal type">
+      <trans-unit id="name" xml:space="preserve">
+        <source>name</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="normal type" xml:space="preserve">
         <source>normal type</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="one">
+      <trans-unit id="one" xml:space="preserve">
         <source>one</source>
         <target>１体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="opposite">
+      <trans-unit id="opposite" xml:space="preserve">
         <source>opposite</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="other">
+      <trans-unit id="other" xml:space="preserve">
         <source>other</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="own side">
+      <trans-unit id="own side" xml:space="preserve">
         <source>own side</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="phantom type">
+      <trans-unit id="phantom type" xml:space="preserve">
         <source>phantom type</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="physical">
+      <trans-unit id="physical" xml:space="preserve">
         <source>physical</source>
         <target>物理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="physics">
+      <trans-unit id="physics" xml:space="preserve">
         <source>physics</source>
         <target>物理攻撃をするの</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="princess arena">
+      <trans-unit id="princess arena" xml:space="preserve">
         <source>princess arena</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="pve">
+      <trans-unit id="pve" xml:space="preserve">
         <source>pve</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="pvp">
+      <trans-unit id="pvp" xml:space="preserve">
         <source>pvp</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="random">
+      <trans-unit id="random" xml:space="preserve">
         <source>random</source>
         <target>ランダム</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="random minion">
+      <trans-unit id="random minion" xml:space="preserve">
         <source>random minion</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="random self minion">
+      <trans-unit id="random self minion" xml:space="preserve">
         <source>random self minion</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="random(once)">
+      <trans-unit id="random(once)" xml:space="preserve">
         <source>random(once)</source>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="raw value id">
+      <trans-unit id="raw value id" xml:space="preserve">
         <source>raw value id</source>
         <note>expression style</note>
       </trans-unit>
-      <trans-unit id="second">
+      <trans-unit id="second" xml:space="preserve">
         <source>second</source>
         <target>2番目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="self">
+      <trans-unit id="self" xml:space="preserve">
         <source>self</source>
         <target>自分</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="short">
+      <trans-unit id="short" xml:space="preserve">
         <source>short</source>
         <target>簡略</target>
         <note>expression style</note>
       </trans-unit>
-      <trans-unit id="target">
+      <trans-unit id="target" xml:space="preserve">
         <source>target</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets">
+      <trans-unit id="targets" xml:space="preserve">
         <source>targets</source>
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of effect %d">
+      <trans-unit id="targets of effect %d" xml:space="preserve">
         <source>targets of effect %d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of effect %d and %@ targets in range %d">
+      <trans-unit id="targets of effect %d and %@ targets in range %d" xml:space="preserve">
         <source>targets of effect %1$d and %2$@ targets in range %3$d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of last effect">
+      <trans-unit id="targets of last effect" xml:space="preserve">
         <source>targets of last effect</source>
         <target>同じ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of last effect or %@ nearest">
+      <trans-unit id="targets of last effect or %@ nearest" xml:space="preserve">
         <source>targets of last effect or %@ nearest</source>
         <target>同じか最も近い%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="targets of last effect or the %@ nearest">
+      <trans-unit id="targets of last effect or the %@ nearest" xml:space="preserve">
         <source>targets of last effect or the %@ nearest</source>
         <target>同じか%@近い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="targets within the scope">
+      <trans-unit id="targets within the scope" xml:space="preserve">
         <source>targets within the scope</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ farthest">
+      <trans-unit id="the %@ farthest" xml:space="preserve">
         <source>the %@ farthest</source>
         <target>%@遠い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ highest ATK">
+      <trans-unit id="the %@ highest ATK" xml:space="preserve">
         <source>the %@ highest ATK</source>
         <target>物理攻撃力が%@高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ highest HP ratio">
+      <trans-unit id="the %@ highest HP ratio" xml:space="preserve">
         <source>the %@ highest HP ratio</source>
         <target>HP割合が%@高い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ highest Magic STR">
+      <trans-unit id="the %@ highest Magic STR" xml:space="preserve">
         <source>the %@ highest Magic STR</source>
         <target>魔法攻撃力が%@高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ highest TP">
+      <trans-unit id="the %@ highest TP" xml:space="preserve">
         <source>the %@ highest TP</source>
         <target>TPが%@高い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ lowest ATK">
+      <trans-unit id="the %@ lowest ATK" xml:space="preserve">
         <source>the %@ lowest ATK</source>
         <target>物理攻撃力が%@低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ lowest HP ratio">
+      <trans-unit id="the %@ lowest HP ratio" xml:space="preserve">
         <source>the %@ lowest HP ratio</source>
         <target>HP割合が%@低い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ lowest Magic STR">
+      <trans-unit id="the %@ lowest Magic STR" xml:space="preserve">
         <source>the %@ lowest Magic STR</source>
         <target>魔法攻撃力が%@低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ lowest TP">
+      <trans-unit id="the %@ lowest TP" xml:space="preserve">
         <source>the %@ lowest TP</source>
         <target>TPが%@低い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ most backward">
+      <trans-unit id="the %@ most backward" xml:space="preserve">
         <source>the %@ most backward</source>
         <target>%@後の</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ most forward">
+      <trans-unit id="the %@ most forward" xml:space="preserve">
         <source>the %@ most forward</source>
         <target>%@前の</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ nearest">
+      <trans-unit id="the %@ nearest" xml:space="preserve">
         <source>the %@ nearest</source>
         <target>%@近い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ unknown type">
+      <trans-unit id="the %@ unknown type" xml:space="preserve">
         <source>the %@ unknown type</source>
         <target>%@未知種類</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the farthest">
+      <trans-unit id="the farthest" xml:space="preserve">
         <source>the farthest</source>
         <target>最も遠い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the highest ATK">
+      <trans-unit id="the highest ATK" xml:space="preserve">
         <source>the highest ATK</source>
         <target>物理攻撃力が一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the highest HP ratio">
+      <trans-unit id="the highest HP ratio" xml:space="preserve">
         <source>the highest HP ratio</source>
         <target>HP割合が一番高い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the highest Magic STR">
+      <trans-unit id="the highest Magic STR" xml:space="preserve">
         <source>the highest Magic STR</source>
         <target>魔法攻撃力が一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the highest TP">
+      <trans-unit id="the highest TP" xml:space="preserve">
         <source>the highest TP</source>
         <target>TPが一番高い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the lowest ATK">
+      <trans-unit id="the lowest ATK" xml:space="preserve">
         <source>the lowest ATK</source>
         <target>物理攻撃力が一番低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the lowest HP ratio">
+      <trans-unit id="the lowest HP ratio" xml:space="preserve">
         <source>the lowest HP ratio</source>
         <target>HP割合が一番低い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the lowest Magic STR">
+      <trans-unit id="the lowest Magic STR" xml:space="preserve">
         <source>the lowest Magic STR</source>
         <target>魔法攻撃力が一番低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the lowest TP">
+      <trans-unit id="the lowest TP" xml:space="preserve">
         <source>the lowest TP</source>
         <target>TPが一番低い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the most backward">
+      <trans-unit id="the most backward" xml:space="preserve">
         <source>the most backward</source>
         <target>最も後の</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the most forward">
+      <trans-unit id="the most forward" xml:space="preserve">
         <source>the most forward</source>
         <target>最も前の</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the nearest">
+      <trans-unit id="the nearest" xml:space="preserve">
         <source>the nearest</source>
         <target>最も近い</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="third">
+      <trans-unit id="third" xml:space="preserve">
         <source>third</source>
         <target>3番目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="three">
+      <trans-unit id="three" xml:space="preserve">
         <source>three</source>
         <target>３体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="two">
+      <trans-unit id="two" xml:space="preserve">
         <source>two</source>
         <target>２体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="unknown">
+      <trans-unit id="unknown" xml:space="preserve">
         <source>unknown</source>
         <target>未知</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="unknown side">
+      <trans-unit id="unknown side" xml:space="preserve">
         <source>unknown side</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="unknown type">
+      <trans-unit id="unknown type" xml:space="preserve">
         <source>unknown type</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is blinded">
+      <trans-unit id="use %d to any of %@ is blinded" xml:space="preserve">
         <source>use %1$d to any of %2$@ is blinded</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is burned">
+      <trans-unit id="use %d to any of %@ is burned" xml:space="preserve">
         <source>use %1$d to any of %2$@ is burned</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is charmed">
+      <trans-unit id="use %d to any of %@ is charmed" xml:space="preserve">
         <source>use %1$d to any of %2$@ is charmed</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is controlled">
+      <trans-unit id="use %d to any of %@ is controlled" xml:space="preserve">
         <source>use %1$d to any of %2$@ is controlled</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is cursed">
+      <trans-unit id="use %d to any of %@ is cursed" xml:space="preserve">
         <source>use %1$d to any of %2$@ is cursed</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is in state of ID: %d">
+      <trans-unit id="use %d to any of %@ is in state of ID: %d" xml:space="preserve">
         <source>use %1$d to any of %2$@ is in state of ID: %3$d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not blinded">
+      <trans-unit id="use %d to any of %@ is not blinded" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not blinded</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not burned">
+      <trans-unit id="use %d to any of %@ is not burned" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not burned</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not charmed">
+      <trans-unit id="use %d to any of %@ is not charmed" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not charmed</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not controlled">
+      <trans-unit id="use %d to any of %@ is not controlled" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not controlled</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not cursed">
+      <trans-unit id="use %d to any of %@ is not cursed" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not cursed</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not in state of ID: %d">
+      <trans-unit id="use %d to any of %@ is not in state of ID: %d" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not in state of ID: %3$d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not poisoned">
+      <trans-unit id="use %d to any of %@ is not poisoned" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not poisoned</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not violently poisoned">
+      <trans-unit id="use %d to any of %@ is not violently poisoned" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not violently poisoned</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is poisoned">
+      <trans-unit id="use %d to any of %@ is poisoned" xml:space="preserve">
         <source>use %1$d to any of %2$@ is poisoned</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is violently poisoned">
+      <trans-unit id="use %d to any of %@ is violently poisoned" xml:space="preserve">
         <source>use %1$d to any of %2$@ is violently poisoned</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ whose HP is below %d%%">
+      <trans-unit id="use %d to any of %@ whose HP is below %d%%" xml:space="preserve">
         <source>use %1$d to any of %2$@ whose HP is below %3$d%%</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ whose HP is not below %d%%">
+      <trans-unit id="use %d to any of %@ whose HP is not below %d%%" xml:space="preserve">
         <source>use %1$d to any of %2$@ whose HP is not below %3$d%%</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="value %d">
+      <trans-unit id="value %d" xml:space="preserve">
         <source>value %d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="value in combat">
+      <trans-unit id="value in combat" xml:space="preserve">
         <source>value in combat</source>
         <target>value in combat</target>
         <note>expression style</note>
       </trans-unit>
-      <trans-unit id="value only">
+      <trans-unit id="value only" xml:space="preserve">
         <source>value only</source>
         <target>value only</target>
         <note>expression style</note>

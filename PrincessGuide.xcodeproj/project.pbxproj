@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1202CE4322C8C4DC00E9C146 /* StopFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */; };
+		1202CE4522C8C4F100E9C146 /* InhibitHealAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */; };
 		120B71D52196DB6100B45A4A /* FixedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B71D42196DB6100B45A4A /* FixedTabBar.swift */; };
 		120BCAF220F20F3C0029A083 /* BDInfoTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */; };
 		120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF320F2564B0029A083 /* ArrayExtension.swift */; };
@@ -268,7 +270,7 @@
 		12F1261720B954F4005C9659 /* AttackFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261620B954F4005C9659 /* AttackFieldAction.swift */; };
 		12F1261920B95509005C9659 /* HealFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261820B95509005C9659 /* HealFieldAction.swift */; };
 		12F1261B20B95528005C9659 /* ChangeParameterFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261A20B95528005C9659 /* ChangeParameterFieldAction.swift */; };
-		12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261C20B95547005C9659 /* DotFieldAction.swift */; };
+		12F1261D20B95547005C9659 /* AbnormalStateFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261C20B95547005C9659 /* AbnormalStateFieldAction.swift */; };
 		12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261E20B9556A005C9659 /* ChangeSpeedFieldAction.swift */; };
 		12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262020B95588005C9659 /* UBChangeTimeAction.swift */; };
 		12F1262320B955A2005C9659 /* LoopTriggerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262220B955A2005C9659 /* LoopTriggerAction.swift */; };
@@ -298,6 +300,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopFieldAction.swift; sourceTree = "<group>"; };
+		1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InhibitHealAction.swift; sourceTree = "<group>"; };
 		120B71D42196DB6100B45A4A /* FixedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTabBar.swift; sourceTree = "<group>"; };
 		120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDInfoTextCell.swift; sourceTree = "<group>"; };
 		120BCAF320F2564B0029A083 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -572,7 +576,7 @@
 		12F1261620B954F4005C9659 /* AttackFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackFieldAction.swift; sourceTree = "<group>"; };
 		12F1261820B95509005C9659 /* HealFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealFieldAction.swift; sourceTree = "<group>"; };
 		12F1261A20B95528005C9659 /* ChangeParameterFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeParameterFieldAction.swift; sourceTree = "<group>"; };
-		12F1261C20B95547005C9659 /* DotFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFieldAction.swift; sourceTree = "<group>"; };
+		12F1261C20B95547005C9659 /* AbnormalStateFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbnormalStateFieldAction.swift; sourceTree = "<group>"; };
 		12F1261E20B9556A005C9659 /* ChangeSpeedFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSpeedFieldAction.swift; sourceTree = "<group>"; };
 		12F1262020B95588005C9659 /* UBChangeTimeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBChangeTimeAction.swift; sourceTree = "<group>"; };
 		12F1262220B955A2005C9659 /* LoopTriggerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopTriggerAction.swift; sourceTree = "<group>"; };
@@ -1283,7 +1287,7 @@
 				12F1261620B954F4005C9659 /* AttackFieldAction.swift */,
 				12F1261820B95509005C9659 /* HealFieldAction.swift */,
 				12F1261A20B95528005C9659 /* ChangeParameterFieldAction.swift */,
-				12F1261C20B95547005C9659 /* DotFieldAction.swift */,
+				12F1261C20B95547005C9659 /* AbnormalStateFieldAction.swift */,
 				12F1261E20B9556A005C9659 /* ChangeSpeedFieldAction.swift */,
 				12F1262020B95588005C9659 /* UBChangeTimeAction.swift */,
 				12F1262220B955A2005C9659 /* LoopTriggerAction.swift */,
@@ -1301,6 +1305,8 @@
 				12C1131C229578680078BC22 /* MovePartsAction.swift */,
 				12184A7922A1434C00C3FEA6 /* CountBlindAction.swift */,
 				12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */,
+				1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */,
+				1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
 			);
@@ -1679,6 +1685,7 @@
 				12F125F720B9505D005C9659 /* DecoyAction.swift in Sources */,
 				12DA21EF20EFBBE3005FD705 /* EditCharaInBoxViewController.swift in Sources */,
 				12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */,
+				1202CE4522C8C4F100E9C146 /* InhibitHealAction.swift in Sources */,
 				12F1260520B95377005C9659 /* MultipleAction.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
 				12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */,
@@ -1748,7 +1755,7 @@
 				12C5992B2286F6EF00875EE4 /* Decimal+Rounding.swift in Sources */,
 				12E3324220F5EAE200844A6A /* CardCollectionViewController.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
-				12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */,
+				12F1261D20B95547005C9659 /* AbnormalStateFieldAction.swift in Sources */,
 				1213373A225113D000BB701B /* RaidBossTableViewController.swift in Sources */,
 				12DA21EC20EFB932005FD705 /* Box.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
@@ -1793,6 +1800,7 @@
 				126BFBD120F0FAF20059B4ED /* BDInfoViewController.swift in Sources */,
 				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
 				12E64A5B213143330075BE01 /* VLTableViewHeaderFooterView.swift in Sources */,
+				1202CE4322C8C4DC00E9C146 /* StopFieldAction.swift in Sources */,
 				12F125E320B93219005C9659 /* BarrierAction.swift in Sources */,
 				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
@@ -2029,7 +2037,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 113;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2051,7 +2059,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 113;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

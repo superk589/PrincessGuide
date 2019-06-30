@@ -497,7 +497,7 @@
 "Cost %@ TP/s, change attack pattern to %d until TP is zero." = "消耗 %1$@ TP/秒，TP 耗光前改为使用攻击模式 %2$d。";
 
 /* No comment provided by engineer. */
-"Count Blind" = "致盲（指定次数或时间）";
+"Count Blind" = "千里眼";
 
 /* No comment provided by engineer. */
 "Crafted" = "制作";
@@ -782,6 +782,9 @@
 "inevitable physical" = "无法躲闪的物理";
 
 /* No comment provided by engineer. */
+"Inhibit Heal" = "治疗阻碍";
+
+/* No comment provided by engineer. */
 "Instant Death" = "即死";
 
 /* No comment provided by engineer. */
@@ -939,6 +942,9 @@
 
 /* No comment provided by engineer. */
 "Multiple [%@ * lost HP / max HP] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。";
+
+/* No comment provided by engineer. */
+"name" = "名称";
 
 /* No comment provided by engineer. */
 "New %@ Event: %@" = "新%1$@活动：%2$@";
@@ -1139,6 +1145,9 @@
 "Reduce %@ %d%% attack speed for [%@]s." = "降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"Remove field of skill %d (1 represents the first skill in this list) effect %d." = "移除技能 %1$d（1 代表本列表中的第一个）效果 %2$d 产生的场地。";
+
+/* No comment provided by engineer. */
 "Reset" = "重置";
 
 /* No comment provided by engineer. */
@@ -1286,16 +1295,19 @@
 "Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
+"Summon a field of radius %d on %@ to cast effect %d for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，持续释放效果 %3$d，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
 "Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." = "展开一片半径为 %1$d 的区域，每秒对%5$@造成 [%2$@] %3$@伤害，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒治疗 [%3$@]%4$@ HP，持续 [%5$@] 秒。";
+"Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒恢复 [%3$@]%4$@ HP，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s." = "展开一片半径为 %1$d 的区域，每秒治疗%2$@ [%3$@] %4$@ HP，持续 [%5$@] 秒。";
+"Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s." = "展开一片半径为 %1$d 的区域，每秒恢复%2$@ [%3$@] %4$@ HP，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
 "Swing" = "普通攻击";
@@ -1626,6 +1638,9 @@
 
 /* No comment provided by engineer. */
 "What's the features of Pro Edition?" = "专业版中有哪些功能？";
+
+/* No comment provided by engineer. */
+"When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." = "当%1$@受到治疗时，治疗效果无效并造成 [%2$@ * 治疗量] 的伤害，持续 [%3$@] 秒，如果是场地效果触发的，持续时间无限。";
 
 /* No comment provided by engineer. */
 "Who Needs" = "可装备的角色";
