@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M337n"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M382q"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M337n"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M382q"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M337n"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M382q"/>
     </header>
     <body>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -310,6 +309,11 @@
         <target>Action</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." xml:space="preserve">
+        <source>Add %1$@ mark stacks(max %2$@, ID: %3$@) on %4$@ for %5$@s.</source>
+        <target>对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Add [%@ * HP] to next effect's value %d." xml:space="preserve">
         <source>Add [%1$@ * HP] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 提高 [%1$@ * HP]。</target>
@@ -333,6 +337,11 @@
       <trans-unit id="Add [%@ * lost HP] to next effect's value %d." xml:space="preserve">
         <source>Add [%1$@ * lost HP] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 提高 [%1$@ * 损失的 HP]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add [%@ * stacks of mark(ID: %d)] to next effect's value %d." xml:space="preserve">
+        <source>Add [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.</source>
+        <target>使下一个效果的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add [%d] to the counter." xml:space="preserve">
@@ -783,6 +792,16 @@
       <trans-unit id="Condition: if the specific field exists then use %d." xml:space="preserve">
         <source>Condition: if the specific field exists then use %d.</source>
         <target>条件分支：如果指定的场地效果存在则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if %@ is alone, otherwise %d." xml:space="preserve">
+        <source>Condition: use %1$d if %2$@ is alone, otherwise %3$d.</source>
+        <target>条件分支：如果%2$@是单独的则使用 %1$d，否则使用 %3$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if %@ is alone." xml:space="preserve">
+        <source>Condition: use %1$d if %2$@ is alone.</source>
+        <target>条件分支：如果%2$@是单独的则使用 %1$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Confirm" xml:space="preserve">
@@ -1355,11 +1374,6 @@
         <target>标记</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mark %@ with state of ID: %@ with max stacks of %@ for %@s." xml:space="preserve">
-        <source>Mark %1$@ with state of ID: %2$@ with max stacks of %3$@ for %4$@s.</source>
-        <target>对%1$@标记 ID 为 %2$@ 的状态，最大层数 %3$@，持续 %4$@ 秒。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Max Level to %@" xml:space="preserve">
         <source>Max Level to %@</source>
         <target>最大等级提高至 %@</target>
@@ -1438,6 +1452,11 @@
       <trans-unit id="Multiple [%@ * lost HP / max HP] to next effect's value %d." xml:space="preserve">
         <source>Multiple [%1$@ * lost HP / max HP] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Multiple [%@ * stacks of mark(ID: %d)] to next effect's value %d." xml:space="preserve">
+        <source>Multiple [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.</source>
+        <target>使下一个效果的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="New %@ Event: %@" xml:space="preserve">
@@ -1625,11 +1644,6 @@
         <target>种族</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raid" xml:space="preserve">
-        <source>Raid</source>
-        <target>Raid</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Raise" xml:space="preserve">
         <source>Raise</source>
         <target>提高</target>
@@ -1688,6 +1702,11 @@
       <trans-unit id="Reduce %@ %d%% attack speed for [%@]s." xml:space="preserve">
         <source>Reduce %1$@ %2$d%% attack speed for [%3$@]s.</source>
         <target>降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Remove %@ mark stacks(ID: %@) on %@." xml:space="preserve">
+        <source>Remove %1$@ mark stacks(ID: %2$@) on %3$@.</source>
+        <target>移除%3$@ %1$@ 层标记（ID：%2$@）。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Remove field of skill %d (1 represents the first skill in this list) effect %d." xml:space="preserve">
@@ -2045,6 +2064,11 @@
         <target>触发条件：Break 时 %1$d%% 触发，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Trigger: %d%% on critical damaged." xml:space="preserve">
+        <source>Trigger: %d%% on critical damaged.</source>
+        <target>触发条件：被暴击时 %1$d%% 触发。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Trigger: %d%% on damaged." xml:space="preserve">
         <source>Trigger: %d%% on damaged.</source>
         <target>触发条件：受到伤害时 %d%% 触发。</target>
@@ -2285,6 +2309,11 @@
         <target>进攻</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="blinded" xml:space="preserve">
+        <source>blinded</source>
+        <target>黑暗</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="boss" xml:space="preserve">
         <source>boss</source>
         <target>首领级</target>
@@ -2305,14 +2334,39 @@
         <target>增益</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="burned" xml:space="preserve">
+        <source>burned</source>
+        <target>烧伤</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="charmed or confused" xml:space="preserve">
+        <source>charmed or confused</source>
+        <target>魅惑或混乱</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="clan battle" xml:space="preserve">
         <source>clan battle</source>
         <target>公会战</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="controlled" xml:space="preserve">
+        <source>controlled</source>
+        <target>被控制</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="cursed" xml:space="preserve">
+        <source>cursed</source>
+        <target>诅咒</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="debuffs" xml:space="preserve">
         <source>debuffs</source>
         <target>减益</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="decoying" xml:space="preserve">
+        <source>decoying</source>
+        <target>吸引其他目标攻击</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="default" xml:space="preserve">
@@ -2463,6 +2517,11 @@
       <trans-unit id="physics" xml:space="preserve">
         <source>physics</source>
         <target>物理系</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="poisoned" xml:space="preserve">
+        <source>poisoned</source>
+        <target>中毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="princess arena" xml:space="preserve">
@@ -2715,84 +2774,34 @@
         <target>未知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is blinded" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is blinded</source>
-        <target>对%2$@中处于黑暗状态的使用 %1$d</target>
+      <trans-unit id="use %d to %@ if it's alone" xml:space="preserve">
+        <source>use %1$d to %2$@ if it's alone</source>
+        <target>如果%2$@是单独的则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is burned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is burned</source>
-        <target>对%2$@中处于烧伤状态的使用 %1$d</target>
+      <trans-unit id="use %d to %@ if it's not alone" xml:space="preserve">
+        <source>use %1$d to %2$@ if it's not alone</source>
+        <target>如果%2$@不是单独的则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is charmed" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is charmed</source>
-        <target>对%2$@中处于魅惑状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is controlled" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is controlled</source>
-        <target>对%2$@中处于被控制状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is cursed" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is cursed</source>
-        <target>对%2$@中处于诅咒状态的使用 %1$d</target>
+      <trans-unit id="use %d to any of %@ is %@" xml:space="preserve">
+        <source>use %1$d to any of %2$@ is %3$@</source>
+        <target>对%2$@中处于%3$@状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to any of %@ is in state of ID: %d" xml:space="preserve">
         <source>use %1$d to any of %2$@ is in state of ID: %3$d</source>
-        <target>对%2$@中处于 ID 为 %3$d 的状态的使用 %1$d</target>
+        <target>对%2$@中处于 ID 为 %3$d 状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not blinded" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not blinded</source>
-        <target>对%2$@中未处于黑暗状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not burned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not burned</source>
-        <target>对%2$@中未处于烧伤状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not charmed" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not charmed</source>
-        <target>对%2$@中未处于魅惑状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not controlled" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not controlled</source>
-        <target>对%2$@中未处于被控制状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not cursed" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not cursed</source>
-        <target>对%2$@中未处于诅咒状态的使用 %1$d</target>
+      <trans-unit id="use %d to any of %@ is not %@" xml:space="preserve">
+        <source>use %1$d to any of %2$@ is not %3$@</source>
+        <target>对%2$@中未处于%3$@状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to any of %@ is not in state of ID: %d" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not in state of ID: %3$d</source>
-        <target>对%2$@中未处于 ID 为 %3$d 的状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not poisoned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not poisoned</source>
-        <target>对%2$@中未处于中毒状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not violently poisoned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not violently poisoned</source>
-        <target>对%2$@中未处于中猛毒状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is poisoned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is poisoned</source>
-        <target>对%2$@中处于中毒状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is violently poisoned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is violently poisoned</source>
-        <target>对%2$@中处于中猛毒状态的使用 %1$d</target>
+        <target>对%2$@中未处于 ID 为 %3$d 状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to any of %@ whose HP is below %d%%" xml:space="preserve">
@@ -2819,6 +2828,11 @@
         <source>value only</source>
         <target>面板数值</target>
         <note>expression style</note>
+      </trans-unit>
+      <trans-unit id="venomed" xml:space="preserve">
+        <source>venomed</source>
+        <target>中猛毒</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>
   </file>

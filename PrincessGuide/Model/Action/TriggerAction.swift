@@ -41,6 +41,9 @@ class TriggerAction: ActionParameter {
         case .dead:
             let format = NSLocalizedString("Trigger: %d%% on dead.", comment: "")
             return String(format: format, Int(actionValue1.rounded()))
+        case .critical:
+            let format = NSLocalizedString("Trigger: %d%% on critical damaged.", comment: "")
+            return String(format: format, Int(actionValue1.rounded()))
         case .stealthFree:
             let format = NSLocalizedString("Trigger: %d%% on stealth.", comment: "")
             return String(format: format, Int(actionValue1.rounded()))

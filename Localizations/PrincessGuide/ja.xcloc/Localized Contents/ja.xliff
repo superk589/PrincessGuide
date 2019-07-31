@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M337n"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M382q"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M337n"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M382q"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M337n"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M382q"/>
     </header>
     <body>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -309,6 +309,10 @@
         <target>行動</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." xml:space="preserve">
+        <source>Add %1$@ mark stacks(max %2$@, ID: %3$@) on %4$@ for %5$@s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Add [%@ * HP] to next effect's value %d." xml:space="preserve">
         <source>Add [%1$@ * HP] to next effect's value %2$d.</source>
         <note>No comment provided by engineer.</note>
@@ -328,6 +332,10 @@
       </trans-unit>
       <trans-unit id="Add [%@ * lost HP] to next effect's value %d." xml:space="preserve">
         <source>Add [%1$@ * lost HP] to next effect's value %2$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add [%@ * stacks of mark(ID: %d)] to next effect's value %d." xml:space="preserve">
+        <source>Add [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add [%d] to the counter." xml:space="preserve">
@@ -741,6 +749,14 @@
       </trans-unit>
       <trans-unit id="Condition: if the specific field exists then use %d." xml:space="preserve">
         <source>Condition: if the specific field exists then use %d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if %@ is alone, otherwise %d." xml:space="preserve">
+        <source>Condition: use %1$d if %2$@ is alone, otherwise %3$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if %@ is alone." xml:space="preserve">
+        <source>Condition: use %1$d if %2$@ is alone.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Confirm" xml:space="preserve">
@@ -1252,10 +1268,6 @@
         <source>Mark</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mark %@ with state of ID: %@ with max stacks of %@ for %@s." xml:space="preserve">
-        <source>Mark %1$@ with state of ID: %2$@ with max stacks of %3$@ for %4$@s.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Max Level to %@" xml:space="preserve">
         <source>Max Level to %@</source>
         <note>No comment provided by engineer.</note>
@@ -1319,6 +1331,10 @@
       </trans-unit>
       <trans-unit id="Multiple [%@ * lost HP / max HP] to next effect's value %d." xml:space="preserve">
         <source>Multiple [%1$@ * lost HP / max HP] to next effect's value %2$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Multiple [%@ * stacks of mark(ID: %d)] to next effect's value %d." xml:space="preserve">
+        <source>Multiple [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="New %@ Event: %@" xml:space="preserve">
@@ -1487,10 +1503,6 @@
         <target>種族</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raid" xml:space="preserve">
-        <source>Raid</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Raise" xml:space="preserve">
         <source>Raise</source>
         <target>アップ</target>
@@ -1545,6 +1557,10 @@
       <trans-unit id="Reduce %@ %d%% attack speed for [%@]s." xml:space="preserve">
         <source>Reduce %1$@ %2$d%% attack speed for [%3$@]s.</source>
         <target>%1$@の行動速度を%2$d%%ダウン、[%3$@]秒継続する。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Remove %@ mark stacks(ID: %@) on %@." xml:space="preserve">
+        <source>Remove %1$@ mark stacks(ID: %2$@) on %3$@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Remove field of skill %d (1 represents the first skill in this list) effect %d." xml:space="preserve">
@@ -1855,6 +1871,10 @@
         <source>Trigger: %1$d%% on break and last for %2$@s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Trigger: %d%% on critical damaged." xml:space="preserve">
+        <source>Trigger: %d%% on critical damaged.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Trigger: %d%% on damaged." xml:space="preserve">
         <source>Trigger: %d%% on damaged.</source>
         <note>No comment provided by engineer.</note>
@@ -2065,6 +2085,10 @@
         <source>attack</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="blinded" xml:space="preserve">
+        <source>blinded</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="boss" xml:space="preserve">
         <source>boss</source>
         <note>No comment provided by engineer.</note>
@@ -2081,12 +2105,32 @@
         <source>buffs</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="burned" xml:space="preserve">
+        <source>burned</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="charmed or confused" xml:space="preserve">
+        <source>charmed or confused</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="clan battle" xml:space="preserve">
         <source>clan battle</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="controlled" xml:space="preserve">
+        <source>controlled</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="cursed" xml:space="preserve">
+        <source>cursed</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="debuffs" xml:space="preserve">
         <source>debuffs</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="decoying" xml:space="preserve">
+        <source>decoying</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="default" xml:space="preserve">
@@ -2221,6 +2265,10 @@
       <trans-unit id="physics" xml:space="preserve">
         <source>physics</source>
         <target>物理攻撃をするの</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="poisoned" xml:space="preserve">
+        <source>poisoned</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="princess arena" xml:space="preserve">
@@ -2461,68 +2509,28 @@
         <source>unknown type</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is blinded" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is blinded</source>
+      <trans-unit id="use %d to %@ if it's alone" xml:space="preserve">
+        <source>use %1$d to %2$@ if it's alone</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is burned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is burned</source>
+      <trans-unit id="use %d to %@ if it's not alone" xml:space="preserve">
+        <source>use %1$d to %2$@ if it's not alone</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is charmed" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is charmed</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is controlled" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is controlled</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is cursed" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is cursed</source>
+      <trans-unit id="use %d to any of %@ is %@" xml:space="preserve">
+        <source>use %1$d to any of %2$@ is %3$@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to any of %@ is in state of ID: %d" xml:space="preserve">
         <source>use %1$d to any of %2$@ is in state of ID: %3$d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not blinded" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not blinded</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not burned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not burned</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not charmed" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not charmed</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not controlled" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not controlled</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not cursed" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not cursed</source>
+      <trans-unit id="use %d to any of %@ is not %@" xml:space="preserve">
+        <source>use %1$d to any of %2$@ is not %3$@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to any of %@ is not in state of ID: %d" xml:space="preserve">
         <source>use %1$d to any of %2$@ is not in state of ID: %3$d</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not poisoned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not poisoned</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not violently poisoned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not violently poisoned</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is poisoned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is poisoned</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is violently poisoned" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is violently poisoned</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to any of %@ whose HP is below %d%%" xml:space="preserve">
@@ -2546,6 +2554,10 @@
         <source>value only</source>
         <target>value only</target>
         <note>expression style</note>
+      </trans-unit>
+      <trans-unit id="venomed" xml:space="preserve">
+        <source>venomed</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>
   </file>

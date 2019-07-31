@@ -9,20 +9,9 @@
 import Foundation
 
 class IfForAllAction: ActionParameter {
-    
-//    enum IFType: Int {
-//        case stop = 100
-//        case blind = 200
-//        case convert = 300
-//        case decoy = 400
-//        case burn = 500
-//        case targetHP = 900
-//        case defeat = 1000
-//        case skillCount = 1200
-//    }
-    
-    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
+    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
+
         switch actionDetail1 {
         case 0..<100:
             if actionDetail2 != 0 && actionDetail3 != 0 {
@@ -31,6 +20,16 @@ class IfForAllAction: ActionParameter {
             } else if actionDetail2 != 0 {
                 let format = NSLocalizedString("Random event: %d%% chance use %d.", comment: "")
                 return String(format: format, actionDetail1, actionDetail2 % 10)
+            } else {
+                return super.localizedDetail(of: level, property: property, style: style)
+            }
+        case 700:
+            if actionDetail2 != 0 && actionDetail3 != 0 {
+                let format = NSLocalizedString("Condition: use %d if %@ is alone, otherwise %d.", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail3 % 10)
+            } else if actionDetail2 != 0 {
+                let format = NSLocalizedString("Condition: use %d if %@ is alone.", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
             } else {
                 return super.localizedDetail(of: level, property: property, style: style)
             }
