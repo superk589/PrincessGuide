@@ -28,6 +28,11 @@ struct EurekaAppearance {
             themeable.backgroundColor = theme.color.tableViewCell.background
             if let segmentedControl = (themeable as? SegmentedCell<U>)?.segmentedControl {
                 segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
+                segmentedControl.setTitleTextAttributes([.foregroundColor: theme.color.tint], for: .normal)
+                segmentedControl.setTitleTextAttributes([.foregroundColor: theme.color.background], for: .selected)
+                if #available(iOS 13.0, *) {
+                    segmentedControl.selectedSegmentTintColor = theme.color.tint
+                }
             }
             if let switchControl = (themeable as? SwitchCell)?.switchControl {
                 switchControl.onTintColor = theme.color.tint
