@@ -82,7 +82,7 @@ class MembersCell: Cell<[Member]>, CellType {
     }
     
     @objc private func handleTapGestureRecognizer(_ tap: UITapGestureRecognizer) {
-        if let view = tap.view as? IconImageView, let index = icons.index(of: view),
+        if let view = tap.view as? IconImageView, let index = icons.firstIndex(of: view),
             let member = row.value?[index] {
             delegate?.membersCell(self, didSelect: member)
         }

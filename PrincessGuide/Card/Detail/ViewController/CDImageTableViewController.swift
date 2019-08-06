@@ -20,7 +20,8 @@ class CDImageTableViewController: CDTableViewController {
                 return
             }
             KingfisherManager.shared.retrieveImage(with: url, options: [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default), .scaleFactor(UIScreen.main.scale)], progressBlock: nil) { result in
-                completion(result.value?.image)
+                let value = try? result.get()
+                completion(value?.image)
             }
 
         }
@@ -91,7 +92,7 @@ class CDImageTableViewController: CDTableViewController {
     }
     
     override func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL?) {
-        if let index = urls.index(where: { $0.absoluteString == String(url?.absoluteString.split(separator: "@").first ?? "") }) {
+        if let index = urls.firstIndex(where: { $0.absoluteString == String(url?.absoluteString.split(separator: "@").first ?? "") }) {
             let vc = createGalleryViewController(startIndex: index, image: imageView.image)
             presentImageGallery(vc)
         }
@@ -119,7 +120,7 @@ extension CDImageTableViewController: GalleryDisplacedViewsDataSource {
         var item: Int?
         for i in 0..<rows.count {
             if case .album(_, let urls, _) = rows[i].data {
-                if let index = urls.index(where: { $0 == url }) {
+                if let index = urls.firstIndex(where: { $0 == url }) {
                     item = index
                     row = i
                     break

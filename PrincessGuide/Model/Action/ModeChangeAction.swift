@@ -27,10 +27,10 @@ class ModeChangeAction: ActionParameter {
             return super.localizedDetail(of: level, property: property, style: style)
         case .time:
             let format = NSLocalizedString("Change attack pattern to %d for %@s.", comment: "")
-            return String(format: format, actionDetail2 % 10, actionValue1.description)
+            return String(format: format, actionDetail2 % 10, actionValue1.roundedString(roundingRule: nil))
         case .energy:
             let format = NSLocalizedString("Cost %@ TP/s, change attack pattern to %d until TP is zero.", comment: "")
-            return String(format: format, actionValue1.roundedValueString(.down), actionDetail2 % 10)
+            return String(format: format, actionValue1.roundedString(roundingRule: .down), actionDetail2 % 10)
         case .release:
             let format = NSLocalizedString("Change attack pattern back to %d after effect over.", comment: "")
             return String(format: format, actionDetail2 % 10)

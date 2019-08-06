@@ -11,17 +11,24 @@ import Tabman
 import Pageboy
 import Gestalt
 
-class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource {
+class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
     
     static var defaultTabIndex: Int = 1
     
-    private var viewControllers: [UIViewController]
+    private var viewControllers = [UIViewController]()
     
     private var enemy: Enemy
     
     init(enemy: Enemy, isMinion: Bool = false) {
         self.enemy = enemy
-        viewControllers = [EDResistTableViewController(enemy: enemy), EDSkillTableViewController(enemy: enemy), EDStatusTableViewController(enemy: enemy, isMinion: isMinion)]
+        if enemy.resist != nil {
+            viewControllers.append(EDResistTableViewController(enemy: enemy))
+            items.append(TMBarItem(title: NSLocalizedString("Resist", comment: "")))
+        }
+        viewControllers.append(EDSkillTableViewController(enemy: enemy))
+        items.append(TMBarItem(title: NSLocalizedString("Skill", comment: "")))
+        viewControllers.append(EDStatusTableViewController(enemy: enemy, isMinion: isMinion))
+        items.append(TMBarItem(title: NSLocalizedString("Status", comment: "")))
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = enemy.base.name
         print("load enemy, id: \(enemy.unit.unitId)")
@@ -31,35 +38,30 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         fatalError("init(coder:) has not been implemented")
     }
     
+    private var items = [TMBarItem]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
         
-        let items = [NSLocalizedString("Resist", comment: ""),
-                     NSLocalizedString("Skill", comment: ""),
-                     NSLocalizedString("Status", comment: "")]
-            .map { Item(title: $0) }
-        
         dataSource = self
-        bar.items = items
-        bar.location = .bottom
-        
+        let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>()
+        let systemBar = bar.systemBar()
+        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        bar.layout.transitionStyle = .progressive
+        addBar(systemBar, dataSource: self, at: .bottom)
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
             navigationBar?.barStyle = theme.barStyle
             
             themeable.view.backgroundColor = theme.color.background
-            themeable.bar.appearance = TabmanBar.Appearance({ (appearance) in
-                appearance.indicator.color = theme.color.tint
-                appearance.state.selectedColor = theme.color.tint
-                appearance.state.color = theme.color.lightText
-                appearance.layout.itemDistribution = .centered
-                appearance.style.background = .blur(style: theme.blurEffectStyle)
-                appearance.indicator.preferredStyle = .clear
-                appearance.layout.extendBackgroundEdgeInsets = true
+            bar.indicator.tintColor = theme.color.tint
+            bar.buttons.customize({ (button) in
+                button.selectedTintColor = theme.color.tint
+                button.tintColor = theme.color.lightText
             })
+            systemBar.backgroundStyle = .blur(style: theme.blurEffectStyle)
         }
         
     }
@@ -73,7 +75,11 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: EDTabViewController.defaultTabIndex)
+        if EDTabViewController.defaultTabIndex < viewControllers.count {
+            return .at(index: EDTabViewController.defaultTabIndex)
+        } else {
+            return .last
+        }
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
@@ -86,5 +92,9 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         let nc = UINavigationController(rootViewController: vc)
         nc.modalPresentationStyle = .formSheet
         present(nc, animated: true, completion: nil)
+    }
+    
+    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
+        return items[index]
     }
 }

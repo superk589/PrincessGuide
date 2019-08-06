@@ -2,7 +2,10 @@
 "CFBundleDisplayName" = "Hatsune's Notes";
 
 /* Bundle name */
-"CFBundleName" = "$(PRODUCT_NAME)";
+"CFBundleName" = "PrincessGuide";
+
+/* Privacy - Calendars Usage Description */
+"NSCalendarsUsageDescription" = "事件を保存するためにアルバムへのアクセスが必要です。";
 
 /* Privacy - Photo Library Additions Usage Description */
 "NSPhotoLibraryAddUsageDescription" = "画像を保存するためにアルバムへのアクセスが必要です。";

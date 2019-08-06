@@ -33,10 +33,10 @@ class MoveAction: ActionParameter {
         case .absoluteReturn:
             if actionValue1 > 0 {
                 let format = NSLocalizedString("Change self position %@ forward then return.", comment: "")
-                return String(format: format, actionValue1.roundedValueString(.down))
+                return String(format: format, actionValue1.roundedString(roundingRule: .down))
             } else {
                 let format = NSLocalizedString("Change self position %@ backward then return.", comment: "")
-                return String(format: format, (-actionValue1).roundedValueString(.down))
+                return String(format: format, (-actionValue1).roundedString(roundingRule: .down))
             }
         case .target:
             let format = NSLocalizedString("Change self position to %@.", comment: "")
@@ -44,26 +44,26 @@ class MoveAction: ActionParameter {
         case .absolute, .absoluteWithoutDirection:
             if actionValue1 > 0 {
                 let format = NSLocalizedString("Change self position %@ forward.", comment: "")
-                return String(format: format, actionValue1.roundedValueString(.down))
+                return String(format: format, actionValue1.roundedString(roundingRule: .down))
             } else {
                 let format = NSLocalizedString("Change self position %@ backward.", comment: "")
-                return String(format: format, (-actionValue1).roundedValueString(.down))
+                return String(format: format, (-actionValue1).roundedString(roundingRule: .down))
             }
         case .targetByVelocity:
             if actionValue1 > 0 {
                 let format = NSLocalizedString("Move to %@ in front of %@ with velocity %@/s.", comment: "")
-                return String(format: format, actionValue1.roundedValueString(.down), targetParameter.buildTargetClause(), actionValue2.roundedValueString(.down).description)
+                return String(format: format, actionValue1.roundedString(roundingRule: .down), targetParameter.buildTargetClause(), actionValue2.roundedString(roundingRule: .down).description)
             } else {
                 let format = NSLocalizedString("Move to %@ behind of %@ with velocity %@/s.", comment: "")
-                return String(format: format, (-actionValue1).roundedValueString(.down), targetParameter.buildTargetClause(), actionValue2.roundedValueString(.down).description)
+                return String(format: format, (-actionValue1).roundedString(roundingRule: .down), targetParameter.buildTargetClause(), actionValue2.roundedString(roundingRule: .down).description)
             }
         case .absoluteByVelocity:
             if actionValue1 > 0 {
                 let format = NSLocalizedString("Move forward %@ with velocity %@/s.", comment: "")
-                return String(format: format, actionValue1.roundedValueString(.down), actionValue2.description)
+                return String(format: format, actionValue1.roundedString(roundingRule: .down), actionValue2.roundedString(roundingRule: nil))
             } else {
                 let format = NSLocalizedString("Move backward %@ with velocity %@/s.", comment: "")
-                return String(format: format, (-actionValue1).roundedValueString(.down), actionValue2.description)
+                return String(format: format, (-actionValue1).roundedString(roundingRule: .down), actionValue2.roundedString(roundingRule: nil))
             }
         default:
             return super.localizedDetail(of: level, property: property, style: style)

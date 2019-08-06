@@ -50,6 +50,12 @@ class EditBoxViewController: FormViewController {
     
     let backgroundImageView = UIImageView()
     
+    private lazy var navigationAccessoryView = NavigationAccessoryView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44.0))
+    
+    override var customNavigationAccessoryView: (UIView & NavigationAccessory)? {
+        return navigationAccessoryView
+    }
+
     lazy var saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAndPop))
     
     override func viewDidLoad() {

@@ -23,7 +23,7 @@ class ChannelAction: AuraAction {
         switch releaseType {
         case .damage:
             let format = NSLocalizedString("Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@.", comment: "")
-            return String(format: format, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property), auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .up, style: style, property: property), percentModifier.description, auraType.description)
+            return String(format: format, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property), auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), percentModifier.description, auraType.description)
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }

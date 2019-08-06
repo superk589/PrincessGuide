@@ -1,4 +1,10 @@
 /* No comment provided by engineer. */
+" Critical damage is %@ times as normal damage." = "クリティカルダメージは通常のダメージ%@倍です。";
+
+/* clause separator */
+", " = "、";
+
+/* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ for [%@]s." = "%2$@に%5$@を[%3$@]%4$@%1$@、[%6$@]秒継続する。";
 
 /* [the farthest two] [enemy] [targets]
@@ -8,6 +14,9 @@
 /* [the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500] */
 "%@ %@ %@ in range %d" = "%4$d範囲内%1$@%2$@%3$@";
+
+/* No comment provided by engineer. */
+"%@ %@ %@ x%@" = "%1$@%2$@%3$@ x%4$@";
 
 /* No comment provided by engineer. */
 "%@ %@ and deal [%@] damage per second for [%@]s." = "%2$@に%1$@状態付与、毎秒[%3$@]のダメージを与える、[%4$@]秒継続する。";
@@ -26,11 +35,31 @@
 /* [friendly] [physics] targets in range [500] */
 "%@ %@ targets in range %d" = "%3$d範囲内%2$@%1$@全体";
 
+/* No comment provided by engineer. */
+"%@ %@ x%@" = "%1$@%2$@ x%3$@";
+
+/* No comment provided by engineer. */
+"%@ boss" = "%@首領";
+
+/* No comment provided by engineer. */
+"%@ Damage is reduced on low level players." = "%@低レベルのプレイヤーにダメージが軽減されます。";
+
 /* target type */
 "%@ farthest" = "最も遠い%@";
 
 /* No comment provided by engineer. */
 "%@ Feedback" = "%@ フィードバック";
+
+/* [the second to fourth farthest] front [enemy] [targets] */
+"%@ front %@ %@" = "前方%1$@%2$@%3$@";
+
+/* [the farthest two] front [enemy] [targets] in range [500]
+   [the second to fourth farthest] front [enemy] [targets] in range [500] */
+"%@ front %@ %@ in range %d" = "前方%4$d範囲内%1$@%2$@%3$@";
+
+/* [the nearest] front [enemy] target in range [500]
+   [the second nearest] front [enemy] target in range [500] */
+"%@ front %@ target in range %d" = "前方%3$d範囲内%1$@%2$@";
 
 /* No comment provided by engineer. */
 "%@ highest ATK" = "物理攻撃力が高い%@";
@@ -59,6 +88,9 @@
 /* No comment provided by engineer. */
 "%@ magic" = "魔法攻撃をする%@";
 
+/* No comment provided by engineer. */
+"%@ minion" = "%@ミニオン";
+
 /* target type */
 "%@ most backward" = "最も後の%@";
 
@@ -74,6 +106,12 @@
 /* No comment provided by engineer. */
 "%@ random" = "ランダム%@";
 
+/* No comment provided by engineer. */
+"%@ random(once)" = "ランダム%@（初回のみ）";
+
+/* No comment provided by engineer. */
+"%@ receives your blessing." = "％@はあなたの祝福を受けました。";
+
 /* [enemy] targets in range [500] */
 "%@ targets in range %d" = "%2$d範囲内%1$@全体";
 
@@ -84,16 +122,31 @@
 "%@ unknown type" = "未知種類%@";
 
 /* No comment provided by engineer. */
+"%@'s birthday" = "％@の誕生日";
+
+/* No comment provided by engineer. */
 "%@/%@" = "%1$@ 月 %2$@ 日";
+
+/* No comment provided by engineer. */
+"%d in front of %@, summon a minion of ID: %d." = "";
 
 /* No comment provided by engineer. */
 "About" = "アプリについて";
 
 /* No comment provided by engineer. */
+"Accuracy" = "命中";
+
+/* No comment provided by engineer. */
 "Action" = "行動";
 
 /* No comment provided by engineer. */
+"Add [%@ * count of defeated enemies] to next effect's value %d." = "";
+
+/* No comment provided by engineer. */
 "Add additional [%@] damage per attack with max [%@] stacks to current target." = "攻撃する度にダメージ[%1$@]増加、最大[%2$@]回まで累積する。";
+
+/* No comment provided by engineer. */
+"Age" = "";
 
 /* No comment provided by engineer. */
 "all" = "全体";
@@ -106,6 +159,12 @@
 
 /* No comment provided by engineer. */
 "App Version" = "アプリバージョン";
+
+/* No comment provided by engineer. */
+"Appear after %@s since wave start." = "";
+
+/* No comment provided by engineer. */
+"Apply" = "";
 
 /* No comment provided by engineer. */
 "Ascending" = "昇順";
@@ -126,6 +185,9 @@
 "Back" = "後衛";
 
 /* No comment provided by engineer. */
+"Batch Edit" = "一括編集";
+
+/* No comment provided by engineer. */
 "Become invulnerable for [%@]s." = "無敵状態になる、[%@]秒継続する。";
 
 /* No comment provided by engineer. */
@@ -135,7 +197,13 @@
 "Birthday" = "誕生日";
 
 /* No comment provided by engineer. */
+"Birthday Notification" = "誕生日通知";
+
+/* No comment provided by engineer. */
 "Blind" = "暗闇";
+
+/* No comment provided by engineer. */
+"Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss." = "";
 
 /* No comment provided by engineer. */
 "Blood Type" = "血液型";
@@ -144,7 +212,22 @@
 "Bond Rank" = "绊ランク";
 
 /* No comment provided by engineer. */
+"Box Detail" = "";
+
+/* No comment provided by engineer. */
 "Burn" = "火傷";
+
+/* No comment provided by engineer. */
+"Calendar Permission" = "カレンダー許可";
+
+/* No comment provided by engineer. */
+"Calendar Settings" = "カレンダー設定";
+
+/* No comment provided by engineer. */
+"Campaign" = "キャンペーン";
+
+/* No comment provided by engineer. */
+"Cancel" = "取消";
 
 /* No comment provided by engineer. */
 "Cards" = "キャラクター";
@@ -168,6 +251,9 @@
 "Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." = "";
+
+/* No comment provided by engineer. */
 "Cast an unknown barrier %d on %@ for [%@]s." = "%2$@に未知バリア %1$d を展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
@@ -180,7 +266,22 @@
 "Center" = "中衛";
 
 /* No comment provided by engineer. */
+"Change attack pattern back to %d after effect over." = "";
+
+/* Birthday notification title */
+"Chara Birthday" = "キャラの誕生日";
+
+/* No comment provided by engineer. */
+"Chara Management" = "キャラ管理";
+
+/* No comment provided by engineer. */
 "Chara Name" = "キャラ名";
+
+/* No comment provided by engineer. */
+"Charas" = "キャラ";
+
+/* No comment provided by engineer. */
+"Charas Count" = "キャラ数";
 
 /* No comment provided by engineer. */
 "Charm" = "魅了";
@@ -414,6 +515,9 @@
 "Normal" = "NORMAL";
 
 /* No comment provided by engineer. */
+"Notification Permission" = "通知許可";
+
+/* No comment provided by engineer. */
 "OK" = "はい";
 
 /* No comment provided by engineer. */
@@ -580,9 +684,6 @@
 
 /* target type */
 "targets of last effect or the %@ nearest" = "同じか%@近い";
-
-/* No comment provided by engineer. */
-"Taunt all enemy targets for [%@]s." = "敵全体を挑発する、[%@]秒継続する。";
 
 /* target type */
 "the %@ farthest" = "%@遠い";

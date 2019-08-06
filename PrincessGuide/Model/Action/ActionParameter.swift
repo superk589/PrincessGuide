@@ -45,7 +45,7 @@ class ActionParameter {
         case 19:
             return ChargeAction.self
         case 20:
-            return TauntAction.self
+            return DecoyAction.self
         case 21:
             return NoDamageAction.self
         case 22:
@@ -83,7 +83,7 @@ class ActionParameter {
         case 38:
             return ChangeParameterFieldAction.self
         case 39:
-            return DotFieldAction.self
+            return AbnormalStateFieldAction.self
         case 40:
             return ChangeSpeedFieldAction.self
         case 41:
@@ -110,6 +110,18 @@ class ActionParameter {
             return ChangeBodyWidthAction.self
         case 53:
             return IFExistsFieldForAllAction.self
+        case 54:
+            return StealthAction.self
+        case 55:
+            return MovePartsAction.self
+        case 56:
+            return CountBlindAction.self
+        case 57:
+            return CountDownAction.self
+        case 58:
+            return StopFieldAction.self
+        case 59:
+            return InhibitHealAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -194,7 +206,7 @@ class ActionParameter {
                 .joined(separator: ","),
             rawActionValues
                 .filter { $0 != 0 }
-                .map(String.init)
+                .map(String.init(_:))
                 .joined(separator: ", ")
         )
     }
@@ -213,7 +225,7 @@ class ActionParameter {
     
     func buildExpression(of level: Int,
                          actionValues: [ActionValue]? = nil,
-                         roundingRule: FloatingPointRoundingRule? = .down,
+                         roundingRule: FloatingPointRoundingRule? = .towardZero,
                          style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle,
                          property: Property = .zero,
                          isHealing: Bool = false,
@@ -225,17 +237,17 @@ class ActionParameter {
             
             let expression = (actionValues ?? self.actionValues).map { value in
                 var part = ""
-                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
+                if let initialValue = Decimal(string: value.initial), let perLevelValue = Decimal(string: value.perLevel) {
                     let roundingRule = value.key == nil ? roundingRule : nil
                     switch (initialValue, perLevelValue) {
                     case (0, 0):
                         break
                     case (0, _):
-                        part = "\((perLevelValue * Double(level)).roundedValueString(roundingRule))@\(level)"
+                        part = "\((perLevelValue * Decimal(level)).roundedString(roundingRule: roundingRule))@\(level)"
                     case (_, 0):
-                        part = "\(initialValue.roundedValueString(roundingRule))"
+                        part = initialValue.roundedString(roundingRule: roundingRule)
                     case (_, _):
-                        part = "\((perLevelValue * Double(level) + initialValue).roundedValueString(roundingRule))@\(level)"
+                        part = "\((perLevelValue * Decimal(level) + initialValue).roundedString(roundingRule: roundingRule))@\(level)"
                     }
                     if let key = value.key {
                         switch (initialValue, perLevelValue) {
@@ -295,47 +307,68 @@ class ActionParameter {
                 return hasBracesIfNeeded ? bracesIfNeeded(content: expression) : expression
             }
             
+        case .rawValueID:
+            
+            let expression = (actionValues ?? self.actionValues).map { value in
+                var part = ""
+                let format = NSLocalizedString("value %d", comment: "")
+                let initialValue = String(format: format, value.startIndex)
+                let perLevelValue = String(format: format, value.startIndex + 1)
+                part = "\(initialValue) + \(perLevelValue) * \(NSLocalizedString("SLv.", comment: ""))"
+                if let key = value.key {
+                    part = "(\(part)) * \(key.description)"
+                }
+                return part
+                }
+                .filter { $0 != "" }
+                .joined(separator: " + ")
+            
+            if expression == "" {
+                return "0"
+            } else {
+                return hasBracesIfNeeded ? bracesIfNeeded(content: expression) : expression
+            }
         case .valueOnly:
             
-            var fixedValue = 0.0
+            var fixedValue: Decimal = 0.0
             
             for value in actionValues ?? self.actionValues {
-                var part = 0.0
-                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
-                    part = initialValue + perLevelValue * Double(level)
+                var part: Decimal = 0.0
+                if let initialValue = Decimal(string: value.initial), let perLevelValue = Decimal(string: value.perLevel) {
+                    part = initialValue + perLevelValue * Decimal(level)
                 }
                 if let key = value.key {
-                    part = part * property.item(for: key).value
+                    part = part * Decimal(property.item(for: key).value)
                 }
                 fixedValue += part
             }
             
-            return fixedValue.roundedValueString(roundingRule)
+            return fixedValue.roundedString(roundingRule: roundingRule)
             
         case .valueInCombat:
             
-            var fixedValue = 0.0
+            var fixedValue: Decimal = 0.0
             
             for value in actionValues ?? self.actionValues {
-                var part = 0.0
-                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
-                    part = initialValue + perLevelValue * Double(level)
+                var part: Decimal = 0.0
+                if let initialValue = Decimal(string: value.initial), let perLevelValue = Decimal(string: value.perLevel) {
+                    part = initialValue + perLevelValue * Decimal(level)
                 }
                 if let key = value.key {
-                    part = part * property.item(for: key).value
+                    part = part * Decimal(property.item(for: key).value)
                 }
                 fixedValue += part
             }
             
             if isHealing {
-                fixedValue *= (property.hpRecoveryRate / 100 + 1)
+                fixedValue *= (Decimal(property.hpRecoveryRate) / 100 + 1)
             }
             
             if isSelfTPRestoring {
-                fixedValue *= (property.energyRecoveryRate / 100 + 1)
+                fixedValue *= (Decimal(property.energyRecoveryRate) / 100 + 1)
             }
             
-            return fixedValue.roundedValueString(roundingRule)
+            return fixedValue.roundedString(roundingRule: roundingRule)
         }
         
     }
@@ -346,6 +379,7 @@ struct ActionValue {
     let initial: String
     let perLevel: String
     let key: PropertyKey?
+    let startIndex: Int
 }
 
 enum PercentModifier: CustomStringConvertible {
@@ -462,18 +496,10 @@ enum ActionType: Int {
     case division
     case changeWidth
     case ifExistsFieldForAll
+    case stealth
+    case moveParts
+    case countBlind
+    case countDown
     case ex = 90
     case exPlus
-}
-
-extension Double {
-    
-    func roundedValueString(_ roundingRule: FloatingPointRoundingRule? = nil) -> String {
-        if let roundingRule = roundingRule {
-            return String(Int(self.rounded(roundingRule)))
-        } else {
-            return String(self)
-        }
-    }
-    
 }

@@ -29,6 +29,7 @@ enum DotDetail: Int, CustomStringConvertible {
     case poison
     case burn
     case curse
+    case violentPoison
     case unknown
     
     var description: String {
@@ -41,6 +42,8 @@ enum DotDetail: Int, CustomStringConvertible {
             return NSLocalizedString("Burn", comment: "")
         case .curse:
             return NSLocalizedString("Curse", comment: "")
+        case .violentPoison:
+            return NSLocalizedString("Violent Poison", comment: "")
         default:
             return NSLocalizedString("Unknown", comment: "")
         }
@@ -110,6 +113,8 @@ enum AilmentType: Int, CustomStringConvertible {
     case silence
     case confuse = 19
     case instantDeath = 30
+    case countBlind = 56
+    case inhibitHeal = 59
     case unknown
     
     var description: String {
@@ -132,6 +137,10 @@ enum AilmentType: Int, CustomStringConvertible {
             return NSLocalizedString("Unknown Effect", comment: "")
         case .confuse:
             return NSLocalizedString("Confuse", comment: "")
+        case .countBlind:
+            return NSLocalizedString("Count Blind", comment: "")
+        case .inhibitHeal:
+            return NSLocalizedString("Inhibit Heal", comment: "")
         }
     }
 }

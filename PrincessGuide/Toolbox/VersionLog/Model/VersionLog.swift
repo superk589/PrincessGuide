@@ -128,6 +128,7 @@ struct VLCampaign: Codable, VLElement {
         case hard = 2
         case mission = 4
         case dungeon = 5
+        case shrine = 7
         var description: String {
             switch self {
             case .unknown:
@@ -140,6 +141,8 @@ struct VLCampaign: Codable, VLElement {
                 return NSLocalizedString("Mission", comment: "")
             case .dungeon:
                 return NSLocalizedString("Dungeon", comment: "")
+            case .shrine:
+                return NSLocalizedString("Shrine", comment: "")
             }
             
         }
@@ -275,7 +278,7 @@ struct VLUnit: Codable, VLElement {
     let id: String
     let name: String
     let rarity: String
-    let realName: String
+    let realName: String?
 }
 
 struct VLStory: Codable, VLElement {

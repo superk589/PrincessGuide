@@ -119,7 +119,7 @@ class EDSettingsViewController: FormViewController {
                 row.displayValueFor = { (rowValue: String?) in
                     return rowValue.flatMap { Setting.ExpressionStyle(rawValue: $0)?.description }
                 }
-                row.options = Setting.ExpressionStyle.allLabels.map { $0.rawValue }
+                row.options = Setting.ExpressionStyle.allCases.map { $0.rawValue }
                 row.value = Setting.default.expressionStyle.rawValue
                 
                 }.cellSetup(cellSetup(cell:row:))

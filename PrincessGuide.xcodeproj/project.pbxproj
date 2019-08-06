@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0873DCABFBE8D57C7AF3BFF8 /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */; };
+		1202CE4322C8C4DC00E9C146 /* StopFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */; };
+		1202CE4522C8C4F100E9C146 /* InhibitHealAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */; };
 		120B71D52196DB6100B45A4A /* FixedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B71D42196DB6100B45A4A /* FixedTabBar.swift */; };
 		120BCAF220F20F3C0029A083 /* BDInfoTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */; };
 		120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF320F2564B0029A083 /* ArrayExtension.swift */; };
@@ -29,6 +30,9 @@
 		12124F462089C9E1001C1A6F /* PropertyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F452089C9E1001C1A6F /* PropertyKey.swift */; };
 		12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4D208EC1A4001C1A6F /* Ailment.swift */; };
 		12125EEE2202C06600A5CEB9 /* IFExistsFieldForAllAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */; };
+		1213373A225113D000BB701B /* RaidBossTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12133739225113D000BB701B /* RaidBossTableViewController.swift */; };
+		12184A7A22A1434C00C3FEA6 /* CountBlindAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12184A7922A1434C00C3FEA6 /* CountBlindAction.swift */; };
+		12184A7C22A14CD000C3FEA6 /* CountDownAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */; };
 		1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */; };
 		1218E61620A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61420A6D53700D68610 /* InfoPlist.strings */; };
 		1218E61920A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61720A6D53700D68610 /* InfoPlist.strings */; };
@@ -165,6 +169,7 @@
 		129A7F9120A3211900D93996 /* EnemyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F9020A3211900D93996 /* EnemyView.swift */; };
 		12A6A7D42163B09F00877074 /* DispelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A6A7D32163B09F00877074 /* DispelAction.swift */; };
 		12A776902153E59E00972187 /* EDSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A7768F2153E59E00972187 /* EDSettingsViewController.swift */; };
+		12B0D2DE228E4B5E0053C813 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */; };
 		12B21F9020F597EE00A04777 /* ChooseMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */; };
 		12B66CF520FB62DB00AB9D2A /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */; };
 		12B85D2B2089840A0088F5FB /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B85D2A2089840A0088F5FB /* Skill.swift */; };
@@ -176,10 +181,15 @@
 		12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */; };
 		12B8F58B214A5B3600C039DE /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58A214A5B3600C039DE /* Tower.swift */; };
 		12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */; };
+		12C1131D229578680078BC22 /* MovePartsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1131C229578680078BC22 /* MovePartsAction.swift */; };
 		12C24B97217ACCA80079AFE0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B96217ACCA80079AFE0 /* Store.swift */; };
 		12C24B99217ACD4A0079AFE0 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B98217ACD4A0079AFE0 /* Voice.swift */; };
 		12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */; };
 		12C4413E209C92AF00016BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C44140209C92AF00016BDC /* LaunchScreen.storyboard */; };
+		12C5992B2286F6EF00875EE4 /* Decimal+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5992A2286F6EF00875EE4 /* Decimal+Rounding.swift */; };
+		12C5992E2287C92B00875EE4 /* CalendarSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5992D2287C92B00875EE4 /* CalendarSettingViewController.swift */; };
+		12C599302287DC4200875EE4 /* GameEventCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5992F2287DC4200875EE4 /* GameEventCenter.swift */; };
+		12C599322287DE4400875EE4 /* GameEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C599312287DE4400875EE4 /* GameEvent.swift */; };
 		12C5D26D21D9FFEE00C99425 /* HatsuneEventQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */; };
 		12C5D26F21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
@@ -209,6 +219,7 @@
 		12E64A5521313AC50075BE01 /* VLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5421313AC50075BE01 /* VLTableViewController.swift */; };
 		12E64A5721313AD40075BE01 /* VLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5621313AD40075BE01 /* VLTableViewCell.swift */; };
 		12E64A5B213143330075BE01 /* VLTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5A213143330075BE01 /* VLTableViewHeaderFooterView.swift */; };
+		12E6BEE1227800A6000BAADC /* StealthAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6BEE0227800A6000BAADC /* StealthAction.swift */; };
 		12EBF70B20F7952600120C2A /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70A20F7952600120C2A /* MemberView.swift */; };
 		12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */; };
 		12EBF71120F7BC0500120C2A /* StrokedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF71020F7BC0500120C2A /* StrokedLabel.swift */; };
@@ -240,7 +251,7 @@
 		12F125F120B94E2B005C9659 /* TriggerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F020B94E2B005C9659 /* TriggerAction.swift */; };
 		12F125F320B9501F005C9659 /* DamageChargeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F220B9501F005C9659 /* DamageChargeAction.swift */; };
 		12F125F520B95037005C9659 /* ChargeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F420B95037005C9659 /* ChargeAction.swift */; };
-		12F125F720B9505D005C9659 /* TauntAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F620B9505D005C9659 /* TauntAction.swift */; };
+		12F125F720B9505D005C9659 /* DecoyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F620B9505D005C9659 /* DecoyAction.swift */; };
 		12F125F920B950F9005C9659 /* NoDamageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125F820B950F9005C9659 /* NoDamageAction.swift */; };
 		12F125FB20B952CA005C9659 /* ChangePatternAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125FA20B952CA005C9659 /* ChangePatternAction.swift */; };
 		12F125FD20B952EB005C9659 /* IfForChildrenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */; };
@@ -259,7 +270,7 @@
 		12F1261720B954F4005C9659 /* AttackFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261620B954F4005C9659 /* AttackFieldAction.swift */; };
 		12F1261920B95509005C9659 /* HealFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261820B95509005C9659 /* HealFieldAction.swift */; };
 		12F1261B20B95528005C9659 /* ChangeParameterFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261A20B95528005C9659 /* ChangeParameterFieldAction.swift */; };
-		12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261C20B95547005C9659 /* DotFieldAction.swift */; };
+		12F1261D20B95547005C9659 /* AbnormalStateFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261C20B95547005C9659 /* AbnormalStateFieldAction.swift */; };
 		12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1261E20B9556A005C9659 /* ChangeSpeedFieldAction.swift */; };
 		12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262020B95588005C9659 /* UBChangeTimeAction.swift */; };
 		12F1262320B955A2005C9659 /* LoopTriggerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1262220B955A2005C9659 /* LoopTriggerAction.swift */; };
@@ -275,6 +286,7 @@
 		12F1263D20BCD86B005C9659 /* CDTextItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263C20BCD86B005C9659 /* CDTextItemView.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
+		94018D168BCD58B74960DD7C /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,7 +300,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopFieldAction.swift; sourceTree = "<group>"; };
+		1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InhibitHealAction.swift; sourceTree = "<group>"; };
 		120B71D42196DB6100B45A4A /* FixedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTabBar.swift; sourceTree = "<group>"; };
 		120BCAF120F20F3C0029A083 /* BDInfoTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDInfoTextCell.swift; sourceTree = "<group>"; };
 		120BCAF320F2564B0029A083 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -310,6 +323,9 @@
 		12124F452089C9E1001C1A6F /* PropertyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKey.swift; sourceTree = "<group>"; };
 		12124F4D208EC1A4001C1A6F /* Ailment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ailment.swift; sourceTree = "<group>"; };
 		12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExistsFieldForAllAction.swift; sourceTree = "<group>"; };
+		12133739225113D000BB701B /* RaidBossTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidBossTableViewController.swift; sourceTree = "<group>"; };
+		12184A7922A1434C00C3FEA6 /* CountBlindAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountBlindAction.swift; sourceTree = "<group>"; };
+		12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownAction.swift; sourceTree = "<group>"; };
 		1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDBasicTableViewCell.swift; sourceTree = "<group>"; };
 		1218E61220A6C3F500D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		1218E61320A6C3F500D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -459,6 +475,7 @@
 		129A7F9020A3211900D93996 /* EnemyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyView.swift; sourceTree = "<group>"; };
 		12A6A7D32163B09F00877074 /* DispelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispelAction.swift; sourceTree = "<group>"; };
 		12A7768F2153E59E00972187 /* EDSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSettingsViewController.swift; sourceTree = "<group>"; };
+		12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMemberViewController.swift; sourceTree = "<group>"; };
 		12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
 		12B85D2A2089840A0088F5FB /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
@@ -470,10 +487,15 @@
 		12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerTableViewController.swift; sourceTree = "<group>"; };
 		12B8F58A214A5B3600C039DE /* Tower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
 		12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerQuestTabViewController.swift; sourceTree = "<group>"; };
+		12C1131C229578680078BC22 /* MovePartsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovePartsAction.swift; sourceTree = "<group>"; };
 		12C24B96217ACCA80079AFE0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		12C24B98217ACD4A0079AFE0 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePlayer.swift; sourceTree = "<group>"; };
 		12C4413F209C92AF00016BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		12C5992A2286F6EF00875EE4 /* Decimal+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Rounding.swift"; sourceTree = "<group>"; };
+		12C5992D2287C92B00875EE4 /* CalendarSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSettingViewController.swift; sourceTree = "<group>"; };
+		12C5992F2287DC4200875EE4 /* GameEventCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEventCenter.swift; sourceTree = "<group>"; };
+		12C599312287DE4400875EE4 /* GameEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEvent.swift; sourceTree = "<group>"; };
 		12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventQuest.swift; sourceTree = "<group>"; };
 		12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventSpecialBattle.swift; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
@@ -503,6 +525,7 @@
 		12E64A5421313AC50075BE01 /* VLTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewController.swift; sourceTree = "<group>"; };
 		12E64A5621313AD40075BE01 /* VLTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewCell.swift; sourceTree = "<group>"; };
 		12E64A5A213143330075BE01 /* VLTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		12E6BEE0227800A6000BAADC /* StealthAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StealthAction.swift; sourceTree = "<group>"; };
 		12EBF70A20F7952600120C2A /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 		12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		12EBF71020F7BC0500120C2A /* StrokedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokedLabel.swift; sourceTree = "<group>"; };
@@ -534,7 +557,7 @@
 		12F125F020B94E2B005C9659 /* TriggerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerAction.swift; sourceTree = "<group>"; };
 		12F125F220B9501F005C9659 /* DamageChargeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageChargeAction.swift; sourceTree = "<group>"; };
 		12F125F420B95037005C9659 /* ChargeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeAction.swift; sourceTree = "<group>"; };
-		12F125F620B9505D005C9659 /* TauntAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TauntAction.swift; sourceTree = "<group>"; };
+		12F125F620B9505D005C9659 /* DecoyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoyAction.swift; sourceTree = "<group>"; };
 		12F125F820B950F9005C9659 /* NoDamageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDamageAction.swift; sourceTree = "<group>"; };
 		12F125FA20B952CA005C9659 /* ChangePatternAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePatternAction.swift; sourceTree = "<group>"; };
 		12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfForChildrenAction.swift; sourceTree = "<group>"; };
@@ -553,7 +576,7 @@
 		12F1261620B954F4005C9659 /* AttackFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackFieldAction.swift; sourceTree = "<group>"; };
 		12F1261820B95509005C9659 /* HealFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealFieldAction.swift; sourceTree = "<group>"; };
 		12F1261A20B95528005C9659 /* ChangeParameterFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeParameterFieldAction.swift; sourceTree = "<group>"; };
-		12F1261C20B95547005C9659 /* DotFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFieldAction.swift; sourceTree = "<group>"; };
+		12F1261C20B95547005C9659 /* AbnormalStateFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbnormalStateFieldAction.swift; sourceTree = "<group>"; };
 		12F1261E20B9556A005C9659 /* ChangeSpeedFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSpeedFieldAction.swift; sourceTree = "<group>"; };
 		12F1262020B95588005C9659 /* UBChangeTimeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBChangeTimeAction.swift; sourceTree = "<group>"; };
 		12F1262220B955A2005C9659 /* LoopTriggerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopTriggerAction.swift; sourceTree = "<group>"; };
@@ -569,8 +592,9 @@
 		12F1263C20BCD86B005C9659 /* CDTextItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextItemView.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
-		3D97751EC21D0717972B78A6 /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
-		85266E68CCED5C8F4B6EAF5C /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
+		3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
+		967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C735B4FA6BCE4F5C07021254 /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -579,7 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */,
-				0873DCABFBE8D57C7AF3BFF8 /* Pods_PrincessGuide.framework in Frameworks */,
+				94018D168BCD58B74960DD7C /* Pods_PrincessGuide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,15 +617,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0701FDC293542EF8848F28EF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3D97751EC21D0717972B78A6 /* Pods-PrincessGuide.debug.xcconfig */,
-				85266E68CCED5C8F4B6EAF5C /* Pods-PrincessGuide.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		120BCAF920F4DEF30029A083 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +629,7 @@
 		120F9B4920E4DA54003632CA /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				12C5992C2287C90B00875EE4 /* Calendar */,
 				1223A8E020F08F2700C98BB2 /* BirthdayNotification */,
 				12DC963D20EDED8B008896D7 /* TeamManager */,
 				12DC963820EDED0E008896D7 /* BoxManager */,
@@ -717,6 +733,7 @@
 				1226532220AD626700BB3E56 /* Resist.swift */,
 				127FB85820F44BE1009B53CC /* Preload.swift */,
 				1273BFC421CE2B5900ECA727 /* Notice.swift */,
+				12C599312287DE4400875EE4 /* GameEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -845,6 +862,7 @@
 				12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */,
 				12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */,
 				12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */,
+				12133739225113D000BB701B /* RaidBossTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -876,7 +894,7 @@
 				129A7F6820A06DE500D93996 /* PrincessGuideTests */,
 				12659E03205F5DB100A8B9A2 /* Products */,
 				C4EE8380F1630D9BF0C1B7E0 /* Frameworks */,
-				0701FDC293542EF8848F28EF /* Pods */,
+				84F4F887B4935ADF41BE15C5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -981,6 +999,8 @@
 				12398E9620918572006AC352 /* VersionManager.swift */,
 				1280DE4220A5D084008D9D72 /* DateExtension.swift */,
 				120BCAF320F2564B0029A083 /* ArrayExtension.swift */,
+				12C5992A2286F6EF00875EE4 /* Decimal+Rounding.swift */,
+				12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1052,6 +1072,15 @@
 				12C24B9B217AE7FA0079AFE0 /* VoicePlayer.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		12C5992C2287C90B00875EE4 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				12C5992D2287C92B00875EE4 /* CalendarSettingViewController.swift */,
+				12C5992F2287DC4200875EE4 /* GameEventCenter.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		12D3D12F20A56F7800034DD6 /* ViewController */ = {
@@ -1239,7 +1268,7 @@
 				12F125F020B94E2B005C9659 /* TriggerAction.swift */,
 				12F125F220B9501F005C9659 /* DamageChargeAction.swift */,
 				12F125F420B95037005C9659 /* ChargeAction.swift */,
-				12F125F620B9505D005C9659 /* TauntAction.swift */,
+				12F125F620B9505D005C9659 /* DecoyAction.swift */,
 				12F125F820B950F9005C9659 /* NoDamageAction.swift */,
 				12F125FA20B952CA005C9659 /* ChangePatternAction.swift */,
 				12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */,
@@ -1258,7 +1287,7 @@
 				12F1261620B954F4005C9659 /* AttackFieldAction.swift */,
 				12F1261820B95509005C9659 /* HealFieldAction.swift */,
 				12F1261A20B95528005C9659 /* ChangeParameterFieldAction.swift */,
-				12F1261C20B95547005C9659 /* DotFieldAction.swift */,
+				12F1261C20B95547005C9659 /* AbnormalStateFieldAction.swift */,
 				12F1261E20B9556A005C9659 /* ChangeSpeedFieldAction.swift */,
 				12F1262020B95588005C9659 /* UBChangeTimeAction.swift */,
 				12F1262220B955A2005C9659 /* LoopTriggerAction.swift */,
@@ -1272,6 +1301,12 @@
 				128DA47F21B24D7B00F7C006 /* ChannelAction.swift */,
 				1247127922279DF700A9C2E1 /* ChangeBodyWidthAction.swift */,
 				12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */,
+				12E6BEE0227800A6000BAADC /* StealthAction.swift */,
+				12C1131C229578680078BC22 /* MovePartsAction.swift */,
+				12184A7922A1434C00C3FEA6 /* CountBlindAction.swift */,
+				12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */,
+				1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */,
+				1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
 			);
@@ -1314,11 +1349,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84F4F887B4935ADF41BE15C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C735B4FA6BCE4F5C07021254 /* Pods-PrincessGuide.debug.xcconfig */,
+				3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C4EE8380F1630D9BF0C1B7E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1221CDCC207C4197008F30AA /* libsqlite3.tbd */,
-				0E1152366E3D237968CF1CEF /* Pods_PrincessGuide.framework */,
+				967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1330,11 +1374,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12659E14205F5DB100A8B9A2 /* Build configuration list for PBXNativeTarget "PrincessGuide" */;
 			buildPhases = (
-				5E4574CB3F020CA5CAC83ACF /* [CP] Check Pods Manifest.lock */,
+				F52EC2F9318F9BE75C34C5D7 /* [CP] Check Pods Manifest.lock */,
 				12659DFE205F5DB100A8B9A2 /* Sources */,
 				12659DFF205F5DB100A8B9A2 /* Frameworks */,
 				12659E00205F5DB100A8B9A2 /* Resources */,
-				25832C3B065A527BC10EE18E /* [CP] Embed Pods Frameworks */,
+				855740317354B8206A573486 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1375,7 +1419,7 @@
 				TargetAttributes = {
 					12659E01205F5DB100A8B9A2 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
@@ -1388,7 +1432,7 @@
 					};
 					129A7F6620A06DE500D93996 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 12659E01205F5DB100A8B9A2;
 					};
@@ -1442,7 +1486,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25832C3B065A527BC10EE18E /* [CP] Embed Pods Frameworks */ = {
+		855740317354B8206A573486 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1502,16 +1546,20 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5E4574CB3F020CA5CAC83ACF /* [CP] Check Pods Manifest.lock */ = {
+		F52EC2F9318F9BE75C34C5D7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PrincessGuide-checkManifestLockResult.txt",
 			);
@@ -1529,6 +1577,7 @@
 			files = (
 				122071EE20F9F57000554030 /* BuyProEditionViewController.swift in Sources */,
 				12124F462089C9E1001C1A6F /* PropertyKey.swift in Sources */,
+				12B0D2DE228E4B5E0053C813 /* Double+Rounding.swift in Sources */,
 				129A7F56209FE8D400D93996 /* ProfileItemView.swift in Sources */,
 				129A7F5820A0249600D93996 /* Property.swift in Sources */,
 				1280DE3F20A5C5A5008D9D72 /* QuestNameTableViewCell.swift in Sources */,
@@ -1580,6 +1629,7 @@
 				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,
 				12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */,
 				12F125DB20B92E79005C9659 /* MoveAction.swift in Sources */,
+				12C599302287DC4200875EE4 /* GameEventCenter.swift in Sources */,
 				1223A8EC20F0B4EB00C98BB2 /* NotificationHandle.swift in Sources */,
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
@@ -1632,12 +1682,14 @@
 				12F125D220B90DF3005C9659 /* ActionParameter.swift in Sources */,
 				12F125DF20B931EF005C9659 /* CureAction.swift in Sources */,
 				12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */,
-				12F125F720B9505D005C9659 /* TauntAction.swift in Sources */,
+				12F125F720B9505D005C9659 /* DecoyAction.swift in Sources */,
 				12DA21EF20EFBBE3005FD705 /* EditCharaInBoxViewController.swift in Sources */,
 				12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */,
+				1202CE4522C8C4F100E9C146 /* InhibitHealAction.swift in Sources */,
 				12F1260520B95377005C9659 /* MultipleAction.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
 				12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */,
+				12184A7A22A1434C00C3FEA6 /* CountBlindAction.swift in Sources */,
 				126DECFC209EF289004EC56A /* CDTableViewController.swift in Sources */,
 				12398E89209168A2006AC352 /* Wave.swift in Sources */,
 				12DC964720EDFF34008896D7 /* AddCharaToBoxViewController.swift in Sources */,
@@ -1662,6 +1714,7 @@
 				12398E9720918572006AC352 /* VersionManager.swift in Sources */,
 				12D3D13B20A57EB200034DD6 /* CraftPropertyTableViewCell.swift in Sources */,
 				12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */,
+				12184A7C22A14CD000C3FEA6 /* CountDownAction.swift in Sources */,
 				12398E83209158EB006AC352 /* QuestAreaTableViewController.swift in Sources */,
 				120BCAFD20F4E6C80029A083 /* MembersCell.swift in Sources */,
 				1225522A213397B300CB0D3E /* TimeStatusIndicator.swift in Sources */,
@@ -1696,11 +1749,14 @@
 				12936B312176CEA000B9531F /* EurekaHelper.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
+				12C5992E2287C92B00875EE4 /* CalendarSettingViewController.swift in Sources */,
 				1221CDD6207C67E5008F30AA /* CardView.swift in Sources */,
 				12F125FB20B952CA005C9659 /* ChangePatternAction.swift in Sources */,
+				12C5992B2286F6EF00875EE4 /* Decimal+Rounding.swift in Sources */,
 				12E3324220F5EAE200844A6A /* CardCollectionViewController.swift in Sources */,
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
-				12F1261D20B95547005C9659 /* DotFieldAction.swift in Sources */,
+				12F1261D20B95547005C9659 /* AbnormalStateFieldAction.swift in Sources */,
+				1213373A225113D000BB701B /* RaidBossTableViewController.swift in Sources */,
 				12DA21EC20EFB932005FD705 /* Box.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
 				12C24B97217ACCA80079AFE0 /* Store.swift in Sources */,
@@ -1739,14 +1795,17 @@
 				1281FA54209AEA3800F2D567 /* CraftSummaryTableViewCell.swift in Sources */,
 				12398E8720916876006AC352 /* Drop.swift in Sources */,
 				12B85D2B2089840A0088F5FB /* Skill.swift in Sources */,
+				12C599322287DE4400875EE4 /* GameEvent.swift in Sources */,
 				12DC964520EDFA9D008896D7 /* EditBoxViewController.swift in Sources */,
 				126BFBD120F0FAF20059B4ED /* BDInfoViewController.swift in Sources */,
 				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
 				12E64A5B213143330075BE01 /* VLTableViewHeaderFooterView.swift in Sources */,
+				1202CE4322C8C4DC00E9C146 /* StopFieldAction.swift in Sources */,
 				12F125E320B93219005C9659 /* BarrierAction.swift in Sources */,
 				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
 				120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */,
+				12E6BEE1227800A6000BAADC /* StealthAction.swift in Sources */,
 				126BFBD320F0FC420059B4ED /* BDEquipmentViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
@@ -1781,6 +1840,7 @@
 				126BFBD520F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift in Sources */,
 				12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */,
 				12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */,
+				12C1131D229578680078BC22 /* MovePartsAction.swift in Sources */,
 				12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1972,12 +2032,12 @@
 		};
 		12659E15205F5DB100A8B9A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D97751EC21D0717972B78A6 /* Pods-PrincessGuide.debug.xcconfig */;
+			baseConfigurationReference = C735B4FA6BCE4F5C07021254 /* Pods-PrincessGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 94;
+				CURRENT_PROJECT_VERSION = 114;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1986,7 +2046,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/PrincessGuide/PrincessGuide-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1994,12 +2054,12 @@
 		};
 		12659E16205F5DB100A8B9A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85266E68CCED5C8F4B6EAF5C /* Pods-PrincessGuide.release.xcconfig */;
+			baseConfigurationReference = 3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 94;
+				CURRENT_PROJECT_VERSION = 114;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2007,7 +2067,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/PrincessGuide/PrincessGuide-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -2025,7 +2085,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuideTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrincessGuide.app/PrincessGuide";
 			};
@@ -2043,7 +2103,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuideTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrincessGuide.app/PrincessGuide";
 			};

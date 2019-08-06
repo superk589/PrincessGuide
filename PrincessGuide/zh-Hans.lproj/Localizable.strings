@@ -1,5 +1,11 @@
+/* No comment provided by engineer. */
+" Critical damage is %@ times as normal damage." = "暴击时将造成 %@ 倍伤害。";
+
 /* clause separator */
 ", " = "，";
+
+/* No comment provided by engineer. */
+"%@ %@ [%@]%@ %@ during break." = "在 Break 期间，%1$@%2$@ [%3$@]%4$@ %5$@。";
 
 /* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ for [%@]s." = "%1$@%2$@ [%3$@]%4$@ %5$@，持续 [%6$@] 秒。";
@@ -13,7 +19,7 @@
 "%@ %@ %@ in range %d" = "范围 %4$d 内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
-"%@ %@ %d%@ %@ for [%@]s." = "%1$@%2$@ %3$d%4$@ %5$@，持续 [%6$@] 秒。";
+"%@ %@ %@ x%@" = "%1$@%2$@%3$@ x%4$@";
 
 /* No comment provided by engineer. */
 "%@ %@ and deal [%@] damage per second for [%@]s." = "%1$@%2$@并每秒造成 [%3$@] 伤害，持续 [%4$@] 秒。";
@@ -31,6 +37,9 @@
 
 /* [friendly] [physics] targets in range [500] */
 "%@ %@ targets in range %d" = "范围 %3$d 内%1$@%2$@目标";
+
+/* No comment provided by engineer. */
+"%@ %@ x%@" = "%1$@%2$@ x%3$@";
 
 /* No comment provided by engineer. */
 "%@ boss" = "%@首领级";
@@ -116,6 +125,9 @@
 "%@ unknown type" = "%@未知类型";
 
 /* No comment provided by engineer. */
+"%@'s birthday" = "%@的生日";
+
+/* No comment provided by engineer. */
 "%@/%@" = "%1$@ 月 %2$@ 日";
 
 /* No comment provided by engineer. */
@@ -131,16 +143,28 @@
 "Action" = "Action";
 
 /* No comment provided by engineer. */
-"Add [%@ * defeated enemy count] to next effect." = "使下一个效果的数值提高 [%@ * 击杀个数]。";
+"Add [%@ * count of defeated enemies] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 击杀个数]。";
 
 /* No comment provided by engineer. */
-"Add [%@ * HP] to next effect." = "使下一个效果的数值提高 [%@ * HP]。";
+"Add [%@ * count of omemes] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * オメメ个数] 。";
 
 /* No comment provided by engineer. */
-"Add [%@ * lost HP] to next effect." = "使下一个效果的数值提高 [%@ * 损失的 HP]。";
+"Add [%@ * count of targets] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 目标个数]。";
+
+/* No comment provided by engineer. */
+"Add [%@ * HP] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * HP]。";
+
+/* No comment provided by engineer. */
+"Add [%@ * lost HP] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 损失的 HP]。";
+
+/* No comment provided by engineer. */
+"Add [%@ * stacks of mark(ID: %d)] to next effect's value %d." = "使下一个效果的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。";
 
 /* No comment provided by engineer. */
 "Add [%d] to the counter." = "使计数器加 [%d]。";
+
+/* No comment provided by engineer. */
+"Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。";
 
 /* No comment provided by engineer. */
 "Add additional [%@] %@ to %@ for next [%@] attacks." = "使%3$@的下 [%4$@] 次攻击附加 [%1$@] %2$@。";
@@ -164,13 +188,22 @@
 "all %@ targets" = "所有%@目标";
 
 /* No comment provided by engineer. */
+"all front %@ enemy targets" = "所有前方%@敌方目标";
+
+/* No comment provided by engineer. */
+"all front %@ targets" = "所有前方%@目标";
+
+/* No comment provided by engineer. */
 "all front enemy targets" = "所有前方敌方目标";
 
 /* No comment provided by engineer. */
 "all front targets" = "所有前方目标";
 
 /* No comment provided by engineer. */
-"all front(including self) friendly targets" = "所有前方的友方目标（包括自己）";
+"all front(including self) %@ friendly targets" = "所有前方%@友方目标（包括自己）";
+
+/* No comment provided by engineer. */
+"all front(including self) friendly targets" = "所有前方友方目标（包括自己）";
 
 /* No comment provided by engineer. */
 "always 1★" = "固定 1★";
@@ -183,6 +216,9 @@
 
 /* No comment provided by engineer. */
 "Appear after %@s since wave start." = "回合开始后 %@ 秒入场。";
+
+/* No comment provided by engineer. */
+"Apply" = "应用";
 
 /* No comment provided by engineer. */
 "arena" = "竞技场";
@@ -242,6 +278,9 @@
 "Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss." = "[%2$@]%% 几率使%1$@进入黑暗状态，持续 [%3$@] 秒，物理攻击会有 %4$d%% 几率丢失。";
 
 /* No comment provided by engineer. */
+"blinded" = "黑暗";
+
+/* No comment provided by engineer. */
 "Blood Type" = "血型";
 
 /* No comment provided by engineer. */
@@ -275,7 +314,16 @@
 "Burn" = "烧伤";
 
 /* No comment provided by engineer. */
+"burned" = "烧伤";
+
+/* No comment provided by engineer. */
 "By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again." = "目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。";
+
+/* No comment provided by engineer. */
+"Calendar Permission" = "系统日历权限";
+
+/* No comment provided by engineer. */
+"Calendar Settings" = "日历设置";
 
 /* No comment provided by engineer. */
 "Campaign" = "奖励事件";
@@ -303,6 +351,24 @@
 
 /* No comment provided by engineer. */
 "Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 物理伤害，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." = "对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking magical damage." = "对%1$@释放一个护盾，受到魔法伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking physical damage." = "对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage when taking damage." = "对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage when taking magical damage." = "对%1$@释放一个护盾，受到魔法伤害时反击 [%2$@] 伤害。";
+
+/* No comment provided by engineer. */
+"Cast a barrier on %@ to strike back [%@] damage when taking physical damage." = "对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害。";
 
 /* No comment provided by engineer. */
 "Cast an unknown barrier %d on %@ for [%@]s." = "对%2$@释放一个护盾，类型 %1$d，持续 [%3$@] 秒。";
@@ -380,6 +446,9 @@
 "Charm %@ with [%@]%% chance for [%@]s." = "[%2$@]%% 几率魅惑%1$@，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"charmed or confused" = "魅惑或混乱";
+
+/* No comment provided by engineer. */
 "Check for Updates at Launch" = "启动时检查更新";
 
 /* No comment provided by engineer. */
@@ -428,6 +497,12 @@
 "Condition: if the specific field exists then use %d." = "条件分支：如果指定的场地效果存在则使用 %1$d。";
 
 /* No comment provided by engineer. */
+"Condition: use %d if %@ is alone, otherwise %d." = "条件分支：如果%2$@是单独的则使用 %1$d，否则使用 %3$d。";
+
+/* No comment provided by engineer. */
+"Condition: use %d if %@ is alone." = "条件分支：如果%2$@是单独的则使用 %1$d。";
+
+/* No comment provided by engineer. */
 "Confirm" = "确定";
 
 /* No comment provided by engineer. */
@@ -437,10 +512,16 @@
 "Confuse %@ with [%@]%% chance for [%@]s." = "[%2$@]%% 几率使%1$@混乱，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"controlled" = "被控制";
+
+/* No comment provided by engineer. */
 "Copy" = "复制";
 
 /* No comment provided by engineer. */
 "Cost %@ TP/s, change attack pattern to %d until TP is zero." = "消耗 %1$@ TP/秒，TP 耗光前改为使用攻击模式 %2$d。";
+
+/* No comment provided by engineer. */
+"Count Blind" = "千里眼";
 
 /* No comment provided by engineer. */
 "Crafted" = "制作";
@@ -450,6 +531,9 @@
 
 /* No comment provided by engineer. */
 "Curse" = "诅咒";
+
+/* No comment provided by engineer. */
+"cursed" = "诅咒";
 
 /* No comment provided by engineer. */
 "Custom Tag" = "自定义标签";
@@ -473,6 +557,9 @@
 "debuffs" = "减益";
 
 /* No comment provided by engineer. */
+"decoying" = "吸引其他目标攻击";
+
+/* No comment provided by engineer. */
 "DEF" = "物理防御力";
 
 /* icon style */
@@ -480,6 +567,9 @@
 
 /* No comment provided by engineer. */
 "defend" = "防守";
+
+/* No comment provided by engineer. */
+"Delay event: use %d after %@s." = "延时事件：%2$@ 秒后触发效果 %1$d。";
 
 /* No comment provided by engineer. */
 "Denied" = "拒绝";
@@ -515,6 +605,9 @@
 "Drop" = "掉落";
 
 /* No comment provided by engineer. */
+"Drop Rate" = "掉率";
+
+/* No comment provided by engineer. */
 "Dropped" = "掉落";
 
 /* No comment provided by engineer. */
@@ -546,6 +639,12 @@
 
 /* No comment provided by engineer. */
 "Email" = "邮件";
+
+/* No comment provided by engineer. */
+"Enable Birthday Events" = "打开生日事件";
+
+/* No comment provided by engineer. */
+"Enable Game Events" = "打开游戏事件";
 
 /* No comment provided by engineer. */
 "Enable Notifications" = "允许通知";
@@ -653,6 +752,12 @@
 "Gacha" = "卡池";
 
 /* No comment provided by engineer. */
+"Game Event" = "游戏事件";
+
+/* No comment provided by engineer. */
+"Game Events Filter" = "游戏事件筛选";
+
+/* No comment provided by engineer. */
 "General" = "通用";
 
 /* No comment provided by engineer. */
@@ -698,7 +803,16 @@
 "Import All Charas" = "导入全图鉴 Box";
 
 /* No comment provided by engineer. */
+"In next [%@] attacks, %@'s physical attacks will miss." = "使%2$@的下 [%1$@] 次物理攻击丢失。";
+
+/* No comment provided by engineer. */
+"In next [%@]s, %@'s physical attacks will miss." = "使%2$@的攻击丢失，持续 [%1$@] 秒。";
+
+/* No comment provided by engineer. */
 "inevitable physical" = "无法躲闪的物理";
+
+/* No comment provided by engineer. */
+"Inhibit Heal" = "治疗阻碍";
 
 /* No comment provided by engineer. */
 "Instant Death" = "即死";
@@ -743,6 +857,9 @@
 "Loses" = "失败";
 
 /* No comment provided by engineer. */
+"Luna's Tower" = "露娜塔";
+
+/* No comment provided by engineer. */
 "magic" = "法系";
 
 /* No comment provided by engineer. */
@@ -771,6 +888,9 @@
 
 /* No comment provided by engineer. */
 "Main+" = "Main+";
+
+/* No comment provided by engineer. */
+"Make %@ attract enemy attacks, last for [%@]s." = "使%1$@吸引敌方的攻击，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
 "Make %@ fall asleep for [%@]s." = "使%1$@入睡，持续 [%2$@] 秒。";
@@ -830,6 +950,9 @@
 "Move forward %@ with velocity %@/s." = "向前移动 %1$@，速度 %2$@/秒。";
 
 /* No comment provided by engineer. */
+"Move Part %d, %d forward then return." = "向前移动部位 %1$d 然后返回，距离 %2$d。";
+
+/* No comment provided by engineer. */
 "Move Speed" = "移动速度";
 
 /* No comment provided by engineer. */
@@ -839,13 +962,19 @@
 "Move to %@ in front of %@ with velocity %@/s." = "移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。";
 
 /* No comment provided by engineer. */
-"Multiple [%@ * defeated enemy count] to next effect." = "使下一个效果的数值乘以 [%@ * 击杀个数]。";
+"Multiple [%@ * count of defeated enemies] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * 击杀个数]。";
 
 /* No comment provided by engineer. */
-"Multiple [%@ * HP / max HP] to next effect." = "使下一个效果的数值乘以 [%@ * HP / 最大 HP]。";
+"Multiple [%@ * HP / max HP] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。";
 
 /* No comment provided by engineer. */
-"Multiple [%@ * lost HP / max HP] to next effect." = "使下一个效果的数值乘以 [%@ * 损失的 HP / 最大 HP]。";
+"Multiple [%@ * lost HP / max HP] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。";
+
+/* No comment provided by engineer. */
+"Multiple [%@ * stacks of mark(ID: %d)] to next effect's value %d." = "使下一个效果的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。";
+
+/* No comment provided by engineer. */
+"name" = "名称";
 
 /* No comment provided by engineer. */
 "New %@ Event: %@" = "新%1$@活动：%2$@";
@@ -962,6 +1091,12 @@
 "Poison %@ and deal [%@] damage per second for [%@]s." = "使%1$@中毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"Poison %@ violently and deal [%@] damage per second for [%@]s." = "使%1$@中猛毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
+"poisoned" = "中毒";
+
+/* No comment provided by engineer. */
 "Position" = "位置";
 
 /* No comment provided by engineer. */
@@ -1030,11 +1165,20 @@
 /* No comment provided by engineer. */
 "Raw Materials" = "原始材料";
 
+/* expression style */
+"raw value id" = "原始数值 ID";
+
 /* No comment provided by engineer. */
 "Reduce" = "降低";
 
 /* No comment provided by engineer. */
 "Reduce %@ %d%% attack speed for [%@]s." = "降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
+"Remove %@ mark stacks(ID: %@) on %@." = "移除%3$@ %1$@ 层标记（ID：%2$@）。";
+
+/* No comment provided by engineer. */
+"Remove field of skill %d (1 represents the first skill in this list) effect %d." = "移除技能 %1$d（1 代表本列表中的第一个）效果 %2$d 产生的场地。";
 
 /* No comment provided by engineer. */
 "Reset" = "重置";
@@ -1160,10 +1304,16 @@
 "Status Comparison" = "属性比较模式";
 
 /* No comment provided by engineer. */
-"Still" = "剧情";
+"Stealth for %@s." = "潜行 %@ 秒。";
+
+/* No comment provided by engineer. */
+"Still" = "剧情插图";
 
 /* No comment provided by engineer. */
 "Story" = "剧情";
+
+/* No comment provided by engineer. */
+"Story Event" = "剧情活动";
 
 /* No comment provided by engineer. */
 "Stun" = "击晕";
@@ -1178,17 +1328,19 @@
 "Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。
-";
+"Summon a field of radius %d on %@ to cast effect %d for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，持续释放效果 %3$d，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
+"Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." = "展开一片半径为 %1$d 的区域，每秒对%5$@造成 [%2$@] %3$@伤害，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒治疗 [%3$@]%4$@ HP，持续 [%5$@] 秒。";
+"Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒恢复 [%3$@]%4$@ HP，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s." = "展开一片半径为 %1$d 的区域，每秒治疗%2$@ [%3$@] %4$@ HP，持续 [%5$@] 秒。";
+"Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s." = "展开一片半径为 %1$d 的区域，每秒恢复%2$@ [%3$@] %4$@ HP，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
 "Swing" = "普通攻击";
@@ -1225,9 +1377,6 @@
 
 /* No comment provided by engineer. */
 "targets within the scope" = "范围内的目标";
-
-/* No comment provided by engineer. */
-"Taunt all enemy targets for [%@]s." = "嘲讽所有敌方单位，持续 [%@] 秒。";
 
 /* No comment provided by engineer. */
 "Team Detail" = "队伍详情";
@@ -1323,6 +1472,9 @@
 "There aren't any Mail accounts" = "未设置邮件账户";
 
 /* No comment provided by engineer. */
+"These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\".\\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content." = "这些设置的作用是：当本 App 内部数据更新时，自动将事件添加到您的系统日历中。这些事件在系统日历中会被添加到独立的含有前缀“Hatsune's Notes”的分组中。\\n**重要**：不建议在多个拥有同样 iCloud 账号的设备上同时启用此功能，将导致同样内容的日历分组出现多个。";
+
+/* No comment provided by engineer. */
 "third" = "第三";
 
 /* No comment provided by engineer. */
@@ -1350,10 +1502,19 @@
 "Tower" = "露娜塔";
 
 /* No comment provided by engineer. */
+"Trigger: %d%% on break and last for %@s." = "触发条件：Break 时 %1$d%% 触发，持续 %2$@ 秒。";
+
+/* No comment provided by engineer. */
+"Trigger: %d%% on critical damaged." = "触发条件：被暴击时 %1$d%% 触发。";
+
+/* No comment provided by engineer. */
 "Trigger: %d%% on damaged." = "触发条件：受到伤害时 %d%% 触发。";
 
 /* No comment provided by engineer. */
-"Trigger: %d%% on dead" = "触发条件：死亡时 %d%% 触发。";
+"Trigger: %d%% on dead." = "触发条件：死亡时 %d%% 触发。";
+
+/* No comment provided by engineer. */
+"Trigger: %d%% on stealth." = "触发条件：潜行时 %d%% 触发。";
 
 /* No comment provided by engineer. */
 "Trigger: HP is below %d%%." = "触发条件：HP 低于 %d%%。";
@@ -1422,34 +1583,22 @@
 "Upgrade to Pro Edition" = "升级至专业版";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ is blinded" = "对%2$@中处于黑暗状态的使用 %1$d";
+"use %d to %@ if it's alone" = "如果%2$@是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ is burned" = "对%2$@中处于烧伤状态的使用 %1$d";
+"use %d to %@ if it's not alone" = "如果%2$@不是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ is charmed" = "对%2$@中处于魅惑状态的使用 %1$d";
+"use %d to any of %@ is %@" = "对%2$@中处于%3$@状态的使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ is controlled" = "对%2$@中处于被控制状态的使用 %1$d";
+"use %d to any of %@ is in state of ID: %d" = "对%2$@中处于 ID 为 %3$d 状态的使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ is cursed" = "对%2$@中处于诅咒状态的使用 %1$d";
+"use %d to any of %@ is not %@" = "对%2$@中未处于%3$@状态的使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ is not blinded" = "对%2$@中未处于黑暗状态的使用 %1$d";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ is not burned" = "对%2$@中未处于烧伤状态的使用 %1$d";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ is not charmed" = "对%2$@中未处于魅惑状态的使用 %1$d";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ is not controlled" = "对%2$@中未处于被控制状态的使用 %1$d";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ is not cursed" = "对%2$@中未处于诅咒状态的使用 %1$d";
+"use %d to any of %@ is not in state of ID: %d" = "对%2$@中未处于 ID 为 %3$d 状态的使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d to any of %@ whose HP is below %d%%" = "对%2$@中 HP 低于 %3$d%% 的使用 %1$d";
@@ -1459,6 +1608,9 @@
 
 /* No comment provided by engineer. */
 "Use Dark Theme" = "使用深色主题";
+
+/* No comment provided by engineer. */
+"value %d" = "数值 %d";
 
 /* expression style */
 "value in combat" = "战斗中数值";
@@ -1470,7 +1622,13 @@
 "Vanguard" = "前卫";
 
 /* No comment provided by engineer. */
+"venomed" = "中猛毒";
+
+/* No comment provided by engineer. */
 "Version Log" = "数据更新日志";
+
+/* No comment provided by engineer. */
+"Violent Poison" = "猛毒";
 
 /* No comment provided by engineer. */
 "Wave %d" = "第 %d 波";
@@ -1489,6 +1647,9 @@
 
 /* No comment provided by engineer. */
 "What's the features of Pro Edition?" = "专业版中有哪些功能？";
+
+/* No comment provided by engineer. */
+"When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." = "当%1$@受到治疗时，治疗效果无效并造成 [%2$@ * 治疗量] 的伤害，持续 [%3$@] 秒，如果是场地效果触发的，持续时间无限。";
 
 /* No comment provided by engineer. */
 "Who Needs" = "可装备的角色";

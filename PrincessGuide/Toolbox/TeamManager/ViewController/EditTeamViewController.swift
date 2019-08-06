@@ -54,6 +54,12 @@ class EditTeamViewController: FormViewController {
     
     let backgroundImageView = UIImageView()
     
+    private lazy var navigationAccessoryView = NavigationAccessoryView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44.0))
+    
+    override var customNavigationAccessoryView: (UIView & NavigationAccessory)? {
+        return navigationAccessoryView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,6 +70,7 @@ class EditTeamViewController: FormViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAndPop(_:)))
         
         tableView.backgroundView = backgroundImageView
+
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint

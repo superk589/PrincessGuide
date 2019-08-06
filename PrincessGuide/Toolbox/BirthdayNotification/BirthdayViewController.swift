@@ -97,8 +97,8 @@ class BirthdayViewController: FormViewController {
                 }
             }.cellSetup(cellSetup(cell:row:))
             .cellUpdate(cellUpdate(cell:row:))
-            .onChange { [weak self] (row) in
-                self?.form.rowBy(tag: "cards")?.reload()
+            .onChange { [unowned self] (row) in
+                self.form.rowBy(tag: "cards")?.reload()
                 if let timeZone = row.value {
                     Setting.default.timeZone = timeZone
                 }
@@ -106,8 +106,8 @@ class BirthdayViewController: FormViewController {
         
             <<< LabelRow("notification_status") {
                 $0.title = NSLocalizedString("Notification Permission", comment: "")
-            }.cellSetup { [weak self] cell, row in
-                row.value = self?.systemNotificationStatusString
+            }.cellSetup { [unowned self] cell, row in
+                row.value = self.systemNotificationStatusString
                 cell.selectedBackgroundView = UIView()
                 ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
                     themeable.textLabel?.textColor = theme.color.title
@@ -116,15 +116,15 @@ class BirthdayViewController: FormViewController {
                     themeable.backgroundColor = theme.color.tableViewCell.background
                 }
             }
-            .cellUpdate { [weak self] cell, row in
+            .cellUpdate { [unowned self] cell, row in
                 ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
                     themeable.textLabel?.textColor = theme.color.title
                     themeable.detailTextLabel?.textColor = theme.color.tint
                 }
-                cell.detailTextLabel?.text = self?.systemNotificationStatusString
+                cell.detailTextLabel?.text = self.systemNotificationStatusString
             }
-            .onCellSelection { [weak self] (cell, row) in
-                self?.openSystemNotificationSettings()
+            .onCellSelection { [unowned self] (cell, row) in
+                self.openSystemNotificationSettings()
             }
             
             +++ Section(NSLocalizedString("Upcoming Birthdays", comment: ""))
@@ -147,7 +147,9 @@ class BirthdayViewController: FormViewController {
     }
     
     @objc private func reloadCards(_ item: Notification) {
-        (form.rowBy(tag: "upcoming_birthdays") as? CardWithBirthdayRow)?.cell.configure(for: cards)
+        let row = form.rowBy(tag: "upcoming_birthdays") as? CardWithBirthdayRow
+        row?.cell.configure(for: cards)
+        row?.reload()
     }
     
     @objc private func reloadSettings(_ item: Notification) {
@@ -180,7 +182,7 @@ class BirthdayViewController: FormViewController {
         if Setting.default.schedulesBirthdayNotifications {
             UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert]) { [weak self] (granted, error) in
                 if error == nil && granted {
-                    BirthdayCenter.default.scheduleNotifications()
+                    BirthdayCenter.default.rescheduleNotifications()
                     DispatchQueue.main.async {
                         let row = self?.form.rowBy(tag: "notification_status") as? LabelRow
                         row?.value = self?.systemNotificationStatusString

@@ -87,7 +87,7 @@ func extractBundle(data: Data) throws -> [(fileName: String, data: Data)] {
         guard let bytes = bundle.next(bytes: Int(compressedSize)) else {
             throw UnityFSError.invalidData
         }
-        blocksInfoData = Data(bytes: bytes)
+        blocksInfoData = Data(bytes)
     }
     
     func decompress(data: Data, flags: Int32, uncompressedSize: Int32) throws -> Data {
@@ -125,7 +125,7 @@ func extractBundle(data: Data) throws -> [(fileName: String, data: Data)] {
             let bytes = bundle.next(bytes: Int(compressedSize)) else {
                 throw UnityFSError.invalidData
         }
-        let data = try decompress(data: Data(bytes: bytes), flags: Int32(flags), uncompressedSize: uncompressedSize)
+        let data = try decompress(data: Data(bytes), flags: Int32(flags), uncompressedSize: uncompressedSize)
         assetsData.append(data)
     }
     

@@ -64,14 +64,13 @@ class TargetParameter {
     
     func buildTargetClause() -> String {
         switch (hasCountPhrase, hasNthModifier, hasRangePhrase, hasRelationPhrase, hasDirectionPhrase, hasDependAction) {
-        case (_, _, _, _, _, true):
-            if targetCount == .all && hasRangePhrase {
-                let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
-                return String(format: format, dependActionID % 100, targetAssignment.description, targetRange.rawRange)
-            } else {
-                let format = NSLocalizedString("targets of effect %d", comment: "")
-                return String(format: format, dependActionID % 100)
-            }           
+        case (_, _, true, _, _, true) where targetCount == .all || targetCount == .zero:
+            let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
+            return String(format: format, dependActionID % 100, targetAssignment.description, targetRange.rawRange)
+        case (false, _, _, _, _, true),
+             (true, _, _, _, _, true) where targetCount == .all || targetCount == .one:
+            let format = NSLocalizedString("targets of effect %d", comment: "")
+            return String(format: format, dependActionID % 100)
         case (_, _, _, false, _, _):
             return targetType.description.description
         case (false, false, false, true, _, _):
@@ -92,7 +91,7 @@ class TargetParameter {
                 let format = NSLocalizedString("%@ %@ %@", comment: "[the farthest two] [enemy] [targets]")
                 return String(format: format, targetType.description(with: targetCount), targetAssignment.description, targetCount.pluralModifier.description)
             }
-        case (true, false, false, true, true, _):
+        case (true, false, false, true, true, _) where targetType.isExclusiveWithAll:
             switch targetAssignment {
             case .enemy:
                 let format = NSLocalizedString("all front enemy targets", comment: "")
@@ -103,6 +102,18 @@ class TargetParameter {
             default:
                 let format = NSLocalizedString("all front targets", comment: "")
                 return String(format: format)
+            }
+        case (true, false, false, true, true, _) where !targetType.isExclusiveWithAll:
+            switch targetAssignment {
+            case .enemy:
+                let format = NSLocalizedString("all front %@ enemy targets", comment: "")
+                return String(format: format, targetType.description)
+            case .friendly:
+                let format = NSLocalizedString("all front(including self) %@ friendly targets", comment: "")
+                return String(format: format, targetType.description)
+            default:
+                let format = NSLocalizedString("all front %@ targets", comment: "")
+                return String(format: format, targetType.description)
             }
         case (false, false, true, true, false, _):
             let format = NSLocalizedString("%@ targets in range %d", comment: "[enemy] targets in range [500]")
@@ -238,6 +249,14 @@ enum TargetType: Int, CustomStringConvertible {
     case allSummonRandom
     case selfSummonRandom
     case boss
+    case hpAscendingOrNear
+    case hpDescendingOrNear
+    case tpDescendingOrNear
+    case tpAscendingOrNear
+    case atkDescendingOrNear
+    case atkAscendingOrNear
+    case magicSTRDescendingOrNear
+    case magicSTRAscendingOrNear
     
     var isExclusiveWithAll: Bool {
         switch self {
@@ -261,39 +280,39 @@ enum TargetType: Int, CustomStringConvertible {
         switch self {
         case .unknown:
             return NSLocalizedString("unknown", comment: "target type")
-        case .none:
-            return NSLocalizedString("last effect affected or the nearest", comment: "")
-        case .random:
+//        case .none:
+//            return NSLocalizedString("last effect affected or the nearest", comment: "")
+        case .random, .randomOnce:
             return NSLocalizedString("random", comment: "target type")
-        case .zero, .near:
+        case .zero, .near, .none:
             return NSLocalizedString("the nearest", comment: "target type")
         case .far:
             return NSLocalizedString("the farthest", comment: "target type")
-        case .hpAscending:
+        case .hpAscending, .hpAscendingOrNear:
             return NSLocalizedString("the lowest HP ratio", comment: "target type")
-        case .hpDescending:
+        case .hpDescending, .hpDescendingOrNear:
             return NSLocalizedString("the highest HP ratio", comment: "target type")
         case .`self`:
             return NSLocalizedString("self", comment: "target type")
-        case .randomOnce:
-            return NSLocalizedString("random(once)", comment: "target type")
+//        case .randomOnce:
+//            return NSLocalizedString("random(once)", comment: "target type")
         case .forward:
             return NSLocalizedString("the most backward", comment: "target type")
         case .backward:
             return NSLocalizedString("the most forward", comment: "target type")
         case .absolute:
             return NSLocalizedString("targets within the scope", comment: "")
-        case .tpDescending:
+        case .tpDescending, .tpDescendingOrNear:
             return NSLocalizedString("the highest TP", comment: "target type")
-        case .tpAscending, .tpReducing:
+        case .tpAscending, .tpReducing, .tpAscendingOrNear:
             return NSLocalizedString("the lowest TP", comment: "target type")
-        case .atkDescending:
+        case .atkDescending, .atkDescendingOrNear:
             return NSLocalizedString("the highest ATK", comment: "")
-        case .atkAscending:
+        case .atkAscending, .atkAscendingOrNear:
             return NSLocalizedString("the lowest ATK", comment: "")
-        case .magicSTRDescending:
+        case .magicSTRDescending, .magicSTRDescendingOrNear:
             return NSLocalizedString("the highest Magic STR", comment: "")
-        case .magicSTRAscending:
+        case .magicSTRAscending, .magicSTRAscendingOrNear:
             return NSLocalizedString("the lowest Magic STR", comment: "")
         case .summon:
             return NSLocalizedString("minion", comment: "")
@@ -316,10 +335,10 @@ enum TargetType: Int, CustomStringConvertible {
         case .unknown:
             let format = NSLocalizedString("%@ unknown type", comment: "target type")
             return String(format: format, localizedModifier)
-        case .none:
-            let format = NSLocalizedString("targets of last effect or %@ nearest", comment: "target type")
-            return String(format: format, localizedModifier)
-        case .zero, .near:
+//        case .none:
+//            let format = NSLocalizedString("targets of last effect or %@ nearest", comment: "target type")
+//            return String(format: format, localizedModifier)
+        case .zero, .near, .none:
             let format = NSLocalizedString("%@ nearest", comment: "target type")
             return String(format: format, localizedModifier)
         case .far:
@@ -337,30 +356,30 @@ enum TargetType: Int, CustomStringConvertible {
         case .backward:
             let format = NSLocalizedString("%@ most forward", comment: "target type")
             return String(format: format, localizedModifier)
-        case .tpDescending:
+        case .tpDescending, .tpDescendingOrNear:
             let format = NSLocalizedString("%@ highest TP", comment: "target type")
             return String(format: format, localizedModifier)
-        case .tpAscending, .tpReducing:
+        case .tpAscending, .tpReducing, .tpAscendingOrNear:
             let format = NSLocalizedString("%@ lowest TP", comment: "target type")
             return String(format: format, localizedModifier)
-        case .atkDescending:
+        case .atkDescending, .atkDescendingOrNear:
             let format = NSLocalizedString("%@ highest ATK", comment: "")
             return String(format: format, localizedModifier)
-        case .atkAscending:
+        case .atkAscending, .atkAscendingOrNear:
             let format = NSLocalizedString("%@ lowest ATK", comment: "")
             return String(format: format, localizedModifier)
-        case .magicSTRDescending:
+        case .magicSTRDescending, .magicSTRDescendingOrNear:
             let format = NSLocalizedString("%@ highest Magic STR", comment: "")
             return String(format: format, localizedModifier)
-        case .magicSTRAscending:
+        case .magicSTRAscending, .magicSTRAscendingOrNear:
             let format = NSLocalizedString("%@ lowest Magic STR", comment: "")
             return String(format: format, localizedModifier)
-        case .random:
+        case .random, .randomOnce:
             let format = NSLocalizedString("%@ random", comment: "")
             return String(format: format, localizedModifier)
-        case .randomOnce:
-            let format = NSLocalizedString("%@ random(once)", comment: "")
-            return String(format: format, localizedModifier)
+//        case .randomOnce:
+//            let format = NSLocalizedString("%@ random(once)", comment: "")
+//            return String(format: format, localizedModifier)
         case .summon:
             let format = NSLocalizedString("%@ minion", comment: "")
             return String(format: format, localizedModifier)
@@ -385,19 +404,19 @@ enum TargetType: Int, CustomStringConvertible {
             case .unknown:
                 let format = NSLocalizedString("the %@ unknown type", comment: "target type")
                 return String(format: format, localizedModifier)
-            case .none:
-                let format = NSLocalizedString("targets of last effect or the %@ nearest", comment: "target type")
-                return String(format: format, localizedModifier)
-            case .zero, .near:
+//            case .none:
+//                let format = NSLocalizedString("targets of last effect or the %@ nearest", comment: "target type")
+//                return String(format: format, localizedModifier)
+            case .zero, .near, .none:
                 let format = NSLocalizedString("the %@ nearest", comment: "target type")
                 return String(format: format, localizedModifier)
             case .far:
                 let format = NSLocalizedString("the %@ farthest", comment: "target type")
                 return String(format: format, localizedModifier)
-            case .hpAscending:
+            case .hpAscending, .hpAscendingOrNear:
                 let format = NSLocalizedString("the %@ lowest HP ratio", comment: "target type")
                 return String(format: format, localizedModifier)
-            case .hpDescending:
+            case .hpDescending, .hpDescendingOrNear:
                 let format = NSLocalizedString("the %@ highest HP ratio", comment: "target type")
                 return String(format: format, localizedModifier)
             case .forward:
@@ -406,22 +425,22 @@ enum TargetType: Int, CustomStringConvertible {
             case .backward:
                 let format = NSLocalizedString("the %@ most forward", comment: "target type")
                 return String(format: format, localizedModifier)
-            case .tpDescending:
+            case .tpDescending, .tpDescendingOrNear:
                 let format = NSLocalizedString("the %@ highest TP", comment: "target type")
                 return String(format: format, localizedModifier)
-            case .tpAscending, .tpReducing:
+            case .tpAscending, .tpReducing, .tpAscendingOrNear:
                 let format = NSLocalizedString("the %@ lowest TP", comment: "target type")
                 return String(format: format, localizedModifier)
-            case .atkDescending:
+            case .atkDescending, .atkDescendingOrNear:
                 let format = NSLocalizedString("the %@ highest ATK", comment: "")
                 return String(format: format, localizedModifier)
-            case .atkAscending:
+            case .atkAscending, .atkAscendingOrNear:
                 let format = NSLocalizedString("the %@ lowest ATK", comment: "")
                 return String(format: format, localizedModifier)
-            case .magicSTRDescending:
+            case .magicSTRDescending, .magicSTRDescendingOrNear:
                 let format = NSLocalizedString("the %@ highest Magic STR", comment: "")
                 return String(format: format, localizedModifier)
-            case .magicSTRAscending:
+            case .magicSTRAscending, .magicSTRAscendingOrNear:
                 let format = NSLocalizedString("the %@ lowest Magic STR", comment: "")
                 return String(format: format, localizedModifier)
             default:

@@ -11,38 +11,41 @@ import Tabman
 import Pageboy
 import Gestalt
 
-class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDataSource {
+class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
     
     private var viewControllers = [UIViewController]()
+    
+    private var items = [TMBarItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Quests", comment: "")
-        viewControllers = [DungeonBossTableViewController(), HatsuneEventAreaTableViewController(), ClanBattleTableViewController(), TowerTableViewController(), QuestAreaTableViewController(areaType: .normal), QuestAreaTableViewController(areaType: .hard), ]
+        viewControllers = [DungeonBossTableViewController(), HatsuneEventAreaTableViewController(), ClanBattleTableViewController(), TowerTableViewController(), QuestAreaTableViewController(areaType: .normal), QuestAreaTableViewController(areaType: .hard)]
         dataSource = self
-        bar.items = [
-            Item(title: NSLocalizedString("Dungeon", comment: "")),
-            Item(title: NSLocalizedString("Event", comment: "")),
-            Item(title: NSLocalizedString("Clan Battle", comment: "")),
-            Item(title: NSLocalizedString("Tower", comment: ""))
-            ] + [AreaType.normal, .hard].map { Item(title: $0.description) }
         
-        bar.location = .bottom
-
+        self.items = [
+            TMBarItem(title: NSLocalizedString("Dungeon", comment: "")),
+            TMBarItem(title: NSLocalizedString("Event", comment: "")),
+            TMBarItem(title: NSLocalizedString("Clan Battle", comment: "")),
+            TMBarItem(title: NSLocalizedString("Tower", comment: ""))
+            ] + [AreaType.normal, .hard].map { TMBarItem(title: $0.description) }
+        
+        let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>()
+        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        bar.layout.transitionStyle = .progressive
+        addBar(bar, dataSource: self, at: .bottom)
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
             navigationBar?.barStyle = theme.barStyle
             
             themeable.view.backgroundColor = theme.color.background
-            themeable.bar.appearance = TabmanBar.Appearance({ (appearance) in
-                appearance.indicator.color = theme.color.tint
-                appearance.state.selectedColor = theme.color.tint
-                appearance.state.color = theme.color.lightText
-                appearance.layout.itemDistribution = .centered
-                appearance.style.background = .blur(style: theme.blurEffectStyle)
-                appearance.indicator.preferredStyle = .clear
+            bar.indicator.tintColor = theme.color.tint
+            bar.buttons.customize({ (button) in
+                button.selectedTintColor = theme.color.tint
+                button.tintColor = theme.color.lightText
             })
+            bar.backgroundView.style = .blur(style: theme.blurEffectStyle)
         }
         
     }
@@ -57,6 +60,10 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return .at(index: 2)
+    }
+    
+    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
+        return items[index]
     }
     
 }

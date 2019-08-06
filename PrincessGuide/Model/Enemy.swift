@@ -13,10 +13,15 @@ class Enemy: Codable {
     let base: Base
     
     let unit: Unit
-        
-    init(base: Base, unit: Unit) {
+    
+    let isBossPart: Bool
+    
+    weak var owner: Enemy?
+    
+    init(base: Base, unit: Unit, isBossPart: Bool = false) {
         self.base = base
         self.unit = unit
+        self.isBossPart = isBossPart
     }
     
     struct Unit: Codable {
@@ -92,6 +97,12 @@ class Enemy: Codable {
         let mainSkill8: Int
         let mainSkill9: Int
         let unionBurst: Int
+        
+        let childEnemyParameter1: Int?
+        let childEnemyParameter2: Int?
+        let childEnemyParameter3: Int?
+        let childEnemyParameter4: Int?
+        let childEnemyParameter5: Int?
 
         var property: Property {
             return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
@@ -123,6 +134,16 @@ class Enemy: Codable {
             return [mainSkillLv1, mainSkillLv2, mainSkillLv3, mainSkillLv4, mainSkillLv5, mainSkillLv6, mainSkillLv7, mainSkillLv8, mainSkillLv9, mainSkillLv10]
         }
         
+        var partIDs: [Int] {
+            return [
+                childEnemyParameter1,
+                childEnemyParameter2,
+                childEnemyParameter3,
+                childEnemyParameter4,
+                childEnemyParameter5,
+                ].compactMap { $0 }
+        }
+        
     }
     
     func exSkillLevel(for id: Int) -> Int {
@@ -136,15 +157,38 @@ class Enemy: Codable {
     // MARK: lazy vars
     
     lazy var exSkillLevels: [Int: Int] = {
-        return zip(base.exSkillLevels, base.exSkillIDs)
+        let levels: [Int]
+        if let owner = self.owner, self.isBossPart {
+            levels = owner.base.exSkillLevels
+        } else {
+            levels = base.exSkillLevels
+        }
+        return zip(levels, base.exSkillIDs)
 //            .prefix { $0.0 != 0 }
             .reduce(into: [Int: Int]() ) {
                 $0[$1.1] = $1.0
         }
     }()
     
+    lazy var parts: [Enemy] = {
+        let parts = base.partIDs.compactMap { id in
+            DispatchSemaphore.sync { closure in
+                Master.shared.getEnemies(enemyID: id, isBossPart: true, callback: closure)
+            }
+        }
+        .flatMap { $0 }
+        parts.forEach { $0.owner = self }
+        return parts
+    }()
+    
     lazy var mainSkillLevels: [Int: Int] = {
-        return zip(base.mainSkillLevels, base.mainSkillIDs)
+        let levels: [Int]
+        if let owner = self.owner, self.isBossPart {
+            levels = owner.base.mainSkillLevels
+        } else {
+            levels = base.mainSkillLevels
+        }
+        return zip(levels, base.mainSkillIDs)
 //            .prefix { $0.0 != 0 }
             .reduce(into: [Int: Int]()) {
                 $0[$1.1] = $1.0

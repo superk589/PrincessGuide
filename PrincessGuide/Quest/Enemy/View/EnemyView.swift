@@ -21,7 +21,6 @@ class EnemyView: UIView {
             make.top.left.equalToSuperview()
             make.height.width.equalTo(64)
         }
-        
     }
     
     func configure(for enemy: Enemy) {
@@ -29,6 +28,17 @@ class EnemyView: UIView {
             enemyIcon.shadowUnitID = enemy.unit.prefabId
         } else {
             enemyIcon.unitID = enemy.unit.prefabId
+        }
+        if enemy.isBossPart {
+            enemyIcon.layer.borderColor = UIColor.red.cgColor
+            enemyIcon.layer.borderWidth = 2
+            enemyIcon.layer.cornerRadius = 6
+            enemyIcon.layer.masksToBounds = true
+            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                themeable.enemyIcon.layer.borderColor = theme.color.highlightedText.cgColor
+            }
+        } else {
+            enemyIcon.layer.borderWidth = 0
         }
     }
     

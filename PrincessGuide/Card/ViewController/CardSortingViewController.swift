@@ -26,6 +26,8 @@ class CardSortingViewController: FormViewController {
             case position
             case attackType
             case uniqueEquipNumber
+            case race
+            case cv
             case none
             
             var description: String {
@@ -38,6 +40,10 @@ class CardSortingViewController: FormViewController {
                     return NSLocalizedString("Attack Type", comment: "")
                 case .uniqueEquipNumber:
                     return NSLocalizedString("Number of Unique Equipments", comment: "")
+                case .race:
+                    return NSLocalizedString("Race", comment: "")
+                case .cv:
+                    return NSLocalizedString("CV", comment: "")
                 default:
                     return NSLocalizedString("None", comment: "")
                 }
@@ -287,6 +293,20 @@ class CardSortingViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
         
+            +++ Section()
+            
+            <<< ButtonRow("reset") { (row) in
+                row.title = NSLocalizedString("Reset", comment: "")
+                }
+                .cellSetup(cellSetup(cell:row:))
+                .onCellSelection { [unowned self] (cell, row) in
+                    let encoder = JSONEncoder()
+                    encoder.keyEncodingStrategy = .convertToSnakeCase
+                    let data = try! encoder.encode(Setting())
+                    let json = try! JSON(data: data)
+                    self.form.setValues(json.dictionaryObject ?? [:])
+                    self.tableView.reloadData()
+        }
     }
     
     @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {

@@ -1,6 +1,9 @@
 /* Class = "UITabBarItem"; title = "Cards"; ObjectID = "0Fw-sz-yKe"; */
 "0Fw-sz-yKe.title" = "キャラ";
 
+/* Class = "UITabBarItem"; title = "Toolbox"; ObjectID = "4mz-CZ-4V6"; */
+"4mz-CZ-4V6.title" = "ツール";
+
 /* Class = "UITabBarItem"; title = "Equipments"; ObjectID = "H57-OB-5Ns"; */
 "H57-OB-5Ns.title" = "装備";
 

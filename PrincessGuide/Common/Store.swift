@@ -26,7 +26,7 @@ final class Store {
                 appropriateFor: nil,
                 create: true
             ),
-            protectionType: .none
+            protectionType: FileProtectionType.none
         )
         
         let memoryConfig = MemoryConfig()

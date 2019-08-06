@@ -13,7 +13,7 @@ import Gestalt
 import SwiftyJSON
 import CoreData
 
-class TDTabViewController: TabmanViewController, PageboyViewControllerDataSource {
+class TDTabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
     
     static var defaultTabIndex: Int = 1
     
@@ -35,6 +35,8 @@ class TDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         fatalError("init(coder:) has not been implemented")
     }
     
+    private var items = [TMBarItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,27 +46,30 @@ class TDTabViewController: TabmanViewController, PageboyViewControllerDataSource
             NSLocalizedString("Loses", comment: ""),
             NSLocalizedString("Wins", comment: ""),
             NSLocalizedString("Edit", comment: "")
-            ].map { Item(title: $0) }
+            ].map { TMBarItem(title: $0) }
+        
+        self.items = items
         
         dataSource = self
-        bar.items = items
-        bar.location = .bottom
-        
+
+        let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>()
+        let systemBar = bar.systemBar()
+        bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        bar.layout.transitionStyle = .progressive
+        addBar(systemBar, dataSource: self, at: .bottom)
+
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             let navigationBar = themeable.navigationController?.navigationBar
             navigationBar?.tintColor = theme.color.tint
             navigationBar?.barStyle = theme.barStyle
             
             themeable.view.backgroundColor = theme.color.background
-            themeable.bar.appearance = TabmanBar.Appearance({ (appearance) in
-                appearance.indicator.color = theme.color.tint
-                appearance.state.selectedColor = theme.color.tint
-                appearance.state.color = theme.color.lightText
-                appearance.layout.itemDistribution = .centered
-                appearance.style.background = .blur(style: theme.blurEffectStyle)
-                appearance.indicator.preferredStyle = .clear
-                appearance.layout.extendBackgroundEdgeInsets = true
+            bar.indicator.tintColor = theme.color.tint
+            bar.buttons.customize({ (button) in
+                button.selectedTintColor = theme.color.tint
+                button.tintColor = theme.color.lightText
             })
+            systemBar.backgroundStyle = .blur(style: theme.blurEffectStyle)
         }
         
     }
@@ -86,4 +91,7 @@ class TDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         TDTabViewController.defaultTabIndex = index
     }
     
+    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
+        return items[index]
+    }
 }

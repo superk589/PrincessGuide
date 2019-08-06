@@ -241,7 +241,7 @@ class Master: FMDatabaseQueue {
                 }
                 
                 if let base = try? decoder.decode(Card.Base.self, from: json.rawData()),
-                    let profile = profile, let actualUnit = actualUnit, let unitBackground = unitBackground {
+                    let profile = profile, let unitBackground = unitBackground {
                     let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground, uniqueEquipIDs: uniqueEquipIDs)
                     cards.append(card)
                 }
@@ -350,10 +350,17 @@ class Master: FMDatabaseQueue {
                 b.ex_skill_2,
                 b.ex_skill_3,
                 b.ex_skill_4,
-                b.ex_skill_5
+                b.ex_skill_5,
+                c.child_enemy_parameter_1,
+                c.child_enemy_parameter_2,
+                c.child_enemy_parameter_3,
+                c.child_enemy_parameter_4,
+                c.child_enemy_parameter_5
             FROM
                 unit_skill_data b,
                 enemy_parameter a
+                LEFT JOIN enemy_m_parts c
+                ON a.enemy_id = c.enemy_id
             WHERE
                 a.unit_id = b.unit_id
                 AND a.enemy_id = \(minionID)
@@ -1133,6 +1140,81 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getRaidEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
+        var enemies = [Enemy]()
+        execute({ (db) in
+            var sql = """
+            SELECT
+                a.sekai_enemy_id enemy_id,
+                a.*,
+                b.union_burst,
+                b.main_skill_1,
+                b.main_skill_2,
+                b.main_skill_3,
+                b.main_skill_4,
+                b.main_skill_5,
+                b.main_skill_6,
+                b.main_skill_7,
+                b.main_skill_8,
+                b.main_skill_9,
+                b.main_skill_10,
+                b.ex_skill_1,
+                b.ex_skill_2,
+                b.ex_skill_3,
+                b.ex_skill_4,
+                b.ex_skill_5,
+                c.child_enemy_parameter_1,
+                c.child_enemy_parameter_2,
+                c.child_enemy_parameter_3,
+                c.child_enemy_parameter_4,
+                c.child_enemy_parameter_5
+            FROM
+                unit_skill_data b,
+                sekai_enemy_parameter a
+                LEFT JOIN enemy_m_parts c
+                ON a.enemy_id = c.enemy_id
+            WHERE
+                a.unit_id = b.unit_id
+            """
+            if let id = enemyID {
+                sql.append(" AND a.enemy_id = \(id)")
+            }
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                let unitID = json["unit_id"].intValue
+                let unitSql = """
+                SELECT
+                    *
+                FROM
+                    unit_enemy_data
+                WHERE
+                    unit_id = \(unitID)
+                """
+                var unit: Enemy.Unit?
+                let unitSet = try db.executeQuery(unitSql, values: nil)
+                while unitSet.next() {
+                    let json = JSON(unitSet.resultDictionary ?? [:])
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    unit = try? decoder.decode(Enemy.Unit.self, from: json.rawData())
+                }
+                
+                var newJson = json
+                newJson["hp"].intValue = json["hp"].intValue
+                
+                if let base = try? decoder.decode(Enemy.Base.self, from: newJson.rawData()),
+                    let unit = unit {
+                    enemies.append(Enemy(base: base, unit: unit))
+                }
+            }
+        }) {
+            callback(enemies)
+        }
+    }
     
     func getDungeons(callback: @escaping FMDBCallbackClosure<[Dungeon]>) {
         var dungeons = [Dungeon]()
@@ -1158,7 +1240,7 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
+    func getEnemies(enemyID: Int? = nil, isBossPart: Bool = false, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
         var enemies = [Enemy]()
         execute({ (db) in
             var sql = """
@@ -1179,10 +1261,17 @@ class Master: FMDatabaseQueue {
                 b.ex_skill_2,
                 b.ex_skill_3,
                 b.ex_skill_4,
-                b.ex_skill_5
+                b.ex_skill_5,
+                c.child_enemy_parameter_1,
+                c.child_enemy_parameter_2,
+                c.child_enemy_parameter_3,
+                c.child_enemy_parameter_4,
+                c.child_enemy_parameter_5
             FROM
                 unit_skill_data b,
                 enemy_parameter a
+                LEFT JOIN enemy_m_parts c
+                ON a.enemy_id = c.enemy_id
             WHERE
                 a.unit_id = b.unit_id
             """
@@ -1215,7 +1304,7 @@ class Master: FMDatabaseQueue {
                 
                 if let base = try? decoder.decode(Enemy.Base.self, from: json.rawData()),
                     let unit = unit {
-                    enemies.append(Enemy(base: base, unit: unit))
+                    enemies.append(Enemy(base: base, unit: unit, isBossPart: isBossPart))
                 }
             }
         }) {
@@ -1244,10 +1333,17 @@ class Master: FMDatabaseQueue {
                 b.ex_skill_2,
                 b.ex_skill_3,
                 b.ex_skill_4,
-                b.ex_skill_5
+                b.ex_skill_5,
+                c.child_enemy_parameter_1,
+                c.child_enemy_parameter_2,
+                c.child_enemy_parameter_3,
+                c.child_enemy_parameter_4,
+                c.child_enemy_parameter_5
             FROM
                 unit_skill_data b,
                 tower_enemy_parameter a
+                LEFT JOIN enemy_m_parts c
+                ON a.enemy_id = c.enemy_id
             WHERE
                 a.unit_id = b.unit_id
             """
@@ -1263,11 +1359,11 @@ class Master: FMDatabaseQueue {
                 let unitID = json["unit_id"].intValue
                 let unitSql = """
                 SELECT
-                *
+                    *
                 FROM
-                unit_enemy_data
+                    unit_enemy_data
                 WHERE
-                unit_id = \(unitID)
+                    unit_id = \(unitID)
                 """
                 var unit: Enemy.Unit?
                 let unitSet = try db.executeQuery(unitSql, values: nil)
@@ -1584,6 +1680,124 @@ class Master: FMDatabaseQueue {
             }
         }) {
             callback(unitExperience)
+        }
+    }
+    
+    func getGameEvents(callback: @escaping FMDBCallbackClosure<[GameEvent]>) {
+        var events = [GameEvent]()
+        execute({ (db) in
+            let campaignSql = """
+            SELECT
+                *
+            FROM
+                campaign_schedule a
+            """
+            
+            var set = try db.executeQuery(campaignSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let category = json["campaign_category"].intValue
+                let value = json["value"].doubleValue
+                let campaign = CampaignEvent(startDate: startDate, endDate: endDate, category: category, value: value)
+                events.append(campaign)
+            }
+            
+            let storyEventSql = """
+            SELECT
+                a.*,
+                b.title
+            FROM
+                hatsune_schedule a,
+                event_story_data b
+            WHERE
+                a.event_id = b.value
+            """
+            
+            set = try db.executeQuery(storyEventSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let name = json["title"].stringValue
+                let story = StoryEvent(startDate: startDate, endDate: endDate, name: name, type: .story)
+                events.append(story)
+            }
+            
+            let clanBattleEventSql = """
+            SELECT
+                *
+            FROM
+                clan_battle_period a
+            """
+            
+            set = try db.executeQuery(clanBattleEventSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let clanBattle = ClanBattleEvent(startDate: startDate, endDate: endDate, name: "", type: .clanBattle)
+                events.append(clanBattle)
+            }
+            
+            let gachaSql = """
+            SELECT
+                *
+            FROM
+                gacha_data a
+            """
+            
+            set = try db.executeQuery(gachaSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let id = json["gacha_id"].stringValue
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let name = json["description"].stringValue.replacingOccurrences(of: "\\n", with: " ")
+                let gacha = GachaEvent(startDate: startDate, endDate: endDate, name: name, type: .gacha)
+                
+                // ignore the gacha has a very long duration
+                if gacha.endDate.timeIntervalSinceNow > 60 * 60 * 24 * 30 {
+                    continue
+                }
+                
+                // ignore normal gacha
+                if id.starts(with: "1") || id.starts(with: "2") {
+                    continue
+                }
+                
+                events.append(gacha)
+            }
+            
+            let towerSql = """
+            SELECT
+                b.*,
+                c.title
+            FROM
+                tower_schedule b,
+                tower_story_data c
+            WHERE
+                b.opening_story_id / 1000 = c.story_group_id
+            """
+            
+            set = try db.executeQuery(towerSql, values: nil)
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                let startDate = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let endDate = json["end_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let name = json["title"].stringValue
+                let tower = TowerEvent(startDate: startDate, endDate: endDate, name: name, type: .tower)
+                events.append(tower)
+            }
+            
+        }) {
+            callback(events)
         }
     }
     

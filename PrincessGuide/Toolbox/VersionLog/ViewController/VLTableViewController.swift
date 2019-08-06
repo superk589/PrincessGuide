@@ -77,7 +77,7 @@ class VLTableViewController: UITableViewController {
             "page": page
         ]
         
-        if filter != .none {
+        if filter != VLFilterViewController.Setting.Filter.none {
             parameters["filter"] = filter?.rawValue
         }
         

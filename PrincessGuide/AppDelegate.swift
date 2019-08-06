@@ -45,7 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = NotificationHandler.default
         
-        BirthdayCenter.default.scheduleNotifications()
+        BirthdayCenter.default.initialize()
+        BirthdayCenter.default.rescheduleNotifications()
+        
+        GameEventCenter.default.initialize()
         
         checkNotice()
 //        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
@@ -75,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         checkNotice()
-        BirthdayCenter.default.scheduleNotifications()
+        BirthdayCenter.default.rescheduleNotifications()
     }
     
     func checkNotice(ignoresExpireDate: Bool = false) {
@@ -88,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func showNotice(payload: NoticePayload, ignoresExpireDate: Bool = false) {
-        if payload.expireDate < Date().toString(timeZone: .current) || ignoresExpireDate {
+        if payload.expireDate > Date().toString(format: "yyyy/MM/dd HH:mm:ss", timeZone: .current) || ignoresExpireDate {
             let alert = UIAlertController(title: payload.localizedTitle, message: payload.localizedContent, preferredStyle: .alert)
             let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
                 alert.dismiss(animated: true, completion: nil)

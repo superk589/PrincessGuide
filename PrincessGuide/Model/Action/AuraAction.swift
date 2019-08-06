@@ -16,13 +16,13 @@ class AuraAction: ActionParameter {
     
     override var actionValues: [ActionValue] {
         return [
-            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil)
+            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil, startIndex: 2)
         ]
     }
     
     var durationValues: [ActionValue] {
         return [
-            ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: nil)
+            ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: nil, startIndex: 4)
         ]
     }
     
@@ -101,16 +101,24 @@ class AuraAction: ActionParameter {
         return AuraType(rawValue: actionDetail1 / 10) ?? .none
     }
     
+    enum BreakType: Int {
+        case unknown = -1
+        case normal = 1
+        case `break`
+    }
+    
+    var breakType: BreakType {
+        return BreakType(rawValue: actionDetail2) ?? .unknown
+    }
+    
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        
-        if actionDetail2 == 2 {
-            let format = NSLocalizedString("%@ %@ %d%@ %@ for [%@]s.", comment: "")
-            return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), Int(actionValue1.rounded()), PercentModifier.percent.description, auraType.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
-            
-        } else {
+        switch breakType {
+        case .break:
+            let format = NSLocalizedString("%@ %@ [%@]%@ %@ during break.", comment: "")
+            return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), percentModifier.description, auraType.description)
+        default:
             let format = NSLocalizedString("%@ %@ [%@]%@ %@ for [%@]s.", comment: "")
-            return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .up, style: style, property: property), percentModifier.description, auraType.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+            return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), percentModifier.description, auraType.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
         }
-
     }
 }
