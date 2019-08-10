@@ -66,6 +66,8 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
     
     let backgroundImageView = UIImageView()
     
+    private var observations = [NSKeyValueObservation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = backgroundImageView
@@ -73,8 +75,8 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             themeable.backgroundImageView.image = theme.backgroundImage
             themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
-        tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
@@ -87,7 +89,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             }, completion: nil)
         super.viewWillTransition(to: size, with: coordinator)
     }
-    
+        
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

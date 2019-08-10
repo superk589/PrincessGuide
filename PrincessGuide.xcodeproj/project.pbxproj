@@ -16,6 +16,8 @@
 		120BCAF820F4DEEC0029A083 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF720F4DEEC0029A083 /* Team.swift */; };
 		120BCAFB20F4DF670029A083 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAFA20F4DF670029A083 /* Member.swift */; };
 		120BCAFD20F4E6C80029A083 /* MembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAFC20F4E6C80029A083 /* MembersCell.swift */; };
+		120E487722FECE3900035566 /* UIActivityViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E487622FECE3900035566 /* UIActivityViewController+Helper.swift */; };
+		120E487922FED13700035566 /* UIImage+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120E487822FED13700035566 /* UIImage+Background.swift */; };
 		120F9B4820E4DA4E003632CA /* ToolboxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4720E4DA4E003632CA /* ToolboxTableViewController.swift */; };
 		120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */; };
 		120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */; };
@@ -85,7 +87,6 @@
 		12398E742091573D006AC352 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E732091573C006AC352 /* Area.swift */; };
 		12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7520915765006AC352 /* PatternCollectionViewCell.swift */; };
 		12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7720915771006AC352 /* CDPatternTableViewCell.swift */; };
-		12398E7A20915781006AC352 /* AttackPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7920915781006AC352 /* AttackPatternView.swift */; };
 		12398E7C209157B2006AC352 /* IconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7B209157B1006AC352 /* IconImageView.swift */; };
 		12398E82209158EB006AC352 /* QuestAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7F209158EA006AC352 /* QuestAreaTableViewCell.swift */; };
 		12398E83209158EB006AC352 /* QuestAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E81209158EA006AC352 /* QuestAreaTableViewController.swift */; };
@@ -309,6 +310,8 @@
 		120BCAF720F4DEEC0029A083 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		120BCAFA20F4DF670029A083 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		120BCAFC20F4E6C80029A083 /* MembersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCell.swift; sourceTree = "<group>"; };
+		120E487622FECE3900035566 /* UIActivityViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityViewController+Helper.swift"; sourceTree = "<group>"; };
+		120E487822FED13700035566 /* UIImage+Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Background.swift"; sourceTree = "<group>"; };
 		120F9B4720E4DA4E003632CA /* ToolboxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxTableViewController.swift; sourceTree = "<group>"; };
 		120F9B4B20E4DA98003632CA /* ToolboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxTableViewCell.swift; sourceTree = "<group>"; };
 		120F9B4E20E4DC84003632CA /* CharaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaTableViewController.swift; sourceTree = "<group>"; };
@@ -381,7 +384,6 @@
 		12398E732091573C006AC352 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		12398E7520915765006AC352 /* PatternCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternCollectionViewCell.swift; sourceTree = "<group>"; };
 		12398E7720915771006AC352 /* CDPatternTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPatternTableViewCell.swift; sourceTree = "<group>"; };
-		12398E7920915781006AC352 /* AttackPatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackPatternView.swift; sourceTree = "<group>"; };
 		12398E7B209157B1006AC352 /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
 		12398E7F209158EA006AC352 /* QuestAreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestAreaTableViewCell.swift; sourceTree = "<group>"; };
 		12398E81209158EA006AC352 /* QuestAreaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestAreaTableViewController.swift; sourceTree = "<group>"; };
@@ -1001,6 +1003,8 @@
 				120BCAF320F2564B0029A083 /* ArrayExtension.swift */,
 				12C5992A2286F6EF00875EE4 /* Decimal+Rounding.swift */,
 				12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */,
+				120E487622FECE3900035566 /* UIActivityViewController+Helper.swift */,
+				120E487822FED13700035566 /* UIImage+Background.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1035,7 +1039,6 @@
 				12B85D382089B1DB0088F5FB /* CDPromotionTableViewCell.swift */,
 				12124F432089B55B001C1A6F /* CDSkillTableViewCell.swift */,
 				12398E7720915771006AC352 /* CDPatternTableViewCell.swift */,
-				12398E7920915781006AC352 /* AttackPatternView.swift */,
 				12398E7520915765006AC352 /* PatternCollectionViewCell.swift */,
 				129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */,
 				12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */,
@@ -1498,6 +1501,7 @@
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/BrotliKit/BrotliKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
+				"${BUILT_PRODUCTS_DIR}/DHSmartScreenshot/DHSmartScreenshot.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
@@ -1523,6 +1527,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrotliKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DHSmartScreenshot.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
@@ -1582,6 +1587,7 @@
 				129A7F5820A0249600D93996 /* Property.swift in Sources */,
 				1280DE3F20A5C5A5008D9D72 /* QuestNameTableViewCell.swift in Sources */,
 				129A7F8F20A31D1600D93996 /* QuestEnemyTableViewCell.swift in Sources */,
+				120E487922FED13700035566 /* UIImage+Background.swift in Sources */,
 				125B663320EFB5D600D15E75 /* Chara.swift in Sources */,
 				12F1262720B955D5005C9659 /* WaveStartIdleAction.swift in Sources */,
 				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
@@ -1616,6 +1622,7 @@
 				12F1260320B9536C005C9659 /* AddtivieAction.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
 				120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */,
+				120E487722FECE3900035566 /* UIActivityViewController+Helper.swift in Sources */,
 				12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */,
 				12DC964A20EE1BC1008896D7 /* CharasCell.swift in Sources */,
 				120BCAF220F20F3C0029A083 /* BDInfoTextCell.swift in Sources */,
@@ -1641,7 +1648,6 @@
 				12512A712163D19A0071B0CC /* VLFilterViewController.swift in Sources */,
 				12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */,
 				12F125C820B7AD8F005C9659 /* CompletionView.swift in Sources */,
-				12398E7A20915781006AC352 /* AttackPatternView.swift in Sources */,
 				12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */,
 				123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */,
 				120F9B8320E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
@@ -2037,7 +2043,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 114;
+				CURRENT_PROJECT_VERSION = 115;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2059,7 +2065,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 114;
+				CURRENT_PROJECT_VERSION = 115;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

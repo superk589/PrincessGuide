@@ -67,8 +67,7 @@ class TargetParameter {
         case (_, _, true, _, _, true) where targetCount == .all || targetCount == .zero:
             let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
             return String(format: format, dependActionID % 100, targetAssignment.description, targetRange.rawRange)
-        case (false, _, _, _, _, true),
-             (true, _, _, _, _, true) where targetCount == .all || targetCount == .one:
+        case (_, _, _, _, _, true) where targetType == .none:
             let format = NSLocalizedString("targets of effect %d", comment: "")
             return String(format: format, dependActionID % 100)
         case (_, _, _, false, _, _):

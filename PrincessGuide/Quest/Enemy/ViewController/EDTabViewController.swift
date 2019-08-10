@@ -15,7 +15,7 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     static var defaultTabIndex: Int = 1
     
-    private var viewControllers = [UIViewController]()
+    private var viewControllers = [EDTableViewController]()
     
     private var enemy: Enemy
     
@@ -42,7 +42,9 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
+        let optionsItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleOptionsItem(_:)))
+        let exportItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(handleExportItem(_:)))
+        navigationItem.rightBarButtonItems = [optionsItem, exportItem]
         
         dataSource = self
         let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>()
@@ -87,7 +89,43 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         EDTabViewController.defaultTabIndex = index
     }
     
-    @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: TabmanViewController.PageIndex, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        super.pageboyViewController(pageboyViewController, willScrollToPageAt: index, direction: direction, animated: animated)
+        guard let vc = viewControllers[index] as? EDSkillTableViewController else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            UIView.performWithoutAnimation {
+                vc.tableView.beginUpdates()
+                vc.tableView.endUpdates()
+            }
+        }
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController, didReloadWith currentViewController: UIViewController, currentPageIndex: TabmanViewController.PageIndex) {
+        super.pageboyViewController(pageboyViewController, didReloadWith: currentViewController, currentPageIndex: currentPageIndex)
+        guard let vc = currentViewController as? EDSkillTableViewController else { return }
+        DispatchQueue.main.async {
+            UIView.performWithoutAnimation {
+                vc.tableView.beginUpdates()
+                vc.tableView.endUpdates()
+            }
+        }
+    }
+    
+    @objc private func handleExportItem(_ item: UIBarButtonItem) {
+        if let index = self.currentIndex,
+            let foregroundImage = viewControllers[index].tableView.screenshot(),
+            let backgroundImage = viewControllers[index].backgroundImageView.image,
+            let tableViewImage = foregroundImage.addBackground(backgroundImage) {
+            
+            var image = tableViewImage
+            if let navigationBarImage = navigationController?.navigationBar.screenshot() {
+                image = UIImage.verticalImage(from: [navigationBarImage, image])
+            }
+            UIActivityViewController.show(images: [image], pointTo: item, in: self)
+        }
+    }
+    
+    @objc private func handleOptionsItem(_ item: UIBarButtonItem) {
         let vc = EDSettingsViewController()
         let nc = UINavigationController(rootViewController: vc)
         nc.modalPresentationStyle = .formSheet

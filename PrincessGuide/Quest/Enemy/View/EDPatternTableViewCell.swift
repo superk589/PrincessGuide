@@ -48,8 +48,10 @@ extension PatternCollectionViewCell {
 
 extension EDPatternTableViewCell: EnemyDetailConfigurable {
     
-    func configure(for items: [AttackPatternView.Item], index: Int?) {
-        attackPatternView.configure(for: items)
+    func configure(for items: [Item], index: Int?) {
+        self.items = items
+        collectionView.reloadData()
+        layoutIfNeeded()
         if let index = index {
             titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
         } else {
@@ -62,11 +64,11 @@ extension EDPatternTableViewCell: EnemyDetailConfigurable {
             fatalError()
         }
         
-        let items: [AttackPatternView.Item] = pattern.items.enumerated().map {
+        let items: [Item] = pattern.items.enumerated().map {
             let offset = $0.offset
             let item = $0.element
-            let iconType: AttackPatternView.Item.IconType
-            let loopType: AttackPatternView.Item.LoopType
+            let iconType: Item.IconType
+            let loopType: Item.LoopType
             let text: String
             switch item {
             case 1:
@@ -110,7 +112,7 @@ extension EDPatternTableViewCell: EnemyDetailConfigurable {
                 loopType = .none
             }
             
-            return AttackPatternView.Item(
+            return Item(
                 iconType: iconType,
                 loopType: loopType,
                 text: text

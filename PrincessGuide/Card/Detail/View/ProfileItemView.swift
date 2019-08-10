@@ -24,6 +24,7 @@ class ProfileItemView: UIView {
             make.left.top.equalToSuperview()
         }
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
+        titleLabel.adjustsFontSizeToFitWidth = true
         addSubview(contentLabel)
         contentLabel.snp.makeConstraints { (make) in
             make.left.bottom.equalToSuperview()
@@ -31,6 +32,7 @@ class ProfileItemView: UIView {
         }
         contentLabel.numberOfLines = 0
         contentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
+        contentLabel.adjustsFontSizeToFitWidth = true
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -9,7 +9,7 @@
 import UIKit
 
 class CDPropertyViewController: CDTableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(handleSettingsChange(_:)), name: .cardDetailSettingsDidChange, object: nil)
@@ -23,7 +23,7 @@ class CDPropertyViewController: CDTableViewController {
         
         rows.removeAll()
         let settings = CDSettingsViewController.Setting.default
-    
+        
         let property: Property
         let combatEffectiveness: Int
         
@@ -66,31 +66,33 @@ class CDPropertyViewController: CDTableViewController {
                     (NSLocalizedString("Swing Time", comment: ""), String(card.base.normalAtkCastTime) + "s", false),
                     (NSLocalizedString("Attack Range", comment: ""), String(card.base.searchAreaWidth), false)
                 ]
-            )),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([property.item(for: .accuracy)], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Physical HP", comment: ""), String(Int(property.effectivePhysicalHP.rounded())), settings.statusComparison)),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Magical HP", comment: ""), String(Int(property.effectiveMagicalHP.rounded())), settings.statusComparison)),
+                )),
+            Row(type: CDProfileTextTableViewCell.self, data: .textArray(
+                [
+                    (NSLocalizedString("Effective Physical HP", comment: ""), String(Int(property.effectivePhysicalHP.rounded())), settings.statusComparison),
+                    (NSLocalizedString("Effective Magical HP", comment: ""), String(Int(property.effectiveMagicalHP.rounded())), settings.statusComparison)
+                ]
+                )),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
-                property.item(for: .waveHpRecovery)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
-                property.item(for: .waveEnergyRecovery)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                property.item(for: .hpRecoveryRate),
                 property.item(for: .lifeSteal)
                 ], unitLevel, targetLevel, settings.statusComparison)),
             Row(type: CDProfileTableViewCell.self, data: .propertyItems([
-                property.item(for: .hpRecoveryRate)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
-                property.item(for: .energyRecoveryRate)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                property.item(for: .energyRecoveryRate),
                 property.item(for: .energyReduceRate)
                 ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Move Speed", comment: ""), String(card.base.moveSpeed), false)),
+            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                property.item(for: .waveHpRecovery),
+                property.item(for: .waveEnergyRecovery)
+                ], unitLevel, targetLevel, settings.statusComparison)),
+            Row(type: CDProfileTextTableViewCell.self, data: .textArray(
+                [
+                    (PropertyKey.accuracy.description, String(Int(property.accuracy.rounded())), settings.statusComparison),
+                    (NSLocalizedString("Move Speed", comment: ""), String(card.base.moveSpeed), false)
+                ]
+                ))
         ]
         
     }
-
+    
 }

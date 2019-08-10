@@ -49,7 +49,7 @@ class PatternCollectionViewCell: UICollectionViewCell {
         loopLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
     }
     
-    func configure(for item: AttackPatternView.Item) {
+    func configure(for item: CDPatternTableViewCell.Item) {
         switch item.iconType {
         case .magicalSwing:
             skillIcon.equipmentID = 101251

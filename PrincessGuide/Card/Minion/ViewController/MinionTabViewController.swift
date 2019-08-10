@@ -15,7 +15,7 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
     
     static var defaultTabIndex: Int = 0
     
-    private var viewControllers: [UIViewController]
+    private var viewControllers: [MinionTableViewController]
     
     private var minion: Minion
     
@@ -35,7 +35,10 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
+        
+        let optionsItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleOptionsItem(_:)))
+        let exportItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(handleExportItem(_:)))
+        navigationItem.rightBarButtonItems = [optionsItem, exportItem]
 
         let items = [
                  NSLocalizedString("Skill", comment: ""),
@@ -67,7 +70,21 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
         
     }
     
-    @objc private func handleNavigationRightItem(_ item: UIBarButtonItem) {
+    @objc private func handleExportItem(_ item: UIBarButtonItem) {
+        if let index = self.currentIndex,
+            let foregroundImage = viewControllers[index].tableView.screenshot(),
+            let backgroundImage = viewControllers[index].backgroundImageView.image,
+            let tableViewImage = foregroundImage.addBackground(backgroundImage) {
+            
+            var image = tableViewImage
+            if let navigationBarImage = navigationController?.navigationBar.screenshot() {
+                image = UIImage.verticalImage(from: [navigationBarImage, image])
+            }
+            UIActivityViewController.show(images: [image], pointTo: item, in: self)
+        }
+    }
+    
+    @objc private func handleOptionsItem(_ item: UIBarButtonItem) {
         let vc = CDSettingsViewController()
         let nc = UINavigationController(rootViewController: vc)
         nc.modalPresentationStyle = .formSheet
@@ -89,6 +106,28 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
         MinionTabViewController.defaultTabIndex = index
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: TabmanViewController.PageIndex, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        super.pageboyViewController(pageboyViewController, willScrollToPageAt: index, direction: direction, animated: animated)
+        guard let vc = viewControllers[index] as? MinionSkillViewController else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            UIView.performWithoutAnimation {
+                vc.tableView.beginUpdates()
+                vc.tableView.endUpdates()
+            }
+        }
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController, didReloadWith currentViewController: UIViewController, currentPageIndex: TabmanViewController.PageIndex) {
+        super.pageboyViewController(pageboyViewController, didReloadWith: currentViewController, currentPageIndex: currentPageIndex)
+        guard let vc = currentViewController as? MinionSkillViewController else { return }
+        DispatchQueue.main.async {
+            UIView.performWithoutAnimation {
+                vc.tableView.beginUpdates()
+                vc.tableView.endUpdates()
+            }
+        }
     }
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
