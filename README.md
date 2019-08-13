@@ -40,7 +40,8 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
 1. Team Management
     * Recording Wins and Loses
     * Searching with Tags
-1. Game Version Log and Schedule
+1. Game Version Log
+1. Event Calendar
 1. Game Data Auto Updating
 
 ## How to localize

@@ -20,4 +20,5 @@ extension UIImage {
         draw(in: bounds)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
+
 }

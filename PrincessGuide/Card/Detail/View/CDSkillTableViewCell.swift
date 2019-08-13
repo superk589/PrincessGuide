@@ -127,9 +127,14 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         skillIcon.skillIconID = skill.base.iconType
         
         if skill.actions.count > 0 {
-            actionLabel.text = skill.actions.map {
+            actionLabel.attributedText = skill.actions.map {
                 let parameter = $0.buildParameter(dependActionID: skill.dependActionIDs[$0.actionId] ?? 0)
-                return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: CDSettingsViewController.Setting.default.skillLevel, property: property))"
+                let tag = NSTextAttachment.makeNumberAttachment(parameter.id % 100, color: actionLabel.textColor, minWidth: 25, font: UIFont.scaledFont(forTextStyle: .body, ofSize: 12))
+                let attributedText = NSMutableAttributedString()
+                attributedText.append(NSAttributedString(attachment: tag))
+                attributedText.append(NSAttributedString(string: " "))
+                attributedText.append(NSAttributedString(string: parameter.localizedDetail(of: CDSettingsViewController.Setting.default.skillLevel, property: property)))
+                return attributedText
                 }.joined(separator: "\n")
         } else {
             actionLabel.text = NSLocalizedString("Do nothing.", comment: "")
@@ -162,5 +167,34 @@ extension CDSkillTableViewCell: MinionDetailConfigurable {
             return
         }
         configure(for: skill, category: category, property: property, index: index)
+    }
+}
+
+extension NSTextAttachment {
+    static func makeNumberAttachment(_ number: Int, color: UIColor, minWidth: CGFloat, font: UIFont) -> NSTextAttachment {
+        let label = UILabel()
+        label.lineBreakMode = .byClipping
+        label.textAlignment = .center
+        label.textColor = color
+        label.layer.borderColor = color.cgColor
+        label.layer.borderWidth = 1
+        label.layer.cornerRadius = 2
+        label.text = String(number)
+        label.font = font
+        label.sizeToFit()
+        label.bounds = CGRect(x: 0, y: 0, width: max(minWidth, label.bounds.size.width + 4), height: label.bounds.size.height)
+        
+        UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, UIScreen.main.scale)
+        label.layer.allowsEdgeAntialiasing = true
+        label.layer.render(in: UIGraphicsGetCurrentContext()!)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        let mid = font.descender + font.capHeight
+        attachment.bounds = CGRect(x: 0.0, y: font.descender - image.size.height / 2 + mid + 2, width: image.size.width, height: image.size.height).integral
+        return attachment
     }
 }

@@ -15,3 +15,19 @@ extension Array {
     }
     
 }
+
+extension Array where Element == NSAttributedString {
+    
+    func joined(separator: String = "") -> NSAttributedString {
+        let result = NSMutableAttributedString()
+        var iter = makeIterator()
+        if let first = iter.next() {
+            result.append(first)
+            while let next = iter.next() {
+                result.append(NSAttributedString(string: separator))
+                result.append(next)
+            }
+        }
+        return result
+    }
+}

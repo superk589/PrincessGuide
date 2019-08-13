@@ -146,9 +146,14 @@ class EDSkillTableViewCell: UITableViewCell, EnemyDetailConfigurable {
         skillIcon.skillIconID = skill.base.iconType
         
         if skill.actions.count > 0 {
-            actionLabel.text = skill.actions.map {
+            actionLabel.attributedText = skill.actions.map {
                 let parameter = $0.buildParameter(dependActionID: skill.dependActionIDs[$0.actionId] ?? 0)
-                return "-\(parameter.id % 10)- \(parameter.localizedDetail(of: level, property: property, style: EDSettingsViewController.Setting.default.expressionStyle))"
+                let tag = NSTextAttachment.makeNumberAttachment(parameter.id % 100, color: actionLabel.textColor, minWidth: 25, font: UIFont.scaledFont(forTextStyle: .body, ofSize: 12))
+                let attributedText = NSMutableAttributedString()
+                attributedText.append(NSAttributedString(attachment: tag))
+                attributedText.append(NSAttributedString(string: " "))
+                attributedText.append(NSAttributedString(string: parameter.localizedDetail(of: level, property: property, style: EDSettingsViewController.Setting.default.expressionStyle)))
+                return attributedText
                 }.joined(separator: "\n")
         } else {
             actionLabel.text = NSLocalizedString("Do nothing.", comment: "")

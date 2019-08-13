@@ -73,6 +73,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         tableView.backgroundView = backgroundImageView
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             themeable.backgroundImageView.image = theme.backgroundImage
+            themeable.tableView.backgroundColor = theme.color.background
             themeable.tableView.indicatorStyle = theme.indicatorStyle
         }
         tableView.rowHeight = UITableView.automaticDimension
