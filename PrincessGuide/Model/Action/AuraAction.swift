@@ -41,32 +41,34 @@ class AuraAction: ActionParameter {
         case none
         
         var description: String {
+            let result: String
             switch self {
             case .atk:
-                return PropertyKey.atk.description
+                result = PropertyKey.atk.description
             case .def:
-                return PropertyKey.def.description
+                result = PropertyKey.def.description
             case .magicStr:
-                return PropertyKey.magicStr.description
+                result = PropertyKey.magicStr.description
             case .magicDef:
-                return PropertyKey.magicDef.description
+                result = PropertyKey.magicDef.description
             case .dodge:
-                return PropertyKey.dodge.description
+                result = PropertyKey.dodge.description
             case .physicalCritical:
-                return PropertyKey.physicalCritical.description
+                result = PropertyKey.physicalCritical.description
             case .magicalCritical:
-                return PropertyKey.magicCritical.description
+                result = PropertyKey.magicCritical.description
             case .energyRecoverRate:
-                return PropertyKey.energyRecoveryRate.description
+                result = PropertyKey.energyRecoveryRate.description
             case .lifeSteal:
-                return PropertyKey.lifeSteal.description
+                result = PropertyKey.lifeSteal.description
             case .moveSpeed:
-                return NSLocalizedString("Move Speed", comment: "")
+                result = NSLocalizedString("Move Speed", comment: "")
             case .num:
-                return ""
+                result = ""
             case .none:
-                return ""
+                result = ""
             }
+            return result.lowercased()
         }
     }
     

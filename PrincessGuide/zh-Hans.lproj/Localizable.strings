@@ -974,9 +974,6 @@
 "Multiple [%@ * stacks of mark(ID: %d)] to next effect's value %d." = "使下一个效果的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。";
 
 /* No comment provided by engineer. */
-"name" = "名称";
-
-/* No comment provided by engineer. */
 "New %@ Event: %@" = "新%1$@活动：%2$@";
 
 /* No comment provided by engineer. */
@@ -1179,6 +1176,9 @@
 
 /* No comment provided by engineer. */
 "Remove field of skill %d (1 represents the first skill in this list) effect %d." = "移除技能 %1$d（1 代表本列表中的第一个）效果 %2$d 产生的场地。";
+
+/* No comment provided by engineer. */
+"Rerun Event" = "复刻活动";
 
 /* No comment provided by engineer. */
 "Reset" = "重置";
@@ -1512,6 +1512,9 @@
 
 /* No comment provided by engineer. */
 "Trigger: %d%% on dead." = "触发条件：死亡时 %d%% 触发。";
+
+/* No comment provided by engineer. */
+"Trigger: %d%% on dot damaged." = "触发条件：受到持续伤害时 %d%% 触发。";
 
 /* No comment provided by engineer. */
 "Trigger: %d%% on stealth." = "触发条件：潜行时 %d%% 触发。";

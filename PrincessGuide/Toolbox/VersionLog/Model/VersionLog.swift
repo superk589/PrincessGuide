@@ -89,7 +89,7 @@ struct VLCampaign: Codable, VLElement {
     
     var content: String {
         switch eventType {
-        case .event:
+        case .event, .eventRerun:
             let format = NSLocalizedString("New Campaign: %@ %@ %@ x%@", comment: "")
             return String(format: format, eventType.description, categoryType.description, bonusType.description, String(format: "%.1f", Double(value) / 1000))
         default:
@@ -152,6 +152,7 @@ struct VLCampaign: Codable, VLElement {
         case unknown = -1
         case normal = 0
         case event = 1
+        case eventRerun = 2
         
         var description: String {
             switch self {
@@ -161,6 +162,8 @@ struct VLCampaign: Codable, VLElement {
                 return NSLocalizedString("", comment: "")
             case .event:
                 return NSLocalizedString("Event", comment: "")
+            case .eventRerun:
+                return NSLocalizedString("Rerun Event", comment: "")
             }
         }
     }

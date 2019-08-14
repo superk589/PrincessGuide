@@ -67,7 +67,7 @@ struct CampaignEvent: GameEvent {
         self.eventType = VLCampaign.EventType(rawValue: category / 100) ?? .unknown
         let name: String
         switch eventType {
-        case .event:
+        case .event, .eventRerun:
             let format = NSLocalizedString("%@ %@ %@ x%@", comment: "")
             name = String(format: format, eventType.description, categoryType.description, bonusType.description, String(format: "%.1f", value / 1000))
         default:

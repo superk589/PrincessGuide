@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M382q"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
     </header>
     <body>
-      <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
+      <trans-unit id="0Fw-sz-yKe.title">
         <source>Cards</source>
         <target>卡片</target>
         <note>Class = "UITabBarItem"; title = "Cards"; ObjectID = "0Fw-sz-yKe";</note>
       </trans-unit>
-      <trans-unit id="4mz-CZ-4V6.title" xml:space="preserve">
+      <trans-unit id="4mz-CZ-4V6.title">
         <source>Toolbox</source>
         <target>工具</target>
         <note>Class = "UITabBarItem"; title = "Toolbox"; ObjectID = "4mz-CZ-4V6";</note>
       </trans-unit>
-      <trans-unit id="H57-OB-5Ns.title" xml:space="preserve">
+      <trans-unit id="H57-OB-5Ns.title">
         <source>Equipments</source>
         <target>装备</target>
         <note>Class = "UITabBarItem"; title = "Equipments"; ObjectID = "H57-OB-5Ns";</note>
       </trans-unit>
-      <trans-unit id="Txl-8E-i4X.title" xml:space="preserve">
+      <trans-unit id="Txl-8E-i4X.title">
         <source>Settings</source>
         <target>设置</target>
         <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "Txl-8E-i4X";</note>
       </trans-unit>
-      <trans-unit id="YOs-2y-sHp.title" xml:space="preserve">
+      <trans-unit id="YOs-2y-sHp.title">
         <source>Quests</source>
         <target>关卡</target>
         <note>Class = "UITabBarItem"; title = "Quests"; ObjectID = "YOs-2y-sHp";</note>
@@ -33,30 +33,30 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M382q"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
     </header>
     <body>
-      <trans-unit id="CFBundleDisplayName" xml:space="preserve">
+      <trans-unit id="CFBundleDisplayName">
         <source>Hatsune's Notes</source>
         <target>Hatsune's Notes</target>
         <note>Bundle display name</note>
       </trans-unit>
-      <trans-unit id="CFBundleName" xml:space="preserve">
+      <trans-unit id="CFBundleName">
         <source>PrincessGuide</source>
         <target>$(PRODUCT_NAME)</target>
         <note>Bundle name</note>
       </trans-unit>
-      <trans-unit id="NSCalendarsUsageDescription" xml:space="preserve">
+      <trans-unit id="NSCalendarsUsageDescription">
         <source>In order to save the events we will need access to your calendar.</source>
         <target>为了保存这些事件，我们需要日历的访问权限。</target>
         <note>Privacy - Calendars Usage Description</note>
       </trans-unit>
-      <trans-unit id="NSPhotoLibraryAddUsageDescription" xml:space="preserve">
+      <trans-unit id="NSPhotoLibraryAddUsageDescription">
         <source>In order to save the image we will need access to your camera roll.</source>
         <target>为了保存这张图片，我们需要相册的访问权限。</target>
         <note>Privacy - Photo Library Additions Usage Description</note>
       </trans-unit>
-      <trans-unit id="NSPhotoLibraryUsageDescription" xml:space="preserve">
+      <trans-unit id="NSPhotoLibraryUsageDescription">
         <source>In order to save the image we will need access to your camera roll.</source>
         <target>为了保存这张图片，我们需要相册的访问权限。</target>
         <note>Privacy - Photo Library Usage Description</note>
@@ -65,2771 +65,2776 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11M382q"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
     </header>
     <body>
-      <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
+      <trans-unit id=" Critical damage is %@ times as normal damage.">
         <source> Critical damage is %@ times as normal damage.</source>
         <target>暴击时将造成 %@ 倍伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ %@" xml:space="preserve">
+      <trans-unit id="%@ %@ %@">
         <source>%1$@ %2$@ %3$@</source>
         <target>%1$@%2$@%3$@</target>
         <note>[the farthest two] [enemy] [targets]
    [the second to fourth farthest] [enemy] [targets]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ %@ in range %d" xml:space="preserve">
+      <trans-unit id="%@ %@ %@ in range %d">
         <source>%1$@ %2$@ %3$@ in range %4$d</source>
         <target>范围 %4$d 内%1$@%2$@%3$@</target>
         <note>[the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ %@ x%@" xml:space="preserve">
+      <trans-unit id="%@ %@ %@ x%@">
         <source>%1$@ %2$@ %3$@ x%4$@</source>
         <target>%1$@%2$@%3$@ x%4$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ [%@]%@ %@ during break." xml:space="preserve">
+      <trans-unit id="%@ %@ [%@]%@ %@ during break.">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ during break.</source>
         <target>在 Break 期间，%1$@%2$@ [%3$@]%4$@ %5$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s." xml:space="preserve">
+      <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s.">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for [%6$@]s.</source>
         <target>%1$@%2$@ [%3$@]%4$@ %5$@，持续 [%6$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ and deal [%@] damage per second for [%@]s." xml:space="preserve">
+      <trans-unit id="%@ %@ and deal [%@] damage per second for [%@]s.">
         <source>%1$@ %2$@ and deal [%3$@] damage per second for [%4$@]s.</source>
         <target>%1$@%2$@并每秒造成 [%3$@] 伤害，持续 [%4$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ for [%@]s." xml:space="preserve">
+      <trans-unit id="%@ %@ for [%@]s.">
         <source>%1$@ %2$@ for [%3$@]s.</source>
         <target>%1$@%2$@，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@ target" xml:space="preserve">
+      <trans-unit id="%@ %@ target">
         <source>%1$@ %2$@ target</source>
         <target>%1$@%2$@目标</target>
         <note>[the nearest] [enemy] target
    [the second nearest] [enemy] target</note>
       </trans-unit>
-      <trans-unit id="%@ %@ target in range %d" xml:space="preserve">
+      <trans-unit id="%@ %@ target in range %d">
         <source>%1$@ %2$@ target in range %3$d</source>
         <target>范围 %3$d 内%1$@%2$@目标</target>
         <note>[the nearest] [enemy] target in range [500]
    [the second nearest] [enemy] target in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ targets in range %d" xml:space="preserve">
+      <trans-unit id="%@ %@ targets in range %d">
         <source>%1$@ %2$@ targets in range %3$d</source>
         <target>范围 %3$d 内%1$@%2$@目标</target>
         <note>[friendly] [physics] targets in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ x%@" xml:space="preserve">
+      <trans-unit id="%@ %@ x%@">
         <source>%1$@ %2$@ x%3$@</source>
         <target>%1$@%2$@ x%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ Damage is reduced on low level players." xml:space="preserve">
+      <trans-unit id="%@ Damage is reduced on low level players.">
         <source>%@ Damage is reduced on low level players.</source>
         <target>%@伤害对低等级玩家会减少。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ Feedback" xml:space="preserve">
+      <trans-unit id="%@ Feedback">
         <source>%@ Feedback</source>
         <target>%@ 反馈</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ boss" xml:space="preserve">
+      <trans-unit id="%@ boss">
         <source>%@ boss</source>
         <target>%@首领级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ farthest" xml:space="preserve">
+      <trans-unit id="%@ farthest">
         <source>%@ farthest</source>
         <target>最远的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ front %@ %@" xml:space="preserve">
+      <trans-unit id="%@ front %@ %@">
         <source>%1$@ front %2$@ %3$@</source>
         <target>前方%1$@%2$@%3$@</target>
         <note>[the second to fourth farthest] front [enemy] [targets]</note>
       </trans-unit>
-      <trans-unit id="%@ front %@ %@ in range %d" xml:space="preserve">
+      <trans-unit id="%@ front %@ %@ in range %d">
         <source>%1$@ front %2$@ %3$@ in range %4$d</source>
         <target>前方 %4$d 范围内%1$@%2$@%3$@</target>
         <note>[the farthest two] front [enemy] [targets] in range [500]
    [the second to fourth farthest] front [enemy] [targets] in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ front %@ target in range %d" xml:space="preserve">
+      <trans-unit id="%@ front %@ target in range %d">
         <source>%1$@ front %2$@ target in range %3$d</source>
         <target>前方%3$d范围内%1$@%2$@目标</target>
         <note>[the nearest] front [enemy] target in range [500]
    [the second nearest] front [enemy] target in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ highest ATK" xml:space="preserve">
+      <trans-unit id="%@ highest ATK">
         <source>%@ highest ATK</source>
         <target>物理攻击力最高的%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ highest HP ratio" xml:space="preserve">
+      <trans-unit id="%@ highest HP ratio">
         <source>%@ highest HP ratio</source>
         <target> HP 比例最高的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ highest Magic STR" xml:space="preserve">
+      <trans-unit id="%@ highest Magic STR">
         <source>%@ highest Magic STR</source>
         <target>魔法攻击力最高的%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ highest TP" xml:space="preserve">
+      <trans-unit id="%@ highest TP">
         <source>%@ highest TP</source>
         <target> TP 最多的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ lowest ATK" xml:space="preserve">
+      <trans-unit id="%@ lowest ATK">
         <source>%@ lowest ATK</source>
         <target>物理攻击力最低的%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ lowest HP ratio" xml:space="preserve">
+      <trans-unit id="%@ lowest HP ratio">
         <source>%@ lowest HP ratio</source>
         <target> HP 比例最低的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ lowest Magic STR" xml:space="preserve">
+      <trans-unit id="%@ lowest Magic STR">
         <source>%@ lowest Magic STR</source>
         <target>魔法攻击力最低的%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ lowest TP" xml:space="preserve">
+      <trans-unit id="%@ lowest TP">
         <source>%@ lowest TP</source>
         <target> TP 最少的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ magic" xml:space="preserve">
+      <trans-unit id="%@ magic">
         <source>%@ magic</source>
         <target>%@法系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ minion" xml:space="preserve">
+      <trans-unit id="%@ minion">
         <source>%@ minion</source>
         <target>%@随从</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ most backward" xml:space="preserve">
+      <trans-unit id="%@ most backward">
         <source>%@ most backward</source>
         <target>最靠后的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ most forward" xml:space="preserve">
+      <trans-unit id="%@ most forward">
         <source>%@ most forward</source>
         <target>最靠前的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ nearest" xml:space="preserve">
+      <trans-unit id="%@ nearest">
         <source>%@ nearest</source>
         <target>最近的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ physics" xml:space="preserve">
+      <trans-unit id="%@ physics">
         <source>%@ physics</source>
         <target>%@物理系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ random" xml:space="preserve">
+      <trans-unit id="%@ random">
         <source>%@ random</source>
         <target>%@随机</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ random(once)" xml:space="preserve">
+      <trans-unit id="%@ random(once)">
         <source>%@ random(once)</source>
         <target>%@随机（仅第一次）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ receives your blessing." xml:space="preserve">
+      <trans-unit id="%@ receives your blessing.">
         <source>%@ receives your blessing.</source>
         <target>%@收到了你的祝福。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ targets in range %d" xml:space="preserve">
+      <trans-unit id="%@ targets in range %d">
         <source>%1$@ targets in range %2$d</source>
         <target>范围 %2$d 内%1$@目标</target>
         <note>[enemy] targets in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ to %@" xml:space="preserve">
+      <trans-unit id="%@ to %@">
         <source>%1$@ to %2$@</source>
         <target>%1$@至%2$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ unknown type" xml:space="preserve">
+      <trans-unit id="%@ unknown type">
         <source>%@ unknown type</source>
         <target>%@未知类型</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@'s birthday" xml:space="preserve">
+      <trans-unit id="%@'s birthday">
         <source>%@'s birthday</source>
         <target>%@的生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@/%@" xml:space="preserve">
+      <trans-unit id="%@/%@">
         <source>%1$@/%2$@</source>
         <target>%1$@ 月 %2$@ 日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%d in front of %@, summon a minion of ID: %d." xml:space="preserve">
+      <trans-unit id="%d in front of %@, summon a minion of ID: %d.">
         <source>%1$d in front of %2$@, summon a minion of ID: %3$d.</source>
         <target>在%2$@前 %1$d 的位置，召唤 ID 为 %3$d 的随从。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id=", " xml:space="preserve">
+      <trans-unit id=", ">
         <source>, </source>
         <target>，</target>
         <note>clause separator</note>
       </trans-unit>
-      <trans-unit id="ATK" xml:space="preserve">
+      <trans-unit id="ATK">
         <source>ATK</source>
         <target>物理攻击力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="About" xml:space="preserve">
+      <trans-unit id="About">
         <source>About</source>
         <target>关于</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Accuracy" xml:space="preserve">
+      <trans-unit id="Accuracy">
         <source>Accuracy</source>
         <target>命中</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Action" xml:space="preserve">
+      <trans-unit id="Action">
         <source>Action</source>
         <target>Action</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." xml:space="preserve">
+      <trans-unit id="Add %@ mark stacks(max %@, ID: %@) on %@ for %@s.">
         <source>Add %1$@ mark stacks(max %2$@, ID: %3$@) on %4$@ for %5$@s.</source>
         <target>对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * HP] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Add [%@ * HP] to next effect's value %d.">
         <source>Add [%1$@ * HP] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 提高 [%1$@ * HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * count of defeated enemies] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Add [%@ * count of defeated enemies] to next effect's value %d.">
         <source>Add [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 提高 [%1$@ * 击杀个数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * count of omemes] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Add [%@ * count of omemes] to next effect's value %d.">
         <source>Add [%1$@ * count of omemes] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 提高 [%1$@ * オメメ个数] 。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * count of targets] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Add [%@ * count of targets] to next effect's value %d.">
         <source>Add [%1$@ * count of targets] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 提高 [%1$@ * 目标个数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * lost HP] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Add [%@ * lost HP] to next effect's value %d.">
         <source>Add [%1$@ * lost HP] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 提高 [%1$@ * 损失的 HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%@ * stacks of mark(ID: %d)] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Add [%@ * stacks of mark(ID: %d)] to next effect's value %d.">
         <source>Add [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.</source>
         <target>使下一个效果的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%d] to the counter." xml:space="preserve">
+      <trans-unit id="Add [%d] to the counter.">
         <source>Add [%d] to the counter.</source>
         <target>使计数器加 [%d]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks." xml:space="preserve">
+      <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks.">
         <source>Add additional [%1$@] %2$@ to %3$@ for next [%4$@] attacks.</source>
         <target>使%3$@的下 [%4$@] 次攻击附加 [%1$@] %2$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add additional [%@] damage per attack with max [%@] stacks to current target." xml:space="preserve">
+      <trans-unit id="Add additional [%@] damage per attack with max [%@] stacks to current target.">
         <source>Add additional [%1$@] damage per attack with max [%2$@] stacks to current target.</source>
         <target>对当前目标的每次攻击附加额外 [%1$@] 伤害，此效果最多叠加 [%2$@] 层。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Adds Ex Bonus" xml:space="preserve">
+      <trans-unit id="Adds Ex Bonus">
         <source>Adds Ex Bonus</source>
         <target>计算 EX 技能加成</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Age" xml:space="preserve">
+      <trans-unit id="Age">
         <source>Age</source>
         <target>年龄</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="App Version" xml:space="preserve">
+      <trans-unit id="App Version">
         <source>App Version</source>
         <target>程序版本</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Appear after %@s since wave start." xml:space="preserve">
+      <trans-unit id="Appear after %@s since wave start.">
         <source>Appear after %@s since wave start.</source>
         <target>回合开始后 %@ 秒入场。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Apply" xml:space="preserve">
+      <trans-unit id="Apply">
         <source>Apply</source>
         <target>应用</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Ascending" xml:space="preserve">
+      <trans-unit id="Ascending">
         <source>Ascending</source>
         <target>升序</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="At the position of %@, summon a minion of ID: %d." xml:space="preserve">
+      <trans-unit id="At the position of %@, summon a minion of ID: %d.">
         <source>At the position of %1$@, summon a minion of ID: %2$d.</source>
         <target>在%1$@的位置，召唤 ID 为 %2$d 的随从。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Attack Pattern" xml:space="preserve">
+      <trans-unit id="Attack Pattern">
         <source>Attack Pattern</source>
         <target>攻击模式</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Attack Range" xml:space="preserve">
+      <trans-unit id="Attack Range">
         <source>Attack Range</source>
         <target>攻击范围</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Attack Type" xml:space="preserve">
+      <trans-unit id="Attack Type">
         <source>Attack Type</source>
         <target>攻击类型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Attention" xml:space="preserve">
+      <trans-unit id="Attention">
         <source>Attention</source>
         <target>提示</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Authorized" xml:space="preserve">
+      <trans-unit id="Authorized">
         <source>Authorized</source>
         <target>已通过</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Back" xml:space="preserve">
+      <trans-unit id="Back">
         <source>Back</source>
         <target>后卫</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Batch Edit" xml:space="preserve">
+      <trans-unit id="Batch Edit">
         <source>Batch Edit</source>
         <target>批量修改</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Become invulnerable for [%@]s." xml:space="preserve">
+      <trans-unit id="Become invulnerable for [%@]s.">
         <source>Become invulnerable for [%@]s.</source>
         <target>进入无敌状态，持续 [%@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Become invulnerable to physical damage for [%@]s." xml:space="preserve">
+      <trans-unit id="Become invulnerable to physical damage for [%@]s.">
         <source>Become invulnerable to physical damage for [%@]s.</source>
         <target>免疫物理伤害，持续 [%@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Bind" xml:space="preserve">
+      <trans-unit id="Bind">
         <source>Bind</source>
         <target>束缚</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Birthday" xml:space="preserve">
+      <trans-unit id="Birthday">
         <source>Birthday</source>
         <target>生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Birthday Notification" xml:space="preserve">
+      <trans-unit id="Birthday Notification">
         <source>Birthday Notification</source>
         <target>生日通知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Blind" xml:space="preserve">
+      <trans-unit id="Blind">
         <source>Blind</source>
         <target>暗黑</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss." xml:space="preserve">
+      <trans-unit id="Blind %@ with [%@]%% chance for [%@]s, physical attack has %d%% chance to miss.">
         <source>Blind %1$@ with [%2$@]%% chance for [%3$@]s, physical attack has %4$d%% chance to miss.</source>
         <target>[%2$@]%% 几率使%1$@进入黑暗状态，持续 [%3$@] 秒，物理攻击会有 %4$d%% 几率丢失。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Blood Type" xml:space="preserve">
+      <trans-unit id="Blood Type">
         <source>Blood Type</source>
         <target>血型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Bond Rank" xml:space="preserve">
+      <trans-unit id="Bond Rank">
         <source>Bond Rank</source>
         <target>绊 Rank</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Box Detail" xml:space="preserve">
+      <trans-unit id="Box Detail">
         <source>Box Detail</source>
         <target>Box 详情</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Box Management" xml:space="preserve">
+      <trans-unit id="Box Management">
         <source>Box Management</source>
         <target>Box 管理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Box Name" xml:space="preserve">
+      <trans-unit id="Box Name">
         <source>Box Name</source>
         <target>Box 名称</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Boxes" xml:space="preserve">
+      <trans-unit id="Boxes">
         <source>Boxes</source>
         <target>Box 列表</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Burn" xml:space="preserve">
+      <trans-unit id="Burn">
         <source>Burn</source>
         <target>烧伤</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again." xml:space="preserve">
+      <trans-unit id="By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.">
         <source>By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.</source>
         <target>目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="CV" xml:space="preserve">
+      <trans-unit id="CV">
         <source>CV</source>
         <target>声优</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Calendar Permission" xml:space="preserve">
+      <trans-unit id="Calendar Permission">
         <source>Calendar Permission</source>
         <target>系统日历权限</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Calendar Settings" xml:space="preserve">
+      <trans-unit id="Calendar Settings">
         <source>Calendar Settings</source>
         <target>日历设置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Campaign" xml:space="preserve">
+      <trans-unit id="Campaign">
         <source>Campaign</source>
         <target>奖励事件</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cancel" xml:space="preserve">
+      <trans-unit id="Cancel">
         <source>Cancel</source>
         <target>取消</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cards" xml:space="preserve">
+      <trans-unit id="Cards">
         <source>Cards</source>
         <target>卡片</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast Time" xml:space="preserve">
+      <trans-unit id="Cast Time">
         <source>Cast Time</source>
         <target>释放时间</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for [%@]s." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for [%@]s.">
         <source>Cast a barrier on %1$@ to absorb [%2$@] magical damage for [%3$@]s.</source>
         <target>对%1$@释放一个护盾，吸收 [%2$@] 魔法伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s.">
         <source>Cast a barrier on %1$@ to absorb [%2$@] physical and magical damage for [%3$@]s.</source>
         <target>对%1$@释放一个护盾，吸收 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for [%@]s." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for [%@]s.">
         <source>Cast a barrier on %1$@ to absorb [%2$@] physical damage for [%3$@]s.</source>
         <target>对%1$@释放一个护盾，吸收 [%2$@] 物理伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] magical damage for [%@]s." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] magical damage for [%@]s.">
         <source>Cast a barrier on %1$@ to nullify [%2$@] magical damage for [%3$@]s.</source>
         <target>对%1$@释放一个护盾，无效 [%2$@] 魔法伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s.">
         <source>Cast a barrier on %1$@ to nullify [%2$@] physical and magical damage for [%3$@]s.</source>
         <target>对%1$@释放一个护盾，无效 [%2$@] 物理和魔法伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for [%@]s.">
         <source>Cast a barrier on %1$@ to nullify [%2$@] physical damage for [%3$@]s.</source>
         <target>对%1$@释放一个护盾，无效 [%2$@] 物理伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage.">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking damage.</source>
         <target>对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking magical damage." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking magical damage.">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking magical damage.</source>
         <target>对%1$@释放一个护盾，受到魔法伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking physical damage." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking physical damage.">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking physical damage.</source>
         <target>对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking damage." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking damage.">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking damage.</source>
         <target>对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking magical damage." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking magical damage.">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking magical damage.</source>
         <target>对%1$@释放一个护盾，受到魔法伤害时反击 [%2$@] 伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking physical damage." xml:space="preserve">
+      <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking physical damage.">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking physical damage.</source>
         <target>对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s." xml:space="preserve">
+      <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s.">
         <source>Cast an unknown barrier %1$d on %2$@ for [%3$@]s.</source>
         <target>对%2$@释放一个护盾，类型 %1$d，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Catch Copy" xml:space="preserve">
+      <trans-unit id="Catch Copy">
         <source>Catch Copy</source>
         <target>简介</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Center" xml:space="preserve">
+      <trans-unit id="Center">
         <source>Center</source>
         <target>中卫</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change attack pattern back to %d after effect over." xml:space="preserve">
+      <trans-unit id="Change attack pattern back to %d after effect over.">
         <source>Change attack pattern back to %d after effect over.</source>
         <target>效果结束后，改回攻击模式 %d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change attack pattern to %d for %@s." xml:space="preserve">
+      <trans-unit id="Change attack pattern to %d for %@s.">
         <source>Change attack pattern to %1$d for %2$@s.</source>
         <target>改为使用攻击模式 %1$d，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change body width to %@." xml:space="preserve">
+      <trans-unit id="Change body width to %@.">
         <source>Change body width to %@.</source>
         <target>改变模型宽度至 %@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position %@ backward then return." xml:space="preserve">
+      <trans-unit id="Change self position %@ backward then return.">
         <source>Change self position %@ backward then return.</source>
         <target>改变自身位置，向后移动 %@，技能结束后回原位置。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position %@ backward." xml:space="preserve">
+      <trans-unit id="Change self position %@ backward.">
         <source>Change self position %@ backward.</source>
         <target>改变自身位置，向后移动 %@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position %@ forward then return." xml:space="preserve">
+      <trans-unit id="Change self position %@ forward then return.">
         <source>Change self position %@ forward then return.</source>
         <target>改变自身位置，向前移动 %@，技能结束后回原位置。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position %@ forward." xml:space="preserve">
+      <trans-unit id="Change self position %@ forward.">
         <source>Change self position %@ forward.</source>
         <target>改变自身位置，向前移动 %@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position to %@ then return." xml:space="preserve">
+      <trans-unit id="Change self position to %@ then return.">
         <source>Change self position to %@ then return.</source>
         <target>改变自身位置到%@，技能结束后回原位置。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change self position to %@." xml:space="preserve">
+      <trans-unit id="Change self position to %@.">
         <source>Change self position to %@.</source>
         <target>改变自身位置到%@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change skill visual effect for %@s." xml:space="preserve">
+      <trans-unit id="Change skill visual effect for %@s.">
         <source>Change skill visual effect for %@s.</source>
         <target>改变技能视觉效果，持续 %@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change the perspective on %@." xml:space="preserve">
+      <trans-unit id="Change the perspective on %@.">
         <source>Change the perspective on %@.</source>
         <target>将自身视角切换到%@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Change the perspective to %@ %d." xml:space="preserve">
+      <trans-unit id="Change the perspective to %@ %d.">
         <source>Change the perspective to %1$@ %2$d.</source>
         <target>向%1$@移动自身视角，距离 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@." xml:space="preserve">
+      <trans-unit id="Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@.">
         <source>Channel for [%1$@]s, interruptible by receiving damange, %2$@ %3$@ [%4$@]%5$@ %6$@.</source>
         <target>引导施法 [%1$@] 秒，受到伤害时中断，%2$@%3$@ [%4$@]%5$@ %6$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Chara Birthday" xml:space="preserve">
+      <trans-unit id="Chara Birthday">
         <source>Chara Birthday</source>
         <target>角色生日</target>
         <note>Birthday notification title</note>
       </trans-unit>
-      <trans-unit id="Chara Management" xml:space="preserve">
+      <trans-unit id="Chara Management">
         <source>Chara Management</source>
         <target>角色管理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Chara Name" xml:space="preserve">
+      <trans-unit id="Chara Name">
         <source>Chara Name</source>
         <target>角色名</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charas" xml:space="preserve">
+      <trans-unit id="Charas">
         <source>Charas</source>
         <target>角色列表</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charas Count" xml:space="preserve">
+      <trans-unit id="Charas Count">
         <source>Charas Count</source>
         <target>角色数量</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charge for %@s and deal [%@ * damage taken] additional damage on the next effect." xml:space="preserve">
+      <trans-unit id="Charge for %@s and deal [%@ * damage taken] additional damage on the next effect.">
         <source>Charge for %1$@s and deal [%2$@ * damage taken] additional damage on the next effect.</source>
         <target>充能 %1$@ 秒，下一个效果造成 [%2$@ * 所受伤害] 的额外伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charm" xml:space="preserve">
+      <trans-unit id="Charm">
         <source>Charm</source>
         <target>魅惑</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charm %@ with [%@]%% chance for [%@]s." xml:space="preserve">
+      <trans-unit id="Charm %@ with [%@]%% chance for [%@]s.">
         <source>Charm %1$@ with [%2$@]%% chance for [%3$@]s.</source>
         <target>[%2$@]%% 几率魅惑%1$@，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Check for Updates at Launch" xml:space="preserve">
+      <trans-unit id="Check for Updates at Launch">
         <source>Check for Updates at Launch</source>
         <target>启动时检查更新</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Checking" xml:space="preserve">
+      <trans-unit id="Checking">
         <source>Checking</source>
         <target>正在检查更新</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Clan Battle" xml:space="preserve">
+      <trans-unit id="Clan Battle">
         <source>Clan Battle</source>
         <target>公会战</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Clan Battle %d-%d" xml:space="preserve">
+      <trans-unit id="Clan Battle %d-%d">
         <source>Clan Battle %1$d-%2$d</source>
         <target>公会战 %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Clear all %@ on %@ with chance [%@]%%." xml:space="preserve">
+      <trans-unit id="Clear all %@ on %@ with chance [%@]%%.">
         <source>Clear all %1$@ on %2$@ with chance [%3$@]%%.</source>
         <target>有 [%3$@]%% 几率清除%2$@上的%1$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Combat Effectiveness" xml:space="preserve">
+      <trans-unit id="Combat Effectiveness">
         <source>Combat Effectiveness</source>
         <target>战力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Comic" xml:space="preserve">
+      <trans-unit id="Comic">
         <source>Comic</source>
         <target>小剧场</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Completed" xml:space="preserve">
+      <trans-unit id="Completed">
         <source>Completed</source>
         <target>完成</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: %@." xml:space="preserve">
+      <trans-unit id="Condition: %@.">
         <source>Condition: %@.</source>
         <target>条件分支：%@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: [%@]%% chance use %d when takes damage within %@s." xml:space="preserve">
+      <trans-unit id="Condition: [%@]%% chance use %d when takes damage within %@s.">
         <source>Condition: [%1$@]%% chance use %2$d when takes damage within %3$@s.</source>
         <target>条件分支：%3$@ 秒内受到伤害时有 [%1$@]%% 几率使用 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: counter is greater or equal to %d then use %d, otherwise %d." xml:space="preserve">
+      <trans-unit id="Condition: counter is greater or equal to %d then use %d, otherwise %d.">
         <source>Condition: counter is greater or equal to %1$d then use %2$d, otherwise %3$d.</source>
         <target>条件分支：计数器大于等于 %1$d 则使用 %2$d，否则使用 %3$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: counter is greater or equal to %d then use %d." xml:space="preserve">
+      <trans-unit id="Condition: counter is greater or equal to %d then use %d.">
         <source>Condition: counter is greater or equal to %1$d then use %2$d.</source>
         <target>条件分支：计数器大于等于 %1$d 则使用 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: if defeat target by the last effect then use %d." xml:space="preserve">
+      <trans-unit id="Condition: if defeat target by the last effect then use %d.">
         <source>Condition: if defeat target by the last effect then use %d.</source>
         <target>条件分支：上一个效果成功击杀目标则使用 %d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: if the specific field exists then use %d, otherwise %d." xml:space="preserve">
+      <trans-unit id="Condition: if the specific field exists then use %d, otherwise %d.">
         <source>Condition: if the specific field exists then use %1$d, otherwise %2$d.</source>
         <target>条件分支：如果指定的场地效果存在则使用 %1$d，否则使用 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: if the specific field exists then use %d." xml:space="preserve">
+      <trans-unit id="Condition: if the specific field exists then use %d.">
         <source>Condition: if the specific field exists then use %d.</source>
         <target>条件分支：如果指定的场地效果存在则使用 %1$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: use %d if %@ is alone, otherwise %d." xml:space="preserve">
+      <trans-unit id="Condition: use %d if %@ is alone, otherwise %d.">
         <source>Condition: use %1$d if %2$@ is alone, otherwise %3$d.</source>
         <target>条件分支：如果%2$@是单独的则使用 %1$d，否则使用 %3$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: use %d if %@ is alone." xml:space="preserve">
+      <trans-unit id="Condition: use %d if %@ is alone.">
         <source>Condition: use %1$d if %2$@ is alone.</source>
         <target>条件分支：如果%2$@是单独的则使用 %1$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Confirm" xml:space="preserve">
+      <trans-unit id="Confirm">
         <source>Confirm</source>
         <target>确定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Confuse" xml:space="preserve">
+      <trans-unit id="Confuse">
         <source>Confuse</source>
         <target>混乱</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Confuse %@ with [%@]%% chance for [%@]s." xml:space="preserve">
+      <trans-unit id="Confuse %@ with [%@]%% chance for [%@]s.">
         <source>Confuse %1$@ with [%2$@]%% chance for [%3$@]s.</source>
         <target>[%2$@]%% 几率使%1$@混乱，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Copy" xml:space="preserve">
+      <trans-unit id="Copy">
         <source>Copy</source>
         <target>复制</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Cost %@ TP/s, change attack pattern to %d until TP is zero." xml:space="preserve">
+      <trans-unit id="Cost %@ TP/s, change attack pattern to %d until TP is zero.">
         <source>Cost %1$@ TP/s, change attack pattern to %2$d until TP is zero.</source>
         <target>消耗 %1$@ TP/秒，TP 耗光前改为使用攻击模式 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Count Blind" xml:space="preserve">
+      <trans-unit id="Count Blind">
         <source>Count Blind</source>
         <target>千里眼</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Crafted" xml:space="preserve">
+      <trans-unit id="Crafted">
         <source>Crafted</source>
         <target>制作</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Create Team" xml:space="preserve">
+      <trans-unit id="Create Team">
         <source>Create Team</source>
         <target>创建队伍</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Curse" xml:space="preserve">
+      <trans-unit id="Curse">
         <source>Curse</source>
         <target>诅咒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Custom Tag" xml:space="preserve">
+      <trans-unit id="Custom Tag">
         <source>Custom Tag</source>
         <target>自定义标签</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="DEF" xml:space="preserve">
+      <trans-unit id="DEF">
         <source>DEF</source>
         <target>物理防御力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Data Version" xml:space="preserve">
+      <trans-unit id="Data Version">
         <source>Data Version</source>
         <target>数据版本</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deal [%@] %@ damage to %@, and this attack is ensured critical." xml:space="preserve">
+      <trans-unit id="Deal [%@] %@ damage to %@, and this attack is ensured critical.">
         <source>Deal [%1$@] %2$@ damage to %3$@, and this attack is ensured critical.</source>
         <target>对%3$@造成 [%1$@] %2$@伤害，并且必定暴击。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deal [%@] %@ damage to %@." xml:space="preserve">
+      <trans-unit id="Deal [%@] %@ damage to %@.">
         <source>Deal [%1$@] %2$@ damage to %3$@.</source>
         <target>对%3$@造成 [%1$@] %2$@伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@." xml:space="preserve">
+      <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@.">
         <source>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</source>
         <target>对%2$@造成其最大 HP [%1$@]%% 的伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Delay event: use %d after %@s." xml:space="preserve">
+      <trans-unit id="Delay event: use %d after %@s.">
         <source>Delay event: use %1$d after %2$@s.</source>
         <target>延时事件：%2$@ 秒后触发效果 %1$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Denied" xml:space="preserve">
+      <trans-unit id="Denied">
         <source>Denied</source>
         <target>拒绝</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Descending" xml:space="preserve">
+      <trans-unit id="Descending">
         <source>Descending</source>
         <target>降序</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Description" xml:space="preserve">
+      <trans-unit id="Description">
         <source>Description</source>
         <target>描述</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deselect All" xml:space="preserve">
+      <trans-unit id="Deselect All">
         <source>Deselect All</source>
         <target>取消全选</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Detain" xml:space="preserve">
+      <trans-unit id="Detain">
         <source>Detain</source>
         <target>拘留</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Detain (Damage)" xml:space="preserve">
+      <trans-unit id="Detain (Damage)">
         <source>Detain (Damage)</source>
         <target>拘留（伤害）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Do nothing." xml:space="preserve">
+      <trans-unit id="Do nothing.">
         <source>Do nothing.</source>
         <target>什么都不做。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Dodge" xml:space="preserve">
+      <trans-unit id="Dodge">
         <source>Dodge</source>
         <target>回避</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Dot" xml:space="preserve">
+      <trans-unit id="Dot">
         <source>Dot</source>
         <target>Dot</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Draw %@ toward self %d." xml:space="preserve">
+      <trans-unit id="Draw %@ toward self %d.">
         <source>Draw %1$@ toward self %2$d.</source>
         <target>拉近%1$@，距离 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Drop" xml:space="preserve">
+      <trans-unit id="Drop">
         <source>Drop</source>
         <target>掉落</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Drop Rate" xml:space="preserve">
+      <trans-unit id="Drop Rate">
         <source>Drop Rate</source>
         <target>掉率</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Dropped" xml:space="preserve">
+      <trans-unit id="Dropped">
         <source>Dropped</source>
         <target>掉落</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Drops" xml:space="preserve">
+      <trans-unit id="Drops">
         <source>Drops</source>
         <target>掉落</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Dungeon" xml:space="preserve">
+      <trans-unit id="Dungeon">
         <source>Dungeon</source>
         <target>地下城</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="EX" xml:space="preserve">
+      <trans-unit id="EX">
         <source>EX</source>
         <target>EX</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="EX+" xml:space="preserve">
+      <trans-unit id="EX+">
         <source>EX+</source>
         <target>EX+</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Edit" xml:space="preserve">
+      <trans-unit id="Edit">
         <source>Edit</source>
         <target>编辑</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Edit Box" xml:space="preserve">
+      <trans-unit id="Edit Box">
         <source>Edit Box</source>
         <target>编辑 Box</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Edit Chara" xml:space="preserve">
+      <trans-unit id="Edit Chara">
         <source>Edit Chara</source>
         <target>编辑角色</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Edit Team" xml:space="preserve">
+      <trans-unit id="Edit Team">
         <source>Edit Team</source>
         <target>编辑队伍</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Effective Magical HP" xml:space="preserve">
+      <trans-unit id="Effective Magical HP">
         <source>Effective Magical HP</source>
         <target>魔法有效 HP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Effective Physical HP" xml:space="preserve">
+      <trans-unit id="Effective Physical HP">
         <source>Effective Physical HP</source>
         <target>物理有效 HP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Email" xml:space="preserve">
+      <trans-unit id="Email">
         <source>Email</source>
         <target>邮件</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable Birthday Events" xml:space="preserve">
+      <trans-unit id="Enable Birthday Events">
         <source>Enable Birthday Events</source>
         <target>打开生日事件</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable Game Events" xml:space="preserve">
+      <trans-unit id="Enable Game Events">
         <source>Enable Game Events</source>
         <target>打开游戏事件</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enable Notifications" xml:space="preserve">
+      <trans-unit id="Enable Notifications">
         <source>Enable Notifications</source>
         <target>允许通知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Energy Recovery Rate" xml:space="preserve">
+      <trans-unit id="Energy Recovery Rate">
         <source>Energy Recovery Rate</source>
         <target>TP 上升</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Energy Reduce Rate" xml:space="preserve">
+      <trans-unit id="Energy Reduce Rate">
         <source>Energy Reduce Rate</source>
         <target>TP 消费轻减</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enter Name" xml:space="preserve">
+      <trans-unit id="Enter Name">
         <source>Enter Name</source>
         <target>输入名称</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Enter Tag" xml:space="preserve">
+      <trans-unit id="Enter Tag">
         <source>Enter Tag</source>
         <target>输入标签</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Equipment" xml:space="preserve">
+      <trans-unit id="Equipment">
         <source>Equipment</source>
         <target>装备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Equipments" xml:space="preserve">
+      <trans-unit id="Equipments">
         <source>Equipments</source>
         <target>装备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Error" xml:space="preserve">
+      <trans-unit id="Error">
         <source>Error</source>
         <target>错误</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Event" xml:space="preserve">
+      <trans-unit id="Event">
         <source>Event</source>
         <target>活动</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Evolution Skill Style" xml:space="preserve">
+      <trans-unit id="Evolution Skill Style">
         <source>Evolution Skill Style</source>
         <target>进化技能显示风格</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Exp." xml:space="preserve">
+      <trans-unit id="Exp.">
         <source>Exp.</source>
         <target>经验值</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Exploration" xml:space="preserve">
+      <trans-unit id="Exploration">
         <source>Exploration</source>
         <target>探索</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Expression Style" xml:space="preserve">
+      <trans-unit id="Expression Style">
         <source>Expression Style</source>
         <target>表达式类型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Failed" xml:space="preserve">
+      <trans-unit id="Failed">
         <source>Failed</source>
         <target>检查更新失败</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Feedback" xml:space="preserve">
+      <trans-unit id="Feedback">
         <source>Feedback</source>
         <target>反馈</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Filter" xml:space="preserve">
+      <trans-unit id="Filter">
         <source>Filter</source>
         <target>筛选</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Filter Condition" xml:space="preserve">
+      <trans-unit id="Filter Condition">
         <source>Filter Condition</source>
         <target>筛选条件</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Finished" xml:space="preserve">
+      <trans-unit id="Finished">
         <source>Finished</source>
         <target>更新完成</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Freeze" xml:space="preserve">
+      <trans-unit id="Freeze">
         <source>Freeze</source>
         <target>冻结</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Full" xml:space="preserve">
+      <trans-unit id="Full">
         <source>Full</source>
         <target>大图</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Gacha" xml:space="preserve">
+      <trans-unit id="Gacha">
         <source>Gacha</source>
         <target>卡池</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Game Event" xml:space="preserve">
+      <trans-unit id="Game Event">
         <source>Game Event</source>
         <target>游戏事件</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Game Events Filter" xml:space="preserve">
+      <trans-unit id="Game Events Filter">
         <source>Game Events Filter</source>
         <target>游戏事件筛选</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="General" xml:space="preserve">
+      <trans-unit id="General">
         <source>General</source>
         <target>通用</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving." xml:space="preserve">
+      <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.">
         <source>Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</source>
         <target>通常，您可能只想批量修改角色等级和技能等级。如果打开这个选项，所有字段都会保存到所选角色上。在保存之前，请确认您已经正确理解了这个选项的含义。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Group by" xml:space="preserve">
+      <trans-unit id="Group by">
         <source>Group by</source>
         <target>分组方式</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Grouping" xml:space="preserve">
+      <trans-unit id="Grouping">
         <source>Grouping</source>
         <target>分组</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Guild" xml:space="preserve">
+      <trans-unit id="Guild">
         <source>Guild</source>
         <target>公会</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="HP" xml:space="preserve">
+      <trans-unit id="HP">
         <source>HP</source>
         <target>HP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="HP Recovery Rate" xml:space="preserve">
+      <trans-unit id="HP Recovery Rate">
         <source>HP Recovery Rate</source>
         <target>恢复量上升</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Happy Birthday!!" xml:space="preserve">
+      <trans-unit id="Happy Birthday!!">
         <source>Happy Birthday!!</source>
         <target>生日快乐！</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Hard" xml:space="preserve">
+      <trans-unit id="Hard">
         <source>Hard</source>
         <target>困难</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Haste" xml:space="preserve">
+      <trans-unit id="Haste">
         <source>Haste</source>
         <target>加速</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Height" xml:space="preserve">
+      <trans-unit id="Height">
         <source>Height</source>
         <target>身高</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="How to restore purchasing on a new device?" xml:space="preserve">
+      <trans-unit id="How to restore purchasing on a new device?">
         <source>How to restore purchasing on a new device?</source>
         <target>如何在一台新设备上恢复您的购买？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Icon Style" xml:space="preserve">
+      <trans-unit id="Icon Style">
         <source>Icon Style</source>
         <target>头像风格</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Image" xml:space="preserve">
+      <trans-unit id="Image">
         <source>Image</source>
         <target>图片</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Import All Charas" xml:space="preserve">
+      <trans-unit id="Import All Charas">
         <source>Import All Charas</source>
         <target>导入全图鉴 Box</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="In next [%@] attacks, %@'s physical attacks will miss." xml:space="preserve">
+      <trans-unit id="In next [%@] attacks, %@'s physical attacks will miss.">
         <source>In next [%1$@] attacks, %2$@'s physical attacks will miss.</source>
         <target>使%2$@的下 [%1$@] 次物理攻击丢失。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="In next [%@]s, %@'s physical attacks will miss." xml:space="preserve">
+      <trans-unit id="In next [%@]s, %@'s physical attacks will miss.">
         <source>In next [%1$@]s, %2$@'s physical attacks will miss.</source>
         <target>使%2$@的攻击丢失，持续 [%1$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Inhibit Heal" xml:space="preserve">
+      <trans-unit id="Inhibit Heal">
         <source>Inhibit Heal</source>
         <target>治疗阻碍</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Instant Death" xml:space="preserve">
+      <trans-unit id="Instant Death">
         <source>Instant Death</source>
         <target>即死</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Interest" xml:space="preserve">
+      <trans-unit id="Interest">
         <source>Interest</source>
         <target>兴趣</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Internal ID" xml:space="preserve">
+      <trans-unit id="Internal ID">
         <source>Internal ID</source>
         <target>内部 ID</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Kill %@ instantly." xml:space="preserve">
+      <trans-unit id="Kill %@ instantly.">
         <source>Kill %@ instantly.</source>
         <target>对%@释放即死效果。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Knock %@ away %d." xml:space="preserve">
+      <trans-unit id="Knock %@ away %d.">
         <source>Knock %1$@ away %2$d.</source>
         <target>击退%1$@，距离 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Knock %@ up %d." xml:space="preserve">
+      <trans-unit id="Knock %@ up %d.">
         <source>Knock %1$@ up %2$d.</source>
         <target>击飞%1$@，高度 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Knock Back" xml:space="preserve">
+      <trans-unit id="Knock Back">
         <source>Knock Back</source>
         <target>击退</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Level" xml:space="preserve">
+      <trans-unit id="Level">
         <source>Level</source>
         <target>等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Life Steal" xml:space="preserve">
+      <trans-unit id="Life Steal">
         <source>Life Steal</source>
         <target>HP 吸收</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Loop end" xml:space="preserve">
+      <trans-unit id="Loop end">
         <source>Loop end</source>
         <target>循环结束</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Loop in place" xml:space="preserve">
+      <trans-unit id="Loop in place">
         <source>Loop in place</source>
         <target>原地循环</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Loop start" xml:space="preserve">
+      <trans-unit id="Loop start">
         <source>Loop start</source>
         <target>循环开始</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Loses" xml:space="preserve">
+      <trans-unit id="Loses">
         <source>Loses</source>
         <target>失败</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Luna's Tower" xml:space="preserve">
+      <trans-unit id="Luna's Tower">
         <source>Luna's Tower</source>
         <target>露娜塔</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic" xml:space="preserve">
+      <trans-unit id="Magic">
         <source>Magic</source>
         <target>法系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic Critical" xml:space="preserve">
+      <trans-unit id="Magic Critical">
         <source>Magic Critical</source>
         <target>魔法暴击</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic DEF" xml:space="preserve">
+      <trans-unit id="Magic DEF">
         <source>Magic DEF</source>
         <target>魔法防御力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic Penetrate" xml:space="preserve">
+      <trans-unit id="Magic Penetrate">
         <source>Magic Penetrate</source>
         <target>魔法穿透</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Magic STR" xml:space="preserve">
+      <trans-unit id="Magic STR">
         <source>Magic STR</source>
         <target>魔法攻击力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Main" xml:space="preserve">
+      <trans-unit id="Main">
         <source>Main</source>
         <target>Main</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Main %d" xml:space="preserve">
+      <trans-unit id="Main %d">
         <source>Main %d</source>
         <target>Main %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Main+" xml:space="preserve">
+      <trans-unit id="Main+">
         <source>Main+</source>
         <target>Main+</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make %@ attract enemy attacks, last for [%@]s." xml:space="preserve">
+      <trans-unit id="Make %@ attract enemy attacks, last for [%@]s.">
         <source>Make %1$@ attract enemy attacks, last for [%2$@]s.</source>
         <target>使%1$@吸引敌方的攻击，持续 [%2$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make %@ fall asleep for [%@]s." xml:space="preserve">
+      <trans-unit id="Make %@ fall asleep for [%@]s.">
         <source>Make %1$@ fall asleep for [%2$@]s.</source>
         <target>使%1$@入睡，持续 [%2$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make %@ lose [%@] TP." xml:space="preserve">
+      <trans-unit id="Make %@ lose [%@] TP.">
         <source>Make %1$@ lose [%2$@] TP.</source>
         <target>使%1$@失去 [%2$@] TP。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page." xml:space="preserve">
+      <trans-unit id="Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.">
         <source>Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.</source>
         <target>确保您已经用同一个 Apple ID 登录了新设备，然后点击右上角的恢复按钮。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mana" xml:space="preserve">
+      <trans-unit id="Mana">
         <source>Mana</source>
         <target>Mana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mana Cost of Crafting" xml:space="preserve">
+      <trans-unit id="Mana Cost of Crafting">
         <source>Mana Cost of Crafting</source>
         <target>制作装备所需 Mana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mana Cost of Enhancing" xml:space="preserve">
+      <trans-unit id="Mana Cost of Enhancing">
         <source>Mana Cost of Enhancing</source>
         <target>强化装备所需 Mana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mana Cost of Skill Training" xml:space="preserve">
+      <trans-unit id="Mana Cost of Skill Training">
         <source>Mana Cost of Skill Training</source>
         <target>提升技能等级所需 Mana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mark" xml:space="preserve">
+      <trans-unit id="Mark">
         <source>Mark</source>
         <target>标记</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Max Level to %@" xml:space="preserve">
+      <trans-unit id="Max Level to %@">
         <source>Max Level to %@</source>
         <target>最大等级提高至 %@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Max Rank to %@" xml:space="preserve">
+      <trans-unit id="Max Rank to %@">
         <source>Max Rank to %@</source>
         <target>最大 Rank 提高至 %@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Max. lv." xml:space="preserve">
+      <trans-unit id="Max. lv.">
         <source>Max. lv.</source>
         <target>最大等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Members" xml:space="preserve">
+      <trans-unit id="Members">
         <source>Members</source>
         <target>队员</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Minion: %d" xml:space="preserve">
+      <trans-unit id="Minion: %d">
         <source>Minion: %d</source>
         <target>随从：%d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Misc" xml:space="preserve">
+      <trans-unit id="Misc">
         <source>Misc</source>
         <target>杂项</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mission" xml:space="preserve">
+      <trans-unit id="Mission">
         <source>Mission</source>
         <target>探索</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move Part %d, %d forward then return." xml:space="preserve">
+      <trans-unit id="Move Part %d, %d forward then return.">
         <source>Move Part %1$d, %2$d forward then return.</source>
         <target>向前移动部位 %1$d 然后返回，距离 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move Speed" xml:space="preserve">
+      <trans-unit id="Move Speed">
         <source>Move Speed</source>
         <target>移动速度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move backward %@ with velocity %@/s." xml:space="preserve">
+      <trans-unit id="Move backward %@ with velocity %@/s.">
         <source>Move backward %1$@ with velocity %2$@/s.</source>
         <target>向后移动 %1$@，速度 %2$@/秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move forward %@ with velocity %@/s." xml:space="preserve">
+      <trans-unit id="Move forward %@ with velocity %@/s.">
         <source>Move forward %1$@ with velocity %2$@/s.</source>
         <target>向前移动 %1$@，速度 %2$@/秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move to %@ behind of %@ with velocity %@/s." xml:space="preserve">
+      <trans-unit id="Move to %@ behind of %@ with velocity %@/s.">
         <source>Move to %1$@ behind of %2$@ with velocity %3$@/s.</source>
         <target>移动到%2$@后 %1$@ 的位置，速度 %3$@/秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Move to %@ in front of %@ with velocity %@/s." xml:space="preserve">
+      <trans-unit id="Move to %@ in front of %@ with velocity %@/s.">
         <source>Move to %1$@ in front of %2$@ with velocity %3$@/s.</source>
         <target>移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * HP / max HP] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Multiple [%@ * HP / max HP] to next effect's value %d.">
         <source>Multiple [%1$@ * HP / max HP] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * count of defeated enemies] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Multiple [%@ * count of defeated enemies] to next effect's value %d.">
         <source>Multiple [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 乘以 [%1$@ * 击杀个数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * lost HP / max HP] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Multiple [%@ * lost HP / max HP] to next effect's value %d.">
         <source>Multiple [%1$@ * lost HP / max HP] to next effect's value %2$d.</source>
         <target>使下一个效果的数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Multiple [%@ * stacks of mark(ID: %d)] to next effect's value %d." xml:space="preserve">
+      <trans-unit id="Multiple [%@ * stacks of mark(ID: %d)] to next effect's value %d.">
         <source>Multiple [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.</source>
         <target>使下一个效果的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New %@ Event: %@" xml:space="preserve">
+      <trans-unit id="New %@ Event: %@">
         <source>New %1$@ Event: %2$@</source>
         <target>新%1$@活动：%2$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Campaign: %@ %@ %@ x%@" xml:space="preserve">
+      <trans-unit id="New Campaign: %@ %@ %@ x%@">
         <source>New Campaign: %1$@ %2$@ %3$@ x%4$@</source>
         <target>新奖励事件：%1$@%2$@%3$@ x%4$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Campaign: %@ %@ x%@" xml:space="preserve">
+      <trans-unit id="New Campaign: %@ %@ x%@">
         <source>New Campaign: %1$@ %2$@ x%3$@</source>
         <target>新奖励事件：%1$@%2$@ x%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Clan Battle: %@" xml:space="preserve">
+      <trans-unit id="New Clan Battle: %@">
         <source>New Clan Battle: %@</source>
         <target>新公会战：%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Dungeon: %@" xml:space="preserve">
+      <trans-unit id="New Dungeon: %@">
         <source>New Dungeon: %@</source>
         <target>新地下城：%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Gacha: %@" xml:space="preserve">
+      <trans-unit id="New Gacha: %@">
         <source>New Gacha: %@</source>
         <target>新卡池：%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Quest Area: %@" xml:space="preserve">
+      <trans-unit id="New Quest Area: %@">
         <source>New Quest Area: %@</source>
         <target>新任务区域：%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Story of %@" xml:space="preserve">
+      <trans-unit id="New Story of %@">
         <source>New Story of %@</source>
         <target>新故事：%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Unit: %@" xml:space="preserve">
+      <trans-unit id="New Unit: %@">
         <source>New Unit: %@</source>
         <target>新角色：%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Next" xml:space="preserve">
+      <trans-unit id="Next">
         <source>Next</source>
         <target>下一步</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="No more data" xml:space="preserve">
+      <trans-unit id="No more data">
         <source>No more data</source>
         <target>没有更多数据了</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="None" xml:space="preserve">
+      <trans-unit id="None">
         <source>None</source>
         <target>无</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Normal" xml:space="preserve">
+      <trans-unit id="Normal">
         <source>Normal</source>
         <target>普通</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Not Determined" xml:space="preserve">
+      <trans-unit id="Not Determined">
         <source>Not Determined</source>
         <target>未确定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Notice" xml:space="preserve">
+      <trans-unit id="Notice">
         <source>Notice</source>
         <target>通知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Notification Permission" xml:space="preserve">
+      <trans-unit id="Notification Permission">
         <source>Notification Permission</source>
         <target>系统通知权限</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Number of Unique Equipments" xml:space="preserve">
+      <trans-unit id="Number of Unique Equipments">
         <source>Number of Unique Equipments</source>
         <target>专属装备数量</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="OK" xml:space="preserve">
+      <trans-unit id="OK">
         <source>OK</source>
         <target>确定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Only shows the first chara's equipments, but will reflect on all selected charas." xml:space="preserve">
+      <trans-unit id="Only shows the first chara's equipments, but will reflect on all selected charas.">
         <source>Only shows the first chara's equipments, but will reflect on all selected charas.</source>
         <target>虽然只显示第一个角色的装备，但是编辑后会反映到所有选中角色上。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Options" xml:space="preserve">
+      <trans-unit id="Options">
         <source>Options</source>
         <target>选项</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Order" xml:space="preserve">
+      <trans-unit id="Order">
         <source>Order</source>
         <target>顺序</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Paralyse" xml:space="preserve">
+      <trans-unit id="Paralyse">
         <source>Paralyse</source>
         <target>麻痹</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Petrify" xml:space="preserve">
+      <trans-unit id="Petrify">
         <source>Petrify</source>
         <target>石化</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Physical Critical" xml:space="preserve">
+      <trans-unit id="Physical Critical">
         <source>Physical Critical</source>
         <target>物理暴击</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Physical Penetrate" xml:space="preserve">
+      <trans-unit id="Physical Penetrate">
         <source>Physical Penetrate</source>
         <target>物理穿透</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Physics" xml:space="preserve">
+      <trans-unit id="Physics">
         <source>Physics</source>
         <target>物理系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Plate" xml:space="preserve">
+      <trans-unit id="Plate">
         <source>Plate</source>
         <target>Plate</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Please wait" xml:space="preserve">
+      <trans-unit id="Please wait">
         <source>Please wait</source>
         <target>正在处理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Poison" xml:space="preserve">
+      <trans-unit id="Poison">
         <source>Poison</source>
         <target>中毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Poison %@ and deal [%@] damage per second for [%@]s." xml:space="preserve">
+      <trans-unit id="Poison %@ and deal [%@] damage per second for [%@]s.">
         <source>Poison %1$@ and deal [%2$@] damage per second for [%3$@]s.</source>
         <target>使%1$@中毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Poison %@ violently and deal [%@] damage per second for [%@]s." xml:space="preserve">
+      <trans-unit id="Poison %@ violently and deal [%@] damage per second for [%@]s.">
         <source>Poison %1$@ violently and deal [%2$@] damage per second for [%3$@]s.</source>
         <target>使%1$@中猛毒并每秒造成 [%2$@] 伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Position" xml:space="preserve">
+      <trans-unit id="Position">
         <source>Position</source>
         <target>位置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Pro Edition" xml:space="preserve">
+      <trans-unit id="Pro Edition">
         <source>Pro Edition</source>
         <target>专业版</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Profile" xml:space="preserve">
+      <trans-unit id="Profile">
         <source>Profile</source>
         <target>角色</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Quest Area" xml:space="preserve">
+      <trans-unit id="Quest Area">
         <source>Quest Area</source>
         <target>任务</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Quests" xml:space="preserve">
+      <trans-unit id="Quests">
         <source>Quests</source>
         <target>关卡</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Race" xml:space="preserve">
+      <trans-unit id="Race">
         <source>Race</source>
         <target>种族</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise" xml:space="preserve">
+      <trans-unit id="Raise">
         <source>Raise</source>
         <target>提高</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise %@ %d%% attack speed for [%@]s." xml:space="preserve">
+      <trans-unit id="Raise %@ %d%% attack speed for [%@]s.">
         <source>Raise %1$@ %2$d%% attack speed for [%3$@]s.</source>
         <target>提高%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise [%@] %@." xml:space="preserve">
+      <trans-unit id="Raise [%@] %@.">
         <source>Raise [%1$@] %2$@.</source>
         <target>提高 [%1$@] %2$@。</target>
         <note>Raise [x] ATK.</note>
       </trans-unit>
-      <trans-unit id="Random event: %d%% chance use %d, otherwise %d." xml:space="preserve">
+      <trans-unit id="Random event: %d%% chance use %d, otherwise %d.">
         <source>Random event: %1$d%% chance use %2$d, otherwise %3$d.</source>
         <target>随机事件：%1$d%% 几率使用 %2$d，否则使用 %3$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Random event: %d%% chance use %d." xml:space="preserve">
+      <trans-unit id="Random event: %d%% chance use %d.">
         <source>Random event: %1$d%% chance use %2$d.</source>
         <target>随机事件：%1$d%% 几率使用 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Rank" xml:space="preserve">
+      <trans-unit id="Rank">
         <source>Rank</source>
         <target>Rank</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Rank From" xml:space="preserve">
+      <trans-unit id="Rank From">
         <source>Rank From</source>
         <target>原始 Rank</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Rank To" xml:space="preserve">
+      <trans-unit id="Rank To">
         <source>Rank To</source>
         <target>目标 Rank</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Rarity" xml:space="preserve">
+      <trans-unit id="Rarity">
         <source>Rarity</source>
         <target>稀有度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raw Materials" xml:space="preserve">
+      <trans-unit id="Raw Materials">
         <source>Raw Materials</source>
         <target>原始材料</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Reduce" xml:space="preserve">
+      <trans-unit id="Reduce">
         <source>Reduce</source>
         <target>降低</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Reduce %@ %d%% attack speed for [%@]s." xml:space="preserve">
+      <trans-unit id="Reduce %@ %d%% attack speed for [%@]s.">
         <source>Reduce %1$@ %2$d%% attack speed for [%3$@]s.</source>
         <target>降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Remove %@ mark stacks(ID: %@) on %@." xml:space="preserve">
+      <trans-unit id="Remove %@ mark stacks(ID: %@) on %@.">
         <source>Remove %1$@ mark stacks(ID: %2$@) on %3$@.</source>
         <target>移除%3$@ %1$@ 层标记（ID：%2$@）。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Remove field of skill %d (1 represents the first skill in this list) effect %d." xml:space="preserve">
+      <trans-unit id="Remove field of skill %d (1 represents the first skill in this list) effect %d.">
         <source>Remove field of skill %1$d (1 represents the first skill in this list) effect %2$d.</source>
         <target>移除技能 %1$d（1 代表本列表中的第一个）效果 %2$d 产生的场地。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Reset" xml:space="preserve">
+      <trans-unit id="Rerun Event">
+        <source>Rerun Event</source>
+        <target>复刻活动</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reset">
         <source>Reset</source>
         <target>重置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Resist" xml:space="preserve">
+      <trans-unit id="Resist">
         <source>Resist</source>
         <target>抗性</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore" xml:space="preserve">
+      <trans-unit id="Restore">
         <source>Restore</source>
         <target>恢复</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore %@ [%@] HP per second for [%@]s." xml:space="preserve">
+      <trans-unit id="Restore %@ [%@] HP per second for [%@]s.">
         <source>Restore %1$@ [%2$@] HP per second for [%3$@]s.</source>
         <target>每秒恢复%1$@ [%2$@] HP，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore %@ [%@] TP." xml:space="preserve">
+      <trans-unit id="Restore %@ [%@] TP.">
         <source>Restore %1$@ [%2$@] TP.</source>
         <target>恢复%1$@ [%2$@] TP。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore %@ [%@]%@ HP." xml:space="preserve">
+      <trans-unit id="Restore %@ [%@]%@ HP.">
         <source>Restore %1$@ [%2$@]%3$@ HP.</source>
         <target>恢复%1$@ [%2$@]%3$@ HP。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Review at App Store" xml:space="preserve">
+      <trans-unit id="Review at App Store">
         <source>Review at App Store</source>
         <target>App Store 评价</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Revive %@ with %d%% HP." xml:space="preserve">
+      <trans-unit id="Revive %@ with %d%% HP.">
         <source>Revive %1$@ with %2$d%% HP.</source>
         <target>复活并恢复%1$@的 HP 至 %2$d%%。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Round %d" xml:space="preserve">
+      <trans-unit id="Round %d">
         <source>Round %d</source>
         <target>第 %d 周目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Round %d ~ %d" xml:space="preserve">
+      <trans-unit id="Round %d ~ %d">
         <source>Round %1$d ~ %2$d</source>
         <target>第 %1$d ~ %2$d 周目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Round %d+" xml:space="preserve">
+      <trans-unit id="Round %d+">
         <source>Round %d+</source>
         <target>第 %d+ 周目</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SLv." xml:space="preserve">
+      <trans-unit id="SLv.">
         <source>SLv.</source>
         <target>技能等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SP" xml:space="preserve">
+      <trans-unit id="SP">
         <source>SP</source>
         <target>SP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="SP %d" xml:space="preserve">
+      <trans-unit id="SP %d">
         <source>SP %d</source>
         <target>SP %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Save" xml:space="preserve">
+      <trans-unit id="Save">
         <source>Save</source>
         <target>保存</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Save Box" xml:space="preserve">
+      <trans-unit id="Save Box">
         <source>Save Box</source>
         <target>保存 Box</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Scout and change the perspective on %@." xml:space="preserve">
+      <trans-unit id="Scout and change the perspective on %@.">
         <source>Scout and change the perspective on %@.</source>
         <target>搜寻并将自身视角切换到%@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select All" xml:space="preserve">
+      <trans-unit id="Select All">
         <source>Select All</source>
         <target>全选</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select Chara" xml:space="preserve">
+      <trans-unit id="Select Chara">
         <source>Select Chara</source>
         <target>选择角色</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select Charas" xml:space="preserve">
+      <trans-unit id="Select Charas">
         <source>Select Charas</source>
         <target>选择角色</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select Loses" xml:space="preserve">
+      <trans-unit id="Select Loses">
         <source>Select Loses</source>
         <target>选择失败场次</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Select Wins" xml:space="preserve">
+      <trans-unit id="Select Wins">
         <source>Select Wins</source>
         <target>选择胜利场次</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Settings" xml:space="preserve">
+      <trans-unit id="Settings">
         <source>Settings</source>
         <target>设置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Show All Field" xml:space="preserve">
+      <trans-unit id="Show All Field">
         <source>Show All Field</source>
         <target>显示所有字段</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Show the Latest Notice" xml:space="preserve">
+      <trans-unit id="Show the Latest Notice">
         <source>Show the Latest Notice</source>
         <target>显示最新通知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Shrine" xml:space="preserve">
+      <trans-unit id="Shrine">
         <source>Shrine</source>
         <target>圣迹调查</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Silence" xml:space="preserve">
+      <trans-unit id="Silence">
         <source>Silence</source>
         <target>沉默</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Silence %@ with [%@]%% chance for [%@]s." xml:space="preserve">
+      <trans-unit id="Silence %@ with [%@]%% chance for [%@]s.">
         <source>Silence %1$@ with [%2$@]%% chance for [%3$@]s.</source>
         <target>[%2$@]%% 几率沉默%1$@，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Skill" xml:space="preserve">
+      <trans-unit id="Skill">
         <source>Skill</source>
         <target>技能</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Skill Detail" xml:space="preserve">
+      <trans-unit id="Skill Detail">
         <source>Skill Detail</source>
         <target>技能详情</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Skill Level" xml:space="preserve">
+      <trans-unit id="Skill Level">
         <source>Skill Level</source>
         <target>技能等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Sleep" xml:space="preserve">
+      <trans-unit id="Sleep">
         <source>Sleep</source>
         <target>睡眠</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Slow" xml:space="preserve">
+      <trans-unit id="Slow">
         <source>Slow</source>
         <target>减速</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Sort by" xml:space="preserve">
+      <trans-unit id="Sort by">
         <source>Sort by</source>
         <target>排序方式</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Sorting" xml:space="preserve">
+      <trans-unit id="Sorting">
         <source>Sorting</source>
         <target>排序</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Star Rank" xml:space="preserve">
+      <trans-unit id="Star Rank">
         <source>Star Rank</source>
         <target>星级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Status" xml:space="preserve">
+      <trans-unit id="Status">
         <source>Status</source>
         <target>属性</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Status Comparison" xml:space="preserve">
+      <trans-unit id="Status Comparison">
         <source>Status Comparison</source>
         <target>属性比较模式</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Stealth for %@s." xml:space="preserve">
+      <trans-unit id="Stealth for %@s.">
         <source>Stealth for %@s.</source>
         <target>潜行 %@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Still" xml:space="preserve">
+      <trans-unit id="Still">
         <source>Still</source>
         <target>剧情插图</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Story" xml:space="preserve">
+      <trans-unit id="Story">
         <source>Story</source>
         <target>剧情</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Story Event" xml:space="preserve">
+      <trans-unit id="Story Event">
         <source>Story Event</source>
         <target>剧情活动</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Stun" xml:space="preserve">
+      <trans-unit id="Stun">
         <source>Stun</source>
         <target>击晕</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summary" xml:space="preserve">
+      <trans-unit id="Summary">
         <source>Summary</source>
         <target>总结</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s." xml:space="preserve">
+      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s.">
         <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@] %5$@ for [%6$@]s.</source>
         <target>在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@] %5$@，持续 [%6$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." xml:space="preserve">
+      <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s.">
         <source>Summon a field of radius %1$d at position of %2$@ to deal [%3$@] %4$@ damage per second for [%5$@]s.</source>
         <target>在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d on %@ to cast effect %d for [%@]s." xml:space="preserve">
+      <trans-unit id="Summon a field of radius %d on %@ to cast effect %d for [%@]s.">
         <source>Summon a field of radius %1$d on %2$@ to cast effect %3$d for [%4$@]s.</source>
         <target>在%2$@的位置展开一片半径为 %1$d 的区域，持续释放效果 %3$d，持续 [%4$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." xml:space="preserve">
+      <trans-unit id="Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s.">
         <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@] %5$@ for [%6$@]s.</source>
         <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." xml:space="preserve">
+      <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@.">
         <source>Summon a field of radius %1$d to deal [%2$@] %3$@ damage per second for [%4$@]s to %5$@.</source>
         <target>展开一片半径为 %1$d 的区域，每秒对%5$@造成 [%2$@] %3$@伤害，持续 [%4$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s." xml:space="preserve">
+      <trans-unit id="Summon a healing field of radius %d at position of %@ to heal [%@]%@ HP per second for [%@]s.">
         <source>Summon a healing field of radius %1$d at position of %2$@ to heal [%3$@]%4$@ HP per second for [%5$@]s.</source>
         <target>在%2$@的位置展开一片半径为 %1$d 的区域，每秒恢复 [%3$@]%4$@ HP，持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s." xml:space="preserve">
+      <trans-unit id="Summon a healing field of radius %d to heal %@ [%@]%@ HP per second for [%@]s.">
         <source>Summon a healing field of radius %1$d to heal %2$@ [%3$@]%4$@ HP per second for [%5$@]s.</source>
         <target>展开一片半径为 %1$d 的区域，每秒恢复%2$@ [%3$@] %4$@ HP，持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Swing" xml:space="preserve">
+      <trans-unit id="Swing">
         <source>Swing</source>
         <target>普通攻击</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Swing Time" xml:space="preserve">
+      <trans-unit id="Swing Time">
         <source>Swing Time</source>
         <target>普通攻击间隔</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Tag" xml:space="preserve">
+      <trans-unit id="Tag">
         <source>Tag</source>
         <target>标签</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Target Level" xml:space="preserve">
+      <trans-unit id="Target Level">
         <source>Target Level</source>
         <target>目标等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Team Detail" xml:space="preserve">
+      <trans-unit id="Team Detail">
         <source>Team Detail</source>
         <target>队伍详情</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Team Management" xml:space="preserve">
+      <trans-unit id="Team Management">
         <source>Team Management</source>
         <target>队伍管理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Team Tag" xml:space="preserve">
+      <trans-unit id="Team Tag">
         <source>Team Tag</source>
         <target>队伍标签</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Teams" xml:space="preserve">
+      <trans-unit id="Teams">
         <source>Teams</source>
         <target>队伍列表</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="The first chara added will be used as cover image." xml:space="preserve">
+      <trans-unit id="The first chara added will be used as cover image.">
         <source>The first chara added will be used as cover image.</source>
         <target>第一个添加的角色将被用作封面。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="There aren't any Mail accounts" xml:space="preserve">
+      <trans-unit id="There aren't any Mail accounts">
         <source>There aren't any Mail accounts</source>
         <target>未设置邮件账户</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix &quot;Hatsune's Notes&quot;.\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content." xml:space="preserve">
+      <trans-unit id="These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix &quot;Hatsune's Notes&quot;.\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content.">
         <source>These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix "Hatsune's Notes".\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content.</source>
         <target>这些设置的作用是：当本 App 内部数据更新时，自动将事件添加到您的系统日历中。这些事件在系统日历中会被添加到独立的含有前缀“Hatsune's Notes”的分组中。\n**重要**：不建议在多个拥有同样 iCloud 账号的设备上同时启用此功能，将导致同样内容的日历分组出现多个。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Third-Party Licenses" xml:space="preserve">
+      <trans-unit id="Third-Party Licenses">
         <source>Third-Party Licenses</source>
         <target>第三方许可</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Time Zone" xml:space="preserve">
+      <trans-unit id="Time Zone">
         <source>Time Zone</source>
         <target>时区</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Today is %@'s birthday (%@/%@)" xml:space="preserve">
+      <trans-unit id="Today is %@'s birthday (%@/%@)">
         <source>Today is %1$@'s birthday (%2$@/%3$@)</source>
         <target>今天是%1$@的生日（%2$@ 月 %3$@ 日）</target>
         <note>Birthday notification body</note>
       </trans-unit>
-      <trans-unit id="Toolbox" xml:space="preserve">
+      <trans-unit id="Toolbox">
         <source>Toolbox</source>
         <target>工具</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Total Experience Needed" xml:space="preserve">
+      <trans-unit id="Total Experience Needed">
         <source>Total Experience Needed</source>
         <target>合计所需经验值</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Total Mana Cost" xml:space="preserve">
+      <trans-unit id="Total Mana Cost">
         <source>Total Mana Cost</source>
         <target>合计所需 Mana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Tower" xml:space="preserve">
+      <trans-unit id="Tower">
         <source>Tower</source>
         <target>露娜塔</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on break and last for %@s." xml:space="preserve">
+      <trans-unit id="Trigger: %d%% on break and last for %@s.">
         <source>Trigger: %1$d%% on break and last for %2$@s.</source>
         <target>触发条件：Break 时 %1$d%% 触发，持续 %2$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on critical damaged." xml:space="preserve">
+      <trans-unit id="Trigger: %d%% on critical damaged.">
         <source>Trigger: %d%% on critical damaged.</source>
         <target>触发条件：被暴击时 %1$d%% 触发。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on damaged." xml:space="preserve">
+      <trans-unit id="Trigger: %d%% on damaged.">
         <source>Trigger: %d%% on damaged.</source>
         <target>触发条件：受到伤害时 %d%% 触发。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on dead." xml:space="preserve">
+      <trans-unit id="Trigger: %d%% on dead.">
         <source>Trigger: %d%% on dead.</source>
         <target>触发条件：死亡时 %d%% 触发。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: %d%% on stealth." xml:space="preserve">
+      <trans-unit id="Trigger: %d%% on dot damaged.">
+        <source>Trigger: %d%% on dot damaged.</source>
+        <target>触发条件：受到持续伤害时 %d%% 触发。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: %d%% on stealth.">
         <source>Trigger: %d%% on stealth.</source>
         <target>触发条件：潜行时 %d%% 触发。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: HP is below %d%%." xml:space="preserve">
+      <trans-unit id="Trigger: HP is below %d%%.">
         <source>Trigger: HP is below %d%%.</source>
         <target>触发条件：HP 低于 %d%%。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Trigger: Left time is below %@s." xml:space="preserve">
+      <trans-unit id="Trigger: Left time is below %@s.">
         <source>Trigger: Left time is below %@s.</source>
         <target>触发条件：战斗时间剩余 %@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="True Name" xml:space="preserve">
+      <trans-unit id="True Name">
         <source>True Name</source>
         <target>真实姓名</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Twitter" xml:space="preserve">
+      <trans-unit id="Twitter">
         <source>Twitter</source>
         <target>Twitter</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="UB" xml:space="preserve">
+      <trans-unit id="UB">
         <source>UB</source>
         <target>UB</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="UB+" xml:space="preserve">
+      <trans-unit id="UB+">
         <source>UB+</source>
         <target>UB+</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unable to open Mail" xml:space="preserve">
+      <trans-unit id="Unable to open Mail">
         <source>Unable to open Mail</source>
         <target>无法打开邮件</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unique" xml:space="preserve">
+      <trans-unit id="Unique">
         <source>Unique</source>
         <target>专属装备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unique Equipment" xml:space="preserve">
+      <trans-unit id="Unique Equipment">
         <source>Unique Equipment</source>
         <target>计算专属装备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unique Equipment Level" xml:space="preserve">
+      <trans-unit id="Unique Equipment Level">
         <source>Unique Equipment Level</source>
         <target>专属装备等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unique Equipments" xml:space="preserve">
+      <trans-unit id="Unique Equipments">
         <source>Unique Equipments</source>
         <target>专属装备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unit" xml:space="preserve">
+      <trans-unit id="Unit">
         <source>Unit</source>
         <target>角色</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unknown" xml:space="preserve">
+      <trans-unit id="Unknown">
         <source>Unknown</source>
         <target>未知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unknown Effect" xml:space="preserve">
+      <trans-unit id="Unknown Effect">
         <source>Unknown Effect</source>
         <target>未知效果</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unknown effect %d to %@ with details [%@], values [%@]." xml:space="preserve">
+      <trans-unit id="Unknown effect %d to %@ with details [%@], values [%@].">
         <source>Unknown effect %1$d to %2$@ with details [%3$@], values [%4$@].</source>
         <target>未知效果 %1$d，详情 [%3$@]，数值 [%4$@]，释放于%2$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Up to date!" xml:space="preserve">
+      <trans-unit id="Up to date!">
         <source>Up to date!</source>
         <target>已经是最新版本</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Upcoming Birthdays" xml:space="preserve">
+      <trans-unit id="Upcoming Birthdays">
         <source>Upcoming Birthdays</source>
         <target>即将到来的生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Upgrade to Pro Edition" xml:space="preserve">
+      <trans-unit id="Upgrade to Pro Edition">
         <source>Upgrade to Pro Edition</source>
         <target>升级至专业版</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Use Dark Theme" xml:space="preserve">
+      <trans-unit id="Use Dark Theme">
         <source>Use Dark Theme</source>
         <target>使用深色主题</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Vanguard" xml:space="preserve">
+      <trans-unit id="Vanguard">
         <source>Vanguard</source>
         <target>前卫</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Version Log" xml:space="preserve">
+      <trans-unit id="Version Log">
         <source>Version Log</source>
         <target>数据更新日志</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Violent Poison" xml:space="preserve">
+      <trans-unit id="Violent Poison">
         <source>Violent Poison</source>
         <target>猛毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wave %d" xml:space="preserve">
+      <trans-unit id="Wave %d">
         <source>Wave %d</source>
         <target>第 %d 波</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wave %d (x%.2f)" xml:space="preserve">
+      <trans-unit id="Wave %d (x%.2f)">
         <source>Wave %1$d (x%2$.2f)</source>
         <target>第 %d 波（x%.2f）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wave Energy Recovery" xml:space="preserve">
+      <trans-unit id="Wave Energy Recovery">
         <source>Wave Energy Recovery</source>
         <target>TP 自动恢复</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wave HP Recovery" xml:space="preserve">
+      <trans-unit id="Wave HP Recovery">
         <source>Wave HP Recovery</source>
         <target>HP 自动恢复</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Weight" xml:space="preserve">
+      <trans-unit id="Weight">
         <source>Weight</source>
         <target>体重</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="What's the features of Pro Edition?" xml:space="preserve">
+      <trans-unit id="What's the features of Pro Edition?">
         <source>What's the features of Pro Edition?</source>
         <target>专业版中有哪些功能？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." xml:space="preserve">
+      <trans-unit id="When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field.">
         <source>When %1$@ receive healing, deal [%2$@ * healing amount] damage instead, last for [%3$@]s or unlimited time if triggered by field.</source>
         <target>当%1$@受到治疗时，治疗效果无效并造成 [%2$@ * 治疗量] 的伤害，持续 [%3$@] 秒，如果是场地效果触发的，持续时间无限。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Who Needs" xml:space="preserve">
+      <trans-unit id="Who Needs">
         <source>Who Needs</source>
         <target>可装备的角色</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Wins" xml:space="preserve">
+      <trans-unit id="Wins">
         <source>Wins</source>
         <target>胜利</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="You have not bought this product yet." xml:space="preserve">
+      <trans-unit id="You have not bought this product yet.">
         <source>You have not bought this product yet.</source>
         <target>您未曾买过本产品。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all" xml:space="preserve">
+      <trans-unit id="all">
         <source>all</source>
         <target>全部</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all %@ %@ targets" xml:space="preserve">
+      <trans-unit id="all %@ %@ targets">
         <source>all %1$@ %2$@ targets</source>
         <target>所有%1$@%2$@目标</target>
         <note>all [enemy] [physics] targets</note>
       </trans-unit>
-      <trans-unit id="all %@ targets" xml:space="preserve">
+      <trans-unit id="all %@ targets">
         <source>all %@ targets</source>
         <target>所有%@目标</target>
         <note>all [enemy] targets</note>
       </trans-unit>
-      <trans-unit id="all front %@ enemy targets" xml:space="preserve">
+      <trans-unit id="all front %@ enemy targets">
         <source>all front %@ enemy targets</source>
         <target>所有前方%@敌方目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front %@ targets" xml:space="preserve">
+      <trans-unit id="all front %@ targets">
         <source>all front %@ targets</source>
         <target>所有前方%@目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front enemy targets" xml:space="preserve">
+      <trans-unit id="all front enemy targets">
         <source>all front enemy targets</source>
         <target>所有前方敌方目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front targets" xml:space="preserve">
+      <trans-unit id="all front targets">
         <source>all front targets</source>
         <target>所有前方目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front(including self) %@ friendly targets" xml:space="preserve">
+      <trans-unit id="all front(including self) %@ friendly targets">
         <source>all front(including self) %@ friendly targets</source>
         <target>所有前方%@友方目标（包括自己）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="all front(including self) friendly targets" xml:space="preserve">
+      <trans-unit id="all front(including self) friendly targets">
         <source>all front(including self) friendly targets</source>
         <target>所有前方友方目标（包括自己）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="always 1★" xml:space="preserve">
+      <trans-unit id="always 1★">
         <source>always 1★</source>
         <target>固定 1★</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="always 3★" xml:space="preserve">
+      <trans-unit id="always 3★">
         <source>always 3★</source>
         <target>固定 3★</target>
         <note>icon style</note>
       </trans-unit>
-      <trans-unit id="arena" xml:space="preserve">
+      <trans-unit id="arena">
         <source>arena</source>
         <target>竞技场</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="attack" xml:space="preserve">
+      <trans-unit id="attack">
         <source>attack</source>
         <target>进攻</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="blinded" xml:space="preserve">
+      <trans-unit id="blinded">
         <source>blinded</source>
         <target>黑暗</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="boss" xml:space="preserve">
+      <trans-unit id="boss">
         <source>boss</source>
         <target>首领级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="both" xml:space="preserve">
+      <trans-unit id="both">
         <source>both</source>
         <target>进化前后</target>
         <note>skill style</note>
       </trans-unit>
-      <trans-unit id="both sides" xml:space="preserve">
+      <trans-unit id="both sides">
         <source>both sides</source>
         <target>敌方和友方</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="buffs" xml:space="preserve">
+      <trans-unit id="buffs">
         <source>buffs</source>
         <target>增益</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="burned" xml:space="preserve">
+      <trans-unit id="burned">
         <source>burned</source>
         <target>烧伤</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="charmed or confused" xml:space="preserve">
+      <trans-unit id="charmed or confused">
         <source>charmed or confused</source>
         <target>魅惑或混乱</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="clan battle" xml:space="preserve">
+      <trans-unit id="clan battle">
         <source>clan battle</source>
         <target>公会战</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="controlled" xml:space="preserve">
+      <trans-unit id="controlled">
         <source>controlled</source>
         <target>被控制</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="cursed" xml:space="preserve">
+      <trans-unit id="cursed">
         <source>cursed</source>
         <target>诅咒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="debuffs" xml:space="preserve">
+      <trans-unit id="debuffs">
         <source>debuffs</source>
         <target>减益</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="decoying" xml:space="preserve">
+      <trans-unit id="decoying">
         <source>decoying</source>
         <target>吸引其他目标攻击</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="default" xml:space="preserve">
+      <trans-unit id="default">
         <source>default</source>
         <target>默认</target>
         <note>icon style</note>
       </trans-unit>
-      <trans-unit id="defend" xml:space="preserve">
+      <trans-unit id="defend">
         <source>defend</source>
         <target>防守</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="dungeon" xml:space="preserve">
+      <trans-unit id="dungeon">
         <source>dungeon</source>
         <target>地下城</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="enemy" xml:space="preserve">
+      <trans-unit id="enemy">
         <source>enemy</source>
         <target>敌方</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="evolution only" xml:space="preserve">
+      <trans-unit id="evolution only">
         <source>evolution only</source>
         <target>只显示进化后</target>
         <note>skill style</note>
       </trans-unit>
-      <trans-unit id="fifth" xml:space="preserve">
+      <trans-unit id="fifth">
         <source>fifth</source>
         <target>第五</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="four" xml:space="preserve">
+      <trans-unit id="four">
         <source>four</source>
         <target>四个</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="fourth" xml:space="preserve">
+      <trans-unit id="fourth">
         <source>fourth</source>
         <target>第四</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="friendly" xml:space="preserve">
+      <trans-unit id="friendly">
         <source>friendly</source>
         <target>友方</target>
         <note>target modifier</note>
       </trans-unit>
-      <trans-unit id="front" xml:space="preserve">
+      <trans-unit id="front">
         <source>front</source>
         <target>前方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="front %@ %@ targets in range %d" xml:space="preserve">
+      <trans-unit id="front %@ %@ targets in range %d">
         <source>front %1$@ %2$@ targets in range %3$d</source>
         <target>前方 %3$d 范围内%1$@%2$@目标</target>
         <note>front [friendly] [physics] targets in range [500]</note>
       </trans-unit>
-      <trans-unit id="front %@ targets in range %d" xml:space="preserve">
+      <trans-unit id="front %@ targets in range %d">
         <source>front %1$@ targets in range %2$d</source>
         <target>前方范围 %2$d 内%1$@目标</target>
         <note>front [enemy] targets in range [500]</note>
       </trans-unit>
-      <trans-unit id="front and back" xml:space="preserve">
+      <trans-unit id="front and back">
         <source>front and back</source>
         <target>前方和后方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="front(including self)" xml:space="preserve">
+      <trans-unit id="front(including self)">
         <source>front(including self)</source>
         <target>前方（包括自己）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="full" xml:space="preserve">
+      <trans-unit id="full">
         <source>full</source>
         <target>完整</target>
         <note>expression style</note>
       </trans-unit>
-      <trans-unit id="inevitable physical" xml:space="preserve">
+      <trans-unit id="inevitable physical">
         <source>inevitable physical</source>
         <target>无法躲闪的物理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="last effect affected or the nearest" xml:space="preserve">
+      <trans-unit id="last effect affected or the nearest">
         <source>last effect affected or the nearest</source>
         <target>上一个效果或最近的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="magic" xml:space="preserve">
+      <trans-unit id="magic">
         <source>magic</source>
         <target>法系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="magical" xml:space="preserve">
+      <trans-unit id="magical">
         <source>magical</source>
         <target>魔法</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="max 16 characters" xml:space="preserve">
+      <trans-unit id="max 16 characters">
         <source>max 16 characters</source>
         <target>最多 16 个字符</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="minion" xml:space="preserve">
+      <trans-unit id="minion">
         <source>minion</source>
         <target>随从</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="name" xml:space="preserve">
-        <source>name</source>
-        <target>名称</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="normal type" xml:space="preserve">
+      <trans-unit id="normal type">
         <source>normal type</source>
         <target>普通类型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="one" xml:space="preserve">
+      <trans-unit id="one">
         <source>one</source>
         <target>一个</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="opposite" xml:space="preserve">
+      <trans-unit id="opposite">
         <source>opposite</source>
         <target>敌方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="other" xml:space="preserve">
+      <trans-unit id="other">
         <source>other</source>
         <target>其他</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="own side" xml:space="preserve">
+      <trans-unit id="own side">
         <source>own side</source>
         <target>己方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="phantom type" xml:space="preserve">
+      <trans-unit id="phantom type">
         <source>phantom type</source>
         <target>幽灵类型</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="physical" xml:space="preserve">
+      <trans-unit id="physical">
         <source>physical</source>
         <target>物理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="physics" xml:space="preserve">
+      <trans-unit id="physics">
         <source>physics</source>
         <target>物理系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="poisoned" xml:space="preserve">
+      <trans-unit id="poisoned">
         <source>poisoned</source>
         <target>中毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="princess arena" xml:space="preserve">
+      <trans-unit id="princess arena">
         <source>princess arena</source>
         <target>公主竞技场</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="pve" xml:space="preserve">
+      <trans-unit id="pve">
         <source>pve</source>
         <target>pve</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="pvp" xml:space="preserve">
+      <trans-unit id="pvp">
         <source>pvp</source>
         <target>pvp</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="random" xml:space="preserve">
+      <trans-unit id="random">
         <source>random</source>
         <target>随机</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="random minion" xml:space="preserve">
+      <trans-unit id="random minion">
         <source>random minion</source>
         <target>随机随从</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="random self minion" xml:space="preserve">
+      <trans-unit id="random self minion">
         <source>random self minion</source>
         <target>自己的随机随从</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="random(once)" xml:space="preserve">
+      <trans-unit id="random(once)">
         <source>random(once)</source>
         <target>随机（仅第一次）</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="raw value id" xml:space="preserve">
+      <trans-unit id="raw value id">
         <source>raw value id</source>
         <target>原始数值 ID</target>
         <note>expression style</note>
       </trans-unit>
-      <trans-unit id="second" xml:space="preserve">
+      <trans-unit id="second">
         <source>second</source>
         <target>第二</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="self" xml:space="preserve">
+      <trans-unit id="self">
         <source>self</source>
         <target>自身</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="short" xml:space="preserve">
+      <trans-unit id="short">
         <source>short</source>
         <target>简短</target>
         <note>expression style</note>
       </trans-unit>
-      <trans-unit id="target" xml:space="preserve">
+      <trans-unit id="target">
         <source>target</source>
         <target>目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets" xml:space="preserve">
+      <trans-unit id="targets">
         <source>targets</source>
         <target>目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of effect %d" xml:space="preserve">
+      <trans-unit id="targets of effect %d">
         <source>targets of effect %d</source>
         <target>效果 %d 的目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of effect %d and %@ targets in range %d" xml:space="preserve">
+      <trans-unit id="targets of effect %d and %@ targets in range %d">
         <source>targets of effect %1$d and %2$@ targets in range %3$d</source>
         <target>效果 %1$d 的目标和范围 %3$d 内的%2$@目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of last effect" xml:space="preserve">
+      <trans-unit id="targets of last effect">
         <source>targets of last effect</source>
         <target>上一个效果影响到的目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of last effect or %@ nearest" xml:space="preserve">
+      <trans-unit id="targets of last effect or %@ nearest">
         <source>targets of last effect or %@ nearest</source>
         <target>上一个效果或最近的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="targets of last effect or the %@ nearest" xml:space="preserve">
+      <trans-unit id="targets of last effect or the %@ nearest">
         <source>targets of last effect or the %@ nearest</source>
         <target>上一个效果或%@近的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="targets within the scope" xml:space="preserve">
+      <trans-unit id="targets within the scope">
         <source>targets within the scope</source>
         <target>范围内的目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ farthest" xml:space="preserve">
+      <trans-unit id="the %@ farthest">
         <source>the %@ farthest</source>
         <target>%@远的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ highest ATK" xml:space="preserve">
+      <trans-unit id="the %@ highest ATK">
         <source>the %@ highest ATK</source>
         <target>物理攻击力%@高的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ highest HP ratio" xml:space="preserve">
+      <trans-unit id="the %@ highest HP ratio">
         <source>the %@ highest HP ratio</source>
         <target> HP 比例%@高的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ highest Magic STR" xml:space="preserve">
+      <trans-unit id="the %@ highest Magic STR">
         <source>the %@ highest Magic STR</source>
         <target>魔法攻击力%@高的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ highest TP" xml:space="preserve">
+      <trans-unit id="the %@ highest TP">
         <source>the %@ highest TP</source>
         <target> TP %@高的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ lowest ATK" xml:space="preserve">
+      <trans-unit id="the %@ lowest ATK">
         <source>the %@ lowest ATK</source>
         <target>物理攻击力%@低的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ lowest HP ratio" xml:space="preserve">
+      <trans-unit id="the %@ lowest HP ratio">
         <source>the %@ lowest HP ratio</source>
         <target> HP 比例%@低的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ lowest Magic STR" xml:space="preserve">
+      <trans-unit id="the %@ lowest Magic STR">
         <source>the %@ lowest Magic STR</source>
         <target>魔法攻击力%@低的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the %@ lowest TP" xml:space="preserve">
+      <trans-unit id="the %@ lowest TP">
         <source>the %@ lowest TP</source>
         <target> TP %@低的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ most backward" xml:space="preserve">
+      <trans-unit id="the %@ most backward">
         <source>the %@ most backward</source>
         <target>%@靠后的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ most forward" xml:space="preserve">
+      <trans-unit id="the %@ most forward">
         <source>the %@ most forward</source>
         <target>%@靠前的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ nearest" xml:space="preserve">
+      <trans-unit id="the %@ nearest">
         <source>the %@ nearest</source>
         <target>%@近的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ unknown type" xml:space="preserve">
+      <trans-unit id="the %@ unknown type">
         <source>the %@ unknown type</source>
         <target>%@未知类型的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the farthest" xml:space="preserve">
+      <trans-unit id="the farthest">
         <source>the farthest</source>
         <target>最远的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the highest ATK" xml:space="preserve">
+      <trans-unit id="the highest ATK">
         <source>the highest ATK</source>
         <target>物理攻击力最高的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the highest HP ratio" xml:space="preserve">
+      <trans-unit id="the highest HP ratio">
         <source>the highest HP ratio</source>
         <target> HP 比例最高的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the highest Magic STR" xml:space="preserve">
+      <trans-unit id="the highest Magic STR">
         <source>the highest Magic STR</source>
         <target>魔法攻击力最高的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the highest TP" xml:space="preserve">
+      <trans-unit id="the highest TP">
         <source>the highest TP</source>
         <target> TP 最多的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the lowest ATK" xml:space="preserve">
+      <trans-unit id="the lowest ATK">
         <source>the lowest ATK</source>
         <target>物理攻击力最低的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the lowest HP ratio" xml:space="preserve">
+      <trans-unit id="the lowest HP ratio">
         <source>the lowest HP ratio</source>
         <target> HP 比例最低的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the lowest Magic STR" xml:space="preserve">
+      <trans-unit id="the lowest Magic STR">
         <source>the lowest Magic STR</source>
         <target>魔法攻击力最低的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="the lowest TP" xml:space="preserve">
+      <trans-unit id="the lowest TP">
         <source>the lowest TP</source>
         <target> TP 最少的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the most backward" xml:space="preserve">
+      <trans-unit id="the most backward">
         <source>the most backward</source>
         <target>最靠后的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the most forward" xml:space="preserve">
+      <trans-unit id="the most forward">
         <source>the most forward</source>
         <target>最靠前的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the nearest" xml:space="preserve">
+      <trans-unit id="the nearest">
         <source>the nearest</source>
         <target>最近的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="third" xml:space="preserve">
+      <trans-unit id="third">
         <source>third</source>
         <target>第三</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="three" xml:space="preserve">
+      <trans-unit id="three">
         <source>three</source>
         <target>三个</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="two" xml:space="preserve">
+      <trans-unit id="two">
         <source>two</source>
         <target>两个</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="unknown" xml:space="preserve">
+      <trans-unit id="unknown">
         <source>unknown</source>
         <target>未知</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="unknown side" xml:space="preserve">
+      <trans-unit id="unknown side">
         <source>unknown side</source>
         <target>未知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="unknown type" xml:space="preserve">
+      <trans-unit id="unknown type">
         <source>unknown type</source>
         <target>未知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to %@ if it's alone" xml:space="preserve">
+      <trans-unit id="use %d to %@ if it's alone">
         <source>use %1$d to %2$@ if it's alone</source>
         <target>如果%2$@是单独的则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to %@ if it's not alone" xml:space="preserve">
+      <trans-unit id="use %d to %@ if it's not alone">
         <source>use %1$d to %2$@ if it's not alone</source>
         <target>如果%2$@不是单独的则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is %@" xml:space="preserve">
+      <trans-unit id="use %d to any of %@ is %@">
         <source>use %1$d to any of %2$@ is %3$@</source>
         <target>对%2$@中处于%3$@状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is in state of ID: %d" xml:space="preserve">
+      <trans-unit id="use %d to any of %@ is in state of ID: %d">
         <source>use %1$d to any of %2$@ is in state of ID: %3$d</source>
         <target>对%2$@中处于 ID 为 %3$d 状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not %@" xml:space="preserve">
+      <trans-unit id="use %d to any of %@ is not %@">
         <source>use %1$d to any of %2$@ is not %3$@</source>
         <target>对%2$@中未处于%3$@状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not in state of ID: %d" xml:space="preserve">
+      <trans-unit id="use %d to any of %@ is not in state of ID: %d">
         <source>use %1$d to any of %2$@ is not in state of ID: %3$d</source>
         <target>对%2$@中未处于 ID 为 %3$d 状态的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ whose HP is below %d%%" xml:space="preserve">
+      <trans-unit id="use %d to any of %@ whose HP is below %d%%">
         <source>use %1$d to any of %2$@ whose HP is below %3$d%%</source>
         <target>对%2$@中 HP 低于 %3$d%% 的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ whose HP is not below %d%%" xml:space="preserve">
+      <trans-unit id="use %d to any of %@ whose HP is not below %d%%">
         <source>use %1$d to any of %2$@ whose HP is not below %3$d%%</source>
         <target>对%2$@中 HP 不低于 %3$d%% 的使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="value %d" xml:space="preserve">
+      <trans-unit id="value %d">
         <source>value %d</source>
         <target>数值 %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="value in combat" xml:space="preserve">
+      <trans-unit id="value in combat">
         <source>value in combat</source>
         <target>战斗中数值</target>
         <note>expression style</note>
       </trans-unit>
-      <trans-unit id="value only" xml:space="preserve">
+      <trans-unit id="value only">
         <source>value only</source>
         <target>面板数值</target>
         <note>expression style</note>
       </trans-unit>
-      <trans-unit id="venomed" xml:space="preserve">
+      <trans-unit id="venomed">
         <source>venomed</source>
         <target>中猛毒</target>
         <note>No comment provided by engineer.</note>
