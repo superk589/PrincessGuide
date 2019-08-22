@@ -128,7 +128,7 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         
         if skill.actions.count > 0 {
             actionLabel.attributedText = skill.actions.map {
-                let parameter = $0.buildParameter(dependActionID: skill.dependActionIDs[$0.actionId] ?? 0)
+                let parameter = $0.parameter
                 let tag = NSTextAttachment.makeNumberAttachment(parameter.id % 100, color: actionLabel.textColor, minWidth: 25, font: UIFont.scaledFont(forTextStyle: .body, ofSize: 12))
                 let attributedText = NSMutableAttributedString()
                 attributedText.append(NSAttributedString(attachment: tag))

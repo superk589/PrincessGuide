@@ -718,9 +718,6 @@ class Master: FMDatabaseQueue {
                     let field = "action_\(i)"
                     let id = json[field].intValue
                     actionIDs.append(id)
-//                    if id != 0 {
-//                        actionIDs.append(id)
-//                    }
                     
                     let dependActionField = "depend_action_\(i)"
                     let dependID = json[dependActionField].intValue
@@ -731,7 +728,7 @@ class Master: FMDatabaseQueue {
                     
                 }
                 
-                var actions = [Skill.Action]()
+                var actions = [Int: Skill.Action]()
                 
                 let actionSql = """
                 SELECT
@@ -747,12 +744,19 @@ class Master: FMDatabaseQueue {
                     let json = JSON(subSet.resultDictionary ?? [:])
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    if let action = try? decoder.decode(Skill.Action.self, from: json.rawData()) {
-                        actions.append(action)
+                    if let base = try? decoder.decode(Skill.Action.Base.self, from: json.rawData()) {
+                        let action = Skill.Action(base: base)
+                        actions[action.base.actionId] = action
+                    }
+                }
+                
+                for action in actions.values {
+                    if let id = dependActionIDs[action.base.actionId] {
+                        action.dependAction = actions[id]
                     }
                 }
                 if let base = try? decoder.decode(Skill.Base.self, from: json.rawData()) {
-                    let skill = Skill(actions: actions, base: base, dependActionIDs: dependActionIDs)
+                    let skill = Skill(actions: Array(actions.values).sorted { $0.base.actionId < $1.base.actionId }, base: base)
                     skills.append(skill)
                 }
             }

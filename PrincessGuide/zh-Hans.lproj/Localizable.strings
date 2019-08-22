@@ -464,6 +464,9 @@
 "Clan Battle %d-%d" = "公会战 %1$d 年 %2$d 月";
 
 /* No comment provided by engineer. */
+"Clan Battle(easy)" = "公会战（简单模式）";
+
+/* No comment provided by engineer. */
 "Clear all %@ on %@ with chance [%@]%%." = "有 [%3$@]%% 几率清除%2$@上的%1$@。";
 
 /* No comment provided by engineer. */
@@ -1359,6 +1362,9 @@
 
 /* No comment provided by engineer. */
 "targets" = "目标";
+
+/* No comment provided by engineer. */
+"targets of damaged by effect %d" = "被效果 %d 伤害到的目标";
 
 /* No comment provided by engineer. */
 "targets of effect %d" = "效果 %d 的目标";

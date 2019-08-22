@@ -110,7 +110,8 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: TabmanViewController.PageIndex, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, willScrollToPageAt: index, direction: direction, animated: animated)
-        guard let vc = viewControllers[index] as? MinionSkillViewController else { return }
+        let vc = viewControllers[index]
+        guard vc is MinionSkillViewController || vc is MinionPropertyViewController else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             UIView.performWithoutAnimation {
                 vc.tableView.beginUpdates()
@@ -121,7 +122,8 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didReloadWith currentViewController: UIViewController, currentPageIndex: TabmanViewController.PageIndex) {
         super.pageboyViewController(pageboyViewController, didReloadWith: currentViewController, currentPageIndex: currentPageIndex)
-        guard let vc = currentViewController as? MinionSkillViewController else { return }
+        guard let vc = currentViewController as? MinionTableViewController else { return }
+        guard vc is MinionSkillViewController || vc is MinionPropertyViewController else { return }
         DispatchQueue.main.async {
             UIView.performWithoutAnimation {
                 vc.tableView.beginUpdates()

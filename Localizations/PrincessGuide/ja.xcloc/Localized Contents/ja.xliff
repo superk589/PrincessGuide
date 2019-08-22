@@ -704,6 +704,10 @@
         <target>クランバトル %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Clan Battle(easy)">
+        <source>Clan Battle(easy)</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%.">
         <source>Clear all %1$@ on %2$@ with chance [%3$@]%%.</source>
         <note>No comment provided by engineer.</note>
@@ -2331,6 +2335,10 @@
       <trans-unit id="targets">
         <source>targets</source>
         <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="targets of damaged by effect %d">
+        <source>targets of damaged by effect %d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets of effect %d">

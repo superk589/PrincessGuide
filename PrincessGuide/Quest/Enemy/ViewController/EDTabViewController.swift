@@ -91,7 +91,8 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: TabmanViewController.PageIndex, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, willScrollToPageAt: index, direction: direction, animated: animated)
-        guard let vc = viewControllers[index] as? EDSkillTableViewController else { return }
+        let vc = viewControllers[index]
+        guard vc is EDSkillTableViewController || vc is EDStatusTableViewController else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             UIView.performWithoutAnimation {
                 vc.tableView.beginUpdates()
@@ -102,7 +103,8 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didReloadWith currentViewController: UIViewController, currentPageIndex: TabmanViewController.PageIndex) {
         super.pageboyViewController(pageboyViewController, didReloadWith: currentViewController, currentPageIndex: currentPageIndex)
-        guard let vc = currentViewController as? EDSkillTableViewController else { return }
+        guard let vc = currentViewController as? EDTableViewController else { return }
+        guard vc is EDSkillTableViewController || vc is EDStatusTableViewController else { return }
         DispatchQueue.main.async {
             UIView.performWithoutAnimation {
                 vc.tableView.beginUpdates()

@@ -17,10 +17,10 @@ class TargetParameter {
     let targetCount: TargetCount
     let direction: DirectionType
     let rawTargetType: Int
-    let dependActionID: Int
+    weak var dependAction: Skill.Action?
     
     init(targetAssignment: Int, targetNth: Int, targetType: Int, targetRange: Int,
-         direction: Int, targetCount: Int ,dependActionID: Int) {
+         direction: Int, targetCount: Int ,dependAction: Skill.Action?) {
         self.targetAssignment = TargetAssignment(rawValue: targetAssignment) ?? .none
         self.targetNth = TargetNth(rawValue: targetNth) ?? .other
         self.rawTargetType = targetType
@@ -28,7 +28,7 @@ class TargetParameter {
         self.targetRange = TargetRange(range: targetRange)
         self.direction = DirectionType(rawValue: direction) ?? .all
         self.targetCount = TargetCount(rawValue: targetCount) ?? .all
-        self.dependActionID = dependActionID
+        self.dependAction = dependAction
     }
     
     var hasRelationPhrase: Bool {
@@ -59,17 +59,27 @@ class TargetParameter {
     }
     
     var hasDependAction: Bool {
-        return dependActionID != 0 && targetType != .absolute
+        if let dependAction = dependAction {
+            return dependAction.base.actionId != 0 && targetType != .absolute
+            && [ActionType.ifForChildren, .ifForAll, .damage, .knock].contains(dependAction.parameter.actionType)
+        } else {
+            return false
+        }
     }
     
     func buildTargetClause() -> String {
         switch (hasCountPhrase, hasNthModifier, hasRangePhrase, hasRelationPhrase, hasDirectionPhrase, hasDependAction) {
-        case (_, _, true, _, _, true) where targetCount == .all || targetCount == .zero:
-            let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
-            return String(format: format, dependActionID % 100, targetAssignment.description, targetRange.rawRange)
-        case (_, _, _, _, _, true) where targetType == .none:
-            let format = NSLocalizedString("targets of effect %d", comment: "")
-            return String(format: format, dependActionID % 100)
+//        case (_, _, true, _, _, true) where targetCount == .all || targetCount == .zero:
+//            let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
+//            return String(format: format, dependAction!.base.actionId % 100, targetAssignment.description, targetRange.rawRange)
+        case (_, _, _, _, _, true):
+            if dependAction?.parameter.actionType == .damage {
+                let format = NSLocalizedString("targets of damaged by effect %d", comment: "")
+                return String(format: format, dependAction!.base.actionId % 100)
+            } else {
+                let format = NSLocalizedString("targets of effect %d", comment: "")
+                return String(format: format, dependAction!.base.actionId % 100)
+            }
         case (_, _, _, false, _, _):
             return targetType.description.description
         case (false, false, false, true, _, _):

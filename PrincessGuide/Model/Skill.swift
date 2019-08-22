@@ -43,22 +43,9 @@ class Skill: Codable {
     var actions: [Action]
     let base: Base
     
-    let dependActionIDs: [Int: Int]
-    
-    init(actions: [Action], base: Base, dependActionIDs: [Int: Int]) {
+    init(actions: [Action], base: Base) {
         self.actions = actions
         self.base = base
-        self.dependActionIDs = dependActionIDs
-        
-        for i in actions.indices {
-            let action = actions[i]
-            if let dependID = dependActionIDs[action.actionId], let dependAction = actions.first(where: { $0.actionId == dependID }) {
-                var newAction = action
-//                newAction.targetCount = dependAction.targetCount
-                newAction.targetAssignment = dependAction.targetAssignment
-                self.actions[i] = newAction
-            }
-        }
     }
         
     struct Base: Codable {
@@ -78,42 +65,48 @@ class Skill: Codable {
         let skillType: Int
     }
     
-    struct Action: Codable {
+    class Action: Codable {
         
-        let actionDetail1: Int
-        let actionDetail2: Int
-        let actionDetail3: Int
-        let actionId: Int
-        let actionType: Int
-        let actionValue1: Double
-        let actionValue2: Double
-        let actionValue3: Double
-        let actionValue4: Double
-        let actionValue5: Double
-        let actionValue6: Double
-        let actionValue7: Double
-        let classId: Int
-        let description: String
-        let levelUpDisp: String
-        let targetArea: Int
-        var targetAssignment: Int
-        var targetCount: Int
-        let targetNumber: Int
-        let targetRange: Int
-        let targetType: Int
+        struct Base: Codable {
+            let actionDetail1: Int
+            let actionDetail2: Int
+            let actionDetail3: Int
+            let actionId: Int
+            let actionType: Int
+            let actionValue1: Double
+            let actionValue2: Double
+            let actionValue3: Double
+            let actionValue4: Double
+            let actionValue5: Double
+            let actionValue6: Double
+            let actionValue7: Double
+            let classId: Int
+            let description: String
+            let levelUpDisp: String
+            let targetArea: Int
+            var targetAssignment: Int
+            var targetCount: Int
+            let targetNumber: Int
+            let targetRange: Int
+            let targetType: Int
+            
+        }
         
-    }
-    
-}
-
-extension Skill.Action {
-    
-    var parameter: ActionParameter {
-        return buildParameter()
-    }
-    
-    func buildParameter(dependActionID: Int = 0) -> ActionParameter {
-        return ActionParameter.type(of: actionType).init(id: actionId, targetAssignment: targetAssignment, targetNth: targetNumber, actionType: actionType, targetType: targetType, targetRange: targetRange, direction: targetArea, targetCount: targetCount, actionValue1: actionValue1, actionValue2: actionValue2, actionValue3: actionValue3, actionValue4: actionValue4, actionValue5: actionValue5, actionValue6: actionValue6, actionValue7: actionValue7, actionDetail1: actionDetail1, actionDetail2: actionDetail2, actionDetail3: actionDetail3, dependActionID: dependActionID)
+        let base: Base
+        
+        init(base: Base) {
+            self.base = base
+        }
+        
+        weak var dependAction: Action?
+        
+        lazy var parameter: ActionParameter = {
+            return buildParameter()
+        }()
+        
+        func buildParameter(dependActionID: Int = 0) -> ActionParameter {
+            return ActionParameter.type(of: base.actionType).init(id: base.actionId, targetAssignment: base.targetAssignment, targetNth: base.targetNumber, actionType: base.actionType, targetType: base.targetType, targetRange: base.targetRange, direction: base.targetArea, targetCount: base.targetCount, actionValue1: base.actionValue1, actionValue2: base.actionValue2, actionValue3: base.actionValue3, actionValue4: base.actionValue4, actionValue5: base.actionValue5, actionValue6: base.actionValue6, actionValue7: base.actionValue7, actionDetail1: base.actionDetail1, actionDetail2: base.actionDetail2, actionDetail3: base.actionDetail3, dependAction: dependAction)
+        }
     }
     
 }
