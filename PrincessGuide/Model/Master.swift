@@ -891,34 +891,6 @@ class Master: FMDatabaseQueue {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 if let period = try? decoder.decode(ClanBattle.Period.self, from: json.rawData()) {
-//                    let id = period.clanBattleId
-//                    let roundSql = """
-//                    SELECT
-//                        *
-//                    FROM
-//                        clan_battle_map_data
-//                    WHERE
-//                        clan_battle_id = \(id)
-//                    """
-//                    var rounds = [ClanBattle.Round]()
-//                    let roundSet = try db.executeQuery(roundSql, values: nil)
-//                    while roundSet.next() {
-//                        let json = JSON(roundSet.resultDictionary ?? [:])
-//                        let
-//                    }
-//
-//                    var groups = [ClanBattle.Group]()
-//                    let groupSet = try db.executeQuery(groupSql, values: nil)
-//                    while groupSet.next() {
-//                        let json = JSON(groupSet.resultDictionary ?? [:])
-//                        let groupId = json["clan_battle_boss_group_id"].intValue
-//                        let waveId = json["wave_group_id"].intValue
-//                        let orderNum = json["order_num"].intValue
-//                        let scoreCoefficient = json["score_coefficient"].doubleValue
-//                        if let wave = try self.getWaves(from: db, waveIDs: [waveId]).first {
-//                            groups.append(ClanBattle.Group(wave: wave, groupId: groupId, orderNum: orderNum, scoreCoefficient: scoreCoefficient))
-//                        }
-//                    }
                     let clanBattle = ClanBattle(period: period)
                     clanBattles.append(clanBattle)
                 }
@@ -935,50 +907,54 @@ class Master: FMDatabaseQueue {
             SELECT
                 *
             FROM
-                clan_battle_map_data
+                clan_battle_2_map_data
             WHERE
                 clan_battle_id = \(clanBattleID)
             """
             let set = try db.executeQuery(sql, values: nil)
-            while set.next() {
-                let json = JSON(set.resultDictionary ?? [:])
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                if let round = try? decoder.decode(ClanBattle.Round.self, from: json.rawData()) {
+            do {
+                while set.next() {
+                    let json = JSON(set.resultDictionary ?? [:])
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let round = try decoder.decode(ClanBattle.Round.self, from: json.rawData())
                     rounds.append(round)
                 }
+            } catch let error {
+                print(error)
             }
         }) {
             callback(rounds)
         }
     }
     
-    func getClanBattleRoundGroups(groupID: Int, callback: @escaping FMDBCallbackClosure<[ClanBattle.Round.Group]>) {
-        var groups = [ClanBattle.Round.Group]()
-        execute({ (db) in
-            let sql = """
-            SELECT
-                *
-            FROM
-                clan_battle_boss_group
-            WHERE
-                clan_battle_boss_group_id = \(groupID)
-            """
-            let set = try db.executeQuery(sql, values: nil)
-            while set.next() {
-                let json = JSON(set.resultDictionary ?? [:])
-                let groupId = json["clan_battle_boss_group_id"].intValue
-                let waveId = json["wave_group_id"].intValue
-                let orderNum = json["order_num"].intValue
-                let scoreCoefficient = json["score_coefficient"].doubleValue
-                if let wave = try self.getWaves(from: db, waveIDs: [waveId]).first {
-                    groups.append(ClanBattle.Round.Group(wave: wave, groupId: groupId, orderNum: orderNum, scoreCoefficient: scoreCoefficient))
-                }
-            }
-        }) {
-            callback(groups)
-        }
-    }
+    func getClanBattleRoundsSimple(clanBattleID: Int, callback: @escaping FMDBCallbackClosure<[ClanBattle.Round]>) {
+           var rounds = [ClanBattle.Round]()
+           execute({ (db) in
+               let sql = """
+               SELECT
+                   *
+               FROM
+                   clan_battle_s_map_data
+               WHERE
+                   clan_battle_id = \(clanBattleID)
+               """
+               let set = try db.executeQuery(sql, values: nil)
+               do {
+                   while set.next() {
+                       let json = JSON(set.resultDictionary ?? [:])
+                       let decoder = JSONDecoder()
+                       decoder.keyDecodingStrategy = .convertFromSnakeCase
+                       let round = try decoder.decode(ClanBattle.Round.self, from: json.rawData())
+                       rounds.append(round)
+                   }
+               } catch let error {
+                   print(error)
+               }
+           }) {
+               callback(rounds)
+           }
+       }
     
     func getTowers(callback: @escaping FMDBCallbackClosure<[Tower]>) {
         var towers = [Tower]()

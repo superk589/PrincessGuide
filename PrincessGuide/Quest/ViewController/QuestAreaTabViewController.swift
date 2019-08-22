@@ -20,7 +20,7 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Quests", comment: "")
-        viewControllers = [DungeonBossTableViewController(), HatsuneEventAreaTableViewController(), ClanBattleTableViewController(), TowerTableViewController(), QuestAreaTableViewController(areaType: .normal), QuestAreaTableViewController(areaType: .hard)]
+        viewControllers = [DungeonBossTableViewController(), HatsuneEventAreaTableViewController(), ClanBattleTableViewController(mode: .normal), TowerTableViewController(), QuestAreaTableViewController(areaType: .normal), QuestAreaTableViewController(areaType: .hard)]
         dataSource = self
         
         self.items = [
@@ -28,7 +28,9 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
             TMBarItem(title: NSLocalizedString("Event", comment: "")),
             TMBarItem(title: NSLocalizedString("Clan Battle", comment: "")),
             TMBarItem(title: NSLocalizedString("Tower", comment: ""))
-            ] + [AreaType.normal, .hard].map { TMBarItem(title: $0.description) }
+            ]
+            + [AreaType.normal, .hard].map { TMBarItem(title: $0.description) }
+//            + [TMBarItem(title: NSLocalizedString("Clan Battle(easy)", comment: ""))]
         
         let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>()
         bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)

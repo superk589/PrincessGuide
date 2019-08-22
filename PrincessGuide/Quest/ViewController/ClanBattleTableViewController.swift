@@ -10,7 +10,23 @@ import UIKit
 import Gestalt
 
 class ClanBattleTableViewController: UITableViewController, DataChecking {
+    
+    enum Mode {
+        case normal
+        case easy
+    }
+    
+    private let mode: Mode
 
+    init(mode: Mode) {
+        self.mode = mode
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private var clanBattles = [ClanBattle]()
     
     let refresher = RefreshHeader()
@@ -60,7 +76,7 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
                     clanBattles.forEach {
                         $0.preload()
                     }
-                    clanBattles.forEach { _ = $0.rounds.last?.groups.last?.wave.enemies.first?.enemy }
+                    clanBattles.forEach { _ = $0.rounds.last?.groups.last?.wave?.enemies.first?.enemy }
                     DispatchQueue.main.async {
                         LoadingHUDManager.default.hide()
                         self?.clanBattles = clanBattles.sorted { $0.period.startTime > $1.period.startTime }
@@ -82,13 +98,13 @@ class ClanBattleTableViewController: UITableViewController, DataChecking {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let clanBattle = clanBattles[indexPath.row]
-        cell.configure(for: clanBattle.rounds.last?.groups.last?.wave.enemies.first?.enemy?.unit.unitName ?? "", subtitle: clanBattle.name, unitID: clanBattle.rounds.last?.groups.last?.wave.enemies.first?.enemy?.unit.prefabId)
+        cell.configure(for: clanBattle.rounds.last?.groups.last?.wave?.enemies.first?.enemy?.unit.unitName ?? "", subtitle: clanBattle.name, unitID: clanBattle.rounds.last?.groups.last?.wave?.enemies.first?.enemy?.unit.prefabId)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let clanBattle = clanBattles[indexPath.row]
-        let vc = QuestEnemyTableViewController(clanBattle: clanBattle)
+        let vc = QuestEnemyTableViewController(clanBattle: clanBattle, mode: mode)
         vc.hidesBottomBarWhenPushed = true
         vc.navigationItem.title = clanBattle.name
         navigationController?.pushViewController(vc, animated: true)

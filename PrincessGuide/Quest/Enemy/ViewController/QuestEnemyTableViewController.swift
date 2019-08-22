@@ -34,10 +34,22 @@ class QuestEnemyTableViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    init(clanBattle: ClanBattle) {
-        self.rows = clanBattle.mergedRounds.flatMap {
+    init(clanBattle: ClanBattle, mode: ClanBattleTableViewController.Mode) {
+        let rounds: [ClanBattle.Round]
+        if mode == .easy {
+            rounds = clanBattle.mergedSimpleRounds
+        } else {
+            rounds = clanBattle.mergedRounds
+        }
+        self.rows = rounds.flatMap {
             [Row(type: QuestNameTableViewCell.self, data: .quest($0.name))] +
-                $0.groups.enumerated().map{ Row(type: QuestEnemyTableViewCell.self, data: .clanBattleWave($0.element.wave, $0.offset, $0.element.scoreCoefficient)) }
+                $0.groups.enumerated().compactMap {
+                    if let wave = $0.element.wave {
+                        return Row(type: QuestEnemyTableViewCell.self, data: .clanBattleWave(wave, $0.offset, $0.element.scoreCoefficient))
+                    } else {
+                        return nil
+                    }
+                }
         }
         super.init(nibName: nil, bundle: nil)
     }
