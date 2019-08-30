@@ -917,7 +917,16 @@
 "Mana Cost of Skill Training" = "提升技能等级所需 Mana";
 
 /* No comment provided by engineer. */
+"Mana Cost of Unique Equipment Crafting" = "制作专属装备所需 Mana";
+
+/* No comment provided by engineer. */
+"Mana Cost of Unique Equipment Enhancing" = "强化专属装备所需 Mana";
+
+/* No comment provided by engineer. */
 "Mark" = "标记";
+
+/* No comment provided by engineer. */
+"Master Coin" = "大师币";
 
 /* No comment provided by engineer. */
 "max 16 characters" = "最多 16 个字符";
@@ -1215,9 +1224,6 @@
 
 /* No comment provided by engineer. */
 "Round %d+" = "第 %d+ 周目";
-
-/* No comment provided by engineer. */
-"Save" = "保存";
 
 /* No comment provided by engineer. */
 "Save Box" = "保存 Box";
@@ -1553,10 +1559,13 @@
 "Unique" = "专属装备";
 
 /* No comment provided by engineer. */
-"Unique Equipment" = "计算专属装备";
+"Unique Equipment" = "专属装备";
 
 /* No comment provided by engineer. */
 "Unique Equipment Level" = "专属装备等级";
+
+/* No comment provided by engineer. */
+"Unique Equipment Lv." = "专属装备等级";
 
 /* No comment provided by engineer. */
 "Unique Equipments" = "专属装备";

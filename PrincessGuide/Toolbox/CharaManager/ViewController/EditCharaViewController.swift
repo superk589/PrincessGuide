@@ -210,6 +210,50 @@ class EditCharaViewController: FormViewController {
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
         
             +++ Section(NSLocalizedString("Equipment", comment: ""))
+            <<< SwitchRow("enables_unique_equipment") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Unique Equipment", comment: "")
+                
+                var isHidden = false
+                if mode == .create {
+                    if let card = self.card {
+                        row.value = card.uniqueEquipIDs.count > 0
+                        isHidden = card.uniqueEquipIDs.count == 0
+                    } else {
+                        isHidden = true
+                    }
+                } else {
+                    if let chara = self.chara {
+                        row.value = chara.enablesUniqueEquipment
+                    } else {
+                        isHidden = true
+                    }
+                }
+                
+                row.hidden = .init(booleanLiteral: isHidden)
+                
+                }
+                .cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+            
+            <<< PickerInlineRow<Int>("unique_equipment_level") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Unique Equipment Level", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<Preload.default.maxUniqueEquipmentLevel {
+                    row.options.append(i + 1)
+                }
+                row.hidden = "$enables_unique_equipment == NO"
+                if mode == .create {
+                    row.value = Preload.default.maxUniqueEquipmentLevel
+                } else {
+                    row.value = (chara?.uniqueEquipmentLevel).flatMap { Int($0) }
+                }
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             
             <<< SlotsRow("slots")
                 .cellSetup{ [weak self] (cell, row) in
@@ -230,23 +274,6 @@ class EditCharaViewController: FormViewController {
                         }
                     }
                 }
-            
-//            +++ Section()
-//            <<< ButtonRow("save") { (row) in
-//                row.title = NSLocalizedString("Save", comment: "")
-//                }
-//                .cellSetup { (cell, row) in
-//                    cell.selectedBackgroundView = UIView()
-//                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-//                        themeable.textLabel?.textColor = theme.color.title
-//                        themeable.detailTextLabel?.textColor = theme.color.tint
-//                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-//                        themeable.backgroundColor = theme.color.tableViewCell.background
-//                    }
-//                }
-//                .onCellSelection { [weak self] (cell, row) in
-//                    self?.saveChara()
-//                }
         
     }
     
@@ -260,7 +287,8 @@ class EditCharaViewController: FormViewController {
         chara?.rank = json["unit_rank"].int16Value
         chara?.rarity = json["unit_rarity"].int16Value
         chara?.skillLevel = min(json["unit_level"].int16Value, json["skill_level"].int16Value)
-        
+        chara?.enablesUniqueEquipment = json["enables_unique_equipment"].boolValue
+        chara?.uniqueEquipmentLevel = json["unique_equipment_level"].int16Value
         chara?.slots = json["slots"].arrayValue.map { $0.boolValue }
         
         do {

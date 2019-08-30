@@ -38,6 +38,8 @@ extension Chara {
         modifiedAt = Date()
         id = anotherChara.id
         rarity = anotherChara.rarity
+        enablesUniqueEquipment = anotherChara.enablesUniqueEquipment
+        uniqueEquipmentLevel = anotherChara.uniqueEquipmentLevel
     }
 
     func unequiped() -> [Equipment] {
@@ -76,6 +78,19 @@ extension Chara {
         } else {
             return []
         }
+    }
+    
+    func uniqueUnequiped() -> [UniqueEquipment] {
+        if self.enablesUniqueEquipment {
+            return []
+        } else {
+            return self.card?.uniqueEquipments ?? []
+        }
+    }
+    
+    var uniqueEquipmentEnhanceCost: Int {
+        let cost = self.card?.uniqueEquipments.map { $0.enhanceCost(from: Int(uniqueEquipmentLevel)) }.reduce(0, +)
+        return cost ?? 0
     }
     
     var slots: [Bool] {

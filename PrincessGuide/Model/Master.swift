@@ -695,6 +695,34 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getUniqueEquipmentCost(callback: @escaping FMDBCallbackClosure<[Int: Int]>) {
+        var cost = [Int: Int]()
+        execute({ (db) in
+            let selectSql = """
+            SELECT
+                *
+            FROM
+                unique_equipment_enhance_data
+            """
+            
+            let set = try db.executeQuery(selectSql, values: nil)
+            var totalPoint = 0
+            cost[1] = 0
+            while set.next() {
+                
+                let json = JSON(set.resultDictionary ?? [:])
+                
+                let enhanceLevel = json["enhance_level"].intValue
+                let neededPoint = json["needed_point"].intValue
+                let neededMana = json["needed_mana"].intValue
+                totalPoint += neededMana * neededPoint
+                cost[enhanceLevel] = totalPoint                
+            }
+        }) {
+            callback(cost)
+        }
+    }
+    
     func getSkills(skillIDs: [Int], callback: @escaping FMDBCallbackClosure<[Skill]>) {
         var skills = [Skill]()
         execute({ (db) in

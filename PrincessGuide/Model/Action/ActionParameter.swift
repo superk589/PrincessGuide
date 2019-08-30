@@ -426,19 +426,9 @@ enum ClassModifier: Int, CustomStringConvertible {
     
 }
 
-enum CriticalModifier: Int, CustomStringConvertible {
-    
+enum CriticalModifier: Int {
     case normal = 0
     case critical
-    
-    var description: String {
-        switch self {
-        case .normal:
-            return NSLocalizedString("", comment: "")
-        case .critical:
-            return NSLocalizedString("", comment: "")
-        }
-    }
 }
 
 enum ActionType: Int {

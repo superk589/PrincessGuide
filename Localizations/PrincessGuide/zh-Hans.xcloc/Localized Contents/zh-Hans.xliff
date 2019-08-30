@@ -1374,9 +1374,24 @@
         <target>提升技能等级所需 Mana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Mana Cost of Unique Equipment Crafting">
+        <source>Mana Cost of Unique Equipment Crafting</source>
+        <target>制作专属装备所需 Mana</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Mana Cost of Unique Equipment Enhancing">
+        <source>Mana Cost of Unique Equipment Enhancing</source>
+        <target>强化专属装备所需 Mana</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Mark">
         <source>Mark</source>
         <target>标记</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Master Coin">
+        <source>Master Coin</source>
+        <target>大师币</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Max Level to %@">
@@ -1794,11 +1809,6 @@
         <target>SP %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Save">
-        <source>Save</source>
-        <target>保存</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Save Box">
         <source>Save Box</source>
         <target>保存 Box</target>
@@ -2141,11 +2151,16 @@
       </trans-unit>
       <trans-unit id="Unique Equipment">
         <source>Unique Equipment</source>
-        <target>计算专属装备</target>
+        <target>专属装备</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Unique Equipment Level">
         <source>Unique Equipment Level</source>
+        <target>专属装备等级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unique Equipment Lv.">
+        <source>Unique Equipment Lv.</source>
         <target>专属装备等级</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>

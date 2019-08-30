@@ -22,6 +22,8 @@ class CharaView: UIView {
     
     let skillLevelView = CharaItemView()
     
+    let uniqueEquipmentLevelView = CharaItemView()
+    
     var icons = [SelectableIconImageView]()
     
     let stackView = UIStackView()
@@ -70,6 +72,12 @@ class CharaView: UIView {
             make.width.top.equalTo(rankView)
         }
         
+        addSubview(uniqueEquipmentLevelView)
+        uniqueEquipmentLevelView.snp.makeConstraints { make in
+            make.left.equalTo(icon.snp.right).offset(10)
+            make.top.equalTo(rankView.snp.bottom).offset(10)
+        }
+        
 //        addSubview(stackView)
 //        stackView.snp.makeConstraints { (make) in
 //            make.left.equalToSuperview()
@@ -116,6 +124,8 @@ class CharaView: UIView {
         
         skillLevelView.configure(for: NSLocalizedString("SLv.", comment: ""), content: String(chara.skillLevel))
         
+        uniqueEquipmentLevelView.isHidden = !chara.enablesUniqueEquipment
+        uniqueEquipmentLevelView.configure(for: NSLocalizedString("Unique Equipment Lv.", comment: ""), content: String(chara.uniqueEquipmentLevel))
 //        icons.forEach {
 //            $0.removeFromSuperview()
 //        }

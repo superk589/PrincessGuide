@@ -68,10 +68,18 @@ class UniqueEquipment: Codable {
         self.accuracy = accuracy
     }
 
-//    var enhanceCost: Int {
-//        return (Constant.presetManaCostPerPoint[promotionLevel] ?? 0) * totalPoint
-//    }
-//
+    func enhanceCost(from: Int, to: Int = Preload.default.maxUniqueEquipmentLevel) -> Int {
+        let costFrom = Preload.default.uniqueEquipmentEnhanceCost[from] ?? 0
+        guard let costTo = Preload.default.uniqueEquipmentEnhanceCost[to] else {
+            return 0
+        }
+        return costTo - costFrom
+    }
+    
+    var enhanceCost: Int {
+        return (Constant.presetManaCostPerPoint[promotionLevel] ?? 0) * totalPoint
+    }
+
     lazy var craft: UniqueCraft? = {
         if craftFlg == 1 {
             return DispatchSemaphore.sync { (closure) in
@@ -154,21 +162,8 @@ class UniqueEquipment: Codable {
 
 extension UniqueEquipment {
     
-//    private func mergeConsumes(_ consumes: [Craft.Consume], to another: [Craft.Consume]) -> [Craft.Consume] {
-//        var mergedConsumes = [Craft.Consume]()
-//        let ids = Set((consumes + another).map { $0.equipmentID })
-//        for id in ids {
-//            let num1 = consumes
-//                .filter { $0.equipmentID == id }
-//                .map { $0.consumeNum }
-//                .reduce(0, +)
-//            let num2 = another
-//                .filter { $0.equipmentID == id }
-//                .map { $0.consumeNum }
-//                .reduce(0, +)
-//            mergedConsumes.append(Craft.Consume(equipmentID: id, consumeNum: num1 + num2))
-//        }
-//        return mergedConsumes
-//    }
+    struct Cost {
+        
+    }
     
 }

@@ -40,6 +40,7 @@ class CalendarSettingViewController: FormViewController {
             static let story = Option(rawValue: 1 << 4)
             static let tower = Option(rawValue: 1 << 5)
             static let gacha = Option(rawValue: 1 << 6)
+            static let masterCoin = Option(rawValue: 1 << 7)
             
             init?(vlCampaignBonusType: VLCampaign.BonusType) {
                 switch vlCampaignBonusType {
@@ -51,6 +52,8 @@ class CalendarSettingViewController: FormViewController {
                     self = .mana
                 case .exp:
                     self = .exp
+                case .masterCoin:
+                    self = .masterCoin
                 }
             }
 
@@ -70,15 +73,17 @@ class CalendarSettingViewController: FormViewController {
                     return NSLocalizedString("Gacha", comment: "")
                 case .clanBattle:
                     return NSLocalizedString("Clan Battle", comment: "")
+                case .masterCoin:
+                    return NSLocalizedString("Master Coin", comment: "")
                 default:
                     return ""
                 }
             }
             
-            static let allLabels: [Option] = [.exp, .drop, .mana, .tower, .clanBattle, .story, .gacha]
+            static let allLabels: [Option] = [.exp, .drop, .mana, .tower, .clanBattle, .story, .gacha, .masterCoin]
         }
         
-        var options: Option = [.drop, .mana, .clanBattle, .story, .tower, .gacha, .exp]
+        var options: Option = [.drop, .mana, .clanBattle, .story, .tower, .gacha, .exp, .masterCoin]
         
         static var `default` = Setting.load() ?? Setting() {
             didSet {

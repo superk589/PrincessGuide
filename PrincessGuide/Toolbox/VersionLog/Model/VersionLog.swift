@@ -107,7 +107,7 @@ struct VLCampaign: Codable, VLElement {
         case drop = 3
         case mana = 4
         case exp = 5
-        
+        case masterCoin = 9
         var description: String {
             switch self {
             case .unknown:
@@ -118,6 +118,8 @@ struct VLCampaign: Codable, VLElement {
                 return NSLocalizedString("Mana", comment: "")
             case .exp:
                 return NSLocalizedString("Exp.", comment: "")
+            case .masterCoin:
+                return NSLocalizedString("Master Coin", comment: "")
             }
         }
     }
@@ -144,7 +146,6 @@ struct VLCampaign: Codable, VLElement {
             case .shrine:
                 return NSLocalizedString("Shrine", comment: "")
             }
-            
         }
     }
     

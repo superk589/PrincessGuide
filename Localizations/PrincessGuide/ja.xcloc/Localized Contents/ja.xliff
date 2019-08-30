@@ -1268,8 +1268,20 @@
         <source>Mana Cost of Skill Training</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Mana Cost of Unique Equipment Crafting">
+        <source>Mana Cost of Unique Equipment Crafting</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Mana Cost of Unique Equipment Enhancing">
+        <source>Mana Cost of Unique Equipment Enhancing</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Mark">
         <source>Mark</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Master Coin">
+        <source>Master Coin</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Max Level to %@">
@@ -1638,10 +1650,6 @@
         <source>SP %d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Save">
-        <source>Save</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Save Box">
         <source>Save Box</source>
         <note>No comment provided by engineer.</note>
@@ -1942,6 +1950,10 @@
       </trans-unit>
       <trans-unit id="Unique Equipment Level">
         <source>Unique Equipment Level</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unique Equipment Lv.">
+        <source>Unique Equipment Lv.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Unique Equipments">

@@ -257,6 +257,14 @@ class EditTeamViewController: FormViewController {
                         }
                     }
             
+                <<< SwitchRow("enables_unique_equipment_\(offset)") { (row : SwitchRow) -> Void in
+                    row.title = NSLocalizedString("Unique Equipment", comment: "")
+                    
+                    row.value = member.enablesUniqueEquipment
+                    row.hidden = .init(booleanLiteral: (member.card?.uniqueEquipments.count ?? 0) == 0)
+                    }
+                    .cellSetup(cellSetup(cell:row:))
+                    .cellUpdate(cellUpdate(cell:row:))
             }
             
     }
@@ -269,6 +277,7 @@ class EditTeamViewController: FormViewController {
         sortedMembers.enumerated().forEach { (offset, member) in
             member.level = json["unit_level_\(offset)"].int16Value
             member.rarity = json["unit_rarity_\(offset)"].int16Value
+            member.enablesUniqueEquipment = json["enables_unique_equipment_\(offset)"].boolValue
         }
         
         team.modifiedAt = Date()

@@ -16,6 +16,7 @@ extension Member {
         id = anotherMember.id
         rarity = anotherMember.rarity
         level = anotherMember.level
+        enablesUniqueEquipment = anotherMember.enablesUniqueEquipment
     }
     
     convenience init(card: Card, context: NSManagedObjectContext) {
@@ -23,6 +24,7 @@ extension Member {
         id = Int32(card.base.unitId)
         rarity = Int16(card.base.rarity)
         level = Int16(Preload.default.maxPlayerLevel)
+        enablesUniqueEquipment = card.uniqueEquipments.count > 0
     }
     
     var card: Card? {

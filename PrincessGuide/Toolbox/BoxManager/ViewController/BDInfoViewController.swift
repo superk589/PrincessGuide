@@ -110,7 +110,24 @@ class BDInfoViewController: UITableViewController {
                  skillCost.formatted)
             ])))
             
-            let totalManaCost = craftCost + enhanceCost + skillCost
+            let uniqueEquipmentCraftCost = charas
+                .flatMap { $0.uniqueUnequiped() }
+                .reduce(0) { $0 + ($1.craft?.craftedCost ?? 0) }
+            
+            rows.append(Row(type: BDInfoTextCell.self, data: .text([
+                (NSLocalizedString("Mana Cost of Unique Equipment Crafting", comment: ""),
+                 uniqueEquipmentCraftCost.formatted)
+                ])))
+            
+            let uniqueEquipmentEnhanceCost = charas
+                .reduce(0) { $0 + $1.uniqueEquipmentEnhanceCost }
+            
+            rows.append(Row(type: BDInfoTextCell.self, data: .text([
+                (NSLocalizedString("Mana Cost of Unique Equipment Enhancing", comment: ""),
+                 uniqueEquipmentEnhanceCost.formatted)
+                ])))
+            
+            let totalManaCost = craftCost + enhanceCost + skillCost + uniqueEquipmentCraftCost + uniqueEquipmentEnhanceCost
             rows.append(Row(type: BDInfoTextCell.self, data: .text([
                 (NSLocalizedString("Total Mana Cost", comment: ""),
                  totalManaCost.formatted)

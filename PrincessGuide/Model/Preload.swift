@@ -32,6 +32,8 @@ class Preload {
     
     var maxUniqueEquipmentLevel = Constant.presetMaxUniqueEquipmentLevel
     
+    var uniqueEquipmentEnhanceCost = [Int: Int]()
+    
     var events = [GameEvent]()
     
     private init() {
@@ -50,6 +52,10 @@ class Preload {
         
         skillCost = DispatchSemaphore.sync { (closure) in
             Master.shared.getSkillCost(callback: closure)
+        } ?? [:]
+        
+        uniqueEquipmentEnhanceCost = DispatchSemaphore.sync { (closure) in
+            Master.shared.getUniqueEquipmentCost(callback: closure)
         } ?? [:]
         
         unitExperience = DispatchSemaphore.sync { (closure) in
@@ -92,6 +98,14 @@ class Preload {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             Master.shared.getSkillCost(callback: { (skillCost) in
                 self?.skillCost = skillCost
+                group.leave()
+            })
+        }
+        
+        group.enter()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            Master.shared.getUniqueEquipmentCost(callback: { (cost) in
+                self?.uniqueEquipmentEnhanceCost = cost
                 group.leave()
             })
         }

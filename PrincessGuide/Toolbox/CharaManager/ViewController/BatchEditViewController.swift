@@ -185,6 +185,33 @@ class BatchEditViewController: FormViewController {
                 $0.hidden = "$save_all == NO"
             }
             
+            <<< SwitchRow("enables_unique_equipment") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Unique Equipment", comment: "")
+                
+                row.value = charas.first?.enablesUniqueEquipment ?? true
+                row.hidden = "$save_all == NO"
+                
+                }
+                .cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+            
+            <<< PickerInlineRow<Int>("unique_equipment_level") { (row : PickerInlineRow<Int>) -> Void in
+                row.title = NSLocalizedString("Unique Equipment Level", comment: "")
+                row.displayValueFor = { (rowValue: Int?) in
+                    return rowValue.flatMap { String($0) }
+                }
+                row.options = []
+                for i in 0..<Preload.default.maxUniqueEquipmentLevel {
+                    row.options.append(i + 1)
+                }
+                row.hidden = "$enables_unique_equipment == NO OR $save_all == NO"
+                row.value = (charas.first?.uniqueEquipmentLevel).flatMap { Int($0) } ?? Preload.default.maxUniqueEquipmentLevel
+                
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+                .onCellSelection(onCellSelection(cell:row:))
+                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            
             <<< SlotsRow("slots")
                 .cellSetup{ [weak self] (cell, row) in
                     cell.selectedBackgroundView = UIView()
@@ -213,6 +240,8 @@ class BatchEditViewController: FormViewController {
                 $0.rank = json["unit_rank"].int16Value
                 $0.rarity = json["unit_rarity"].int16Value
                 $0.slots = json["slots"].arrayValue.map { $0.boolValue }
+                $0.enablesUniqueEquipment = json["enables_unique_equipment"].boolValue
+                $0.uniqueEquipmentLevel = json["unique_equipment_level"].int16Value
             }
             $0.level = json["unit_level"].int16Value
             $0.skillLevel = min(json["unit_level"].int16Value, json["skill_level"].int16Value)

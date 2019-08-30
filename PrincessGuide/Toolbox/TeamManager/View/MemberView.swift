@@ -15,6 +15,8 @@ class MemberView: UIView {
     
     let rarityView = ShadowRarityView()
     
+    let uniqueEquipmentView = UIImageView(image: UIImage(named: "unique_equipment"))
+    
     let levelLabel = StrokedLabel()
 
     override init(frame: CGRect) {
@@ -43,18 +45,25 @@ class MemberView: UIView {
         levelLabel.font = UIFont.boldSystemFont(ofSize: 10)
         levelLabel.textColor = .nearBlack
         
+        addSubview(uniqueEquipmentView)
+        uniqueEquipmentView.snp.makeConstraints { make in
+            make.top.right.equalToSuperview()
+            make.size.equalTo(12)
+        }
     }
     
     func configure(for member: Member) {
         icon.cardID = member.iconID
         rarityView.setup(stars: Int(member.rarity))
         levelLabel.text = "Lv\(member.level)"
+        uniqueEquipmentView.isHidden = !member.enablesUniqueEquipment
     }
     
     func clear() {
         icon.image = nil
         rarityView.setup(stars: 0)
         levelLabel.text = ""
+        uniqueEquipmentView.isHidden = true
     }
     
     override var intrinsicContentSize: CGSize {

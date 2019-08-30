@@ -188,6 +188,8 @@ class EditBoxViewController: FormViewController {
                         chara.rarity = Int16(Constant.presetMaxRarity)
                         chara.skillLevel = Int16(Preload.default.maxPlayerLevel)
                         chara.id = Int32($0.base.unitId)
+                        chara.uniqueEquipmentLevel = Int16(Preload.default.maxUniqueEquipmentLevel)
+                        chara.enablesUniqueEquipment = $0.uniqueEquipIDs.count > 0
                         chara.slots = $0.promotions.last?.defaultSlots ?? [Bool](repeating: false, count: 6)
                         self.box.addToCharas(chara)
                     }
