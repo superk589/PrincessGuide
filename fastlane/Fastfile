@@ -16,7 +16,8 @@
 # setup_travis
 
 default_platform(:ios)
-
+xcversion(version: "10.3")
+match(type: "appstore", readonly: is_ci)
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do

@@ -16,7 +16,7 @@ fastlane/test_output
 *.dSYM.zip
 *.dSYM
 
-Pods/
+# Pods/
 xcuserdata/
-*.xcworkspacedata
+# *.xcworkspacedata
 *.DS_Store

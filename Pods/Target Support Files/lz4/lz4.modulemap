@@ -1,0 +1,6 @@
+framework module lz4 {
+  umbrella header "lz4-umbrella.h"
+
+  export *
+  module * { export * }
+}

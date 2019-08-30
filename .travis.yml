@@ -1,9 +1,0 @@
-language: objective-c
-osx_image: xcode9.4
-branches:
-  only:
-    - testflight  # only execute on our testflight branch
-install:
-  - bundle update
-script:
-  - fastlane beta
