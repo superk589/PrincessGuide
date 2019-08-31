@@ -97,6 +97,9 @@ class Enemy: Codable {
         let mainSkill8: Int
         let mainSkill9: Int
         let unionBurst: Int
+        let unionBurstEvolution: Int
+        let mainSkillEvolution1: Int
+        let mainSkillEvolution2: Int
         
         let childEnemyParameter1: Int?
         let childEnemyParameter2: Int?
@@ -104,6 +107,8 @@ class Enemy: Codable {
         let childEnemyParameter4: Int?
         let childEnemyParameter5: Int?
 
+        let uniqueEquipmentFlag1: Int
+        
         var property: Property {
             return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
                             energyRecoveryRate: Double(energyRecoveryRate), energyReduceRate: Double(energyReduceRate),
@@ -134,6 +139,10 @@ class Enemy: Codable {
             return [mainSkillLv1, mainSkillLv2, mainSkillLv3, mainSkillLv4, mainSkillLv5, mainSkillLv6, mainSkillLv7, mainSkillLv8, mainSkillLv9, mainSkillLv10]
         }
         
+        var mainSkillEvolutionIDs: [Int] {
+            return Array([mainSkillEvolution1, mainSkillEvolution2].prefix { $0 != 0 })
+        }
+        
         var partIDs: [Int] {
             return [
                 childEnemyParameter1,
@@ -141,7 +150,7 @@ class Enemy: Codable {
                 childEnemyParameter3,
                 childEnemyParameter4,
                 childEnemyParameter5,
-                ].compactMap { $0 }
+            ].compactMap { $0 }
         }
         
     }
@@ -213,5 +222,20 @@ class Enemy: Codable {
     
     lazy var resist: Resist? = DispatchSemaphore.sync { (closure) in
         Master.shared.getResistData(resistID: base.resistStatusId, callback: closure)
+    }
+    
+    lazy var mainSkillEvolutions = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: self.base.mainSkillEvolutionIDs, callback: closure)
+    } ?? []
+    
+    lazy var unionBurstEvolution = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: [self.base.unionBurstEvolution], callback: closure)
+    }?.first
+}
+
+extension Enemy {
+    
+    var hasUniqueEquipment: Bool {
+        return base.uniqueEquipmentFlag1 == 1
     }
 }

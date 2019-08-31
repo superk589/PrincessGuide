@@ -808,6 +808,8 @@ class Master: FMDatabaseQueue {
                     sql.append(" WHERE area_id < 12000 and area_id > 11000")
                 case .hard:
                     sql.append(" WHERE area_id > 12000 and area_id < 13000")
+                case .veryHard:
+                    sql.append(" WHERE area_id > 13000 and area_id < 14000")
                 default:
                     break
                 }
@@ -1255,8 +1257,13 @@ class Master: FMDatabaseQueue {
             SELECT
                 a.*,
                 b.union_burst,
+                b.union_burst_evolution,
                 b.main_skill_1,
+                b.main_skill_evolution_1,
                 b.main_skill_2,
+                b.main_skill_evolution_2,
+                b.ex_skill_1,
+                b.ex_skill_evolution_1,
                 b.main_skill_3,
                 b.main_skill_4,
                 b.main_skill_5,
@@ -1265,11 +1272,19 @@ class Master: FMDatabaseQueue {
                 b.main_skill_8,
                 b.main_skill_9,
                 b.main_skill_10,
-                b.ex_skill_1,
                 b.ex_skill_2,
+                b.ex_skill_evolution_2,
                 b.ex_skill_3,
+                b.ex_skill_evolution_3,
                 b.ex_skill_4,
+                b.ex_skill_evolution_4,
                 b.ex_skill_5,
+                b.sp_skill_1,
+                b.ex_skill_evolution_5,
+                b.sp_skill_2,
+                b.sp_skill_3,
+                b.sp_skill_4,
+                b.sp_skill_5,
                 c.child_enemy_parameter_1,
                 c.child_enemy_parameter_2,
                 c.child_enemy_parameter_3,

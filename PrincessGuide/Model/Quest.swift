@@ -86,6 +86,8 @@ extension Quest {
             return .normal
         case 12000..<13000:
             return .hard
+        case 13000..<14000:
+            return .veryHard
         case 18000..<19000:
             return .shrine
         case 21000..<22000:

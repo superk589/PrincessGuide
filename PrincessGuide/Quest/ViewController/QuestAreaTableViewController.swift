@@ -92,7 +92,12 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let area = areas[indexPath.row]
         
-        cell.configure(for: area.areaName, subtitle: "", unitID: area.quests.last?.waves.last?.enemies.first?.enemy?.unit.prefabId)
+        switch areaType {
+        case .veryHard:
+            cell.configure(for: area.areaName, subtitle: "", shadowUnitID: area.quests.last?.waves.last?.enemies.first?.enemy?.unit.prefabId)
+        default:
+            cell.configure(for: area.areaName, subtitle: "", unitID: area.quests.last?.waves.last?.enemies.first?.enemy?.unit.prefabId)
+        }
         return cell
     }
     

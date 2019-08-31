@@ -69,5 +69,10 @@ class HatsuneEventTableViewCell: UITableViewCell {
         subtitleLabel.text = subtitle
         icon.unitID = unitID
     }
-
+    
+    func configure(for title: String, subtitle: String, shadowUnitID: Int?) {
+        titleLabel.text = title
+        subtitleLabel.text = subtitle
+        icon.shadowUnitID = shadowUnitID
+    }
 }

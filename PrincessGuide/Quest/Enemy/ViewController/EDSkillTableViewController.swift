@@ -37,13 +37,32 @@ class EDSkillTableViewController: EDTableViewController {
             rows.append(Row(type: EDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, enemy.base.unionBurstLevel, property, nil)))
         }
         
-        rows.append(contentsOf:
-            enemy.mainSkills
-                .enumerated()
-                .map {
-                    Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .main, enemy.mainSkillLevel(for: $0.element.base.skillId), property, $0.offset + 1))
+        // setup main skills
+        if enemy.hasUniqueEquipment {
+            rows.append(contentsOf:
+                zip(enemy.mainSkillEvolutions, enemy.mainSkills)
+                    .enumerated()
+                    .map {
+                        return Row(type: EDSkillTableViewCell.self, data: .skill($0.element.0, .mainEvolution, enemy.mainSkillLevel(for: $0.element.0.base.skillId), property, $0.offset + 1))
+                    }
+            )
+            
+            if enemy.mainSkills.count > enemy.mainSkillEvolutions.count {
+                rows += enemy.mainSkills[enemy.mainSkillEvolutions.count..<enemy.mainSkills.count]
+                    .enumerated()
+                    .map {
+                        return Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .main, enemy.mainSkillLevel(for: $0.element.base.skillId), property, enemy.mainSkillEvolutions.count + $0.offset + 1))
+                }
             }
-        )
+        } else {
+            rows.append(contentsOf:
+                enemy.mainSkills
+                    .enumerated()
+                    .map {
+                        Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .main, enemy.mainSkillLevel(for: $0.element.base.skillId), property, $0.offset + 1))
+                }
+            )
+        }
         
         rows.append(contentsOf:
             enemy.exSkills
