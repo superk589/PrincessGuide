@@ -1015,8 +1015,11 @@ class Master: FMDatabaseQueue {
                 let json = JSON(set.resultDictionary ?? [:])
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                if let tower = try? decoder.decode(Tower.self, from: json.rawData()) {
+                do {
+                    let tower = try decoder.decode(Tower.self, from: json.rawData())
                     towers.append(tower)
+                } catch {
+                    print(error)
                 }
             }
         }) {
@@ -1042,8 +1045,11 @@ class Master: FMDatabaseQueue {
                 let json = JSON(set.resultDictionary ?? [:])
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                if let quest = try? decoder.decode(Tower.Quest.self, from: json.rawData()) {
+                do {
+                    let quest = try decoder.decode(Tower.Quest.self, from: json.rawData())
                     quests.append(quest)
+                } catch let error {
+                    print(error)
                 }
             }
         }) {
@@ -1363,6 +1369,14 @@ class Master: FMDatabaseQueue {
                 b.ex_skill_3,
                 b.ex_skill_4,
                 b.ex_skill_5,
+                b.union_burst_evolution,
+                b.main_skill_evolution_1,
+                b.main_skill_evolution_2,
+                b.ex_skill_evolution_1,
+                b.ex_skill_evolution_2,
+                b.ex_skill_evolution_3,
+                b.ex_skill_evolution_4,
+                b.ex_skill_evolution_5,
                 c.child_enemy_parameter_1,
                 c.child_enemy_parameter_2,
                 c.child_enemy_parameter_3,
@@ -1394,18 +1408,22 @@ class Master: FMDatabaseQueue {
                 WHERE
                     unit_id = \(unitID)
                 """
-                var unit: Enemy.Unit?
-                let unitSet = try db.executeQuery(unitSql, values: nil)
-                while unitSet.next() {
-                    let json = JSON(unitSet.resultDictionary ?? [:])
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    unit = try? decoder.decode(Enemy.Unit.self, from: json.rawData())
-                }
-                
-                if let base = try? decoder.decode(Enemy.Base.self, from: json.rawData()),
-                    let unit = unit {
-                    enemies.append(Enemy(base: base, unit: unit))
+                do {
+                    var unit: Enemy.Unit?
+                    let unitSet = try db.executeQuery(unitSql, values: nil)
+                    while unitSet.next() {
+                        let json = JSON(unitSet.resultDictionary ?? [:])
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        unit = try decoder.decode(Enemy.Unit.self, from: json.rawData())
+                    }
+                    
+                    let base = try decoder.decode(Enemy.Base.self, from: json.rawData())
+                    if let unit = unit {
+                        enemies.append(Enemy(base: base, unit: unit))
+                    }
+                } catch {
+                    print(error)
                 }
             }
         }) {

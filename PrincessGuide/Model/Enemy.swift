@@ -107,7 +107,7 @@ class Enemy: Codable {
         let childEnemyParameter4: Int?
         let childEnemyParameter5: Int?
 
-        let uniqueEquipmentFlag1: Int
+        let uniqueEquipmentFlag1: Int?
         
         var property: Property {
             return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
