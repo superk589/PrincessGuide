@@ -128,8 +128,10 @@ struct VLCampaign: Codable, VLElement {
         case unknown = 0
         case normal = 1
         case hard = 2
+        case veryHard = 3
         case mission = 4
         case dungeon = 5
+        case temple = 6
         case shrine = 7
         var description: String {
             switch self {
@@ -139,12 +141,16 @@ struct VLCampaign: Codable, VLElement {
                 return NSLocalizedString("Normal", comment: "")
             case .hard:
                 return NSLocalizedString("Hard", comment: "")
+            case .veryHard:
+                return NSLocalizedString("Very Hard", comment: "")
             case .mission:
                 return NSLocalizedString("Mission", comment: "")
             case .dungeon:
                 return NSLocalizedString("Dungeon", comment: "")
             case .shrine:
                 return NSLocalizedString("Shrine", comment: "")
+            case .temple:
+                return NSLocalizedString("Temple", comment: "")
             }
         }
     }
