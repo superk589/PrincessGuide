@@ -25,22 +25,12 @@ class Quest: Codable {
         let background1: Int
         let background2: Int
         let background3: Int
-        let clearRewardGroup: Int
-        let dailyLimit: Int
         let endTime: String
         let enemyImage1: Int
         let enemyImage2: Int
         let enemyImage3: Int
         let enemyImage4: Int
         let enemyImage5: Int
-        let iconId: Int
-        let limitTeamLevel: Int
-        let limitTime: Int
-        let love: Int
-        let positionX: Int
-        let positionY: Int
-        let questDetailBgId: Int
-        let questDetailBgPosition: Int
         let questId: Int
         let questName: String
         let rankRewardGroup: Int
@@ -52,24 +42,11 @@ class Quest: Codable {
         let stamina: Int
         let staminaStart: Int
         let startTime: String
-        let storyIdWaveend1: Int
-        let storyIdWaveend2: Int
-        let storyIdWaveend3: Int
-        let storyIdWavestart1: Int
-        let storyIdWavestart2: Int
-        let storyIdWavestart3: Int
         let teamExp: Int
         let unitExp: Int
-        let waveBgmQueId1: String
-        let waveBgmQueId2: String
-        let waveBgmQueId3: String
-        let waveBgmSheetId1: String
-        let waveBgmSheetId2: String
-        let waveBgmSheetId3: String
         let waveGroupId1: Int
         let waveGroupId2: Int
         let waveGroupId3: Int
-
     }
     
 }
@@ -90,6 +67,8 @@ extension Quest {
             return .veryHard
         case 18000..<19000:
             return .shrine
+        case 19000..<20000:
+            return .temple
         case 21000..<22000:
             return .exploration
         default:

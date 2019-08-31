@@ -40,6 +40,7 @@
 		1218E61920A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61720A6D53700D68610 /* InfoPlist.strings */; };
 		1218E61C20A6D53700D68610 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61A20A6D53700D68610 /* Localizable.strings */; };
 		121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */; };
+		1220423D231A909400205C85 /* MiscQuestAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */; };
 		122071DC20F8E30800554030 /* SearchableTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071DB20F8E30800554030 /* SearchableTeamTableViewController.swift */; };
 		122071DE20F9D61D00554030 /* TDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071DD20F9D61D00554030 /* TDTabViewController.swift */; };
 		122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E320F9D6AE00554030 /* TDBattleViewController.swift */; };
@@ -336,6 +337,7 @@
 		1218E61820A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1218E61B20A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableIconImageView.swift; sourceTree = "<group>"; };
+		1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscQuestAreaViewController.swift; sourceTree = "<group>"; };
 		122071DB20F8E30800554030 /* SearchableTeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTeamTableViewController.swift; sourceTree = "<group>"; };
 		122071DD20F9D61D00554030 /* TDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTabViewController.swift; sourceTree = "<group>"; };
 		122071E320F9D6AE00554030 /* TDBattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDBattleViewController.swift; sourceTree = "<group>"; };
@@ -858,6 +860,7 @@
 			children = (
 				126DECF1209EDC0E004EC56A /* QuestAreaTabViewController.swift */,
 				12398E81209158EA006AC352 /* QuestAreaTableViewController.swift */,
+				1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */,
 				129A7F8820A3108C00D93996 /* QuestTabViewController.swift */,
 				1280DE4420A5DED5008D9D72 /* ClanBattleTableViewController.swift */,
 				1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */,
@@ -1669,6 +1672,7 @@
 				12F1263120B95684005C9659 /* PassiveAction.swift in Sources */,
 				1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */,
 				1280DE4120A5CEB2008D9D72 /* ClanBattle.swift in Sources */,
+				1220423D231A909400205C85 /* MiscQuestAreaViewController.swift in Sources */,
 				12C24B9C217AE7FA0079AFE0 /* VoicePlayer.swift in Sources */,
 				1273BFC521CE2B5900ECA727 /* Notice.swift in Sources */,
 				12124F442089B55B001C1A6F /* CDSkillTableViewCell.swift in Sources */,

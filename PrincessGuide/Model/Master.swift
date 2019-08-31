@@ -810,6 +810,12 @@ class Master: FMDatabaseQueue {
                     sql.append(" WHERE area_id > 12000 and area_id < 13000")
                 case .veryHard:
                     sql.append(" WHERE area_id > 13000 and area_id < 14000")
+                case .shrine:
+                    sql.append(" WHERE area_id > 18000 and area_id < 19000")
+                case .temple:
+                    sql.append(" WHERE area_id > 19000 and area_id < 20000")
+                case .exploration:
+                    sql.append(" WHERE area_id > 21000 and area_id < 22000")
                 default:
                     break
                 }
@@ -1440,6 +1446,45 @@ class Master: FMDatabaseQueue {
                     } else if quest.allRewards.contains(where: { $0.rewardID == equipmentID! }) {
                         quests.append(quest)
                     }
+                }
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
+    func getTrainingQuests(areaID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Quest]>) {
+        var quests = [Quest]()
+        execute({ [unowned self] (db) in
+            var sql = """
+            SELECT
+                *
+            FROM
+                training_quest_data
+            """
+            if let areaID = areaID {
+                sql.append(" WHERE area_id = \(areaID)")
+            }
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                var waveIDs = [Int]()
+                for i in 1...3 {
+                    let field = "wave_group_id_\(i)"
+                    let id = json[field].intValue
+                    if id != 0 {
+                        waveIDs.append(id)
+                    }
+                }
+                let waves = try self.getWaves(from: db, waveIDs: waveIDs)
+                do {
+                    let base = try decoder.decode(Quest.Base.self, from: json.rawData())
+                    let quest = Quest(base: base, waves: waves)
+                    quests.append(quest)
+                } catch let error {
+                    print(error)
                 }
             }
         }) {

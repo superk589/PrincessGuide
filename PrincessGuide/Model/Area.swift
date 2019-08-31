@@ -28,8 +28,12 @@ class Area: Codable {
         self.startTime = startTime
     }
 
-    lazy var quests: [Quest] = DispatchSemaphore.sync { (closure) in
-        Master.shared.getQuests(areaID: areaId, callback: closure)
+    lazy var quests: [Quest] = DispatchSemaphore.sync { [weak self] (closure) in
+        if self?.areaType == .exploration {
+            return Master.shared.getTrainingQuests(areaID: self?.areaId, callback: closure)
+        } else {
+            return Master.shared.getQuests(areaID: self?.areaId, callback: closure)
+        }
     } ?? []
 }
 
@@ -38,6 +42,7 @@ enum AreaType: CustomStringConvertible {
     case hard
     case veryHard
     case shrine
+    case temple
     case exploration
     
     case unknown
@@ -54,6 +59,8 @@ enum AreaType: CustomStringConvertible {
             return NSLocalizedString("Exploration", comment: "")
         case .shrine:
             return NSLocalizedString("Shrine", comment: "")
+        case .temple:
+            return NSLocalizedString("Temple", comment: "")
         case .unknown:
             return NSLocalizedString("Unknown", comment: "")
         }
@@ -72,6 +79,8 @@ extension Area {
             return .veryHard
         case 18000..<19000:
             return .shrine
+        case 19000..<20000:
+            return .temple
         case 21000..<22000:
             return .exploration
         default:

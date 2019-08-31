@@ -27,7 +27,8 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
             TowerTableViewController(),
             QuestAreaTableViewController(areaType: .normal),
             QuestAreaTableViewController(areaType: .hard),
-            QuestAreaTableViewController(areaType: .veryHard)
+            QuestAreaTableViewController(areaType: .veryHard),
+            MiscQuestAreaTableViewController()
         ]
         dataSource = self
         
@@ -38,7 +39,7 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
             TMBarItem(title: NSLocalizedString("Tower", comment: ""))
             ]
             + [AreaType.normal, .hard, .veryHard].map { TMBarItem(title: $0.description) }
-//            + [TMBarItem(title: NSLocalizedString("Clan Battle(easy)", comment: ""))]
+            + [TMBarItem(title: NSLocalizedString("Exploration", comment: ""))]
         
         let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>()
         bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
