@@ -32,7 +32,9 @@ class Card: Codable {
     
     let uniqueEquipIDs: [Int]
     
-    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment], actualUnit: ActualUnit?, unitBackground: UnitBackground, uniqueEquipIDs: [Int]) {
+    let rarity6s: [Rarity6]
+    
+    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment], actualUnit: ActualUnit?, unitBackground: UnitBackground, uniqueEquipIDs: [Int], rarity6s: [Rarity6]) {
         self.base = base
         self.promotions = promotions
         self.promotionStatuses = promotionStatuses
@@ -42,6 +44,7 @@ class Card: Codable {
         self.actualUnit = actualUnit
         self.unitBackground = unitBackground
         self.uniqueEquipIDs = uniqueEquipIDs
+        self.rarity6s = rarity6s
     }
     
     struct Base: Codable {
@@ -408,8 +411,8 @@ extension Card {
     
     func property(unitLevel: Int = Preload.default.maxPlayerLevel,
                   unitRank: Int = Preload.default.maxEquipmentRank,
-                  bondRank: Int = Constant.presetMaxBondRank,
-                  unitRarity: Int = Constant.presetMaxRarity,
+                  bondRank: Int = Constant.presetMaxPossibleBondRank,
+                  unitRarity: Int = Constant.presetMaxPossibleRarity,
                   addsEx: Bool = CardSortingViewController.Setting.default.addsEx,
                   hasUniqueEquipment: Bool = CardSortingViewController.Setting.default.equipsUniqueEquipment,
                   uniqueEquipmentLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Property {
@@ -418,9 +421,17 @@ extension Card {
         for item in storyPropertyItems {
             property += item
         }
-        if let rarity = rarities.first(where: { $0.rarity == unitRarity }) {
-            property += rarity.property + rarity.propertyGrowth * Double(unitLevel + unitRank)
+        
+        if unitRarity == 6 && hasRarity6 {
+            if let rarity = rarities.first(where: { $0.rarity == 6 }) {
+                property += rarity.property + rarity.propertyGrowth * Double(unitLevel + unitRank)
+            }
+        } else {
+            if let rarity = rarities.sorted(by: { $0.rarity > $1.rarity }).first {
+                property += rarity.property + rarity.propertyGrowth * Double(unitLevel + unitRank)
+            }
         }
+        
         if let promotionStatus = promotionStatuses.first(where: { $0.promotionLevel == unitRank }) {
             property += promotionStatus.property
         }
@@ -447,13 +458,20 @@ extension Card {
                     .forEach { property += $0 }
             }
         }
+        
+        if unitRarity == 6 && hasRarity6 {
+            rarity6s
+                .filter { $0.unlockFlag == 1 }
+                .forEach { property += $0.property }
+        }
+        
         return property.rounded()
     }
     
     func combatEffectiveness(unitLevel: Int = Preload.default.maxPlayerLevel,
                              unitRank: Int = Preload.default.maxEquipmentRank,
-                             bondRank: Int = Constant.presetMaxBondRank,
-                             unitRarity: Int = Constant.presetMaxRarity,
+                             bondRank: Int = Constant.presetMaxPossibleBondRank,
+                             unitRarity: Int = Constant.presetMaxPossibleRarity,
                              skillLevel: Int = Preload.default.maxPlayerLevel,
                              hasUniqueEquipment: Bool = CardSortingViewController.Setting.default.equipsUniqueEquipment,
                              uniqueEquipmentLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Int {
@@ -479,11 +497,10 @@ extension Card {
         }
         
         if unionBurst != nil {
-            if hasUniqueEquipment && unionBurstEvolution != nil {
-                result += Double(skillLevel) * coefficient.skill1EvolutionCoefficient * coefficient.skill1EvolutionSlvCoefficient
-            } else {
-                result += Double(skillLevel) * coefficient.skillLvCoefficient
+            if hasRarity6 && unionBurstEvolution != nil && unitRarity == 6 {
+                result += coefficient.ubEvolutionCoefficient * coefficient.ubEvolutionSlvCoefficient
             }
+            result += Double(skillLevel) * coefficient.skillLvCoefficient
         }
         
         if unitRank >= 7 {

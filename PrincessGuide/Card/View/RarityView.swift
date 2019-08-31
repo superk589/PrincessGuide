@@ -10,7 +10,7 @@ import UIKit
 
 class RarityView: UIView {
     
-    private var starViews = [UIImageView]()
+    var starViews = [UIImageView]()
     
     var image: UIImage {
         return #imageLiteral(resourceName: "loading_star").withRenderingMode(.alwaysTemplate)
@@ -21,7 +21,7 @@ class RarityView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        for _ in 0..<5 {
+        for _ in 0..<6 {
             let view = UIImageView()
             view.tintColor = .rarityStar
             starViews.append(view)
@@ -51,14 +51,16 @@ class RarityView: UIView {
     }
     
     func setup(stars: Int) {
-        assert(0...5 ~= stars)
+        assert(0...6 ~= stars)
         starViews[0..<stars].forEach {
             stackView.addArrangedSubview($0)
         }
-        starViews[stars..<5].forEach {
+        starViews[stars..<6].forEach {
             stackView.removeArrangedSubview($0)
             $0.removeFromSuperview()
         }
+        stackView.arrangedSubviews.first?.tintColor = stars == 6 ? .rarity6Star : .rarityStar
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,5 +72,18 @@ class RarityView: UIView {
 class ShadowRarityView: RarityView {
     override var image: UIImage {
         return #imageLiteral(resourceName: "shadow_star").withRenderingMode(.alwaysOriginal)
+    }
+    
+    override func setup(stars: Int) {
+        assert(0...6 ~= stars)
+        starViews[0..<stars].forEach {
+            stackView.addArrangedSubview($0)
+        }
+        starViews[stars..<6].forEach {
+            stackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+        (stackView.arrangedSubviews.first as? UIImageView)?.image = stars == 6 ? #imageLiteral(resourceName: "shadow_star").withRenderingMode(.alwaysTemplate) : image
+        (stackView.arrangedSubviews.first as? UIImageView)?.tintColor = stars == 6 ? .rarity6Star : .rarityStar
     }
 }

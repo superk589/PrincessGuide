@@ -338,6 +338,10 @@
         <source>Add [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Add [%@ * total damage] to next effect's value %d.">
+        <source>Add [%1$@ * total damage] to next effect's value %2$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Add [%d] to the counter.">
         <source>Add [%d] to the counter.</source>
         <note>No comment provided by engineer.</note>
@@ -704,10 +708,6 @@
         <target>クランバトル %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Clan Battle(easy)">
-        <source>Clan Battle(easy)</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%.">
         <source>Clear all %1$@ on %2$@ with chance [%3$@]%%.</source>
         <note>No comment provided by engineer.</note>
@@ -1011,6 +1011,14 @@
         <target>更新失敗</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Fear">
+        <source>Fear</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Fear %@ with [%@]%% chance for [%@]s.">
+        <source>Fear %1$@ with [%2$@]%% chance for [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Feedback">
         <source>Feedback</source>
         <target>フィードバック</target>
@@ -1288,6 +1296,14 @@
         <source>Max Level to %@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Max Possible Bond Rank">
+        <source>Max Possible Bond Rank</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Max Possible Star Rank">
+        <source>Max Possible Star Rank</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Max Rank to %@">
         <source>Max Rank to %@</source>
         <note>No comment provided by engineer.</note>
@@ -1442,6 +1458,10 @@
         <source>Order</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Other">
+        <source>Other</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Paralyse">
         <source>Paralyse</source>
         <target>麻痺</target>
@@ -1558,6 +1578,10 @@
       <trans-unit id="Rarity">
         <source>Rarity</source>
         <target>レア度</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Rarity 6">
+        <source>Rarity 6</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raw Materials">
@@ -1840,6 +1864,10 @@
         <source>Teams</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Temple">
+        <source>Temple</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="The first chara added will be used as cover image.">
         <source>The first chara added will be used as cover image.</source>
         <note>No comment provided by engineer.</note>
@@ -2006,6 +2034,10 @@
         <source>Version Log</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Very Hard">
+        <source>Very Hard</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Violent Poison">
         <source>Violent Poison</source>
         <note>No comment provided by engineer.</note>
@@ -2095,7 +2127,7 @@
       </trans-unit>
       <trans-unit id="always 1★">
         <source>always 1★</source>
-        <note>No comment provided by engineer.</note>
+        <note>icon style</note>
       </trans-unit>
       <trans-unit id="always 3★">
         <source>always 3★</source>
@@ -2225,6 +2257,10 @@
         <source>full</source>
         <target>詳細</target>
         <note>expression style</note>
+      </trans-unit>
+      <trans-unit id="highest rarity">
+        <source>highest rarity</source>
+        <note>icon style</note>
       </trans-unit>
       <trans-unit id="inevitable physical">
         <source>inevitable physical</source>

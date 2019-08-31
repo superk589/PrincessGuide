@@ -28,6 +28,7 @@ class CardSortingViewController: FormViewController {
             case uniqueEquipNumber
             case race
             case cv
+            case rarity6
             case none
             
             var description: String {
@@ -44,6 +45,8 @@ class CardSortingViewController: FormViewController {
                     return NSLocalizedString("Race", comment: "")
                 case .cv:
                     return NSLocalizedString("CV", comment: "")
+                case .rarity6:
+                    return NSLocalizedString("Rarity 6", comment: "")
                 default:
                     return NSLocalizedString("None", comment: "")
                 }
@@ -125,6 +128,7 @@ class CardSortingViewController: FormViewController {
             case `default`
             case r3
             case r1
+            case highestRarity
             
             var description: String {
                 switch self {
@@ -133,11 +137,13 @@ class CardSortingViewController: FormViewController {
                 case .r3:
                     return NSLocalizedString("always 3★", comment: "icon style")
                 case .r1:
-                    return NSLocalizedString("always 1★", comment: "")
+                    return NSLocalizedString("always 1★", comment: "icon style")
+                case .highestRarity:
+                    return NSLocalizedString("highest rarity", comment: "icon style")
                 }
             }
             
-            static let allLabels = [IconStyle.default, .r3, .r1]
+            static let allLabels = [IconStyle.default, .r3, .r1, .highestRarity]
         }
         
         var isAscending: Bool = true
@@ -149,7 +155,7 @@ class CardSortingViewController: FormViewController {
         var addsEx: Bool = true
         
         var equipsUniqueEquipment: Bool = true
-        
+                
         var iconStyle: IconStyle = .default
         
         func save() {

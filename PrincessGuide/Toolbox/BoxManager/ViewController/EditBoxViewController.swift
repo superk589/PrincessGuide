@@ -183,9 +183,9 @@ class EditBoxViewController: FormViewController {
                         
                         chara.modifiedAt = Date()
                         chara.level = Int16(Preload.default.maxPlayerLevel)
-                        chara.bondRank = Int16(Constant.presetMaxBondRank)
+                        chara.bondRank = Int16(Constant.presetMaxPossibleBondRank)
                         chara.rank = Int16(Preload.default.maxEquipmentRank)
-                        chara.rarity = Int16(Constant.presetMaxRarity)
+                        chara.rarity = Int16(Constant.presetMaxPossibleRarity)
                         chara.skillLevel = Int16(Preload.default.maxPlayerLevel)
                         chara.id = Int32($0.base.unitId)
                         chara.uniqueEquipmentLevel = Int16(Preload.default.maxUniqueEquipmentLevel)

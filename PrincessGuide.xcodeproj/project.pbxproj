@@ -41,6 +41,8 @@
 		1218E61C20A6D53700D68610 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61A20A6D53700D68610 /* Localizable.strings */; };
 		121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */; };
 		1220423D231A909400205C85 /* MiscQuestAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */; };
+		1220423F231A9ECC00205C85 /* Card+Rarity6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220423E231A9ECC00205C85 /* Card+Rarity6.swift */; };
+		12204241231AABF700205C85 /* FearAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12204240231AABF700205C85 /* FearAction.swift */; };
 		122071DC20F8E30800554030 /* SearchableTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071DB20F8E30800554030 /* SearchableTeamTableViewController.swift */; };
 		122071DE20F9D61D00554030 /* TDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071DD20F9D61D00554030 /* TDTabViewController.swift */; };
 		122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E320F9D6AE00554030 /* TDBattleViewController.swift */; };
@@ -338,6 +340,8 @@
 		1218E61B20A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableIconImageView.swift; sourceTree = "<group>"; };
 		1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscQuestAreaViewController.swift; sourceTree = "<group>"; };
+		1220423E231A9ECC00205C85 /* Card+Rarity6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Rarity6.swift"; sourceTree = "<group>"; };
+		12204240231AABF700205C85 /* FearAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FearAction.swift; sourceTree = "<group>"; };
 		122071DB20F8E30800554030 /* SearchableTeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTeamTableViewController.swift; sourceTree = "<group>"; };
 		122071DD20F9D61D00554030 /* TDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTabViewController.swift; sourceTree = "<group>"; };
 		122071E320F9D6AE00554030 /* TDBattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDBattleViewController.swift; sourceTree = "<group>"; };
@@ -714,6 +718,7 @@
 				1281FA51209AE3E900F2D567 /* Craft.swift */,
 				12D7A91D21AAC76F004E22C6 /* UniqueCraft.swift */,
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
+				1220423E231A9ECC00205C85 /* Card+Rarity6.swift */,
 				128DA48121B25E3900F7C006 /* Minion.swift */,
 				1250190720AF0DBC00D2FBDC /* Still.swift */,
 				12B85D2A2089840A0088F5FB /* Skill.swift */,
@@ -1313,6 +1318,7 @@
 				12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */,
 				1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */,
 				1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */,
+				12204240231AABF700205C85 /* FearAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
 			);
@@ -1622,6 +1628,7 @@
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				127EEBA120ECDAD300A6B3D4 /* CharaItemView.swift in Sources */,
 				129A7F6220A0465800D93996 /* CharaStory.swift in Sources */,
+				1220423F231A9ECC00205C85 /* Card+Rarity6.swift in Sources */,
 				12F1260320B9536C005C9659 /* AdditiveAction.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
 				120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */,
@@ -1822,6 +1829,7 @@
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
 				120F9B8520E9F97E003632CA /* CharaTableViewCell.swift in Sources */,
 				122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */,
+				12204241231AABF700205C85 /* FearAction.swift in Sources */,
 				1247127A22279DF700A9C2E1 /* ChangeBodyWidthAction.swift in Sources */,
 				1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */,
 				12E3324420F5ED7600844A6A /* CardCollectionViewCell.swift in Sources */,

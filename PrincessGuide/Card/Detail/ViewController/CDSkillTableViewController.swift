@@ -52,11 +52,11 @@ class CDSkillTableViewController: CDTableViewController {
             if let unionBurst = card.unionBurst {
                 rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, property, nil)))
             }
-            if let unionBurstEvolution = card.unionBurstEvolution {
+            if let unionBurstEvolution = card.unionBurstEvolution, settings.unitRarity == 6 {
                 rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurstEvolution, .unionBurstEvolution, property, nil)))
             }
         } else {
-            if let unionBurstEvolution = card.unionBurstEvolution {
+            if let unionBurstEvolution = card.unionBurstEvolution, settings.unitRarity == 6 {
                 rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurstEvolution, .unionBurstEvolution, property, nil)))
             } else if let unionBurst = card.unionBurst {
                 rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, property, nil)))

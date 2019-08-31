@@ -240,9 +240,29 @@ class Master: FMDatabaseQueue {
                     unitBackground = try decoder.decode(Card.UnitBackground.self, from: json.rawData())
                 }
                 
+                let rarity6Sql = """
+                SELECT
+                    *
+                FROM
+                    unlock_rarity_6
+                WHERE
+                    unit_id = \(json["unit_id"])
+                """
+                let rarity6Set = try db.executeQuery(rarity6Sql, values: nil)
+                var rarity6s = [Card.Rarity6]()
+                while rarity6Set.next() {
+                    do {
+                        let json = JSON(rarity6Set.resultDictionary ?? [:])
+                        let rarity6 = try decoder.decode(Card.Rarity6.self, from: json.rawData())
+                        rarity6s.append(rarity6)
+                    } catch {
+                        print(error)
+                    }
+                }
+                
                 if let base = try? decoder.decode(Card.Base.self, from: json.rawData()),
                     let profile = profile, let unitBackground = unitBackground {
-                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground, uniqueEquipIDs: uniqueEquipIDs)
+                    let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground, uniqueEquipIDs: uniqueEquipIDs, rarity6s: rarity6s)
                     cards.append(card)
                 }
             }

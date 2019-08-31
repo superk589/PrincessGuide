@@ -344,6 +344,11 @@
         <target>使下一个效果的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Add [%@ * total damage] to next effect's value %d.">
+        <source>Add [%1$@ * total damage] to next effect's value %2$d.</source>
+        <target>使下一个效果的数值 %2$d 提高 [%1$@ * 总伤害]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Add [%d] to the counter.">
         <source>Add [%d] to the counter.</source>
         <target>使计数器加 [%d]。</target>
@@ -739,11 +744,6 @@
         <target>公会战 %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Clan Battle(easy)">
-        <source>Clan Battle(easy)</source>
-        <target>公会战（简单模式）</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%.">
         <source>Clear all %1$@ on %2$@ with chance [%3$@]%%.</source>
         <target>有 [%3$@]%% 几率清除%2$@上的%1$@。</target>
@@ -1089,6 +1089,16 @@
         <target>检查更新失败</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Fear">
+        <source>Fear</source>
+        <target>恐慌</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Fear %@ with [%@]%% chance for [%@]s.">
+        <source>Fear %1$@ with [%2$@]%% chance for [%3$@]s.</source>
+        <target>[%2$@]%% 几率使%1$@恐慌，持续 [%3$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Feedback">
         <source>Feedback</source>
         <target>反馈</target>
@@ -1176,7 +1186,7 @@
       </trans-unit>
       <trans-unit id="Hard">
         <source>Hard</source>
-        <target>困难</target>
+        <target>H</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Haste">
@@ -1399,6 +1409,16 @@
         <target>最大等级提高至 %@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Max Possible Bond Rank">
+        <source>Max Possible Bond Rank</source>
+        <target>最大可能羁绊等级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Max Possible Star Rank">
+        <source>Max Possible Star Rank</source>
+        <target>最大可能星级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Max Rank to %@">
         <source>Max Rank to %@</source>
         <target>最大 Rank 提高至 %@</target>
@@ -1541,7 +1561,7 @@
       </trans-unit>
       <trans-unit id="Normal">
         <source>Normal</source>
-        <target>普通</target>
+        <target>N</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Not Determined">
@@ -1582,6 +1602,11 @@
       <trans-unit id="Order">
         <source>Order</source>
         <target>顺序</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Other">
+        <source>Other</source>
+        <target>其他</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Paralyse">
@@ -1707,6 +1732,11 @@
       <trans-unit id="Rarity">
         <source>Rarity</source>
         <target>稀有度</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Rarity 6">
+        <source>Rarity 6</source>
+        <target>星 6</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raw Materials">
@@ -2029,6 +2059,11 @@
         <target>队伍列表</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Temple">
+        <source>Temple</source>
+        <target>神殿</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="The first chara added will be used as cover image.">
         <source>The first chara added will be used as cover image.</source>
         <target>第一个添加的角色将被用作封面。</target>
@@ -2219,6 +2254,11 @@
         <target>数据更新日志</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Very Hard">
+        <source>Very Hard</source>
+        <target>VH</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Violent Poison">
         <source>Violent Poison</source>
         <target>猛毒</target>
@@ -2322,7 +2362,7 @@
       <trans-unit id="always 1★">
         <source>always 1★</source>
         <target>固定 1★</target>
-        <note>No comment provided by engineer.</note>
+        <note>icon style</note>
       </trans-unit>
       <trans-unit id="always 3★">
         <source>always 3★</source>
@@ -2473,6 +2513,11 @@
         <source>full</source>
         <target>完整</target>
         <note>expression style</note>
+      </trans-unit>
+      <trans-unit id="highest rarity">
+        <source>highest rarity</source>
+        <target>最高稀有度</target>
+        <note>icon style</note>
       </trans-unit>
       <trans-unit id="inevitable physical">
         <source>inevitable physical</source>

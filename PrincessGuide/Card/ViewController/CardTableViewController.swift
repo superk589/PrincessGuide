@@ -395,6 +395,12 @@ extension Array where Element == Card {
                 }
                 .map { Section(title: $0, cards: $1) }
                 .sorted { $0.title < $1.title }
+        case .rarity6:
+            sections = reduce(into: [String: [Card]]()) {
+                $0[$1.hasRarity6 ? NSLocalizedString("Rarity 6", comment: "") : NSLocalizedString("Other", comment: ""), default: [Card]()].append($1)
+                }
+                .map { Section(title: $0, cards: $1) }
+                .sorted { $0.title > $1.title }
         }
         
         for index in sections.indices {
@@ -419,6 +425,12 @@ extension Card {
             return base.prefabId + 10
         case .r3:
             return base.prefabId + 30
+        case .highestRarity:
+            if hasRarity6 {
+                return base.prefabId + 60
+            } else {
+                return base.prefabId + 30
+            }
         }
     }
     

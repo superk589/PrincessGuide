@@ -106,9 +106,9 @@ class CDSettingsViewController: FormViewController {
         init() {
             unitLevel = Preload.default.maxPlayerLevel
             skillLevel = Preload.default.maxPlayerLevel
-            bondRank = Constant.presetMaxBondRank
+            bondRank = Constant.presetMaxPossibleBondRank
             unitRank = Preload.default.maxEquipmentRank
-            unitRarity = Constant.presetMaxRarity
+            unitRarity = Constant.presetMaxPossibleRarity
             targetLevel = unitLevel
             addsEx = true
             statusComparison = false
@@ -220,12 +220,12 @@ class CDSettingsViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             <<< PickerInlineRow<Int>("bond_rank") { (row : PickerInlineRow<Int>) -> Void in
-                row.title = NSLocalizedString("Bond Rank", comment: "")
+                row.title = NSLocalizedString("Max Possible Bond Rank", comment: "")
                 row.displayValueFor = { (rowValue: Int?) in
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<Constant.presetMaxBondRank {
+                for i in 0..<Constant.presetMaxPossibleBondRank {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.bondRank
@@ -235,12 +235,12 @@ class CDSettingsViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             <<< PickerInlineRow<Int>("unit_rarity") { (row : PickerInlineRow<Int>) -> Void in
-                row.title = NSLocalizedString("Star Rank", comment: "")
+                row.title = NSLocalizedString("Max Possible Star Rank", comment: "")
                 row.displayValueFor = { (rowValue: Int?) in
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<Constant.presetMaxRarity {
+                for i in 0..<Constant.presetMaxPossibleRarity {
                     row.options.append(i + 1)
                 }
                 row.value = Setting.default.unitRarity

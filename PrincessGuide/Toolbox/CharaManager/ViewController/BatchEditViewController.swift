@@ -134,11 +134,11 @@ class BatchEditViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<Constant.presetMaxBondRank {
+                for i in 0..<Constant.presetMaxPossibleBondRank {
                     row.options.append(i + 1)
                 }
                 row.hidden = "$save_all == NO"
-                row.value = (charas.first?.bondRank).flatMap { Int($0) } ?? Constant.presetMaxBondRank
+                row.value = (charas.first?.bondRank).flatMap { Int($0) } ?? Constant.presetMaxPossibleBondRank
 
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
@@ -150,11 +150,11 @@ class BatchEditViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<Constant.presetMaxRarity {
+                for i in 0..<Constant.presetMaxPossibleRarity {
                     row.options.append(i + 1)
                 }
                 row.hidden = "$save_all == NO"
-                row.value = (charas.first?.rarity).flatMap { Int($0) } ?? Constant.presetMaxRarity
+                row.value = (charas.first?.rarity).flatMap { Int($0) } ?? Constant.presetMaxPossibleRarity
 
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))

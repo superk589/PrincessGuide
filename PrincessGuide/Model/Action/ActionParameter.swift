@@ -122,6 +122,8 @@ class ActionParameter {
             return StopFieldAction.self
         case 59:
             return InhibitHealAction.self
+        case 61:
+            return FearAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -490,6 +492,7 @@ enum ActionType: Int {
     case moveParts
     case countBlind
     case countDown
+    case fear = 61
     case ex = 90
     case exPlus
 }

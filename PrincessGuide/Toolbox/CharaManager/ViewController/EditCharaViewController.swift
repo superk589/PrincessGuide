@@ -157,11 +157,11 @@ class EditCharaViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<Constant.presetMaxBondRank {
+                for i in 0..<Constant.presetMaxPossibleBondRank {
                     row.options.append(i + 1)
                 }
                 if mode == .create {
-                    row.value = Constant.presetMaxBondRank
+                    row.value = Constant.presetMaxPossibleBondRank
                 } else {
                     row.value = (chara?.bondRank).flatMap { Int($0) }
                 }
@@ -175,11 +175,11 @@ class EditCharaViewController: FormViewController {
                     return rowValue.flatMap { String($0) }
                 }
                 row.options = []
-                for i in 0..<Constant.presetMaxRarity {
+                for i in 0..<Constant.presetMaxPossibleRarity {
                     row.options.append(i + 1)
                 }
                 if mode == .create {
-                    row.value = Constant.presetMaxRarity
+                    row.value = Constant.presetMaxPossibleRarity
                 } else {
                     row.value = (chara?.rarity).flatMap { Int($0) }
                 }

@@ -67,8 +67,8 @@ extension Minion {
     
     func property(unitLevel: Int = Preload.default.maxPlayerLevel,
                   unitRank: Int = Preload.default.maxEquipmentRank,
-                  bondRank: Int = Constant.presetMaxBondRank,
-                  unitRarity: Int = Constant.presetMaxRarity,
+                  bondRank: Int = Constant.presetMaxPossibleBondRank,
+                  unitRarity: Int = Constant.presetMaxPossibleRarity,
                   addsEx: Bool = CardSortingViewController.Setting.default.addsEx,
                   hasUniqueEquipment: Bool = CardSortingViewController.Setting.default.equipsUniqueEquipment,
                   uniqueEquipmentLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Property {

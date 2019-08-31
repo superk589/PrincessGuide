@@ -13,6 +13,8 @@ extension UIColor {
 
     static let rarityStar = UIColor(hexString: "#F0D052")
     
+    static let rarity6Star = UIColor(hexString: "#E0A7D3")
+    
     static let hatsunePurple = UIColor(hexString: "#ED9BF5")
     
     static let darkHighlighted = UIColor(hexString: "#F76445")

@@ -34,7 +34,7 @@ class EditTeamViewController: FormViewController {
         super.init(nibName: nil, bundle: nil)
         cards.forEach {
             let member = Member(card: $0, context: context)
-            member.rarity = Int16(Constant.presetMaxRarity)
+            member.rarity = Int16(Constant.presetMaxPossibleRarity)
             member.level = Int16(Preload.default.maxPlayerLevel)
             team.addToMembers(member)
         }
@@ -243,7 +243,7 @@ class EditTeamViewController: FormViewController {
                         return rowValue.flatMap { String($0) }
                     }
                     row.options = []
-                    for i in 0..<Constant.presetMaxRarity {
+                    for i in 0..<Constant.presetMaxPossibleRarity {
                         row.options.append(i + 1)
                     }
                     row.value = Int(member.rarity)

@@ -68,7 +68,7 @@ class AuraAction: ActionParameter {
             case .none:
                 result = ""
             }
-            return result.lowercased()
+            return result
         }
     }
     
