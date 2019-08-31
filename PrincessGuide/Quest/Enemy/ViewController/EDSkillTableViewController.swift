@@ -43,7 +43,7 @@ class EDSkillTableViewController: EDTableViewController {
                 zip(enemy.mainSkillEvolutions, enemy.mainSkills)
                     .enumerated()
                     .map {
-                        return Row(type: EDSkillTableViewCell.self, data: .skill($0.element.0, .mainEvolution, enemy.mainSkillLevel(for: $0.element.0.base.skillId), property, $0.offset + 1))
+                        return Row(type: EDSkillTableViewCell.self, data: .skill($0.element.0, .mainEvolution, enemy.mainSkillLevel(for: $0.element.1.base.skillId), property, $0.offset + 1))
                     }
             )
             
