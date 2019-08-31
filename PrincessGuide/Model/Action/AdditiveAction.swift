@@ -1,5 +1,5 @@
 //
-//  AddtivieAction.swift
+//  AdditiveAction.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/5/26.
@@ -32,6 +32,9 @@ class AdditiveAction: ActionParameter {
             return String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), Int(actionValue1) % 200, actionDetail2)
         case 4:
             let format = NSLocalizedString("Add [%@ * count of targets] to next effect's value %d.", comment: "")
+            return String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2)
+        case 6:
+            let format = NSLocalizedString("Add [%@ * total damage] to next effect's value %d.", comment: "")
             return String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2)
         case 102:
             let format = NSLocalizedString("Add [%@ * count of omemes] to next effect's value %d.", comment: "")

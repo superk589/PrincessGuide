@@ -259,7 +259,7 @@
 		12F125FD20B952EB005C9659 /* IfForChildrenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */; };
 		12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F125FE20B95315005C9659 /* RevivalAction.swift */; };
 		12F1260120B95345005C9659 /* ContinuousAttackAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260020B95345005C9659 /* ContinuousAttackAction.swift */; };
-		12F1260320B9536C005C9659 /* AddtivieAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260220B9536C005C9659 /* AddtivieAction.swift */; };
+		12F1260320B9536C005C9659 /* AdditiveAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260220B9536C005C9659 /* AdditiveAction.swift */; };
 		12F1260520B95377005C9659 /* MultipleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260420B95377005C9659 /* MultipleAction.swift */; };
 		12F1260720B9539D005C9659 /* IfForAllAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260620B9539D005C9659 /* IfForAllAction.swift */; };
 		12F1260920B953BD005C9659 /* SearchAreaChangeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1260820B953BD005C9659 /* SearchAreaChangeAction.swift */; };
@@ -567,7 +567,7 @@
 		12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfForChildrenAction.swift; sourceTree = "<group>"; };
 		12F125FE20B95315005C9659 /* RevivalAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevivalAction.swift; sourceTree = "<group>"; };
 		12F1260020B95345005C9659 /* ContinuousAttackAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousAttackAction.swift; sourceTree = "<group>"; };
-		12F1260220B9536C005C9659 /* AddtivieAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddtivieAction.swift; sourceTree = "<group>"; };
+		12F1260220B9536C005C9659 /* AdditiveAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditiveAction.swift; sourceTree = "<group>"; };
 		12F1260420B95377005C9659 /* MultipleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAction.swift; sourceTree = "<group>"; };
 		12F1260620B9539D005C9659 /* IfForAllAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfForAllAction.swift; sourceTree = "<group>"; };
 		12F1260820B953BD005C9659 /* SearchAreaChangeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAreaChangeAction.swift; sourceTree = "<group>"; };
@@ -1280,7 +1280,7 @@
 				12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */,
 				12F125FE20B95315005C9659 /* RevivalAction.swift */,
 				12F1260020B95345005C9659 /* ContinuousAttackAction.swift */,
-				12F1260220B9536C005C9659 /* AddtivieAction.swift */,
+				12F1260220B9536C005C9659 /* AdditiveAction.swift */,
 				12F1260420B95377005C9659 /* MultipleAction.swift */,
 				12F1260620B9539D005C9659 /* IfForAllAction.swift */,
 				12F1260820B953BD005C9659 /* SearchAreaChangeAction.swift */,
@@ -1622,7 +1622,7 @@
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				127EEBA120ECDAD300A6B3D4 /* CharaItemView.swift in Sources */,
 				129A7F6220A0465800D93996 /* CharaStory.swift in Sources */,
-				12F1260320B9536C005C9659 /* AddtivieAction.swift in Sources */,
+				12F1260320B9536C005C9659 /* AdditiveAction.swift in Sources */,
 				1221CDE7207DB350008F30AA /* Debouncer.swift in Sources */,
 				120F9B4F20E4DC84003632CA /* CharaTableViewController.swift in Sources */,
 				120E487722FECE3900035566 /* UIActivityViewController+Helper.swift in Sources */,
