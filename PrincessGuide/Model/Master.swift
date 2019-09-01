@@ -1491,6 +1491,33 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getRarity6UnlockQuest(callback: @escaping FMDBCallbackClosure<[Rarity6UnlockQuest]>) {
+        var quests = [Rarity6UnlockQuest]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                rarity_6_quest_data
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                do {
+                    let quest = try decoder.decode(Rarity6UnlockQuest.self, from: json.rawData())
+                    quests.append(quest)
+                } catch {
+                    print(error)
+                }
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
     func getTrainingQuests(areaID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Quest]>) {
         var quests = [Quest]()
         execute({ [unowned self] (db) in

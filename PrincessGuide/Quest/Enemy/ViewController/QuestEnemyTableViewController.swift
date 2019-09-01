@@ -75,6 +75,13 @@ class QuestEnemyTableViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    init(rarity6UnlockQuest: Rarity6UnlockQuest) {
+        self.rows = rarity6UnlockQuest.wave.flatMap {
+            [Row(type: QuestEnemyTableViewCell.self, data: .wave($0, 0))]
+        } ?? []
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     let backgroundImageView = UIImageView()
     
     override func viewDidLoad() {

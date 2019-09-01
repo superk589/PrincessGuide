@@ -43,6 +43,8 @@
 		1220423D231A909400205C85 /* MiscQuestAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */; };
 		1220423F231A9ECC00205C85 /* Card+Rarity6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220423E231A9ECC00205C85 /* Card+Rarity6.swift */; };
 		12204241231AABF700205C85 /* FearAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12204240231AABF700205C85 /* FearAction.swift */; };
+		12204245231B74CE00205C85 /* Rarity6UnlockQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12204244231B74CE00205C85 /* Rarity6UnlockQuest.swift */; };
+		12204247231B765800205C85 /* Rarity6UnlockQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12204246231B765800205C85 /* Rarity6UnlockQuestViewController.swift */; };
 		122071DC20F8E30800554030 /* SearchableTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071DB20F8E30800554030 /* SearchableTeamTableViewController.swift */; };
 		122071DE20F9D61D00554030 /* TDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071DD20F9D61D00554030 /* TDTabViewController.swift */; };
 		122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122071E320F9D6AE00554030 /* TDBattleViewController.swift */; };
@@ -342,6 +344,8 @@
 		1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscQuestAreaViewController.swift; sourceTree = "<group>"; };
 		1220423E231A9ECC00205C85 /* Card+Rarity6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Rarity6.swift"; sourceTree = "<group>"; };
 		12204240231AABF700205C85 /* FearAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FearAction.swift; sourceTree = "<group>"; };
+		12204244231B74CE00205C85 /* Rarity6UnlockQuest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rarity6UnlockQuest.swift; sourceTree = "<group>"; };
+		12204246231B765800205C85 /* Rarity6UnlockQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rarity6UnlockQuestViewController.swift; sourceTree = "<group>"; };
 		122071DB20F8E30800554030 /* SearchableTeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTeamTableViewController.swift; sourceTree = "<group>"; };
 		122071DD20F9D61D00554030 /* TDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTabViewController.swift; sourceTree = "<group>"; };
 		122071E320F9D6AE00554030 /* TDBattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDBattleViewController.swift; sourceTree = "<group>"; };
@@ -737,6 +741,7 @@
 				1276D4B720AD2D4100805355 /* HatsuneEvent.swift */,
 				12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */,
 				12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */,
+				12204244231B74CE00205C85 /* Rarity6UnlockQuest.swift */,
 				124EA0A120D26CA500F46029 /* Dungeon.swift */,
 				12B8F58A214A5B3600C039DE /* Tower.swift */,
 				1226532220AD626700BB3E56 /* Resist.swift */,
@@ -872,6 +877,7 @@
 				12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */,
 				12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */,
 				12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */,
+				12204246231B765800205C85 /* Rarity6UnlockQuestViewController.swift */,
 				12133739225113D000BB701B /* RaidBossTableViewController.swift */,
 			);
 			path = ViewController;
@@ -1799,6 +1805,7 @@
 				129A7F54209FE7A800D93996 /* CDProfileTableViewCell.swift in Sources */,
 				12973CEF20EBBAC500C83089 /* CharaView.swift in Sources */,
 				1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */,
+				12204245231B74CE00205C85 /* Rarity6UnlockQuest.swift in Sources */,
 				12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */,
 				12F125EF20B94D1D005C9659 /* ChangeEnergyAction.swift in Sources */,
 				12398E7220915737006AC352 /* AttackPattern.swift in Sources */,
@@ -1834,6 +1841,7 @@
 				1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */,
 				12E3324420F5ED7600844A6A /* CardCollectionViewCell.swift in Sources */,
 				12F125DD20B92FA7005C9659 /* KnockAction.swift in Sources */,
+				12204247231B765800205C85 /* Rarity6UnlockQuestViewController.swift in Sources */,
 				12F125F320B9501F005C9659 /* DamageChargeAction.swift in Sources */,
 				1226532320AD626700BB3E56 /* Resist.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDSkillTableViewController.swift in Sources */,
