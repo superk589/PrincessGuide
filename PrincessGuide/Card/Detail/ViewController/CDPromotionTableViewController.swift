@@ -15,10 +15,10 @@ class CDPromotionTableViewController: CDTableViewController {
         rows = [Row]()
         
         if card.uniqueEquipIDs.count > 0 {
-            rows += [Row(type: CDPromotionTableViewCell.self, data: .uniqueEquipments(card.uniqueEquipIDs))]
+            rows += [Row.uniqueEquipments(card.uniqueEquipIDs)]
         }
 
-        rows += card.promotions.map { Row(type: CDPromotionTableViewCell.self, data: .promotion($0)) }.reversed()
+        rows += card.promotions.map { Row.promotion($0) }.reversed()
     }
     
 }

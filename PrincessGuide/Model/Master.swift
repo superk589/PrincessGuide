@@ -355,22 +355,7 @@ class Master: FMDatabaseQueue {
             let sql = """
             SELECT
                 a.*,
-                b.union_burst,
-                b.main_skill_1,
-                b.main_skill_2,
-                b.main_skill_3,
-                b.main_skill_4,
-                b.main_skill_5,
-                b.main_skill_6,
-                b.main_skill_7,
-                b.main_skill_8,
-                b.main_skill_9,
-                b.main_skill_10,
-                b.ex_skill_1,
-                b.ex_skill_2,
-                b.ex_skill_3,
-                b.ex_skill_4,
-                b.ex_skill_5,
+                b.*,
                 c.child_enemy_parameter_1,
                 c.child_enemy_parameter_2,
                 c.child_enemy_parameter_3,
@@ -407,13 +392,19 @@ class Master: FMDatabaseQueue {
                     let json = JSON(unitSet.resultDictionary ?? [:])
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    unit = try? decoder.decode(Enemy.Unit.self, from: json.rawData())
+                    do {
+                        unit = try decoder.decode(Enemy.Unit.self, from: json.rawData())
+                    } catch {
+                        print(error)
+                    }
                 }
-                
-                if let base = try? decoder.decode(Enemy.Base.self, from: json.rawData()),
-                    let unit = unit {
-                    minion = Enemy(base: base, unit: unit)
-                    break
+                do {
+                    let base = try decoder.decode(Enemy.Base.self, from: json.rawData())
+                    if let unit = unit {
+                        minion = Enemy(base: base, unit: unit)
+                    }
+                } catch {
+                    print(error)
                 }
             }
         }) {

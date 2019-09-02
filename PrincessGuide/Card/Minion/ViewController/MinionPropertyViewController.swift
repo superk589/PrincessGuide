@@ -31,51 +31,62 @@ class MinionPropertyViewController: MinionTableViewController {
         let property = minion.property(unitLevel: unitLevel, unitRank: settings.unitRank, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
         
         rows += [
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+            Row.propertyItems([
                 property.item(for: .atk),
                 property.item(for: .magicStr)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel, targetLevel),
+            Row.propertyItems([
                 property.item(for: .def),
                 property.item(for: .magicDef)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel, targetLevel),
+            Row.propertyItems([
                 property.item(for: .hp),
                 property.item(for: .physicalCritical)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel, targetLevel),
+            Row.propertyItems([
                 property.item(for: .dodge),
                 property.item(for: .magicCritical)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTextTableViewCell.self, data:  .textArray(
+                ], unitLevel, targetLevel),
+            Row.textArray(
                 [
-                    (NSLocalizedString("Swing Time", comment: ""), "\(minion.base.normalAtkCastTime)s"),
-                    (NSLocalizedString("Attack Range", comment: ""), String(minion.base.searchAreaWidth))
+                    TextItem(title: NSLocalizedString("Swing Time", comment: ""), content: "\(minion.base.normalAtkCastTime)s", colorMode: .normal),
+                    TextItem(title: NSLocalizedString("Attack Range", comment: ""), content: String(minion.base.searchAreaWidth), colorMode: .normal)
                 ]
-                )),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([property.item(for: .accuracy)], unitLevel, targetLevel)),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Physical HP", comment: ""), String(Int(property.effectivePhysicalHP.rounded())))),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Effective Magical HP", comment: ""), String(Int(property.effectiveMagicalHP.rounded())))),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+            ),
+            Row.propertyItems([property.item(for: .accuracy)], unitLevel, targetLevel),
+            Row.textArray(
+                [
+                    TextItem(title: NSLocalizedString("Effective Physical HP", comment: ""), content: String(Int(property.effectivePhysicalHP.rounded())), colorMode: .normal)
+                ]
+            ),
+            Row.textArray(
+                [
+                    TextItem(title: NSLocalizedString("Effective Magical HP", comment: ""), content: String(Int(property.effectiveMagicalHP.rounded())), colorMode: .normal)
+                ]
+            ),
+            Row.propertyItems([
                 property.item(for: .waveHpRecovery)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel, targetLevel),
+            Row.propertyItems([
                 property.item(for: .waveEnergyRecovery)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel, targetLevel),
+            Row.propertyItems([
                 property.item(for: .lifeSteal)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel, targetLevel),
+            Row.propertyItems([
                 property.item(for: .hpRecoveryRate)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel, targetLevel),
+            Row.propertyItems([
                 property.item(for: .energyRecoveryRate)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel, targetLevel),
+            Row.propertyItems([
                 property.item(for: .energyReduceRate)
-                ], unitLevel, targetLevel)),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Move Speed", comment: ""), String(minion.base.moveSpeed))),
-
+                ], unitLevel, targetLevel),
+            Row.textArray(
+                [
+                    TextItem(title: NSLocalizedString("Move Speed", comment: ""), content: String(minion.base.moveSpeed), colorMode: .normal)
+                ]
+            ),
         ]
         
     }

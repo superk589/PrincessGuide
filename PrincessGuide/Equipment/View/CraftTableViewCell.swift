@@ -8,8 +8,9 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
-class CraftTableViewCell: UITableViewCell, CraftDetailConfigurable, UniqueCraftConfigurable {
+class CraftTableViewCell: UITableViewCell, Reusable {
     
     let icon = IconImageView()
     
@@ -57,21 +58,6 @@ class CraftTableViewCell: UITableViewCell, CraftDetailConfigurable, UniqueCraftC
         nameLabel.text = name
         consumeNumberLabel.text = String(number)
         icon.kf.setImage(with: itemURL, placeholder: #imageLiteral(resourceName: "icon_placeholder"))
-    }
-    
-    func configure(for item: CraftDetailItem) {
-        guard case .consume(let consume) = item else {
-            fatalError()
-        }
-        configure(name: consume.equipment?.equipmentName, number: consume.consumeNum, itemURL: consume.itemURL)
-    }
-    
-    func configure(for item: UniqueCraftItem) {
-        guard case .consume(let consume) = item else {
-            fatalError()
-        }
-        configure(name: nil, number: consume.consumeNum, itemURL: consume.itemURL)
-
     }
     
     required init?(coder aDecoder: NSCoder) {

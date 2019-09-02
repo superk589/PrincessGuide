@@ -8,19 +8,4 @@
 
 import UIKit
 
-protocol EnemyDetailConfigurable {
-    func configure(for item: EDTableViewController.Row.Model)
-}
-
 typealias EDPropertyTableViewCell = CDPropertyTableViewCell
-
-extension EDPropertyTableViewCell: EnemyDetailConfigurable {
-
-    func configure(for item: EDTableViewController.Row.Model) {
-        guard case .propertyItems(let items, let unitLevel, let targetLevel) = item else {
-            fatalError()
-        }
-        configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel, comparisonMode: false)
-    }
-
-}

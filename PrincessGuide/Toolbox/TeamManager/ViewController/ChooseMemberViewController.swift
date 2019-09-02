@@ -83,6 +83,7 @@ class ChooseMemberViewController: CardCollectionViewController {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! CardCollectionViewCell
         
         let card = sortedCards[indexPath.item]
+        cell.icon.configure(iconURL: card.iconURL(style: .highestRarity), placeholderStyle: .blank)
         if selectedCards.contains(where: { $0.card.base.unitId == card.base.unitId }) {
             cell.isEnable = false
         } else {
@@ -90,7 +91,6 @@ class ChooseMemberViewController: CardCollectionViewController {
         }
         return cell
     }
-    
 }
 
 extension ChooseMemberViewController: CandidateCardsViewDelegate {

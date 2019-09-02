@@ -27,7 +27,7 @@ class ProfileItemView: UIView {
         titleLabel.adjustsFontSizeToFitWidth = true
         addSubview(contentLabel)
         contentLabel.snp.makeConstraints { (make) in
-            make.left.bottom.equalToSuperview()
+            make.left.right.bottom.equalToSuperview()
             make.top.greaterThanOrEqualTo(titleLabel.snp.bottom)
         }
         contentLabel.numberOfLines = 0
@@ -42,44 +42,24 @@ class ProfileItemView: UIView {
     let titleLabel = UILabel()
     
     let contentLabel = UILabel()
-
-    func configure(for item: Card.Profile.Item) {
-        titleLabel.text = item.key.description
-        contentLabel.text = item.value
-    }
     
-    func configure(for item: Property.Item, unitLevel: Int, targetLevel: Int, comparisonMode: Bool = false) {
-        titleLabel.text = item.key.description
-        if let percent = item.percent(selfLevel: unitLevel, targetLevel: targetLevel), percent != 0, !comparisonMode {
-            if item.hasLevelAssumption {
-                contentLabel.text = String(format: "%d(%.2f%%, %d to %d)", Int(item.value), percent, unitLevel, targetLevel)
-            } else {
-                contentLabel.text = String(format: "%d(%.2f%%)", Int(item.value), percent)
-            }
-        } else {
-            contentLabel.text = String(Int(item.value))
-        }
+    func configure(title: String, content: String, colorMode: TextItem.ColorMode) {
+        titleLabel.text = title
+        contentLabel.text = content
         
-        if comparisonMode {
-            if item.value > 0 {
-                ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-                    themeable.contentLabel.textColor = theme.color.upValue
-                }
-            } else if item.value < 0 {
-                ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-                    themeable.contentLabel.textColor = theme.color.downValue
-                }
-            } else {
-                ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-                    themeable.contentLabel.textColor = theme.color.body
-                }
+        switch colorMode {
+        case .down:
+            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                themeable.contentLabel.textColor = theme.color.downValue
+            }
+        case .normal:
+            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                themeable.contentLabel.textColor = theme.color.body
+            }
+        case .up:
+            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
+                themeable.contentLabel.textColor = theme.color.upValue
             }
         }
     }
-    
-    func configure(for item: Property.Item) {
-        titleLabel.text = item.key.description
-        contentLabel.text = String(Int(item.value))
-    }
-    
 }

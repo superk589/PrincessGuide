@@ -37,11 +37,11 @@ class CDSkillTableViewController: CDTableViewController {
         
         if let patterns = card.patterns, patterns.count > 1 {
             card.patterns?.enumerated().forEach {
-                rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0.element, card, $0.offset + 1)))
+                rows.append(Row.pattern(pattern: $0.element, card: card, index: $0.offset + 1))
             }
         } else {
             card.patterns?.enumerated().forEach {
-                rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0.element, card, nil)))
+                rows.append(Row.pattern(pattern: $0.element, card: card, index: nil))
             }
         }
         
@@ -50,16 +50,16 @@ class CDSkillTableViewController: CDTableViewController {
         
         if settings.skillStyle == .both {
             if let unionBurst = card.unionBurst {
-                rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, property, nil)))
+                rows.append(Row.skill(skill: unionBurst, category: .unionBurst, property: property, index: nil))
             }
             if let unionBurstEvolution = card.unionBurstEvolution, settings.unitRarity == 6 {
-                rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurstEvolution, .unionBurstEvolution, property, nil)))
+                rows.append(Row.skill(skill: unionBurstEvolution, category: .unionBurstEvolution, property: property, index: nil))
             }
         } else {
             if let unionBurstEvolution = card.unionBurstEvolution, settings.unitRarity == 6 {
-                rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurstEvolution, .unionBurstEvolution, property, nil)))
+                rows.append(Row.skill(skill: unionBurstEvolution, category: .unionBurstEvolution, property: property, index: nil))
             } else if let unionBurst = card.unionBurst {
-                rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, property, nil)))
+                rows.append(Row.skill(skill: unionBurst, category: .unionBurst, property: property, index: nil))
             }
         }
         
@@ -69,8 +69,8 @@ class CDSkillTableViewController: CDTableViewController {
                 .enumerated()
                 .flatMap {
                     [
-                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element.0, .main, property, $0.offset + 1)),
-                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element.1, .mainEvolution, property, $0.offset + 1))
+                        Row.skill(skill: $0.element.0, category: .main, property: property, index: $0.offset + 1),
+                        Row.skill(skill: $0.element.1, category: .mainEvolution, property: property, index: $0.offset + 1)
                     ]
                 }
             
@@ -79,7 +79,7 @@ class CDSkillTableViewController: CDTableViewController {
                 rows += card.mainSkills[card.mainSkillEvolutions.count..<card.mainSkills.count]
                     .enumerated()
                     .map {
-                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, property, card.mainSkillEvolutions.count + $0.offset + 1))
+                        return Row.skill(skill: $0.element, category: .main, property: property, index: card.mainSkillEvolutions.count + $0.offset + 1)
                 }
             }
         } else {
@@ -87,7 +87,7 @@ class CDSkillTableViewController: CDTableViewController {
                 zip(card.mainSkillEvolutions, card.mainSkills)
                     .enumerated()
                     .map {
-                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element.0, .mainEvolution, property, $0.offset + 1))
+                        return Row.skill(skill: $0.element.0, category: .mainEvolution, property: property, index: $0.offset + 1)
                 }
             )
             
@@ -96,14 +96,14 @@ class CDSkillTableViewController: CDTableViewController {
                 rows += card.mainSkills[card.mainSkillEvolutions.count..<card.mainSkills.count]
                     .enumerated()
                     .map {
-                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, property, card.mainSkillEvolutions.count + $0.offset + 1))
+                        return Row.skill(skill: $0.element, category: .main, property: property, index: card.mainSkillEvolutions.count + $0.offset + 1)
                 }
             }
         }
         
         // setup sp skills
         rows += card.spSkills.enumerated().map {
-            return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .sp, property, $0.offset + 1))
+            return Row.skill(skill: $0.element, category: .sp, property: property, index: $0.offset + 1)
         }
         
         // setup ex skills
@@ -112,8 +112,8 @@ class CDSkillTableViewController: CDTableViewController {
                 .enumerated()
                 .flatMap {
                     [
-                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element.0, .ex, property, nil)),
-                        Row(type: CDSkillTableViewCell.self, data: .skill($0.element.1, .exEvolution, property, nil))
+                        Row.skill(skill: $0.element.0, category: .ex, property: property, index: nil),
+                        Row.skill(skill: $0.element.1, category: .exEvolution, property: property, index: nil)
                     ]
             }
             
@@ -122,7 +122,7 @@ class CDSkillTableViewController: CDTableViewController {
                 rows += card.exSkills[card.exSkillEvolutions.count..<card.exSkills.count]
                     .enumerated()
                     .map {
-                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, property, nil))
+                        return Row.skill(skill: $0.element, category: .ex, property: property, index: nil)
                 }
             }
         } else {
@@ -130,7 +130,7 @@ class CDSkillTableViewController: CDTableViewController {
                 zip(card.exSkillEvolutions, card.exSkills)
                     .enumerated()
                     .map {
-                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element.0, .exEvolution, property, nil))
+                        return Row.skill(skill: $0.element.0, category: .exEvolution, property: property, index: nil)
                 }
             )
             
@@ -139,14 +139,14 @@ class CDSkillTableViewController: CDTableViewController {
                 rows += card.mainSkills[card.exSkillEvolutions.count..<card.exSkills.count]
                     .enumerated()
                     .map {
-                        return Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, property, nil))
+                        return Row.skill(skill: $0.element, category: .ex, property: property, index: nil)
                 }
             }
         }
         
         // insert minions
         let newRows: [Row] = rows.flatMap { row -> [Row] in
-            guard case .skill(let skill, _, _, _) = row.data else {
+            guard case .skill(let skill, _, _, _) = row else {
                 return [row]
             }
             let actions = skill.actions
@@ -158,7 +158,7 @@ class CDSkillTableViewController: CDTableViewController {
                         results.append(minion)
                     }
             }
-            let rows = minions.map { Row(type: CDMinionTableViewCell.self, data: .minion($0)) }
+            let rows = minions.map { Row.minion($0) }
             
             return [row] + rows
         }
@@ -166,4 +166,72 @@ class CDSkillTableViewController: CDTableViewController {
         self.rows = newRows
     }
     
+}
+
+extension AttackPattern {
+    
+    func toCollectionViewItems(card: Card) -> [CDPatternTableViewCell.Item] {
+        return items.enumerated().map {
+            let offset = $0.offset
+            let item = $0.element
+            let iconType: CDPatternTableViewCell.Item.IconType
+            let loopType: CDPatternTableViewCell.Item.LoopType
+            let text: String
+            switch item {
+            case 1:
+                if card.base.atkType == 2 {
+                    iconType = .magicalSwing
+                } else {
+                    iconType = .physicalSwing
+                }
+                text = NSLocalizedString("Swing", comment: "")
+            case 1000..<2000:
+                let index = item - 1001
+                let skillID = card.base.mainSkillIDs[index]
+                if let iconID = card.mainSkills.first (where: {
+                    $0.base.skillId == skillID
+                })?.base.iconType {
+                    iconType = .skill(iconID)
+                } else {
+                    iconType = .unknown
+                }
+                let format = NSLocalizedString("Main %d", comment: "")
+                text = String(format: format, index + 1)
+            case 2000..<3000:
+                let index = item - 2001
+                let skillID = card.base.spSkillIDs[index]
+                if let iconID = card.spSkills.first (where: {
+                    $0.base.skillId == skillID
+                })?.base.iconType {
+                    iconType = .skill(iconID)
+                } else {
+                    iconType = .unknown
+                }
+                let format = NSLocalizedString("SP %d", comment: "")
+                text = String(format: format, index + 1)
+            default:
+                iconType = .unknown
+                text = NSLocalizedString("Unknown", comment: "")
+            }
+            
+            switch offset {
+            case loopStart - 1:
+                if loopStart == loopEnd {
+                    loopType = .inPlace
+                } else {
+                    loopType = .start
+                }
+            case loopEnd - 1:
+                loopType = .end
+            default:
+                loopType = .none
+            }
+            
+            return CDPatternTableViewCell.Item(
+                iconType: iconType,
+                loopType: loopType,
+                text: text
+            )
+        }
+    }
 }

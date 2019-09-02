@@ -427,7 +427,7 @@ extension Card {
                 property += rarity.property + rarity.propertyGrowth * Double(unitLevel + unitRank)
             }
         } else {
-            if let rarity = rarities.sorted(by: { $0.rarity > $1.rarity }).first {
+            if let rarity = rarities.sorted(by: { $0.rarity > $1.rarity }).first(where: { $0.rarity <= unitRarity }) {
                 property += rarity.property + rarity.propertyGrowth * Double(unitLevel + unitRank)
             }
         }
@@ -498,9 +498,10 @@ extension Card {
         
         if unionBurst != nil {
             if hasRarity6 && unionBurstEvolution != nil && unitRarity == 6 {
-                result += coefficient.ubEvolutionCoefficient * coefficient.ubEvolutionSlvCoefficient
+                result += (coefficient.ubEvolutionCoefficient + coefficient.ubEvolutionSlvCoefficient * Double(skillLevel)) * coefficient.skillLvCoefficient
+            } else {
+                result += Double(skillLevel) * coefficient.skillLvCoefficient
             }
-            result += Double(skillLevel) * coefficient.skillLvCoefficient
         }
         
         if unitRank >= 7 {

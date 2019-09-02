@@ -10,10 +10,6 @@ import UIKit
 import CoreData
 import Gestalt
 
-protocol BDInfoConfigurable {
-    func configure(for model: BDInfoViewController.Row.Model)
-}
-
 class BDInfoViewController: UITableViewController {
     
     let parentContext: NSManagedObjectContext?
@@ -22,13 +18,9 @@ class BDInfoViewController: UITableViewController {
     
     let box: Box
     
-    struct Row {
-        enum Model {
-            case text([(String, String)])
-            case basic(Int?, String)
-        }
-        var type: UITableViewCell.Type
-        var data: Model
+    enum Row {
+        case textArray([TextItem])
+        case basic(URL?, String)
     }
     
     var rows = [Row]()
@@ -65,8 +57,8 @@ class BDInfoViewController: UITableViewController {
             themeable.navigationController?.toolbar.barStyle = theme.barStyle
             themeable.navigationController?.toolbar.tintColor = theme.color.tint
         }
-        tableView.register(BDInfoTextCell.self, forCellReuseIdentifier: BDInfoTextCell.description())
-        tableView.register(BoxTableViewCell.self, forCellReuseIdentifier: BoxTableViewCell.description())
+        tableView.register(cellType: CDProfileTableViewCell.self)
+        tableView.register(cellType: BoxTableViewCell.self)
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 60
@@ -83,61 +75,49 @@ class BDInfoViewController: UITableViewController {
             
             let box = self?.context.object(with: objectID) as? Box
             let charas = box?.charas?.array as? [Chara] ?? []
-            rows.append(Row(type: BoxTableViewCell.self, data: .basic(charas.first?.iconID, box?.name ?? "")))
-            rows.append(Row(type: BDInfoTextCell.self, data: .text([
-                    (NSLocalizedString("Charas Count", comment: ""),
-                     String(charas.count))
-                ])))
+            rows.append(Row.basic(charas.first?.iconURL, box?.name ?? ""))
+            rows.append(Row.textArray([
+                TextItem(title: NSLocalizedString("Charas Count", comment: ""), content: String(charas.count), colorMode: .normal)
+            ]))
             
             let craftCost = charas.flatMap { $0.unequiped() }
                 .flatMap { $0.recursiveCraft }
                 .reduce(0) { $0 + $1.craftedCost }
-            rows.append(Row(type: BDInfoTextCell.self, data: .text([
-                (NSLocalizedString("Mana Cost of Crafting", comment: ""),
-                 craftCost.formatted)
-            ])))
-            
+            rows.append(Row.textArray([
+                TextItem(title: NSLocalizedString("Mana Cost of Crafting", comment: ""), content: craftCost.formatted, colorMode: .normal)
+            ]))
             let enhanceCost = charas.flatMap { $0.maxRankUnequiped() }
                 .reduce(0) { $0 + $1.enhanceCost }
-            rows.append(Row(type: BDInfoTextCell.self, data: .text([
-                (NSLocalizedString("Mana Cost of Enhancing", comment: ""),
-                 enhanceCost.formatted)
-            ])))
-            
+            rows.append(Row.textArray([
+                TextItem(title: NSLocalizedString("Mana Cost of Enhancing", comment: ""), content: enhanceCost.formatted, colorMode: .normal)
+            ]))
             let skillCost = charas.reduce(0) { $0 + $1.skillLevelUpCost }
-            rows.append(Row(type: BDInfoTextCell.self, data: .text([
-                (NSLocalizedString("Mana Cost of Skill Training", comment: ""),
-                 skillCost.formatted)
-            ])))
+            rows.append(Row.textArray([
+                TextItem(title: NSLocalizedString("Mana Cost of Skill Training", comment: ""), content: skillCost.formatted, colorMode: .normal)
+            ]))
             
             let uniqueEquipmentCraftCost = charas
                 .flatMap { $0.uniqueUnequiped() }
                 .reduce(0) { $0 + ($1.craft?.craftedCost ?? 0) }
-            
-            rows.append(Row(type: BDInfoTextCell.self, data: .text([
-                (NSLocalizedString("Mana Cost of Unique Equipment Crafting", comment: ""),
-                 uniqueEquipmentCraftCost.formatted)
-                ])))
+            rows.append(Row.textArray([
+                TextItem(title: NSLocalizedString("Mana Cost of Unique Equipment Crafting", comment: ""), content: uniqueEquipmentCraftCost.formatted, colorMode: .normal)
+            ]))
             
             let uniqueEquipmentEnhanceCost = charas
                 .reduce(0) { $0 + $1.uniqueEquipmentEnhanceCost }
-            
-            rows.append(Row(type: BDInfoTextCell.self, data: .text([
-                (NSLocalizedString("Mana Cost of Unique Equipment Enhancing", comment: ""),
-                 uniqueEquipmentEnhanceCost.formatted)
-                ])))
+            rows.append(Row.textArray([
+                TextItem(title: NSLocalizedString("Mana Cost of Unique Equipment Enhancing", comment: ""), content: uniqueEquipmentEnhanceCost.formatted, colorMode: .normal)
+            ]))
             
             let totalManaCost = craftCost + enhanceCost + skillCost + uniqueEquipmentCraftCost + uniqueEquipmentEnhanceCost
-            rows.append(Row(type: BDInfoTextCell.self, data: .text([
-                (NSLocalizedString("Total Mana Cost", comment: ""),
-                 totalManaCost.formatted)
-            ])))
+            rows.append(Row.textArray([
+                TextItem(title: NSLocalizedString("Total Mana Cost", comment: ""), content: totalManaCost.formatted, colorMode: .normal)
+            ]))
             
             let totalExperience = charas.reduce(0) { $0 + $1.experienceToMaxLevel }
-            rows.append(Row(type: BDInfoTextCell.self, data: .text([
-                (NSLocalizedString("Total Experience Needed", comment: ""),
-                 totalExperience.formatted)
-            ])))
+            rows.append(Row.textArray([
+                TextItem(title: NSLocalizedString("Total Experience Needed", comment: ""), content: totalExperience.formatted, colorMode: .normal)
+            ]))
             
             DispatchQueue.main.async {
                 LoadingHUDManager.default.hide()
@@ -153,9 +133,19 @@ class BDInfoViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = rows[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: row.type.description(), for: indexPath) as! BDInfoConfigurable
-        cell.configure(for: row.data)
-        return cell as! UITableViewCell
+        switch row {
+        case .basic(let url, let name):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: BoxTableViewCell.self)
+            cell.configure(
+                iconURL: url,
+                name: name
+            )
+            return cell
+        case .textArray(let items):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: items)
+            return cell
+        }
     }
 }
 

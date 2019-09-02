@@ -8,18 +8,13 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
 protocol CraftSummaryTableViewCellDelegate: class {
     func craftSummaryTableViewCell(_ craftSummaryTableViewCell: CraftSummaryTableViewCell, didSelect index: Int)
 }
 
-typealias CraftDetailItem = CraftTableViewController.Row.Model
-
-protocol CraftDetailConfigurable {
-    func configure(for item: CraftDetailItem)
-}
-
-class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CraftDetailConfigurable, UniqueCraftConfigurable {
+class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, Reusable {
     
     let titleLabel = UILabel()
     let layout: UICollectionViewFlowLayout
@@ -72,32 +67,16 @@ class CraftSummaryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
         fatalError("init(coder:) has not been implemented")
     }
     
-    private struct Item {
+    struct Item {
         var number: Int
         var url: URL
     }
     
     private var items = [Item]()
     
-    private func configure(for items:[Item]) {
+    func configure(for items: [Item]) {
         self.items = items
         collectionView.reloadData()
-    }
-    
-    func configure(for item: CraftDetailItem) {
-        guard case .summary(let equipment) = item else {
-            fatalError()
-        }
-        let items = equipment.recursiveConsumes.map { Item(number: $0.consumeNum, url: $0.itemURL) }
-        configure(for: items)
-    }
-    
-    func configure(for item: UniqueCraftItem) {
-        guard case .summary(let equipment) = item else {
-            fatalError()
-        }
-        let items = equipment.recursiveConsumes.map { Item(number: $0.consumeNum, url: $0.itemURL) }
-        configure(for: items)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

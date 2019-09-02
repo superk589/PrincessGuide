@@ -8,8 +8,9 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
-class CDMinionTableViewCell: UITableViewCell, CardDetailConfigurable {
+class CDMinionTableViewCell: UITableViewCell, Reusable {
 
     let titleLabel = UILabel()
     
@@ -34,14 +35,6 @@ class CDMinionTableViewCell: UITableViewCell, CardDetailConfigurable {
         accessoryType = .disclosureIndicator
     }
     
-    func configure(for item: CardDetailItem) {
-        guard case .minion(let minion) = item else {
-            return
-        }
-        let format = NSLocalizedString("Minion: %d", comment: "")
-        configure(title: String(format: format, minion.base.unitId))
-    }
-    
     func configure(title: String) {
         titleLabel.text = title
     }
@@ -50,14 +43,4 @@ class CDMinionTableViewCell: UITableViewCell, CardDetailConfigurable {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-extension CDMinionTableViewCell: EnemyDetailConfigurable {
-    func configure(for item: EDTableViewController.Row.Model) {
-        guard case .minion(let minion) = item else {
-            return
-        }
-        let format = NSLocalizedString("Minion: %d", comment: "")
-        configure(title: String(format: format, minion.base.enemyId))
-    }
 }

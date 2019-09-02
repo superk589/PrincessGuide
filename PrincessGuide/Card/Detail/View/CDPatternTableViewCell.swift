@@ -9,8 +9,9 @@
 import UIKit
 import Gestalt
 import SnapKit
+import Reusable
 
-class CDPatternTableViewCell: UITableViewCell, CardDetailConfigurable, UICollectionViewDelegate, UICollectionViewDataSource {
+class CDPatternTableViewCell: UITableViewCell, Reusable, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let titleLabel = UILabel()
     var layout: UICollectionViewFlowLayout
@@ -70,75 +71,8 @@ class CDPatternTableViewCell: UITableViewCell, CardDetailConfigurable, UICollect
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for item: CardDetailItem) {
-        guard case .pattern(let pattern, let card, let index) = item else { return }
-        if let index = index {
-            titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
-        } else {
-            titleLabel.text = NSLocalizedString("Attack Pattern", comment: "")
-        }
-        let items: [Item] = pattern.items.enumerated().map {
-            let offset = $0.offset
-            let item = $0.element
-            let iconType: Item.IconType
-            let loopType: Item.LoopType
-            let text: String
-            switch item {
-            case 1:
-                if card.base.atkType == 2 {
-                    iconType = .magicalSwing
-                } else {
-                    iconType = .physicalSwing
-                }
-                text = NSLocalizedString("Swing", comment: "")
-            case 1000..<2000:
-                let index = item - 1001
-                let skillID = card.base.mainSkillIDs[index]
-                if let iconID = card.mainSkills.first (where: {
-                    $0.base.skillId == skillID
-                })?.base.iconType {
-                    iconType = .skill(iconID)
-                } else {
-                    iconType = .unknown
-                }
-                let format = NSLocalizedString("Main %d", comment: "")
-                text = String(format: format, index + 1)
-            case 2000..<3000:
-                let index = item - 2001
-                let skillID = card.base.spSkillIDs[index]
-                if let iconID = card.spSkills.first (where: {
-                    $0.base.skillId == skillID
-                })?.base.iconType {
-                    iconType = .skill(iconID)
-                } else {
-                    iconType = .unknown
-                }
-                let format = NSLocalizedString("SP %d", comment: "")
-                text = String(format: format, index + 1)
-            default:
-                iconType = .unknown
-                text = NSLocalizedString("Unknown", comment: "")
-            }
-            
-            switch offset {
-            case pattern.loopStart - 1:
-                if pattern.loopStart == pattern.loopEnd {
-                    loopType = .inPlace
-                } else {
-                    loopType = .start
-                }
-            case pattern.loopEnd - 1:
-                loopType = .end
-            default:
-                loopType = .none
-            }
-            
-            return Item(
-                iconType: iconType,
-                loopType: loopType,
-                text: text
-            )
-        }
+    func configure(title: String, items: [Item]) {
+        titleLabel.text = title
         self.items = items
         collectionView.reloadData()
         layoutIfNeeded()
@@ -177,82 +111,5 @@ class CDPatternTableViewCell: UITableViewCell, CardDetailConfigurable, UICollect
         let item = items[indexPath.item]
         cell.configure(for: item)
         return cell
-    }
-}
-
-extension CDPatternTableViewCell: MinionDetailConfigurable {
-    func configure(for item: MinionDetailItem) {
-        guard case .pattern(let pattern, let minion, let index) = item else { return }
-        if let index = index {
-            titleLabel.text = "\(NSLocalizedString("Attack Pattern", comment: "")) \(index)"
-        } else {
-            titleLabel.text = NSLocalizedString("Attack Pattern", comment: "")
-        }
-        let items: [Item] = pattern.items.enumerated().map {
-            let offset = $0.offset
-            let item = $0.element
-            let iconType: Item.IconType
-            let loopType: Item.LoopType
-            let text: String
-            switch item {
-            case 1:
-                if minion.base.atkType == 2 {
-                    iconType = .magicalSwing
-                } else {
-                    iconType = .physicalSwing
-                }
-                text = NSLocalizedString("Swing", comment: "")
-            case 1000..<2000:
-                let index = item - 1001
-                let skillID = minion.base.mainSkillIDs[index]
-                if let iconID = minion.mainSkills.first (where: {
-                    $0.base.skillId == skillID
-                })?.base.iconType {
-                    iconType = .skill(iconID)
-                } else {
-                    iconType = .unknown
-                }
-                let format = NSLocalizedString("Main %d", comment: "")
-                text = String(format: format, index + 1)
-            case 2000..<3000:
-                let index = item - 2001
-                let skillID = minion.base.spSkillIDs[index]
-                if let iconID = minion.spSkills.first (where: {
-                    $0.base.skillId == skillID
-                })?.base.iconType {
-                    iconType = .skill(iconID)
-                } else {
-                    iconType = .unknown
-                }
-                let format = NSLocalizedString("SP %d", comment: "")
-                text = String(format: format, index + 1)
-            default:
-                iconType = .unknown
-                text = NSLocalizedString("Unknown", comment: "")
-            }
-            
-            switch offset {
-            case pattern.loopStart - 1:
-                if pattern.loopStart == pattern.loopEnd {
-                    loopType = .inPlace
-                } else {
-                    loopType = .start
-                }
-            case pattern.loopEnd - 1:
-                loopType = .end
-            default:
-                loopType = .none
-            }
-            
-            return Item(
-                iconType: iconType,
-                loopType: loopType,
-                text: text
-            )
-        }
-
-        self.items = items
-        collectionView.reloadData()
-        layoutIfNeeded()
     }
 }

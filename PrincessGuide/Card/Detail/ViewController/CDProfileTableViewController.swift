@@ -13,33 +13,37 @@ class CDProfileTableViewController: CDTableViewController {
     override func prepareRows(for card: Card) {
         rows.removeAll()
         rows += [
-            Row(type: CDBasicTableViewCell.self, data: .card(card)),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("True Name", comment: ""), card.actualUnit?.unitName ?? NSLocalizedString("None", comment: ""), false)),
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Catch Copy", comment: ""), card.profile.catchCopy, false)),
-            Row(type: CDProfileTableViewCell.self, data: .profileItems([
+            Row.card(card),
+            Row.textArray([
+                TextItem(title: NSLocalizedString("True Name", comment: ""), content: card.actualUnit?.unitName ?? NSLocalizedString("None", comment: ""), colorMode: .normal)
+            ]),
+            Row.textArray([
+                TextItem(title: NSLocalizedString("Catch Copy", comment: ""), content: card.profile.catchCopy, colorMode: .normal)
+            ]),
+            Row.profileItems([
                 card.profile.item(for: .height),
                 card.profile.item(for: .weight)
-            ])),
-            Row(type: CDProfileTableViewCell.self, data: .profileItems([
+            ]),
+            Row.profileItems([
                 card.profile.item(for: .birthday),
                 card.profile.item(for: .blood)
-            ])),
-            Row(type: CDProfileTableViewCell.self, data: .profileItems([
+            ]),
+            Row.profileItems([
                 card.profile.item(for: .race),
                 card.profile.item(for: .age)
-            ])),
-            Row(type: CDProfileTableViewCell.self, data: .profileItems([
+            ]),
+            Row.profileItems([
                 card.profile.item(for: .guild)
-            ])),
-            Row(type: CDProfileTableViewCell.self, data: .profileItems([
+            ]),
+            Row.profileItems([
                 card.profile.item(for: .favorite)
-            ])),
-            Row(type: CDProfileTableViewCell.self, data: .profileItems([
+            ]),
+            Row.profileItems([
                 card.profile.item(for: .voice)
-            ]))
+            ])
         ]
         
-        rows += card.comments.map { Row(type: CDCommentTableViewCell.self, data: .comment($0)) }
+        rows += card.comments.map { Row.comment($0) }
     }
     
 }

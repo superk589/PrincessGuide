@@ -37,6 +37,14 @@ class Enemy: Codable {
         let unitId: Int
         let unitName: String
         let visualChangeFlag: Int
+        
+        var iconURL: URL {
+            if visualChangeFlag == 1 {
+                return URL.resource.appendingPathComponent("icon/unit_shadow/\(prefabId + 10).webp")
+            } else {
+                return URL.resource.appendingPathComponent("icon/unit/\(prefabId).webp")
+            }
+        }
     }
     
     struct Base: Codable {
@@ -238,4 +246,5 @@ extension Enemy {
     var hasUniqueEquipment: Bool {
         return base.uniqueEquipmentFlag1 == 1
     }
+    
 }

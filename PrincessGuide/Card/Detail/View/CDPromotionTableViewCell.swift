@@ -9,12 +9,13 @@
 import UIKit
 import Gestalt
 import SnapKit
+import Reusable
 
 protocol CDPromotionTableViewCellDelegate: class {
-    func cdPromotionTableViewCell(_ cdPromotionTableViewCell: CDPromotionTableViewCell, didSelectEquipmentID equipmentID: Int)
+    func cdPromotionTableViewCell(_ cdPromotionTableViewCell: CDPromotionTableViewCell, didSelect index: Int)
 }
 
-class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
+class CDPromotionTableViewCell: UITableViewCell, Reusable {
     
     let titleLabel = UILabel()
     
@@ -60,24 +61,7 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for item: CardDetailItem) {
-        switch item {
-        case .promotion(let promotion):
-            configure(
-                title: NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)",
-                ids: promotion.equipSlots
-            )
-        case .uniqueEquipments(let uniqueEquipIDs):
-            configure(
-                title: NSLocalizedString("Unique Equipments", comment: ""),
-                ids: uniqueEquipIDs
-            )
-        default:
-            break
-        }
-    }
-    
-    func configure(title: String, ids: [Int]) {
+    func configure(title: String, imageURLs: [URL]) {
         titleLabel.text = title
         
         icons.forEach {
@@ -85,18 +69,18 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
         }
         icons.removeAll()
         
-        ids.forEach {
+        imageURLs.forEach {
             let icon = IconImageView()
             icon.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
-            icon.equipmentID = $0
+            icon.configure(iconURL: $0, placeholderStyle: .questionMark)
             icon.addGestureRecognizer(tapGesture)
             stackView.addArrangedSubview(icon)
             icons.append(icon)
         }
         
-        if ids.count < 6 {
-            (ids.count..<6).forEach { _ in
+        if imageURLs.count < 6 {
+            (imageURLs.count..<6).forEach { _ in
                 let icon = IconImageView()
                 stackView.addArrangedSubview(icon)
                 icons.append(icon)
@@ -105,8 +89,8 @@ class CDPromotionTableViewCell: UITableViewCell, CardDetailConfigurable {
     }
     
     @objc private func handleTapGestureRecognizer(_ tap: UITapGestureRecognizer) {
-        if let imageView = tap.view as? IconImageView, let id = imageView.equipmentID {
-            delegate?.cdPromotionTableViewCell(self, didSelectEquipmentID: id)
+        if let imageView = tap.view as? IconImageView, let index = icons.firstIndex(of: imageView) {
+            delegate?.cdPromotionTableViewCell(self, didSelect: index)
         }
     }
 }

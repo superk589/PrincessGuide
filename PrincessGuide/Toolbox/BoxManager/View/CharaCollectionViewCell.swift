@@ -37,7 +37,7 @@ class CharaCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(for chara: Chara) {
-        icon.cardID = chara.iconID
+        icon.configure(iconURL: chara.iconURL, placeholderStyle: .blank)
         rarityView.setup(stars: Int(chara.rarity))
     }
 }

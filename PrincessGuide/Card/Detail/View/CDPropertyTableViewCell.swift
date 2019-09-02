@@ -9,32 +9,3 @@
 import UIKit
 
 typealias CDPropertyTableViewCell = CDProfileTableViewCell
-
-extension CDPropertyTableViewCell {
-    
-    func configure(for items: [Property.Item], unitLevel: Int, targetLevel: Int, comparisonMode: Bool) {
-        itemViews.forEach {
-            $0.removeFromSuperview()
-        }
-        itemViews.removeAll()
-        for item in items {
-            let itemView = ProfileItemView()
-            itemView.configure(for: item, unitLevel: unitLevel, targetLevel: targetLevel, comparisonMode: comparisonMode)
-            itemViews.append(itemView)
-            stackView.addArrangedSubview(itemView)
-        }
-    }
-    
-    func configure(for items: [Property.Item]) {
-        itemViews.forEach {
-            $0.removeFromSuperview()
-        }
-        itemViews.removeAll()
-        for item in items {
-            let itemView = ProfileItemView()
-            itemView.configure(for: item)
-            itemViews.append(itemView)
-            stackView.addArrangedSubview(itemView)
-        }
-    }
-}

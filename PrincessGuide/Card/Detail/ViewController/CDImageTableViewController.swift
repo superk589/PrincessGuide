@@ -60,18 +60,17 @@ class CDImageTableViewController: CDTableViewController {
         rows.removeAll()
 
         rows += [
-            Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Still", comment: ""), card.stillImageURLs(), card.stillImageURLs(postfix: "@h\(height)"))),
-            Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Full", comment: ""), [card.fullImageURL()], [card.fullImageURL(postfix: "@h\(height)")])),
-            Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Profile", comment: ""), card.profileImageURLs(), card.profileImageURLs(postfix: "@h\(height)"))),
-            // Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Plate", comment: ""), card.plateImageURLs(), card.plateImageURLs(postfix: "@h\(height)")))
+            Row.album(title: NSLocalizedString("Still", comment: ""), urls: card.stillImageURLs(), thumbnailURLs: card.stillImageURLs(postfix: "@h\(height)")),
+            Row.album(title: NSLocalizedString("Full", comment: ""), urls: [card.fullImageURL()], thumbnailURLs: [card.fullImageURL(postfix: "@h\(height)")]),
+            Row.album(title: NSLocalizedString("Profile", comment: ""), urls: card.profileImageURLs(), thumbnailURLs: card.profileImageURLs(postfix: "@h\(height)"))
         ]
         
         if card.comics.count > 0 {
-            rows.append(Row(type: CDImageTableViewCell.self, data: .album(NSLocalizedString("Comic", comment: ""), card.comicImageURLs(), card.comicImageURLs(postfix: "@h\(height)"))))
+            rows.append(Row.album(title: NSLocalizedString("Comic", comment: ""), urls: card.comicImageURLs(), thumbnailURLs: card.comicImageURLs(postfix: "@h\(height)")))
         }
         
         urls = rows.flatMap { (row) -> [URL] in
-            if case .album(_, let fullURLs, _) = row.data {
+            if case .album(_, let fullURLs, _) = row {
                 return fullURLs
             } else {
                 return []
@@ -80,8 +79,9 @@ class CDImageTableViewController: CDTableViewController {
         items = urls.map { createGalleryItem($0) }
         
         staticCells = rows.map {
-            let cell = $0.type.init() as! CDImageTableViewCell
-            cell.configure(for: $0.data)
+            let cell = CDImageTableViewCell()
+            guard case .album(let title, _, let thumbnailURLS) = $0 else { fatalError() }
+            cell.configure(for: thumbnailURLS, title: title)
             cell.delegate = self
             return cell
         }
@@ -119,7 +119,7 @@ extension CDImageTableViewController: GalleryDisplacedViewsDataSource {
         var row: Int?
         var item: Int?
         for i in 0..<rows.count {
-            if case .album(_, let urls, _) = rows[i].data {
+            if case .album(_, let urls, _) = rows[i] {
                 if let index = urls.firstIndex(where: { $0 == url }) {
                     item = index
                     row = i

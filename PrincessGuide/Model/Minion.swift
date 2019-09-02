@@ -73,9 +73,11 @@ extension Minion {
                   hasUniqueEquipment: Bool = CardSortingViewController.Setting.default.equipsUniqueEquipment,
                   uniqueEquipmentLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Property {
         var property = Property()
-        if let rarity = rarities.first(where: { $0.rarity == unitRarity }) {
+        
+        if let rarity = rarities.sorted(by: { $0.rarity > $1.rarity }).first(where: { $0.rarity <= unitRarity }) {
             property += rarity.property + rarity.propertyGrowth * Double(unitLevel + unitRank)
         }
+        
         return property.rounded()
     }
     

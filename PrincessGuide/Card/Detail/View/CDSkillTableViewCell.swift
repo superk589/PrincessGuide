@@ -8,8 +8,9 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
-class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
+class CDSkillTableViewCell: UITableViewCell, Reusable {
     
     let skillIcon = IconImageView()
     
@@ -142,32 +143,10 @@ class CDSkillTableViewCell: UITableViewCell, CardDetailConfigurable {
         
     }
     
-    func configure(for item: CardDetailItem) {
-        guard case .skill(let skill, let category, let property, let index) = item else { return }
-        configure(for: skill, category: category, property: property, index: index)
-    }
-    
-//    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-//        setNeedsLayout()
-//        setNeedsUpdateConstraints()
-//        updateConstraints()
-//        layoutIfNeeded()
-//        return super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
-//    }
-//
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-extension CDSkillTableViewCell: MinionDetailConfigurable {
-    func configure(for item: MinionDetailItem) {
-        guard case .skill(let skill, let category, let property, let index) = item else {
-            return
-        }
-        configure(for: skill, category: category, property: property, index: index)
-    }
 }
 
 extension NSTextAttachment {

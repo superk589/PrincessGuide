@@ -110,3 +110,10 @@ class Skill: Codable {
     }
     
 }
+
+extension Skill {
+    
+    var iconURL: URL {
+        return URL.resource.appendingPathComponent("icon/skill/\(base.iconType).webp")
+    }
+}

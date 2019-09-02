@@ -25,11 +25,11 @@ class MinionSkillViewController: MinionTableViewController {
         
         if let patterns = minion.patterns, patterns.count > 1 {
             patterns.enumerated().forEach {
-                rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0.element, minion, $0.offset + 1)))
+                rows.append(Row.pattern($0.element, minion, $0.offset + 1))
             }
         } else {
             minion.patterns?.enumerated().forEach {
-                rows.append(Row(type: CDPatternTableViewCell.self, data: .pattern($0.element, minion, nil)))
+                rows.append(Row.pattern($0.element, minion, nil))
             }
         }
         
@@ -44,14 +44,14 @@ class MinionSkillViewController: MinionTableViewController {
         }
         
         if let unionBurst = minion.unionBurst {
-            rows.append(Row(type: CDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, property, nil)))
+            rows.append(Row.skill(unionBurst, .unionBurst, property, nil))
         }
         
         rows.append(contentsOf:
             minion.mainSkills
                 .enumerated()
                 .map {
-                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .main, property, $0.offset + 1))
+                    Row.skill($0.element, .main, property, $0.offset + 1)
             }
         )
         
@@ -59,7 +59,7 @@ class MinionSkillViewController: MinionTableViewController {
             minion.exSkills
                 .enumerated()
                 .map {
-                    Row(type: CDSkillTableViewCell.self, data: .skill($0.element, .ex, property, $0.offset + 1))
+                    Row.skill($0.element, .ex, property, $0.offset + 1)
             }
         )
     }
@@ -68,4 +68,72 @@ class MinionSkillViewController: MinionTableViewController {
         return 280
     }
     
+}
+
+extension AttackPattern {
+    
+    func toCollectionViewItems(minion: Minion) -> [CDPatternTableViewCell.Item] {
+        return items.enumerated().map {
+            let offset = $0.offset
+            let item = $0.element
+            let iconType: CDPatternTableViewCell.Item.IconType
+            let loopType: CDPatternTableViewCell.Item.LoopType
+            let text: String
+            switch item {
+            case 1:
+                if minion.base.atkType == 2 {
+                    iconType = .magicalSwing
+                } else {
+                    iconType = .physicalSwing
+                }
+                text = NSLocalizedString("Swing", comment: "")
+            case 1000..<2000:
+                let index = item - 1001
+                let skillID = minion.base.mainSkillIDs[index]
+                if let iconID = minion.mainSkills.first (where: {
+                    $0.base.skillId == skillID
+                })?.base.iconType {
+                    iconType = .skill(iconID)
+                } else {
+                    iconType = .unknown
+                }
+                let format = NSLocalizedString("Main %d", comment: "")
+                text = String(format: format, index + 1)
+            case 2000..<3000:
+                let index = item - 2001
+                let skillID = minion.base.spSkillIDs[index]
+                if let iconID = minion.spSkills.first (where: {
+                    $0.base.skillId == skillID
+                })?.base.iconType {
+                    iconType = .skill(iconID)
+                } else {
+                    iconType = .unknown
+                }
+                let format = NSLocalizedString("SP %d", comment: "")
+                text = String(format: format, index + 1)
+            default:
+                iconType = .unknown
+                text = NSLocalizedString("Unknown", comment: "")
+            }
+            
+            switch offset {
+            case loopStart - 1:
+                if loopStart == loopEnd {
+                    loopType = .inPlace
+                } else {
+                    loopType = .start
+                }
+            case loopEnd - 1:
+                loopType = .end
+            default:
+                loopType = .none
+            }
+            
+            return CDPatternTableViewCell.Item(
+                iconType: iconType,
+                loopType: loopType,
+                text: text
+            )
+        }
+    }
 }

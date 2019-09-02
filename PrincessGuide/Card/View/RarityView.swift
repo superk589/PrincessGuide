@@ -83,7 +83,6 @@ class ShadowRarityView: RarityView {
             stackView.removeArrangedSubview($0)
             $0.removeFromSuperview()
         }
-        (stackView.arrangedSubviews.first as? UIImageView)?.image = stars == 6 ? #imageLiteral(resourceName: "shadow_star").withRenderingMode(.alwaysTemplate) : image
-        (stackView.arrangedSubviews.first as? UIImageView)?.tintColor = stars == 6 ? .rarity6Star : .rarityStar
+        (stackView.arrangedSubviews.first as? UIImageView)?.image = stars != 6 ? #imageLiteral(resourceName: "shadow_star").withRenderingMode(.alwaysOriginal) : #imageLiteral(resourceName: "rarity6_shadow_star").withRenderingMode(.alwaysOriginal)
     }
 }

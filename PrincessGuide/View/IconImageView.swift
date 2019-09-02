@@ -10,6 +10,24 @@ import UIKit
 import Kingfisher
 
 class IconImageView: UIImageView {
+    
+    enum PlaceholderStyle {
+        case questionMark
+        case blank
+        
+        var image: UIImage? {
+            switch self {
+            case .questionMark:
+                return UIImage(named: "icon_placeholder")
+            case .blank:
+                return UIImage(named: "icon_placeholder_2")
+            }
+        }
+    }
+    
+    func configure(iconURL: URL?, placeholderStyle: PlaceholderStyle) {
+        kf.setImage(with: iconURL, placeholder: placeholderStyle.image)
+    }
 
     var skillIconID: Int? {
         didSet {

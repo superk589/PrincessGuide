@@ -9,23 +9,3 @@
 import UIKit
 
 typealias EDBasicTableViewCell = CDBasicTableViewCell
-
-extension EDBasicTableViewCell: EnemyDetailConfigurable {
-    
-    func configure(for enemyUnit: Enemy.Unit) {
-        nameLabel.text = enemyUnit.unitName
-        commentLabel.text = enemyUnit.comment.replacingOccurrences(of: "\\n", with: "\n")
-        if enemyUnit.visualChangeFlag == 1 {
-            cardIcon.shadowUnitID = enemyUnit.prefabId
-        } else {
-            cardIcon.unitID = enemyUnit.prefabId
-        }
-    }
-    
-    func configure(for item: EnemyDetailItem) {
-        guard case .unit(let unit) = item else {
-            fatalError()
-        }
-        configure(for: unit)
-    }
-}

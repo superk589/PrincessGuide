@@ -15,6 +15,17 @@ struct Drop: Codable {
         let rewardID: Int
         let rewardNum: Int
         let rewardType: Int
+        
+        var iconURL: URL? {
+            switch rewardType {
+            case 2:
+                return URL.resource.appendingPathComponent("icon/item/\(rewardID).webp")
+            case 4:
+                return URL.resource.appendingPathComponent("icon/equipment/\(rewardID).webp")
+            default:
+                return nil
+            }
+        }
     }
     
     let dropCount: Int

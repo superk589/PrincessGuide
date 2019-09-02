@@ -8,12 +8,13 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
 protocol CraftCharaTableViewCellDelegate: class {
     func craftCharaTableViewCell(_ craftCharaTableViewCell: CraftCharaTableViewCell, didSelect index: Int)
 }
 
-class CraftCharaTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CraftDetailConfigurable {
+class CraftCharaTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, Reusable {
     
     let titleLabel = UILabel()
     let layout: UICollectionViewFlowLayout
@@ -66,24 +67,16 @@ class CraftCharaTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         fatalError("init(coder:) has not been implemented")
     }
     
-    private struct Item {
+    struct Item {
         var number: Int
         var url: URL
     }
     
     private var items = [Item]()
     
-    private func configure(for items:[Item]) {
+    func configure(for items: [Item]) {
         self.items = items
         collectionView.reloadData()
-    }
-    
-    func configure(for item: CraftDetailItem) {
-        guard case .charas(let requires) = item else {
-            fatalError()
-        }
-        let items = requires.map { Item(number: $0.number, url: $0.card.iconURL()) }
-        configure(for: items)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

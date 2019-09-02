@@ -47,7 +47,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(for card: Card, isEnable: Bool) {
-        icon.cardID = card.iconID()
+        icon.configure(iconURL: card.iconURL(), placeholderStyle: .blank)
         self.isEnable = isEnable
     }
     

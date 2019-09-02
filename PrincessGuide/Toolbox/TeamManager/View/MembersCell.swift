@@ -61,7 +61,7 @@ class MembersCell: Cell<[Member]>, CellType {
         sortedMembers.forEach {
             let icon = IconImageView()
             icon.isUserInteractionEnabled = true
-            icon.cardID = $0.iconID
+            icon.configure(iconURL: $0.iconURL, placeholderStyle: .blank)
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
             icon.addGestureRecognizer(tapGesture)
             stackView.addArrangedSubview(icon)

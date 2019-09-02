@@ -9,23 +9,15 @@
 import UIKit
 import Gestalt
 
-typealias EnemyDetailItem = EDTableViewController.Row.Model
-
 class EDTableViewController: UITableViewController {
     
-    struct Row {
-        enum Model {
-            case skill(Skill, SkillCategory, Int, Property, Int?)
-            case unit(Enemy.Unit)
-            case profile(Enemy.Unit)
-            case pattern(AttackPattern, Enemy, Int?)
-            case minion(Enemy)
-            case propertyItems([Property.Item], Int, Int)
-            case text(String, String)
-            case textArray([(String, String)])
-        }
-        var type: UITableViewCell.Type
-        var data: Model
+    enum Row {
+        case skill(skill: Skill, category: SkillCategory, level: Int, property: Property, index: Int?)
+        case unit(Enemy.Unit)
+        case pattern(AttackPattern, Enemy, Int?)
+        case minion(Enemy)
+        case propertyItems([Property.Item], Int, Int)
+        case textArray([TextItem])
     }
     
     let enemy: Enemy
@@ -42,7 +34,6 @@ class EDTableViewController: UITableViewController {
     func reloadAll() {
         navigationItem.title = enemy.base.name
         prepareRows()
-        registerRows()
         tableView.reloadData()
     }
     
@@ -50,12 +41,6 @@ class EDTableViewController: UITableViewController {
     
     func prepareRows() {
         
-    }
-    
-    func registerRows() {
-        for row in rows {
-            tableView.register(row.type.self, forCellReuseIdentifier: row.type.description())
-        }
     }
     
     let backgroundImageView = UIImageView()
@@ -73,6 +58,11 @@ class EDTableViewController: UITableViewController {
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
+        tableView.register(cellType: EDPropertyTableViewCell.self)
+        tableView.register(cellType: EDPatternTableViewCell.self)
+        tableView.register(cellType: EDSkillTableViewCell.self)
+        tableView.register(cellType: EDBasicTableViewCell.self)
+        tableView.register(cellType: CDMinionTableViewCell.self)
         reloadAll()
     }
     
@@ -93,16 +83,61 @@ class EDTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = rows[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! EnemyDetailConfigurable
-        cell.configure(for: model.data)
-        
-        return cell as! UITableViewCell
+        let row = rows[indexPath.row]
+        switch row {
+        case .minion(let minion):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDMinionTableViewCell.self)
+            let format = NSLocalizedString("Minion: %d", comment: "")
+            cell.configure(title: String(format: format, minion.base.unitId))
+            return cell
+        case .pattern(let pattern, let enemy, let index):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EDPatternTableViewCell.self)
+            cell.configure(
+                title: index.flatMap { "\(NSLocalizedString("Attack Pattern", comment: "")) \($0)" } ?? NSLocalizedString("Attack Pattern", comment: ""),
+                items: pattern.toCollectionViewItems(enemy: enemy)
+            )
+            return cell
+        case .propertyItems(let items, let unitLevel, let targetLevel):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: items.map {
+                let content: String
+                if let percent = $0.percent(selfLevel: unitLevel, targetLevel: targetLevel), percent != 0 {
+                    if $0.hasLevelAssumption {
+                        content = String(format: "%d(%.2f%%, %d to %d)", Int($0.value), percent, unitLevel, targetLevel)
+                    } else {
+                        content = String(format: "%d(%.2f%%)", Int($0.value), percent)
+                    }
+                } else {
+                    content = String(Int($0.value))
+                }
+                return TextItem(
+                    title: $0.key.description,
+                    content: content,
+                    colorMode: .normal
+                )
+            })
+            return cell
+        case .skill(let skill, let category, let level, let property, let index):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EDSkillTableViewCell.self)
+            cell.configure(for: skill, category: category, level: level, property: property, index: index)
+            return cell
+        case .textArray(let items):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: items)
+            return cell
+        case .unit(let unit):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EDBasicTableViewCell.self)
+            cell.configure(
+                comment: unit.comment.replacingOccurrences(of: "\\n", with: "\n"),
+                iconURL: unit.iconURL
+            )
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = rows[indexPath.row].data
-        switch data {
+        let row = rows[indexPath.row]
+        switch row {
         case .minion(let minion):
             let vc = EDTabViewController(enemy: minion, isMinion: true)
             navigationController?.pushViewController(vc, animated: true)

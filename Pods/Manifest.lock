@@ -44,6 +44,11 @@ PODS:
   - MJRefresh (3.2.0)
   - Pageboy (3.2.3)
   - ReachabilitySwift (4.3.1)
+  - Reusable (4.1.0):
+    - Reusable/Storyboard (= 4.1.0)
+    - Reusable/View (= 4.1.0)
+  - Reusable/Storyboard (4.1.0)
+  - Reusable/View (4.1.0)
   - SnapKit (5.0.0)
   - SwiftyJSON (5.0.0)
   - Tabman (2.4.3):
@@ -68,6 +73,7 @@ DEPENDENCIES:
   - lz4
   - MJRefresh
   - ReachabilitySwift
+  - Reusable
   - SnapKit
   - SwiftyJSON
   - Tabman
@@ -91,6 +97,7 @@ SPEC REPOS:
     - MJRefresh
     - Pageboy
     - ReachabilitySwift
+    - Reusable
     - SnapKit
     - SwiftyJSON
     - Tabman
@@ -137,12 +144,13 @@ SPEC CHECKSUMS:
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   Pageboy: 347c49b3a7f15aa78ddb6bf5c6c3b113e382fe52
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Tabman: c2c83ebfcbec3e5be67e27a1dd6689a4e3efccd3
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: 724ba6b27ae187bd96c14b763346c9d1670ad8f5
+PODFILE CHECKSUM: 7d82dc25daea6cb89fded95ada58d111cd04fd90
 
 COCOAPODS: 1.7.5

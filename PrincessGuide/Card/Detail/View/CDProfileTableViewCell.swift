@@ -8,8 +8,9 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
-class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
+class CDProfileTableViewCell: UITableViewCell, Reusable {
 
     let stackView = UIStackView()
     
@@ -44,7 +45,7 @@ class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for items: [Card.Profile.Item]) {
+    func configure(items: [TextItem]) {
         itemViews.forEach {
             $0.removeFromSuperview()
         }
@@ -52,29 +53,10 @@ class CDProfileTableViewCell: UITableViewCell, CardDetailConfigurable {
         
         for item in items {
             let itemView = ProfileItemView()
-            itemView.configure(for: item)
+            itemView.configure(title: item.title, content: item.content, colorMode: item.colorMode)
             itemViews.append(itemView)
             stackView.addArrangedSubview(itemView)
         }
     }
     
-    func configure(for item: CardDetailItem) {
-        if case .profileItems(let items) = item {
-            configure(for: items)
-        } else if case .propertyItems(let items, let unitLevel, let targetLevel, let comparisonMode) = item {
-            configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel, comparisonMode: comparisonMode)
-        } else {
-            fatalError()
-        }
-    }
-    
-}
-
-extension CDProfileTableViewCell: MinionDetailConfigurable {
-    func configure(for item: MinionDetailItem) {
-        guard case .propertyItems(let items, let unitLevel, let targetLevel) = item else {
-            return
-        }
-        configure(for: items, unitLevel: unitLevel, targetLevel: targetLevel, comparisonMode: false)
-    }
 }

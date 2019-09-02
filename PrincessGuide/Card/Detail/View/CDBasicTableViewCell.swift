@@ -9,14 +9,9 @@
 import UIKit
 import SnapKit
 import Gestalt
+import Reusable
 
-typealias CardDetailItem = CDTableViewController.Row.Model
-
-protocol CardDetailConfigurable {
-    func configure(for item: CardDetailItem)
-}
-
-class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
+class CDBasicTableViewCell: UITableViewCell, Reusable {
     
     let cardIcon = IconImageView()
     
@@ -44,13 +39,6 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
             make.bottom.lessThanOrEqualTo(-10)
         }
         
-        nameLabel.font = UIFont.scaledFont(forTextStyle: .title1, ofSize: 16)
-//        contentView.addSubview(nameLabel)
-//        nameLabel.snp.makeConstraints { (make) in
-//            make.left.equalTo(cardIcon.snp.right).offset(10)
-//            make.top.equalTo(10)
-//        }
-        
         commentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         commentLabel.numberOfLines = 0
         contentView.addSubview(commentLabel)
@@ -67,17 +55,8 @@ class CDBasicTableViewCell: UITableViewCell, CardDetailConfigurable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for card: Card) {
-        nameLabel.text = card.base.unitName
-        commentLabel.text = card.base.comment.replacingOccurrences(of: "\\n", with: "\n")
-        cardIcon.cardID = card.iconID()
-    }
-    
-    func configure(for item: CardDetailItem) {
-        if case .card(let card) = item {
-            configure(for: card)
-        } else {
-            fatalError()
-        }
+    func configure(comment: String, iconURL: URL) {
+        commentLabel.text = comment
+        cardIcon.configure(iconURL: iconURL, placeholderStyle: .blank)
     }
 }

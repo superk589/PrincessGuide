@@ -9,8 +9,9 @@
 import UIKit
 import Kingfisher
 import Gestalt
+import Reusable
 
-class PatternCollectionViewCell: UICollectionViewCell {
+class PatternCollectionViewCell: UICollectionViewCell, Reusable {
     
     let skillIcon = IconImageView()
     
@@ -52,13 +53,13 @@ class PatternCollectionViewCell: UICollectionViewCell {
     func configure(for item: CDPatternTableViewCell.Item) {
         switch item.iconType {
         case .magicalSwing:
-            skillIcon.equipmentID = 101251
+            skillIcon.configure(iconURL: URL.resource.appendingPathComponent("icon/equipment/101251.webp"), placeholderStyle: .questionMark)
         case .physicalSwing:
-            skillIcon.equipmentID = 101011
+            skillIcon.configure(iconURL: URL.resource.appendingPathComponent("icon/equipment/101011.webp"), placeholderStyle: .questionMark)
         case .skill(let id):
-            skillIcon.skillIconID = id
+            skillIcon.configure(iconURL: URL.resource.appendingPathComponent("icon/skill/\(id).webp"), placeholderStyle: .questionMark)
         default:
-            skillIcon.image = #imageLiteral(resourceName: "icon_placeholder")
+            skillIcon.configure(iconURL: nil, placeholderStyle: .questionMark)
         }
         skillLabel.text = item.text
         switch item.loopType {

@@ -9,29 +9,23 @@
 import UIKit
 import Gestalt
 import AVFoundation
+import Reusable
 
 class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate {
     
-    struct Row {
-        enum Model {
-            case card(Card)
-            case skill(Skill, SkillCategory, Property, Int?)
-            case minion(Minion)
-            case base(Card.Base)
-            case profile(Card.Profile)
-            case pattern(AttackPattern, Card, Int?)
-            case promotion(Card.Promotion)
-            case profileItems([Card.Profile.Item])
-            case propertyItems([Property.Item], Int, Int, Bool)
-            case comment(Card.Comment)
-            case text(String, String, Bool)
-            case textArray([(String, String, Bool)])
-            case album(String, [URL], [URL])
-            case commentText(String)
-            case uniqueEquipments([Int])
-        }
-        var type: UITableViewCell.Type
-        var data: Model
+    enum Row {
+        case card(Card)
+        case skill(skill: Skill, category: SkillCategory, property: Property, index: Int?)
+        case minion(Minion)
+        case pattern(pattern: AttackPattern, card: Card, index: Int?)
+        case promotion(Card.Promotion)
+        case profileItems([Card.Profile.Item])
+        case propertyItems(items: [Property.Item], unitLevel: Int, targetLevel: Int, enablesComparisonMode: Bool)
+        case comment(Card.Comment)
+        case textArray([TextItem])
+        case album(title: String, urls: [URL], thumbnailURLs: [URL])
+        case commentText(String)
+        case uniqueEquipments([Int])
     }
     
     var card: Card? {
@@ -44,7 +38,6 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         navigationItem.title = card?.base.unitName
         if let card = card {
             prepareRows(for: card)
-            registerRows()
             tableView.reloadData()
         }
     }
@@ -56,12 +49,6 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
     /// should be overrided by subclasses
     func prepareRows(for card: Card) {
 
-    }
-    
-    func registerRows() {
-        for row in rows {
-            tableView.register(row.type.self, forCellReuseIdentifier: row.type.description())
-        }
     }
     
     let backgroundImageView = UIImageView()
@@ -81,6 +68,14 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
+        tableView.register(cellType: CDBasicTableViewCell.self)
+        tableView.register(cellType: CDPromotionTableViewCell.self)
+        tableView.register(cellType: CDSkillTableViewCell.self)
+        tableView.register(cellType: CDPatternTableViewCell.self)
+        tableView.register(cellType: CDProfileTableViewCell.self)
+        tableView.register(cellType: CDMinionTableViewCell.self)
+        tableView.register(cellType: CDCommentTableViewCell.self)
+        tableView.register(cellType: CDImageTableViewCell.self)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -100,24 +95,96 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = rows[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! CardDetailConfigurable
-        cell.configure(for: model.data)
-        
-        if let cell = cell as? CDPromotionTableViewCell {
+        let row = rows[indexPath.row]
+        switch row {
+        case .album(let title, _, let thumbnailURLS):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDImageTableViewCell.self)
+            cell.configure(for: thumbnailURLS, title: title)
             cell.delegate = self
-        } else if let cell = cell as? CDImageTableViewCell {
+            return cell
+        case .card(let card):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDBasicTableViewCell.self)
+            cell.configure(
+                comment: card.base.comment.replacingOccurrences(of: "\\n", with: "\n"),
+                iconURL: card.iconURL()
+            )
+            return cell
+        case .comment(let comment):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDCommentTableViewCell.self)
+            cell.configure(for: comment.description.replacingOccurrences(of: "\\n", with: "\n"))
             cell.delegate = self
-        } else if let cell = cell as? CDCommentTableViewCell {
+            return cell
+        case .commentText(let text):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDCommentTableViewCell.self)
+            cell.configure(for: text)
             cell.delegate = self
+            return cell
+        case .minion(let minion):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDMinionTableViewCell.self)
+            let format = NSLocalizedString("Minion: %d", comment: "")
+            cell.configure(title: String(format: format, minion.base.unitId))
+            return cell
+        case .pattern(let pattern, let card, let index):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDPatternTableViewCell.self)
+            cell.configure(
+                title: index.flatMap { "\(NSLocalizedString("Attack Pattern", comment: "")) \($0)" } ?? NSLocalizedString("Attack Pattern", comment: ""),
+                items: pattern.toCollectionViewItems(card: card)
+            )
+            return cell
+        case .profileItems(let items):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: items.map {
+                TextItem(title: $0.key.description, content: $0.value, colorMode: .normal)
+            })
+            return cell
+        case .promotion(let promotion):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDPromotionTableViewCell.self)
+            cell.configure(
+                title: NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)",
+                imageURLs: promotion.equipSlots.map { URL.resource.appendingPathComponent("icon/equipment/\($0).webp") }
+            )
+            cell.delegate = self
+            return cell
+        case .propertyItems(let items, let unitLevel, let targetLevel, let enablesComparisonMode):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: items.map {
+                let content: String
+                if let percent = $0.percent(selfLevel: unitLevel, targetLevel: targetLevel), percent != 0, !enablesComparisonMode {
+                    if $0.hasLevelAssumption {
+                        content = String(format: "%d(%.2f%%, %d to %d)", Int($0.value), percent, unitLevel, targetLevel)
+                    } else {
+                        content = String(format: "%d(%.2f%%)", Int($0.value), percent)
+                    }
+                } else {
+                    content = String(Int($0.value))
+                }
+                return TextItem(
+                    title: $0.key.description,
+                    content: content,
+                    deltaValue: enablesComparisonMode ? $0.value : 0
+                )
+            })
+            return cell
+        case .skill(let skill, let category, let property, let index):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDSkillTableViewCell.self)
+            cell.configure(for: skill, category: category, property: property, index: index)
+            return cell
+        case .textArray(let items):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: items)
+            return cell
+        case .uniqueEquipments(let ids):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDPromotionTableViewCell.self)
+            cell.configure(
+                title: NSLocalizedString("Unique Equipments", comment: ""),
+                imageURLs: ids.map { URL.resource.appendingPathComponent("icon/equipment/\($0).webp") })
+            return cell
         }
-        
-        return cell as! UITableViewCell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = rows[indexPath.row].data
-        switch data {
+        let row = rows[indexPath.row]
+        switch row {
         case .minion(let minion):
             let vc = MinionTabViewController(minion: minion)
             navigationController?.pushViewController(vc, animated: true)
@@ -133,32 +200,33 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
 
 extension CDTableViewController: CDPromotionTableViewCellDelegate {
     
-    func cdPromotionTableViewCell(_ cdPromotionTableViewCell: CDPromotionTableViewCell, didSelectEquipmentID equipmentID: Int) {
-        
+    func cdPromotionTableViewCell(_ cdPromotionTableViewCell: CDPromotionTableViewCell, didSelect index: Int) {
         guard let indexPath = tableView.indexPath(for: cdPromotionTableViewCell) else {
             return
         }
         
         let row = rows[indexPath.row]
-        switch row.data {
-        case .uniqueEquipments:
+        switch row {
+        case .uniqueEquipments(let ids):
+            let id = ids[index]
             let equipments = DispatchSemaphore.sync { (closure) in
-                Master.shared.getUniqueEquipments(equipmentIDs: [equipmentID]) { equipments in
+                Master.shared.getUniqueEquipments(equipmentIDs: [id]) { equipments in
                     closure(equipments)
                 }
             }
             guard let equipment = equipments?.first else {
                 return
             }
-
+            
             let vc = UniqueCraftTableViewController()
             vc.navigationItem.title = equipment.equipmentName
             vc.equipment = equipment
             vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
-        case .promotion:
+            navigationController?.pushViewController(vc, animated: true)
+        case .promotion(let promotion):
+            let id = promotion.equipSlots[index]
             let equipments = DispatchSemaphore.sync { (closure) in
-                Master.shared.getEquipments(equipmentID: equipmentID) { equipments in
+                Master.shared.getEquipments(equipmentID: id) { equipments in
                     closure(equipments)
                 }
             }
@@ -174,23 +242,22 @@ extension CDTableViewController: CDPromotionTableViewCellDelegate {
                 vc.navigationItem.title = equipment.equipmentName
                 vc.equipment = equipment
                 vc.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(vc, animated: true)
+                navigationController?.pushViewController(vc, animated: true)
             }
         default:
             break
         }
-        
     }
-    
 }
 
 extension CDTableViewController: CDCommentTableViewCellDelegate {
     func doubleClick(on cdCommentTableViewCell: CDCommentTableViewCell) {
+        
         guard let indexPath = tableView.indexPath(for: cdCommentTableViewCell) else {
             return
         }
         
-        guard case .comment(let comment) = rows[indexPath.row].data else {
+        guard case .comment(let comment) = rows[indexPath.row] else {
             return
         }
         

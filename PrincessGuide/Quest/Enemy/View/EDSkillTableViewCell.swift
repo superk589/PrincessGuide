@@ -8,8 +8,9 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
-class EDSkillTableViewCell: UITableViewCell, EnemyDetailConfigurable {
+class EDSkillTableViewCell: UITableViewCell, Reusable {
     
     let skillIcon = IconImageView()
     
@@ -160,13 +161,6 @@ class EDSkillTableViewCell: UITableViewCell, EnemyDetailConfigurable {
         }
         
         selectionStyle = .none
-    }
-    
-    func configure(for item: EnemyDetailItem) {
-        guard case .skill(let skill, let category, let level, let property, let index) = item else {
-            fatalError()
-        }
-        configure(for: skill, category: category, level: level, property: property, index: index)
     }
     
     required init?(coder aDecoder: NSCoder) {

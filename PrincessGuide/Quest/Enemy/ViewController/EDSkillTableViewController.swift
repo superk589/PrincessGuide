@@ -20,23 +20,22 @@ class EDSkillTableViewController: EDTableViewController {
         
         rows.removeAll()
         
-        
         if let patterns = enemy.patterns, patterns.count > 1 {
             enemy.patterns?.enumerated().forEach {
-                rows.append(Row(type: EDPatternTableViewCell.self, data: .pattern($0.element, enemy, $0.offset + 1)))
+                rows.append(Row.pattern($0.element, enemy, $0.offset + 1))
             }
         } else {
             enemy.patterns?.enumerated().forEach {
-                rows.append(Row(type: EDPatternTableViewCell.self, data: .pattern($0.element, enemy, nil)))
+                rows.append(Row.pattern($0.element, enemy, nil))
             }
         }
                 
         let property = enemy.base.property
         
         if let unionBurstEvolution = enemy.unionBurstEvolution, enemy.base.rarity == 6 {
-            rows.append(Row(type: EDSkillTableViewCell.self, data: .skill(unionBurstEvolution, .unionBurstEvolution, enemy.base.unionBurstLevel, property, nil)))
+            rows.append(Row.skill(skill: unionBurstEvolution, category: .unionBurstEvolution, level: enemy.base.unionBurstLevel, property: property, index: nil))
         } else if let unionBurst = enemy.unionBurst {
-            rows.append(Row(type: EDSkillTableViewCell.self, data: .skill(unionBurst, .unionBurst, enemy.base.unionBurstLevel, property, nil)))
+            rows.append(Row.skill(skill: unionBurst, category: .unionBurst, level: enemy.base.unionBurstLevel, property: property, index: nil))
         }
         
         // setup main skills
@@ -45,7 +44,7 @@ class EDSkillTableViewController: EDTableViewController {
                 zip(enemy.mainSkillEvolutions, enemy.mainSkills)
                     .enumerated()
                     .map {
-                        return Row(type: EDSkillTableViewCell.self, data: .skill($0.element.0, .mainEvolution, enemy.mainSkillLevel(for: $0.element.1.base.skillId), property, $0.offset + 1))
+                        return Row.skill(skill: $0.element.0, category: .mainEvolution, level: enemy.mainSkillLevel(for: $0.element.1.base.skillId), property: property, index: $0.offset + 1)
                     }
             )
             
@@ -53,7 +52,7 @@ class EDSkillTableViewController: EDTableViewController {
                 rows += enemy.mainSkills[enemy.mainSkillEvolutions.count..<enemy.mainSkills.count]
                     .enumerated()
                     .map {
-                        return Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .main, enemy.mainSkillLevel(for: $0.element.base.skillId), property, enemy.mainSkillEvolutions.count + $0.offset + 1))
+                        return Row.skill(skill: $0.element, category: .main, level: enemy.mainSkillLevel(for: $0.element.base.skillId), property: property, index: enemy.mainSkillEvolutions.count + $0.offset + 1)
                 }
             }
         } else {
@@ -61,7 +60,7 @@ class EDSkillTableViewController: EDTableViewController {
                 enemy.mainSkills
                     .enumerated()
                     .map {
-                        Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .main, enemy.mainSkillLevel(for: $0.element.base.skillId), property, $0.offset + 1))
+                        Row.skill(skill: $0.element, category: .main, level: enemy.mainSkillLevel(for: $0.element.base.skillId), property: property, index: $0.offset + 1)
                 }
             )
         }
@@ -70,13 +69,13 @@ class EDSkillTableViewController: EDTableViewController {
             enemy.exSkills
                 .enumerated()
                 .map {
-                    Row(type: EDSkillTableViewCell.self, data: .skill($0.element, .ex, enemy.exSkillLevel(for: $0.element.base.skillId), property, nil))
+                    Row.skill(skill: $0.element, category: .ex, level: enemy.exSkillLevel(for: $0.element.base.skillId), property: property, index: nil)
             }
         )
         
         // insert minions
         let newRows: [Row] = rows.flatMap { row -> [Row] in
-            guard case .skill(let skill, _, _, _, _) = row.data else {
+            guard case .skill(let skill, _, _, _, _) = row else {
                 return [row]
             }
             let actions = skill.actions
@@ -90,7 +89,7 @@ class EDSkillTableViewController: EDTableViewController {
                     }
             }
                     
-            let rows = minions.map { Row(type: CDMinionTableViewCell.self, data: .minion($0)) }
+            let rows = minions.map { Row.minion($0) }
             
             return [row] + rows
         }
@@ -106,4 +105,64 @@ class EDSkillTableViewController: EDTableViewController {
         reloadAll()
     }
 
+}
+
+extension AttackPattern {
+    
+    func toCollectionViewItems(enemy: Enemy) -> [CDPatternTableViewCell.Item] {
+        return items.enumerated().map {
+            let offset = $0.offset
+            let item = $0.element
+            let iconType: CDPatternTableViewCell.Item.IconType
+            let loopType: CDPatternTableViewCell.Item.LoopType
+            let text: String
+            switch item {
+            case 1:
+                if enemy.unit.atkType == 2 {
+                    iconType = .magicalSwing
+                } else {
+                    iconType = .physicalSwing
+                }
+                text = NSLocalizedString("Swing", comment: "")
+            case let x where x > 1000:
+                let index = x - 1001
+                let skillID = enemy.base.mainSkillIDs[index]
+                
+                if let (offset, element) = enemy.mainSkills.enumerated().first (where: {
+                    $0.element.base.skillId == skillID
+                }) {
+                    let iconID = element.base.iconType
+                    iconType = .skill(iconID)
+                    let format = NSLocalizedString("Main %d", comment: "")
+                    text = String(format: format, offset + 1)
+                } else {
+                    iconType = .unknown
+                    text = ""
+                }
+                
+            default:
+                iconType = .unknown
+                text = NSLocalizedString("Unknown", comment: "")
+            }
+            
+            switch offset {
+            case loopStart - 1:
+                if loopStart == loopEnd {
+                    loopType = .inPlace
+                } else {
+                    loopType = .start
+                }
+            case loopEnd - 1:
+                loopType = .end
+            default:
+                loopType = .none
+            }
+            
+            return CDPatternTableViewCell.Item(
+                iconType: iconType,
+                loopType: loopType,
+                text: text
+            )
+        }
+    }
 }

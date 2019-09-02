@@ -8,8 +8,9 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
-class BoxTableViewCell: UITableViewCell, BDInfoConfigurable {
+class BoxTableViewCell: UITableViewCell, Reusable {
     
     let icon = IconImageView()
     
@@ -51,26 +52,8 @@ class BoxTableViewCell: UITableViewCell, BDInfoConfigurable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(for box: Box) {
-        nameLabel.text = box.name
-        
-        if let chara = box.charas?.firstObject as? Chara {
-            icon.cardID = chara.iconID
-        } else {
-            icon.equipmentID = 99999
-        }
-    }
-    
-    func configure(for model: BDInfoViewController.Row.Model) {
-        guard case .basic(let iconID, let name) = model else {
-            fatalError()
-        }
+    func configure(iconURL: URL?, name: String) {
         nameLabel.text = name
-        
-        if let id = iconID {
-            icon.cardID = id
-        } else {
-            icon.equipmentID = 99999
-        }
+        icon.configure(iconURL: iconURL, placeholderStyle: .blank)
     }
 }

@@ -9,25 +9,13 @@
 import UIKit
 import Gestalt
 
-typealias MinionDetailItem = MinionTableViewController.Row.Model
-
-protocol MinionDetailConfigurable {
-    func configure(for item: MinionDetailItem)
-}
-
 class MinionTableViewController: UITableViewController {
     
-    struct Row {
-        enum Model {
-            case skill(Skill, SkillCategory, Property, Int?)
-            case unit(Minion)
-            case pattern(AttackPattern, Minion, Int?)
-            case propertyItems([Property.Item], Int, Int)
-            case text(String, String)
-            case textArray([(String, String)])
-        }
-        var type: UITableViewCell.Type
-        var data: Model
+    enum Row {
+        case skill(Skill, SkillCategory, Property, Int?)
+        case pattern(AttackPattern, Minion, Int?)
+        case propertyItems([Property.Item], Int, Int)
+        case textArray([TextItem])
     }
     
     let minion: Minion
@@ -44,7 +32,6 @@ class MinionTableViewController: UITableViewController {
     func reloadAll() {
         navigationItem.title = minion.base.unitName
         prepareRows()
-        registerRows()
         tableView.reloadData()
     }
     
@@ -52,12 +39,6 @@ class MinionTableViewController: UITableViewController {
     
     func prepareRows() {
         
-    }
-    
-    func registerRows() {
-        for row in rows {
-            tableView.register(row.type.self, forCellReuseIdentifier: row.type.description())
-        }
     }
     
     let backgroundImageView = UIImageView()
@@ -75,6 +56,10 @@ class MinionTableViewController: UITableViewController {
         tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
         tableView.cellLayoutMarginsFollowReadableWidth = true
+        tableView.register(cellType: CDProfileTableViewCell.self)
+        tableView.register(cellType: CDSkillTableViewCell.self)
+        tableView.register(cellType: CDPatternTableViewCell.self)
+        tableView.register(cellType: CDBasicTableViewCell.self)
         reloadAll()
     }
     
@@ -95,10 +80,43 @@ class MinionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = rows[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! MinionDetailConfigurable
-        cell.configure(for: model.data)
-        
-        return cell as! UITableViewCell
+        let row = rows[indexPath.row]
+        switch row {
+        case .pattern(let pattern, let minion, let index):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDPatternTableViewCell.self)
+            cell.configure(
+                title: index.flatMap { "\(NSLocalizedString("Attack Pattern", comment: "")) \($0)" } ?? NSLocalizedString("Attack Pattern", comment: ""),
+                items: pattern.toCollectionViewItems(minion: minion)
+            )
+            return cell
+        case .propertyItems(let items, let unitLevel, let targetLevel):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: items.map {
+                let content: String
+                if let percent = $0.percent(selfLevel: unitLevel, targetLevel: targetLevel), percent != 0 {
+                    if $0.hasLevelAssumption {
+                        content = String(format: "%d(%.2f%%, %d to %d)", Int($0.value), percent, unitLevel, targetLevel)
+                    } else {
+                        content = String(format: "%d(%.2f%%)", Int($0.value), percent)
+                    }
+                } else {
+                    content = String(Int($0.value))
+                }
+                return TextItem(
+                    title: $0.key.description,
+                    content: content,
+                    colorMode: .normal
+                )
+            })
+            return cell
+        case .skill(let skill, let category, let property, let index):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDSkillTableViewCell.self)
+            cell.configure(for: skill, category: category, property: property, index: index)
+            return cell
+        case .textArray(let items):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: items)
+            return cell
+        }
     }
 }

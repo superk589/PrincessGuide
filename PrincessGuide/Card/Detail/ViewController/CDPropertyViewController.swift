@@ -44,53 +44,53 @@ class CDPropertyViewController: CDTableViewController {
         let targetLevel = settings.targetLevel
         
         rows += [
-            Row(type: CDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Combat Effectiveness", comment: ""), String(combatEffectiveness), settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+            
+            Row.textArray([
+                TextItem(title: NSLocalizedString("Combat Effectiveness", comment: ""), content: String(combatEffectiveness), deltaValue: settings.statusComparison ? combatEffectiveness : 0)
+                ]),
+            Row.propertyItems(items: [
                 property.item(for: .atk),
                 property.item(for: .magicStr)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel: unitLevel, targetLevel: targetLevel, enablesComparisonMode: settings.statusComparison),
+            Row.propertyItems(items: [
                 property.item(for: .def),
                 property.item(for: .magicDef)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel: unitLevel, targetLevel: targetLevel, enablesComparisonMode: settings.statusComparison),
+            Row.propertyItems(items: [
                 property.item(for: .hp),
                 property.item(for: .physicalCritical)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel: unitLevel, targetLevel: targetLevel, enablesComparisonMode: settings.statusComparison),
+            Row.propertyItems(items: [
                 property.item(for: .dodge),
                 property.item(for: .magicCritical)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTextTableViewCell.self, data: .textArray(
+                ], unitLevel: unitLevel, targetLevel: targetLevel, enablesComparisonMode: settings.statusComparison),
+            Row.textArray(
                 [
-                    (NSLocalizedString("Swing Time", comment: ""), String(card.base.normalAtkCastTime) + "s", false),
-                    (NSLocalizedString("Attack Range", comment: ""), String(card.base.searchAreaWidth), false)
-                ]
-                )),
-            Row(type: CDProfileTextTableViewCell.self, data: .textArray(
+                    TextItem(title: NSLocalizedString("Swing Time", comment: ""), content: String(card.base.normalAtkCastTime) + "s", colorMode: .normal),
+                    TextItem(title: NSLocalizedString("Attack Range", comment: ""), content: String(card.base.searchAreaWidth), colorMode: .normal)
+                ]),
+            Row.textArray(
                 [
-                    (NSLocalizedString("Effective Physical HP", comment: ""), String(Int(property.effectivePhysicalHP.rounded())), settings.statusComparison),
-                    (NSLocalizedString("Effective Magical HP", comment: ""), String(Int(property.effectiveMagicalHP.rounded())), settings.statusComparison)
-                ]
-                )),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                    TextItem(title: NSLocalizedString("Effective Physical HP", comment: ""), content: String(Int(property.effectivePhysicalHP.rounded())), deltaValue: settings.statusComparison ? property.effectivePhysicalHP.rounded() : 0),
+                    TextItem(title: NSLocalizedString("Effective Magical HP", comment: ""), content: String(Int(property.effectiveMagicalHP.rounded())), deltaValue: settings.statusComparison ? property.effectiveMagicalHP.rounded() : 0)
+                ]),
+            Row.propertyItems(items: [
                 property.item(for: .hpRecoveryRate),
                 property.item(for: .lifeSteal)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel: unitLevel, targetLevel: targetLevel, enablesComparisonMode: settings.statusComparison),
+            Row.propertyItems(items: [
                 property.item(for: .energyRecoveryRate),
                 property.item(for: .energyReduceRate)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTableViewCell.self, data: .propertyItems([
+                ], unitLevel: unitLevel, targetLevel: targetLevel, enablesComparisonMode: settings.statusComparison),
+            Row.propertyItems(items: [
                 property.item(for: .waveHpRecovery),
                 property.item(for: .waveEnergyRecovery)
-                ], unitLevel, targetLevel, settings.statusComparison)),
-            Row(type: CDProfileTextTableViewCell.self, data: .textArray(
+                ], unitLevel: unitLevel, targetLevel: targetLevel, enablesComparisonMode: settings.statusComparison),
+            Row.textArray(
                 [
-                    (PropertyKey.accuracy.description, String(Int(property.accuracy.rounded())), settings.statusComparison),
-                    (NSLocalizedString("Move Speed", comment: ""), String(card.base.moveSpeed), false)
-                ]
-                ))
+                    TextItem(title: PropertyKey.accuracy.description, content: String(Int(property.accuracy.rounded())), deltaValue: settings.statusComparison ? property.accuracy.rounded() : 0),
+                    TextItem(title: NSLocalizedString("Move Speed", comment: ""), content: String(card.base.moveSpeed), colorMode: .normal)
+                ])
         ]
         
     }

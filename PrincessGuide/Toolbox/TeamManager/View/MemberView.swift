@@ -53,7 +53,7 @@ class MemberView: UIView {
     }
     
     func configure(for member: Member) {
-        icon.cardID = member.iconID
+        icon.configure(iconURL: member.iconURL, placeholderStyle: .blank)
         rarityView.setup(stars: Int(member.rarity))
         levelLabel.text = "Lv\(member.level)"
         uniqueEquipmentView.isHidden = !member.enablesUniqueEquipment

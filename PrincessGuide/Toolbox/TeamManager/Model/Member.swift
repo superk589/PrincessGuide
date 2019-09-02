@@ -31,11 +31,13 @@ extension Member {
         return Card.findByID(Int(id))
     }
     
-    var iconID: Int? {
-        if rarity >= 3 {
-            return card?.iconID(style: .r3)
+    var iconURL: URL? {
+        if rarity >= 6 {
+            return card?.iconURL(style: .highestRarity)
+        } else if rarity >= 3 {
+            return card?.iconURL(style: .r3)
         } else {
-            return card?.iconID(style: .r1)
+            return card?.iconURL(style: .r1)
         }
     }
 

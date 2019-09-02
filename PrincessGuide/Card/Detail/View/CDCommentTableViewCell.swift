@@ -8,12 +8,13 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
 protocol CDCommentTableViewCellDelegate: class {
     func doubleClick(on cdCommentTableViewCell: CDCommentTableViewCell)
 }
 
-class CDCommentTableViewCell: UITableViewCell {
+class CDCommentTableViewCell: UITableViewCell, Reusable {
 
     let commentLabel = UILabel()
     
@@ -65,14 +66,4 @@ class CDCommentTableViewCell: UITableViewCell {
         commentLabel.text = text
     }
     
-}
-
-extension CDCommentTableViewCell: CardDetailConfigurable {
-    func configure(for item: CardDetailItem) {
-        if case .comment(let comment) = item {
-            configure(for: comment.description.replacingOccurrences(of: "\\n", with: "\n"))
-        } else if case .commentText(let text) = item {
-            configure(for: text)
-        }
-    }
 }

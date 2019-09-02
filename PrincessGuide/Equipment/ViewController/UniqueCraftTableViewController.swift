@@ -9,29 +9,19 @@
 import UIKit
 import Gestalt
 
-typealias UniqueCraftItem = UniqueCraftTableViewController.Row.Model
-protocol UniqueCraftConfigurable {
-    func configure(for item: UniqueCraftItem)
-}
-
 class UniqueCraftTableViewController: UITableViewController {
     
-    struct Row {
-        enum Model {
-            case summary(UniqueEquipment)
-            case consume(UniqueCraft.Consume)
-            case properties([Property.Item])
-            case text(String, String)
-        }
-        var type: UITableViewCell.Type
-        var data: Model
+    enum Row {
+        case summary(UniqueEquipment)
+        case consume(UniqueCraft.Consume)
+        case properties([Property.Item])
+        case textArray([TextItem])
     }
     
     var equipment: UniqueEquipment? {
         didSet {
             if let _ = equipment {
                 prepareRows()
-                registerRows()
                 tableView.reloadData()
             }
         }
@@ -39,28 +29,19 @@ class UniqueCraftTableViewController: UITableViewController {
     
     private var rows = [Row]()
     
-    private func registerRows() {
-        rows.forEach {
-            tableView.register($0.type, forCellReuseIdentifier: $0.type.description())
-        }
-    }
-    
     private func prepareRows() {
         rows.removeAll()
         guard let equipment = equipment, let craft = equipment.craft else {
             return
         }
-        rows = [Row(type: CraftSummaryTableViewCell.self, data: .summary(equipment))]
+        rows = [Row.summary(equipment)]
         
-        rows += craft.consumes.map { Row(type: CraftTableViewCell.self, data: .consume($0)) }
-        rows += equipment.property().ceiled().noneZeroProperties().map { Row(type: CraftPropertyTableViewCell.self, data: .properties([$0])) }
+        rows += craft.consumes.map { Row.consume($0) }
+        rows += equipment.property().ceiled().noneZeroProperties().map { Row.properties([$0]) }
         
-//        let craftCost = equipment.recursiveCraft.reduce(0) { $0 + $1.craftedCost }
-//        let enhanceCost = equipment.enhanceCost
-//        rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Crafting", comment: ""), String(craftCost)))]
-//        rows += [Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Mana Cost of Enhancing", comment: ""), String(enhanceCost)))]
-        
-        rows.append(Row(type: CraftTextTableViewCell.self, data: .text(NSLocalizedString("Description", comment: ""), equipment.description)))
+        rows.append(Row.textArray([
+            TextItem(title: NSLocalizedString("Description", comment: ""), content: equipment.description.replacingOccurrences(of: "\\n", with: ""), colorMode: .normal)
+        ]))
     }
     
     let backgroundImageView = UIImageView()
@@ -76,9 +57,11 @@ class UniqueCraftTableViewController: UITableViewController {
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.estimatedRowHeight = 84
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(CraftSummaryTableViewCell.self, forCellReuseIdentifier: CraftSummaryTableViewCell.description())
-        tableView.register(CraftTableViewCell.self, forCellReuseIdentifier: CraftTableViewCell.description())
-        tableView.register(CraftTextTableViewCell.self, forCellReuseIdentifier: CraftTextTableViewCell.description())
+        tableView.register(cellType: CraftSummaryTableViewCell.self)
+        tableView.register(cellType: CraftTableViewCell.self)
+        tableView.register(cellType: CraftCharaTableViewCell.self)
+        tableView.register(cellType: CDProfileTableViewCell.self)
+        tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
     }
     
@@ -95,11 +78,35 @@ class UniqueCraftTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let model = rows[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.description(), for: indexPath) as! UniqueCraftConfigurable
-        cell.configure(for: model.data)
-        return cell as! UITableViewCell
+        let row = rows[indexPath.row]
+        switch row {
+        case .consume(let consume):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CraftTableViewCell.self)
+            cell.configure(
+                name: "",
+                number: consume.consumeNum,
+                itemURL: consume.itemURL
+            )
+            return cell
+        case .properties(let properties):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: properties.map {
+                return TextItem(
+                    title: $0.key.description,
+                    content: String(Int($0.value)),
+                    colorMode: .normal
+                )
+            })
+            return cell
+        case .summary(let equipment):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CraftSummaryTableViewCell.self)
+            cell.configure(for: equipment.recursiveConsumes.map { CraftSummaryTableViewCell.Item(number: $0.consumeNum, url: $0.itemURL) })
+            return cell
+        case .textArray(let items):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
+            cell.configure(items: items)
+            return cell
+        }
     }
     
 }

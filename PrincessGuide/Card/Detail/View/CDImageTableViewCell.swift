@@ -8,12 +8,13 @@
 
 import UIKit
 import Gestalt
+import Reusable
 
 protocol CDImageTableViewCellDelegate: class {
     func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL?)
 }
 
-class CDImageTableViewCell: UITableViewCell, CardDetailConfigurable {
+class CDImageTableViewCell: UITableViewCell, Reusable {
     
     static let imageHeight: CGFloat = 100
     
@@ -93,13 +94,6 @@ class CDImageTableViewCell: UITableViewCell, CardDetailConfigurable {
         if let imageView = tap.view as? CDImageView {
             delegate?.cdImageTableViewCell(self, didSelect: imageView, url: imageView.url)
         }
-    }
-    
-    func configure(for item: CardDetailItem) {
-        guard case .album(let title, _, let thumbnailURLs) = item else {
-            fatalError()
-        }
-        configure(for: thumbnailURLs, title: title)
     }
     
 }

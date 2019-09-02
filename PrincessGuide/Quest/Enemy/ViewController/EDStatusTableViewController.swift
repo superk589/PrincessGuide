@@ -34,28 +34,39 @@ class EDStatusTableViewController: EDTableViewController {
         
         if !isMinion {
             rows += [
-                Row(type: EDBasicTableViewCell.self, data: .unit(enemy.unit)),
+                Row.unit(enemy.unit),
             ]
         }
         
         rows += [
-            Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Level", comment: ""), String(enemy.base.level))),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .atk),
-                                                                          property.item(for: .magicStr)], unitLevel, targetLevel)),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .def),
-                                                                          property.item(for: .magicDef)], unitLevel, targetLevel)),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .hp),
-                                                                          property.item(for: .physicalCritical)], unitLevel, targetLevel)),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .dodge),
-                                                                          property.item(for: .magicCritical)], unitLevel, targetLevel)),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .accuracy)], unitLevel, targetLevel)),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .energyRecoveryRate)], unitLevel, targetLevel)),
-            Row(type: EDPropertyTableViewCell.self, data: .propertyItems([property.item(for: .hpRecoveryRate)], unitLevel, targetLevel)),
+            Row.textArray([
+                TextItem(title: NSLocalizedString("Level", comment: ""), content: String(enemy.base.level), colorMode: .normal)
+            ]),
+            Row.propertyItems([
+                property.item(for: .atk),
+                property.item(for: .magicStr)], unitLevel, targetLevel),
+            Row.propertyItems([
+                property.item(for: .def),
+                property.item(for: .magicDef)], unitLevel, targetLevel),
+            Row.propertyItems([
+                property.item(for: .hp),
+                property.item(for: .physicalCritical)], unitLevel, targetLevel),
+            Row.propertyItems([
+                property.item(for: .dodge),
+                property.item(for: .magicCritical)], unitLevel, targetLevel),
+            Row.propertyItems([property.item(for: .accuracy)], unitLevel, targetLevel),
+            Row.propertyItems([property.item(for: .energyRecoveryRate)], unitLevel, targetLevel),
+            Row.propertyItems([property.item(for: .hpRecoveryRate)], unitLevel, targetLevel),
         ]
-        
-        rows.append(Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Swing Time", comment: ""), "\(enemy.unit.normalAtkCastTime)s")))
-        rows.append(Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Attack Range", comment: ""), "\(enemy.unit.searchAreaWidth)")))
-        rows.append(Row(type: EDProfileTextTableViewCell.self, data: .text(NSLocalizedString("Move Speed", comment: ""), String(enemy.unit.moveSpeed))))
+        rows.append(Row.textArray([
+            TextItem(title: NSLocalizedString("Swing Time", comment: ""), content: "\(enemy.unit.normalAtkCastTime)s", colorMode: .normal)
+        ]))
+        rows.append(Row.textArray([
+            TextItem(title: NSLocalizedString("Attack Range", comment: ""), content: "\(enemy.unit.searchAreaWidth)", colorMode: .normal)
+        ]))
+        rows.append(Row.textArray([
+            TextItem(title: NSLocalizedString("Move Speed", comment: ""), content: String(enemy.unit.moveSpeed), colorMode: .normal)
+        ]))
     }
     
     @objc private func handleSettingsChange(_ notification: Notification) {
