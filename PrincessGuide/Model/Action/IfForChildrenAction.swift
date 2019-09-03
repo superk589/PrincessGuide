@@ -17,6 +17,7 @@ enum IfType: Int, CustomStringConvertible {
     case curse
     case poison
     case venom
+    case poisonOrVenon = 512
     
     var description: String {
         switch self {
@@ -36,6 +37,8 @@ enum IfType: Int, CustomStringConvertible {
             return NSLocalizedString("poisoned", comment: "")
         case .venom:
             return NSLocalizedString("venomed", comment: "")
+        case .poisonOrVenon:
+            return NSLocalizedString("poisoned or venomed", comment: "")
         }
     }
 }
@@ -94,7 +97,7 @@ class IfForChildrenAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         switch actionDetail1 {
-        case 100, 200, 300, 500, 501, 502, 503, 600..<900, 901..<1000:
+        case 100, 200, 300, 500, 501, 502, 503, 512, 600..<900, 901..<1000:
             let format = NSLocalizedString("Condition: %@.", comment: "")
             return String(format: format, [trueClause, falseClause].compactMap { $0 }.joined(separator: NSLocalizedString(", ", comment: "clause separator")))
         case 0..<100:

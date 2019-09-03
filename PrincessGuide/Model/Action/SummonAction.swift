@@ -62,9 +62,13 @@ class SummonAction: ActionParameter {
         }
     }
     
-    lazy var minion: Minion? = DispatchSemaphore.sync { (closure) in
-        return Master.shared.getUnitMinion(minionID: actionDetail2, callback: closure)
-    }
+    lazy var minion: Minion? = {
+        let minion = DispatchSemaphore.sync { (closure) in
+            return Master.shared.getUnitMinion(minionID: actionDetail2, callback: closure)
+        }
+        minion?.shouldApplyPassiveSkills = self.actionDetail1 == 3
+        return minion
+    }()
     
     lazy var enemyMinion: Enemy? = DispatchSemaphore.sync { (closure) in
         return Master.shared.getEnemyMinion(minionID: actionDetail2, callback: closure)

@@ -22,6 +22,8 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
 1. Quest
     * Normal
     * Hard
+    * Very Hard
+    * Exploration
     * Clan Battle
     * Story Event
     * Dungeon
@@ -53,17 +55,13 @@ For developers only, if you have macOS and Xcode, please read `./Localizations/R
 ## How to build
 ### Requirements
 * iOS 10.0+
-* Xcode 10.2+
+* Xcode 10.3+
 * Swift 5.0+
 
 ### Steps
 * Clone the repository
 ```
 $ git clone https://github.com/superk589/PrincessGuide.git
-```
-* Install dependencies with [CocoaPods](https://cocoapods.org).
-```
-$ pod install
 ```
 * Open the workspace in Xcode
 ```

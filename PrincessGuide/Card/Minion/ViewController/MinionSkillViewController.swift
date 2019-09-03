@@ -43,25 +43,99 @@ class MinionSkillViewController: MinionTableViewController {
             property = .zero
         }
         
-        if let unionBurst = minion.unionBurst {
-            rows.append(Row.skill(unionBurst, .unionBurst, property, nil))
+        // setup union burst
+        if settings.skillStyle == .both {
+            if let unionBurst = minion.unionBurst {
+                rows.append(Row.skill(unionBurst, .unionBurst, property, nil))
+            }
+            if let unionBurstEvolution = minion.unionBurstEvolution, settings.unitRarity == 6 {
+                rows.append(Row.skill(unionBurstEvolution, .unionBurstEvolution, property, nil))
+            }
+        } else {
+            if let unionBurstEvolution = minion.unionBurstEvolution, settings.unitRarity == 6 {
+                rows.append(Row.skill(unionBurstEvolution, .unionBurstEvolution, property, nil))
+            } else if let unionBurst = minion.unionBurst {
+                rows.append(Row.skill(unionBurst, .unionBurst, property, nil))
+            }
         }
         
-        rows.append(contentsOf:
-            minion.mainSkills
+        // setup main skills
+        if settings.skillStyle == .both {
+            rows += zip(minion.mainSkills, minion.mainSkillEvolutions)
                 .enumerated()
-                .map {
-                    Row.skill($0.element, .main, property, $0.offset + 1)
+                .flatMap {
+                    [
+                        Row.skill($0.element.0, .main, property, $0.offset + 1),
+                        Row.skill($0.element.1, .mainEvolution, property, $0.offset + 1)
+                    ]
             }
-        )
+            
+            if minion.mainSkills.count > minion.mainSkillEvolutions.count {
+                
+                rows += minion.mainSkills[minion.mainSkillEvolutions.count..<minion.mainSkills.count]
+                    .enumerated()
+                    .map {
+                        return Row.skill($0.element, .main, property, minion.mainSkillEvolutions.count + $0.offset + 1)
+                }
+            }
+        } else {
+            rows.append(contentsOf:
+                zip(minion.mainSkillEvolutions, minion.mainSkills)
+                    .enumerated()
+                    .map {
+                        return Row.skill($0.element.0, .mainEvolution, property, $0.offset + 1)
+                }
+            )
+            
+            if minion.mainSkills.count > minion.mainSkillEvolutions.count {
+                
+                rows += minion.mainSkills[minion.mainSkillEvolutions.count..<minion.mainSkills.count]
+                    .enumerated()
+                    .map {
+                        return Row.skill($0.element, .main, property, minion.mainSkillEvolutions.count + $0.offset + 1)
+                }
+            }
+        }
         
-        rows.append(contentsOf:
-            minion.exSkills
-                .enumerated()
-                .map {
-                    Row.skill($0.element, .ex, property, $0.offset + 1)
+        // setup ex skills
+        if minion.shouldApplyPassiveSkills {
+            if settings.skillStyle == .both {
+                rows += zip(minion.exSkills, minion.exSkillEvolutions)
+                    .enumerated()
+                    .flatMap {
+                        [
+                            Row.skill($0.element.0, .ex, property, nil),
+                            Row.skill($0.element.1, .exEvolution, property, nil)
+                        ]
+                }
+                
+                if minion.exSkills.count > minion.exSkillEvolutions.count {
+                    
+                    rows += minion.exSkills[minion.exSkillEvolutions.count..<minion.exSkills.count]
+                        .enumerated()
+                        .map {
+                            return Row.skill($0.element, .ex, property, nil)
+                    }
+                }
+            } else {
+                rows.append(contentsOf:
+                    zip(minion.exSkillEvolutions, minion.exSkills)
+                        .enumerated()
+                        .map {
+                            return Row.skill($0.element.0, .exEvolution, property, nil)
+                    }
+                )
+                
+                if minion.exSkills.count > minion.exSkillEvolutions.count {
+                    
+                    rows += minion.mainSkills[minion.exSkillEvolutions.count..<minion.exSkills.count]
+                        .enumerated()
+                        .map {
+                            return Row.skill($0.element, .ex, property, nil)
+                    }
+                }
             }
-        )
+        }
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

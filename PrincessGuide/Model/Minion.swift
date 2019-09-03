@@ -17,6 +17,8 @@ class Minion {
     
     let base: Base
     
+    var shouldApplyPassiveSkills = false
+    
     init(base: Base, rarities: [Rarity]) {
         self.base = base
         self.rarities = rarities
@@ -76,6 +78,20 @@ extension Minion {
         
         if let rarity = rarities.sorted(by: { $0.rarity > $1.rarity }).first(where: { $0.rarity <= unitRarity }) {
             property += rarity.property + rarity.propertyGrowth * Double(unitLevel + unitRank)
+        }
+        
+        if addsEx && unitRank >= 7 && shouldApplyPassiveSkills {
+            if unitRarity >= 5 {
+                exSkillEvolutions
+                    .flatMap { $0.actions }
+                    .compactMap { ($0.parameter as? PassiveAction)?.propertyItem(of: unitLevel) }
+                    .forEach { property += $0 }
+            } else {
+                exSkills
+                    .flatMap { $0.actions }
+                    .compactMap { ($0.parameter as? PassiveAction)?.propertyItem(of: unitLevel) }
+                    .forEach { property += $0 }
+            }
         }
         
         return property.rounded()

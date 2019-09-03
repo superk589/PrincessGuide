@@ -1487,11 +1487,6 @@
         <target>物理系</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Plate">
-        <source>Plate</source>
-        <target>Plate</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Please wait">
         <source>Please wait</source>
         <target>処理中...</target>
@@ -2325,6 +2320,10 @@
       </trans-unit>
       <trans-unit id="poisoned">
         <source>poisoned</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="poisoned or venomed">
+        <source>poisoned or venomed</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="princess arena">

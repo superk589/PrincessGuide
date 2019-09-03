@@ -785,7 +785,7 @@
 "Happy Birthday!!" = "生日快乐！";
 
 /* No comment provided by engineer. */
-"Hard" = "H";
+"Hard" = "H 难度";
 
 /* No comment provided by engineer. */
 "Haste" = "加速";
@@ -1037,7 +1037,7 @@
 "None" = "无";
 
 /* No comment provided by engineer. */
-"Normal" = "N";
+"Normal" = "N 难度";
 
 /* No comment provided by engineer. */
 "normal type" = "普通类型";
@@ -1106,9 +1106,6 @@
 "Physics" = "物理系";
 
 /* No comment provided by engineer. */
-"Plate" = "Plate";
-
-/* No comment provided by engineer. */
 "Please wait" = "正在处理";
 
 /* No comment provided by engineer. */
@@ -1122,6 +1119,9 @@
 
 /* No comment provided by engineer. */
 "poisoned" = "中毒";
+
+/* No comment provided by engineer. */
+"poisoned or venomed" = "中毒或猛毒";
 
 /* No comment provided by engineer. */
 "Position" = "位置";
@@ -1190,7 +1190,7 @@
 "Rarity" = "稀有度";
 
 /* No comment provided by engineer. */
-"Rarity 6" = "星 6";
+"Rarity 6" = "星 6 解锁";
 
 /* No comment provided by engineer. */
 "Raw Materials" = "原始材料";
@@ -1670,7 +1670,7 @@
 "Version Log" = "数据更新日志";
 
 /* No comment provided by engineer. */
-"Very Hard" = "VH";
+"Very Hard" = "VH 难度";
 
 /* No comment provided by engineer. */
 "Violent Poison" = "猛毒";

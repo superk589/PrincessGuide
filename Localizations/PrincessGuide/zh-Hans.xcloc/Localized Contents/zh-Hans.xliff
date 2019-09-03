@@ -1186,7 +1186,7 @@
       </trans-unit>
       <trans-unit id="Hard">
         <source>Hard</source>
-        <target>H</target>
+        <target>H 难度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Haste">
@@ -1561,7 +1561,7 @@
       </trans-unit>
       <trans-unit id="Normal">
         <source>Normal</source>
-        <target>N</target>
+        <target>N 难度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Not Determined">
@@ -1632,11 +1632,6 @@
       <trans-unit id="Physics">
         <source>Physics</source>
         <target>物理系</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Plate">
-        <source>Plate</source>
-        <target>Plate</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Please wait">
@@ -1736,7 +1731,7 @@
       </trans-unit>
       <trans-unit id="Rarity 6">
         <source>Rarity 6</source>
-        <target>星 6</target>
+        <target>星 6 解锁</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raw Materials">
@@ -2256,7 +2251,7 @@
       </trans-unit>
       <trans-unit id="Very Hard">
         <source>Very Hard</source>
-        <target>VH</target>
+        <target>VH 难度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Violent Poison">
@@ -2592,6 +2587,11 @@
       <trans-unit id="poisoned">
         <source>poisoned</source>
         <target>中毒</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="poisoned or venomed">
+        <source>poisoned or venomed</source>
+        <target>中毒或猛毒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="princess arena">
