@@ -459,12 +459,6 @@ extension Card {
             }
         }
         
-        if unitRarity == 6 && hasRarity6 {
-            rarity6s
-                .filter { $0.unlockFlag == 1 }
-                .forEach { property += $0.property }
-        }
-        
         return property.rounded()
     }
     
