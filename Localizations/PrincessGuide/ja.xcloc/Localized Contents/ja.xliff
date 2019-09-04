@@ -364,6 +364,10 @@
         <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="All">
+        <source>All</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="App Version">
         <source>App Version</source>
         <target>アプリバージョン</target>
@@ -1409,6 +1413,10 @@
         <source>Next</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="No">
+        <source>No</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="No more data">
         <source>No more data</source>
         <note>No comment provided by engineer.</note>
@@ -2075,6 +2083,10 @@
       </trans-unit>
       <trans-unit id="Wins">
         <source>Wins</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Yes">
+        <source>Yes</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="You have not bought this product yet.">

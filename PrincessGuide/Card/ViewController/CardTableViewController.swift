@@ -23,7 +23,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         var cards: [Card]
     }
     
-    var sortedAndGroupedCards = [Section]()
+    var sections = [Section]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,11 +71,11 @@ class CardTableViewController: UITableViewController, DataChecking {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             let cards = Array(Preload.default.cards.values)
-            let sortedAndGroupedCards = cards.filter(settings: CardSortingViewController.Setting.default)
+            let sections = self?.createSections(settings: CardSortingViewController.Setting.default, cards: cards) ?? []
             DispatchQueue.main.async {
                 LoadingHUDManager.default.hide()
                 self?.cards = cards
-                self?.sortedAndGroupedCards = sortedAndGroupedCards
+                self?.sections = sections
                 self?.tableView.reloadData()
                     
                 /* debug */
@@ -174,10 +174,10 @@ class CardTableViewController: UITableViewController, DataChecking {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             if let strongSelf = self {
-                let newDict = strongSelf.cards.filter(settings: CardSortingViewController.Setting.default)
+                let newSections = strongSelf.createSections(settings: CardSortingViewController.Setting.default, cards: strongSelf.cards)
                 DispatchQueue.main.async {
                     LoadingHUDManager.default.hide()
-                    self?.sortedAndGroupedCards = newDict
+                    self?.sections = newSections
                     self?.tableView.reloadData()
                 }
             }
@@ -189,14 +189,14 @@ class CardTableViewController: UITableViewController, DataChecking {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sortedAndGroupedCards.count
+        return sections.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if sortedAndGroupedCards.count <= 1 {
+        if sections.count <= 1 {
             return nil
         } else {
-            return sortedAndGroupedCards[section].title
+            return sections[section].title
         }
     }
     
@@ -210,11 +210,11 @@ class CardTableViewController: UITableViewController, DataChecking {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedAndGroupedCards[section].cards.count
+        return sections[section].cards.count
     }
     
     func cardOf(indexPath: IndexPath) -> Card {
-        return sortedAndGroupedCards[indexPath.section].cards[indexPath.row]
+        return sections[indexPath.section].cards[indexPath.row]
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -228,7 +228,7 @@ class CardTableViewController: UITableViewController, DataChecking {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let card = sortedAndGroupedCards[indexPath.section].cards[indexPath.row]
+        let card = sections[indexPath.section].cards[indexPath.row]
         let vc = CDTabViewController(card: card)
         print("card id: \(card.base.unitId)")
         vc.hidesBottomBarWhenPushed = true
@@ -283,6 +283,15 @@ class CardTableViewController: UITableViewController, DataChecking {
         }
         return (mode, text)
     }
+    
+    func createSections(settings: CardSortingViewController.Setting, cards: [Card]) -> [Section] {
+        var groups = cards.grouped(settings: settings)
+        for index in groups.indices {
+            groups[index].cards.filter(settings: settings)
+            groups[index].cards.sort(settings: settings)
+        }
+        return groups
+    }
 }
 
 extension Array where Element == Card {
@@ -333,7 +342,7 @@ extension Array where Element == Card {
         return cards
     }
     
-    func filter(settings: CardSortingViewController.Setting) -> [CardTableViewController.Section] {
+    func grouped(settings: CardSortingViewController.Setting) -> [CardTableViewController.Section] {
         
         typealias Section = CardTableViewController.Section
 
@@ -403,11 +412,15 @@ extension Array where Element == Card {
                 .sorted { $0.title > $1.title }
         }
         
-        for index in sections.indices {
-            sections[index].cards.sort(settings: settings)
-        }
-        
         return sections
+    }
+    
+    mutating func filter(settings: CardSortingViewController.Setting) {
+        self = self
+            .filtered(by: settings.positionFilter)
+            .filtered(by: settings.attackTypeFilter)
+            .filtered(by: settings.hasRarity6Filter)
+            .filtered(by: settings.hasUniqueEquipmentFilter)
     }
 }
 

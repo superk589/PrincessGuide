@@ -178,6 +178,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             cell.configure(
                 title: NSLocalizedString("Unique Equipments", comment: ""),
                 imageURLs: ids.map { URL.resource.appendingPathComponent("icon/equipment/\($0).webp") })
+            cell.delegate = self
             return cell
         }
     }

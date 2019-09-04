@@ -158,6 +158,14 @@ class CardSortingViewController: FormViewController {
                 
         var iconStyle: IconStyle = .default
         
+        var positionFilter: Card.PositionFilter = .all
+        
+        var attackTypeFilter: Card.AttackTypeFilter = .all
+        
+        var hasRarity6Filter: Card.HasRarity6Filter = .all
+        
+        var hasUniqueEquipmentFilter: Card.HasUniqueEquipmentFilter = .all
+        
         func save() {
             let encoder = JSONEncoder()
             encoder.keyEncodingStrategy = .convertToSnakeCase
@@ -281,6 +289,64 @@ class CardSortingViewController: FormViewController {
                 
                 row.value = Setting.default.equipsUniqueEquipment
                 
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+            
+            +++ Section(NSLocalizedString("Filter", comment: ""))
+            
+            <<< SegmentedRow<String>("position_filter"){
+                $0.title = NSLocalizedString("Position", comment: "")
+                $0.displayValueFor = { (rowValue: String?) in
+                    if let rowValue = rowValue {
+                        return Card.PositionFilter(rawValue: rowValue)?.description ?? nil
+                    } else {
+                        return nil
+                    }
+                }
+                $0.options = Card.PositionFilter.allCases.map { $0.rawValue }
+                $0.value = Setting.default.positionFilter.rawValue
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+            
+            <<< SegmentedRow<String>("attack_type_filter"){
+                $0.title = NSLocalizedString("Attack Type", comment: "")
+                $0.displayValueFor = { (rowValue: String?) in
+                    if let rowValue = rowValue {
+                        return Card.AttackTypeFilter(rawValue: rowValue)?.description ?? nil
+                    } else {
+                        return nil
+                    }
+                }
+                $0.options = Card.AttackTypeFilter.allCases.map { $0.rawValue }
+                $0.value = Setting.default.attackTypeFilter.rawValue
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+            
+            <<< SegmentedRow<String>("has_rarity6_filter"){
+                $0.title = NSLocalizedString("Rarity 6", comment: "")
+                $0.displayValueFor = { (rowValue: String?) in
+                    if let rowValue = rowValue {
+                        return Card.HasRarity6Filter(rawValue: rowValue)?.description ?? nil
+                    } else {
+                        return nil
+                    }
+                }
+                $0.options = Card.HasRarity6Filter.allCases.map { $0.rawValue }
+                $0.value = Setting.default.hasRarity6Filter.rawValue
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+            
+            <<< SegmentedRow<String>("has_unique_equipment_filter"){
+                $0.title = NSLocalizedString("Unique Equipment", comment: "")
+                $0.displayValueFor = { (rowValue: String?) in
+                    if let rowValue = rowValue {
+                        return Card.HasUniqueEquipmentFilter(rawValue: rowValue)?.description ?? nil
+                    } else {
+                        return nil
+                    }
+                }
+                $0.options = Card.HasUniqueEquipmentFilter.allCases.map { $0.rawValue }
+                $0.value = Setting.default.hasUniqueEquipmentFilter.rawValue
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
         

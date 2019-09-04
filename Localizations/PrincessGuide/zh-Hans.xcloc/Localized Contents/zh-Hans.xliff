@@ -374,6 +374,11 @@
         <target>年龄</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="All">
+        <source>All</source>
+        <target>全部</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="App Version">
         <source>App Version</source>
         <target>程序版本</target>
@@ -1366,7 +1371,7 @@
       </trans-unit>
       <trans-unit id="Mana">
         <source>Mana</source>
-        <target>Mana</target>
+        <target> Mana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Mana Cost of Crafting">
@@ -1547,6 +1552,11 @@
       <trans-unit id="Next">
         <source>Next</source>
         <target>下一步</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No">
+        <source>No</source>
+        <target>否</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="No more data">
@@ -2302,6 +2312,11 @@
       <trans-unit id="Wins">
         <source>Wins</source>
         <target>胜利</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Yes">
+        <source>Yes</source>
+        <target>是</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="You have not bought this product yet.">

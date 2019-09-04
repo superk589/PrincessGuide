@@ -12,6 +12,7 @@ import Gestalt
 class DropRewardView: UIView {
     
     let itemIcon = IconImageView()
+    let countLabel = UILabel()
     
     let rateLabel = UILabel()
 
@@ -20,6 +21,7 @@ class DropRewardView: UIView {
         
         ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
             themeable.rateLabel.textColor = theme.color.caption
+            themeable.countLabel.textColor = theme.color.body
         }
         
         addSubview(itemIcon)

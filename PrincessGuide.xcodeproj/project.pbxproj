@@ -173,6 +173,8 @@
 		129A7F9120A3211900D93996 /* EnemyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F9020A3211900D93996 /* EnemyView.swift */; };
 		12A6A7D42163B09F00877074 /* DispelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A6A7D32163B09F00877074 /* DispelAction.swift */; };
 		12A776902153E59E00972187 /* EDSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A7768F2153E59E00972187 /* EDSettingsViewController.swift */; };
+		12B00D2E231F4C9E0086B079 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2D231F4C9E0086B079 /* FilterType.swift */; };
+		12B00D30231F7EA40086B079 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2F231F7EA40086B079 /* Card+Filter.swift */; };
 		12B0D2DE228E4B5E0053C813 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */; };
 		12B21F9020F597EE00A04777 /* ChooseMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */; };
 		12B66CF520FB62DB00AB9D2A /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */; };
@@ -481,6 +483,8 @@
 		129A7F9020A3211900D93996 /* EnemyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyView.swift; sourceTree = "<group>"; };
 		12A6A7D32163B09F00877074 /* DispelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispelAction.swift; sourceTree = "<group>"; };
 		12A7768F2153E59E00972187 /* EDSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSettingsViewController.swift; sourceTree = "<group>"; };
+		12B00D2D231F4C9E0086B079 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
+		12B00D2F231F7EA40086B079 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
 		12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMemberViewController.swift; sourceTree = "<group>"; };
 		12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
@@ -715,6 +719,7 @@
 				12D7A91D21AAC76F004E22C6 /* UniqueCraft.swift */,
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
 				1220423E231A9ECC00205C85 /* Card+Rarity6.swift */,
+				12B00D2F231F7EA40086B079 /* Card+Filter.swift */,
 				128DA48121B25E3900F7C006 /* Minion.swift */,
 				1250190720AF0DBC00D2FBDC /* Still.swift */,
 				12B85D2A2089840A0088F5FB /* Skill.swift */,
@@ -747,6 +752,7 @@
 		1221CDBB207B9342008F30AA /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				12B00D2D231F4C9E0086B079 /* FilterType.swift */,
 				123608E6209322EB003E7D11 /* DataChecking.swift */,
 				1223A8E320F091DD00C98BB2 /* SettingProtocol.swift */,
 			);
@@ -1806,6 +1812,7 @@
 				12F125E320B93219005C9659 /* BarrierAction.swift in Sources */,
 				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
+				12B00D30231F7EA40086B079 /* Card+Filter.swift in Sources */,
 				120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */,
 				12E6BEE1227800A6000BAADC /* StealthAction.swift in Sources */,
 				126BFBD320F0FC420059B4ED /* BDEquipmentViewController.swift in Sources */,
@@ -1814,6 +1821,7 @@
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
 				120F9B8520E9F97E003632CA /* CharaTableViewCell.swift in Sources */,
 				122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */,
+				12B00D2E231F4C9E0086B079 /* FilterType.swift in Sources */,
 				12204241231AABF700205C85 /* FearAction.swift in Sources */,
 				1247127A22279DF700A9C2E1 /* ChangeBodyWidthAction.swift in Sources */,
 				1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */,

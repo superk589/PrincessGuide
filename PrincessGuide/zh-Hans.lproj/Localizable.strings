@@ -184,6 +184,9 @@
 /* No comment provided by engineer. */
 "all" = "全部";
 
+/* No comment provided by engineer. */
+"All" = "全部";
+
 /* all [enemy] [physics] targets */
 "all %@ %@ targets" = "所有%1$@%2$@目标";
 
@@ -914,7 +917,7 @@
 "Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page." = "确保您已经用同一个 Apple ID 登录了新设备，然后点击右上角的恢复按钮。";
 
 /* No comment provided by engineer. */
-"Mana" = "Mana";
+"Mana" = " Mana";
 
 /* No comment provided by engineer. */
 "Mana Cost of Crafting" = "制作装备所需 Mana";
@@ -1029,6 +1032,9 @@
 
 /* No comment provided by engineer. */
 "Next" = "下一步";
+
+/* No comment provided by engineer. */
+"No" = "否";
 
 /* No comment provided by engineer. */
 "No more data" = "没有更多数据了";
@@ -1701,6 +1707,9 @@
 
 /* No comment provided by engineer. */
 "Wins" = "胜利";
+
+/* No comment provided by engineer. */
+"Yes" = "是";
 
 /* No comment provided by engineer. */
 "You have not bought this product yet." = "您未曾买过本产品。";
