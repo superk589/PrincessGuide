@@ -12,7 +12,7 @@ import Gestalt
 class DropRewardView: UIView {
     
     let itemIcon = IconImageView()
-    let countLabel = UILabel()
+    let countLabel = StrokedTextLabel()
     
     let rateLabel = UILabel()
 
@@ -29,6 +29,14 @@ class DropRewardView: UIView {
             make.top.left.equalToSuperview()
             make.height.width.equalTo(64)
         }
+        
+        addSubview(countLabel)
+        countLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(itemIcon.snp.bottom).offset(-2)
+            make.right.equalTo(itemIcon.snp.right).offset(-2)
+        }
+        countLabel.font = UIFont.boldSystemFont(ofSize: 12)
+        countLabel.textColor = .black
         
         rateLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
         addSubview(rateLabel)
@@ -47,6 +55,7 @@ class DropRewardView: UIView {
             itemIcon.itemID = reward.rewardID
         }
         setHighlighted(isFocused)
+        countLabel.text = reward.rewardNum > 1 ? "x\(reward.rewardNum)" : ""
     }
     
     private(set) var isHighlighted: Bool = false

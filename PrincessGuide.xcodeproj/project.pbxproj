@@ -175,6 +175,7 @@
 		12A776902153E59E00972187 /* EDSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A7768F2153E59E00972187 /* EDSettingsViewController.swift */; };
 		12B00D2E231F4C9E0086B079 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2D231F4C9E0086B079 /* FilterType.swift */; };
 		12B00D30231F7EA40086B079 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2F231F7EA40086B079 /* Card+Filter.swift */; };
+		12B00D32231F911E0086B079 /* StrokedTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D31231F911E0086B079 /* StrokedTextLabel.swift */; };
 		12B0D2DE228E4B5E0053C813 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */; };
 		12B21F9020F597EE00A04777 /* ChooseMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */; };
 		12B66CF520FB62DB00AB9D2A /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */; };
@@ -485,6 +486,7 @@
 		12A7768F2153E59E00972187 /* EDSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSettingsViewController.swift; sourceTree = "<group>"; };
 		12B00D2D231F4C9E0086B079 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		12B00D2F231F7EA40086B079 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
+		12B00D31231F911E0086B079 /* StrokedTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedTextLabel.swift; sourceTree = "<group>"; };
 		12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMemberViewController.swift; sourceTree = "<group>"; };
 		12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
@@ -773,6 +775,7 @@
 				122552272133977C00CB0D3E /* StatusIndicator.swift */,
 				12255229213397B300CB0D3E /* TimeStatusIndicator.swift */,
 				120B71D42196DB6100B45A4A /* FixedTabBar.swift */,
+				12B00D31231F911E0086B079 /* StrokedTextLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1754,6 +1757,7 @@
 				12360921209940B2003E7D11 /* Binary.swift in Sources */,
 				129A7F8920A3108C00D93996 /* QuestTabViewController.swift in Sources */,
 				12936B312176CEA000B9531F /* EurekaHelper.swift in Sources */,
+				12B00D32231F911E0086B079 /* StrokedTextLabel.swift in Sources */,
 				1221CDCB207B9864008F30AA /* Master.swift in Sources */,
 				12659E06205F5DB100A8B9A2 /* AppDelegate.swift in Sources */,
 				12C5992E2287C92B00875EE4 /* CalendarSettingViewController.swift in Sources */,
