@@ -17,7 +17,7 @@
 
 default_platform(:ios)
 xcversion(version: "10.3")
-match(type: "appstore", readonly: is_ci)
+# match(type: "appstore", readonly: is_ci)
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
@@ -28,5 +28,8 @@ platform :ios do
     # cocoapods
     build_app(workspace: "PrincessGuide.xcworkspace", scheme: "PrincessGuide")
     upload_to_testflight
+  end
+  lane :clean do
+    clean_testflight_testers(days_of_inactivity: 120)
   end
 end

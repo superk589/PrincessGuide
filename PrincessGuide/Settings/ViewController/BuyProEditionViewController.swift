@@ -24,12 +24,7 @@ class BuyProEditionViewController: UITableViewController {
         var answer: String
     }
 
-    let faqs = [
-        FAQ(question: NSLocalizedString("What's the features of Pro Edition?", comment: ""),
-            answer: NSLocalizedString("By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.", comment: "")),
-        FAQ(question: NSLocalizedString("How to restore purchasing on a new device?", comment: ""),
-            answer: NSLocalizedString("Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.", comment: ""))
-    ]
+    let faqs = [FAQ]()
     
     struct Row {
         enum Model {
@@ -72,7 +67,6 @@ class BuyProEditionViewController: UITableViewController {
 
     func prepareUI() {
         
-        navigationItem.title = NSLocalizedString("Pro Edition", comment: "")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Restore", comment: ""), style: .plain, target: self, action: #selector(restore(_:)))
         
         tableView.backgroundView = backgroundImageView

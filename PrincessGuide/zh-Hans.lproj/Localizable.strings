@@ -19,9 +19,6 @@
 "%@ %@ %@ in range %d" = "范围 %4$d 内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
-"%@ %@ %@ x%@" = "%1$@%2$@%3$@ x%4$@";
-
-/* No comment provided by engineer. */
 "%@ %@ and deal [%@] damage per second for [%@]s." = "%1$@%2$@并每秒造成 [%3$@] 伤害，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -39,7 +36,7 @@
 "%@ %@ targets in range %d" = "范围 %3$d 内%1$@%2$@目标";
 
 /* No comment provided by engineer. */
-"%@ %@ x%@" = "%1$@%2$@ x%3$@";
+"%@ %@ x%@" = "%1$@ %2$@ x%3$@";
 
 /* No comment provided by engineer. */
 "%@ boss" = "%@首领级";
@@ -682,6 +679,12 @@
 /* No comment provided by engineer. */
 "Event" = "活动";
 
+/* No comment provided by engineer. */
+"Event Hard" = "活动 H 难度";
+
+/* No comment provided by engineer. */
+"Event Normal" = "活动 N 难度";
+
 /* skill style */
 "evolution only" = "只显示进化后";
 
@@ -917,7 +920,7 @@
 "Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page." = "确保您已经用同一个 Apple ID 登录了新设备，然后点击右上角的恢复按钮。";
 
 /* No comment provided by engineer. */
-"Mana" = " Mana";
+"Mana" = "Mana";
 
 /* No comment provided by engineer. */
 "Mana Cost of Crafting" = "制作装备所需 Mana";
@@ -971,9 +974,6 @@
 "Misc" = "杂项";
 
 /* No comment provided by engineer. */
-"Mission" = "探索";
-
-/* No comment provided by engineer. */
 "Move backward %@ with velocity %@/s." = "向后移动 %1$@，速度 %2$@/秒。";
 
 /* No comment provided by engineer. */
@@ -1007,10 +1007,7 @@
 "New %@ Event: %@" = "新%1$@活动：%2$@";
 
 /* No comment provided by engineer. */
-"New Campaign: %@ %@ %@ x%@" = "新奖励事件：%1$@%2$@%3$@ x%4$@";
-
-/* No comment provided by engineer. */
-"New Campaign: %@ %@ x%@" = "新奖励事件：%1$@%2$@ x%3$@";
+"New Campaign: %@ %@ x%@" = "新奖励事件：%1$@ %2$@ x%3$@";
 
 /* No comment provided by engineer. */
 "New Clan Battle: %@" = "新公会战：%@";
@@ -1044,6 +1041,9 @@
 
 /* No comment provided by engineer. */
 "Normal" = "N 难度";
+
+/* No comment provided by engineer. */
+"Normal and Hard" = "N 难度和 H 难度";
 
 /* No comment provided by engineer. */
 "normal type" = "普通类型";
@@ -1217,9 +1217,6 @@
 "Remove field of skill %d (1 represents the first skill in this list) effect %d." = "移除技能 %1$d（1 代表本列表中的第一个）效果 %2$d 产生的场地。";
 
 /* No comment provided by engineer. */
-"Rerun Event" = "复刻活动";
-
-/* No comment provided by engineer. */
 "Reset" = "重置";
 
 /* No comment provided by engineer. */
@@ -1239,6 +1236,12 @@
 
 /* No comment provided by engineer. */
 "Review at App Store" = "App Store 评价";
+
+/* No comment provided by engineer. */
+"Revival Event Hard" = "复刻活动 H 难度";
+
+/* No comment provided by engineer. */
+"Revival Event Normal" = "复刻活动 N 难度";
 
 /* No comment provided by engineer. */
 "Revive %@ with %d%% HP." = "复活并恢复%1$@的 HP 至 %2$d%%。";
@@ -1430,7 +1433,7 @@
 "Teams" = "队伍列表";
 
 /* No comment provided by engineer. */
-"Temple" = "神殿";
+"Temple" = "神殿调查";
 
 /* target type */
 "the %@ farthest" = "%@远的";

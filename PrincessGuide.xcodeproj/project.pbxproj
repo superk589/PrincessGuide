@@ -176,6 +176,7 @@
 		12B00D2E231F4C9E0086B079 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2D231F4C9E0086B079 /* FilterType.swift */; };
 		12B00D30231F7EA40086B079 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2F231F7EA40086B079 /* Card+Filter.swift */; };
 		12B00D32231F911E0086B079 /* StrokedTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D31231F911E0086B079 /* StrokedTextLabel.swift */; };
+		12B00D342321F2B90086B079 /* CampaignEventCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D332321F2B90086B079 /* CampaignEventCategory.swift */; };
 		12B0D2DE228E4B5E0053C813 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */; };
 		12B21F9020F597EE00A04777 /* ChooseMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */; };
 		12B66CF520FB62DB00AB9D2A /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */; };
@@ -487,6 +488,7 @@
 		12B00D2D231F4C9E0086B079 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		12B00D2F231F7EA40086B079 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
 		12B00D31231F911E0086B079 /* StrokedTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedTextLabel.swift; sourceTree = "<group>"; };
+		12B00D332321F2B90086B079 /* CampaignEventCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignEventCategory.swift; sourceTree = "<group>"; };
 		12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		12B21F8F20F597EE00A04777 /* ChooseMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMemberViewController.swift; sourceTree = "<group>"; };
 		12B66CF420FB62DB00AB9D2A /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
@@ -1250,6 +1252,7 @@
 			isa = PBXGroup;
 			children = (
 				12ECB2C12128459500CDAA8E /* VersionLog.swift */,
+				12B00D332321F2B90086B079 /* CampaignEventCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1813,6 +1816,7 @@
 				126DECF8209EF24D004EC56A /* CDPromotionTableViewController.swift in Sources */,
 				12E64A5B213143330075BE01 /* VLTableViewHeaderFooterView.swift in Sources */,
 				1202CE4322C8C4DC00E9C146 /* StopFieldAction.swift in Sources */,
+				12B00D342321F2B90086B079 /* CampaignEventCategory.swift in Sources */,
 				12F125E320B93219005C9659 /* BarrierAction.swift in Sources */,
 				12F1262F20B9566A005C9659 /* RegenerationAction.swift in Sources */,
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,

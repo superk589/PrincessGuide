@@ -42,7 +42,7 @@ class CalendarSettingViewController: FormViewController {
             static let gacha = Option(rawValue: 1 << 6)
             static let masterCoin = Option(rawValue: 1 << 7)
             
-            init?(vlCampaignBonusType: VLCampaign.BonusType) {
+            init?(vlCampaignBonusType: CampaignEventCategory.BonusType) {
                 switch vlCampaignBonusType {
                 case .unknown:
                     return nil

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
@@ -85,11 +86,6 @@
         <note>[the farthest two] [enemy] [targets] in range [500]
    [the second to fourth farthest] [enemy] [targets] in range [500]</note>
       </trans-unit>
-      <trans-unit id="%@ %@ %@ x%@">
-        <source>%1$@ %2$@ %3$@ x%4$@</source>
-        <target>%1$@%2$@%3$@ x%4$@</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ during break.">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ during break.</source>
         <target>在 Break 期间，%1$@%2$@ [%3$@]%4$@ %5$@。</target>
@@ -129,7 +125,7 @@
       </trans-unit>
       <trans-unit id="%@ %@ x%@">
         <source>%1$@ %2$@ x%3$@</source>
-        <target>%1$@%2$@ x%3$@</target>
+        <target>%1$@ %2$@ x%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ Damage is reduced on low level players.">
@@ -507,11 +503,6 @@
       <trans-unit id="Burn">
         <source>Burn</source>
         <target>烧伤</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.">
-        <source>By now, chara management, box management and team management are only available in pro edition. If we add new features to pro edition in the future, you will gain those features automatically without paying for it again.</source>
-        <target>目前为止，角色管理，Box 管理，队伍管理是专业版独有功能。如果我们后续为专业版添加了新的功能，您无需再次付费购买就能自动获得新加入的功能。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="CV">
@@ -1069,6 +1060,16 @@
         <target>活动</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Event Hard">
+        <source>Event Hard</source>
+        <target>活动 H 难度</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Event Normal">
+        <source>Event Normal</source>
+        <target>活动 N 难度</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Evolution Skill Style">
         <source>Evolution Skill Style</source>
         <target>进化技能显示风格</target>
@@ -1202,11 +1203,6 @@
       <trans-unit id="Height">
         <source>Height</source>
         <target>身高</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="How to restore purchasing on a new device?">
-        <source>How to restore purchasing on a new device?</source>
-        <target>如何在一台新设备上恢复您的购买？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Icon Style">
@@ -1364,14 +1360,9 @@
         <target>使%1$@失去 [%2$@] TP。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.">
-        <source>Make sure you have signed-in using the same Apple ID on the new device, then click the restore button on this page.</source>
-        <target>确保您已经用同一个 Apple ID 登录了新设备，然后点击右上角的恢复按钮。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Mana">
         <source>Mana</source>
-        <target> Mana</target>
+        <target>Mana</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Mana Cost of Crafting">
@@ -1449,11 +1440,6 @@
         <target>杂项</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Mission">
-        <source>Mission</source>
-        <target>探索</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Move Part %d, %d forward then return.">
         <source>Move Part %1$d, %2$d forward then return.</source>
         <target>向前移动部位 %1$d 然后返回，距离 %2$d。</target>
@@ -1509,14 +1495,9 @@
         <target>新%1$@活动：%2$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="New Campaign: %@ %@ %@ x%@">
-        <source>New Campaign: %1$@ %2$@ %3$@ x%4$@</source>
-        <target>新奖励事件：%1$@%2$@%3$@ x%4$@</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="New Campaign: %@ %@ x%@">
         <source>New Campaign: %1$@ %2$@ x%3$@</source>
-        <target>新奖励事件：%1$@%2$@ x%3$@</target>
+        <target>新奖励事件：%1$@ %2$@ x%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="New Clan Battle: %@">
@@ -1572,6 +1553,11 @@
       <trans-unit id="Normal">
         <source>Normal</source>
         <target>N 难度</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Normal and Hard">
+        <source>Normal and Hard</source>
+        <target>N 难度和 H 难度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Not Determined">
@@ -1669,11 +1655,6 @@
         <target>位置</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Pro Edition">
-        <source>Pro Edition</source>
-        <target>专业版</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Profile">
         <source>Profile</source>
         <target>角色</target>
@@ -1769,11 +1750,6 @@
         <target>移除技能 %1$d（1 代表本列表中的第一个）效果 %2$d 产生的场地。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Rerun Event">
-        <source>Rerun Event</source>
-        <target>复刻活动</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Reset">
         <source>Reset</source>
         <target>重置</target>
@@ -1807,6 +1783,16 @@
       <trans-unit id="Review at App Store">
         <source>Review at App Store</source>
         <target>App Store 评价</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Revival Event Hard">
+        <source>Revival Event Hard</source>
+        <target>复刻活动 H 难度</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Revival Event Normal">
+        <source>Revival Event Normal</source>
+        <target>复刻活动 N 难度</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Revive %@ with %d%% HP.">
@@ -2066,7 +2052,7 @@
       </trans-unit>
       <trans-unit id="Temple">
         <source>Temple</source>
-        <target>神殿</target>
+        <target>神殿调查</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="The first chara added will be used as cover image.">
@@ -2239,11 +2225,6 @@
         <target>即将到来的生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Upgrade to Pro Edition">
-        <source>Upgrade to Pro Edition</source>
-        <target>升级至专业版</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Use Dark Theme">
         <source>Use Dark Theme</source>
         <target>使用深色主题</target>
@@ -2292,11 +2273,6 @@
       <trans-unit id="Weight">
         <source>Weight</source>
         <target>体重</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="What's the features of Pro Edition?">
-        <source>What's the features of Pro Edition?</source>
-        <target>专业版中有哪些功能？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field.">

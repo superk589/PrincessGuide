@@ -88,106 +88,16 @@ protocol VLElement {
 struct VLCampaign: Codable, VLElement {
     
     var content: String {
-        switch eventType {
-        case .event, .eventRerun:
-            let format = NSLocalizedString("New Campaign: %@ %@ %@ x%@", comment: "")
-            return String(format: format, eventType.description, categoryType.description, bonusType.description, String(format: "%.1f", Double(value) / 1000))
-        default:
-            let format = NSLocalizedString("New Campaign: %@ %@ x%@", comment: "")
-            return String(format: format, categoryType.description, bonusType.description, String(format: "%.1f", Double(value) / 1000))
-        }
+        let format = NSLocalizedString("New Campaign: %@ %@ x%@", comment: "")
+        return String(format: format, campaignEventCategory.categoryType.description, campaignEventCategory.bonusType.description, String(format: "%.1f", Double(value) / 1000))
     }
     
     var schedule: Schedule? {
         return Schedule(start: start, end: end)
     }
     
-    enum BonusType: Int, CustomStringConvertible {
-        case unknown = 0
-        case drop = 3
-        case mana = 4
-        case exp = 5
-        case masterCoin = 9
-        var description: String {
-            switch self {
-            case .unknown:
-                return NSLocalizedString("Unknown", comment: "")
-            case .drop:
-                return NSLocalizedString("Drop", comment: "")
-            case .mana:
-                return NSLocalizedString("Mana", comment: "")
-            case .exp:
-                return NSLocalizedString("Exp.", comment: "")
-            case .masterCoin:
-                return NSLocalizedString("Master Coin", comment: "")
-            }
-        }
-    }
-    
-    enum CategoryType: Int, CustomStringConvertible {
-        case unknown = 0
-        case normal = 1
-        case hard = 2
-        case veryHard = 3
-        case mission = 4
-        case dungeon = 5
-        case temple = 6
-        case shrine = 7
-        var description: String {
-            switch self {
-            case .unknown:
-                return NSLocalizedString("Unknown", comment: "")
-            case .normal:
-                return NSLocalizedString("Normal", comment: "")
-            case .hard:
-                return NSLocalizedString("Hard", comment: "")
-            case .veryHard:
-                return NSLocalizedString("Very Hard", comment: "")
-            case .mission:
-                return NSLocalizedString("Mission", comment: "")
-            case .dungeon:
-                return NSLocalizedString("Dungeon", comment: "")
-            case .shrine:
-                return NSLocalizedString("Shrine", comment: "")
-            case .temple:
-                return NSLocalizedString("Temple", comment: "")
-            }
-        }
-    }
-    
-    enum EventType: Int, CustomStringConvertible {
-        case unknown = -1
-        case normal = 0
-        case event = 1
-        case eventRerun = 2
-        
-        var description: String {
-            switch self {
-            case .unknown:
-                return NSLocalizedString("Unknown", comment: "")
-            case .normal:
-                return NSLocalizedString("", comment: "")
-            case .event:
-                return NSLocalizedString("Event", comment: "")
-            case .eventRerun:
-                return NSLocalizedString("Rerun Event", comment: "")
-            }
-        }
-    }
-    
-    var categoryType: CategoryType {
-        let rawValue = (Int(category) ?? 0) % 10
-        return CategoryType(rawValue: rawValue) ?? .unknown
-    }
-    
-    var bonusType: BonusType {
-        let rawValue = (Int(category) ?? 0) / 10 % 10
-        return BonusType(rawValue: rawValue) ?? .unknown
-    }
-    
-    var eventType: EventType {
-        let rawValue = (Int(category) ?? 0) / 100
-        return EventType(rawValue: rawValue) ?? .unknown
+    var campaignEventCategory: CampaignEventCategory {
+        return CampaignEventCategory(rawValue: Int(category) ?? 0) ?? .none
     }
     
     let category: String

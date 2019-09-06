@@ -12,7 +12,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - Gestalt (1.1.0)
   - ImageViewer (5.0.0)
-  - Kingfisher (5.5.0)
+  - Kingfisher (5.7.1)
   - KingfisherWebP (0.6.0):
     - Kingfisher (~> 5.0)
     - libwebp (>= 0.5.0)
@@ -137,7 +137,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Gestalt: be239fdeee2de30b2468865cf5e24b7923f507c2
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
+  Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   KingfisherWebP: 53327b38511996ce093b50513abe46408a26de43
   libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf

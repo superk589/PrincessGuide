@@ -55,25 +55,17 @@ struct CampaignEvent: GameEvent {
     
     var type: GameEventType = .campaign
     
-    var eventType: VLCampaign.EventType
+    var bonusType: CampaignEventCategory.BonusType
     
-    var bonusType: VLCampaign.BonusType
-    
-    var categoryType: VLCampaign.CategoryType
+    var categoryType: CampaignEventCategory.CategoryType
     
     init(startDate: Date, endDate: Date, category: Int, value: Double) {
-        self.categoryType = VLCampaign.CategoryType(rawValue: category % 10) ?? .unknown
-        self.bonusType = VLCampaign.BonusType(rawValue: category / 10 % 10) ?? .unknown
-        self.eventType = VLCampaign.EventType(rawValue: category / 100) ?? .unknown
+        let campaignEventCategory = CampaignEventCategory(rawValue: category) ?? .none
+        self.categoryType = campaignEventCategory.categoryType
+        self.bonusType = campaignEventCategory.bonusType
         let name: String
-        switch eventType {
-        case .event, .eventRerun:
-            let format = NSLocalizedString("%@ %@ %@ x%@", comment: "")
-            name = String(format: format, eventType.description, categoryType.description, bonusType.description, String(format: "%.1f", value / 1000))
-        default:
-            let format = NSLocalizedString("%@ %@ x%@", comment: "")
-            name = String(format: format, categoryType.description, bonusType.description, String(format: "%.1f", Double(value) / 1000))
-        }
+        let format = NSLocalizedString("%@ %@ x%@", comment: "")
+        name = String(format: format, categoryType.description, bonusType.description, String(format: "%.1f", Double(value) / 1000))
         self.startDate = startDate
         self.endDate = endDate
         self.name = name
