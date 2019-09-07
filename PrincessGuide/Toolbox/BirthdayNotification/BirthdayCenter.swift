@@ -211,6 +211,7 @@ class BirthdayCenter {
     
     func removeBirthdayEvents(_ then: ((Bool) -> Void)? = nil) {
         eventStore.requestAccess(to: .event) { [unowned self] (granted, error) in
+            NotificationCenter.default.post(name: .ekStorePermissionDidChange, object: nil)
             if granted {
                 self.eventStore.reset()
                 let calendars = self.eventStore.calendars(for: .event)
@@ -249,4 +250,8 @@ class BirthdayCenter {
             }
         }
     }
+}
+
+extension Notification.Name {
+    static let ekStorePermissionDidChange = Notification.Name("ek_store_permission_did_change")
 }

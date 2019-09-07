@@ -238,7 +238,9 @@ class CalendarSettingViewController: FormViewController {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadSettings(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleStoreChanged(_:)), name: .EKEventStoreChanged, object: nil)
+        NotificationCenter.default.addObserver(forName: .ekStorePermissionDidChange, object: nil, queue: .main, using: { _ in
+            self.updatePermissionStatus()
+        })
         
     }
     
@@ -262,14 +264,10 @@ class CalendarSettingViewController: FormViewController {
         }
     }
     
-    @objc private func handleStoreChanged(_ notification: Notification) {
-        updatePermissionStatus()
-    }
-    
     private func updatePermissionStatus() {
         let row = self.form.rowBy(tag: "calendar_status") as? LabelRow
         row?.value = self.systemCalendarStatusString
-        row?.reload()
+        row?.updateCell()
     }
     
     @objc private func reloadSettings(_ item: Notification) {

@@ -102,6 +102,7 @@ class GameEventCenter {
     
     func removeGameEvents(_ then: ((Bool) -> Void)? = nil) {
         eventStore.requestAccess(to: .event) { [unowned self] (granted, error) in
+            NotificationCenter.default.post(name: .ekStorePermissionDidChange, object: nil)
             if granted {
                 self.eventStore.reset()
                 let calendars = self.eventStore.calendars(for: .event)
