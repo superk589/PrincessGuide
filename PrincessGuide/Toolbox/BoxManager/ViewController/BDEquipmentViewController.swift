@@ -95,7 +95,7 @@ class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UIC
         LoadingHUDManager.default.show()
         context.perform { [weak self] in
             let box = self?.context.object(with: objectID) as? Box
-            let charas = box?.charas?.array as? [Chara] ?? []
+            let charas = box?.charas?.allObjects as? [Chara] ?? []
             let consumes: [Craft.Consume] = charas.flatMap { (chara) -> [Craft.Consume] in
                 var array = [Craft.Consume]()
                 if let promotions = chara.card?.promotions, promotions.count >= chara.rank {

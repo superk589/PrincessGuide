@@ -49,7 +49,7 @@ class UpdatingHUD: UIView {
     func show() {
         isShowing = true
         stopFading()
-        if let window = UIApplication.shared.keyWindow {
+        if let window = UIApplication.shared.currentWindow {
             window.addSubview(self)
             snp.remakeConstraints { (make) in
                 make.width.equalTo(240)

@@ -28,13 +28,7 @@ class Updater {
     
     static let shared = Updater()
     
-    var isUpdating = false {
-        didSet {
-            DispatchQueue.main.async { [unowned self] in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = self.isUpdating
-            }
-        }
-    }
+    var isUpdating = false
     
     private init() {
 

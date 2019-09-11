@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Hatsune&apos;s Notes</string>
+	<string>Hatsune's Notes</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,12 +26,16 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>In order to save the events we will need access to your calendar.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>In order to save the image we will need access to your camera roll.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>In order to save the image we will need access to your camera roll.</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>In order to save the events we will need access to your calendar.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

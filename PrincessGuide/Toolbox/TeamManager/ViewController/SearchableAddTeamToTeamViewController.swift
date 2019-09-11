@@ -25,7 +25,6 @@ class SearchableAddTeamToTeamViewController: AddTeamToTeamViewController {
         searchController.searchBar.placeholder = NSLocalizedString("Team Tag", comment: "")
         searchController.searchResultsUpdater = self
         searchController.delegate = self
-        searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = true
         definesPresentationContext = true
         return searchController

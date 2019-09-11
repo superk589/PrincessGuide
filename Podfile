@@ -1,4 +1,4 @@
-platform :ios, '10.0'
+platform :ios, '13.0'
 use_frameworks!
 inhibit_all_warnings!
 target 'PrincessGuide' do

@@ -18,7 +18,6 @@ class SearchableCardTableViewController: CardTableViewController {
         searchController.searchBar.placeholder = NSLocalizedString("Chara Name", comment: "")
         searchController.searchResultsUpdater = self
         searchController.delegate = self
-        searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = true
         definesPresentationContext = true
         return searchController

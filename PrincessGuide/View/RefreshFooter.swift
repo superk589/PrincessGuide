@@ -11,7 +11,7 @@ import MJRefresh
 
 class RefreshFooter: MJRefreshAutoFooter {
     
-    var loadingView = UIActivityIndicatorView(style: .gray)
+    var loadingView = UIActivityIndicatorView(style: .medium)
     var stateLabel = UILabel()
     
     var centerOffset: CGFloat = 0

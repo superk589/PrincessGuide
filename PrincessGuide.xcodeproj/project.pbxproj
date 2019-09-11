@@ -39,6 +39,8 @@
 		1218E61920A6D53700D68610 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61720A6D53700D68610 /* InfoPlist.strings */; };
 		1218E61C20A6D53700D68610 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1218E61A20A6D53700D68610 /* Localizable.strings */; };
 		121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */; };
+		121FAC262328FBF900A43976 /* UIApplication+KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121FAC252328FBF900A43976 /* UIApplication+KeyWindow.swift */; };
+		121FAC282328FD5500A43976 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FAC272328FD5500A43976 /* CloudKit.framework */; };
 		1220423D231A909400205C85 /* MiscQuestAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */; };
 		1220423F231A9ECC00205C85 /* Card+Rarity6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1220423E231A9ECC00205C85 /* Card+Rarity6.swift */; };
 		12204241231AABF700205C85 /* FearAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12204240231AABF700205C85 /* FearAction.swift */; };
@@ -340,6 +342,8 @@
 		1218E61820A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1218E61B20A6D53700D68610 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		121B14D720EB23D10012ADA4 /* SelectableIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableIconImageView.swift; sourceTree = "<group>"; };
+		121FAC252328FBF900A43976 /* UIApplication+KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+KeyWindow.swift"; sourceTree = "<group>"; };
+		121FAC272328FD5500A43976 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscQuestAreaViewController.swift; sourceTree = "<group>"; };
 		1220423E231A9ECC00205C85 /* Card+Rarity6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Rarity6.swift"; sourceTree = "<group>"; };
 		12204240231AABF700205C85 /* FearAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FearAction.swift; sourceTree = "<group>"; };
@@ -614,6 +618,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121FAC282328FD5500A43976 /* CloudKit.framework in Frameworks */,
 				1221CDCD207C4197008F30AA /* libsqlite3.tbd in Frameworks */,
 				94018D168BCD58B74960DD7C /* Pods_PrincessGuide.framework in Frameworks */,
 			);
@@ -1014,6 +1019,7 @@
 				12B0D2DD228E4B5E0053C813 /* Double+Rounding.swift */,
 				120E487622FECE3900035566 /* UIActivityViewController+Helper.swift */,
 				120E487822FED13700035566 /* UIImage+Background.swift */,
+				121FAC252328FBF900A43976 /* UIApplication+KeyWindow.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1371,6 +1377,7 @@
 		C4EE8380F1630D9BF0C1B7E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				121FAC272328FD5500A43976 /* CloudKit.framework */,
 				1221CDCC207C4197008F30AA /* libsqlite3.tbd */,
 				967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */,
 			);
@@ -1837,6 +1844,7 @@
 				12F125DD20B92FA7005C9659 /* KnockAction.swift in Sources */,
 				12204247231B765800205C85 /* Rarity6UnlockQuestViewController.swift in Sources */,
 				12F125F320B9501F005C9659 /* DamageChargeAction.swift in Sources */,
+				121FAC262328FBF900A43976 /* UIApplication+KeyWindow.swift in Sources */,
 				1226532320AD626700BB3E56 /* Resist.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDSkillTableViewController.swift in Sources */,
 				129A7F8D20A3124600D93996 /* QuestEnemyTableViewController.swift in Sources */,
@@ -1986,7 +1994,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2041,7 +2049,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -2056,11 +2064,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 123;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2078,11 +2087,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 123;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";

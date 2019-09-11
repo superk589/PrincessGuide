@@ -148,7 +148,7 @@ class BoxTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BoxTableViewCell.description(), for: indexPath) as! BoxTableViewCell
         let box = boxes[indexPath.row]
-        let firstChara = box.charas?.firstObject as? Chara
+        let firstChara = box.charas?.allObjects.first as? Chara
         cell.configure(iconURL: firstChara?.iconURL, name: box.name ?? "")
         return cell
     }

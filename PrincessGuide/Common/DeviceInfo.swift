@@ -34,8 +34,8 @@ class DeviceInfo: CustomStringConvertible {
     let language = Locale.preferredLanguages.first ?? ""
     
     var carrier: String {
-        let info = CTTelephonyNetworkInfo.init()
-        return info.subscriberCellularProvider?.carrierName ?? ""
+        let info = CTTelephonyNetworkInfo()
+        return info.serviceSubscriberCellularProviders?.first?.value.carrierName ?? ""
     }
     
     var timeZone: String {

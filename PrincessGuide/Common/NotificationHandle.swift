@@ -52,7 +52,7 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
         let userInfo = response.notification.request.content.userInfo
         if let cardID = userInfo["card_id"] as? Int {
             if let card = Card.findByID(cardID),
-                let nvc = (UIApplication.shared.keyWindow?.rootViewController as? UITabBarController)?.selectedViewController as? UINavigationController {
+                let nvc = (UIApplication.shared.currentWindow?.rootViewController as? UITabBarController)?.selectedViewController as? UINavigationController {
                 let vc = CDTabViewController(card: card)
                 vc.hidesBottomBarWhenPushed = true
                 nvc.pushViewController(vc, animated: false)

@@ -210,7 +210,7 @@ class EditBoxViewController: FormViewController {
                 }
                 .cellSetup(cellSetup(cell:row:))
                 .onCellSelection { [unowned self] (cell, row) in
-                    let vc = BatchEditCharaInBoxViewController(charas: self.box.charas?.array as? [Chara] ?? [], parentContext: self.context)
+                    let vc = BatchEditCharaInBoxViewController(charas: self.box.charas?.allObjects as? [Chara] ?? [], parentContext: self.context)
                     vc.delegate = self
                     self.navigationController?.pushViewController(vc, animated: true)
             }
@@ -269,12 +269,12 @@ extension EditBoxViewController: CharasCellDelegate {
     }
     
     func charasCell(_ charasCell: CharasCell, move fromIndex: Int, to toIndex: Int) {
-        guard var charas = box.charas?.array else {
+        guard var charas = box.charas?.allObjects else {
             return
         }
         let source = charas.remove(at: fromIndex)
         charas.insert(source, at: toIndex)
-        box.charas = NSOrderedSet(array: charas)
+        box.charas = NSSet(array: charas)
         if mode == .edit {
             saveBox()
         }

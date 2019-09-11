@@ -56,7 +56,6 @@ struct EurekaAppearance {
             }
         }
         pickerRow.cellUpdate { (cell, row) in
-            cell.picker.showsSelectionIndicator = false
             ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
                 themeable.cell.backgroundColor = theme.color.tableViewCell.background
                 themeable.cell.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: theme.color.body]

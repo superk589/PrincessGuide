@@ -99,7 +99,7 @@ class LoadingHUDManager {
     }
     
     private lazy var showClosure: (() -> Void) = { [unowned self] in
-        if let window = UIApplication.shared.keyWindow {
+        if let window = UIApplication.shared.currentWindow {
             window.addSubview(self.hud)
             self.hud.snp.makeConstraints { (make) in
                 make.edges.equalToSuperview()

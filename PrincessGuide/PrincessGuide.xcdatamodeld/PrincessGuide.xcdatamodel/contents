@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G87" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Box" representedClassName="Box" syncable="YES" codeGenerationType="class">
-        <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="charas" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Chara" inverseName="boxes" inverseEntity="Chara" syncable="YES"/>
+        <attribute name="modifiedAt" attributeType="Date" defaultDateTimeInterval="589889280" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <relationship name="charas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chara" inverseName="boxes" inverseEntity="Chara"/>
     </entity>
     <entity name="Chara" representedClassName="Chara" syncable="YES" codeGenerationType="class">
-        <attribute name="bondRank" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="enablesUniqueEquipment" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="level" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="rank" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="rarity" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="skillLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="slot1" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="slot2" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="slot3" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="slot4" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="slot5" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="slot6" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="uniqueEquipmentLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="boxes" toMany="YES" deletionRule="Nullify" destinationEntity="Box" inverseName="charas" inverseEntity="Box" syncable="YES"/>
+        <attribute name="bondRank" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="enablesUniqueEquipment" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="level" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modifiedAt" attributeType="Date" defaultDateTimeInterval="589889340" usesScalarValueType="NO"/>
+        <attribute name="rank" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rarity" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="skillLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="slot1" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="slot2" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="slot3" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="slot4" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="slot5" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="slot6" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="uniqueEquipmentLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="boxes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Box" inverseName="charas" inverseEntity="Box"/>
     </entity>
     <entity name="Member" representedClassName="Member" syncable="YES" codeGenerationType="class">
-        <attribute name="enablesUniqueEquipment" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="level" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="rarity" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="team" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="members" inverseEntity="Team" syncable="YES"/>
+        <attribute name="enablesUniqueEquipment" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="level" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rarity" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="members" inverseEntity="Team"/>
     </entity>
     <entity name="Team" representedClassName="Team" syncable="YES" codeGenerationType="class">
-        <attribute name="mark" attributeType="String" syncable="YES"/>
-        <attribute name="modifiedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="tag" attributeType="String" syncable="YES"/>
-        <relationship name="loses" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="wins" inverseEntity="Team" syncable="YES"/>
-        <relationship name="members" toMany="YES" minCount="1" maxCount="5" deletionRule="Cascade" destinationEntity="Member" inverseName="team" inverseEntity="Member" syncable="YES"/>
-        <relationship name="wins" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="loses" inverseEntity="Team" syncable="YES"/>
+        <attribute name="mark" attributeType="String" defaultValueString=""/>
+        <attribute name="modifiedAt" attributeType="Date" defaultDateTimeInterval="589889400" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="tag" attributeType="String" defaultValueString=""/>
+        <relationship name="loses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="wins" inverseEntity="Team"/>
+        <relationship name="members" optional="YES" toMany="YES" minCount="1" maxCount="5" deletionRule="Cascade" destinationEntity="Member" inverseName="team" inverseEntity="Member"/>
+        <relationship name="wins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="loses" inverseEntity="Team"/>
     </entity>
     <elements>
-        <element name="Box" positionX="684" positionY="-27" width="128" height="90"/>
-        <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="285"/>
-        <element name="Member" positionX="693" positionY="-9" width="128" height="120"/>
-        <element name="Team" positionX="684" positionY="-18" width="128" height="150"/>
+        <element name="Box" positionX="684" positionY="-27" width="128" height="88"/>
+        <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="283"/>
+        <element name="Member" positionX="693" positionY="-9" width="128" height="118"/>
+        <element name="Team" positionX="684" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

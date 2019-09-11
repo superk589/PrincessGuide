@@ -14,7 +14,7 @@ class CoreDataStack {
     static let `default` = CoreDataStack()
     
     private lazy var container: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "PrincessGuide")
+        let container = NSPersistentCloudKitContainer(name: "PrincessGuide")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

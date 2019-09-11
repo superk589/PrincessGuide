@@ -16,7 +16,7 @@ protocol ProductTableViewCellDelegate: class {
 
 class ProductTableViewCell: UITableViewCell {
 
-    let indicator = UIActivityIndicatorView(style: .gray)
+    let indicator = UIActivityIndicatorView(style: .medium)
     
     let button = UIButton()
     
