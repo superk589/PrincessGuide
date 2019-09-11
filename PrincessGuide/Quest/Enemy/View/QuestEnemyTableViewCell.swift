@@ -8,7 +8,6 @@
 
 import UIKit
 import TTGTagCollectionView
-import Gestalt
 
 protocol QuestEnemyTableViewCellDelegate: class {
     func questEnemyTableViewCell(_ questEnemyTableViewCell: QuestEnemyTableViewCell, didSelect enemy: Enemy)
@@ -27,13 +26,8 @@ class QuestEnemyTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.titleLabel.textColor = theme.color.title
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        titleLabel.textColor = Theme.dynamic.color.title
+        backgroundColor = Theme.dynamic.color.background
         
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         contentView.addSubview(titleLabel)

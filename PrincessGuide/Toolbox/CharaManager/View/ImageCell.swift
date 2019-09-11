@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 
 class ImageCell: Cell<String>, CellType {
     
@@ -19,13 +18,7 @@ class ImageCell: Cell<String>, CellType {
     override func setup() {
         super.setup()
         
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.titleLabel.textColor = theme.color.title
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        titleLabel.textColor = Theme.dynamic.color.title
         
         contentView.addSubview(icon)
         icon.snp.makeConstraints { (make) in

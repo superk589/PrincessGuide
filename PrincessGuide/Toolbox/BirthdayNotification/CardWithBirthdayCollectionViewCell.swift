@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class CardWithBirthdayCollectionViewCell: UICollectionViewCell {
     
@@ -32,9 +31,7 @@ class CardWithBirthdayCollectionViewCell: UICollectionViewCell {
             make.bottom.equalToSuperview()
         }
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.birthdayLabel.textColor = theme.color.body
-        }
+        birthdayLabel.textColor = Theme.dynamic.color.body
     }
     
     required init?(coder aDecoder: NSCoder) {

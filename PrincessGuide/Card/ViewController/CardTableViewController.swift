@@ -8,16 +8,13 @@
 
 import UIKit
 import MJRefresh
-import Gestalt
 
 class CardTableViewController: UITableViewController, DataChecking {
     
     var cards = [Card]()
 
     let refresher = RefreshHeader()
-    
-    let backgroundImageView = UIImageView()
-    
+        
     struct Section {
         var title: String
         var cards: [Card]
@@ -27,18 +24,6 @@ class CardTableViewController: UITableViewController, DataChecking {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.backgroundView = backgroundImageView
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.refresher.arrowImage.tintColor = theme.color.indicator
-            themeable.refresher.loadingView.color = theme.color.indicator
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFilterChange(_:)), name: .cardSortingSettingsDidChange, object: nil)
@@ -197,15 +182,6 @@ class CardTableViewController: UITableViewController, DataChecking {
             return nil
         } else {
             return sections[section].title
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        ThemeManager.default.apply(theme: Theme.self, to: view) { (themeable, theme) in
-            if let view = themeable as? UITableViewHeaderFooterView {
-                view.backgroundView = UIVisualEffectView(effect: UIBlurEffect(style: theme.blurEffectStyle))
-                view.textLabel?.textColor = theme.color.title
-            }
         }
     }
     

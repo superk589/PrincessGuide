@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 
 class FAQTableViewCell: UITableViewCell {
     
@@ -41,11 +40,8 @@ class FAQTableViewCell: UITableViewCell {
         questionLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
         answerLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.questionLabel.textColor = theme.color.title
-            themeable.answerLabel.textColor = theme.color.body
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        questionLabel.textColor = Theme.dynamic.color.title
+        answerLabel.textColor = Theme.dynamic.color.body
         
         selectionStyle = .none
     }

@@ -9,7 +9,6 @@
 import UIKit
 import Kingfisher
 import KingfisherWebP
-import Gestalt
 import CoreData
 import UserNotifications
 
@@ -27,13 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootTabBarController
         window?.makeKeyAndVisible()
         
-        ThemeManager.default.theme = Defaults.prefersDarkTheme ? Theme.dark : Theme.light
-        ThemeManager.default.apply(theme: Theme.self, to: self) { themeable, theme in
-            let tabBar = rootTabBarController.tabBar
-            tabBar.tintColor = theme.color.tint
-            tabBar.barStyle = theme.barStyle
-            themeable.window?.backgroundColor = theme.color.background
-        }
+        let tabBar = rootTabBarController.tabBar
+        tabBar.tintColor = Theme.dynamic.color.tint
+        window?.backgroundColor = Theme.dynamic.color.background
+        UINavigationBar.appearance().tintColor = Theme.dynamic.color.tint
         
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
 

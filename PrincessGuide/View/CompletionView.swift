@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class CompletionView: UIView {
     
@@ -32,9 +31,7 @@ class CompletionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.addSublayer(checkmarkShapeLayer)
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.checkmarkShapeLayer.strokeColor = theme.color.tint.cgColor
-        }
+        checkmarkShapeLayer.strokeColor = Theme.dynamic.color.tint.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {

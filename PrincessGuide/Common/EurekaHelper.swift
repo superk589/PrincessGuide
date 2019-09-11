@@ -8,58 +8,37 @@
 
 import UIKit
 import Eureka
-import Gestalt
 
 struct EurekaAppearance {
     
     static func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
-        ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-            themeable.textLabel?.textColor = theme.color.title
-            themeable.detailTextLabel?.textColor = theme.color.tint
-        }
+        cell.textLabel?.textColor = Theme.dynamic.color.title
+        cell.detailTextLabel?.textColor = Theme.dynamic.color.tint
     }
     
     static func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
-        cell.selectedBackgroundView = UIView()
-        ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-            themeable.textLabel?.textColor = theme.color.title
-            themeable.detailTextLabel?.textColor = theme.color.tint
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-            if let segmentedControl = (themeable as? SegmentedCell<U>)?.segmentedControl {
-                segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
-                segmentedControl.setTitleTextAttributes([.foregroundColor: theme.color.tint], for: .normal)
-                segmentedControl.setTitleTextAttributes([.foregroundColor: theme.color.background], for: .selected)
-//                if #available(iOS 13.0, *) {
-//                    segmentedControl.selectedSegmentTintColor = theme.color.tint
-//                }
-            }
-            if let switchControl = (themeable as? SwitchCell)?.switchControl {
-                switchControl.onTintColor = theme.color.tint
-            }
+        cell.textLabel?.textColor = Theme.dynamic.color.title
+        cell.detailTextLabel?.textColor = Theme.dynamic.color.tint
+        
+        if let segmentedControl = (cell as? SegmentedCell<U>)?.segmentedControl {
+            segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
+            segmentedControl.setTitleTextAttributes([.foregroundColor: Theme.dynamic.color.tint], for: .normal)
+            segmentedControl.setTitleTextAttributes([.foregroundColor: Theme.dynamic.color.background], for: .selected)
+            segmentedControl.selectedSegmentTintColor = Theme.dynamic.color.tint
+        }
+        if let switchControl = (cell as? SwitchCell)?.switchControl {
+            switchControl.onTintColor = Theme.dynamic.color.tint
         }
     }
     
     static func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
-        ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-            themeable.textLabel?.textColor = theme.color.title
-            themeable.detailTextLabel?.textColor = theme.color.tint
-        }
+        cell.textLabel?.textColor = Theme.dynamic.color.title
+        cell.detailTextLabel?.textColor = Theme.dynamic.color.tint
     }
     
     static func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
-        pickerRow.cellSetup{ (cell, row) in
-            cell.selectedBackgroundView = UIView()
-            ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                themeable.cell.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                themeable.cell.backgroundColor = theme.color.tableViewCell.background
-            }
-        }
         pickerRow.cellUpdate { (cell, row) in
-            ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                themeable.cell.backgroundColor = theme.color.tableViewCell.background
-                themeable.cell.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: theme.color.body]
-            }
+            cell.pickerTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.dynamic.color.body]
         }
     }
     

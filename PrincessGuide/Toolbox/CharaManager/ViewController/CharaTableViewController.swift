@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Gestalt
 
 class CharaTableViewController: UITableViewController {
 
@@ -20,9 +19,7 @@ class CharaTableViewController: UITableViewController {
     var charas: [Chara] {
         return fetchedResultsController?.fetchedObjects ?? []
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     private func prepareFetchRequest() {
         let request: NSFetchRequest<Chara> = Chara.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "modifiedAt", ascending: false)]
@@ -40,14 +37,6 @@ class CharaTableViewController: UITableViewController {
         navigationItem.title = NSLocalizedString("Charas", comment: "")
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.navigationController?.toolbar.barStyle = theme.barStyle
-            themeable.navigationController?.toolbar.tintColor = theme.color.tint
-        }
-
         tableView.register(CharaTableViewCell.self, forCellReuseIdentifier: CharaTableViewCell.description())
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 103

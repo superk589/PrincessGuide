@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import Reusable
 
 class BoxTableViewCell: UITableViewCell, Reusable {
@@ -19,16 +18,8 @@ class BoxTableViewCell: UITableViewCell, Reusable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectedBackgroundView = UIView()
-        multipleSelectionBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-            themeable.multipleSelectionBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.tintColor = theme.color.tint
-            themeable.nameLabel.textColor = theme.color.title
-        }
+        tintColor = Theme.dynamic.color.tint
+        nameLabel.textColor = Theme.dynamic.color.title
         
         contentView.addSubview(icon)
         icon.snp.makeConstraints { (make) in

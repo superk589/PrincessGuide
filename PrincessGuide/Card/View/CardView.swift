@@ -52,10 +52,11 @@ class CardView: UIView {
         rightLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         rightLabel.isHidden = true
         
-        if #available(iOS 11.0, *) {
-            nameLabel.adjustsFontForContentSizeCategory = true
-            rightLabel.adjustsFontForContentSizeCategory = true
-        }
+        nameLabel.adjustsFontForContentSizeCategory = true
+        rightLabel.adjustsFontForContentSizeCategory = true
+        
+        nameLabel.textColor = Theme.dynamic.color.title
+        rightLabel.textColor = Theme.dynamic.color.body
     }
     
     func configure(for card: Card, value: String?, mode: Mode = .rarity) {

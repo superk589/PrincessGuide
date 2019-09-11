@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import Reusable
 
 class CraftTableViewCell: UITableViewCell, Reusable {
@@ -20,15 +19,8 @@ class CraftTableViewCell: UITableViewCell, Reusable {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.nameLabel.textColor = theme.color.title
-            themeable.consumeNumberLabel.textColor = theme.color.body
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        nameLabel.textColor = Theme.dynamic.color.title
+        consumeNumberLabel.textColor = Theme.dynamic.color.body
         
         contentView.addSubview(icon)
         icon.snp.makeConstraints { (make) in

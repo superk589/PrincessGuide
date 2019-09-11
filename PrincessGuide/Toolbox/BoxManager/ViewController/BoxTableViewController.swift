@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import CoreData
 
 class BoxTableViewController: UITableViewController {
@@ -20,9 +19,7 @@ class BoxTableViewController: UITableViewController {
     var boxes: [Box] {
         return fetchedResultsController?.fetchedObjects ?? []
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     private func prepareFetchRequest() {
         let request: NSFetchRequest<Box> = Box.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "modifiedAt", ascending: false)]
@@ -38,13 +35,7 @@ class BoxTableViewController: UITableViewController {
         navigationItem.title = NSLocalizedString("Boxes", comment: "")
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.navigationController?.toolbar.barStyle = theme.barStyle
-            themeable.navigationController?.toolbar.tintColor = theme.color.tint
-        }
+        navigationController?.toolbar.tintColor = Theme.dynamic.color.tint
         
         tableView.register(BoxTableViewCell.self, forCellReuseIdentifier: BoxTableViewCell.description())
         tableView.tableFooterView = UIView()

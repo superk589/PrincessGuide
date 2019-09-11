@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import AcknowList
 
 class ThirdPartyLibrariesViewController: AcknowListViewController {
@@ -38,30 +37,16 @@ class ThirdPartyLibrariesViewController: AcknowListViewController {
         let path = ThirdPartyLibrariesViewController.defaultAcknowledgementsPlistPath()
         self.init(acknowledgementsPlistPath: path)
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = backgroundImageView
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        cell.selectedBackgroundView = UIView()
-        ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-            themeable.textLabel?.textColor = theme.color.title
-            themeable.detailTextLabel?.textColor = theme.color.body
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
-        
+        cell.textLabel?.textColor = Theme.dynamic.color.title
+        cell.detailTextLabel?.textColor = Theme.dynamic.color.body
         return cell
     }
     

@@ -8,7 +8,6 @@
 
 import UIKit
 import TTGTagCollectionView
-import Gestalt
 
 class DropSummaryTableViewCell: UITableViewCell {
 
@@ -23,14 +22,8 @@ class DropSummaryTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.titleLabel.textColor = theme.color.title
-            themeable.typeLabel.textColor = theme.color.lightText
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        titleLabel.textColor = Theme.dynamic.color.title
+        typeLabel.textColor = Theme.dynamic.color.lightText
         
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         contentView.addSubview(titleLabel)

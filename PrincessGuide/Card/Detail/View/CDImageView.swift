@@ -8,7 +8,6 @@
 
 import UIKit
 import Kingfisher
-import Gestalt
 
 class CDImageView: UIImageView {
     
@@ -22,9 +21,7 @@ class CDImageView: UIImageView {
             make.center.equalToSuperview()
         }
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.indicator.color = theme.color.indicator
-        }
+        indicator.color = Theme.dynamic.color.indicator
     }
     
     convenience init() {

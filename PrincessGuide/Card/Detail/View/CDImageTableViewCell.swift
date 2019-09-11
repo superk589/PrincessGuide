@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import Reusable
 
 protocol CDImageTableViewCellDelegate: class {
@@ -26,16 +25,9 @@ class CDImageTableViewCell: UITableViewCell, Reusable {
     weak var delegate: CDImageTableViewCellDelegate?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        selectedBackgroundView = UIView()
-
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-            themeable.titleLabel.textColor = theme.color.title
-            themeable.scrollView.indicatorStyle = theme.indicatorStyle
-        }
+        
+        titleLabel.textColor = Theme.dynamic.color.title
         
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         contentView.addSubview(titleLabel)

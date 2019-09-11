@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class ToolboxTableViewController: UITableViewController {
     
@@ -26,23 +25,11 @@ class ToolboxTableViewController: UITableViewController {
         Row(title: NSLocalizedString("Calendar Settings", comment: ""), vcType: CalendarSettingViewController.self, isProFeature: false)
     ]
     
-    let backgroundImageView = UIImageView()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.backgroundView = backgroundImageView
-        
+                
         navigationItem.title = NSLocalizedString("Toolbox", comment: "")
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
-    
+            
         tableView.register(ToolboxTableViewCell.self, forCellReuseIdentifier: ToolboxTableViewCell.description())
 
         tableView.keyboardDismissMode = .onDrag

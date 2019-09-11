@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 
 class SlotsCell: Cell<[Bool]>, CellType {
 
@@ -20,20 +19,6 @@ class SlotsCell: Cell<[Bool]>, CellType {
     
     override func setup() {
         super.setup()
-        
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
-        
-//        contentView.addSubview(titleLabel)
-//        titleLabel.snp.makeConstraints { (make) in
-//            make.left.equalTo(readableContentGuide)
-//            make.top.equalTo(10)
-//        }
-//        titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in

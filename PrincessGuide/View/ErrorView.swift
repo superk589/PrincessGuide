@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class ErrorView: UIView {
 
@@ -35,10 +34,8 @@ class ErrorView: UIView {
         super.init(frame: frame)
         layer.addSublayer(dashOneLayer)
         layer.addSublayer(dashTwoLayer)
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.dashOneLayer.strokeColor = theme.color.tint.cgColor
-            themeable.dashTwoLayer.strokeColor = theme.color.tint.cgColor
-        }
+        dashOneLayer.strokeColor = Theme.dynamic.color.tint.cgColor
+        dashTwoLayer.strokeColor = Theme.dynamic.color.tint.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -7,16 +7,13 @@
 //
 
 import UIKit
-import Gestalt
 
 class EquipmentViewController: UIViewController, DataChecking {
     
     var equipments = [Equipment]()
     
     let refresher = RefreshHeader()
-    
-    let backgroundImageView = UIImageView()
-    
+        
     private var collectionView: UICollectionView!
     
     private var layout: UICollectionViewFlowLayout!
@@ -34,11 +31,6 @@ class EquipmentViewController: UIViewController, DataChecking {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(backgroundImageView)
-        backgroundImageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
 
@@ -68,17 +60,7 @@ class EquipmentViewController: UIViewController, DataChecking {
         // fix a layout issue of mjrefresh
         // refresher.bounds.origin.y = collectionView.contentInset.top
         refresher.refreshingBlock = { [weak self] in self?.check() }
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.refresher.arrowImage.tintColor = theme.color.indicator
-            themeable.refresher.loadingView.color = theme.color.indicator
-            themeable.collectionView.indicatorStyle = theme.indicatorStyle
-        }
-        
+                
         loadData()
 
     }

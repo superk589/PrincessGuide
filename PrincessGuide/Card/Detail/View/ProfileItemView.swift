@@ -7,17 +7,14 @@
 //
 
 import UIKit
-import Gestalt
 
 class ProfileItemView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.titleLabel.textColor = theme.color.title
-            themeable.contentLabel.textColor = theme.color.body
-        }
+        titleLabel.textColor = Theme.dynamic.color.title
+        contentLabel.textColor = Theme.dynamic.color.body
         
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
@@ -49,17 +46,11 @@ class ProfileItemView: UIView {
         
         switch colorMode {
         case .down:
-            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-                themeable.contentLabel.textColor = theme.color.downValue
-            }
+            contentLabel.textColor = Theme.dynamic.color.downValue
         case .normal:
-            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-                themeable.contentLabel.textColor = theme.color.body
-            }
+            contentLabel.textColor = Theme.dynamic.color.body
         case .up:
-            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-                themeable.contentLabel.textColor = theme.color.upValue
-            }
+            contentLabel.textColor = Theme.dynamic.color.upValue
         }
     }
 }

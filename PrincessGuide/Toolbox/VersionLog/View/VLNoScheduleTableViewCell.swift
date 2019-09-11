@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class VLNoScheduleTableViewCell: UITableViewCell {
 
@@ -16,13 +15,7 @@ class VLNoScheduleTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.contentLabel.textColor = theme.color.body
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        contentLabel.textColor = Theme.dynamic.color.body
         
         contentView.addSubview(contentLabel)
         contentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)

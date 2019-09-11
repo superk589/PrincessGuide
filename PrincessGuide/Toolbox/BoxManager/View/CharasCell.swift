@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 
 protocol CharasCellDelegate: class {
     func charasCell(_ charasCell: CharasCell, didSelect chara: Chara)
@@ -27,14 +26,6 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
     
     override func setup() {
         super.setup()
-        
-        selectedBackgroundView = UIView()
-        //        preservesSuperviewLayoutMargins = true
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
         
         contentView.addSubview(collectionView)
         collectionView.delegate = self

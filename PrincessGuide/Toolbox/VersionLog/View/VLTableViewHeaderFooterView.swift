@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class VLTableViewHeaderFooterView: UITableViewHeaderFooterView {
     
@@ -22,12 +21,9 @@ class VLTableViewHeaderFooterView: UITableViewHeaderFooterView {
         
         backgroundView = backgroundEffectView
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundEffectView.effect = UIBlurEffect(style: theme.blurEffectStyle)
-            themeable.versionLabel.textColor = theme.color.title
-            themeable.timeLabel.textColor = theme.color.lightText
-            
-        }
+        backgroundEffectView.effect = UIBlurEffect(style: .systemMaterial)
+        timeLabel.textColor = Theme.dynamic.color.lightText
+        versionLabel.textColor = Theme.dynamic.color.title
         
         contentView.addSubview(timeLabel)
         timeLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)

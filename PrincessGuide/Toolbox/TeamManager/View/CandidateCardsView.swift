@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 protocol CandidateCardsViewDelegate: class {
     func candidateCardsView(_ candidateCardsView: CandidateCardsView, didSelect index: Int)
@@ -31,9 +30,7 @@ class CandidateCardsView: UIView {
             make.edges.equalToSuperview()
         }
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundView.effect = UIBlurEffect(style: theme.blurEffectStyle)
-        }
+        backgroundView.effect = UIBlurEffect(style: .systemMaterial)
         
         addSubview(stackView)
         stackView.snp.makeConstraints { (make) in

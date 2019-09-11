@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 import SwiftyJSON
 
 extension Notification.Name {
@@ -118,24 +117,13 @@ class CDSettingsViewController: FormViewController {
             uniqueEquipmentLevel = Preload.default.maxUniqueEquipmentLevel
         }
     }
-
-    let backgroundImageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleNavigationRightItem(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleNavigationLeftItem(_:)))
-        tableView.backgroundView = backgroundImageView
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.tableView.backgroundColor = theme.color.background
-            themeable.view.tintColor = theme.color.tint
-        }
+        view.tintColor = Theme.dynamic.color.tint
         
         func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
             EurekaAppearance.cellUpdate(cell: cell, row: row)
@@ -163,16 +151,9 @@ class CDSettingsViewController: FormViewController {
                 
                 row.value = Setting.default.equipsUniqueEquipment
                 
-                }.cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                        themeable.switchControl.onTintColor = theme.color.tint
-                    }
-                }.cellUpdate(cellUpdate(cell:row:))
+            }
+            .cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
             
             <<< PickerInlineRow<Int>("unique_equipment_level") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Unique Equipment Level", comment: "")
@@ -317,32 +298,17 @@ class CDSettingsViewController: FormViewController {
                 
                 row.value = Setting.default.addsEx
                 
-                }.cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                        themeable.switchControl.onTintColor = theme.color.tint
-                    }
-                }.cellUpdate(cellUpdate(cell:row:))
+                }
+                .cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
         
             <<< SwitchRow("status_comparison") { (row : SwitchRow) -> Void in
                 row.title = NSLocalizedString("Status Comparison", comment: "")
                 
                 row.value = Setting.default.statusComparison
                 
-                }.cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                        themeable.switchControl.onTintColor = theme.color.tint
-                    }
-                }.cellUpdate(cellUpdate(cell:row:))
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
         
             <<< PickerInlineRow<Int>("rank_from") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Rank From", comment: "")

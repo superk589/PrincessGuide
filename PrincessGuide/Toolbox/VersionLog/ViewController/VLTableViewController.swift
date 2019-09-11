@@ -11,7 +11,6 @@ import Eureka
 import SnapKit
 import Alamofire
 import MJRefresh
-import Gestalt
 
 class VLTableViewController: UITableViewController {
     
@@ -22,9 +21,7 @@ class VLTableViewController: UITableViewController {
     let header = RefreshHeader()
     
     let footer = RefreshFooter()
-    
-    let backgroundImageView = UIImageView()
-    
+        
     private lazy var filter = VLFilterViewController.Setting.default.filter
 
     override func viewDidLoad() {
@@ -33,17 +30,7 @@ class VLTableViewController: UITableViewController {
         navigationItem.title = NSLocalizedString("Version Log", comment: "")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Options", comment: ""), style: .plain, target: self, action: #selector(handleNavigationRightItem(_:)))
         NotificationCenter.default.addObserver(self, selector: #selector(handleVersionLogSettingsChange(_:)), name: .versionLogFilterDidChange, object: nil)
-        
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.header.arrowImage.tintColor = theme.color.indicator
-            themeable.header.loadingView.color = theme.color.indicator
-            themeable.footer.stateLabel.textColor = theme.color.indicator
-            themeable.footer.loadingView.color = theme.color.indicator
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
-        
+                
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
         

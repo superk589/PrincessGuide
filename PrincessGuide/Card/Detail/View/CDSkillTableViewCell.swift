@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import Reusable
 
 class CDSkillTableViewCell: UITableViewCell, Reusable {
@@ -30,19 +29,14 @@ class CDSkillTableViewCell: UITableViewCell, Reusable {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        selectedBackgroundView = UIView()
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.nameLabel.textColor = theme.color.title
-            themeable.categoryLabel.textColor = theme.color.caption
-            themeable.castTimeLabel.textColor = theme.color.body
-            themeable.descLabel.textColor = theme.color.body
-            themeable.subtitleLabel.textColor = theme.color.title
-            themeable.subtitleLabel2.textColor = theme.color.title
-            themeable.actionLabel.textColor = theme.color.body
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        nameLabel.textColor = Theme.dynamic.color.title
+        categoryLabel.textColor = Theme.dynamic.color.caption
+        castTimeLabel.textColor = Theme.dynamic.color.body
+        descLabel.textColor = Theme.dynamic.color.body
+        subtitleLabel.textColor = Theme.dynamic.color.title
+        subtitleLabel2.textColor = Theme.dynamic.color.title
+        actionLabel.textColor = Theme.dynamic.color.body
         
         contentView.addSubview(skillIcon)
         skillIcon.snp.makeConstraints { (make) in

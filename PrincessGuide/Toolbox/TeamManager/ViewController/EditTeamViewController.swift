@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import Eureka
-import Gestalt
 import SwiftyJSON
 
 class EditTeamViewController: FormViewController {
@@ -51,9 +50,7 @@ class EditTeamViewController: FormViewController {
         self.team = team
         super.init(nibName: nil, bundle: nil)
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     private lazy var navigationAccessoryView = NavigationAccessoryView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44.0))
     
     override var customNavigationAccessoryView: (UIView & NavigationAccessory)? {
@@ -69,19 +66,8 @@ class EditTeamViewController: FormViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAndPop(_:)))
         
-        tableView.backgroundView = backgroundImageView
-
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.tableView.backgroundColor = theme.color.background
-            themeable.view.tintColor = theme.color.tint
-            themeable.navigationAccessoryView.barStyle = theme.barStyle
-            themeable.navigationAccessoryView.tintColor = theme.color.tint
-        }
+        view.tintColor = Theme.dynamic.color.tint
+        navigationAccessoryView.tintColor = Theme.dynamic.color.tint
         
         func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
             EurekaAppearance.cellUpdate(cell: cell, row: row)
@@ -108,27 +94,8 @@ class EditTeamViewController: FormViewController {
                 $0.title = NSLocalizedString("Custom Tag", comment: "")
                 $0.placeholder = NSLocalizedString("Enter Tag", comment: "")
                 $0.value = team.name
-                }.cellSetup { (cell, row) in
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                        themeable.textField.textColor = theme.color.tint
-                        themeable.textField.keyboardAppearance = theme.keyboardAppearance
-                    }
-                    ThemeManager.default.apply(theme: Theme.self, to: row) { (themeable, theme) in
-                        themeable.placeholderColor = theme.color.lightText
-                    }
-                }
-                .cellUpdate { (cell, row) in
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.textField.textColor = theme.color.tint
-                    }
-                }
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
                 .onChange { [weak self] (row) in
                     if self?.mode == .edit {
                         self?.saveTeam()

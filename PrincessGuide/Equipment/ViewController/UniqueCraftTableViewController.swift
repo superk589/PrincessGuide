@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class UniqueCraftTableViewController: UITableViewController {
     
@@ -43,16 +42,9 @@ class UniqueCraftTableViewController: UITableViewController {
             TextItem(title: NSLocalizedString("Description", comment: ""), content: equipment.description.replacingOccurrences(of: "\\n", with: ""), colorMode: .normal)
         ]))
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
         
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.estimatedRowHeight = 84

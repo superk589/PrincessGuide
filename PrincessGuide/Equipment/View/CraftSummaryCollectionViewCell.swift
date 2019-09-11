@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class CraftSummaryCollectionViewCell: UICollectionViewCell {
     
@@ -18,9 +17,7 @@ class CraftSummaryCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.numberLabel.textColor = theme.color.caption
-        }
+        numberLabel.textColor = Theme.dynamic.color.caption
         
         contentView.addSubview(icon)
         icon.snp.makeConstraints { (make) in

@@ -8,7 +8,6 @@
 
 import UIKit
 import SnapKit
-import Gestalt
 import Reusable
 
 class CDBasicTableViewCell: UITableViewCell, Reusable {
@@ -22,14 +21,8 @@ class CDBasicTableViewCell: UITableViewCell, Reusable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.nameLabel.textColor = theme.color.title
-            themeable.commentLabel.textColor = theme.color.body
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        nameLabel.textColor = Theme.dynamic.color.title
+        commentLabel.textColor = Theme.dynamic.color.body
         
         contentView.addSubview(cardIcon)
         cardIcon.snp.makeConstraints { (make) in

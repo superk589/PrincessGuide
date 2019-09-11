@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class CardCollectionViewCell: UICollectionViewCell {
     
@@ -28,10 +27,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
                 
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundColor = theme.color.tableViewCell.background
-            themeable.foregroundView.backgroundColor = theme.color.foregroundColor
-        }
+        foregroundView.backgroundColor = Theme.dynamic.color.foregroundColor
         
         contentView.addSubview(icon)
         icon.snp.makeConstraints { (make) in

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class EnemyView: UIView {
     
@@ -34,9 +33,7 @@ class EnemyView: UIView {
             enemyIcon.layer.borderWidth = 2
             enemyIcon.layer.cornerRadius = 6
             enemyIcon.layer.masksToBounds = true
-            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-                themeable.enemyIcon.layer.borderColor = theme.color.highlightedText.cgColor
-            }
+            enemyIcon.layer.borderColor = Theme.dynamic.color.highlightedText.cgColor
         } else {
             enemyIcon.layer.borderWidth = 0
         }

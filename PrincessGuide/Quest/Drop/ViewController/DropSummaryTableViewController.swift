@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class DropSummaryTableViewController: UITableViewController {
     
@@ -44,17 +43,9 @@ class DropSummaryTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
         
         tableView.allowsSelection = false
         tableView.estimatedRowHeight = 305

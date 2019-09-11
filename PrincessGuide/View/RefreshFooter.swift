@@ -53,6 +53,9 @@ class RefreshFooter: MJRefreshAutoFooter {
         addSubview(stateLabel)
         
         ignoredScrollViewContentInsetBottom = 300
+        
+        stateLabel.textColor = Theme.dynamic.color.indicator
+        loadingView.color = Theme.dynamic.color.indicator
     }
     
     override func placeSubviews(){

@@ -14,7 +14,6 @@ target 'PrincessGuide' do
   pod 'Alamofire'
   pod 'lz4'
   pod 'MJRefresh'
-  pod 'Gestalt', :git => 'https://github.com/superk589/Gestalt.git', :branch => 'swift5'
   pod 'Timepiece'
   pod 'Tabman'
   pod 'Eureka'
@@ -24,4 +23,5 @@ target 'PrincessGuide' do
   pod 'Cache', :git => 'https://github.com/Igor-Palaguta/Cache', :branch => 'Update-MD5'
   pod 'DHSmartScreenshot'
   pod 'Reusable'
+  pod 'R.swift'
 end

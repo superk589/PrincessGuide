@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import CoreData
 
 class SearchableAddTeamToTeamViewController: AddTeamToTeamViewController {
@@ -27,6 +26,7 @@ class SearchableAddTeamToTeamViewController: AddTeamToTeamViewController {
         searchController.delegate = self
         searchController.hidesNavigationBarDuringPresentation = true
         definesPresentationContext = true
+        searchController.searchBar.tintColor = Theme.dynamic.color.tint
         return searchController
     }()
     
@@ -40,12 +40,7 @@ class SearchableAddTeamToTeamViewController: AddTeamToTeamViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 11.0, *) {
-            navigationItem.searchController = searchController
-        }
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.searchController.searchBar.tintColor = theme.color.tint
-        }
+        navigationItem.searchController = searchController
     }
     
 }

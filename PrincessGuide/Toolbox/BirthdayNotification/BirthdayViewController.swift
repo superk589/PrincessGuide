@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 import SwiftyJSON
 import UserNotifications
 
@@ -37,20 +36,12 @@ class BirthdayViewController: FormViewController {
     var cards: [Card] {
         return BirthdayCenter.default.cards
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Chara Birthday", comment: "")
-        tableView.backgroundView = backgroundImageView
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.tableView.backgroundColor = theme.color.background
-            themeable.view.tintColor = theme.color.tint
-        }
+        view.tintColor = Theme.dynamic.color.tint
         
         func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
             EurekaAppearance.cellUpdate(cell: cell, row: row)
@@ -104,23 +95,13 @@ class BirthdayViewController: FormViewController {
                 }
             }
         
-            <<< LabelRow("notification_status") {
+            <<< LabelRow("notification_status") { [unowned self] in
                 $0.title = NSLocalizedString("Notification Permission", comment: "")
-            }.cellSetup { [unowned self] cell, row in
-                row.value = self.systemNotificationStatusString
-                cell.selectedBackgroundView = UIView()
-                ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                    themeable.textLabel?.textColor = theme.color.title
-                    themeable.detailTextLabel?.textColor = theme.color.tint
-                    themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                    themeable.backgroundColor = theme.color.tableViewCell.background
-                }
-            }
+                $0.value = self.systemNotificationStatusString
+            }.cellSetup(cellSetup(cell:row:))
             .cellUpdate { [unowned self] cell, row in
-                ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                    themeable.textLabel?.textColor = theme.color.title
-                    themeable.detailTextLabel?.textColor = theme.color.tint
-                }
+                cell.textLabel?.textColor = Theme.dynamic.color.title
+                cell.detailTextLabel?.textColor = Theme.dynamic.color.tint
                 cell.detailTextLabel?.text = self.systemNotificationStatusString
             }
             .onCellSelection { [unowned self] (cell, row) in
@@ -130,13 +111,8 @@ class BirthdayViewController: FormViewController {
             +++ Section(NSLocalizedString("Upcoming Birthdays", comment: ""))
         
             <<< CardWithBirthdayRow("upcoming_birthdays").cellSetup { (cell, row) in
-                cell.selectedBackgroundView = UIView()
-                ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                    themeable.textLabel?.textColor = theme.color.title
-                    themeable.detailTextLabel?.textColor = theme.color.tint
-                    themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                    themeable.backgroundColor = theme.color.tableViewCell.background
-                }
+                cell.textLabel?.textColor = Theme.dynamic.color.title
+                cell.detailTextLabel?.textColor = Theme.dynamic.color.tint
                 cell.configure(for: self.cards)
                 cell.delegate = self
             }

@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 
 protocol CardWithBirthdayCellDelegate: class {
     func cardWithBirthdayCell(_ cardWithBirthdayCell: CardWithBirthdayCell, didSelect card: Card)
@@ -24,14 +23,6 @@ class CardWithBirthdayCell: Cell<String>, CellType, UICollectionViewDelegate, UI
     
     override func setup() {
         super.setup()
-        
-        selectedBackgroundView = UIView()
-        //        preservesSuperviewLayoutMargins = true
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
         
         contentView.addSubview(collectionView)
         collectionView.delegate = self

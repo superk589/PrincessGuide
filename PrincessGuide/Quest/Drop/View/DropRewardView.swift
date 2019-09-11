@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class DropRewardView: UIView {
     
@@ -19,10 +18,8 @@ class DropRewardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.rateLabel.textColor = theme.color.caption
-            themeable.countLabel.textColor = theme.color.body
-        }
+        rateLabel.textColor = Theme.dynamic.color.caption
+        countLabel.textColor = Theme.dynamic.color.body
         
         addSubview(itemIcon)
         itemIcon.snp.makeConstraints { (make) in
@@ -67,15 +64,11 @@ class DropRewardView: UIView {
             itemIcon.layer.borderWidth = 2
             itemIcon.layer.cornerRadius = 6
             itemIcon.layer.masksToBounds = true
-            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-                themeable.itemIcon.layer.borderColor = theme.color.highlightedText.cgColor
-                themeable.rateLabel.textColor = theme.color.highlightedText
-            }
+            itemIcon.layer.borderColor = Theme.dynamic.color.highlightedText.cgColor
+            rateLabel.textColor = Theme.dynamic.color.highlightedText
         } else {
             itemIcon.layer.borderWidth = 0
-            ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-                themeable.rateLabel.textColor = theme.color.caption
-            }
+            rateLabel.textColor = Theme.dynamic.color.caption
         }
     }
         

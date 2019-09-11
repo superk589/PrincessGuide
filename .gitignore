@@ -20,3 +20,4 @@ fastlane/test_output
 xcuserdata/
 # *.xcworkspacedata
 *.DS_Store
+*.generated.swift

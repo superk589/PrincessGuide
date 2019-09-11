@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class CDSkillTableViewController: CDTableViewController {
     

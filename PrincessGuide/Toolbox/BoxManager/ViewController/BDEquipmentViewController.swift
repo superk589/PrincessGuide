@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import CoreData
 
 class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -42,26 +41,17 @@ class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UIC
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     private var consumes = [Craft.Consume]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(backgroundImageView)
-        backgroundImageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
                 
         layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
-        if #available(iOS 11.0, *) {
-            layout.sectionInsetReference = .fromSafeArea
-        }
+        layout.sectionInsetReference = .fromSafeArea
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -78,15 +68,7 @@ class BDEquipmentViewController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.scrollsToTop = false
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.collectionView.indicatorStyle = theme.indicatorStyle
-        }
-        
+                
         loadData()
     }
 

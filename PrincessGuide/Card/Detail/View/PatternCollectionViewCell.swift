@@ -8,7 +8,6 @@
 
 import UIKit
 import Kingfisher
-import Gestalt
 import Reusable
 
 class PatternCollectionViewCell: UICollectionViewCell, Reusable {
@@ -22,10 +21,8 @@ class PatternCollectionViewCell: UICollectionViewCell, Reusable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.skillLabel.textColor = theme.color.caption
-            themeable.loopLabel.textColor = theme.color.caption
-        }
+        skillLabel.textColor = Theme.dynamic.color.caption
+        loopLabel.textColor = Theme.dynamic.color.caption
         
         contentView.addSubview(skillIcon)
         skillIcon.snp.makeConstraints { (make) in

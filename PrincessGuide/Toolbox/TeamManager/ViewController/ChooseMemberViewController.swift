@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Gestalt
 import SwiftyJSON
 
 class ChooseMemberViewController: CardCollectionViewController {

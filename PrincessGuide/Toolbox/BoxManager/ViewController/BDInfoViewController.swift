@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Gestalt
 
 class BDInfoViewController: UITableViewController {
     
@@ -45,18 +44,10 @@ class BDInfoViewController: UITableViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.navigationController?.toolbar.barStyle = theme.barStyle
-            themeable.navigationController?.toolbar.tintColor = theme.color.tint
-        }
+        
         tableView.register(cellType: CDProfileTableViewCell.self)
         tableView.register(cellType: BoxTableViewCell.self)
         tableView.cellLayoutMarginsFollowReadableWidth = true

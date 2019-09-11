@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import AVFoundation
 import Reusable
 
@@ -50,19 +49,12 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
     func prepareRows(for card: Card) {
 
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     private var observations = [NSKeyValueObservation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.backgroundColor = theme.color.background
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
         tableView.cellLayoutMarginsFollowReadableWidth = true

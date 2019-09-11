@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import SnapKit
 import Reusable
 
@@ -27,13 +26,7 @@ class CDPromotionTableViewCell: UITableViewCell, Reusable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.titleLabel.textColor = theme.color.title
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        titleLabel.textColor = Theme.dynamic.color.title
         
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in

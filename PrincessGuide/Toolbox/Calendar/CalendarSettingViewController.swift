@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 import SwiftyJSON
 import EventKit
 
@@ -95,26 +94,14 @@ class CalendarSettingViewController: FormViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = NSLocalizedString("Calendar Settings", comment: "")
         
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        tableView.backgroundView = backgroundImageView
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.tableView.backgroundColor = theme.color.background
-            themeable.view.tintColor = theme.color.tint
-        }
+        view.tintColor = Theme.dynamic.color.tint
         
         func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
             EurekaAppearance.cellUpdate(cell: cell, row: row)
@@ -174,23 +161,13 @@ class CalendarSettingViewController: FormViewController {
                     }
                 }
         
-            <<< LabelRow("calendar_status") {
+            <<< LabelRow("calendar_status") { [unowned self] in
+                $0.value = self.systemCalendarStatusString
                 $0.title = NSLocalizedString("Calendar Permission", comment: "")
-                }.cellSetup { [unowned self] cell, row in
-                    row.value = self.systemCalendarStatusString
-                    cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                    }
-                }
+                }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate { [unowned self] cell, row in
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                    }
+                    cell.textLabel?.textColor = Theme.dynamic.color.title
+                    cell.detailTextLabel?.textColor = Theme.dynamic.color.tint
                     cell.detailTextLabel?.text = self.systemCalendarStatusString
                 }
                 .onCellSelection { [unowned self] (cell, row) in

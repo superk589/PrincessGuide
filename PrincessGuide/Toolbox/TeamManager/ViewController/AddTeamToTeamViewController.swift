@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Gestalt
 
 protocol AddTeamToTeamViewControllerDelegate: class {
     func addTeamToTeamViewControllerDidSave(_ addTeamToTeamViewController: AddTeamToTeamViewController)
@@ -49,13 +48,7 @@ class AddTeamToTeamViewController: UITableViewController {
         navigationItem.title = NSLocalizedString("Teams", comment: "")
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.navigationController?.toolbar.barStyle = theme.barStyle
-            themeable.navigationController?.toolbar.tintColor = theme.color.tint
-        }
+        navigationController?.toolbar.tintColor = Theme.dynamic.color.tint
         
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.description())
         tableView.tableFooterView = UIView()
@@ -153,9 +146,7 @@ class AddTeamToTeamViewController: UITableViewController {
     var teams: [Team] {
         return fetchedResultsController?.fetchedObjects ?? []
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     private func prepareFetchRequest() {
         let request: NSFetchRequest<Team> = Team.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "modifiedAt", ascending: false)]

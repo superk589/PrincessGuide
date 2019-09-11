@@ -9,7 +9,6 @@
 import UIKit
 import Tabman
 import Pageboy
-import Gestalt
 
 class QuestTabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
     
@@ -53,20 +52,14 @@ class QuestTabViewController: TabmanViewController, PageboyViewControllerDataSou
         bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         bar.layout.transitionStyle = .progressive
         addBar(systemBar, dataSource: self, at: .bottom)
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            
-            themeable.view.backgroundColor = theme.color.background
-            bar.indicator.tintColor = theme.color.tint
-            bar.buttons.customize({ (button) in
-                button.selectedTintColor = theme.color.tint
-                button.tintColor = theme.color.lightText
-            })
-            systemBar.backgroundStyle = .blur(style: theme.blurEffectStyle)
-        }
         
+        view.backgroundColor = Theme.dynamic.color.background
+        bar.indicator.tintColor = Theme.dynamic.color.tint
+        bar.buttons.customize { (button) in
+            button.selectedTintColor = Theme.dynamic.color.tint
+            button.tintColor = Theme.dynamic.color.lightText
+        }
+        systemBar.backgroundStyle = .blur(style: .systemMaterial)
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {

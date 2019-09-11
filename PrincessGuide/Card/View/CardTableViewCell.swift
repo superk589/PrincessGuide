@@ -8,7 +8,6 @@
 
 import UIKit
 import SnapKit
-import Gestalt
 
 class CardTableViewCell: UITableViewCell {
 
@@ -16,16 +15,6 @@ class CardTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        selectedBackgroundView = UIView()
-
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.cardView.nameLabel.textColor = theme.color.title
-            themeable.cardView.rightLabel.textColor = theme.color.body
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
-        
         contentView.addSubview(cardView)
         cardView.snp.makeConstraints { (make) in
             make.left.right.equalTo(readableContentGuide)

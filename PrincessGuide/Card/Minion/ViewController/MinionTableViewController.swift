@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class MinionTableViewController: UITableViewController {
     
@@ -40,17 +39,10 @@ class MinionTableViewController: UITableViewController {
     func prepareRows() {
         
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.backgroundColor = theme.color.background
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
+        
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false

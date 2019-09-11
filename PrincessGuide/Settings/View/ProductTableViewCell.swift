@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import StoreKit
 
 protocol ProductTableViewCellDelegate: class {
@@ -40,12 +39,9 @@ class ProductTableViewCell: UITableViewCell {
         
         selectionStyle = .none
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.button.setTitleColor(theme.color.tint, for: .normal)
-            themeable.button.setTitleColor(theme.color.title, for: .highlighted)
-            themeable.backgroundColor = theme.color.tableViewCell.background
-            themeable.indicator.color = theme.color.indicator
-        }
+        button.setTitleColor(Theme.dynamic.color.tint, for: .normal)
+        button.setTitleColor(Theme.dynamic.color.title, for: .highlighted)
+        indicator.color = Theme.dynamic.color.indicator
     }
     
     private var product: SKProduct?

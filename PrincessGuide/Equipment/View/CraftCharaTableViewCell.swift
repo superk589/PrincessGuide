@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import Reusable
 
 protocol CraftCharaTableViewCellDelegate: class {
@@ -27,14 +26,7 @@ class CraftCharaTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.titleLabel.textColor = theme.color.title
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-            themeable.collectionView.indicatorStyle = theme.indicatorStyle
-        }
+        titleLabel.textColor = Theme.dynamic.color.title
         
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         titleLabel.text = NSLocalizedString("Who Needs", comment: "")

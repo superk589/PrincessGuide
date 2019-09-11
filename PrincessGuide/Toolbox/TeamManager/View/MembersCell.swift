@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 
 protocol MembersCellDelegate: class {
     func membersCell(_ membersCell: MembersCell, didSelect member: Member)
@@ -24,13 +23,6 @@ class MembersCell: Cell<[Member]>, CellType {
     
     override func setup() {
         super.setup()
-        
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
         
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in

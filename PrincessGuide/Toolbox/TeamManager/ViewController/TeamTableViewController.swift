@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import CoreData
 
 class TeamTableViewController: UITableViewController {
@@ -20,9 +19,7 @@ class TeamTableViewController: UITableViewController {
     var teams: [Team] {
         return fetchedResultsController?.fetchedObjects ?? []
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     private func prepareFetchRequest() {
         let request: NSFetchRequest<Team> = Team.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "modifiedAt", ascending: false)]
@@ -37,16 +34,7 @@ class TeamTableViewController: UITableViewController {
         
         navigationItem.title = NSLocalizedString("Teams", comment: "")
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.navigationController?.toolbar.barStyle = theme.barStyle
-            themeable.navigationController?.toolbar.tintColor = theme.color.tint
-            themeable.tableView.backgroundColor = theme.color.background
-        }
-        
+                
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.description())
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 104

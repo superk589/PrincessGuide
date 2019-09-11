@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class VLTableViewCell: UITableViewCell {
     
@@ -24,14 +23,8 @@ class VLTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.contentLabel.textColor = theme.color.body
-            themeable.scheduleLabel.textColor = theme.color.caption
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        contentLabel.textColor = Theme.dynamic.color.body
+        scheduleLabel.textColor = Theme.dynamic.color.caption
         
         topView.axis = .horizontal
         topView.spacing = 5

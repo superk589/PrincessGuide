@@ -9,7 +9,6 @@
 import UIKit
 import Tabman
 import Pageboy
-import Gestalt
 
 class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
     
@@ -54,29 +53,21 @@ class MinionTabViewController: TabmanViewController, PageboyViewControllerDataSo
         bar.layout.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         bar.layout.transitionStyle = .progressive
         addBar(systemBar, dataSource: self, at: .bottom)
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            
-            themeable.view.backgroundColor = theme.color.background
-            bar.indicator.tintColor = theme.color.tint
-            bar.buttons.customize({ (button) in
-                button.selectedTintColor = theme.color.tint
-                button.tintColor = theme.color.lightText
-            })
-            systemBar.backgroundStyle = .blur(style: theme.blurEffectStyle)
-        }
         
+        view.backgroundColor = Theme.dynamic.color.background
+        bar.indicator.tintColor = Theme.dynamic.color.tint
+        bar.buttons.customize { (button) in
+            button.selectedTintColor = Theme.dynamic.color.tint
+            button.tintColor = Theme.dynamic.color.lightText
+        }
+        systemBar.backgroundStyle = .blur(style: .systemMaterial)
     }
     
     @objc private func handleExportItem(_ item: UIBarButtonItem) {
         if let index = self.currentIndex,
-            let foregroundImage = viewControllers[index].tableView.screenshot(),
-            let backgroundImage = viewControllers[index].backgroundImageView.image,
-            let tableViewImage = foregroundImage.addBackground(backgroundImage) {
+            let foregroundImage = viewControllers[index].tableView.screenshot() {
             
-            var image = tableViewImage
+            var image = foregroundImage
             if let navigationBarImage = navigationController?.navigationBar.screenshot() {
                 image = UIImage.verticalImage(from: [navigationBarImage, image])
             }

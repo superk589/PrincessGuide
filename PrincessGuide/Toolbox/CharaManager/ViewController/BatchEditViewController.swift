@@ -8,7 +8,6 @@
 
 import UIKit
 import Eureka
-import Gestalt
 import CoreData
 import SwiftyJSON
 
@@ -30,9 +29,7 @@ class BatchEditViewController: FormViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,16 +38,7 @@ class BatchEditViewController: FormViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveCharas))
         
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.tableView.backgroundColor = theme.color.background
-            themeable.view.tintColor = theme.color.tint
-        }
+        view.tintColor = Theme.dynamic.color.tint
         
         func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
             EurekaAppearance.cellUpdate(cell: cell, row: row)
@@ -215,12 +203,8 @@ class BatchEditViewController: FormViewController {
             <<< SlotsRow("slots")
                 .cellSetup{ [weak self] (cell, row) in
                     cell.selectedBackgroundView = UIView()
-                    ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-                        themeable.textLabel?.textColor = theme.color.title
-                        themeable.detailTextLabel?.textColor = theme.color.tint
-                        themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-                        themeable.backgroundColor = theme.color.tableViewCell.background
-                    }
+                    cell.textLabel?.textColor = Theme.dynamic.color.title
+                    cell.detailTextLabel?.textColor = Theme.dynamic.color.tint
                     if let card = self?.charas.first?.card, let row = self?.form.rowBy(tag: "unit_rank") as? RowOf<Int>,
                         let value = row.value, card.promotions.indices ~= value - 1 {
                         cell.configure(for: card.promotions[value - 1], slots: self?.charas.first?.slots ?? [Bool](repeating: true, count: 6))

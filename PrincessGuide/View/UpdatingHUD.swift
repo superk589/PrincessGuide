@@ -8,7 +8,6 @@
 
 import UIKit
 import SnapKit
-import Gestalt
 
 class UpdatingHUD: UIView {
     
@@ -19,10 +18,8 @@ class UpdatingHUD: UIView {
         super.init(frame: frame)
         layer.cornerRadius = 10
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundColor = theme.color.loadingHUD.foreground
-            themeable.statusLabel.textColor = theme.color.loadingHUD.text
-        }
+        backgroundColor = Theme.dynamic.color.loadingHUD.foreground
+        statusLabel.textColor = Theme.dynamic.color.loadingHUD.text
         
         loadingView.hideWhenStopped = true
         addSubview(loadingView)

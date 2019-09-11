@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class QuestEnemyTableViewController: UITableViewController {
     
@@ -81,18 +80,9 @@ class QuestEnemyTableViewController: UITableViewController {
         } ?? []
         super.init(nibName: nil, bundle: nil)
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.tableView.backgroundColor = theme.color.background
-        }
         
         tableView.allowsSelection = false
         tableView.estimatedRowHeight = 88

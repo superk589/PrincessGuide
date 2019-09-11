@@ -7,30 +7,16 @@
 //
 
 import UIKit
-import Gestalt
 
 class DungeonBossTableViewController: UITableViewController, DataChecking {
     
     private var dungeons = [Dungeon]()
     
     let refresher = RefreshHeader()
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.refresher.arrowImage.tintColor = theme.color.indicator
-            themeable.refresher.loadingView.color = theme.color.indicator
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
-        
+                
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         
         tableView.mj_header = refresher

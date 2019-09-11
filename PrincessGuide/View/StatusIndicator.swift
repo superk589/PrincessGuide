@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class StatusIndicator: UIView {
     
@@ -26,14 +25,15 @@ class StatusIndicator: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.setNeedsDisplay()
-        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        setNeedsDisplay()
     }
     
     override func draw(_ rect: CGRect) {
-        let theme = ThemeManager.default.theme as! Theme
-        let colors = [color.cgColor, color.mixed(withColor: theme.color.background, weight: 0.9).cgColor]
+        let colors = [color.cgColor, color.mixed(withColor: Theme.dynamic.color.background, weight: 0.9).cgColor]
         let gradient = CGGradient(colorsSpace: nil, colors: colors as CFArray, locations: nil)
         
         if let context = UIGraphicsGetCurrentContext() {

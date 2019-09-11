@@ -7,17 +7,14 @@
 //
 
 import UIKit
-import Gestalt
 
 class CharaItemView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.titleLabel.textColor = theme.color.title
-            themeable.contentLabel.textColor = theme.color.body
-        }
+        titleLabel.textColor = Theme.dynamic.color.title
+        contentLabel.textColor = Theme.dynamic.color.body
         
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in

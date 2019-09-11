@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import CoreData
 
 class SearchableTeamTableViewController: TeamTableViewController {
@@ -39,6 +38,7 @@ class SearchableTeamTableViewController: TeamTableViewController {
         searchController.delegate = self
         searchController.hidesNavigationBarDuringPresentation = true
         definesPresentationContext = true
+        searchController.searchBar.tintColor = Theme.dynamic.color.tint
         return searchController
     }()
     
@@ -52,12 +52,7 @@ class SearchableTeamTableViewController: TeamTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 11.0, *) {
-            navigationItem.searchController = searchController
-        }
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.searchController.searchBar.tintColor = theme.color.tint
-        }
+        navigationItem.searchController = searchController
     }
     
     override func teamOf(indexPath: IndexPath) -> Team {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class CharaTableViewCell: UITableViewCell {
     
@@ -15,16 +14,8 @@ class CharaTableViewCell: UITableViewCell {
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        selectedBackgroundView = UIView()
-        multipleSelectionBackgroundView = UIView()
-//        preservesSuperviewLayoutMargins = true
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-            themeable.multipleSelectionBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.tintColor = theme.color.tint
-        }
+       
+        tintColor = Theme.dynamic.color.tint
         
         contentView.addSubview(charaView)
         charaView.snp.makeConstraints { (make) in

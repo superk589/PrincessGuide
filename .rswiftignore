@@ -1,0 +1,3 @@
+# Ignore all strings files wherever they are
+**/*.strings
+

@@ -10,7 +10,6 @@ import UIKit
 import MessageUI
 import Social
 import AcknowList
-import Gestalt
 
 class SettingsTableViewController: UITableViewController {
 
@@ -34,22 +33,12 @@ class SettingsTableViewController: UITableViewController {
         var settingRows = [Row]()
         
         let downloadAtStartSwitch = UISwitch()
-        ThemeManager.default.apply(theme: Theme.self, to: downloadAtStartSwitch) { (themeable, theme) in
-            themeable.onTintColor = theme.color.tint
-        }
+        downloadAtStartSwitch.onTintColor = Theme.dynamic.color.tint
         downloadAtStartSwitch.isOn = Defaults.downloadAtStart
         downloadAtStartSwitch.addTarget(self, action: #selector(handleDownloadAtStartSwitch(_:)), for: .valueChanged)
         
-        let darkThemeSwitch = UISwitch()
-        ThemeManager.default.apply(theme: Theme.self, to: darkThemeSwitch) { (themeable, theme) in
-            themeable.onTintColor = theme.color.tint
-        }
-        darkThemeSwitch.isOn = Defaults.prefersDarkTheme
-        darkThemeSwitch.addTarget(self, action: #selector(handleDarkThemeSwitch(_:)), for: .valueChanged)
-        
+    
         settingRows.append(Row(title: NSLocalizedString("Check for Updates at Launch", comment: ""), detail: nil, hasDisclosure: false, accessoryView: downloadAtStartSwitch, selector: nil))
-        settingRows.append(Row(title: NSLocalizedString("Use Dark Theme", comment: ""), detail: "", hasDisclosure: false, accessoryView: darkThemeSwitch, selector: nil))
-        
         sections.append(Section(rows: settingRows, title: NSLocalizedString("General", comment: "")))
         
         var feedbackRows = [Row]()
@@ -61,24 +50,14 @@ class SettingsTableViewController: UITableViewController {
         var aboutRows = [Row]()
         aboutRows.append(Row(title: NSLocalizedString("Show the Latest Notice", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showRecentNotice)))
         aboutRows.append(Row(title: NSLocalizedString("Third-Party Licenses", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
-        let versionInfo = Defaults.proEdition ? VersionManager.shared.appVersion + " (Pro)" : VersionManager.shared.appVersion
+        let versionInfo = VersionManager.shared.appVersion
         aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: versionInfo, hasDisclosure: false, accessoryView: nil, selector: nil))
         aboutRows.append(Row(title: NSLocalizedString("Data Version", comment: ""), detail: VersionManager.shared.truthVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
         sections.append(Section(rows: aboutRows, title: NSLocalizedString("About", comment: "")))
     }
-    
-    let backgroundImageView = UIImageView()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = backgroundImageView
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            let navigationBar = themeable.navigationController?.navigationBar
-            navigationBar?.tintColor = theme.color.tint
-            navigationBar?.barStyle = theme.barStyle
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-        }
         
         navigationItem.title = NSLocalizedString("Settings", comment: "")
         prepareCellData()
@@ -103,10 +82,6 @@ class SettingsTableViewController: UITableViewController {
     
     @objc private func handleDownloadAtStartSwitch(_ sender: UISwitch) {
         Defaults.downloadAtStart = sender.isOn
-    }
-    
-    @objc private func handleDarkThemeSwitch(_ sender: UISwitch) {
-        Defaults.prefersDarkTheme = sender.isOn
     }
     
     @objc private func showAckListViewController() {
@@ -199,12 +174,8 @@ class SettingsTableViewController: UITableViewController {
         cell.selectionStyle = .none
         cell.selectedBackgroundView = UIView()
         
-        ThemeManager.default.apply(theme: Theme.self, to: cell) { (themeable, theme) in
-            themeable.textLabel?.textColor = theme.color.title
-            themeable.detailTextLabel?.textColor = theme.color.body
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-        }
+        cell.textLabel?.textColor = Theme.dynamic.color.title
+        cell.detailTextLabel?.textColor = Theme.dynamic.color.body
         
         return cell
     }

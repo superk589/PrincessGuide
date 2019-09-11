@@ -9,7 +9,6 @@
 import UIKit
 import SnapKit
 import Eureka
-import Gestalt
 import StoreKit
 
 extension Notification.Name {
@@ -63,20 +62,12 @@ class BuyProEditionViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
-    let backgroundImageView = UIImageView()
-
     func prepareUI() {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Restore", comment: ""), style: .plain, target: self, action: #selector(restore(_:)))
         
-        tableView.backgroundView = backgroundImageView
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundImageView.image = theme.backgroundImage
-            themeable.tableView.indicatorStyle = theme.indicatorStyle
-            themeable.tableView.backgroundColor = theme.color.background
-            themeable.view.tintColor = theme.color.tint
-        }
+        view.tintColor = Theme.dynamic.color.tint
         
         tableView.register(FAQTableViewCell.self, forCellReuseIdentifier: FAQTableViewCell.description())
         tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: ProductTableViewCell.description())

@@ -8,7 +8,6 @@
 
 import UIKit
 import SnapKit
-import Gestalt
 
 class LoadingHUD: UIView {
     
@@ -46,11 +45,9 @@ class LoadingHUD: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.backgroundColor = theme.color.loadingHUD.background
-            themeable.titleLabel.textColor = theme.color.loadingHUD.text
-            themeable.contentView.backgroundColor = theme.color.loadingHUD.foreground
-        }
+        backgroundColor = Theme.dynamic.color.loadingHUD.background
+        titleLabel.textColor = Theme.dynamic.color.loadingHUD.text
+        contentView.backgroundColor = Theme.dynamic.color.loadingHUD.foreground
         
         isUserInteractionEnabled = true
         

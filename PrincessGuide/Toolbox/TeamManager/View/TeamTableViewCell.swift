@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 
 class TeamTableViewCell: UITableViewCell {
     
@@ -50,17 +49,9 @@ class TeamTableViewCell: UITableViewCell {
         
         stackView.setContentCompressionResistancePriority(.required, for: .vertical)
         
-        selectedBackgroundView = UIView()
-        multipleSelectionBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-            themeable.multipleSelectionBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.tintColor = theme.color.tint
-            themeable.tagLabel.textColor = theme.color.caption
-            themeable.markIcon.tintColor = theme.color.tint
-        }
+        tintColor = Theme.dynamic.color.tint
+        tagLabel.textColor = Theme.dynamic.color.caption
+        markIcon.tintColor = Theme.dynamic.color.tint
         
         tagLabel.font = UIFont.scaledFont(forTextStyle: .caption1, ofSize: 12)
         

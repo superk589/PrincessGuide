@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gestalt
 import Reusable
 
 protocol CDCommentTableViewCellDelegate: class {
@@ -25,14 +24,8 @@ class CDCommentTableViewCell: UITableViewCell, Reusable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectedBackgroundView = UIView()
-        
-        ThemeManager.default.apply(theme: Theme.self, to: self) { (themeable, theme) in
-            themeable.selectedBackgroundView?.backgroundColor = theme.color.tableViewCell.selectedBackground
-            themeable.backgroundColor = theme.color.tableViewCell.background
-            themeable.commentLabel.textColor = theme.color.body
-            themeable.loadingIndicator.color = theme.color.indicator
-        }
+        commentLabel.textColor = Theme.dynamic.color.body
+        loadingIndicator.color = Theme.dynamic.color.indicator
         
         commentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
         contentView.addSubview(commentLabel)
