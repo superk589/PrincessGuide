@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewController.swift
+//  SettingsViewController.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/4/26.
@@ -12,36 +12,7 @@ import Social
 import AcknowList
 import Eureka
 
-class SettingsTableViewController: FormViewController {
-
-//    private func prepareCellData() {
-//
-//        var settingRows = [Row]()
-//
-//        let downloadAtStartSwitch = UISwitch()
-//        downloadAtStartSwitch.onTintColor = Theme.dynamic.color.tint
-//        downloadAtStartSwitch.isOn = Defaults.downloadAtStart
-//        downloadAtStartSwitch.addTarget(self, action: #selector(handleDownloadAtStartSwitch(_:)), for: .valueChanged)
-//
-//
-//
-//        settingRows.append(Row(title: NSLocalizedString("Check for Updates at Launch", comment: ""), detail: nil, hasDisclosure: false, accessoryView: downloadAtStartSwitch, selector: nil))
-//        sections.append(Section(rows: settingRows, title: NSLocalizedString("General", comment: "")))
-//
-//        var feedbackRows = [Row]()
-//        feedbackRows.append(Row(title: NSLocalizedString("Email", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(sendEmail)))
-//        feedbackRows.append(Row(title: NSLocalizedString("Review at App Store", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(postReview)))
-//        feedbackRows.append(Row(title: NSLocalizedString("Twitter", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(sendTweet)))
-//        sections.append(Section(rows: feedbackRows, title: NSLocalizedString("Feedback", comment: "")))
-//
-//        var aboutRows = [Row]()
-//        aboutRows.append(Row(title: NSLocalizedString("Show the Latest Notice", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showRecentNotice)))
-//        aboutRows.append(Row(title: NSLocalizedString("Third-Party Licenses", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
-//        let versionInfo = VersionManager.shared.appVersion
-//        aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: versionInfo, hasDisclosure: false, accessoryView: nil, selector: nil))
-//        aboutRows.append(Row(title: NSLocalizedString("Data Version", comment: ""), detail: VersionManager.shared.truthVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
-//        sections.append(Section(rows: aboutRows, title: NSLocalizedString("About", comment: "")))
-//    }
+class SettingsViewController: FormViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -249,7 +220,7 @@ class SettingsTableViewController: FormViewController {
 
 // MARK: MFMailComposeViewControllerDelegate
 
-extension SettingsTableViewController: MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
+extension SettingsViewController: MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)

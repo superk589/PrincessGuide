@@ -105,7 +105,7 @@
 		12398E8B20917554006AC352 /* DropSummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E8A20917554006AC352 /* DropSummaryTableViewController.swift */; };
 		12398E8D20917C1F006AC352 /* DropSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E8C20917C1F006AC352 /* DropSummaryTableViewCell.swift */; };
 		12398E8F20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12398E8E20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist */; };
-		12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9020917EC2006AC352 /* SettingsTableViewController.swift */; };
+		12398E9120917EC2006AC352 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9020917EC2006AC352 /* SettingsViewController.swift */; };
 		12398E9720918572006AC352 /* VersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9620918572006AC352 /* VersionManager.swift */; };
 		12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E982091A1CB006AC352 /* DropRewardView.swift */; };
 		12398E9D2092A923006AC352 /* EquipmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9C2092A923006AC352 /* EquipmentCollectionViewCell.swift */; };
@@ -414,7 +414,7 @@
 		12398E8A20917554006AC352 /* DropSummaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropSummaryTableViewController.swift; sourceTree = "<group>"; };
 		12398E8C20917C1F006AC352 /* DropSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		12398E8E20917E56006AC352 /* Pods-PrincessGuide-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-PrincessGuide-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
-		12398E9020917EC2006AC352 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		12398E9020917EC2006AC352 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		12398E9620918572006AC352 /* VersionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionManager.swift; sourceTree = "<group>"; };
 		12398E982091A1CB006AC352 /* DropRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropRewardView.swift; sourceTree = "<group>"; };
 		12398E9C2092A923006AC352 /* EquipmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -921,7 +921,7 @@
 		12398E9320917EE0006AC352 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				12398E9020917EC2006AC352 /* SettingsTableViewController.swift */,
+				12398E9020917EC2006AC352 /* SettingsViewController.swift */,
 				126DECDE209E0733004EC56A /* ThirdPartyLibrariesViewController.swift */,
 				126DECE0209E0B2C004EC56A /* CustomAcknowViewController.swift */,
 				122071ED20F9F57000554030 /* BuyProEditionViewController.swift */,
@@ -1851,7 +1851,7 @@
 				12973CEF20EBBAC500C83089 /* CharaView.swift in Sources */,
 				1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */,
 				12204245231B74CE00205C85 /* Rarity6UnlockQuest.swift in Sources */,
-				12398E9120917EC2006AC352 /* SettingsTableViewController.swift in Sources */,
+				12398E9120917EC2006AC352 /* SettingsViewController.swift in Sources */,
 				12F125EF20B94D1D005C9659 /* ChangeEnergyAction.swift in Sources */,
 				12398E7220915737006AC352 /* AttackPattern.swift in Sources */,
 				128DA48421B262DB00F7C006 /* CDMinionTableViewCell.swift in Sources */,
