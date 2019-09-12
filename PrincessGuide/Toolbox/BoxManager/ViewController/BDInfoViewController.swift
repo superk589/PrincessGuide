@@ -66,7 +66,7 @@ class BDInfoViewController: UITableViewController {
             
             let box = self?.context.object(with: objectID) as? Box
             let charas = box?.charas?.allObjects as? [Chara] ?? []
-            rows.append(Row.basic(charas.first?.iconURL, box?.name ?? ""))
+            rows.append(Row.basic(box?.coverURL, box?.name ?? ""))
             rows.append(Row.textArray([
                 TextItem(title: NSLocalizedString("Charas Count", comment: ""), content: String(charas.count), colorMode: .normal)
             ]))

@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBar.tintColor = Theme.dynamic.color.tint
         window?.backgroundColor = Theme.dynamic.color.background
         UINavigationBar.appearance().tintColor = Theme.dynamic.color.tint
+        UIToolbar.appearance().tintColor = Theme.dynamic.color.tint
         
         KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
 

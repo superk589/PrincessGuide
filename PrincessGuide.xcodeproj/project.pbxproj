@@ -112,6 +112,8 @@
 		12398E9F2092D174006AC352 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E9E2092D174006AC352 /* DeviceInfo.swift */; };
 		12398EA12092D78C006AC352 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA02092D78C006AC352 /* Updater.swift */; };
 		12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA22092F7D4006AC352 /* StringExtension.swift */; };
+		123AA274232A3E6F00226AFF /* BoxCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123AA273232A3E6F00226AFF /* BoxCoverCell.swift */; };
+		123AA276232A40B900226AFF /* BoxCoverSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123AA275232A40B900226AFF /* BoxCoverSelectionViewController.swift */; };
 		1247127822278EC500A9C2E1 /* CharmAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247127722278EC500A9C2E1 /* CharmAction.swift */; };
 		1247127A22279DF700A9C2E1 /* ChangeBodyWidthAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247127922279DF700A9C2E1 /* ChangeBodyWidthAction.swift */; };
 		124BADDB21AD42F5001041F2 /* UniqueEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BADDA21AD42F5001041F2 /* UniqueEquipmentViewController.swift */; };
@@ -419,6 +421,8 @@
 		12398E9E2092D174006AC352 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		12398EA02092D78C006AC352 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		12398EA22092F7D4006AC352 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		123AA273232A3E6F00226AFF /* BoxCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCoverCell.swift; sourceTree = "<group>"; };
+		123AA275232A40B900226AFF /* BoxCoverSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCoverSelectionViewController.swift; sourceTree = "<group>"; };
 		1247127722278EC500A9C2E1 /* CharmAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharmAction.swift; sourceTree = "<group>"; };
 		1247127922279DF700A9C2E1 /* ChangeBodyWidthAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBodyWidthAction.swift; sourceTree = "<group>"; };
 		124BADDA21AD42F5001041F2 /* UniqueEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueEquipmentViewController.swift; sourceTree = "<group>"; };
@@ -1187,6 +1191,7 @@
 				12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */,
 				12DA21EE20EFBBE3005FD705 /* EditCharaInBoxViewController.swift */,
 				126BFBD420F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift */,
+				123AA275232A40B900226AFF /* BoxCoverSelectionViewController.swift */,
 				126BFBCE20F0FAE70059B4ED /* BDTabViewController.swift */,
 				126BFBD020F0FAF20059B4ED /* BDInfoViewController.swift */,
 				126BFBD220F0FC420059B4ED /* BDEquipmentViewController.swift */,
@@ -1200,6 +1205,7 @@
 				12DC963B20EDED44008896D7 /* BoxTableViewCell.swift */,
 				12DC964920EE1BC1008896D7 /* CharasCell.swift */,
 				125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */,
+				123AA273232A3E6F00226AFF /* BoxCoverCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1686,6 +1692,7 @@
 				128DA48221B25E3900F7C006 /* Minion.swift in Sources */,
 				125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */,
 				126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */,
+				123AA276232A40B900226AFF /* BoxCoverSelectionViewController.swift in Sources */,
 				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,
 				12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */,
 				12F125DB20B92E79005C9659 /* MoveAction.swift in Sources */,
@@ -1821,6 +1828,7 @@
 				12398E742091573D006AC352 /* Area.swift in Sources */,
 				12C24B97217ACCA80079AFE0 /* Store.swift in Sources */,
 				1281FA4E209AE25700F2D567 /* CraftTableViewCell.swift in Sources */,
+				123AA274232A3E6F00226AFF /* BoxCoverCell.swift in Sources */,
 				12398E8D20917C1F006AC352 /* DropSummaryTableViewCell.swift in Sources */,
 				12B8F58B214A5B3600C039DE /* Tower.swift in Sources */,
 				12DC963C20EDED44008896D7 /* BoxTableViewCell.swift in Sources */,
@@ -2105,7 +2113,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 123;
+				CURRENT_PROJECT_VERSION = 124;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2128,7 +2136,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 123;
+				CURRENT_PROJECT_VERSION = 124;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

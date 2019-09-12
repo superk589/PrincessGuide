@@ -104,6 +104,17 @@ class EditBoxViewController: FormViewController {
                         self?.saveBox()
                     }
                 }
+            
+            <<< BoxCoverRow("cover") {
+                $0.value = box.coverURL
+            }
+            .cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+            .onCellSelection { [unowned self] cell, row in
+                let vc = BoxCoverSelectionViewController()
+                vc.delegate = self
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         
 //            <<< ButtonRow("save_box") { (row) in
 //                row.title = NSLocalizedString("Save Box", comment: "")
@@ -193,9 +204,10 @@ class EditBoxViewController: FormViewController {
     }
     
     func saveBox() {
-        let json = JSON(form.values())
+        let values = form.values()
         box.modifiedAt = Date()
-        box.name = json["name"].stringValue
+        box.name = values["name"] as? String
+        box.coverURL = values["cover"] as? URL
         do {
             try context.save()
             try parentContext?.save()
@@ -217,6 +229,19 @@ extension EditBoxViewController: AddCharaToBoxViewControllerDelegate {
         let row = form.rowBy(tag: "charas") as? CharasRow
         row?.cell.configure(for: box)
         row?.reload()
+        if mode == .edit {
+            saveBox()
+        }
+    }
+}
+
+extension EditBoxViewController: BoxCoverSelectionViewControllerDelegate {
+    
+    func boxCoverSelectionViewController(_ boxCoverSelectionViewController: BoxCoverSelectionViewController, didSelect url: URL) {
+        navigationController?.popViewController(animated: true)
+        let row = form.rowBy(tag: "cover") as? BoxCoverRow
+        row?.cell.icon.configure(iconURL: url, placeholderStyle: .blank)
+        row?.value = url
         if mode == .edit {
             saveBox()
         }

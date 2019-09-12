@@ -10,78 +10,177 @@ import UIKit
 import MessageUI
 import Social
 import AcknowList
+import Eureka
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: FormViewController {
 
-    private struct Row {
-        var title: String
-        var detail: String?
-        var hasDisclosure: Bool
-        var accessoryView: UIView?
-        var selector: Selector?
-    }
-    
-    private struct Section {
-        var rows: [Row]
-        var title: String
-    }
-    
-    private var sections = [Section]()
-    
-    private func prepareCellData() {
-        
-        var settingRows = [Row]()
-        
-        let downloadAtStartSwitch = UISwitch()
-        downloadAtStartSwitch.onTintColor = Theme.dynamic.color.tint
-        downloadAtStartSwitch.isOn = Defaults.downloadAtStart
-        downloadAtStartSwitch.addTarget(self, action: #selector(handleDownloadAtStartSwitch(_:)), for: .valueChanged)
-        
-    
-        settingRows.append(Row(title: NSLocalizedString("Check for Updates at Launch", comment: ""), detail: nil, hasDisclosure: false, accessoryView: downloadAtStartSwitch, selector: nil))
-        sections.append(Section(rows: settingRows, title: NSLocalizedString("General", comment: "")))
-        
-        var feedbackRows = [Row]()
-        feedbackRows.append(Row(title: NSLocalizedString("Email", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(sendEmail)))
-        feedbackRows.append(Row(title: NSLocalizedString("Review at App Store", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(postReview)))
-        feedbackRows.append(Row(title: NSLocalizedString("Twitter", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(sendTweet)))
-        sections.append(Section(rows: feedbackRows, title: NSLocalizedString("Feedback", comment: "")))
-        
-        var aboutRows = [Row]()
-        aboutRows.append(Row(title: NSLocalizedString("Show the Latest Notice", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showRecentNotice)))
-        aboutRows.append(Row(title: NSLocalizedString("Third-Party Licenses", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
-        let versionInfo = VersionManager.shared.appVersion
-        aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: versionInfo, hasDisclosure: false, accessoryView: nil, selector: nil))
-        aboutRows.append(Row(title: NSLocalizedString("Data Version", comment: ""), detail: VersionManager.shared.truthVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
-        sections.append(Section(rows: aboutRows, title: NSLocalizedString("About", comment: "")))
-    }
+//    private func prepareCellData() {
+//
+//        var settingRows = [Row]()
+//
+//        let downloadAtStartSwitch = UISwitch()
+//        downloadAtStartSwitch.onTintColor = Theme.dynamic.color.tint
+//        downloadAtStartSwitch.isOn = Defaults.downloadAtStart
+//        downloadAtStartSwitch.addTarget(self, action: #selector(handleDownloadAtStartSwitch(_:)), for: .valueChanged)
+//
+//
+//
+//        settingRows.append(Row(title: NSLocalizedString("Check for Updates at Launch", comment: ""), detail: nil, hasDisclosure: false, accessoryView: downloadAtStartSwitch, selector: nil))
+//        sections.append(Section(rows: settingRows, title: NSLocalizedString("General", comment: "")))
+//
+//        var feedbackRows = [Row]()
+//        feedbackRows.append(Row(title: NSLocalizedString("Email", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(sendEmail)))
+//        feedbackRows.append(Row(title: NSLocalizedString("Review at App Store", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(postReview)))
+//        feedbackRows.append(Row(title: NSLocalizedString("Twitter", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(sendTweet)))
+//        sections.append(Section(rows: feedbackRows, title: NSLocalizedString("Feedback", comment: "")))
+//
+//        var aboutRows = [Row]()
+//        aboutRows.append(Row(title: NSLocalizedString("Show the Latest Notice", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showRecentNotice)))
+//        aboutRows.append(Row(title: NSLocalizedString("Third-Party Licenses", comment: ""), detail: nil, hasDisclosure: true, accessoryView: nil, selector: #selector(showAckListViewController)))
+//        let versionInfo = VersionManager.shared.appVersion
+//        aboutRows.append(Row(title: NSLocalizedString("App Version", comment: ""), detail: versionInfo, hasDisclosure: false, accessoryView: nil, selector: nil))
+//        aboutRows.append(Row(title: NSLocalizedString("Data Version", comment: ""), detail: VersionManager.shared.truthVersion, hasDisclosure: false, accessoryView: nil, selector: nil))
+//        sections.append(Section(rows: aboutRows, title: NSLocalizedString("About", comment: "")))
+//    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = NSLocalizedString("Settings", comment: "")
-        prepareCellData()
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleEditionChange(_:)), name: .proEditionPurchased, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDidBecameActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
         tableView.cellLayoutMarginsFollowReadableWidth = true
+        
+        func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            EurekaAppearance.cellUpdate(cell: cell, row: row)
+        }
+        
+        func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            EurekaAppearance.cellSetup(cell: cell, row: row)
+        }
+        
+        func cellUpdateWithDisclosureIndicator<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            EurekaAppearance.cellUpdate(cell: cell, row: row)
+            cell.accessoryType = .disclosureIndicator
+        }
+        
+        func cellSetupWidthDisclosureIndicator<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
+            EurekaAppearance.cellSetup(cell: cell, row: row)
+            cell.accessoryType = .disclosureIndicator
+        }
+        
+        func onCellSelection<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>) {
+            EurekaAppearance.onCellSelection(cell: cell, row: row)
+        }
+        
+        func onExpandInlineRow<T>(cell: PickerInlineCell<T>, row: PickerInlineRow<T>, pickerRow: PickerRow<T>) {
+            EurekaAppearance.onExpandInlineRow(cell: cell, row: row, pickerRow: pickerRow)
+        }
+        
+        form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
+
+        form
+            +++ Section(NSLocalizedString("General", comment: ""))
+            
+            <<< SwitchRow() { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Check for Updates at Launch", comment: "")
+                row.value = Defaults.downloadAtStart
+            }
+            .cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+            .onChange { row in
+                Defaults.downloadAtStart = row.value ?? false
+            }
+            
+            <<< LabelRow("current_language") {
+                if let identifier = Bundle.main.preferredLocalizations.first {
+                    let locale = Locale(identifier: identifier)
+                    $0.value = locale.localizedString(forIdentifier: identifier)
+                } else {
+                    $0.value = nil
+                }
+                $0.title = NSLocalizedString("Current Language", comment: "")
+            }
+            .cellSetup(cellSetupWidthDisclosureIndicator(cell:row:))
+            .cellUpdate(cellUpdateWithDisclosureIndicator(cell:row:))
+            .onCellSelection { _, _ in
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            }
+            
+            +++ Section(NSLocalizedString("Feedback", comment: ""))
+            
+            <<< LabelRow() {
+                $0.title = NSLocalizedString("Email", comment: "")
+            }
+            .cellSetup(cellSetupWidthDisclosureIndicator(cell:row:))
+            .cellUpdate(cellUpdateWithDisclosureIndicator(cell:row:))
+            .onCellSelection { [unowned self] _, _ in
+                self.sendEmail()
+            }
+        
+            <<< LabelRow() {
+                $0.title = NSLocalizedString("Review at App Store", comment: "")
+            }
+            .cellSetup(cellSetupWidthDisclosureIndicator(cell:row:))
+            .cellUpdate(cellUpdateWithDisclosureIndicator(cell:row:))
+            .onCellSelection { [unowned self] _, _ in
+                self.postReview()
+            }
+            
+            <<< LabelRow() {
+                $0.title = NSLocalizedString("Twitter", comment: "")
+            }
+            .cellSetup(cellSetupWidthDisclosureIndicator(cell:row:))
+            .cellUpdate(cellUpdateWithDisclosureIndicator(cell:row:))
+            .onCellSelection { [unowned self] _, _ in
+                self.sendTweet()
+            }
+        
+            +++ Section(NSLocalizedString("About", comment: ""))
+            
+            <<< LabelRow() {
+                $0.title = NSLocalizedString("Show the Latest Notice", comment: "")
+            }
+            .cellSetup(cellSetupWidthDisclosureIndicator(cell:row:))
+            .cellUpdate(cellUpdateWithDisclosureIndicator(cell:row:))
+            .onCellSelection { [unowned self] _, _ in
+                self.showRecentNotice()
+            }
+            
+            <<< LabelRow() {
+                $0.title = NSLocalizedString("Third-Party Licenses", comment: "")
+            }
+            .cellSetup(cellSetupWidthDisclosureIndicator(cell:row:))
+            .cellUpdate(cellUpdateWithDisclosureIndicator(cell:row:))
+            .onCellSelection { [unowned self] _, _ in
+                self.showAckListViewController()
+            }
+            
+            <<< LabelRow() {
+                $0.title = NSLocalizedString("App Version", comment: "")
+                $0.value = VersionManager.shared.appVersion
+            }
+            .cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+            
+            <<< LabelRow("data_version") {
+                $0.title = NSLocalizedString("Data Version", comment: "")
+                $0.value = VersionManager.shared.truthVersion
+            }
+            .cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
     }
     
-    private func reload() {
-        sections.removeAll()
-        prepareCellData()
-        tableView.reloadData()
-    }
-    
-    @objc private func handleEditionChange(_ notification: Notification) {
-        reload()
+    @objc private func handleDidBecameActive(_ notification: Notification) {
+        let row = form.rowBy(tag: "current_language")
+        row?.updateCell()
     }
     
     @objc private func handleUpdateEnd(_ notification: Notification) {
-        reload()
-    }
-    
-    @objc private func handleDownloadAtStartSwitch(_ sender: UISwitch) {
-        Defaults.downloadAtStart = sender.isOn
+        let row = form.rowBy(tag: "data_version")
+        row?.updateCell()
     }
     
     @objc private func showAckListViewController() {
@@ -144,46 +243,6 @@ class SettingsTableViewController: UITableViewController {
             } else {
                 UIApplication.shared.openURL(url)
             }
-        }
-    }
-    
-    // MARK: UITableViewDelegate & DataSource
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].title
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].rows.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.description()) ?? UITableViewCell(style: .value1, reuseIdentifier: UITableViewCell.description())
-        
-        let row = sections[indexPath.section].rows[indexPath.row]
-        
-        cell.textLabel?.text = row.title
-        cell.textLabel?.adjustsFontSizeToFitWidth = true
-        cell.detailTextLabel?.text = row.detail
-        cell.accessoryType = row.hasDisclosure ? .disclosureIndicator : .none
-        cell.accessoryView = row.accessoryView
-        cell.selectionStyle = .none
-        cell.selectedBackgroundView = UIView()
-        
-        cell.textLabel?.textColor = Theme.dynamic.color.title
-        cell.detailTextLabel?.textColor = Theme.dynamic.color.body
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = sections[indexPath.section].rows[indexPath.row]
-        if let selector = row.selector {
-            perform(selector)
         }
     }
 }

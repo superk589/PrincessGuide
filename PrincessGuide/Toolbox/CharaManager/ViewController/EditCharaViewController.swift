@@ -139,7 +139,7 @@ class EditCharaViewController: FormViewController {
                     }
                 }
             
-            <<< PickerInlineRow<Int>("bond_rank") { (row : PickerInlineRow<Int>) -> Void in
+            <<< PickerInlineRow<Int>("bond_rank") { [unowned self] (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Bond Rank", comment: "")
                 row.displayValueFor = { (rowValue: Int?) in
                     return rowValue.flatMap { String($0) }
@@ -149,7 +149,11 @@ class EditCharaViewController: FormViewController {
                     row.options.append(i + 1)
                 }
                 if mode == .create {
-                    row.value = Constant.presetMaxPossibleBondRank
+                    if let card = self.card {
+                        row.value = card.hasRarity6 ? 12 : 8
+                    } else {
+                        row.value = Constant.presetMaxPossibleBondRank
+                    }
                 } else {
                     row.value = (chara?.bondRank).flatMap { Int($0) }
                 }
@@ -157,7 +161,8 @@ class EditCharaViewController: FormViewController {
                 .cellUpdate(cellUpdate(cell:row:))
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
-            <<< PickerInlineRow<Int>("unit_rarity") { (row : PickerInlineRow<Int>) -> Void in
+            
+            <<< PickerInlineRow<Int>("unit_rarity") { [unowned self] (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Star Rank", comment: "")
                 row.displayValueFor = { (rowValue: Int?) in
                     return rowValue.flatMap { String($0) }
@@ -167,7 +172,11 @@ class EditCharaViewController: FormViewController {
                     row.options.append(i + 1)
                 }
                 if mode == .create {
-                    row.value = Constant.presetMaxPossibleRarity
+                    if let card = self.card {
+                        row.value = card.hasRarity6 ? 6 : 5
+                    } else {
+                        row.value = Constant.presetMaxPossibleRarity
+                    }
                 } else {
                     row.value = (chara?.rarity).flatMap { Int($0) }
                 }
@@ -198,7 +207,7 @@ class EditCharaViewController: FormViewController {
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
         
             +++ Section(NSLocalizedString("Equipment", comment: ""))
-            <<< SwitchRow("enables_unique_equipment") { (row : SwitchRow) -> Void in
+            <<< SwitchRow("enables_unique_equipment") { [unowned self] (row : SwitchRow) -> Void in
                 row.title = NSLocalizedString("Unique Equipment", comment: "")
                 
                 var isHidden = false

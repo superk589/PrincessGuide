@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Box" representedClassName="Box" syncable="YES" codeGenerationType="class">
+        <attribute name="coverURL" optional="YES" attributeType="URI"/>
         <attribute name="modifiedAt" attributeType="Date" defaultDateTimeInterval="589889280" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <relationship name="charas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chara" inverseName="boxes" inverseEntity="Chara"/>
@@ -40,7 +41,7 @@
         <relationship name="wins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="loses" inverseEntity="Team"/>
     </entity>
     <elements>
-        <element name="Box" positionX="684" positionY="-27" width="128" height="88"/>
+        <element name="Box" positionX="684" positionY="-27" width="128" height="103"/>
         <element name="Chara" positionX="682.89453125" positionY="-125.6484375" width="128" height="283"/>
         <element name="Member" positionX="693" positionY="-9" width="128" height="118"/>
         <element name="Team" positionX="684" positionY="-18" width="128" height="148"/>

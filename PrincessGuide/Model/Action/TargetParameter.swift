@@ -74,7 +74,7 @@ class TargetParameter {
 //            return String(format: format, dependAction!.base.actionId % 100, targetAssignment.description, targetRange.rawRange)
         case (_, _, _, _, _, true):
             if dependAction?.parameter.actionType == .damage {
-                let format = NSLocalizedString("targets of damaged by effect %d", comment: "")
+                let format = NSLocalizedString("targets those damaged by effect %d", comment: "")
                 return String(format: format, dependAction!.base.actionId % 100)
             } else {
                 let format = NSLocalizedString("targets of effect %d", comment: "")

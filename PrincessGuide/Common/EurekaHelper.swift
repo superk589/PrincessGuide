@@ -14,6 +14,9 @@ struct EurekaAppearance {
     static func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
         cell.textLabel?.textColor = Theme.dynamic.color.title
         cell.detailTextLabel?.textColor = Theme.dynamic.color.tint
+        if let textfield = (cell as? TextCell)?.textField {
+            textfield.textColor = Theme.dynamic.color.tint
+        }
     }
     
     static func cellSetup<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
@@ -28,6 +31,9 @@ struct EurekaAppearance {
         }
         if let switchControl = (cell as? SwitchCell)?.switchControl {
             switchControl.onTintColor = Theme.dynamic.color.tint
+        }
+        if let textfield = (cell as? TextCell)?.textField {
+            textfield.textColor = Theme.dynamic.color.tint
         }
     }
     

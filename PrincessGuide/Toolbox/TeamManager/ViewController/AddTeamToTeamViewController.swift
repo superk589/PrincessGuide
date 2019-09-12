@@ -47,9 +47,7 @@ class AddTeamToTeamViewController: UITableViewController {
         
         navigationItem.title = NSLocalizedString("Teams", comment: "")
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        
-        navigationController?.toolbar.tintColor = Theme.dynamic.color.tint
-        
+                
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.description())
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 104

@@ -17,10 +17,7 @@ class ToolboxTableViewCell: UITableViewCell {
         
         titleLabel.textColor = Theme.dynamic.color.title
         
-        titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
-        if #available(iOS 11.0, *) {
-            titleLabel.adjustsFontForContentSizeCategory = true
-        }
+        titleLabel.adjustsFontForContentSizeCategory = true
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)

@@ -34,9 +34,7 @@ class BoxTableViewController: UITableViewController {
         
         navigationItem.title = NSLocalizedString("Boxes", comment: "")
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        
-        navigationController?.toolbar.tintColor = Theme.dynamic.color.tint
-        
+                
         tableView.register(BoxTableViewCell.self, forCellReuseIdentifier: BoxTableViewCell.description())
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 103
@@ -139,8 +137,7 @@ class BoxTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BoxTableViewCell.description(), for: indexPath) as! BoxTableViewCell
         let box = boxes[indexPath.row]
-        let firstChara = box.charas?.allObjects.first as? Chara
-        cell.configure(iconURL: firstChara?.iconURL, name: box.name ?? "")
+        cell.configure(iconURL: box.coverURL, name: box.name ?? "")
         return cell
     }
     
