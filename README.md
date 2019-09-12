@@ -54,9 +54,9 @@ For developers only, if you have macOS and Xcode, please read `./Localizations/R
 
 ## How to build
 ### Requirements
-* iOS 10.0+
-* Xcode 10.3+
-* Swift 5.0+
+* iOS 13.0+
+* Xcode 11.0+
+* Swift 5.1+
 
 ### Steps
 * Clone the repository
