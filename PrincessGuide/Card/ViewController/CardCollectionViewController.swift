@@ -33,18 +33,12 @@ class CardCollectionViewController: UIViewController, DataChecking, UICollection
         layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
-            if #available(iOS 11.0, *) {
-                make.edges.equalToSuperview()
-            } else {
-                make.top.equalTo(topLayoutGuide.snp.bottom)
-                make.left.right.bottom.equalToSuperview()
-            }
+            make.edges.equalToSuperview()
         }
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 84, right: 0)
 
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .clear
+        view.backgroundColor = Theme.dynamic.color.background
         collectionView.register(CardCollectionViewCell.self, forCellWithReuseIdentifier: CardCollectionViewCell.description())
         
         collectionView.mj_header = refresher
@@ -55,7 +49,6 @@ class CardCollectionViewController: UIViewController, DataChecking, UICollection
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleSortingChange(_:)), name: .cardSortingSettingsDidChange, object: nil)
         loadData()
-        
     }
     
     @objc private func handleUpdateEnd(_ notification: Notification) {

@@ -734,6 +734,11 @@
         <target>正在检查更新</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Choose Chara" xml:space="preserve">
+        <source>Choose Chara</source>
+        <target>选择角色</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Clan Battle" xml:space="preserve">
         <source>Clan Battle</source>
         <target>公会战</target>

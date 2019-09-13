@@ -15,10 +15,10 @@ protocol BoxCoverSelectionViewControllerDelegate: class {
 class BoxCoverSelectionViewController: CardCollectionViewController {
     
     weak var delegate: BoxCoverSelectionViewControllerDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Theme.dynamic.color.background
+        navigationItem.title = NSLocalizedString("Choose Chara", comment: "")
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

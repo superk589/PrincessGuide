@@ -35,12 +35,12 @@ class ChooseMemberViewController: CardCollectionViewController {
         nextItem.isEnabled = false
         navigationItem.rightBarButtonItems = [nextItem, optionItem]
         
-        view.addSubview(candidateView)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 84, right: 0)
         
+        view.addSubview(candidateView)
         candidateView.snp.makeConstraints { (make) in
             make.right.left.bottom.equalToSuperview()
         }
-        
         candidateView.delegate = self
     }
     

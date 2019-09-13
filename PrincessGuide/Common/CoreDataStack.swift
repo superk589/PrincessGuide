@@ -28,11 +28,8 @@ class CoreDataStack {
     }()
     
     private(set) lazy var viewContext: NSManagedObjectContext = {
+        self.container.viewContext.automaticallyMergesChangesFromParent = true
         return self.container.viewContext
-    }()
-    
-    private(set) lazy var syncContext: NSManagedObjectContext = {
-        return self.container.newBackgroundContext()
     }()
     
     func newChildContext(parent: NSManagedObjectContext, concurrencyType: NSManagedObjectContextConcurrencyType? = nil) -> NSManagedObjectContext {
