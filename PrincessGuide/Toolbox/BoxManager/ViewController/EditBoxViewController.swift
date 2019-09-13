@@ -132,11 +132,8 @@ class EditBoxViewController: FormViewController {
 //                    self.saveBox()
 //                }
             
-            +++ Section(NSLocalizedString("Charas", comment: "")) { [unowned self] in
+            +++ Section(NSLocalizedString("Charas", comment: "")) {
                 $0.tag = "charas_section"
-                if self.mode == .edit {
-                    $0.footer = HeaderFooterView(title: NSLocalizedString("The first chara added will be used as cover image.", comment: ""))
-                }
             }
             
             <<< ButtonRow("select_charas") { (row) in

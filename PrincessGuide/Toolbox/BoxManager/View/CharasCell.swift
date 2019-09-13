@@ -42,8 +42,8 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
         collectionView.isScrollEnabled = false
         collectionView.backgroundColor = .clear
         
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
-        collectionView.addGestureRecognizer(longPress)
+//        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
+//        collectionView.addGestureRecognizer(longPress)
         
         selectionStyle = .none
         
@@ -75,7 +75,7 @@ class CharasCell: Cell<[Chara]>, CellType, UICollectionViewDelegate, UICollectio
     
     func configure(for box: Box) {
         if let set = box.charas, let charas = set.allObjects as? [Chara] {
-            self.charas = charas
+            self.charas = charas.sorted { ($0.card?.base.searchAreaWidth ?? 0) < ($1.card?.base.searchAreaWidth ?? 0) }
         }
         collectionView.reloadData()
     }
