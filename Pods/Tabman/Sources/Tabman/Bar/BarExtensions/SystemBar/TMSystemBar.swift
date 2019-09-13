@@ -48,7 +48,7 @@ public final class TMSystemBar: UIView {
     /// Background style of the system bar.
     ///
     /// Defaults to `.blur(style: .extraLight)`.
-    public var backgroundStyle: TMBarBackgroundView.Style = .blur(style: .extraLight) {
+    public var backgroundStyle: TMBarBackgroundView.Style {
         didSet {
             backgroundView.style = backgroundStyle
         }
@@ -76,6 +76,13 @@ public final class TMSystemBar: UIView {
     /// - Parameter bar: Bar to embed in the system bar.
     internal init(for bar: TMBar) {
         self.bar = bar
+        
+        if #available(iOS 13, *) {
+            backgroundStyle = .blur(style: .systemMaterial)
+        } else {
+            backgroundStyle = .blur(style: .extraLight)
+        }
+        
         super.init(frame: .zero)
         
         layout(in: self)
@@ -153,13 +160,13 @@ public final class TMSystemBar: UIView {
         let isNavigationBarNotVisible = viewController.navigationController?.isNavigationBarHidden != false
         
         let relativeFrame = viewController.view.convert(self.frame, from: superview)
-        if relativeFrame.origin.y == safeAreaInsets.top, isNavigationBarNotVisible { // Pin to top anchor
+        if ceil(relativeFrame.origin.y) == safeAreaInsets.top, isNavigationBarNotVisible { // Pin to top anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: bottomAnchor)
                 ])
             contentView.addArrangedSubview(makeSeparatorView())
-        } else if relativeFrame.maxY == (viewController.view.bounds.size.height - safeAreaInsets.bottom) { // Pin to bottom anchor
+        } else if ceil(relativeFrame.maxY) == (viewController.view.bounds.size.height - safeAreaInsets.bottom) { // Pin to bottom anchor
             constraints.append(contentsOf: [
                 extendingView.topAnchor.constraint(equalTo: topAnchor),
                 extendingView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor)

@@ -330,8 +330,11 @@ extension Form {
 
     func removeRowObservers(from taggable: Taggable, rowTags: [String], type: ConditionType) {
         for rowTag in rowTags {
-            guard var arr = rowObservers[rowTag]?[type], let index = arr.firstIndex(where: { $0 === taggable }) else { continue }
-            arr.remove(at: index)
+            guard let arr = rowObservers[rowTag]?[type], let index = arr.firstIndex(where: { $0 === taggable }) else { continue }
+            rowObservers[rowTag]?[type]?.remove(at: index)
+            if rowObservers[rowTag]?[type]?.isEmpty == true {
+                rowObservers[rowTag] = nil
+            }
         }
     }
 
@@ -390,13 +393,13 @@ extension Form {
 extension Form {
 
     @discardableResult
-    public func validate(includeHidden: Bool = false, includeDisabled: Bool = true) -> [ValidationError] {
+    public func validate(includeHidden: Bool = false, includeDisabled: Bool = true, quietly: Bool = false) -> [ValidationError] {
         let rowsWithHiddenFilter = includeHidden ? allRows : rows
         let rowsWithDisabledFilter = includeDisabled ? rowsWithHiddenFilter : rowsWithHiddenFilter.filter { $0.isDisabled != true }
         
         return rowsWithDisabledFilter.reduce([ValidationError]()) { res, row in
             var res = res
-            res.append(contentsOf: row.validate())
+            res.append(contentsOf: row.validate(quietly: quietly))
             return res
         }
     }

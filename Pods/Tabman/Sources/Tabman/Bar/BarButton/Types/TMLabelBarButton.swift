@@ -103,8 +103,9 @@ open class TMLabelBarButton: TMBarButton {
         let badgeContainerWidth = badgeContainer.widthAnchor.constraint(equalToConstant: 0.0)
         let constraints = [
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            label.topAnchor.constraint(equalTo: view.topAnchor),
-            view.bottomAnchor.constraint(equalTo: label.bottomAnchor),
+            label.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor),
+            view.bottomAnchor.constraint(greaterThanOrEqualTo: label.bottomAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             badgeContainerLeading,
             badgeContainer.topAnchor.constraint(equalTo: view.topAnchor),
             view.trailingAnchor.constraint(equalTo: badgeContainer.trailingAnchor),
@@ -122,9 +123,13 @@ open class TMLabelBarButton: TMBarButton {
         adjustsAlphaOnSelection = false
         label.text = Defaults.text
         label.font = self.font
-        selectedTintColor = tintColor
-        tintColor = .black
-        self.contentInset = Defaults.contentInset
+        if #available(iOS 13, *) {
+            tintColor = .label
+        } else {
+            tintColor = .black
+        }
+        selectedTintColor = .systemBlue
+        contentInset = Defaults.contentInset
         
         calculateFontIntrinsicContentSize(for: label.text)
     }
@@ -136,9 +141,18 @@ open class TMLabelBarButton: TMBarButton {
         badge.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             badge.leadingAnchor.constraint(equalTo: badgeContainer.leadingAnchor),
-            badge.topAnchor.constraint(equalTo: badgeContainer.topAnchor),
-            badgeContainer.bottomAnchor.constraint(equalTo: badge.bottomAnchor)
+            badge.topAnchor.constraint(greaterThanOrEqualTo: badgeContainer.topAnchor),
+            badgeContainer.bottomAnchor.constraint(greaterThanOrEqualTo: badge.bottomAnchor),
+            badge.centerYAnchor.constraint(equalTo: badgeContainer.centerYAnchor)
             ])
+    }
+    
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        UIView.performWithoutAnimation {
+            update(for: selectionState)
+        }
     }
     
     open override func layoutSubviews() {

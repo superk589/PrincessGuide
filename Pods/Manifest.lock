@@ -1,12 +1,12 @@
 PODS:
   - AcknowList (1.9)
   - Alamofire (4.8.2)
-  - AutoInsetter (1.7.2)
+  - AutoInsetter (1.8.0)
   - BrotliKit (1.0.1)
   - Cache (5.2.0)
   - DHSmartScreenshot (1.3.1)
   - DynamicColor (4.1.0)
-  - Eureka (5.0.0)
+  - Eureka (5.0.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
@@ -41,7 +41,7 @@ PODS:
   - libwebp/webp (1.0.2)
   - lz4 (128)
   - MJRefresh (3.2.0)
-  - Pageboy (3.2.3)
+  - Pageboy (3.4.0)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
@@ -51,11 +51,11 @@ PODS:
     - Reusable/View (= 4.1.0)
   - Reusable/Storyboard (4.1.0)
   - Reusable/View (4.1.0)
-  - SnapKit (5.0.0)
+  - SnapKit (5.0.1)
   - SwiftyJSON (5.0.0)
-  - Tabman (2.4.3):
-    - AutoInsetter (~> 1.7.2)
-    - Pageboy (~> 3.2.3)
+  - Tabman (2.6.1):
+    - AutoInsetter (~> 1.8.0)
+    - Pageboy (~> 3.4.0)
   - Timepiece (1.3.1)
   - TTGTagCollectionView (1.11.1)
 
@@ -126,12 +126,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AcknowList: 06fde3319971dfd517ea1b1c194d78eb8cd774a2
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  AutoInsetter: 176c5c069b40bf6afa51bf7081be346ab70ca315
+  AutoInsetter: 0b90ca74e36561c340129045a3722c51a0b15c58
   BrotliKit: b28f7dfde4436acc7e990e73a313ed8c40ba23e7
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   DHSmartScreenshot: ee749048bd7126c4826748f98df3a4adc6ad6c78
   DynamicColor: e72fcf4174518c514e862bb4bdea794c1865b412
-  Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
+  Eureka: da9d2294da234eae40b22e7273b9fc2335502fc1
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
@@ -139,14 +139,14 @@ SPEC CHECKSUMS:
   libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
-  Pageboy: 347c49b3a7f15aa78ddb6bf5c6c3b113e382fe52
+  Pageboy: fd23a9b9e8156f4fac62731637f5d6f7d1e1c3aa
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
-  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  Tabman: c2c83ebfcbec3e5be67e27a1dd6689a4e3efccd3
+  Tabman: 2a8d767aa8c791617787f1567bdf081caf8835db
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 

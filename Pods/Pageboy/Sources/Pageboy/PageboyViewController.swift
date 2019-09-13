@@ -44,6 +44,25 @@ open class PageboyViewController: UIViewController {
     
     #if os(iOS)
     
+    /// The minimum number of fingers that can be touching the page view for the pan gesture to be recognized.
+    open var minimumNumberOfTouches: Int {
+        get {
+            return pageViewController?.scrollView?.panGestureRecognizer.minimumNumberOfTouches ?? 1
+        }
+        set {
+            pageViewController?.scrollView?.panGestureRecognizer.minimumNumberOfTouches = newValue
+        }
+    }
+    /// The maximum number of fingers that can be touching the page view for the pan gesture to be recognized.
+    open var maximumNumberOfTouches: Int {
+        get {
+            return pageViewController?.scrollView?.panGestureRecognizer.maximumNumberOfTouches ?? 1
+        }
+        set {
+            pageViewController?.scrollView?.panGestureRecognizer.maximumNumberOfTouches = newValue
+        }
+    }
+    
     /// Preferred status bar style of the current view controller.
     open override var preferredStatusBarStyle: UIStatusBarStyle {
         if let currentViewController = currentViewController {
