@@ -114,6 +114,7 @@
 		12398EA32092F7D4006AC352 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398EA22092F7D4006AC352 /* StringExtension.swift */; };
 		123AA274232A3E6F00226AFF /* BoxCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123AA273232A3E6F00226AFF /* BoxCoverCell.swift */; };
 		123AA276232A40B900226AFF /* BoxCoverSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123AA275232A40B900226AFF /* BoxCoverSelectionViewController.swift */; };
+		123AA2F4232F5DBF00226AFF /* AttackSealAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123AA2F3232F5DBF00226AFF /* AttackSealAction.swift */; };
 		1247127822278EC500A9C2E1 /* CharmAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247127722278EC500A9C2E1 /* CharmAction.swift */; };
 		1247127A22279DF700A9C2E1 /* ChangeBodyWidthAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247127922279DF700A9C2E1 /* ChangeBodyWidthAction.swift */; };
 		124BADDB21AD42F5001041F2 /* UniqueEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124BADDA21AD42F5001041F2 /* UniqueEquipmentViewController.swift */; };
@@ -423,6 +424,7 @@
 		12398EA22092F7D4006AC352 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		123AA273232A3E6F00226AFF /* BoxCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCoverCell.swift; sourceTree = "<group>"; };
 		123AA275232A40B900226AFF /* BoxCoverSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCoverSelectionViewController.swift; sourceTree = "<group>"; };
+		123AA2F3232F5DBF00226AFF /* AttackSealAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackSealAction.swift; sourceTree = "<group>"; };
 		1247127722278EC500A9C2E1 /* CharmAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharmAction.swift; sourceTree = "<group>"; };
 		1247127922279DF700A9C2E1 /* ChangeBodyWidthAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBodyWidthAction.swift; sourceTree = "<group>"; };
 		124BADDA21AD42F5001041F2 /* UniqueEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueEquipmentViewController.swift; sourceTree = "<group>"; };
@@ -1345,6 +1347,7 @@
 				12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */,
 				1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */,
 				1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */,
+				123AA2F3232F5DBF00226AFF /* AttackSealAction.swift */,
 				12204240231AABF700205C85 /* FearAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
@@ -1655,6 +1658,7 @@
 				12398E7C209157B2006AC352 /* IconImageView.swift in Sources */,
 				12F1261720B954F4005C9659 /* AttackFieldAction.swift in Sources */,
 				120BCAFB20F4DF670029A083 /* Member.swift in Sources */,
+				123AA2F4232F5DBF00226AFF /* AttackSealAction.swift in Sources */,
 				12F1260D20B9543A005C9659 /* ContinuousAttackNearbyAction.swift in Sources */,
 				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
 				12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */,
@@ -2113,7 +2117,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 126;
+				CURRENT_PROJECT_VERSION = 127;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2136,7 +2140,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 126;
+				CURRENT_PROJECT_VERSION = 127;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

@@ -920,6 +920,9 @@
 "Make %@ lose [%@] TP." = "使%1$@失去 [%2$@] TP。";
 
 /* No comment provided by engineer. */
+"Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "使%1$@获得每受到一次来自施法者的 Hit 就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
 "Mana" = "Mana";
 
 /* No comment provided by engineer. */
@@ -1476,9 +1479,6 @@
 
 /* target type */
 "the farthest" = "最远的";
-
-/* No comment provided by engineer. */
-"The first chara added will be used as cover image." = "第一个添加的角色将被用作封面。";
 
 /* No comment provided by engineer. */
 "the highest ATK" = "物理攻击力最高的";

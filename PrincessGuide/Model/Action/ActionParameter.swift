@@ -122,6 +122,8 @@ class ActionParameter {
             return StopFieldAction.self
         case 59:
             return InhibitHealAction.self
+        case 60:
+            return AttackSealAction.self
         case 61:
             return FearAction.self
         case 90:

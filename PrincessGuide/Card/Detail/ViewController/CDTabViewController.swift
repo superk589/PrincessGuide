@@ -72,8 +72,9 @@ class CDTabViewController: TabmanViewController, PageboyViewControllerDataSource
         if let index = self.currentIndex,
             let foregroundImage = viewControllers[index].tableView.screenshot() {
             var image = foregroundImage
-            if let navigationBarImage = navigationController?.navigationBar.screenshot() {
-                image = UIImage.verticalImage(from: [navigationBarImage, image])
+            if let navigationBarImage = navigationController?.navigationBar.screenshot(),
+                let navigationBarImageWithBackground = navigationBarImage.addBackground(.systemBackground) {
+                image = UIImage.verticalImage(from: [navigationBarImageWithBackground, image])
             }
             UIActivityViewController.show(images: [image], pointTo: item, in: self)
         }

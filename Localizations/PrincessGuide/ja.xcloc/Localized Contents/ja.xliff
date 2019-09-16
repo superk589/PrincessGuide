@@ -1372,6 +1372,10 @@
         <target>%1$@のTPを[%2$@]失わせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
+        <source>Make %1$@ when get one hit by the caster, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Mana" xml:space="preserve">
         <source>Mana</source>
         <target>マナ</target>
@@ -2065,11 +2069,6 @@
       <trans-unit id="Temple" xml:space="preserve">
         <source>Temple</source>
         <target>神殿</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="The first chara added will be used as cover image." xml:space="preserve">
-        <source>The first chara added will be used as cover image.</source>
-        <target>追加された最初のキャラがカバー画像として使用されます。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="There aren't any Mail accounts" xml:space="preserve">
