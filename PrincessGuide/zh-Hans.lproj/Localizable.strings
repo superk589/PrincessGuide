@@ -314,6 +314,9 @@
 "Boxes" = "Box 列表";
 
 /* No comment provided by engineer. */
+"breaking" = "Break";
+
+/* No comment provided by engineer. */
 "buffs" = "增益";
 
 /* No comment provided by engineer. */
@@ -468,6 +471,9 @@
 
 /* No comment provided by engineer. */
 "Clan Battle %d-%d" = "公会战 %1$d 年 %2$d 月";
+
+/* No comment provided by engineer. */
+"Clan Battle(Simple)" = "公会战（简单）";
 
 /* No comment provided by engineer. */
 "Clear all %@ on %@ with chance [%@]%%." = "有 [%3$@]%% 几率清除%2$@上的%1$@。";

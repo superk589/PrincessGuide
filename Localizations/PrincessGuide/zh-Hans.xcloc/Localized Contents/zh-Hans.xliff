@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11A419c"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11A420a"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11A419c"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11A420a"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11A419c"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11A420a"/>
     </header>
     <body>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -747,6 +747,11 @@
       <trans-unit id="Clan Battle %d-%d" xml:space="preserve">
         <source>Clan Battle %1$d-%2$d</source>
         <target>公会战 %1$d 年 %2$d 月</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Clan Battle(Simple)" xml:space="preserve">
+        <source>Clan Battle(Simple)</source>
+        <target>公会战（简单）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%." xml:space="preserve">
@@ -2393,6 +2398,11 @@
         <source>both sides</source>
         <target>敌方和友方</target>
         <note>target modifier</note>
+      </trans-unit>
+      <trans-unit id="breaking" xml:space="preserve">
+        <source>breaking</source>
+        <target>Break</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="buffs" xml:space="preserve">
         <source>buffs</source>

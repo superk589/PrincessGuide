@@ -33,9 +33,9 @@ class EDSkillTableViewController: EDTableViewController {
         let property = enemy.base.property
         
         if let unionBurstEvolution = enemy.unionBurstEvolution, enemy.base.rarity == 6 {
-            rows.append(Row.skill(skill: unionBurstEvolution, category: .unionBurstEvolution, level: enemy.base.unionBurstLevel, property: property, index: nil))
+            rows.append(Row.skill(skill: unionBurstEvolution, category: .unionBurstEvolution, level: enemy.unionBurstSkillLevel, property: property, index: nil))
         } else if let unionBurst = enemy.unionBurst {
-            rows.append(Row.skill(skill: unionBurst, category: .unionBurst, level: enemy.base.unionBurstLevel, property: property, index: nil))
+            rows.append(Row.skill(skill: unionBurst, category: .unionBurst, level: enemy.unionBurstSkillLevel, property: property, index: nil))
         }
         
         // setup main skills

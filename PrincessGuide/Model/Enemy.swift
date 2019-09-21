@@ -212,6 +212,14 @@ class Enemy: Codable {
         }
     }()
     
+    lazy var unionBurstSkillLevel: Int = {
+        if let owner = self.owner, self.isBossPart {
+            return owner.base.unionBurstLevel
+        } else {
+            return base.unionBurstLevel
+        }
+    }()
+    
     lazy var exSkills = DispatchSemaphore.sync { (closure) in
         Master.shared.getSkills(skillIDs: base.exSkillIDs, callback: closure)
     } ?? []

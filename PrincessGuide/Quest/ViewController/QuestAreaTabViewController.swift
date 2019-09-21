@@ -28,7 +28,8 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
             QuestAreaTableViewController(areaType: .hard),
             QuestAreaTableViewController(areaType: .veryHard),
             MiscQuestAreaTableViewController(),
-            Rarity6UnlockQuestViewController()
+            Rarity6UnlockQuestViewController(),
+            ClanBattleTableViewController(mode: .easy)
         ]
         dataSource = self
         
@@ -40,7 +41,8 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
             ]
             + [AreaType.normal, .hard, .veryHard].map { TMBarItem(title: $0.description) }
             + [TMBarItem(title: NSLocalizedString("Exploration", comment: "")),
-               TMBarItem(title: NSLocalizedString("Rarity 6", comment: ""))
+               TMBarItem(title: NSLocalizedString("Rarity 6", comment: "")),
+               TMBarItem(title: NSLocalizedString("Clan Battle(Simple)", comment: ""))
         ]
         
         let bar = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>()

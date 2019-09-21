@@ -18,6 +18,7 @@ enum IfType: Int, CustomStringConvertible {
     case poison
     case venom
     case poisonOrVenon = 512
+    case `break` = 710
     
     var description: String {
         switch self {
@@ -39,6 +40,8 @@ enum IfType: Int, CustomStringConvertible {
             return NSLocalizedString("venomed", comment: "")
         case .poisonOrVenon:
             return NSLocalizedString("poisoned or venomed", comment: "")
+        case .break:
+            return NSLocalizedString("breaking", comment: "")
         }
     }
 }
@@ -55,7 +58,7 @@ class IfForChildrenAction: ActionParameter {
             return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(), ifType.description)
         } else {
             switch actionDetail1 {
-            case 600..<700:
+            case 600..<700, 710:
                 let format = NSLocalizedString("use %d to any of %@ is in state of ID: %d", comment: "")
                 return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600)
             case 700:
@@ -79,7 +82,7 @@ class IfForChildrenAction: ActionParameter {
             return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause(), ifType.description)
         } else {
             switch actionDetail1 {
-            case 600..<700:
+            case 600..<700, 710:
                 let format = NSLocalizedString("use %d to any of %@ is not in state of ID: %d", comment: "")
                 return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600)
             case 700:
