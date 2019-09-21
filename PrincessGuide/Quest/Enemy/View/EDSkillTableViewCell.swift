@@ -128,7 +128,7 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
         return label
     }
     
-    func configure(for skill: Skill, category: SkillCategory, level: Int, property: Property, index: Int? = nil) {
+    func configure(for skill: Skill, category: SkillCategory, level: Int, property: Property, ownerPropery: Property?, index: Int? = nil) {
         nameLabel.text = skill.base.name
         if let index = index {
             categoryLabel.text = "\(category.description) \(index)"
@@ -143,6 +143,7 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
         if skill.actions.count > 0 {
             actionLabel.attributedText = skill.actions.map {
                 let parameter = $0.buildParameter()
+                let property = parameter is ChangeEnergyAction ? (ownerPropery ?? property) : property
                 let tag = NSTextAttachment.makeNumberAttachment(parameter.id % 100, color: actionLabel.textColor, minWidth: 25, font: UIFont.scaledFont(forTextStyle: .body, ofSize: 12))
                 let attributedText = NSMutableAttributedString()
                 attributedText.append(NSAttributedString(attachment: tag))

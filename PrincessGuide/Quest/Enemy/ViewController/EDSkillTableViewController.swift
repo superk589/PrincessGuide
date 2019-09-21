@@ -31,11 +31,12 @@ class EDSkillTableViewController: EDTableViewController {
         }
                 
         let property = enemy.base.property
+        let ownerProperty = enemy.owner?.base.property
         
         if let unionBurstEvolution = enemy.unionBurstEvolution, enemy.base.rarity == 6 {
-            rows.append(Row.skill(skill: unionBurstEvolution, category: .unionBurstEvolution, level: enemy.unionBurstSkillLevel, property: property, index: nil))
+            rows.append(Row.skill(skill: unionBurstEvolution, category: .unionBurstEvolution, level: enemy.unionBurstSkillLevel, property: property, ownerProperty: ownerProperty, index: nil))
         } else if let unionBurst = enemy.unionBurst {
-            rows.append(Row.skill(skill: unionBurst, category: .unionBurst, level: enemy.unionBurstSkillLevel, property: property, index: nil))
+            rows.append(Row.skill(skill: unionBurst, category: .unionBurst, level: enemy.unionBurstSkillLevel, property: property, ownerProperty: ownerProperty, index: nil))
         }
         
         // setup main skills
@@ -44,7 +45,7 @@ class EDSkillTableViewController: EDTableViewController {
                 zip(enemy.mainSkillEvolutions, enemy.mainSkills)
                     .enumerated()
                     .map {
-                        return Row.skill(skill: $0.element.0, category: .mainEvolution, level: enemy.mainSkillLevel(for: $0.element.1.base.skillId), property: property, index: $0.offset + 1)
+                        return Row.skill(skill: $0.element.0, category: .mainEvolution, level: enemy.mainSkillLevel(for: $0.element.1.base.skillId), property: property, ownerProperty: ownerProperty, index: $0.offset + 1)
                     }
             )
             
@@ -52,7 +53,7 @@ class EDSkillTableViewController: EDTableViewController {
                 rows += enemy.mainSkills[enemy.mainSkillEvolutions.count..<enemy.mainSkills.count]
                     .enumerated()
                     .map {
-                        return Row.skill(skill: $0.element, category: .main, level: enemy.mainSkillLevel(for: $0.element.base.skillId), property: property, index: enemy.mainSkillEvolutions.count + $0.offset + 1)
+                        return Row.skill(skill: $0.element, category: .main, level: enemy.mainSkillLevel(for: $0.element.base.skillId), property: property, ownerProperty: ownerProperty, index: enemy.mainSkillEvolutions.count + $0.offset + 1)
                 }
             }
         } else {
@@ -60,7 +61,7 @@ class EDSkillTableViewController: EDTableViewController {
                 enemy.mainSkills
                     .enumerated()
                     .map {
-                        Row.skill(skill: $0.element, category: .main, level: enemy.mainSkillLevel(for: $0.element.base.skillId), property: property, index: $0.offset + 1)
+                        Row.skill(skill: $0.element, category: .main, level: enemy.mainSkillLevel(for: $0.element.base.skillId), property: property, ownerProperty: ownerProperty, index: $0.offset + 1)
                 }
             )
         }
@@ -69,13 +70,13 @@ class EDSkillTableViewController: EDTableViewController {
             enemy.exSkills
                 .enumerated()
                 .map {
-                    Row.skill(skill: $0.element, category: .ex, level: enemy.exSkillLevel(for: $0.element.base.skillId), property: property, index: nil)
+                    Row.skill(skill: $0.element, category: .ex, level: enemy.exSkillLevel(for: $0.element.base.skillId), property: property, ownerProperty: ownerProperty, index: nil)
             }
         )
         
         // insert minions
         let newRows: [Row] = rows.flatMap { row -> [Row] in
-            guard case .skill(let skill, _, _, _, _) = row else {
+            guard case .skill(let skill, _, _, _, _, _) = row else {
                 return [row]
             }
             let actions = skill.actions

@@ -11,7 +11,7 @@ import UIKit
 class EDTableViewController: UITableViewController {
     
     enum Row {
-        case skill(skill: Skill, category: SkillCategory, level: Int, property: Property, index: Int?)
+        case skill(skill: Skill, category: SkillCategory, level: Int, property: Property, ownerProperty: Property?, index: Int?)
         case unit(Enemy.Unit)
         case pattern(AttackPattern, Enemy, Int?)
         case minion(Enemy)
@@ -109,9 +109,9 @@ class EDTableViewController: UITableViewController {
                 )
             })
             return cell
-        case .skill(let skill, let category, let level, let property, let index):
+        case .skill(let skill, let category, let level, let property, let ownerProperty, let index):
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EDSkillTableViewCell.self)
-            cell.configure(for: skill, category: category, level: level, property: property, index: index)
+            cell.configure(for: skill, category: category, level: level, property: property, ownerPropery: ownerProperty, index: index)
             return cell
         case .textArray(let items):
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)
