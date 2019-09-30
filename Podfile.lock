@@ -83,14 +83,13 @@ DEPENDENCIES:
   - TTGTagCollectionView
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AcknowList
     - Alamofire
     - AutoInsetter
     - BrotliKit
     - DHSmartScreenshot
     - DynamicColor
-    - Eureka
     - FMDB
     - Kingfisher
     - KingfisherWebP
@@ -107,6 +106,8 @@ SPEC REPOS:
     - Tabman
     - Timepiece
     - TTGTagCollectionView
+  trunk:
+    - Eureka
 
 EXTERNAL SOURCES:
   Cache:
@@ -152,4 +153,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 18d9ee753288843e53f3e0e01788c8e8502575e6
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.1

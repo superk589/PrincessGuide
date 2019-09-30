@@ -20,6 +20,7 @@ class SearchableCardTableViewController: CardTableViewController {
         searchController.hidesNavigationBarDuringPresentation = true
         definesPresentationContext = true
         searchController.searchBar.tintColor = Theme.dynamic.color.tint
+        searchController.searchBar.backgroundColor = .systemBackground
         return searchController
     }()
     

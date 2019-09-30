@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11A420a"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.1" build-num="11A1027"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11A420a"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.1" build-num="11A1027"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.0" build-num="11A420a"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.1" build-num="11A1027"/>
     </header>
     <body>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -308,6 +308,10 @@
       <trans-unit id="Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." xml:space="preserve">
         <source>Add %1$@ mark stacks(max %2$@, ID: %3$@) on %4$@ for %5$@s.</source>
         <target>Add %1$@ mark stacks(max %2$@, ID: %3$@) on %4$@ for %5$@s.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add [%@ * %@ of %@] to next effect's value %d." xml:space="preserve">
+        <source>Add [%1$@ * %2$@ of %3$@] to next effect's value %4$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add [%@ * HP] to next effect's value %d." xml:space="preserve">
@@ -894,11 +898,6 @@
       <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@." xml:space="preserve">
         <source>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</source>
         <target>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Delay event: use %d after %@s." xml:space="preserve">
-        <source>Delay event: use %1$d after %2$@s.</source>
-        <target>Delay event: use %1$d after %2$@s.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Denied" xml:space="preserve">
@@ -1885,6 +1884,10 @@
         <target>勝利を選択</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Set a countdown timer on %@, trigger effect %d after %@s." xml:space="preserve">
+        <source>Set a countdown timer on %1$@, trigger effect %2$d after %3$@s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Settings" xml:space="preserve">
         <source>Settings</source>
         <target>設定</target>
@@ -2846,6 +2849,10 @@
         <source>unknown</source>
         <target>未知</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="unknown property" xml:space="preserve">
+        <source>unknown property</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="unknown side" xml:space="preserve">
         <source>unknown side</source>

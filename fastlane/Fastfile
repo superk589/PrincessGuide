@@ -16,7 +16,7 @@
 # setup_travis
 
 default_platform(:ios)
-xcversion(version: "11.0")
+# xcversion(version: "11.0")
 # match(type: "appstore", readonly: is_ci)
 platform :ios do
   desc "Push a new beta build to TestFlight"

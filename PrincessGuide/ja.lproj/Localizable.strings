@@ -569,9 +569,6 @@
 "defend" = "守";
 
 /* No comment provided by engineer. */
-"Delay event: use %d after %@s." = "Delay event: use %1$d after %2$@s.";
-
-/* No comment provided by engineer. */
 "Denied" = "拒否されました";
 
 /* No comment provided by engineer. */

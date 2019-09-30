@@ -17,6 +17,7 @@ class KnockAction: ActionParameter {
         case back
         case moveTarget
         case moveTargetParaboric
+        case backLimited
     }
     
     var knockType: KnockType {
@@ -28,7 +29,7 @@ class KnockAction: ActionParameter {
         case .upDown:
             let format = NSLocalizedString("Knock %@ up %d.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), Int(actionValue1))
-        case .back:
+        case .back, .backLimited:
             let format: String
             if actionValue1 >= 0 {
                 format = NSLocalizedString("Knock %@ away %d.", comment: "")

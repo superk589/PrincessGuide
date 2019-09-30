@@ -11,7 +11,7 @@ import Foundation
 class CountDownAction: ActionParameter {
 
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("Delay event: use %d after %@s.", comment: "")
-        return String(format: format, actionDetail1 % 10, actionValue1.roundedString(roundingRule: nil))
+        let format = NSLocalizedString("Set a countdown timer on %@, trigger effect %d after %@s.", comment: "")
+        return String(format: format, targetParameter.buildTargetClause(), actionDetail1 % 10, actionValue1.roundedString(roundingRule: nil))
     }
 }
