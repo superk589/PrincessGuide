@@ -429,6 +429,10 @@
         <target>承認済み</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Awe" xml:space="preserve">
+        <source>Awe</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Back" xml:space="preserve">
         <source>Back</source>
         <target>後衛</target>
@@ -1759,6 +1763,14 @@
         <target>%1$@の行動速度を%2$d%%ダウン、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." xml:space="preserve">
+        <source>Reduce [%1$@]%% damage or instant healing effect of union burst and main skills cast by %2$@ for [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." xml:space="preserve">
+        <source>Reduce [%1$@]%% damage or instant healing effect of union burst cast by %2$@ for [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Remove %@ mark stacks(ID: %@) on %@." xml:space="preserve">
         <source>Remove %1$@ mark stacks(ID: %2$@) on %3$@.</source>
         <target>Remove %1$@ mark stacks(ID: %2$@) on %3$@.</target>
@@ -1857,6 +1869,10 @@
       <trans-unit id="Scout and change the perspective on %@." xml:space="preserve">
         <source>Scout and change the perspective on %@.</source>
         <target>Scout and change the perspective on %@.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Seal" xml:space="preserve">
+        <source>Seal</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Select All" xml:space="preserve">

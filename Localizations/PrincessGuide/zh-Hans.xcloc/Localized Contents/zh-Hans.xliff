@@ -429,6 +429,11 @@
         <target>已通过</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Awe" xml:space="preserve">
+        <source>Awe</source>
+        <target>畏怖</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Back" xml:space="preserve">
         <source>Back</source>
         <target>后卫</target>
@@ -1764,6 +1769,16 @@
         <target>降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." xml:space="preserve">
+        <source>Reduce [%1$@]%% damage or instant healing effect of union burst and main skills cast by %2$@ for [%3$@]s.</source>
+        <target>降低 [%1$@]%% %2$@释放的 UB 和其他技能造成的伤害或直接治疗效果，持续 [%3$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." xml:space="preserve">
+        <source>Reduce [%1$@]%% damage or instant healing effect of union burst cast by %2$@ for [%3$@]s.</source>
+        <target>降低 [%1$@]%% %2$@释放的 UB 造成的伤害或直接治疗效果，持续 [%3$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Remove %@ mark stacks(ID: %@) on %@." xml:space="preserve">
         <source>Remove %1$@ mark stacks(ID: %2$@) on %3$@.</source>
         <target>移除%3$@ %1$@ 层标记（ID：%2$@）。</target>
@@ -1862,6 +1877,11 @@
       <trans-unit id="Scout and change the perspective on %@." xml:space="preserve">
         <source>Scout and change the perspective on %@.</source>
         <target>搜寻并将自身视角切换到%@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Seal" xml:space="preserve">
+        <source>Seal</source>
+        <target>刻印赋予</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Select All" xml:space="preserve">

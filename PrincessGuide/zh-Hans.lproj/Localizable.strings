@@ -257,6 +257,9 @@
 "Authorized" = "已通过";
 
 /* No comment provided by engineer. */
+"Awe" = "畏怖";
+
+/* No comment provided by engineer. */
 "Back" = "后卫";
 
 /* No comment provided by engineer. */
@@ -1217,6 +1220,12 @@
 "Reduce" = "降低";
 
 /* No comment provided by engineer. */
+"Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." = "降低 [%1$@]%% %2$@释放的 UB 和其他技能造成的伤害或直接治疗效果，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
+"Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." = "降低 [%1$@]%% %2$@释放的 UB 造成的伤害或直接治疗效果，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
 "Reduce %@ %d%% attack speed for [%@]s." = "降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -1269,6 +1278,9 @@
 
 /* No comment provided by engineer. */
 "Scout and change the perspective on %@." = "搜寻并将自身视角切换到%@。";
+
+/* No comment provided by engineer. */
+"Seal" = "刻印赋予";
 
 /* No comment provided by engineer. */
 "second" = "第二";

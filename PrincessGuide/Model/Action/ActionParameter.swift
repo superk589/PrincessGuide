@@ -126,6 +126,8 @@ class ActionParameter {
             return AttackSealAction.self
         case 61:
             return FearAction.self
+        case 62:
+            return AweAction.self
         case 90:
             return PassiveAction.self
         case 91:
