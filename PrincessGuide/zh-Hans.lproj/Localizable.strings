@@ -485,6 +485,9 @@
 "Clear all %@ on %@ with chance [%@]%%." = "有 [%3$@]%% 几率清除%2$@上的%1$@。";
 
 /* No comment provided by engineer. */
+"Cloister" = "回廊";
+
+/* No comment provided by engineer. */
 "Combat Effectiveness" = "战力";
 
 /* No comment provided by engineer. */

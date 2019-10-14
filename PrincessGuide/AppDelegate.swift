@@ -20,6 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // prepare for preload master data
+        Preload.default.syncLoad()
+        
+        KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
+
+        // set Kingfisher cache never expiring
+        ImageCache.default.diskStorage.config.expiration = .never
+        
+        UNUserNotificationCenter.current().delegate = NotificationHandler.default
+        
+        BirthdayCenter.default.initialize()
+        BirthdayCenter.default.rescheduleNotifications()
+        
+        GameEventCenter.default.initialize()
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let rootTabBarController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController") as! UITabBarController
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -31,21 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = Theme.dynamic.color.background
         UINavigationBar.appearance().tintColor = Theme.dynamic.color.tint
         UIToolbar.appearance().tintColor = Theme.dynamic.color.tint
-        
-        KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
-
-        // set Kingfisher cache never expiring
-        ImageCache.default.diskStorage.config.expiration = .never
-        
-        // prepare for preload master data
-        Preload.default.syncLoad()
-        
-        UNUserNotificationCenter.current().delegate = NotificationHandler.default
-        
-        BirthdayCenter.default.initialize()
-        BirthdayCenter.default.rescheduleNotifications()
-        
-        GameEventCenter.default.initialize()
         
         checkNotice()
 //        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in

@@ -87,10 +87,10 @@ public extension DynamicColor {
     let b = cappedHex >> (alphaChannel ? 8 : 0) & mask
     let a = alphaChannel ? cappedHex & mask : 255
 
-    let red   = CGFloat(r) / 255
-    let green = CGFloat(g) / 255
-    let blue  = CGFloat(b) / 255
-    let alpha = CGFloat(a) / 255
+    let red   = CGFloat(r) / 255.0
+    let green = CGFloat(g) / 255.0
+    let blue  = CGFloat(b) / 255.0
+    let alpha = CGFloat(a) / 255.0
 
     self.init(red: red, green: green, blue: blue, alpha: alpha)
   }
@@ -105,22 +105,36 @@ public extension DynamicColor {
   }
 
   /**
-   Returns the color representation as an integer.
+   Returns the color representation as an integer (without the alpha channel).
 
    - returns: A UInt32 that represents the hexa-decimal color.
    */
   final func toHex() -> UInt32 {
-    func roundToHex(_ x: CGFloat) -> UInt32 {
-      guard x > 0 else { return 0 }
-      let rounded: CGFloat = round(x * 255)
-
-      return UInt32(rounded)
-    }
-
-    let rgba       = toRGBAComponents()
-    let colorToInt = roundToHex(rgba.r) << 16 | roundToHex(rgba.g) << 8 | roundToHex(rgba.b)
-
-    return colorToInt
+    let rgba = toRGBAComponents()
+    
+    return roundToHex(rgba.r) << 16 | roundToHex(rgba.g) << 8 | roundToHex(rgba.b)
+  }
+  
+  /**
+   Returns the RGBA color representation.
+   
+   - returns: A UInt32 that represents the color as an RGBA value.
+   */
+  func toRGBA() -> UInt32 {
+    let rgba = toRGBAComponents()
+    
+    return roundToHex(rgba.r) << 24 | roundToHex(rgba.g) << 16 | roundToHex(rgba.b) << 8 | roundToHex(rgba.a)
+  }
+  
+  /**
+   Returns the AGBR color representation.
+   
+   - returns: A UInt32 that represents the color as an AGBR value.
+   */
+  func toAGBR() -> UInt32 {
+    let rgba = toRGBAComponents()
+    
+    return roundToHex(rgba.a) << 24 | roundToHex(rgba.b) << 16 | roundToHex(rgba.g) << 8 | roundToHex(rgba.r)
   }
 
   // MARK: - Identifying and Comparing Colors
@@ -156,7 +170,7 @@ public extension DynamicColor {
    */
   func isLight() -> Bool {
     let components = toRGBAComponents()
-    let brightness = ((components.r * 299) + (components.g * 587) + (components.b * 114)) / 1000
+    let brightness = ((components.r * 299.0) + (components.g * 587.0) + (components.b * 114.0)) / 1000.0
 
     return brightness >= 0.5
   }

@@ -85,6 +85,7 @@
 		1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */; };
 		1226532320AD626700BB3E56 /* Resist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226532220AD626700BB3E56 /* Resist.swift */; };
 		1226532520AD68BE00BB3E56 /* EDResistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226532420AD68BE00BB3E56 /* EDResistTableViewController.swift */; };
+		1231EB4023541D3300525170 /* TowerCloister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1231EB3F23541D3300525170 /* TowerCloister.swift */; };
 		123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E02093105D003E7D11 /* LZ4Decompressor.swift */; };
 		123608E32093200A003E7D11 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E22093200A003E7D11 /* Defaults.swift */; };
 		123608E7209322EB003E7D11 /* DataChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608E6209322EB003E7D11 /* DataChecking.swift */; };
@@ -396,6 +397,7 @@
 		1226531C20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventTableViewCell.swift; sourceTree = "<group>"; };
 		1226532220AD626700BB3E56 /* Resist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resist.swift; sourceTree = "<group>"; };
 		1226532420AD68BE00BB3E56 /* EDResistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDResistTableViewController.swift; sourceTree = "<group>"; };
+		1231EB3F23541D3300525170 /* TowerCloister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerCloister.swift; sourceTree = "<group>"; };
 		123608E02093105D003E7D11 /* LZ4Decompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZ4Decompressor.swift; sourceTree = "<group>"; };
 		123608E22093200A003E7D11 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		123608E6209322EB003E7D11 /* DataChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChecking.swift; sourceTree = "<group>"; };
@@ -771,6 +773,7 @@
 				12204244231B74CE00205C85 /* Rarity6UnlockQuest.swift */,
 				124EA0A120D26CA500F46029 /* Dungeon.swift */,
 				12B8F58A214A5B3600C039DE /* Tower.swift */,
+				1231EB3F23541D3300525170 /* TowerCloister.swift */,
 				1226532220AD626700BB3E56 /* Resist.swift */,
 				127FB85820F44BE1009B53CC /* Preload.swift */,
 				1273BFC421CE2B5900ECA727 /* Notice.swift */,
@@ -1695,6 +1698,7 @@
 				121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */,
 				122071DE20F9D61D00554030 /* TDTabViewController.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
+				1231EB4023541D3300525170 /* TowerCloister.swift in Sources */,
 				128DA48021B24D7B00F7C006 /* ChannelAction.swift in Sources */,
 				128DA48221B25E3900F7C006 /* Minion.swift in Sources */,
 				125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */,
@@ -2121,13 +2125,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 131;
+				CURRENT_PROJECT_VERSION = 133;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/PrincessGuide/PrincessGuide-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -2144,13 +2150,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 131;
+				CURRENT_PROJECT_VERSION = 133;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.PrincessGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/PrincessGuide/PrincessGuide-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

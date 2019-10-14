@@ -9,7 +9,7 @@
 import UIKit
 import MJRefresh
 
-class CardTableViewController: UITableViewController, DataChecking {
+class CardTableViewController: UIViewController, DataChecking, UITableViewDelegate, UITableViewDataSource {
     
     var cards = [Card]()
 
@@ -22,8 +22,17 @@ class CardTableViewController: UITableViewController, DataChecking {
     
     var sections = [Section]()
     
+    let tableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        tableView.delegate = self
+        tableView.dataSource = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateEnd(_:)), name: .preloadEnd, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFilterChange(_:)), name: .cardSortingSettingsDidChange, object: nil)
@@ -173,11 +182,11 @@ class CardTableViewController: UITableViewController, DataChecking {
         loadData()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if sections.count <= 1 {
             return nil
         } else {
@@ -185,7 +194,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].cards.count
     }
     
@@ -193,7 +202,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         return sections[indexPath.section].cards[indexPath.row]
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.description(), for: indexPath) as! CardTableViewCell
         
         let card = cardOf(indexPath: indexPath)
@@ -203,7 +212,7 @@ class CardTableViewController: UITableViewController, DataChecking {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let card = sections[indexPath.section].cards[indexPath.row]
         let vc = CDTabViewController(card: card)
         print("card id: \(card.base.unitId)")

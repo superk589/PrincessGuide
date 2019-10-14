@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ToolboxTableViewController: UITableViewController {
+class ToolboxTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let tableView = UITableView()
     
     struct Row {
         var title: String
@@ -27,6 +29,13 @@ class ToolboxTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        tableView.delegate = self
+        tableView.dataSource = self
                 
         navigationItem.title = NSLocalizedString("Toolbox", comment: "")
             
@@ -46,11 +55,11 @@ class ToolboxTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rows.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ToolboxTableViewCell.description(), for: indexPath) as! ToolboxTableViewCell
         let row = rows[indexPath.row]
 //        if row.isProFeature && !Defaults.proEdition {
@@ -61,7 +70,7 @@ class ToolboxTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let row = rows[indexPath.row]
         

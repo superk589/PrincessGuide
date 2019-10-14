@@ -769,6 +769,11 @@
         <target>有 [%3$@]%% 几率清除%2$@上的%1$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Cloister" xml:space="preserve">
+        <source>Cloister</source>
+        <target>回廊</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Combat Effectiveness" xml:space="preserve">
         <source>Combat Effectiveness</source>
         <target>战力</target>

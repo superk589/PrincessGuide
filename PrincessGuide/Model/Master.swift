@@ -1038,6 +1038,33 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getTowerCloisterWaves(waveIDs: [Int], callback: @escaping FMDBCallbackClosure<[TowerCloister.Wave]>) {
+        var waves = [TowerCloister.Wave]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                tower_wave_group_data
+            WHERE
+                wave_group_id in (\(waveIDs.map(String.init).joined(separator: ",")))
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                do {
+                    let quest = try decoder.decode(TowerCloister.Wave.self, from: json.rawData())
+                    waves.append(quest)
+                } catch let error {
+                    print(error)
+                }
+            }
+        }) {
+            callback(waves)
+        }
+    }
     func getTowerQuests(towerID: Int, callback: @escaping FMDBCallbackClosure<[Tower.Quest]>) {
         var quests = [Tower.Quest]()
         execute({ (db) in
@@ -1476,6 +1503,32 @@ class Master: FMDatabaseQueue {
                         quests.append(quest)
                     }
                 }
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
+    func getTowerCloisterQuests(id: Int?, callback: @escaping FMDBCallbackClosure<[TowerCloister]>) {
+        var quests = [TowerCloister]()
+        execute({ (db) in
+            var sql = """
+            SELECT
+                *
+            FROM
+                tower_cloister_quest_data
+            """
+            if let id = id {
+                sql.append(" WHERE tower_cloister_quest_id = \(id)")
+            }
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let base = try decoder.decode(TowerCloister.Base.self, from: json.rawData())
+                let quest = TowerCloister(base: base)
+                quests.append(quest)
             }
         }) {
             callback(quests)

@@ -765,6 +765,10 @@
         <target>Clear all %1$@ on %2$@ with chance [%3$@]%%.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Cloister" xml:space="preserve">
+        <source>Cloister</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Combat Effectiveness" xml:space="preserve">
         <source>Combat Effectiveness</source>
         <target>戦力</target>

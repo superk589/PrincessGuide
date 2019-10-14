@@ -77,7 +77,7 @@ class TowerTableViewController: UITableViewController, DataChecking {
             tower.preload()
             DispatchQueue.main.async {
                 LoadingHUDManager.default.hide()
-                let vc = TowerQuestTabViewController(quests: tower.quests, exQuests: tower.exQuests)
+                let vc = TowerQuestTabViewController(quests: tower.quests, exQuests: tower.exQuests, cloister: tower.cloisterQuest)
                 vc.hidesBottomBarWhenPushed = true
                 vc.navigationItem.title = tower.title
                 self?.navigationController?.pushViewController(vc, animated: true)

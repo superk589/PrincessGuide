@@ -18,9 +18,12 @@ class TowerQuestTabViewController: TabmanViewController, PageboyViewControllerDa
     
     let exQuests: [Tower.Quest]
     
-    init(quests: [Tower.Quest], exQuests: [Tower.Quest]) {
+    let cloister: TowerCloister?
+    
+    init(quests: [Tower.Quest], exQuests: [Tower.Quest], cloister: TowerCloister?) {
         self.quests = quests.sorted { $0.waveGroupId > $1.waveGroupId }
         self.exQuests = exQuests.sorted { $0.waveGroupId > $1.waveGroupId }
+        self.cloister = cloister
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,6 +47,13 @@ class TowerQuestTabViewController: TabmanViewController, PageboyViewControllerDa
             items.append(TMBarItem(title: title))
             vcs.append(vc)
             if upperBound == exQuests.count { break }
+        }
+        
+        if let cloister = cloister {
+            let vc = QuestEnemyTableViewController(towerCloister: cloister)
+            let title = NSLocalizedString("Cloister", comment: "")
+            items.append(TMBarItem(title: title))
+            vcs.append(vc)
         }
         
         for i in 0... {

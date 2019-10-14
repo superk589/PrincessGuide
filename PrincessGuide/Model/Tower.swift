@@ -13,7 +13,8 @@ class Tower: Codable {
     let towerAreaId: Int
     let maxFloorNum: Int
     let title: String
-    
+    let cloisterQuestId: Int
+
     lazy var quests: [Quest] = DispatchSemaphore.sync { (closure) in
         Master.shared.getTowerQuests(towerID: towerAreaId, callback: closure)
     } ?? []
@@ -22,11 +23,18 @@ class Tower: Codable {
         Master.shared.getTowerExQuests(towerID: towerAreaId, callback: closure)
     } ?? []
     
+    lazy var cloisterQuest: TowerCloister? = DispatchSemaphore.sync { closure in
+        Master.shared.getTowerCloisterQuests(id: cloisterQuestId, callback: closure)
+    }?.first
+    
     func preload() {
         quests.forEach {
             _ = $0.enemies
         }
         exQuests.forEach {
+            _ = $0.enemies
+        }
+        cloisterQuest?.waves.forEach {
             _ = $0.enemies
         }
     }

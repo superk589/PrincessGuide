@@ -80,7 +80,7 @@ class QuestAreaTableViewController: UITableViewController, DataChecking {
         
         switch areaType {
         case .veryHard:
-            cell.configure(for: area.areaName, subtitle: "", shadowUnitID: area.quests.last?.waves.last?.enemies.first?.enemy?.unit.prefabId)
+            cell.configure(for: area.areaName, subtitle: "", shadowUnitID: area.quests.last { $0.waves.count > 0 }?.waves.last?.enemies.first?.enemy?.unit.prefabId)
         default:
             cell.configure(for: area.areaName, subtitle: "", unitID: area.quests.last?.waves.last?.enemies.first?.enemy?.unit.prefabId)
         }

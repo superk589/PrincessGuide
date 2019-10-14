@@ -20,6 +20,7 @@ class QuestEnemyTableViewController: UITableViewController {
             case clanBattleWave(Wave, Int, Double)
             case tower([Enemy], Int)
             case hatsuneEvent(Wave, String)
+            case cloister(TowerCloister.Wave, Int)
         }
     }
 
@@ -56,6 +57,13 @@ class QuestEnemyTableViewController: UITableViewController {
     init(towerQuests: [Tower.Quest]) {
         self.rows = towerQuests.map {
             Row(type: QuestEnemyTableViewCell.self, data: .tower($0.enemies, $0.floorNum))
+        }
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(towerCloister: TowerCloister) {
+        self.rows = towerCloister.waves.enumerated().map {
+            Row(type: QuestEnemyTableViewCell.self, data: .cloister($0.element, $0.offset))
         }
         super.init(nibName: nil, bundle: nil)
     }
@@ -138,6 +146,12 @@ class QuestEnemyTableViewController: UITableViewController {
             cell.delegate = self
         case (let cell as QuestEnemyTableViewCell, .hatsuneEvent(let wave, let title)):
             let enemies = wave.enemies.flatMap { [$0.enemy] + ($0.enemy?.parts ?? [])}.compactMap { $0 }
+            cell.configure(for: enemies, title: title)
+            cell.delegate = self
+        case (let cell as QuestEnemyTableViewCell, .cloister(let wave, let index)):
+            let enemies = wave.enemies.flatMap { [$0] + $0.parts }.compactMap { $0 }
+            let format = NSLocalizedString("Wave %d", comment: "")
+            let title = String(format: format, index + 1)
             cell.configure(for: enemies, title: title)
             cell.delegate = self
         default:
