@@ -128,9 +128,6 @@
 "%@/%@" = "%1$@ 月 %2$@ 日";
 
 /* No comment provided by engineer. */
-"%d in front of %@, summon a minion of ID: %d." = "%1$d in front of %2$@, summon a minion of ID: %3$d.";
-
-/* No comment provided by engineer. */
 "About" = "アプリについて";
 
 /* No comment provided by engineer. */
@@ -230,9 +227,6 @@
 "Ascending" = "昇順";
 
 /* No comment provided by engineer. */
-"At the position of %@, summon a minion of ID: %d." = "At the position of %1$@, summon a minion of ID: %2$d.";
-
-/* No comment provided by engineer. */
 "ATK" = "物理攻撃力";
 
 /* No comment provided by engineer. */
@@ -258,12 +252,6 @@
 
 /* No comment provided by engineer. */
 "Batch Edit" = "一括編集";
-
-/* No comment provided by engineer. */
-"Become invulnerable for [%@]s." = "無敵状態になる、[%@]秒継続する。";
-
-/* No comment provided by engineer. */
-"Become invulnerable to physical damage for [%@]s." = "Become invulnerable to physical damage for [%@]s.";
 
 /* No comment provided by engineer. */
 "Bind" = "束縛";

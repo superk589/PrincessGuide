@@ -275,11 +275,6 @@
         <target>%1$@ 月 %2$@ 日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%d in front of %@, summon a minion of ID: %d." xml:space="preserve">
-        <source>%1$d in front of %2$@, summon a minion of ID: %3$d.</source>
-        <target>%1$d in front of %2$@, summon a minion of ID: %3$d.</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id=", " xml:space="preserve">
         <source>, </source>
         <target>、</target>
@@ -399,9 +394,16 @@
         <target>昇順</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="At the position of %@, summon a minion of ID: %d." xml:space="preserve">
-        <source>At the position of %1$@, summon a minion of ID: %2$d.</source>
-        <target>At the position of %1$@, summon a minion of ID: %2$d.</target>
+      <trans-unit id="At %d behind of %@, summon a minion(ID: %d)." xml:space="preserve">
+        <source>At %1$d behind of %2$@, summon a minion(ID: %3$d).</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="At %d in front of %@, summon a minion(ID: %d)." xml:space="preserve">
+        <source>At %1$d in front of %2$@, summon a minion(ID: %3$d).</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="At the position of %@, summon a minion(ID: %d)." xml:space="preserve">
+        <source>At the position of %1$@, summon a minion(ID: %2$d).</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Attack Pattern" xml:space="preserve">
@@ -441,16 +443,6 @@
       <trans-unit id="Batch Edit" xml:space="preserve">
         <source>Batch Edit</source>
         <target>一括編集</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Become invulnerable for [%@]s." xml:space="preserve">
-        <source>Become invulnerable for [%@]s.</source>
-        <target>無敵状態になる、[%@]秒継続する。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Become invulnerable to physical damage for [%@]s." xml:space="preserve">
-        <source>Become invulnerable to physical damage for [%@]s.</source>
-        <target>Become invulnerable to physical damage for [%@]s.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Bind" xml:space="preserve">
@@ -827,6 +819,30 @@
       <trans-unit id="Condition: use %d if %@ is alone." xml:space="preserve">
         <source>Condition: use %1$d if %2$@ is alone.</source>
         <target>Condition: use %1$d if %2$@ is alone.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if among %@ does not exist unit(ID: %d)." xml:space="preserve">
+        <source>Condition: use %1$d if among %2$@ does not exist unit(ID: %3$d).</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if among %@ exists unit(ID: %d), otherwise %d." xml:space="preserve">
+        <source>Condition: use %1$d if among %2$@ exists unit(ID: %3$d), otherwise %4$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if among %@ exists unit(ID: %d)." xml:space="preserve">
+        <source>Condition: use %1$d if among %2$@ exists unit(ID: %3$d).</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if the count of %@(except stealth units) is %d, otherwise %d." xml:space="preserve">
+        <source>Condition: use %1$d if the count of %2$@(except stealth units) is %3$d, otherwise %4$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if the count of %@(except stealth units) is %d." xml:space="preserve">
+        <source>Condition: use %1$d if the count of %2$@(except stealth units) is %3$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Condition: use %d if the count of %@(except stealth units) is not %d." xml:space="preserve">
+        <source>Condition: use %1$d if the count of %2$@(except stealth units) is not %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Confirm" xml:space="preserve">
@@ -1383,6 +1399,14 @@
         <target>%1$@のTPを[%2$@]失わせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ to be invulnerable for [%@]s." xml:space="preserve">
+        <source>Make %1$@ to be invulnerable for [%2$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Make %@ to be invulnerable to physical damage for [%@]s." xml:space="preserve">
+        <source>Make %1$@ to be invulnerable to physical damage for [%2$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
         <source>Make %1$@ when get one hit by the caster, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
         <note>No comment provided by engineer.</note>
@@ -1460,6 +1484,10 @@
       <trans-unit id="Minion: %d" xml:space="preserve">
         <source>Minion: %d</source>
         <target>ミニオン：%d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Minion: %d(Unit: %d)" xml:space="preserve">
+        <source>Minion: %1$d(Unit: %2$d)</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Misc" xml:space="preserve">

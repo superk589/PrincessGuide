@@ -33,6 +33,32 @@ class IfForAllAction: ActionParameter {
             } else {
                 return super.localizedDetail(of: level, property: property, style: style)
             }
+        case 700..<710:
+            if actionDetail2 != 0 && actionDetail3 != 0 {
+                let format = NSLocalizedString("Condition: use %d if the count of %@(except stealth units) is %d, otherwise %d.", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 700, actionDetail3 % 10)
+            } else if actionDetail2 != 0 {
+                let format = NSLocalizedString("Condition: use %d if the count of %@(except stealth units) is %d.", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 700)
+            } else if actionDetail3 != 0 {
+                let format = NSLocalizedString("Condition: use %d if the count of %@(except stealth units) is not %d.", comment: "")
+                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 700)
+            } else {
+                return super.localizedDetail(of: level, property: property, style: style)
+            }
+        case 720:
+            if actionDetail2 != 0 && actionDetail3 != 0 {
+                let format = NSLocalizedString("Condition: use %d if among %@ exists unit(ID: %d), otherwise %d.", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), Int(actionValue3), actionDetail3 % 10)
+            } else if actionDetail2 != 0 {
+                let format = NSLocalizedString("Condition: use %d if among %@ exists unit(ID: %d).", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), Int(actionValue3))
+            } else if actionDetail3 != 0 {
+                let format = NSLocalizedString("Condition: use %d if among %@ does not exist unit(ID: %d).", comment: "")
+                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), Int(actionValue3))
+            } else {
+                return super.localizedDetail(of: level, property: property, style: style)
+            }
         case 1000:
             let format = NSLocalizedString("Condition: if defeat target by the last effect then use %d.", comment: "")
             return String(format: format, actionDetail2 % 10)

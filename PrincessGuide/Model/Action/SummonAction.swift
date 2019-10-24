@@ -54,10 +54,13 @@ class SummonAction: ActionParameter {
 
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         if actionValue7 > 0 {
-            let format = NSLocalizedString("%d in front of %@, summon a minion of ID: %d.", comment: "")
+            let format = NSLocalizedString("At %d in front of %@, summon a minion(ID: %d).", comment: "")
             return String(format: format, Int(actionValue7), targetParameter.buildTargetClause(), actionDetail2)
+        } else if actionValue7 < 0 {
+            let format = NSLocalizedString("At %d behind of %@, summon a minion(ID: %d).", comment: "")
+            return String(format: format, Int(-actionValue7), targetParameter.buildTargetClause(), actionDetail2)
         } else {
-            let format = NSLocalizedString("At the position of %@, summon a minion of ID: %d.", comment: "")
+            let format = NSLocalizedString("At the position of %@, summon a minion(ID: %d).", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), actionDetail2)
         }
     }

@@ -79,8 +79,8 @@ class EDTableViewController: UITableViewController {
         switch row {
         case .minion(let minion):
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDMinionTableViewCell.self)
-            let format = NSLocalizedString("Minion: %d", comment: "")
-            cell.configure(title: String(format: format, minion.base.unitId))
+            let format = NSLocalizedString("Minion: %d(Unit: %d)", comment: "")
+            cell.configure(title: String(format: format, minion.base.enemyId, minion.unit.prefabId))
             return cell
         case .pattern(let pattern, let enemy, let index):
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EDPatternTableViewCell.self)

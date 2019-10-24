@@ -128,9 +128,6 @@
 "%@/%@" = "%1$@ 月 %2$@ 日";
 
 /* No comment provided by engineer. */
-"%d in front of %@, summon a minion of ID: %d." = "在%2$@前 %1$d 的位置，召唤 ID 为 %3$d 的随从。";
-
-/* No comment provided by engineer. */
 "About" = "关于";
 
 /* No comment provided by engineer. */
@@ -233,7 +230,13 @@
 "Ascending" = "升序";
 
 /* No comment provided by engineer. */
-"At the position of %@, summon a minion of ID: %d." = "在%1$@的位置，召唤 ID 为 %2$d 的随从。";
+"At %d behind of %@, summon a minion(ID: %d)." = "在%2$@身后 %1$d 的位置，召唤一个随从（ID：%3$d）。";
+
+/* No comment provided by engineer. */
+"At %d in front of %@, summon a minion(ID: %d)." = "在%2$@前方 %1$d 的位置，召唤一个随从（ID：%3$d）。";
+
+/* No comment provided by engineer. */
+"At the position of %@, summon a minion(ID: %d)." = "在%1$@的位置，召唤一个随从（ID：%2$d）。";
 
 /* No comment provided by engineer. */
 "ATK" = "物理攻击力";
@@ -264,12 +267,6 @@
 
 /* No comment provided by engineer. */
 "Batch Edit" = "批量修改";
-
-/* No comment provided by engineer. */
-"Become invulnerable for [%@]s." = "进入无敌状态，持续 [%@] 秒。";
-
-/* No comment provided by engineer. */
-"Become invulnerable to physical damage for [%@]s." = "免疫物理伤害，持续 [%@] 秒。";
 
 /* No comment provided by engineer. */
 "Bind" = "束缚";
@@ -522,6 +519,24 @@
 
 /* No comment provided by engineer. */
 "Condition: use %d if %@ is alone." = "条件分支：如果%2$@是单独的则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"Condition: use %d if among %@ does not exist unit(ID: %d)." = "条件分支：如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"Condition: use %d if among %@ exists unit(ID: %d), otherwise %d." = "条件分支：如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d，否则使用 %4$d。";
+
+/* No comment provided by engineer. */
+"Condition: use %d if among %@ exists unit(ID: %d)." = "条件分支：如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"Condition: use %d if the count of %@(except stealth units) is %d, otherwise %d." = "条件分支：如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d，否则使用 %4$d。";
+
+/* No comment provided by engineer. */
+"Condition: use %d if the count of %@(except stealth units) is %d." = "条件分支：如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"Condition: use %d if the count of %@(except stealth units) is not %d." = "条件分支：如果%2$@（潜行单位除外）的数量不等于 %3$d 则使用 %1$d。";
 
 /* No comment provided by engineer. */
 "Confirm" = "确定";
@@ -932,6 +947,12 @@
 "Make %@ lose [%@] TP." = "使%1$@失去 [%2$@] TP。";
 
 /* No comment provided by engineer. */
+"Make %@ to be invulnerable for [%@]s." = "使%@免疫所有伤害，持续 [%@] 秒。";
+
+/* No comment provided by engineer. */
+"Make %@ to be invulnerable to physical damage for [%@]s." = "使%@免疫物理伤害，持续 [%@] 秒。";
+
+/* No comment provided by engineer. */
 "Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "使%1$@获得每受到一次来自施法者的 Hit 就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -984,6 +1005,9 @@
 
 /* No comment provided by engineer. */
 "Minion: %d" = "随从：%d";
+
+/* No comment provided by engineer. */
+"Minion: %d(Unit: %d)" = "随从：%1$d（单位：%2$d）";
 
 /* No comment provided by engineer. */
 "Misc" = "杂项";
