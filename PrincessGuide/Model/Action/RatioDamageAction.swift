@@ -18,6 +18,6 @@ class RatioDamageAction: ActionParameter {
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("Deal damage equal to [%@]%% of target's max HP to %@.", comment: "")
-        return String(format: format, buildExpression(of: level, style: style, property: property), targetParameter.buildTargetClause())
+        return String(format: format, buildExpression(of: level, roundingRule: .none, style: style, property: property), targetParameter.buildTargetClause())
     }
 }

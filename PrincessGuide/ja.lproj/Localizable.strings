@@ -137,27 +137,6 @@
 "Action" = "行動";
 
 /* No comment provided by engineer. */
-"Add [%@ * count of defeated enemies] to next effect's value %d." = "Add [%1$@ * count of defeated enemies] to next effect's value %2$d.";
-
-/* No comment provided by engineer. */
-"Add [%@ * count of omemes] to next effect's value %d." = "Add [%1$@ * count of omemes] to next effect's value %2$d.";
-
-/* No comment provided by engineer. */
-"Add [%@ * count of targets] to next effect's value %d." = "Add [%1$@ * count of targets] to next effect's value %2$d.";
-
-/* No comment provided by engineer. */
-"Add [%@ * HP] to next effect's value %d." = "Add [%1$@ * HP] to next effect's value %2$d.";
-
-/* No comment provided by engineer. */
-"Add [%@ * lost HP] to next effect's value %d." = "Add [%1$@ * lost HP] to next effect's value %2$d.";
-
-/* No comment provided by engineer. */
-"Add [%@ * stacks of mark(ID: %d)] to next effect's value %d." = "Add [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.";
-
-/* No comment provided by engineer. */
-"Add [%@ * total damage] to next effect's value %d." = "Add [%1$@ * total damage] to next effect's value %2$d.";
-
-/* No comment provided by engineer. */
 "Add [%d] to the counter." = "Add [%d] to the counter.";
 
 /* No comment provided by engineer. */
@@ -470,25 +449,10 @@
 "Condition: %@." = "Condition: %@.";
 
 /* No comment provided by engineer. */
-"Condition: counter is greater or equal to %d then use %d, otherwise %d." = "Condition: counter is greater or equal to %1$d then use %2$d, otherwise %3$d.";
-
-/* No comment provided by engineer. */
-"Condition: counter is greater or equal to %d then use %d." = "Condition: counter is greater or equal to %1$d then use %2$d.";
-
-/* No comment provided by engineer. */
-"Condition: if defeat target by the last effect then use %d." = "Condition: if defeat target by the last effect then use %d.";
-
-/* No comment provided by engineer. */
 "Condition: if the specific field exists then use %d, otherwise %d." = "Condition: if the specific field exists then use %1$d, otherwise %2$d.";
 
 /* No comment provided by engineer. */
 "Condition: if the specific field exists then use %d." = "Condition: if the specific field exists then use %d.";
-
-/* No comment provided by engineer. */
-"Condition: use %d if %@ is alone, otherwise %d." = "Condition: use %1$d if %2$@ is alone, otherwise %3$d.";
-
-/* No comment provided by engineer. */
-"Condition: use %d if %@ is alone." = "Condition: use %1$d if %2$@ is alone.";
 
 /* No comment provided by engineer. */
 "Confirm" = "確認する";
@@ -966,18 +930,6 @@
 
 /* No comment provided by engineer. */
 "Move to %@ in front of %@ with velocity %@/s." = "Move to %1$@ in front of %2$@ with velocity %3$@/s.";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * count of defeated enemies] to next effect's value %d." = "Multiple [%1$@ * count of defeated enemies] to next effect's value %2$d.";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * HP / max HP] to next effect's value %d." = "Multiple [%1$@ * HP / max HP] to next effect's value %2$d.";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * lost HP / max HP] to next effect's value %d." = "Multiple [%1$@ * lost HP / max HP] to next effect's value %2$d.";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * stacks of mark(ID: %d)] to next effect's value %d." = "Multiple [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.";
 
 /* No comment provided by engineer. */
 "New %@ Event: %@" = "New %1$@ Event: %2$@";
@@ -1602,24 +1554,6 @@
 
 /* No comment provided by engineer. */
 "use %d to %@ if it's not alone" = "use %1$d to %2$@ if it's not alone";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ is %@" = "use %1$d to any of %2$@ is %3$@";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ is in state of ID: %d" = "use %1$d to any of %2$@ is in state of ID: %3$d";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ is not %@" = "use %1$d to any of %2$@ is not %3$@";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ is not in state of ID: %d" = "use %1$d to any of %2$@ is not in state of ID: %3$d";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ whose HP is below %d%%" = "use %1$d to any of %2$@ whose HP is below %3$d%%";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ whose HP is not below %d%%" = "use %1$d to any of %2$@ whose HP is not below %3$d%%";
 
 /* No comment provided by engineer. */
 "value %d" = "value %d";

@@ -54,19 +54,19 @@ class IfForChildrenAction: ActionParameter {
         }
         
         if let ifType = IfType(rawValue: actionDetail1) {
-            let format = NSLocalizedString("use %d to any of %@ is %@", comment: "")
-            return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(), ifType.description)
+            let format = NSLocalizedString("use %d to %@ if %@", comment: "")
+            return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(anyOfModifier: true), ifType.description)
         } else {
             switch actionDetail1 {
             case 600..<700, 710:
-                let format = NSLocalizedString("use %d to any of %@ is in state of ID: %d", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600)
+                let format = NSLocalizedString("use %d to %@ in state of ID: %d", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 600)
             case 700:
                 let format = NSLocalizedString("use %d to %@ if it's alone", comment: "")
                 return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
             case 901..<1000:
-                let format = NSLocalizedString("use %d to any of %@ whose HP is below %d%%", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 900)
+                let format = NSLocalizedString("use %d to %@ if HP is below %d%%", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
             default:
                 return nil
             }
@@ -78,19 +78,19 @@ class IfForChildrenAction: ActionParameter {
             return nil
         }
         if let ifType = IfType(rawValue: actionDetail1) {
-            let format = NSLocalizedString("use %d to any of %@ is not %@", comment: "")
-            return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause(), ifType.description)
+            let format = NSLocalizedString("use %d to %@ if not %@", comment: "")
+            return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause(anyOfModifier: true), ifType.description)
         } else {
             switch actionDetail1 {
             case 600..<700, 710:
-                let format = NSLocalizedString("use %d to any of %@ is not in state of ID: %d", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600)
+                let format = NSLocalizedString("use %d to %@ if not in state of ID: %d", comment: "")
+                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 600)
             case 700:
                 let format = NSLocalizedString("use %d to %@ if it's not alone", comment: "")
                 return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
             case 901..<1000:
-                let format = NSLocalizedString("use %d to any of %@ whose HP is not below %d%%", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 900)
+                let format = NSLocalizedString("use %d to %@ if HP is not below %d%%", comment: "")
+                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
             default:
                 return nil
             }

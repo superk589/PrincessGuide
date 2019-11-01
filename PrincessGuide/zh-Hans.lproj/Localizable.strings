@@ -121,11 +121,17 @@
 /* target type */
 "%@ unknown type" = "%@未知类型";
 
+/* sentence and period */
+"%@." = "%@。";
+
 /* No comment provided by engineer. */
 "%@'s birthday" = "%@的生日";
 
 /* No comment provided by engineer. */
 "%@/%@" = "%1$@ 月 %2$@ 日";
+
+/* No comment provided by engineer. */
+"%d%% chance use %d" = "%1$d%% 几率使用 %2$d";
 
 /* No comment provided by engineer. */
 "About" = "关于";
@@ -135,30 +141,6 @@
 
 /* No comment provided by engineer. */
 "Action" = "Action";
-
-/* No comment provided by engineer. */
-"Add [%@ * %@ of %@] to next effect's value %d." = "使下一个效果的数值 %4$d 提高 [%1$@ * %3$@的%2$@]。";
-
-/* No comment provided by engineer. */
-"Add [%@ * count of defeated enemies] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 击杀个数]。";
-
-/* No comment provided by engineer. */
-"Add [%@ * count of omemes] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * オメメ个数] 。";
-
-/* No comment provided by engineer. */
-"Add [%@ * count of targets] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 目标个数]。";
-
-/* No comment provided by engineer. */
-"Add [%@ * HP] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * HP]。";
-
-/* No comment provided by engineer. */
-"Add [%@ * lost HP] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 损失的 HP]。";
-
-/* No comment provided by engineer. */
-"Add [%@ * stacks of mark(ID: %d)] to next effect's value %d." = "使下一个效果的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。";
-
-/* No comment provided by engineer. */
-"Add [%@ * total damage] to next effect's value %d." = "使下一个效果的数值 %2$d 提高 [%1$@ * 总伤害]。";
 
 /* No comment provided by engineer. */
 "Add [%d] to the counter." = "使计数器加 [%d]。";
@@ -213,6 +195,9 @@
 
 /* icon style */
 "always 3★" = "固定 3★";
+
+/* No comment provided by engineer. */
+"any of %@" = "%@中任何";
 
 /* No comment provided by engineer. */
 "App Version" = "程序版本";
@@ -500,43 +485,10 @@
 "Condition: %@." = "条件分支：%@。";
 
 /* No comment provided by engineer. */
-"Condition: counter is greater or equal to %d then use %d, otherwise %d." = "条件分支：计数器大于等于 %1$d 则使用 %2$d，否则使用 %3$d。";
-
-/* No comment provided by engineer. */
-"Condition: counter is greater or equal to %d then use %d." = "条件分支：计数器大于等于 %1$d 则使用 %2$d。";
-
-/* No comment provided by engineer. */
-"Condition: if defeat target by the last effect then use %d." = "条件分支：上一个效果成功击杀目标则使用 %d。";
-
-/* No comment provided by engineer. */
 "Condition: if the specific field exists then use %d, otherwise %d." = "条件分支：如果指定的场地效果存在则使用 %1$d，否则使用 %2$d。";
 
 /* No comment provided by engineer. */
 "Condition: if the specific field exists then use %d." = "条件分支：如果指定的场地效果存在则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: use %d if %@ is alone, otherwise %d." = "条件分支：如果%2$@是单独的则使用 %1$d，否则使用 %3$d。";
-
-/* No comment provided by engineer. */
-"Condition: use %d if %@ is alone." = "条件分支：如果%2$@是单独的则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: use %d if among %@ does not exist unit(ID: %d)." = "条件分支：如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: use %d if among %@ exists unit(ID: %d), otherwise %d." = "条件分支：如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d，否则使用 %4$d。";
-
-/* No comment provided by engineer. */
-"Condition: use %d if among %@ exists unit(ID: %d)." = "条件分支：如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: use %d if the count of %@(except stealth units) is %d, otherwise %d." = "条件分支：如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d，否则使用 %4$d。";
-
-/* No comment provided by engineer. */
-"Condition: use %d if the count of %@(except stealth units) is %d." = "条件分支：如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d。";
-
-/* No comment provided by engineer. */
-"Condition: use %d if the count of %@(except stealth units) is not %d." = "条件分支：如果%2$@（潜行单位除外）的数量不等于 %3$d 则使用 %1$d。";
 
 /* No comment provided by engineer. */
 "Confirm" = "确定";
@@ -558,6 +510,12 @@
 
 /* No comment provided by engineer. */
 "Count Blind" = "千里眼";
+
+/* No comment provided by engineer. */
+"counter is greater than or equal to %d then use %d" = "计数器大于等于 %1$d 时使用 %2$d";
+
+/* No comment provided by engineer. */
+"counter is less than %d then use %d" = "计数器小于 %1$d 时使用 %2$d";
 
 /* No comment provided by engineer. */
 "Crafted" = "制作";
@@ -845,6 +803,12 @@
 "Icon Style" = "头像风格";
 
 /* No comment provided by engineer. */
+"if target is defeated by the last effect then use %d" = "上一个效果成功击杀目标则使用 %d。";
+
+/* No comment provided by engineer. */
+"if target is not defeated by last effect then use %d" = "上一个效果未能成功击杀目标则使用 %d。";
+
+/* No comment provided by engineer. */
 "Image" = "图片";
 
 /* No comment provided by engineer. */
@@ -953,6 +917,9 @@
 "Make %@ to be invulnerable to physical damage for [%@]s." = "使%@免疫物理伤害，持续 [%@] 秒。";
 
 /* No comment provided by engineer. */
+"Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "使%1$@获得每次造成伤害时就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
 "Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "使%1$@获得每受到一次来自施法者的 Hit 就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -1013,6 +980,42 @@
 "Misc" = "杂项";
 
 /* No comment provided by engineer. */
+"Modifier: add [%@ * %@ of %@] to value %d of effect %d." = "使效果 %5$d 的数值 %4$d 提高 [%1$@ * %3$@的%2$@]。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 击杀个数]。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * count of omemes] value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * オメメ个数] 。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * count of targets] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 目标个数]。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * HP] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * HP]。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * lost HP] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 损失的 HP]。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * stacks of mark(ID: %d)] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * total damage] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 总伤害]。";
+
+/* No comment provided by engineer. */
+"Modifier: multiple [%@ * count of defeated enemies] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 乘以 [%1$@ * 击杀个数]。";
+
+/* No comment provided by engineer. */
+"Modifier: multiple [%@ * HP / max HP] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。";
+
+/* No comment provided by engineer. */
+"Modifier: multiple [%@ * lost HP / max HP] to value %d of effect %d." = "使效果 %3$d 数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。";
+
+/* No comment provided by engineer. */
+"Modifier: multiple [%@ * stacks of mark(ID: %d)] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。";
+
+/* No comment provided by engineer. */
 "Move backward %@ with velocity %@/s." = "向后移动 %1$@，速度 %2$@/秒。";
 
 /* No comment provided by engineer. */
@@ -1029,18 +1032,6 @@
 
 /* No comment provided by engineer. */
 "Move to %@ in front of %@ with velocity %@/s." = "移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * count of defeated enemies] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * 击杀个数]。";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * HP / max HP] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * lost HP / max HP] to next effect's value %d." = "使下一个效果的数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。";
-
-/* No comment provided by engineer. */
-"Multiple [%@ * stacks of mark(ID: %d)] to next effect's value %d." = "使下一个效果的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。";
 
 /* No comment provided by engineer. */
 "name" = "名称";
@@ -1125,6 +1116,9 @@
 
 /* No comment provided by engineer. */
 "Other" = "其他";
+
+/* No comment provided by engineer. */
+"Overall branch: %@." = "整体分支：%@。";
 
 /* No comment provided by engineer. */
 "own side" = "己方";
@@ -1260,6 +1254,9 @@
 
 /* No comment provided by engineer. */
 "Remove field of skill %d (1 represents the first skill in this list) effect %d." = "移除技能 %1$d（1 代表本列表中的第一个）效果 %2$d 产生的场地。";
+
+/* No comment provided by engineer. */
+"Repeat effect %d every %@s up to %@s, break if taken more than %@ damage" = "每 %2$@ 秒释放一次效果 %1$d，最多持续 %3$@ 秒， 受到超过 %4$@ 伤害后终止";
 
 /* No comment provided by engineer. */
 "Reset" = "重置";
@@ -1682,28 +1679,58 @@
 "Upcoming Birthdays" = "即将到来的生日";
 
 /* No comment provided by engineer. */
+"use %d after break" = "被打断后使用 %d";
+
+/* No comment provided by engineer. */
+"use %d after time up" = "持续时间结束后使用 %d";
+
+/* No comment provided by engineer. */
+"use %d if %@ is alone" = "如果%2$@是单独的则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"use %d if %@ is in state of ID: %d with stacks greater than or equal to %d" = "如果%2$@拥有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d if %@ is not alone" = "如果%2$@不是单独的则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" = "如果%2$@没有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d if among %@ does not exist unit(ID: %d)" = "如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"use %d if among %@ exists unit(ID: %d)" = "如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"use %d if the count of %@(except stealth units) is %d" = "如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d，否则使用 %4$d。";
+
+/* No comment provided by engineer. */
+"use %d if the count of %@(except stealth units) is not %d" = "如果%2$@（潜行单位除外）的数量不等于 %3$d 则使用 %1$d，否则使用 %4$d。";
+
+/* No comment provided by engineer. */
+"use %d to %@ if %@" = "如果%2$@处于%3$@状态，对其使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to %@ if HP is below %d%%" = "如果%2$@的 HP 低于 %3$d%%，对其使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to %@ if HP is not below %d%%" = "如果%2$@的 HP 不低于 %3$d%%，对其使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d to %@ if it's alone" = "如果%2$@是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d to %@ if it's not alone" = "如果%2$@不是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ is %@" = "对%2$@中处于%3$@状态的使用 %1$d";
+"use %d to %@ if not %@" = "如果%2$@未处于%3$@状态，对其使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ is in state of ID: %d" = "对%2$@中处于 ID 为 %3$d 状态的使用 %1$d";
+"use %d to %@ if not in state of ID: %d" = "如果%2$@没有标记（ID：%3$d），对其使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d to any of %@ is not %@" = "对%2$@中未处于%3$@状态的使用 %1$d";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ is not in state of ID: %d" = "对%2$@中未处于 ID 为 %3$d 状态的使用 %1$d";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ whose HP is below %d%%" = "对%2$@中 HP 低于 %3$d%% 的使用 %1$d";
-
-/* No comment provided by engineer. */
-"use %d to any of %@ whose HP is not below %d%%" = "对%2$@中 HP 不低于 %3$d%% 的使用 %1$d";
+"use %d to %@ in state of ID: %d" = "如果%2$@有标记（ID：%3$d），对其使用 %1$d";
 
 /* No comment provided by engineer. */
 "value %d" = "数值 %d";

@@ -6,7 +6,7 @@
 //  Copyright © 2019 zzk. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class AweAction: ActionParameter {
     

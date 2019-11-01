@@ -209,6 +209,7 @@
 		12C5D26D21D9FFEE00C99425 /* HatsuneEventQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */; };
 		12C5D26F21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */; };
 		12C9508023504CAE000318C5 /* AweAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9507F23504CAE000318C5 /* AweAction.swift */; };
+		12CF02A5236AA9C4003CD3AD /* LoopMotionRepeatAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CF02A4236AA9C4003CD3AD /* LoopMotionRepeatAction.swift */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
 		12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */; };
 		12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13820A573B800034DD6 /* EDSkillTableViewController.swift */; };
@@ -531,6 +532,7 @@
 		12C5D26C21D9FFEE00C99425 /* HatsuneEventQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventQuest.swift; sourceTree = "<group>"; };
 		12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventSpecialBattle.swift; sourceTree = "<group>"; };
 		12C9507F23504CAE000318C5 /* AweAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AweAction.swift; sourceTree = "<group>"; };
+		12CF02A4236AA9C4003CD3AD /* LoopMotionRepeatAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopMotionRepeatAction.swift; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
 		12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDStatusTableViewController.swift; sourceTree = "<group>"; };
 		12D3D13820A573B800034DD6 /* EDSkillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewController.swift; sourceTree = "<group>"; };
@@ -1356,6 +1358,7 @@
 				12204240231AABF700205C85 /* FearAction.swift */,
 				12C9507F23504CAE000318C5 /* AweAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
+				12CF02A4236AA9C4003CD3AD /* LoopMotionRepeatAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
 			);
 			path = Action;
@@ -1891,6 +1894,7 @@
 				12E6BEE1227800A6000BAADC /* StealthAction.swift in Sources */,
 				126BFBD320F0FC420059B4ED /* BDEquipmentViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
+				12CF02A5236AA9C4003CD3AD /* LoopMotionRepeatAction.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
 				120F9B8520E9F97E003632CA /* CharaTableViewCell.swift in Sources */,
@@ -2125,7 +2129,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 134;
+				CURRENT_PROJECT_VERSION = 136;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2150,7 +2154,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 134;
+				CURRENT_PROJECT_VERSION = 136;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

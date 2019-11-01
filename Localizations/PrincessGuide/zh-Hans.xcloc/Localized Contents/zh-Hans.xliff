@@ -269,9 +269,19 @@
         <target>%@的生日</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="%@." xml:space="preserve">
+        <source>%@.</source>
+        <target>%@。</target>
+        <note>sentence and period</note>
+      </trans-unit>
       <trans-unit id="%@/%@" xml:space="preserve">
         <source>%1$@/%2$@</source>
         <target>%1$@ 月 %2$@ 日</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%d%% chance use %d" xml:space="preserve">
+        <source>%1$d%% chance use %2$d</source>
+        <target>%1$d%% 几率使用 %2$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=", " xml:space="preserve">
@@ -302,46 +312,6 @@
       <trans-unit id="Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." xml:space="preserve">
         <source>Add %1$@ mark stacks(max %2$@, ID: %3$@) on %4$@ for %5$@s.</source>
         <target>对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Add [%@ * %@ of %@] to next effect's value %d." xml:space="preserve">
-        <source>Add [%1$@ * %2$@ of %3$@] to next effect's value %4$d.</source>
-        <target>使下一个效果的数值 %4$d 提高 [%1$@ * %3$@的%2$@]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Add [%@ * HP] to next effect's value %d." xml:space="preserve">
-        <source>Add [%1$@ * HP] to next effect's value %2$d.</source>
-        <target>使下一个效果的数值 %2$d 提高 [%1$@ * HP]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Add [%@ * count of defeated enemies] to next effect's value %d." xml:space="preserve">
-        <source>Add [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
-        <target>使下一个效果的数值 %2$d 提高 [%1$@ * 击杀个数]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Add [%@ * count of omemes] to next effect's value %d." xml:space="preserve">
-        <source>Add [%1$@ * count of omemes] to next effect's value %2$d.</source>
-        <target>使下一个效果的数值 %2$d 提高 [%1$@ * オメメ个数] 。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Add [%@ * count of targets] to next effect's value %d." xml:space="preserve">
-        <source>Add [%1$@ * count of targets] to next effect's value %2$d.</source>
-        <target>使下一个效果的数值 %2$d 提高 [%1$@ * 目标个数]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Add [%@ * lost HP] to next effect's value %d." xml:space="preserve">
-        <source>Add [%1$@ * lost HP] to next effect's value %2$d.</source>
-        <target>使下一个效果的数值 %2$d 提高 [%1$@ * 损失的 HP]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Add [%@ * stacks of mark(ID: %d)] to next effect's value %d." xml:space="preserve">
-        <source>Add [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.</source>
-        <target>使下一个效果的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Add [%@ * total damage] to next effect's value %d." xml:space="preserve">
-        <source>Add [%1$@ * total damage] to next effect's value %2$d.</source>
-        <target>使下一个效果的数值 %2$d 提高 [%1$@ * 总伤害]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add [%d] to the counter." xml:space="preserve">
@@ -794,21 +764,6 @@
         <target>条件分支：%3$@ 秒内受到伤害时有 [%1$@]%% 几率使用 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Condition: counter is greater or equal to %d then use %d, otherwise %d." xml:space="preserve">
-        <source>Condition: counter is greater or equal to %1$d then use %2$d, otherwise %3$d.</source>
-        <target>条件分支：计数器大于等于 %1$d 则使用 %2$d，否则使用 %3$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: counter is greater or equal to %d then use %d." xml:space="preserve">
-        <source>Condition: counter is greater or equal to %1$d then use %2$d.</source>
-        <target>条件分支：计数器大于等于 %1$d 则使用 %2$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: if defeat target by the last effect then use %d." xml:space="preserve">
-        <source>Condition: if defeat target by the last effect then use %d.</source>
-        <target>条件分支：上一个效果成功击杀目标则使用 %d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Condition: if the specific field exists then use %d, otherwise %d." xml:space="preserve">
         <source>Condition: if the specific field exists then use %1$d, otherwise %2$d.</source>
         <target>条件分支：如果指定的场地效果存在则使用 %1$d，否则使用 %2$d。</target>
@@ -817,46 +772,6 @@
       <trans-unit id="Condition: if the specific field exists then use %d." xml:space="preserve">
         <source>Condition: if the specific field exists then use %d.</source>
         <target>条件分支：如果指定的场地效果存在则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: use %d if %@ is alone, otherwise %d." xml:space="preserve">
-        <source>Condition: use %1$d if %2$@ is alone, otherwise %3$d.</source>
-        <target>条件分支：如果%2$@是单独的则使用 %1$d，否则使用 %3$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: use %d if %@ is alone." xml:space="preserve">
-        <source>Condition: use %1$d if %2$@ is alone.</source>
-        <target>条件分支：如果%2$@是单独的则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: use %d if among %@ does not exist unit(ID: %d)." xml:space="preserve">
-        <source>Condition: use %1$d if among %2$@ does not exist unit(ID: %3$d).</source>
-        <target>条件分支：如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: use %d if among %@ exists unit(ID: %d), otherwise %d." xml:space="preserve">
-        <source>Condition: use %1$d if among %2$@ exists unit(ID: %3$d), otherwise %4$d.</source>
-        <target>条件分支：如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d，否则使用 %4$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: use %d if among %@ exists unit(ID: %d)." xml:space="preserve">
-        <source>Condition: use %1$d if among %2$@ exists unit(ID: %3$d).</source>
-        <target>条件分支：如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: use %d if the count of %@(except stealth units) is %d, otherwise %d." xml:space="preserve">
-        <source>Condition: use %1$d if the count of %2$@(except stealth units) is %3$d, otherwise %4$d.</source>
-        <target>条件分支：如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d，否则使用 %4$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: use %d if the count of %@(except stealth units) is %d." xml:space="preserve">
-        <source>Condition: use %1$d if the count of %2$@(except stealth units) is %3$d.</source>
-        <target>条件分支：如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Condition: use %d if the count of %@(except stealth units) is not %d." xml:space="preserve">
-        <source>Condition: use %1$d if the count of %2$@(except stealth units) is not %3$d.</source>
-        <target>条件分支：如果%2$@（潜行单位除外）的数量不等于 %3$d 则使用 %1$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Confirm" xml:space="preserve">
@@ -1424,6 +1339,11 @@
         <target>使%@免疫物理伤害，持续 [%@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
+        <source>Make %1$@ when deal damage, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
+        <target>使%1$@获得每次造成伤害时就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
         <source>Make %1$@ when get one hit by the caster, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
         <target>使%1$@获得每受到一次来自施法者的 Hit 就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。</target>
@@ -1514,6 +1434,66 @@
         <target>杂项</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Modifier: add [%@ * %@ of %@] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * %2$@ of %3$@] to value %4$d of effect %5$d.</source>
+        <target>使效果 %5$d 的数值 %4$d 提高 [%1$@ * %3$@的%2$@]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * HP] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * HP] to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * HP]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * count of defeated enemies] to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 击杀个数]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * count of omemes] value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * count of omemes] value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * オメメ个数] 。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * count of targets] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * count of targets] to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 目标个数]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * lost HP] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * lost HP] to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 损失的 HP]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * stacks of mark(ID: %d)] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * stacks of mark(ID: %2$d)] to value %3$d of effect %4$d.</source>
+        <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * total damage] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * total damage] to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 总伤害]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: multiple [%@ * HP / max HP] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: multiple [%1$@ * HP / max HP] to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: multiple [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: multiple [%1$@ * count of defeated enemies] to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 乘以 [%1$@ * 击杀个数]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: multiple [%@ * lost HP / max HP] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: multiple [%1$@ * lost HP / max HP] to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: multiple [%@ * stacks of mark(ID: %d)] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: multiple [%1$@ * stacks of mark(ID: %2$d)] to value %3$d of effect %4$d.</source>
+        <target>使效果 %4$d 的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Move Part %d, %d forward then return." xml:space="preserve">
         <source>Move Part %1$d, %2$d forward then return.</source>
         <target>向前移动部位 %1$d 然后返回，距离 %2$d。</target>
@@ -1542,26 +1522,6 @@
       <trans-unit id="Move to %@ in front of %@ with velocity %@/s." xml:space="preserve">
         <source>Move to %1$@ in front of %2$@ with velocity %3$@/s.</source>
         <target>移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Multiple [%@ * HP / max HP] to next effect's value %d." xml:space="preserve">
-        <source>Multiple [%1$@ * HP / max HP] to next effect's value %2$d.</source>
-        <target>使下一个效果的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Multiple [%@ * count of defeated enemies] to next effect's value %d." xml:space="preserve">
-        <source>Multiple [%1$@ * count of defeated enemies] to next effect's value %2$d.</source>
-        <target>使下一个效果的数值 %2$d 乘以 [%1$@ * 击杀个数]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Multiple [%@ * lost HP / max HP] to next effect's value %d." xml:space="preserve">
-        <source>Multiple [%1$@ * lost HP / max HP] to next effect's value %2$d.</source>
-        <target>使下一个效果的数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Multiple [%@ * stacks of mark(ID: %d)] to next effect's value %d." xml:space="preserve">
-        <source>Multiple [%1$@ * stacks of mark(ID: %2$d)] to next effect's value %3$d.</source>
-        <target>使下一个效果的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="New %@ Event: %@" xml:space="preserve">
@@ -1677,6 +1637,11 @@
       <trans-unit id="Other" xml:space="preserve">
         <source>Other</source>
         <target>其他</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Overall branch: %@." xml:space="preserve">
+        <source>Overall branch: %@.</source>
+        <target>整体分支：%@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Paralyse" xml:space="preserve">
@@ -1832,6 +1797,11 @@
       <trans-unit id="Remove field of skill %d (1 represents the first skill in this list) effect %d." xml:space="preserve">
         <source>Remove field of skill %1$d (1 represents the first skill in this list) effect %2$d.</source>
         <target>移除技能 %1$d（1 代表本列表中的第一个）效果 %2$d 产生的场地。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Repeat effect %d every %@s up to %@s, break if taken more than %@ damage" xml:space="preserve">
+        <source>Repeat effect %1$d every %2$@s up to %3$@s, break if taken more than %4$@ damage</source>
+        <target>每 %2$@ 秒释放一次效果 %1$d，最多持续 %3$@ 秒， 受到超过 %4$@ 伤害后终止</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Reset" xml:space="preserve">
@@ -2439,6 +2409,11 @@
         <target>固定 3★</target>
         <note>icon style</note>
       </trans-unit>
+      <trans-unit id="any of %@" xml:space="preserve">
+        <source>any of %@</source>
+        <target>%@中任何</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="arena" xml:space="preserve">
         <source>arena</source>
         <target>竞技场</target>
@@ -2497,6 +2472,16 @@
       <trans-unit id="controlled" xml:space="preserve">
         <source>controlled</source>
         <target>被控制</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="counter is greater than or equal to %d then use %d" xml:space="preserve">
+        <source>counter is greater than or equal to %1$d then use %2$d</source>
+        <target>计数器大于等于 %1$d 时使用 %2$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="counter is less than %d then use %d" xml:space="preserve">
+        <source>counter is less than %1$d then use %2$d</source>
+        <target>计数器小于 %1$d 时使用 %2$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="cursed" xml:space="preserve">
@@ -2593,6 +2578,16 @@
         <source>highest rarity</source>
         <target>最高稀有度</target>
         <note>icon style</note>
+      </trans-unit>
+      <trans-unit id="if target is defeated by the last effect then use %d" xml:space="preserve">
+        <source>if target is defeated by the last effect then use %d</source>
+        <target>上一个效果成功击杀目标则使用 %d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="if target is not defeated by last effect then use %d" xml:space="preserve">
+        <source>if target is not defeated by last effect then use %d</source>
+        <target>上一个效果未能成功击杀目标则使用 %d。</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="inevitable physical" xml:space="preserve">
         <source>inevitable physical</source>
@@ -2939,6 +2934,71 @@
         <target>未知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d after break" xml:space="preserve">
+        <source>use %d after break</source>
+        <target>被打断后使用 %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d after time up" xml:space="preserve">
+        <source>use %d after time up</source>
+        <target>持续时间结束后使用 %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is alone" xml:space="preserve">
+        <source>use %1$d if %2$@ is alone</source>
+        <target>如果%2$@是单独的则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is in state of ID: %d with stacks greater than or equal to %d" xml:space="preserve">
+        <source>use %1$d if %2$@ is in state of ID: %3$d with stacks greater than or equal to %4$d</source>
+        <target>如果%2$@拥有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is not alone" xml:space="preserve">
+        <source>use %1$d if %2$@ is not alone</source>
+        <target>如果%2$@不是单独的则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" xml:space="preserve">
+        <source>use %1$d if %2$@ is not in state of ID: %3$d with stacks greater than or equal to %4$d</source>
+        <target>如果%2$@没有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if among %@ does not exist unit(ID: %d)" xml:space="preserve">
+        <source>use %1$d if among %2$@ does not exist unit(ID: %3$d)</source>
+        <target>如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if among %@ exists unit(ID: %d)" xml:space="preserve">
+        <source>use %1$d if among %2$@ exists unit(ID: %3$d)</source>
+        <target>如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if the count of %@(except stealth units) is %d" xml:space="preserve">
+        <source>use %1$d if the count of %2$@(except stealth units) is %3$d</source>
+        <target>如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d，否则使用 %4$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if the count of %@(except stealth units) is not %d" xml:space="preserve">
+        <source>use %1$d if the count of %2$@(except stealth units) is not %3$d</source>
+        <target>如果%2$@（潜行单位除外）的数量不等于 %3$d 则使用 %1$d，否则使用 %4$d。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if %@" xml:space="preserve">
+        <source>use %1$d to %2$@ if %3$@</source>
+        <target>如果%2$@处于%3$@状态，对其使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if HP is below %d%%" xml:space="preserve">
+        <source>use %1$d to %2$@ if HP is below %3$d%%</source>
+        <target>如果%2$@的 HP 低于 %3$d%%，对其使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if HP is not below %d%%" xml:space="preserve">
+        <source>use %1$d to %2$@ if HP is not below %3$d%%</source>
+        <target>如果%2$@的 HP 不低于 %3$d%%，对其使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d to %@ if it's alone" xml:space="preserve">
         <source>use %1$d to %2$@ if it's alone</source>
         <target>如果%2$@是单独的则使用 %1$d</target>
@@ -2949,34 +3009,19 @@
         <target>如果%2$@不是单独的则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is %@" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is %3$@</source>
-        <target>对%2$@中处于%3$@状态的使用 %1$d</target>
+      <trans-unit id="use %d to %@ if not %@" xml:space="preserve">
+        <source>use %1$d to %2$@ if not %3$@</source>
+        <target>如果%2$@未处于%3$@状态，对其使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is in state of ID: %d" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is in state of ID: %3$d</source>
-        <target>对%2$@中处于 ID 为 %3$d 状态的使用 %1$d</target>
+      <trans-unit id="use %d to %@ if not in state of ID: %d" xml:space="preserve">
+        <source>use %1$d to %2$@ if not in state of ID: %3$d</source>
+        <target>如果%2$@没有标记（ID：%3$d），对其使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="use %d to any of %@ is not %@" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not %3$@</source>
-        <target>对%2$@中未处于%3$@状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ is not in state of ID: %d" xml:space="preserve">
-        <source>use %1$d to any of %2$@ is not in state of ID: %3$d</source>
-        <target>对%2$@中未处于 ID 为 %3$d 状态的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ whose HP is below %d%%" xml:space="preserve">
-        <source>use %1$d to any of %2$@ whose HP is below %3$d%%</source>
-        <target>对%2$@中 HP 低于 %3$d%% 的使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to any of %@ whose HP is not below %d%%" xml:space="preserve">
-        <source>use %1$d to any of %2$@ whose HP is not below %3$d%%</source>
-        <target>对%2$@中 HP 不低于 %3$d%% 的使用 %1$d</target>
+      <trans-unit id="use %d to %@ in state of ID: %d" xml:space="preserve">
+        <source>use %1$d to %2$@ in state of ID: %3$d</source>
+        <target>如果%2$@有标记（ID：%3$d），对其使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="value %d" xml:space="preserve">

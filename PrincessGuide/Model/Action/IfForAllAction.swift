@@ -9,71 +9,80 @@
 import Foundation
 
 class IfForAllAction: ActionParameter {
+    
+    var trueClause: String? {
+        
+        guard actionDetail2 != 0 else {
+            return nil
+        }
+        
+        switch actionDetail1 {
+        case 0..<100:
+            let format = NSLocalizedString("%d%% chance use %d", comment: "")
+            return String(format: format, actionDetail1, actionDetail2 % 10)
+        case 600..<700:
+            let format = NSLocalizedString("use %d if %@ is in state of ID: %d with stacks greater than or equal to %d", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600, Int(actionValue3))
+        case 700:
+            let format = NSLocalizedString("use %d if %@ is alone", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+        case 700..<710:
+            let format = NSLocalizedString("use %d if the count of %@(except stealth units) is %d", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 700)
+        case 720:
+            let format = NSLocalizedString("use %d if among %@ exists unit(ID: %d)", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), Int(actionValue3))
+        case 1000:
+            let format = NSLocalizedString("if target is defeated by the last effect then use %d", comment: "")
+            return String(format: format, actionDetail2 % 10)
+        case 1200..<1300:
+            let format = NSLocalizedString("counter is greater than or equal to %d then use %d", comment: "")
+            return String(format: format, actionDetail1 % 10, actionDetail2 % 10)
+        default:
+            return nil
+        }
+    }
+    
+    var falseClause: String? {
+        
+        guard actionDetail3 != 0 else {
+            return nil
+        }
+        
+        switch actionDetail1 {
+        case 0..<100:
+            let format = NSLocalizedString("%d%% chance use %d", comment: "")
+            return String(format: format, (100 - actionDetail1), actionDetail3 % 10)
+        case 600..<700:
+            let format = NSLocalizedString("use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600, Int(actionValue3))
+        case 700:
+            let format = NSLocalizedString("use %d if %@ is not alone", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+        case 700..<710:
+            let format = NSLocalizedString("use %d if the count of %@(except stealth units) is not %d", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 700)
+        case 720:
+            let format = NSLocalizedString("use %d if among %@ does not exist unit(ID: %d)", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), Int(actionValue3))
+        case 1000:
+            let format = NSLocalizedString("if target is not defeated by last effect then use %d", comment: "")
+            return String(format: format, actionDetail3 % 10)
+        case 1200..<1300:
+            let format = NSLocalizedString("counter is less than %d then use %d", comment: "")
+            return String(format: format, actionDetail1 % 10, actionDetail3 % 10)
+        default:
+            return nil
+        }
+    }
         
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
 
-        switch actionDetail1 {
-        case 0..<100:
-            if actionDetail2 != 0 && actionDetail3 != 0 {
-                let format = NSLocalizedString("Random event: %d%% chance use %d, otherwise %d.", comment: "")
-                return String(format: format, actionDetail1, actionDetail2 % 10, actionDetail3 % 10)
-            } else if actionDetail2 != 0 {
-                let format = NSLocalizedString("Random event: %d%% chance use %d.", comment: "")
-                return String(format: format, actionDetail1, actionDetail2 % 10)
-            } else {
-                return super.localizedDetail(of: level, property: property, style: style)
-            }
-        case 700:
-            if actionDetail2 != 0 && actionDetail3 != 0 {
-                let format = NSLocalizedString("Condition: use %d if %@ is alone, otherwise %d.", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail3 % 10)
-            } else if actionDetail2 != 0 {
-                let format = NSLocalizedString("Condition: use %d if %@ is alone.", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
-            } else {
-                return super.localizedDetail(of: level, property: property, style: style)
-            }
-        case 700..<710:
-            if actionDetail2 != 0 && actionDetail3 != 0 {
-                let format = NSLocalizedString("Condition: use %d if the count of %@(except stealth units) is %d, otherwise %d.", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 700, actionDetail3 % 10)
-            } else if actionDetail2 != 0 {
-                let format = NSLocalizedString("Condition: use %d if the count of %@(except stealth units) is %d.", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 700)
-            } else if actionDetail3 != 0 {
-                let format = NSLocalizedString("Condition: use %d if the count of %@(except stealth units) is not %d.", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 700)
-            } else {
-                return super.localizedDetail(of: level, property: property, style: style)
-            }
-        case 720:
-            if actionDetail2 != 0 && actionDetail3 != 0 {
-                let format = NSLocalizedString("Condition: use %d if among %@ exists unit(ID: %d), otherwise %d.", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), Int(actionValue3), actionDetail3 % 10)
-            } else if actionDetail2 != 0 {
-                let format = NSLocalizedString("Condition: use %d if among %@ exists unit(ID: %d).", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), Int(actionValue3))
-            } else if actionDetail3 != 0 {
-                let format = NSLocalizedString("Condition: use %d if among %@ does not exist unit(ID: %d).", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), Int(actionValue3))
-            } else {
-                return super.localizedDetail(of: level, property: property, style: style)
-            }
-        case 1000:
-            let format = NSLocalizedString("Condition: if defeat target by the last effect then use %d.", comment: "")
-            return String(format: format, actionDetail2 % 10)
-        case 1200..<1300:
-            if actionDetail2 != 0 && actionDetail3 != 0 {
-                let format = NSLocalizedString("Condition: counter is greater or equal to %d then use %d, otherwise %d.", comment: "")
-                return String(format: format, actionDetail1 % 10, actionDetail2 % 10, actionDetail3 % 10)
-            } else if actionDetail2 != 0 {
-                let format = NSLocalizedString("Condition: counter is greater or equal to %d then use %d.", comment: "")
-                return String(format: format, actionDetail1 % 10, actionDetail2 % 10)
-            } else {
-                return super.localizedDetail(of: level, property: property, style: style)
-            }
-        default:
+        let format = NSLocalizedString("Overall branch: %@.", comment: "")
+        if trueClause == nil && falseClause == nil {
             return super.localizedDetail(of: level, property: property, style: style)
+        } else {
+            return String(format: format, [trueClause, falseClause].compactMap { $0 }.joined(separator: NSLocalizedString(", ", comment: "clause separator")))
         }
     }
     
