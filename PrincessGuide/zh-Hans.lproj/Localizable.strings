@@ -1697,16 +1697,16 @@
 "use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" = "如果%2$@没有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d if among %@ does not exist unit(ID: %d)" = "如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d。";
+"use %d if among %@ does not exist unit(ID: %d)" = "如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d if among %@ exists unit(ID: %d)" = "如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d。";
+"use %d if among %@ exists unit(ID: %d)" = "如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d if the count of %@(except stealth units) is %d" = "如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d，否则使用 %4$d。";
+"use %d if the count of %@(except stealth units) is %d" = "如果%2$@（潜行单位除外）的数量等于 %3$d 则使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d if the count of %@(except stealth units) is not %d" = "如果%2$@（潜行单位除外）的数量不等于 %3$d 则使用 %1$d，否则使用 %4$d。";
+"use %d if the count of %@(except stealth units) is not %d" = "如果%2$@（潜行单位除外）的数量不等于 %3$d 则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d to %@ if %@" = "如果%2$@处于%3$@状态，对其使用 %1$d";

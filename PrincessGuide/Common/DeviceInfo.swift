@@ -43,7 +43,7 @@ class DeviceInfo: CustomStringConvertible {
     }
     
     var connection: String {
-        if let reachability = Reachability(hostname: "https://www.baidu.com") {
+        if let reachability = try? Reachability(hostname: "https://www.baidu.com") {
             return reachability.connection.description
         } else {
             return NSLocalizedString("Unknown", comment: "")
