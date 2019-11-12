@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ActionParameter {
     
@@ -217,6 +218,41 @@ class ActionParameter {
                 .map(String.init(_:))
                 .joined(separator: ", ")
         )
+    }
+    
+    func localizedDetailWithTags(of level: Int,
+                                 property: Property = .zero,
+                                 style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle,
+                                 textColor: UIColor,
+                                 tagBorderColor: UIColor,
+                                 tagBackgroundColor: UIColor) -> NSAttributedString {
+        let string = localizedDetail(of: level, property: property, style: style)
+        let regex = try! NSRegularExpression(pattern: "attachment:([^:]*):", options: NSRegularExpression.Options.caseInsensitive)
+        let checkingResults = regex.matches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, string.count))
+        var chunks = [(NSRange, Bool)]()
+        var lastIndex = 0
+        for result in checkingResults {
+            let range1 = result.range(at: 1)
+            let range0 = result.range(at: 0)
+            chunks.append((NSRange(location: lastIndex, length: range0.location - lastIndex), false))
+            chunks.append((range1, true))
+            lastIndex = range0.upperBound
+        }
+        chunks.append((NSRange(location: lastIndex, length: string.count - lastIndex), false))
+        
+        let attributedText = NSMutableAttributedString()
+        for chunk in chunks {
+            let substring = (string as NSString).substring(with: chunk.0)
+            if chunk.1 {
+                let attachment = NSTextAttachment.makeAttachment(substring, textColor: textColor, backgroundColor: tagBackgroundColor, borderColor: tagBorderColor)
+                attributedText.append(NSAttributedString(string: " "))
+                attributedText.append(NSAttributedString(attachment: attachment))
+                attributedText.append(NSAttributedString(string: " "))
+            } else {
+                attributedText.append(NSAttributedString(string: substring))
+            }
+        }
+        return attributedText
     }
     
     var actionValues: [ActionValue] {

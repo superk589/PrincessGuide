@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.1" build-num="11A1027"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2.1" build-num="11B53"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.1" build-num="11A1027"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2.1" build-num="11B53"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.1" build-num="11A1027"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2.1" build-num="11B53"/>
     </header>
     <body>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -977,6 +977,10 @@
       <trans-unit id="Enable Notifications" xml:space="preserve">
         <source>Enable Notifications</source>
         <target>通知を有効にする</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Enable Tag Based Description" xml:space="preserve">
+        <source>Enable Tag Based Description</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Energy Recovery Rate" xml:space="preserve">
@@ -2376,6 +2380,10 @@
         <target>常に3★</target>
         <note>icon style</note>
       </trans-unit>
+      <trans-unit id="any of" xml:space="preserve">
+        <source>any of</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="any of %@" xml:space="preserve">
         <source>any of %@</source>
         <note>No comment provided by engineer.</note>
@@ -2450,6 +2458,10 @@
       <trans-unit id="cursed" xml:space="preserve">
         <source>cursed</source>
         <target>呪われた</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="damaged by effect %d" xml:space="preserve">
+        <source>damaged by effect %d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="debuffs" xml:space="preserve">
@@ -2647,6 +2659,10 @@
       <trans-unit id="pvp" xml:space="preserve">
         <source>pvp</source>
         <target>pvp</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="radius %d" xml:space="preserve">
+        <source>radius %d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="random" xml:space="preserve">

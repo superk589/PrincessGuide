@@ -12,6 +12,7 @@ struct ThemeColors {
     let tint: UIColor
     let title: UIColor
     let body: UIColor
+    let reversedBody: UIColor
     let lightText: UIColor
     let highlightedText: UIColor
     let background: UIColor
@@ -46,6 +47,12 @@ struct Theme {
                 switch $0.userInterfaceStyle {
                 case .dark: return .nearWhite
                 default: return .nearBlack
+                }
+            },
+            reversedBody: UIColor {
+                switch $0.userInterfaceStyle {
+                case .dark: return .nearBlack
+                default: return .white
                 }
             },
             lightText: .tertiaryLabel,

@@ -197,7 +197,10 @@
 "always 3★" = "固定 3★";
 
 /* No comment provided by engineer. */
-"any of %@" = "%@中任何";
+"any of" = "任何一个";
+
+/* No comment provided by engineer. */
+"any of %@" = "%@中任何一个";
 
 /* No comment provided by engineer. */
 "App Version" = "程序版本";
@@ -539,6 +542,9 @@
 "CV" = "声优";
 
 /* No comment provided by engineer. */
+"damaged by effect %d" = "被效果 %d 伤害到的";
+
+/* No comment provided by engineer. */
 "Data Version" = "数据版本";
 
 /* No comment provided by engineer. */
@@ -642,6 +648,9 @@
 
 /* No comment provided by engineer. */
 "Enable Notifications" = "允许通知";
+
+/* No comment provided by engineer. */
+"Enable Tag Based Description" = "开启标签式描述";
 
 /* target modifier */
 "enemy" = "敌方";
@@ -1188,6 +1197,9 @@
 
 /* No comment provided by engineer. */
 "Race" = "种族";
+
+/* No comment provided by engineer. */
+"radius %d" = "半径 %d";
 
 /* No comment provided by engineer. */
 "Raise" = "提高";

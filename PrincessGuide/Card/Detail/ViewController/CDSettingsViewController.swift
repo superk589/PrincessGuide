@@ -71,6 +71,7 @@ class CDSettingsViewController: FormViewController {
         var skillStyle: SkillStyle = .evolutionFirst
         var equipsUniqueEquipment: Bool
         var uniqueEquipmentLevel: Int
+        var enableTagBasedDescription: Bool
         
         func save() {
             let encoder = JSONEncoder()
@@ -115,6 +116,7 @@ class CDSettingsViewController: FormViewController {
             rankTo = Preload.default.maxEquipmentRank
             equipsUniqueEquipment = true
             uniqueEquipmentLevel = Preload.default.maxUniqueEquipmentLevel
+            enableTagBasedDescription = false
         }
     }
     
@@ -248,6 +250,13 @@ class CDSettingsViewController: FormViewController {
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
             
             +++ Section(NSLocalizedString("Skill", comment: ""))
+            
+            <<< SwitchRow("enable_tag_based_description") { (row : SwitchRow) -> Void in
+                row.title = NSLocalizedString("Enable Tag Based Description", comment: "") + "(β)"
+                row.value = Setting.default.enableTagBasedDescription
+            }
+            .cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
             
             <<< PickerInlineRow<Int>("skill_level") { (row : PickerInlineRow<Int>) -> Void in
                 row.title = NSLocalizedString("Level", comment: "")

@@ -144,11 +144,12 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
             actionLabel.attributedText = skill.actions.map {
                 let parameter = $0.buildParameter()
                 let property = parameter is ChangeEnergyAction ? (ownerPropery ?? property) : property
-                let tag = NSTextAttachment.makeNumberAttachment(parameter.id % 100, color: actionLabel.textColor, minWidth: 25, font: UIFont.scaledFont(forTextStyle: .body, ofSize: 12))
+                let attributedContent = parameter.localizedDetailWithTags(of: level, property: property, style: EDSettingsViewController.Setting.default.expressionStyle, textColor: Theme.dynamic.color.reversedBody, tagBorderColor: Theme.dynamic.color.tint, tagBackgroundColor: Theme.dynamic.color.tint)
+                let tagAttachment = NSTextAttachment.makeAttachment(String(parameter.id % 100), textColor: actionLabel.textColor, backgroundColor: .clear, borderColor: actionLabel.textColor)
                 let attributedText = NSMutableAttributedString()
-                attributedText.append(NSAttributedString(attachment: tag))
+                attributedText.append(NSAttributedString(attachment: tagAttachment))
                 attributedText.append(NSAttributedString(string: " "))
-                attributedText.append(NSAttributedString(string: parameter.localizedDetail(of: level, property: property, style: EDSettingsViewController.Setting.default.expressionStyle)))
+                attributedText.append(attributedContent)
                 return attributedText
                 }.joined(separator: "\n")
         } else {

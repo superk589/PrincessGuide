@@ -124,11 +124,12 @@ class CDSkillTableViewCell: UITableViewCell, Reusable {
         if skill.actions.count > 0 {
             actionLabel.attributedText = skill.actions.map {
                 let parameter = $0.parameter
-                let tag = NSTextAttachment.makeNumberAttachment(parameter.id % 100, color: actionLabel.textColor, minWidth: 25, font: UIFont.scaledFont(forTextStyle: .body, ofSize: 12))
+                let attributedContent = parameter.localizedDetailWithTags(of: CDSettingsViewController.Setting.default.unitLevel, property: property, textColor: Theme.dynamic.color.reversedBody, tagBorderColor: Theme.dynamic.color.tint, tagBackgroundColor: Theme.dynamic.color.tint)
+                let tagAttachment = NSTextAttachment.makeAttachment(String(parameter.id % 100), textColor: actionLabel.textColor, backgroundColor: .clear, borderColor: actionLabel.textColor)
                 let attributedText = NSMutableAttributedString()
-                attributedText.append(NSAttributedString(attachment: tag))
+                attributedText.append(NSAttributedString(attachment: tagAttachment))
                 attributedText.append(NSAttributedString(string: " "))
-                attributedText.append(NSAttributedString(string: parameter.localizedDetail(of: CDSettingsViewController.Setting.default.skillLevel, property: property)))
+                attributedText.append(attributedContent)
                 return attributedText
                 }.joined(separator: "\n")
         } else {
@@ -144,15 +145,16 @@ class CDSkillTableViewCell: UITableViewCell, Reusable {
 }
 
 extension NSTextAttachment {
-    static func makeNumberAttachment(_ number: Int, color: UIColor, minWidth: CGFloat, font: UIFont) -> NSTextAttachment {
+    static func makeAttachment(_ text: String, textColor: UIColor, backgroundColor: UIColor, borderColor: UIColor, minWidth: CGFloat = 25, font: UIFont = UIFont.scaledFont(forTextStyle: .body, ofSize: 12)) -> NSTextAttachment {
         let label = UILabel()
         label.lineBreakMode = .byClipping
         label.textAlignment = .center
-        label.textColor = color
-        label.layer.borderColor = color.cgColor
+        label.textColor = textColor
+        label.layer.borderColor = borderColor.cgColor
         label.layer.borderWidth = 1
         label.layer.cornerRadius = 2
-        label.text = String(number)
+        label.layer.backgroundColor = backgroundColor.cgColor
+        label.text = text
         label.font = font
         label.sizeToFit()
         label.bounds = CGRect(x: 0, y: 0, width: max(minWidth, label.bounds.size.width + 4), height: label.bounds.size.height)

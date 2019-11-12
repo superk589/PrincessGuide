@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1202CE4322C8C4DC00E9C146 /* StopFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */; };
 		1202CE4522C8C4F100E9C146 /* InhibitHealAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */; };
+		120AC25D2303DD7400062062 /* ActionTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120AC25C2303DD7400062062 /* ActionTag.swift */; };
 		120B71D52196DB6100B45A4A /* FixedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B71D42196DB6100B45A4A /* FixedTabBar.swift */; };
 		120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF320F2564B0029A083 /* ArrayExtension.swift */; };
 		120BCAF620F4DEA20029A083 /* EditTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BCAF520F4DEA20029A083 /* EditTeamViewController.swift */; };
@@ -318,6 +319,7 @@
 /* Begin PBXFileReference section */
 		1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopFieldAction.swift; sourceTree = "<group>"; };
 		1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InhibitHealAction.swift; sourceTree = "<group>"; };
+		120AC25C2303DD7400062062 /* ActionTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTag.swift; sourceTree = "<group>"; };
 		120B71D42196DB6100B45A4A /* FixedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTabBar.swift; sourceTree = "<group>"; };
 		120BCAF320F2564B0029A083 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		120BCAF520F4DEA20029A083 /* EditTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTeamViewController.swift; sourceTree = "<group>"; };
@@ -1297,6 +1299,7 @@
 		12F125D520B92658005C9659 /* Action */ = {
 			isa = PBXGroup;
 			children = (
+				120AC25C2303DD7400062062 /* ActionTag.swift */,
 				12F125D320B90E1F005C9659 /* TargetParameter.swift */,
 				12F125D120B90DF3005C9659 /* ActionParameter.swift */,
 				12F125D620B92686005C9659 /* DamageAction.swift */,
@@ -1825,6 +1828,7 @@
 				1225522C2133A1FC00CB0D3E /* RefreshFooter.swift in Sources */,
 				12398E992091A1CB006AC352 /* DropRewardView.swift in Sources */,
 				12F125FD20B952EB005C9659 /* IfForChildrenAction.swift in Sources */,
+				120AC25D2303DD7400062062 /* ActionTag.swift in Sources */,
 				12360921209940B2003E7D11 /* Binary.swift in Sources */,
 				129A7F8920A3108C00D93996 /* QuestTabViewController.swift in Sources */,
 				12936B312176CEA000B9531F /* EurekaHelper.swift in Sources */,
