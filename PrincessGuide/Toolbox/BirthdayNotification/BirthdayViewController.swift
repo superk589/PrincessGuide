@@ -110,7 +110,7 @@ class BirthdayViewController: FormViewController {
             
             +++ Section(NSLocalizedString("Upcoming Birthdays", comment: ""))
         
-            <<< CardWithBirthdayRow("upcoming_birthdays").cellSetup { (cell, row) in
+            <<< CardWithBirthdayRow("upcoming_birthdays").cellSetup { [unowned self] (cell, row) in
                 cell.textLabel?.textColor = Theme.dynamic.color.title
                 cell.detailTextLabel?.textColor = Theme.dynamic.color.tint
                 cell.configure(for: self.cards)

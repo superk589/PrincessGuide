@@ -55,8 +55,8 @@ class CDPatternTableViewCell: UITableViewCell, Reusable, UICollectionViewDelegat
         collectionView.backgroundColor = .clear
         collectionView.isScrollEnabled = false
         
-        observation = collectionView.observe(\.contentSize) { (collectionView, _) in
-            self.collectionViewHeightConstraint?.update(offset: collectionView.contentSize.height)
+        observation = collectionView.observe(\.contentSize) { [weak self] (collectionView, _) in
+            self?.collectionViewHeightConstraint?.update(offset: collectionView.contentSize.height)
         }
     }
     

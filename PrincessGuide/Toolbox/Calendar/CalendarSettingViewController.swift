@@ -148,15 +148,15 @@ class CalendarSettingViewController: FormViewController {
                 }
                 .cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
-                .onChange { row in
+                .onChange { [weak self] row in
                     if let value = row.value {
                         Setting.default.autoAddGameEvents = value
                     }
                     LoadingHUDManager.default.show()
                     GameEventCenter.default.rescheduleGameEvents() {
-                        DispatchQueue.main.async { [unowned self] in
+                        DispatchQueue.main.async {
                             LoadingHUDManager.default.hide()
-                            self.updatePermissionStatus()
+                            self?.updatePermissionStatus()
                         }
                     }
                 }
@@ -183,15 +183,15 @@ class CalendarSettingViewController: FormViewController {
                 $0.title = NSLocalizedString("Apply", comment: "")
             }
                 .cellSetup(cellSetup(cell:row:))
-                .onCellSelection { _, _ in
+                .onCellSelection { [weak self] _, _ in
                     LoadingHUDManager.default.show()
                     GameEventCenter.default.rescheduleGameEvents() {
-                        DispatchQueue.main.async { [unowned self] in
+                        DispatchQueue.main.async {
                             LoadingHUDManager.default.hide()
-                            self.updatePermissionStatus()
+                            self?.updatePermissionStatus()
                         }
                     }
-        }
+                }
         
         let section = form.sectionBy(tag: "filter")
         for (index, label) in Setting.Option.allLabels.enumerated() {
@@ -215,8 +215,8 @@ class CalendarSettingViewController: FormViewController {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadSettings(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(forName: .ekStorePermissionDidChange, object: nil, queue: .main, using: { _ in
-            self.updatePermissionStatus()
+        NotificationCenter.default.addObserver(forName: .ekStorePermissionDidChange, object: nil, queue: .main, using: { [weak self] _ in
+            self?.updatePermissionStatus()
         })
         
     }

@@ -24,4 +24,5 @@ target 'PrincessGuide' do
   pod 'DHSmartScreenshot'
   pod 'Reusable'
   pod 'R.swift'
+  pod 'MLeaksFinder', :configurations => ['Debug']
 end
