@@ -32,7 +32,6 @@
 //  respective owners.
 
 #if !os(watchOS)
-
 #if canImport(UIKit)
 import UIKit
 import ImageIO
@@ -534,10 +533,11 @@ extension AnimatedImageView {
 
         private func incrementCurrentFrameIndex() {
             currentFrameIndex = increment(frameIndex: currentFrameIndex)
-            if isReachMaxRepeatCount && isLastFrame {
-                isFinished = true
-            } else if currentFrameIndex == 0 {
+            if isLastFrame {
                 currentRepeatCount += 1
+                if isReachMaxRepeatCount {
+                    isFinished = true
+                }
                 delegate?.animator(self, didPlayAnimationLoops: currentRepeatCount)
             }
         }
@@ -612,5 +612,4 @@ class SafeArray<Element> {
     }
 }
 #endif
-
 #endif

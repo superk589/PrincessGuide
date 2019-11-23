@@ -16,6 +16,10 @@ class VersionManager {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
     }
     
+    var buildNumber: String {
+        return Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+    }
+    
     var truthVersion: String {
         set {
             UserDefaults.standard.setValue(newValue, forKey: "truth_version")

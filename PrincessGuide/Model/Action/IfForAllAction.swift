@@ -17,6 +17,13 @@ class IfForAllAction: ActionParameter {
         }
         
         switch actionDetail1 {
+        case 710:
+            if let ifType = IfType(rawValue: actionDetail1) {
+                let format = NSLocalizedString("use %d to %@ if %@", comment: "")
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(anyOfModifier: true), ifType.description)
+            } else {
+                return nil
+            }
         case 0..<100:
             let format = NSLocalizedString("%d%% chance use %d", comment: "")
             return String(format: format, actionDetail1, actionDetail2 % 10)
@@ -50,6 +57,13 @@ class IfForAllAction: ActionParameter {
         }
         
         switch actionDetail1 {
+        case 710:
+            if let ifType = IfType(rawValue: actionDetail1) {
+                let format = NSLocalizedString("use %d to %@ if not %@", comment: "")
+                return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause(anyOfModifier: true), ifType.description)
+            } else {
+                return nil
+            }
         case 0..<100:
             let format = NSLocalizedString("%d%% chance use %d", comment: "")
             return String(format: format, (100 - actionDetail1), actionDetail3 % 10)

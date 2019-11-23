@@ -130,7 +130,7 @@ class SettingsViewController: FormViewController {
             
             <<< LabelRow() {
                 $0.title = NSLocalizedString("App Version", comment: "")
-                $0.value = VersionManager.shared.appVersion
+                $0.value = "\(VersionManager.shared.appVersion)(\(VersionManager.shared.buildNumber))"
             }
             .cellSetup(cellSetup(cell:row:))
             .cellUpdate(cellUpdate(cell:row:))
