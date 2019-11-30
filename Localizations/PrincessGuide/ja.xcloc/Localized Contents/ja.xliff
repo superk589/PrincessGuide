@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2.1" build-num="11B53"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2.1" build-num="11B500"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2.1" build-num="11B53"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2.1" build-num="11B500"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2.1" build-num="11B53"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2.1" build-num="11B500"/>
     </header>
     <body>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -1431,6 +1431,10 @@
         <source>Modifier: add [%1$@ * HP] to value %2$d of effect %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Modifier: add [%@ * count of %@ behind self] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * count of %2$@ behind self] to value %3$d of effect %4$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of defeated enemies] to value %2$d of effect %3$d.</source>
         <note>No comment provided by engineer.</note>
@@ -1663,6 +1667,10 @@
       <trans-unit id="Poison %@ violently and deal [%@] damage per second for [%@]s." xml:space="preserve">
         <source>Poison %1$@ violently and deal [%2$@] damage per second for [%3$@]s.</source>
         <target>Poison %1$@ violently and deal [%2$@] damage per second for [%3$@]s.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Polymorph %@ for [%@]s." xml:space="preserve">
+        <source>Polymorph %1$@ for [%2$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Position" xml:space="preserve">

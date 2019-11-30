@@ -992,6 +992,9 @@
 "Modifier: add [%@ * %@ of %@] to value %d of effect %d." = "使效果 %5$d 的数值 %4$d 提高 [%1$@ * %3$@的%2$@]。";
 
 /* No comment provided by engineer. */
+"Modifier: add [%@ * count of %@ behind self] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * 身后%2$@的数量]。";
+
+/* No comment provided by engineer. */
 "Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 击杀个数]。";
 
 /* No comment provided by engineer. */
@@ -1173,6 +1176,9 @@
 
 /* No comment provided by engineer. */
 "poisoned or venomed" = "中毒或猛毒";
+
+/* No comment provided by engineer. */
+"Polymorph %@ for [%@]s." = "对%1$@释放变形术，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
 "Position" = "位置";

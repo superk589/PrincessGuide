@@ -131,6 +131,8 @@ class ActionParameter {
             return AweAction.self
         case 63:
             return LoopMotionRepeatAction.self
+        case 69:
+            return ToadAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -538,6 +540,7 @@ enum ActionType: Int {
     case fear
     case awe
     case loop
+    case toad = 69
     case ex = 90
     case exPlus
 }

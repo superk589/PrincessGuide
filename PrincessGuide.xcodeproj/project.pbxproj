@@ -303,6 +303,7 @@
 		12F1263B20BC23F5005C9659 /* SearchableCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
+		12FD97CC239225D700430222 /* ToadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FD97CB239225D700430222 /* ToadAction.swift */; };
 		94018D168BCD58B74960DD7C /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */; };
 /* End PBXBuildFile section */
 
@@ -627,6 +628,7 @@
 		12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableCardTableViewController.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
+		12FD97CB239225D700430222 /* ToadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToadAction.swift; sourceTree = "<group>"; };
 		3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
 		967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C735B4FA6BCE4F5C07021254 /* Pods-PrincessGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.debug.xcconfig"; path = "Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1360,6 +1362,7 @@
 				123AA2F3232F5DBF00226AFF /* AttackSealAction.swift */,
 				12204240231AABF700205C85 /* FearAction.swift */,
 				12C9507F23504CAE000318C5 /* AweAction.swift */,
+				12FD97CB239225D700430222 /* ToadAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12CF02A4236AA9C4003CD3AD /* LoopMotionRepeatAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
@@ -1555,7 +1558,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1675,6 +1678,7 @@
 				12F1261720B954F4005C9659 /* AttackFieldAction.swift in Sources */,
 				120BCAFB20F4DF670029A083 /* Member.swift in Sources */,
 				123AA2F4232F5DBF00226AFF /* AttackSealAction.swift in Sources */,
+				12FD97CC239225D700430222 /* ToadAction.swift in Sources */,
 				12F1260D20B9543A005C9659 /* ContinuousAttackNearbyAction.swift in Sources */,
 				126DECFA209EF264004EC56A /* CDProfileTableViewController.swift in Sources */,
 				12F125CA20B7D42F005C9659 /* ErrorView.swift in Sources */,
@@ -2137,7 +2141,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2162,7 +2166,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
