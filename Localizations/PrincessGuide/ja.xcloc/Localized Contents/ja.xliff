@@ -1038,6 +1038,10 @@
         <target>進化スキルスタイル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Exclusive condition: %@." xml:space="preserve">
+        <source>Exclusive condition: %@.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Exp." xml:space="preserve">
         <source>Exp.</source>
         <target>経験</target>
@@ -1618,10 +1622,6 @@
       <trans-unit id="Other" xml:space="preserve">
         <source>Other</source>
         <target>その他</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Overall branch: %@." xml:space="preserve">
-        <source>Overall branch: %@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Paralyse" xml:space="preserve">

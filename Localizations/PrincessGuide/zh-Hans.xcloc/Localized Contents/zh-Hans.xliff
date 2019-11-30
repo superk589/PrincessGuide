@@ -1049,6 +1049,11 @@
         <target>进化技能显示风格</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Exclusive condition: %@." xml:space="preserve">
+        <source>Exclusive condition: %@.</source>
+        <target>排他条件分支：%@。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Exp." xml:space="preserve">
         <source>Exp.</source>
         <target>经验值</target>
@@ -1647,11 +1652,6 @@
       <trans-unit id="Other" xml:space="preserve">
         <source>Other</source>
         <target>其他</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Overall branch: %@." xml:space="preserve">
-        <source>Overall branch: %@.</source>
-        <target>整体分支：%@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Paralyse" xml:space="preserve">

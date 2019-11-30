@@ -698,6 +698,9 @@
 "EX+" = "EX+";
 
 /* No comment provided by engineer. */
+"Exclusive condition: %@." = "排他条件分支：%@。";
+
+/* No comment provided by engineer. */
 "Exp." = "经验值";
 
 /* No comment provided by engineer. */
@@ -1128,9 +1131,6 @@
 
 /* No comment provided by engineer. */
 "Other" = "其他";
-
-/* No comment provided by engineer. */
-"Overall branch: %@." = "整体分支：%@。";
 
 /* No comment provided by engineer. */
 "own side" = "己方";

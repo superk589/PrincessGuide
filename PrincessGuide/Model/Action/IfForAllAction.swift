@@ -92,7 +92,7 @@ class IfForAllAction: ActionParameter {
         
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
 
-        let format = NSLocalizedString("Overall branch: %@.", comment: "")
+        let format = NSLocalizedString("Exclusive condition: %@.", comment: "")
         if trueClause == nil && falseClause == nil {
             return super.localizedDetail(of: level, property: property, style: style)
         } else {
