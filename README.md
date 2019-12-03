@@ -1,10 +1,13 @@
-# Removed from App Store
-Cygames does not allow this app and it has been removed from App Store.  
-Use this link to join TestFlight external test: https://redive.estertion.win/testflight/
-
 # Hatsune's Notes
 An unofficial iOS app for **プリンセスコネクト！Re:Dive**.  
 **Hatsune's Notes** is the app name and **PrincessGuide** is the project name.  
+
+## How to install
+Open this link on your iPhone or iPad:  
+https://testflight.apple.com/join/e8Dc4f4U
+
+## Why not release on App Store
+Cygames does not allow this app and it has been removed from App Store.  
 
 ## Features
 
