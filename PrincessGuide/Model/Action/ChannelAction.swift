@@ -22,12 +22,12 @@ class ChannelAction: AuraAction {
     override func localizedDetail(of level: Int, property: Property, style: CDSettingsViewController.Setting.ExpressionStyle) -> String {
         switch releaseType {
         case .damage:
-            let format = NSLocalizedString("Channel for [%@]s, interruptible by receiving damange %d times, %@ %@ [%@]%@ %@.", comment: "")
+            let format = NSLocalizedString("Channeling for [%@]s, disrupted by taking damage %d times, %@ %@ [%@]%@ %@.", comment: "")
             return String(
                 format: format,
                 buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property),
                 actionDetail3,
-                auraActionType.description,
+                auraActionType.description.lowercased(),
                 targetParameter.buildTargetClause(),
                 buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property),
                 percentModifier.description,
