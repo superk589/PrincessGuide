@@ -416,7 +416,7 @@
 "Change the perspective to %@ %d." = "向%1$@移动自身视角，距离 %2$d。";
 
 /* No comment provided by engineer. */
-"Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@." = "引导施法 [%1$@] 秒，受到伤害时中断，%2$@%3$@ [%4$@]%5$@ %6$@。";
+"Channel for [%@]s, interruptible by receiving damange %d times, %@ %@ [%@]%@ %@." = "引导施法 [%1$@] 秒，受到 %2$d 次伤害时中断，%3$@%4$@ [%5$@]%6$@ %7$@。";
 
 /* Birthday notification title */
 "Chara Birthday" = "角色生日";

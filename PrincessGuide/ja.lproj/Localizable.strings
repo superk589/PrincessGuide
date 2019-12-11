@@ -385,9 +385,6 @@
 /* No comment provided by engineer. */
 "Change the perspective to %@ %d." = "Change the perspective to %1$@ %2$d.";
 
-/* No comment provided by engineer. */
-"Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@." = "Channel for [%1$@]s, interruptible by receiving damange, %2$@ %3$@ [%4$@]%5$@ %6$@.";
-
 /* Birthday notification title */
 "Chara Birthday" = "キャラの誕生日";
 

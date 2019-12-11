@@ -648,9 +648,8 @@
         <target>Change the perspective to %1$@ %2$d.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Channel for [%@]s, interruptible by receiving damange, %@ %@ [%@]%@ %@." xml:space="preserve">
-        <source>Channel for [%1$@]s, interruptible by receiving damange, %2$@ %3$@ [%4$@]%5$@ %6$@.</source>
-        <target>Channel for [%1$@]s, interruptible by receiving damange, %2$@ %3$@ [%4$@]%5$@ %6$@.</target>
+      <trans-unit id="Channel for [%@]s, interruptible by receiving damange %d times, %@ %@ [%@]%@ %@." xml:space="preserve">
+        <source>Channel for [%1$@]s, interruptible by receiving damange %2$d times, %3$@ %4$@ [%5$@]%6$@ %7$@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Chara Birthday" xml:space="preserve">
