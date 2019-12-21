@@ -838,6 +838,10 @@
         <target>%3$@に[%1$@]の%2$@ダメージを与える。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Deal damage equal to [%@]%% of target's current HP to %@." xml:space="preserve">
+        <source>Deal damage equal to [%1$@]%% of target's current HP to %2$@.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@." xml:space="preserve">
         <source>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</source>
         <target>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</target>

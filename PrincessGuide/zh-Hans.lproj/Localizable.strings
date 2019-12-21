@@ -554,6 +554,9 @@
 "Deal [%@] %@ damage to %@." = "对%3$@造成 [%1$@] %2$@伤害。";
 
 /* No comment provided by engineer. */
+"Deal damage equal to [%@]%% of target's current HP to %@." = "对%2$@造成其当前 HP [%1$@]%% 的伤害。";
+
+/* No comment provided by engineer. */
 "Deal damage equal to [%@]%% of target's max HP to %@." = "对%2$@造成其最大 HP [%1$@]%% 的伤害。";
 
 /* No comment provided by engineer. */

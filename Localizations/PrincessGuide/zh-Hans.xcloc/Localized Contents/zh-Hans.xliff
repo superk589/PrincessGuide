@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3" build-num="11C29"/>
@@ -848,6 +847,11 @@
       <trans-unit id="Deal [%@] %@ damage to %@." xml:space="preserve">
         <source>Deal [%1$@] %2$@ damage to %3$@.</source>
         <target>对%3$@造成 [%1$@] %2$@伤害。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Deal damage equal to [%@]%% of target's current HP to %@." xml:space="preserve">
+        <source>Deal damage equal to [%1$@]%% of target's current HP to %2$@.</source>
+        <target>对%2$@造成其当前 HP [%1$@]%% 的伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@." xml:space="preserve">
