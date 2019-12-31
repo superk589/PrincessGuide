@@ -648,6 +648,10 @@
         <target>Change the perspective to %1$@ %2$d.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Changing Max HP" xml:space="preserve">
+        <source>Changing Max HP</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Channeling for [%@]s, disrupted by taking damage %d times, %@ %@ [%@]%@ %@." xml:space="preserve">
         <source>Channeling for [%1$@]s, disrupted by taking damage %2$d times, %3$@ %4$@ [%5$@]%6$@ %7$@.</source>
         <note>No comment provided by engineer.</note>
@@ -779,6 +783,10 @@
         <target>Confuse %1$@ with [%2$@]%% chance for [%3$@]s.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Control" xml:space="preserve">
+        <source>Control</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Copy" xml:space="preserve">
         <source>Copy</source>
         <target>コピー</target>
@@ -821,6 +829,10 @@
       <trans-unit id="DEF" xml:space="preserve">
         <source>DEF</source>
         <target>物理防御力</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Damage Over Time" xml:space="preserve">
+        <source>Damage Over Time</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Data Version" xml:space="preserve">
@@ -1065,6 +1077,10 @@
         <target>更新失敗</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Faint" xml:space="preserve">
+        <source>Faint</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Fear" xml:space="preserve">
         <source>Fear</source>
         <target>恐慌</target>
@@ -1173,6 +1189,10 @@
       <trans-unit id="Height" xml:space="preserve">
         <source>Height</source>
         <target>身長</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Hex" xml:space="preserve">
+        <source>Hex</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Icon Style" xml:space="preserve">
@@ -1323,6 +1343,10 @@
       <trans-unit id="Make %@ fall asleep for [%@]s." xml:space="preserve">
         <source>Make %1$@ fall asleep for [%2$@]s.</source>
         <target>%1$@を睡眠状態にする、[%2$@]秒継続する。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Make %@ fall into faint for [%@]s." xml:space="preserve">
+        <source>Make %1$@ fall into faint for [%2$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Make %@ lose [%@] TP." xml:space="preserve">
@@ -1672,6 +1696,10 @@
         <target>Poison %1$@ violently and deal [%2$@] damage per second for [%3$@]s.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Polymorph" xml:space="preserve">
+        <source>Polymorph</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Polymorph %@ for [%@]s." xml:space="preserve">
         <source>Polymorph %1$@ for [%2$@]s.</source>
         <note>No comment provided by engineer.</note>
@@ -1699,6 +1727,10 @@
       <trans-unit id="Race" xml:space="preserve">
         <source>Race</source>
         <target>種族</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Raid" xml:space="preserve">
+        <source>Raid</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raise" xml:space="preserve">
@@ -1974,6 +2006,10 @@
       <trans-unit id="Sorting" xml:space="preserve">
         <source>Sorting</source>
         <target>ソーティング</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Special Effect" xml:space="preserve">
+        <source>Special Effect</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Star Rank" xml:space="preserve">
@@ -2925,6 +2961,14 @@
       </trans-unit>
       <trans-unit id="use %d after time up" xml:space="preserve">
         <source>use %d after time up</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ has any dot debuff" xml:space="preserve">
+        <source>use %1$d if %2$@ has any dot debuff</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ has no dot debuff" xml:space="preserve">
+        <source>use %1$d if %2$@ has no dot debuff</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is alone" xml:space="preserve">

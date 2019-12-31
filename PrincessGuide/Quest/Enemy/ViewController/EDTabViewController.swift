@@ -14,7 +14,7 @@ class EDTabViewController: TabmanViewController, PageboyViewControllerDataSource
     
     static var defaultTabIndex: Int = 1
     
-    private var viewControllers = [EDTableViewController]()
+    private var viewControllers = [UITableViewController]()
     
     private var enemy: Enemy
     

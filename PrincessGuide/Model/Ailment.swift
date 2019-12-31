@@ -30,6 +30,7 @@ enum DotDetail: Int, CustomStringConvertible {
     case burn
     case curse
     case violentPoison
+    case hex
     case unknown
     
     var description: String {
@@ -44,6 +45,8 @@ enum DotDetail: Int, CustomStringConvertible {
             return NSLocalizedString("Curse", comment: "")
         case .violentPoison:
             return NSLocalizedString("Violent Poison", comment: "")
+        case .hex:
+            return NSLocalizedString("Hex", comment: "")
         default:
             return NSLocalizedString("Unknown", comment: "")
         }
@@ -74,6 +77,7 @@ enum ActionDetail: Int, CustomStringConvertible {
     case stun
     case petrify
     case detain
+    case faint
     case unknown
     
     var description: String {
@@ -96,6 +100,8 @@ enum ActionDetail: Int, CustomStringConvertible {
             return NSLocalizedString("Petrify", comment: "")
         case .detain:
             return NSLocalizedString("Detain", comment: "")
+        case .faint:
+            return NSLocalizedString("Faint", comment: "")
         case .unknown:
             return NSLocalizedString("Unknown", comment: "")
         }
@@ -118,6 +124,8 @@ enum AilmentType: Int, CustomStringConvertible {
     case attackSeal = 60
     case fear = 61
     case awe = 62
+    case toad = 69
+    case maxHP = 70
     case unknown
     
     var description: String {
@@ -150,6 +158,10 @@ enum AilmentType: Int, CustomStringConvertible {
             return NSLocalizedString("Seal", comment: "")
         case .awe:
             return NSLocalizedString("Awe", comment: "")
+        case .toad:
+            return NSLocalizedString("Polymorph", comment: "")
+        case .maxHP:
+            return NSLocalizedString("Changing Max HP", comment: "")
         }
     }
 }

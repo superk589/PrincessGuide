@@ -22,6 +22,7 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
         viewControllers = [
             DungeonBossTableViewController(),
             HatsuneEventAreaTableViewController(),
+//            KaiserRaidViewController(),
             ClanBattleTableViewController(mode: .normal),
             TowerTableViewController(),
             QuestAreaTableViewController(areaType: .normal),
@@ -36,6 +37,7 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
         self.items = [
             TMBarItem(title: NSLocalizedString("Dungeon", comment: "")),
             TMBarItem(title: NSLocalizedString("Event", comment: "")),
+//            TMBarItem(title: NSLocalizedString("Raid", comment: "")),
             TMBarItem(title: NSLocalizedString("Clan Battle", comment: "")),
             TMBarItem(title: NSLocalizedString("Tower", comment: ""))
             ]

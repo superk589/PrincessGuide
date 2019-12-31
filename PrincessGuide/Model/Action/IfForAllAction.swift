@@ -27,6 +27,9 @@ class IfForAllAction: ActionParameter {
         case 0..<100:
             let format = NSLocalizedString("%d%% chance use %d", comment: "")
             return String(format: format, actionDetail1, actionDetail2 % 10)
+        case 599:
+            let format = NSLocalizedString("use %d if %@ has any dot debuff", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
         case 600..<700:
             let format = NSLocalizedString("use %d if %@ is in state of ID: %d with stacks greater than or equal to %d", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600, Int(actionValue3))
@@ -67,6 +70,9 @@ class IfForAllAction: ActionParameter {
         case 0..<100:
             let format = NSLocalizedString("%d%% chance use %d", comment: "")
             return String(format: format, (100 - actionDetail1), actionDetail3 % 10)
+        case 599:
+            let format = NSLocalizedString("use %d if %@ has no dot debuff", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
         case 600..<700:
             let format = NSLocalizedString("use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), actionDetail1 - 600, Int(actionValue3))

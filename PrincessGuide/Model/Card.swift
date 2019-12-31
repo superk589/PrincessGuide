@@ -524,14 +524,22 @@ extension Card {
     }
     
     func plateImageURLs(postfix: String = "") -> [URL] {
-        return [
+        var urls = [
             URL.resource.appendingPathComponent("icon/plate/\(base.prefabId + 10).webp\(postfix)"),
             URL.resource.appendingPathComponent("icon/plate/\(base.prefabId + 30).webp\(postfix)")
         ]
+        if hasRarity6 {
+            urls.append(URL.resource.appendingPathComponent("icon/plate/\(base.prefabId + 60).webp\(postfix)"))
+        }
+        return urls
     }
     
-    func fullImageURL(postfix: String = "") -> URL {
-        return URL.resource.appendingPathComponent("card/full/\(base.prefabId + 30).webp\(postfix)")
+    func fullImageURL(postfix: String = "") -> [URL] {
+        var urls = [URL.resource.appendingPathComponent("card/full/\(base.prefabId + 30).webp\(postfix)")]
+        if hasRarity6 {
+            urls.append(URL.resource.appendingPathComponent("card/full/\(base.prefabId + 60).webp\(postfix)"))
+        }
+        return urls
     }
     
     func profileImageURLs(postfix: String = "") -> [URL] {
@@ -539,6 +547,9 @@ extension Card {
             URL.resource.appendingPathComponent("card/profile/\(base.prefabId + 10).webp\(postfix)"),
             URL.resource.appendingPathComponent("card/profile/\(base.prefabId + 30).webp\(postfix)")
         ]
+        if hasRarity6 {
+            urls.append(URL.resource.appendingPathComponent("card/profile/\(base.prefabId + 60).webp\(postfix)"))
+        }
         if let actualUnitID = actualUnit?.unitId {
             urls.append(URL.resource.appendingPathComponent("card/actual_profile/\(actualUnitID).webp\(postfix)"))
         }

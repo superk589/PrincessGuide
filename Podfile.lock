@@ -12,9 +12,9 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - ImageViewer (5.0.0)
-  - Kingfisher (5.10.1):
-    - Kingfisher/Core (= 5.10.1)
-  - Kingfisher/Core (5.10.1)
+  - Kingfisher (5.12.0):
+    - Kingfisher/Core (= 5.12.0)
+  - Kingfisher/Core (5.12.0)
   - KingfisherWebP (0.7.0):
     - Kingfisher (~> 5.8)
     - libwebp (>= 0.5.0)
@@ -28,7 +28,7 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.0.3)
   - lz4 (128)
-  - MJRefresh (3.2.2)
+  - MJRefresh (3.3.1)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - Pageboy (3.5.0)
@@ -128,11 +128,11 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kingfisher: eb36b7dfcc78d60877051c92c119a2865972961a
+  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   KingfisherWebP: 50d8389a48a9004c36e655470ccbff96de1ced9c
   libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
-  MJRefresh: 72a46ecaa2a0feaf48fc5198dff95f25f8bb27c6
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   Pageboy: 3794c578aae5fcce06e90b3ed4a0ad6b807d75bb
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9

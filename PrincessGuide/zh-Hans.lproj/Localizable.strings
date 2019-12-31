@@ -416,6 +416,9 @@
 "Change the perspective to %@ %d." = "向%1$@移动自身视角，距离 %2$d。";
 
 /* No comment provided by engineer. */
+"Changing Max HP" = "改变生命上限";
+
+/* No comment provided by engineer. */
 "Channeling for [%@]s, disrupted by taking damage %d times, %@ %@ [%@]%@ %@." = "引导施法 [%1$@] 秒，受到 %2$d 次伤害时中断，%3$@%4$@ [%5$@]%6$@ %7$@。";
 
 /* Birthday notification title */
@@ -503,6 +506,9 @@
 "Confuse %@ with [%@]%% chance for [%@]s." = "[%2$@]%% 几率使%1$@混乱，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"Control" = "行动控制";
+
+/* No comment provided by engineer. */
 "controlled" = "被控制";
 
 /* No comment provided by engineer. */
@@ -540,6 +546,9 @@
 
 /* No comment provided by engineer. */
 "CV" = "声优";
+
+/* No comment provided by engineer. */
+"Damage Over Time" = "持续伤害";
 
 /* No comment provided by engineer. */
 "damaged by effect %d" = "被效果 %d 伤害到的";
@@ -716,6 +725,9 @@
 "Failed" = "检查更新失败";
 
 /* No comment provided by engineer. */
+"Faint" = "气绝";
+
+/* No comment provided by engineer. */
 "Fear" = "恐慌";
 
 /* No comment provided by engineer. */
@@ -804,6 +816,9 @@
 
 /* No comment provided by engineer. */
 "Height" = "身高";
+
+/* No comment provided by engineer. */
+"Hex" = "恶咒";
 
 /* icon style */
 "highest rarity" = "最高稀有度";
@@ -921,6 +936,9 @@
 
 /* No comment provided by engineer. */
 "Make %@ fall asleep for [%@]s." = "使%1$@入睡，持续 [%2$@] 秒。";
+
+/* No comment provided by engineer. */
+"Make %@ fall into faint for [%@]s." = "使%1$@气绝，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
 "Make %@ lose [%@] TP." = "使%1$@失去 [%2$@] TP。";
@@ -1181,6 +1199,9 @@
 "poisoned or venomed" = "中毒或猛毒";
 
 /* No comment provided by engineer. */
+"Polymorph" = "变形术";
+
+/* No comment provided by engineer. */
 "Polymorph %@ for [%@]s." = "对%1$@释放变形术，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
@@ -1209,6 +1230,9 @@
 
 /* No comment provided by engineer. */
 "radius %d" = "半径 %d";
+
+/* No comment provided by engineer. */
+"Raid" = "Raid";
 
 /* No comment provided by engineer. */
 "Raise" = "提高";
@@ -1401,6 +1425,9 @@
 
 /* No comment provided by engineer. */
 "SP %d" = "SP %d";
+
+/* No comment provided by engineer. */
+"Special Effect" = "特殊效果";
 
 /* No comment provided by engineer. */
 "Star Rank" = "星级";
@@ -1704,6 +1731,12 @@
 
 /* No comment provided by engineer. */
 "use %d after time up" = "持续时间结束后使用 %d";
+
+/* No comment provided by engineer. */
+"use %d if %@ has any dot debuff" = "如果%2$@有任何持续伤害类减益则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d if %@ has no dot debuff" = "如果%2$@没有持续伤害类减益则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d if %@ is alone" = "如果%2$@是单独的则使用 %1$d。";

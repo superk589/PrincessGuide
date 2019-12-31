@@ -43,6 +43,9 @@ class AilmentAction: ActionParameter {
             case .some(.action(.sleep)):
                 let format = NSLocalizedString("Make %@ fall asleep for [%@]s.", comment: "")
                 return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+            case .some(.action(.faint)):
+                let format = NSLocalizedString("Make %@ fall into faint for [%@]s.", comment: "")
+                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             default:
                 let format = NSLocalizedString("%@ %@ for [%@]s.", comment: "")
                 return String(format: format, ailment.description, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))

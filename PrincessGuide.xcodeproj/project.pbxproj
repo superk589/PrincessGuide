@@ -232,6 +232,7 @@
 		12DC964520EDFA9D008896D7 /* EditBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */; };
 		12DC964720EDFF34008896D7 /* AddCharaToBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */; };
 		12DC964A20EE1BC1008896D7 /* CharasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964920EE1BC1008896D7 /* CharasCell.swift */; };
+		12E02BAF23B052A400652270 /* KaiserRaidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E02BAE23B052A400652270 /* KaiserRaidViewController.swift */; };
 		12E3324220F5EAE200844A6A /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324120F5EAE200844A6A /* CardCollectionViewController.swift */; };
 		12E3324420F5ED7600844A6A /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324320F5ED7600844A6A /* CardCollectionViewCell.swift */; };
 		12E3324620F5F9C200844A6A /* CandidateCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324520F5F9C200844A6A /* CandidateCardsView.swift */; };
@@ -557,6 +558,7 @@
 		12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBoxViewController.swift; sourceTree = "<group>"; };
 		12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharaToBoxViewController.swift; sourceTree = "<group>"; };
 		12DC964920EE1BC1008896D7 /* CharasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharasCell.swift; sourceTree = "<group>"; };
+		12E02BAE23B052A400652270 /* KaiserRaidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaiserRaidViewController.swift; sourceTree = "<group>"; };
 		12E3324120F5EAE200844A6A /* CardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewController.swift; sourceTree = "<group>"; };
 		12E3324320F5ED7600844A6A /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		12E3324520F5F9C200844A6A /* CandidateCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateCardsView.swift; sourceTree = "<group>"; };
@@ -918,6 +920,7 @@
 				12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */,
 				12204246231B765800205C85 /* Rarity6UnlockQuestViewController.swift */,
 				12133739225113D000BB701B /* RaidBossTableViewController.swift */,
+				12E02BAE23B052A400652270 /* KaiserRaidViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1941,6 +1944,7 @@
 				128DA49321B26DEA00F7C006 /* MinionSkillViewController.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
 				126BFBD520F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift in Sources */,
+				12E02BAF23B052A400652270 /* KaiserRaidViewController.swift in Sources */,
 				12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */,
 				12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */,
 				12C1131D229578680078BC22 /* MovePartsAction.swift in Sources */,
@@ -2141,7 +2145,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 146;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2166,7 +2170,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 141;
+				CURRENT_PROJECT_VERSION = 146;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

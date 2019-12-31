@@ -61,7 +61,7 @@ class CDImageTableViewController: CDTableViewController {
 
         rows += [
             Row.album(title: NSLocalizedString("Still", comment: ""), urls: card.stillImageURLs(), thumbnailURLs: card.stillImageURLs(postfix: "@h\(height)")),
-            Row.album(title: NSLocalizedString("Full", comment: ""), urls: [card.fullImageURL()], thumbnailURLs: [card.fullImageURL(postfix: "@h\(height)")]),
+            Row.album(title: NSLocalizedString("Full", comment: ""), urls: card.fullImageURL(), thumbnailURLs: card.fullImageURL(postfix: "@h\(height)")),
             Row.album(title: NSLocalizedString("Profile", comment: ""), urls: card.profileImageURLs(), thumbnailURLs: card.profileImageURLs(postfix: "@h\(height)"))
         ]
         
