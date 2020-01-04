@@ -31,12 +31,13 @@ class SearchableTeamTableViewController: TeamTableViewController {
         }
     }
     
-    lazy var searchController: UISearchController = {
+    lazy var searchController: UISearchController = { [unowned self] in
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = NSLocalizedString("Team Tag", comment: "")
         searchController.searchResultsUpdater = self
         searchController.delegate = self
         searchController.hidesNavigationBarDuringPresentation = true
+        searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
         searchController.searchBar.tintColor = Theme.dynamic.color.tint
         return searchController

@@ -12,12 +12,13 @@ class SearchableCardTableViewController: CardTableViewController {
     
     var filteredCards = [Card]()
 
-    lazy var searchController: UISearchController = {
+    lazy var searchController: UISearchController = { [unowned self] in
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = NSLocalizedString("Chara Name", comment: "")
         searchController.searchResultsUpdater = self
         searchController.delegate = self
         searchController.hidesNavigationBarDuringPresentation = true
+        searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
         searchController.searchBar.tintColor = Theme.dynamic.color.tint
         searchController.searchBar.backgroundColor = .systemBackground
