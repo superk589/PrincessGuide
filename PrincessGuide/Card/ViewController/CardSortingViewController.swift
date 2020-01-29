@@ -52,7 +52,7 @@ class CardSortingViewController: FormViewController {
             }
         }
         
-        enum SortingMethod: String, Codable, CustomStringConvertible {
+        enum SortingMethod: String, Codable, CustomStringConvertible, CaseIterable {
             case atk
             case def
             case dodge
@@ -119,11 +119,9 @@ class CardSortingViewController: FormViewController {
                 
             }
             
-            static let allLabels = [SortingMethod.atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy, .rarity, .effectiveMagicalHP, .effectivePhysicalHP, .combatEffectiveness, .swingTime, .attackRange, .id, .name, .age, .birthday, .height, .weight]
-            
         }
         
-        enum IconStyle: String, Codable, CustomStringConvertible {
+        enum IconStyle: String, Codable, CustomStringConvertible, CaseIterable {
             case `default`
             case r3
             case r1
@@ -141,8 +139,6 @@ class CardSortingViewController: FormViewController {
                     return NSLocalizedString("highest rarity", comment: "icon style")
                 }
             }
-            
-            static let allLabels = [IconStyle.default, .r3, .r1, .highestRarity]
         }
         
         var isAscending: Bool = true
@@ -256,7 +252,7 @@ class CardSortingViewController: FormViewController {
                 row.displayValueFor = { (rowValue: String?) in
                     return rowValue.flatMap { Setting.SortingMethod(rawValue: $0)?.description }
                 }
-                row.options = Setting.SortingMethod.allLabels.map { $0.rawValue }
+                row.options = Setting.SortingMethod.allCases.map { $0.rawValue }
                 row.value = Setting.default.sortingMethod.rawValue
                 
                 }.cellSetup(cellSetup(cell:row:))
@@ -345,7 +341,7 @@ class CardSortingViewController: FormViewController {
                 row.displayValueFor = { (rowValue: String?) in
                     return rowValue.flatMap { Setting.IconStyle(rawValue: $0)?.description }
                 }
-                row.options = Setting.IconStyle.allLabels.map { $0.rawValue }
+                row.options = Setting.IconStyle.allCases.map { $0.rawValue }
                 row.value = Setting.default.iconStyle.rawValue
                 
                 }.cellSetup(cellSetup(cell:row:))

@@ -37,6 +37,8 @@ class AuraAction: ActionParameter {
         case energyRecoverRate
         case lifeSteal
         case moveSpeed
+        case physicalCriticalDamage
+        case magicalCriticalDamage
         case num
         case none
         
@@ -67,6 +69,10 @@ class AuraAction: ActionParameter {
                 result = ""
             case .none:
                 result = ""
+            case .physicalCriticalDamage:
+                result = NSLocalizedString("Physical Critical Damage", comment: "")
+            case .magicalCriticalDamage:
+                result = NSLocalizedString("Magical Critical Damage", comment: "")
             }
             return result
         }

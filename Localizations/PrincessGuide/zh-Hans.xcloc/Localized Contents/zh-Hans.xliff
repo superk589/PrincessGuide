@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3" build-num="11C29"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3.1" build-num="11C504"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3" build-num="11C29"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3.1" build-num="11C504"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3" build-num="11C29"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3.1" build-num="11C504"/>
     </header>
     <body>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -1339,6 +1339,11 @@
         <target>魔法攻击力</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Magical Critical Damage" xml:space="preserve">
+        <source>Magical Critical Damage</source>
+        <target>魔法暴击伤害</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Main" xml:space="preserve">
         <source>Main</source>
         <target>Main</target>
@@ -1702,6 +1707,11 @@
       <trans-unit id="Physical Critical" xml:space="preserve">
         <source>Physical Critical</source>
         <target>物理暴击</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Physical Critical Damage" xml:space="preserve">
+        <source>Physical Critical Damage</source>
+        <target>物理暴击伤害</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Physical Penetrate" xml:space="preserve">

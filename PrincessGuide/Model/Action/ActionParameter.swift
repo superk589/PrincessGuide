@@ -321,13 +321,14 @@ class ActionParameter {
             let expression = (actionValues ?? self.actionValues).map { value in
                 var part = ""
                 if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
+                    let roundingRule = value.key == nil ? roundingRule : nil
                     switch (initialValue, perLevelValue) {
                     case (0, 0):
                         break
                     case (0, _):
                         part = "\(perLevelValue) * \(NSLocalizedString("SLv.", comment: ""))"
                     case (_, 0):
-                        part = "\(initialValue)"
+                        part = "\(initialValue.roundedString(roundingRule: roundingRule))"
                     case (_, _):
                         part = "\(initialValue) + \(perLevelValue) * \(NSLocalizedString("SLv.", comment: ""))"
                     }

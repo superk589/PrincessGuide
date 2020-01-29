@@ -64,7 +64,7 @@ class CandidateCardsView: UIView {
         cards.forEach {
             let icon = IconImageView()
             icon.isUserInteractionEnabled = true
-            icon.cardID = $0.iconID(style: .default)
+            icon.cardID = $0.iconID(style: .highestRarity)
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer(_:)))
             icon.addGestureRecognizer(tapGesture)
             stackView.addArrangedSubview(icon)
