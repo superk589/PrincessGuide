@@ -1843,9 +1843,8 @@
         <target>リストア</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Restore %@ [%@] HP per second for [%@]s." xml:space="preserve">
-        <source>Restore %1$@ [%2$@] HP per second for [%3$@]s.</source>
-        <target>%1$@に毎秒HPを[%2$@]回復、[%3$@]秒継続する。</target>
+      <trans-unit id="Restore %@ [%@] %@ per second for [%@]s." xml:space="preserve">
+        <source>Restore %1$@ [%2$@] %3$@ per second for [%4$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Restore %@ [%@] TP." xml:space="preserve">
@@ -2108,6 +2107,10 @@
       <trans-unit id="Swing Time" xml:space="preserve">
         <source>Swing Time</source>
         <target>通常攻撃間隔</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="TP" xml:space="preserve">
+        <source>TP</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Tag" xml:space="preserve">

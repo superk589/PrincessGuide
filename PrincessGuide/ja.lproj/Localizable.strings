@@ -1148,9 +1148,6 @@
 "Restore" = "リストア";
 
 /* No comment provided by engineer. */
-"Restore %@ [%@] HP per second for [%@]s." = "%1$@に毎秒HPを[%2$@]回復、[%3$@]秒継続する。";
-
-/* No comment provided by engineer. */
 "Restore %@ [%@] TP." = "%1$@のTPを[%2$@]回復。";
 
 /* No comment provided by engineer. */
