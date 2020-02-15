@@ -2363,6 +2363,10 @@
         <target>When %1$@ receive healing, deal [%2$@ * healing amount] damage instead, last for [%3$@]s or unlimited time if triggered by field.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="When %@'s HP reaches 0, restore [%@] HP once in next [%@]s." xml:space="preserve">
+        <source>When %1$@'s HP reaches 0, restore [%2$@] HP once in next [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Who Needs" xml:space="preserve">
         <source>Who Needs</source>
         <target>装備可能なキャラ</target>

@@ -304,6 +304,7 @@
 		12F1263B20BC23F5005C9659 /* SearchableCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
+		12F7643523F7E0660080398B /* KnightGuardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7643423F7E0660080398B /* KnightGuardAction.swift */; };
 		12FD97CC239225D700430222 /* ToadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FD97CB239225D700430222 /* ToadAction.swift */; };
 		94018D168BCD58B74960DD7C /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */; };
 /* End PBXBuildFile section */
@@ -630,6 +631,7 @@
 		12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableCardTableViewController.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
+		12F7643423F7E0660080398B /* KnightGuardAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightGuardAction.swift; sourceTree = "<group>"; };
 		12FD97CB239225D700430222 /* ToadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToadAction.swift; sourceTree = "<group>"; };
 		3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
 		967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1366,6 +1368,7 @@
 				12204240231AABF700205C85 /* FearAction.swift */,
 				12C9507F23504CAE000318C5 /* AweAction.swift */,
 				12FD97CB239225D700430222 /* ToadAction.swift */,
+				12F7643423F7E0660080398B /* KnightGuardAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12CF02A4236AA9C4003CD3AD /* LoopMotionRepeatAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
@@ -1673,6 +1676,7 @@
 				129A7F8F20A31D1600D93996 /* QuestEnemyTableViewCell.swift in Sources */,
 				120E487922FED13700035566 /* UIImage+Background.swift in Sources */,
 				125B663320EFB5D600D15E75 /* Chara.swift in Sources */,
+				12F7643523F7E0660080398B /* KnightGuardAction.swift in Sources */,
 				12F1262720B955D5005C9659 /* WaveStartIdleAction.swift in Sources */,
 				123608E32093200A003E7D11 /* Defaults.swift in Sources */,
 				12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */,
@@ -2145,7 +2149,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 150;
+				CURRENT_PROJECT_VERSION = 151;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2170,7 +2174,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 150;
+				CURRENT_PROJECT_VERSION = 151;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

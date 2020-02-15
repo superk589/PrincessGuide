@@ -2414,6 +2414,11 @@
         <target>当%1$@受到治疗时，治疗效果无效并造成 [%2$@ * 治疗量] 的伤害，持续 [%3$@] 秒，如果是场地效果触发的，持续时间无限。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="When %@'s HP reaches 0, restore [%@] HP once in next [%@]s." xml:space="preserve">
+        <source>When %1$@'s HP reaches 0, restore [%2$@] HP once in next [%3$@]s.</source>
+        <target>在 [%3$@] 秒内，当%1$@的 HP 为 0 时，恢复 [%2$@] HP 并移除该效果。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Who Needs" xml:space="preserve">
         <source>Who Needs</source>
         <target>可装备的角色</target>

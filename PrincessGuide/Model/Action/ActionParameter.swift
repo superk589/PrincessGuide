@@ -133,6 +133,8 @@ class ActionParameter {
             return LoopMotionRepeatAction.self
         case 69:
             return ToadAction.self
+        case 71:
+            return KnightGuardAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -542,6 +544,7 @@ enum ActionType: Int {
     case awe
     case loop
     case toad = 69
+    case knightGuard = 71
     case ex = 90
     case exPlus
 }
