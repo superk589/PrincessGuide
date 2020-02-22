@@ -71,6 +71,7 @@ class CardSortingViewController: FormViewController {
             
             case rarity
             case effectivePhysicalHP
+            case effectivePhysicalHPNoDodge
             case effectiveMagicalHP
             case combatEffectiveness
             case swingTime
@@ -95,6 +96,8 @@ class CardSortingViewController: FormViewController {
                     return NSLocalizedString("Rarity", comment: "")
                 case .effectivePhysicalHP:
                     return NSLocalizedString("Effective Physical HP", comment: "")
+                case .effectivePhysicalHPNoDodge:
+                    return NSLocalizedString("Effective Physical HP(No Dodge)", comment: "")
                 case .effectiveMagicalHP:
                     return NSLocalizedString("Effective Magical HP", comment: "")
                 case .swingTime:

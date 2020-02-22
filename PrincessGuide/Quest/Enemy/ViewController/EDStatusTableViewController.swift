@@ -48,6 +48,11 @@ class EDStatusTableViewController: EDTableViewController {
             Row.propertyItems([
                 property.item(for: .def),
                 property.item(for: .magicDef)], unitLevel, targetLevel),
+            Row.textArray(
+                [
+                    TextItem(title: NSLocalizedString("Effective Physical HP", comment: ""), content: String(Int(property.effectivePhysicalHP.rounded())), colorMode: .normal),
+                    TextItem(title: NSLocalizedString("Effective Magical HP", comment: ""), content: String(Int(property.effectiveMagicalHP.rounded())), colorMode: .normal)
+            ]),
             Row.propertyItems([
                 property.item(for: .hp),
                 property.item(for: .physicalCritical)], unitLevel, targetLevel),

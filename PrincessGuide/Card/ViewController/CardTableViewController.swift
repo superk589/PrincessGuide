@@ -234,6 +234,9 @@ class CardTableViewController: UIViewController, DataChecking, UITableViewDelega
         case .effectivePhysicalHP:
             mode = .text
             text = String(Int(card.property().effectivePhysicalHP.rounded()))
+        case .effectivePhysicalHPNoDodge:
+            mode = .text
+            text = String(Int(card.property().effectivePhysicalHPNoDodge.rounded()))
         case .effectiveMagicalHP:
             mode = .text
             text = String(Int(card.property().effectiveMagicalHP.rounded()))
@@ -292,6 +295,8 @@ extension Array where Element == Card {
             sortingMethod = { $0.base.rarity < $1.base.rarity }
         case .effectivePhysicalHP:
             sortingMethod = { $0.property().effectivePhysicalHP < $1.property().effectivePhysicalHP }
+        case .effectivePhysicalHPNoDodge:
+            sortingMethod = { $0.property().effectivePhysicalHPNoDodge < $1.property().effectivePhysicalHPNoDodge }
         case .effectiveMagicalHP:
             sortingMethod = { $0.property().effectiveMagicalHP < $1.property().effectiveMagicalHP }
         case .swingTime:

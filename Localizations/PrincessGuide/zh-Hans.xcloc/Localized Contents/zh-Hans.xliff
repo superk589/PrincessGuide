@@ -549,6 +549,11 @@
         <target>对%1$@释放一个护盾，无效 [%2$@] 物理伤害，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to reduce damage over %@ with coefficient [%@](the greater the less reduced amount) for [%@]s." xml:space="preserve">
+        <source>Cast a barrier on %1$@ to reduce damage over %2$@ with coefficient [%3$@](the greater the less reduced amount) for [%4$@]s.</source>
+        <target>对%1$@释放一个护盾，伤害超过 %2$@ 的部分会受到减免，减免系数 [%3$@]（越大减免量越小），持续 [%4$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking damage.</source>
         <target>对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。</target>
@@ -987,6 +992,11 @@
       <trans-unit id="Effective Physical HP" xml:space="preserve">
         <source>Effective Physical HP</source>
         <target>物理有效 HP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Effective Physical HP(No Dodge)" xml:space="preserve">
+        <source>Effective Physical HP(No Dodge)</source>
+        <target>物理有效 HP（不计躲闪）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Email" xml:space="preserve">

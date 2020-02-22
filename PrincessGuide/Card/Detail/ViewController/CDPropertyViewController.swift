@@ -73,7 +73,11 @@ class CDPropertyViewController: CDTableViewController {
                 [
                     TextItem(title: NSLocalizedString("Effective Physical HP", comment: ""), content: String(Int(property.effectivePhysicalHP.rounded())), deltaValue: settings.statusComparison ? property.effectivePhysicalHP.rounded() : 0),
                     TextItem(title: NSLocalizedString("Effective Magical HP", comment: ""), content: String(Int(property.effectiveMagicalHP.rounded())), deltaValue: settings.statusComparison ? property.effectiveMagicalHP.rounded() : 0)
-                ]),
+            ]),
+            Row.textArray(
+                [
+                    TextItem(title: NSLocalizedString("Effective Physical HP(No Dodge)", comment: ""), content: String(Int(property.effectivePhysicalHPNoDodge.rounded())), deltaValue: settings.statusComparison ? property.effectivePhysicalHPNoDodge.rounded() : 0)
+            ]),
             Row.propertyItems(items: [
                 property.item(for: .hpRecoveryRate),
                 property.item(for: .lifeSteal)

@@ -350,6 +350,9 @@
 "Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "对%1$@释放一个护盾，无效 [%2$@] 物理伤害，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"Cast a barrier on %@ to reduce damage over %@ with coefficient [%@](the greater the less reduced amount) for [%@]s." = "对%1$@释放一个护盾，伤害超过 %2$@ 的部分会受到减免，减免系数 [%3$@]（越大减免量越小），持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
 "Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." = "对%1$@释放一个护盾，受到伤害时反击 [%2$@] 伤害，并恢复自身等量 HP。";
 
 /* No comment provided by engineer. */
@@ -648,6 +651,9 @@
 
 /* No comment provided by engineer. */
 "Effective Physical HP" = "物理有效 HP";
+
+/* No comment provided by engineer. */
+"Effective Physical HP(No Dodge)" = "物理有效 HP（不计躲闪）";
 
 /* No comment provided by engineer. */
 "Email" = "邮件";

@@ -31,6 +31,10 @@ struct Property: Codable, Equatable {
         return hp * (1 + def / 100) * (1 + dodge / 100)
     }
     
+    var effectivePhysicalHPNoDodge: Double {
+        return hp * (1 + def / 100)
+    }
+    
     var effectiveMagicalHP: Double {
         return hp * (1 + magicDef / 100)
     }

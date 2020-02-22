@@ -543,6 +543,10 @@
         <target>%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、[%3$@]秒継続する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Cast a barrier on %@ to reduce damage over %@ with coefficient [%@](the greater the less reduced amount) for [%@]s." xml:space="preserve">
+        <source>Cast a barrier on %1$@ to reduce damage over %2$@ with coefficient [%3$@](the greater the less reduced amount) for [%4$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking damage.</source>
         <target>Cast a barrier on %1$@ to strike back [%2$@] damage and recover the same HP when taking damage.</target>
@@ -972,6 +976,10 @@
       <trans-unit id="Effective Physical HP" xml:space="preserve">
         <source>Effective Physical HP</source>
         <target>Effective Physical HP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Effective Physical HP(No Dodge)" xml:space="preserve">
+        <source>Effective Physical HP(No Dodge)</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Email" xml:space="preserve">
