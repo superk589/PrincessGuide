@@ -956,6 +956,9 @@
 "Make %@ to be invulnerable for [%@]s." = "使%@免疫所有伤害，持续 [%@] 秒。";
 
 /* No comment provided by engineer. */
+"Make %@ to be invulnerable to break for [%@]s." = "使%1$@免疫 Break 效果，持续 [%2$@] 秒。";
+
+/* No comment provided by engineer. */
 "Make %@ to be invulnerable to physical damage for [%@]s." = "使%@免疫物理伤害，持续 [%@] 秒。";
 
 /* No comment provided by engineer. */
@@ -1653,6 +1656,9 @@
 
 /* No comment provided by engineer. */
 "TP" = "TP";
+
+/* No comment provided by engineer. */
+"Trigger: %d%% on all targets break." = "触发条件：所有部位 Break 时 %d%% 触发。";
 
 /* No comment provided by engineer. */
 "Trigger: %d%% on break and last for %@s." = "触发条件：Break 时 %1$d%% 触发，持续 %2$@ 秒。";

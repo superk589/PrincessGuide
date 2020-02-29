@@ -86,10 +86,17 @@ class DungeonBossTableViewController: UITableViewController, DataChecking {
          */
         
         if let enemy = dungeon.wave?.enemies.first?.enemy {
-            let vc = EDTabViewController(enemy: enemy)
-            vc.hidesBottomBarWhenPushed = true
-            vc.navigationItem.title = enemy.unit.unitName
-            navigationController?.pushViewController(vc, animated: true)
+            if enemy.parts.count > 0 {
+                let vc = QuestEnemyTableViewController(waves: [dungeon.wave!])
+                vc.hidesBottomBarWhenPushed = true
+                vc.navigationItem.title = enemy.unit.unitName
+                navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let vc = EDTabViewController(enemy: enemy)
+                vc.hidesBottomBarWhenPushed = true
+                vc.navigationItem.title = enemy.unit.unitName
+                navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
     

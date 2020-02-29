@@ -1370,6 +1370,10 @@
         <source>Make %1$@ to be invulnerable for [%2$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ to be invulnerable to break for [%@]s." xml:space="preserve">
+        <source>Make %1$@ to be invulnerable to break for [%2$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Make %@ to be invulnerable to physical damage for [%@]s." xml:space="preserve">
         <source>Make %1$@ to be invulnerable to physical damage for [%2$@]s.</source>
         <note>No comment provided by engineer.</note>
@@ -2199,6 +2203,10 @@
       <trans-unit id="Tower" xml:space="preserve">
         <source>Tower</source>
         <target>ルナの塔</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigger: %d%% on all targets break." xml:space="preserve">
+        <source>Trigger: %d%% on all targets break.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Trigger: %d%% on break and last for %@s." xml:space="preserve">

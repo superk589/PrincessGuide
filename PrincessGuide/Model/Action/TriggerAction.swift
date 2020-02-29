@@ -22,6 +22,7 @@ class TriggerAction: ActionParameter {
         case stealthFree
         case `break`
         case dot
+        case allBreak
     }
     
     var triggerType: TriggerType {
@@ -53,6 +54,9 @@ class TriggerAction: ActionParameter {
             return String(format: format, Int(actionValue1.rounded()), actionValue3.roundedString(roundingRule: nil))
         case .dot:
             let format = NSLocalizedString("Trigger: %d%% on dot damaged.", comment: "")
+            return String(format: format, Int(actionValue1.rounded()))
+        case .allBreak:
+            let format = NSLocalizedString("Trigger: %d%% on all targets break.", comment: "")
             return String(format: format, Int(actionValue1.rounded()))
         default:
             return super.localizedDetail(of: level, property: property, style: style)

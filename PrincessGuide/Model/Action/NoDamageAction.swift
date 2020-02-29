@@ -17,6 +17,7 @@ class NoDamageAction: ActionParameter {
         case dodgeAll
         case abnormal
         case debuff
+        case `break`
     }
     
     var noDamageType: NoDamageType {
@@ -36,6 +37,9 @@ class NoDamageAction: ActionParameter {
             return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: nil, style: style, property: property))
         case .dodgePhysics:
             let format = NSLocalizedString("Make %@ to be invulnerable to physical damage for [%@]s.", comment: "")
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: nil, style: style, property: property))
+        case .break:
+            let format = NSLocalizedString("Make %@ to be invulnerable to break for [%@]s.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: nil, style: style, property: property))
         default:
             return super.localizedDetail(of: level, property: property, style: style)
