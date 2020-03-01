@@ -139,7 +139,7 @@ struct VLQuestArea: Codable, VLElement {
 struct VLEvent: Codable, VLElement {
     var content: String {
         let format = NSLocalizedString("New %@ Event: %@", comment: "")
-        return String(format: format, type.description, name ?? "")
+        return String(format: format, type?.description ?? NSLocalizedString("unknown", comment: ""), name ?? "")
     }
     
     var schedule: Schedule? {
@@ -154,7 +154,7 @@ struct VLEvent: Codable, VLElement {
     let id: String
     let name: String?
     let start: String?
-    let type: EventType
+    let type: EventType?
     
     enum EventType: String, Codable, CustomStringConvertible {
         case story

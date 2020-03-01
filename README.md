@@ -1,6 +1,7 @@
 # Hatsune's Notes
 An unofficial iOS app for **プリンセスコネクト！Re:Dive**.  
 **Hatsune's Notes** is the app name and **PrincessGuide** is the project name.  
+Looking for an Android app? Try this one [ShizuruNotes](https://github.com/MalitsPlus/ShizuruNotes)
 
 ## How to install
 Open this link on your iPhone or iPad:  
@@ -53,7 +54,8 @@ Cygames does not allow this app and it has been removed from App Store.
 By now, **Hatsune's Notes** provides Chinese and English localization fully, and Japanese partially.  
 If you want to localize the app, please goto `./Localizations/PrincessGuide/` and edit the .xliff files.  
 If you want to add a new language please tell me.  
-For developers only, if you have macOS and Xcode, please read `./Localizations/README.md` and use those scripts to export or import localization.
+For developers only, if you have macOS and Xcode, please read `./Localizations/README.md` and use those scripts to export or import localization.  
+Most of the Japanese localizations are done by CaiMiao and Vibbit.
 
 ## How to build
 ### Requirements
@@ -74,6 +76,7 @@ $ open PrincessGuide.xcworkspace
 ## Acknowledgement
 * [esterTion](https://github.com/esterTion)
 * [CaiMiao](https://github.com/CaiMiao)
+* [Vibbit](https://github.com/MalitsPlus)
 * Axx
 * GSflky
 * izuna
