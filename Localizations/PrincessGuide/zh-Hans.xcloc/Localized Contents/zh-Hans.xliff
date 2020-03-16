@@ -2034,6 +2034,11 @@
         <target>圣迹调查</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Side Story" xml:space="preserve">
+        <source>Side Story</source>
+        <target>支线</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Silence" xml:space="preserve">
         <source>Silence</source>
         <target>沉默</target>

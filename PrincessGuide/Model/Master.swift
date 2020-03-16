@@ -1200,6 +1200,57 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getShioriEvents(callback: @escaping FMDBCallbackClosure<[ShioriEvent]>) {
+        var events = [ShioriEvent]()
+        execute({ (db) in
+            let sql = """
+               SELECT
+                   a.*,
+                   b.title
+               FROM
+                   shiori_event_list a,
+                   event_story_data b
+               WHERE
+                   a.event_id = b.value
+               """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let base = try decoder.decode(ShioriEvent.Base.self, from: json.rawData())
+                let event = ShioriEvent(base: base)
+                events.append(event)
+            }
+        }) {
+            callback(events)
+        }
+    }
+    
+    func getShioriEventBossQuests(eventID: Int, callback: @escaping FMDBCallbackClosure<[ShioriEventBossQuest]>) {
+        var quests = [ShioriEventBossQuest]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+            a.*
+            FROM
+            shiori_boss a
+            WHERE
+            event_id = \(eventID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let quest = try decoder.decode(ShioriEventBossQuest.self, from: json.rawData())
+                quests.append(quest)
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
     func getRaidEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
         var enemies = [Enemy]()
         execute({ (db) in

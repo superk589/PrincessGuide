@@ -28,6 +28,7 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
             QuestAreaTableViewController(areaType: .normal),
             QuestAreaTableViewController(areaType: .hard),
             QuestAreaTableViewController(areaType: .veryHard),
+            ShioriEventAreaTableViewController(),
             MiscQuestAreaTableViewController(),
             Rarity6UnlockQuestViewController(),
             ClanBattleTableViewController(mode: .easy)
@@ -42,7 +43,8 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
             TMBarItem(title: NSLocalizedString("Tower", comment: ""))
             ]
             + [AreaType.normal, .hard, .veryHard].map { TMBarItem(title: $0.description) }
-            + [TMBarItem(title: NSLocalizedString("Exploration", comment: "")),
+            + [TMBarItem(title: NSLocalizedString("Side Story", comment: "")),
+                TMBarItem(title: NSLocalizedString("Exploration", comment: "")),
                TMBarItem(title: NSLocalizedString("Rarity 6", comment: "")),
                TMBarItem(title: NSLocalizedString("Clan Battle(Simple)", comment: ""))
         ]

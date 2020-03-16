@@ -464,7 +464,13 @@
 "Clan Battle %d-%d" = "クランバトル %1$d 年 %2$d 月";
 
 /* No comment provided by engineer. */
+"Clan Battle(Simple)" = "";
+
+/* No comment provided by engineer. */
 "Clear all %@ on %@ with chance [%@]%%." = "[%3$@%%]の確率で%2$@の%1$@をすべて解除する。";
+
+/* No comment provided by engineer. */
+"Cloister" = "回廊";
 
 /* No comment provided by engineer. */
 "Combat Effectiveness" = "戦力";
@@ -1220,6 +1226,9 @@
 "radius %d" = "半径%1$d";
 
 /* No comment provided by engineer. */
+"Raid" = "ライド";
+
+/* No comment provided by engineer. */
 "Raise" = "アップ";
 
 /* Raise [x] ATK. */
@@ -1374,6 +1383,9 @@
 
 /* No comment provided by engineer. */
 "Shrine" = "聖跡調査";
+
+/* No comment provided by engineer. */
+"Side Story" = "サイドストーリー";
 
 /* No comment provided by engineer. */
 "Silence" = "沈黙";

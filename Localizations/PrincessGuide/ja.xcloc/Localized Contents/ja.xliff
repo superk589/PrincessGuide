@@ -734,6 +734,7 @@
       </trans-unit>
       <trans-unit id="Clan Battle(Simple)" xml:space="preserve">
         <source>Clan Battle(Simple)</source>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%." xml:space="preserve">
@@ -743,6 +744,7 @@
       </trans-unit>
       <trans-unit id="Cloister" xml:space="preserve">
         <source>Cloister</source>
+        <target>回廊</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Combat Effectiveness" xml:space="preserve">
@@ -1788,6 +1790,7 @@
       </trans-unit>
       <trans-unit id="Raid" xml:space="preserve">
         <source>Raid</source>
+        <target>ライド</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raise" xml:space="preserve">
@@ -2023,6 +2026,11 @@
       <trans-unit id="Shrine" xml:space="preserve">
         <source>Shrine</source>
         <target>聖跡調査</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Side Story" xml:space="preserve">
+        <source>Side Story</source>
+        <target>サイドストーリー</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Silence" xml:space="preserve">

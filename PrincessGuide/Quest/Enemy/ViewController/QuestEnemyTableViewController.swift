@@ -83,6 +83,16 @@ class QuestEnemyTableViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    init(shioriEvent: ShioriEvent) {
+        self.rows = shioriEvent.quests.compactMap { quest in
+            quest.wave.map {
+                Row(type: QuestEnemyTableViewCell.self, data: .hatsuneEvent($0, quest.difficultyType.description))
+            }
+        }
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     init(rarity6UnlockQuest: Rarity6UnlockQuest) {
         self.rows = rarity6UnlockQuest.wave.flatMap {
             [Row(type: QuestEnemyTableViewCell.self, data: .wave($0, 0))]

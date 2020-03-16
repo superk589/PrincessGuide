@@ -199,6 +199,9 @@
 		12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */; };
 		12B8F58B214A5B3600C039DE /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58A214A5B3600C039DE /* Tower.swift */; };
 		12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */; };
+		12BDDA7F241FAB2C00E89D7B /* ShioriEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */; };
+		12BDDA81241FAC1000E89D7B /* ShioriEventBossQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA80241FAC1000E89D7B /* ShioriEventBossQuest.swift */; };
+		12BDDA85241FB30800E89D7B /* ShioriEventAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA84241FB30800E89D7B /* ShioriEventAreaTableViewController.swift */; };
 		12C1131D229578680078BC22 /* MovePartsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C1131C229578680078BC22 /* MovePartsAction.swift */; };
 		12C24B97217ACCA80079AFE0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B96217ACCA80079AFE0 /* Store.swift */; };
 		12C24B99217ACD4A0079AFE0 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C24B98217ACD4A0079AFE0 /* Voice.swift */; };
@@ -527,6 +530,9 @@
 		12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerTableViewController.swift; sourceTree = "<group>"; };
 		12B8F58A214A5B3600C039DE /* Tower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
 		12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerQuestTabViewController.swift; sourceTree = "<group>"; };
+		12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEvent.swift; sourceTree = "<group>"; };
+		12BDDA80241FAC1000E89D7B /* ShioriEventBossQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEventBossQuest.swift; sourceTree = "<group>"; };
+		12BDDA84241FB30800E89D7B /* ShioriEventAreaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEventAreaTableViewController.swift; sourceTree = "<group>"; };
 		12C1131C229578680078BC22 /* MovePartsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovePartsAction.swift; sourceTree = "<group>"; };
 		12C24B96217ACCA80079AFE0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		12C24B98217ACD4A0079AFE0 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
@@ -790,6 +796,8 @@
 				127FB85820F44BE1009B53CC /* Preload.swift */,
 				1273BFC421CE2B5900ECA727 /* Notice.swift */,
 				12C599312287DE4400875EE4 /* GameEvent.swift */,
+				12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */,
+				12BDDA80241FAC1000E89D7B /* ShioriEventBossQuest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -919,6 +927,7 @@
 				129A7F8820A3108C00D93996 /* QuestTabViewController.swift */,
 				1280DE4420A5DED5008D9D72 /* ClanBattleTableViewController.swift */,
 				1276D4B920AD317E00805355 /* HatsuneEventAreaTableViewController.swift */,
+				12BDDA84241FB30800E89D7B /* ShioriEventAreaTableViewController.swift */,
 				12EE352920D2942100DDC04B /* DungeonBossTableViewController.swift */,
 				12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */,
 				12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */,
@@ -1731,6 +1740,7 @@
 				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,
 				12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */,
 				12F125DB20B92E79005C9659 /* MoveAction.swift in Sources */,
+				12BDDA85241FB30800E89D7B /* ShioriEventAreaTableViewController.swift in Sources */,
 				12C599302287DC4200875EE4 /* GameEventCenter.swift in Sources */,
 				1223A8EC20F0B4EB00C98BB2 /* NotificationHandle.swift in Sources */,
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
@@ -1783,6 +1793,7 @@
 				120BCAF620F4DEA20029A083 /* EditTeamViewController.swift in Sources */,
 				12F125D220B90DF3005C9659 /* ActionParameter.swift in Sources */,
 				12F125DF20B931EF005C9659 /* CureAction.swift in Sources */,
+				12BDDA81241FAC1000E89D7B /* ShioriEventBossQuest.swift in Sources */,
 				12F1262120B95588005C9659 /* UBChangeTimeAction.swift in Sources */,
 				12F125F720B9505D005C9659 /* DecoyAction.swift in Sources */,
 				12DA21EF20EFBBE3005FD705 /* EditCharaInBoxViewController.swift in Sources */,
@@ -1922,6 +1933,7 @@
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
 				120F9B8520E9F97E003632CA /* CharaTableViewCell.swift in Sources */,
 				122071E420F9D6AE00554030 /* TDBattleViewController.swift in Sources */,
+				12BDDA7F241FAB2C00E89D7B /* ShioriEvent.swift in Sources */,
 				12B00D2E231F4C9E0086B079 /* FilterType.swift in Sources */,
 				12204241231AABF700205C85 /* FearAction.swift in Sources */,
 				1247127A22279DF700A9C2E1 /* ChangeBodyWidthAction.swift in Sources */,
