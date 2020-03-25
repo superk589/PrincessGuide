@@ -61,7 +61,7 @@ class TargetParameter {
     var hasDependAction: Bool {
         if let dependAction = dependAction {
             return dependAction.base.actionId != 0 && targetType != .absolute
-            && [ActionType.ifForChildren, .ifForAll, .damage, .knock].contains(dependAction.parameter.actionType)
+                && [ActionType.ifForChildren, .ifForAll, .damage, .knock, .gravity].contains(dependAction.parameter.actionType)
         } else {
             return false
         }
@@ -158,7 +158,7 @@ class TargetParameter {
                 //            let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
             //            return String(format: format, dependAction!.base.actionId % 100, targetAssignment.description, targetRange.rawRange)
             case (_, _, _, _, _, true):
-                if dependAction?.parameter.actionType == .damage {
+                if let actionType = dependAction?.parameter.actionType, [ActionType.damage, .gravity].contains(actionType) {
                     let format = NSLocalizedString("targets those damaged by effect %d", comment: "")
                     result = String(format: format, dependAction!.base.actionId % 100)
                 } else {
