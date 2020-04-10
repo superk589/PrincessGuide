@@ -1259,8 +1259,11 @@ class Master: FMDatabaseQueue {
                 a.sekai_enemy_id enemy_id,
                 a.*,
                 b.union_burst,
+                b.union_burst_evolution,
                 b.main_skill_1,
                 b.main_skill_2,
+                b.main_skill_evolution_1,
+                b.main_skill_evolution_2,
                 b.main_skill_3,
                 b.main_skill_4,
                 b.main_skill_5,
@@ -1283,12 +1286,12 @@ class Master: FMDatabaseQueue {
                 unit_skill_data b,
                 sekai_enemy_parameter a
                 LEFT JOIN enemy_m_parts c
-                ON a.enemy_id = c.enemy_id
+                ON a.sekai_enemy_id = c.enemy_id
             WHERE
                 a.unit_id = b.unit_id
             """
             if let id = enemyID {
-                sql.append(" AND a.enemy_id = \(id)")
+                sql.append(" AND a.sekai_enemy_id = \(id)")
             }
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {
@@ -1317,9 +1320,13 @@ class Master: FMDatabaseQueue {
                 var newJson = json
                 newJson["hp"].intValue = json["hp"].intValue
                 
-                if let base = try? decoder.decode(Enemy.Base.self, from: newJson.rawData()),
-                    let unit = unit {
-                    enemies.append(Enemy(base: base, unit: unit))
+                do {
+                    let base = try decoder.decode(Enemy.Base.self, from: newJson.rawData())
+                    if let unit = unit {
+                        enemies.append(Enemy(base: base, unit: unit))
+                    }
+                } catch {
+                    print(error)
                 }
             }
         }) {

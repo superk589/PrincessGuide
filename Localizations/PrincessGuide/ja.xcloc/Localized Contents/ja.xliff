@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3.1" build-num="11C504"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4" build-num="11E146"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3.1" build-num="11C504"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4" build-num="11E146"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.3.1" build-num="11C504"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4" build-num="11E146"/>
     </header>
     <body>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -551,6 +551,7 @@
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to reduce damage over %@ with coefficient [%@](the greater the less reduced amount) for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to reduce damage over %2$@ with coefficient [%3$@](the greater the less reduced amount) for [%4$@]s.</source>
+        <target>%1$@にバリアを展開する、一回の行動で受けたダメージが[%2$@]を超えた場合、ダメージが減衰される、減衰係数[%3$@]（この値が小さいほど減衰されやすい）、効果時間[%4$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." xml:space="preserve">
@@ -570,7 +571,7 @@
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking damage.</source>
-        <target>%1$@にシールドを展開する、ダメージを受けた時[%2$@]分のダメージを反射し、自分のHPを同等の値回復させる。</target>
+        <target>%1$@にシールドを展開する、ダメージを受けた時[%2$@]分のダメージを反射する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking magical damage." xml:space="preserve">
@@ -1485,7 +1486,7 @@
       </trans-unit>
       <trans-unit id="Minion: %d(Unit: %d)" xml:space="preserve">
         <source>Minion: %1$d(Unit: %2$d)</source>
-        <target></target>
+        <target>召喚物：%1$d（ユニット：%2$d）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Misc" xml:space="preserve">
@@ -2258,6 +2259,7 @@
       </trans-unit>
       <trans-unit id="Trigger: %d%% on all targets break." xml:space="preserve">
         <source>Trigger: %d%% on all targets break.</source>
+        <target>トリガー：すべての部位がBreakされた時[%1$d%%]の確率で発動。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Trigger: %d%% on break and last for %@s." xml:space="preserve">
@@ -3073,6 +3075,11 @@
         <target>%2$@が独りの場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if %@ is in state of ID: %d" xml:space="preserve">
+        <source>use %1$d if %2$@ is in state of ID: %3$d</source>
+        <target>%2$@がマーク[ID：%3$d]を持っているの場合、[アクション%1$d]を使う</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if %@ is in state of ID: %d with stacks greater than or equal to %d" xml:space="preserve">
         <source>use %1$d if %2$@ is in state of ID: %3$d with stacks greater than or equal to %4$d</source>
         <target>%2$@が持っているマーク[ID：%3$d]のスタック数が%4$d以上の場合、[アクション%1$d]を使う</target>
@@ -3081,6 +3088,11 @@
       <trans-unit id="use %d if %@ is not alone" xml:space="preserve">
         <source>use %1$d if %2$@ is not alone</source>
         <target>%2$@が独りでない場合、[アクション%1$d]を使う</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is not in state of ID: %d" xml:space="preserve">
+        <source>use %1$d if %2$@ is not in state of ID: %3$d</source>
+        <target>%2$@がマーク[ID：%3$d]を持っていないの場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" xml:space="preserve">

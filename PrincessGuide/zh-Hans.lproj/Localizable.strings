@@ -1766,10 +1766,16 @@
 "use %d if %@ is alone" = "如果%2$@是单独的则使用 %1$d。";
 
 /* No comment provided by engineer. */
+"use %d if %@ is in state of ID: %d" = "如果%2$@拥有标记（ID：%3$d）则使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d if %@ is in state of ID: %d with stacks greater than or equal to %d" = "如果%2$@拥有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d if %@ is not alone" = "如果%2$@不是单独的则使用 %1$d。";
+
+/* No comment provided by engineer. */
+"use %d if %@ is not in state of ID: %d" = "如果%2$@没有标记（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" = "如果%2$@没有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d";

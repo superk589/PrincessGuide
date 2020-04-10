@@ -350,6 +350,9 @@
 "Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
+"Cast a barrier on %@ to reduce damage over %@ with coefficient [%@](the greater the less reduced amount) for [%@]s." = "%1$@にバリアを展開する、一回の行動で受けたダメージが[%2$@]を超えた場合、ダメージが減衰される、減衰係数[%3$@]（この値が小さいほど減衰されやすい）、効果時間[%4$@]秒。";
+
+/* No comment provided by engineer. */
 "Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking damage." = "%1$@にシールドを展開する、ダメージを受けた時[%2$@]分のダメージを反射し、自分のHPを同等の値回復させる。";
 
 /* No comment provided by engineer. */
@@ -359,7 +362,7 @@
 "Cast a barrier on %@ to strike back [%@] damage and recover the same HP when taking physical damage." = "%1$@にシールドを展開する、物理ダメージを受けた時[%2$@]分のダメージを反射し、自分のHPを同等の値回復させる。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to strike back [%@] damage when taking damage." = "%1$@にシールドを展開する、ダメージを受けた時[%2$@]分のダメージを反射し、自分のHPを同等の値回復させる。";
+"Cast a barrier on %@ to strike back [%@] damage when taking damage." = "%1$@にシールドを展開する、ダメージを受けた時[%2$@]分のダメージを反射する。";
 
 /* No comment provided by engineer. */
 "Cast a barrier on %@ to strike back [%@] damage when taking magical damage." = "%1$@にシールドを展開する、魔法ダメージを受けた時[%2$@]分のダメージを反射する。";
@@ -1001,7 +1004,7 @@
 "Minion: %d" = "ミニオン：%d";
 
 /* No comment provided by engineer. */
-"Minion: %d(Unit: %d)" = "";
+"Minion: %d(Unit: %d)" = "召喚物：%1$d（ユニット：%2$d）";
 
 /* No comment provided by engineer. */
 "Misc" = "その他";
@@ -1634,6 +1637,9 @@
 "Tower" = "ルナの塔";
 
 /* No comment provided by engineer. */
+"Trigger: %d%% on all targets break." = "トリガー：すべての部位がBreakされた時[%1$d%%]の確率で発動。";
+
+/* No comment provided by engineer. */
 "Trigger: %d%% on break and last for %@s." = "トリガー：Breakの時[%1$d%%]の確率で発動、効果時間[%2$@]秒。";
 
 /* No comment provided by engineer. */
@@ -1733,10 +1739,16 @@
 "use %d if %@ is alone" = "%2$@が独りの場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
+"use %d if %@ is in state of ID: %d" = "%2$@がマーク[ID：%3$d]を持っているの場合、[アクション%1$d]を使う";
+
+/* No comment provided by engineer. */
 "use %d if %@ is in state of ID: %d with stacks greater than or equal to %d" = "%2$@が持っているマーク[ID：%3$d]のスタック数が%4$d以上の場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
 "use %d if %@ is not alone" = "%2$@が独りでない場合、[アクション%1$d]を使う";
+
+/* No comment provided by engineer. */
+"use %d if %@ is not in state of ID: %d" = "%2$@がマーク[ID：%3$d]を持っていないの場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
 "use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" = "%2$@が持っているマーク[ID：%3$d]のスタック数が%4$d未満の場合、[アクション%1$d]を使う";

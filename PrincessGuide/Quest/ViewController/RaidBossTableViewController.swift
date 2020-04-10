@@ -64,7 +64,7 @@ class RaidBossTableViewController: UITableViewController, DataChecking {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuestEnemyTableViewCell.description(), for: indexPath) as! QuestEnemyTableViewCell
         let enemy = enemies[indexPath.row]
         let unit = enemy.unit
-        cell.configure(for: [enemy], title: unit.unitName)
+        cell.configure(for: [enemy] + enemy.parts, title: unit.unitName)
         cell.delegate = self
         return cell
     }
