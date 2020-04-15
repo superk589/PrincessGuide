@@ -947,6 +947,9 @@
 "Make %@ to be invulnerable to physical damage for [%@]s." = "%1$@に物理攻撃無効状態、効果時間[%2$@]秒。";
 
 /* No comment provided by engineer. */
+"Make %@ when deal critical damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@がクリティカルダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
+
+/* No comment provided by engineer. */
 "Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@がダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
 
 /* No comment provided by engineer. */

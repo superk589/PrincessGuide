@@ -1399,6 +1399,11 @@
         <target>%1$@に物理攻撃無効状態、効果時間[%2$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ when deal critical damage, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
+        <source>Make %1$@ when deal critical damage, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
+        <target>%1$@がクリティカルダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
         <source>Make %1$@ when deal damage, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
         <target>%1$@がダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。</target>

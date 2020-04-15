@@ -962,6 +962,9 @@
 "Make %@ to be invulnerable to physical damage for [%@]s." = "使%@免疫物理伤害，持续 [%@] 秒。";
 
 /* No comment provided by engineer. */
+"Make %@ when deal critical damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "使%1$@获得每次造成暴击伤害时就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
 "Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "使%1$@获得每次造成伤害时就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */

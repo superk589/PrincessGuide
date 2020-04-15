@@ -15,6 +15,7 @@ class AttackSealAction: ActionParameter {
         case damage = 1
         case target
         case hit
+        case critical
     }
     
     enum Target: Int {
@@ -50,6 +51,15 @@ class AttackSealAction: ActionParameter {
             )
         case (.damage, .owner):
             let format = NSLocalizedString("Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s.", comment: "")
+            return String(
+                format: format,
+                targetParameter.buildTargetClause(),
+                actionValue1.roundedString(roundingRule: .down),
+                actionValue2.roundedString(roundingRule: .down),
+                buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+            )
+        case (.critical, .owner):
+            let format = NSLocalizedString("Make %@ when deal critical damage, gain one mark stack(max %@, ID: %@) for [%@]s.", comment: "")
             return String(
                 format: format,
                 targetParameter.buildTargetClause(),
