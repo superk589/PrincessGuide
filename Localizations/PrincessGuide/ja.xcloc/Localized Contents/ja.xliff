@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4" build-num="11E146"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4.1" build-num="11E503a"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4" build-num="11E146"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4.1" build-num="11E503a"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4" build-num="11E146"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4.1" build-num="11E503a"/>
     </header>
     <body>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -456,7 +457,7 @@
       </trans-unit>
       <trans-unit id="Box Cover" xml:space="preserve">
         <source>Box Cover</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Box Detail" xml:space="preserve">
@@ -721,6 +722,7 @@
       </trans-unit>
       <trans-unit id="Choose Chara" xml:space="preserve">
         <source>Choose Chara</source>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clan Battle" xml:space="preserve">
@@ -735,7 +737,7 @@
       </trans-unit>
       <trans-unit id="Clan Battle(Simple)" xml:space="preserve">
         <source>Clan Battle(Simple)</source>
-        <target></target>
+        <target/>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%." xml:space="preserve">
@@ -1149,6 +1151,10 @@
         <target>ガチャ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Gacha Type" xml:space="preserve">
+        <source>Gacha Type</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Game Event" xml:space="preserve">
         <source>Game Event</source>
         <target>ゲームイベント</target>
@@ -1292,6 +1298,10 @@
       <trans-unit id="Life Steal" xml:space="preserve">
         <source>Life Steal</source>
         <target>HP吸収</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Limited Gacha" xml:space="preserve">
+        <source>Limited Gacha</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Loop end" xml:space="preserve">
@@ -1657,6 +1667,10 @@
       <trans-unit id="Normal" xml:space="preserve">
         <source>Normal</source>
         <target>NORMAL</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Normal Gacha" xml:space="preserve">
+        <source>Normal Gacha</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Normal and Hard" xml:space="preserve">
@@ -2037,6 +2051,16 @@
       <trans-unit id="Side Story" xml:space="preserve">
         <source>Side Story</source>
         <target>サイドストーリー</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Side Story Hard" xml:space="preserve">
+        <source>Side Story Hard</source>
+        <target>サイドストーリーハード</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Side Story Normal" xml:space="preserve">
+        <source>Side Story Normal</source>
+        <target>サイドストーリーノーマル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Silence" xml:space="preserve">

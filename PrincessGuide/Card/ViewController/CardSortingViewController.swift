@@ -28,6 +28,7 @@ class CardSortingViewController: FormViewController {
             case race
             case cv
             case rarity6
+            case gachaType
             case none
             
             var description: String {
@@ -46,6 +47,8 @@ class CardSortingViewController: FormViewController {
                     return NSLocalizedString("CV", comment: "")
                 case .rarity6:
                     return NSLocalizedString("Rarity 6", comment: "")
+                case .gachaType:
+                    return NSLocalizedString("Gacha Type", comment: "")
                 default:
                     return NSLocalizedString("None", comment: "")
                 }

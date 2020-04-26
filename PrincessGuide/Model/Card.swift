@@ -94,6 +94,7 @@ class Card: Codable {
         let unionBurstEvolution: Int
         let mainSkillEvolution1: Int
         let mainSkillEvolution2: Int
+        let isLimited: Int
         
         var rawName: String {
             if let substring = unitName.split(separator: "（").first {

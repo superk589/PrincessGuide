@@ -791,6 +791,9 @@
 "Gacha" = "卡池";
 
 /* No comment provided by engineer. */
+"Gacha Type" = "卡池类型";
+
+/* No comment provided by engineer. */
 "Game Event" = "游戏事件";
 
 /* No comment provided by engineer. */
@@ -891,6 +894,9 @@
 
 /* No comment provided by engineer. */
 "Life Steal" = "HP 吸收";
+
+/* No comment provided by engineer. */
+"Limited Gacha" = "限定角色";
 
 /* No comment provided by engineer. */
 "Loop end" = "循环结束";
@@ -1128,6 +1134,9 @@
 
 /* No comment provided by engineer. */
 "Normal and Hard" = "N 难度和 H 难度";
+
+/* No comment provided by engineer. */
+"Normal Gacha" = "常驻角色";
 
 /* No comment provided by engineer. */
 "normal type" = "普通类型";
@@ -1410,6 +1419,12 @@
 
 /* No comment provided by engineer. */
 "Side Story" = "支线";
+
+/* No comment provided by engineer. */
+"Side Story Hard" = "支线 H 难度";
+
+/* No comment provided by engineer. */
+"Side Story Normal" = "支线 N 难度";
 
 /* No comment provided by engineer. */
 "Silence" = "沉默";

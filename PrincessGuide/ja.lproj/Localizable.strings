@@ -458,6 +458,9 @@
 "Checking" = "更新確認中";
 
 /* No comment provided by engineer. */
+"Choose Chara" = "";
+
+/* No comment provided by engineer. */
 "clan battle" = "クランバトル";
 
 /* No comment provided by engineer. */
@@ -1392,6 +1395,12 @@
 
 /* No comment provided by engineer. */
 "Side Story" = "サイドストーリー";
+
+/* No comment provided by engineer. */
+"Side Story Hard" = "サイドストーリーハード";
+
+/* No comment provided by engineer. */
+"Side Story Normal" = "サイドストーリーノーマル";
 
 /* No comment provided by engineer. */
 "Silence" = "沈黙";

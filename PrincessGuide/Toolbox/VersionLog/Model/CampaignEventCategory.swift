@@ -56,6 +56,8 @@ enum CampaignEventCategory: Int {
     case masterCoinEventHard
     case masterCoinRevivalEventNormal
     case masterCoinRevivalEventHard
+    case masterCoinSideStoryNormal
+    case masterCoinSideStoryHard
     
     case halfStaminaEventNormal = 111
     case halfStaminaEventHard
@@ -91,6 +93,21 @@ enum CampaignEventCategory: Int {
     
     case expRevivalEventNormal = 251
     case expRevivalEventHard
+    
+    case halfStaminaSideStoryNormal = 311
+    case halfStaminaSideStoryHard
+    
+    case dropRareSideStoryNormal = 321
+    case dropRareSideStoryHard
+    
+    case dropAmountSideStoryNormal = 331
+    case dropAmountSideStoryHard
+    
+    case manaSideStoryNormal = 341
+    case manaSideStoryHard
+    
+    case expSideStoryNormal = 351
+    case expSideStoryHard
 }
 
 extension CampaignEventCategory {
@@ -117,7 +134,11 @@ extension CampaignEventCategory {
     }
     
     var bonusType: BonusType {
-        return BonusType(rawValue: rawValue / 10 % 10) ?? .unknown
+        if 90..<111 ~= rawValue {
+            return .masterCoin
+        } else {
+            return BonusType(rawValue: rawValue / 10 % 10) ?? .unknown
+        }
     }
 }
 
@@ -138,6 +159,9 @@ extension CampaignEventCategory {
         case eventHard
         case revivalEventNormal
         case revivalEventHard
+        
+        case sideStoryNormal
+        case sideStoryHard
         
         var description: String {
             switch self {
@@ -167,6 +191,10 @@ extension CampaignEventCategory {
                 return NSLocalizedString("Revival Event Hard", comment: "")
             case .revivalEventNormal:
                 return NSLocalizedString("Revival Event Normal", comment: "")
+            case .sideStoryNormal:
+                return NSLocalizedString("Side Story Normal", comment: "")
+            case .sideStoryHard:
+                return NSLocalizedString("Side Story Hard", comment: "")
             }
         }
     }
@@ -200,6 +228,13 @@ extension CampaignEventCategory {
              .masterCoinRevivalEventNormal
             :
             return .revivalEventNormal
+        case .expSideStoryNormal,
+             .manaSideStoryNormal,
+             .dropRareSideStoryNormal,
+             .dropAmountSideStoryNormal,
+             .masterCoinSideStoryNormal
+            :
+            return .sideStoryNormal
         case .manaHard,
              .dropRareHard,
              .masterCoinHard,
@@ -221,6 +256,13 @@ extension CampaignEventCategory {
              .masterCoinRevivalEventHard
             :
             return .revivalEventHard
+        case .expSideStoryHard,
+             .manaSideStoryHard,
+             .dropRareSideStoryHard,
+             .dropAmountSideStoryHard,
+             .masterCoinSideStoryHard
+            :
+            return .sideStoryHard
         case .dropAmountShrine,
              .masterCoinShrine,
              .halfStaminaShrine
