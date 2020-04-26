@@ -167,6 +167,8 @@ class CardSortingViewController: FormViewController {
         
         var hasUniqueEquipmentFilter: Card.HasUniqueEquipmentFilter = .all
         
+        var sourceFilter: Card.SourceFilter = .all
+        
         func save() {
             let encoder = JSONEncoder()
             encoder.keyEncodingStrategy = .convertToSnakeCase
@@ -337,6 +339,20 @@ class CardSortingViewController: FormViewController {
                 }
                 $0.options = Card.HasUniqueEquipmentFilter.allCases.map { $0.rawValue }
                 $0.value = Setting.default.hasUniqueEquipmentFilter.rawValue
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+            
+            <<< SegmentedRow<String>("source_filter"){
+                $0.title = NSLocalizedString("Gacha Type", comment: "")
+                $0.displayValueFor = { (rowValue: String?) in
+                    if let rowValue = rowValue {
+                        return Card.SourceFilter(rawValue: rowValue)?.description ?? nil
+                    } else {
+                        return nil
+                    }
+                }
+                $0.options = Card.SourceFilter.allCases.map { $0.rawValue }
+                $0.value = Setting.default.sourceFilter.rawValue
                 }.cellSetup(cellSetup(cell:row:))
                 .cellUpdate(cellUpdate(cell:row:))
         

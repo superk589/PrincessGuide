@@ -417,6 +417,7 @@ extension Array where Element == Card {
             .filtered(by: settings.attackTypeFilter)
             .filtered(by: settings.hasRarity6Filter)
             .filtered(by: settings.hasUniqueEquipmentFilter)
+            .filtered(by: settings.sourceFilter)
     }
 }
 

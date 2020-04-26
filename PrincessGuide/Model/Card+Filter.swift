@@ -95,4 +95,25 @@ extension Card {
             }
         }
     }
+    
+    enum SourceFilter: String, Codable, CustomStringConvertible, CaseIterable, FilterType {
+        case all
+        case normal
+        case limited
+        
+        var description: String {
+            switch self {
+            case .all: return NSLocalizedString("All", comment: "")
+            case .normal: return NSLocalizedString("Normal Gacha", comment: "")
+            case .limited: return NSLocalizedString("Limited Gacha", comment: "")
+            }
+        }
+        func filter<S>(_ s: S) -> [Card] where S: Sequence, S.Element == Card {
+            switch self {
+            case .all: return Array(s)
+            case .normal: return s.filter { $0.base.isLimited == 0 }
+            case .limited: return s.filter { $0.base.isLimited == 1 }
+            }
+        }
+    }
 }
