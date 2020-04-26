@@ -1,7 +1,7 @@
 //
 // AcknowListViewController.swift
 //
-// Copyright (c) 2015-2019 Vincent Tourraine (http://www.vtourraine.net)
+// Copyright (c) 2015-2020 Vincent Tourraine (https://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -120,10 +120,6 @@ open class AcknowListViewController: UITableViewController {
         else {
             commonInit(acknowledgementsPlistPaths: [])
         }
-    }
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
     func commonInit(acknowledgementsPlistPaths: [String]) {
@@ -315,34 +311,36 @@ open class AcknowListViewController: UITableViewController {
         return 20
     }
 
+    func headerFooterLabel(frame: CGRect, font: UIFont, text: String?) -> UILabel {
+        let label = UILabel(frame: frame)
+        label.text = text
+        label.font = font
+        if #available(iOS 13.0, tvOS 13.0, *) {
+            label.textColor = .secondaryLabel
+        }
+        else {
+            label.textColor = .gray
+        }
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin]
+
+        if #available(iOS 10.0, tvOS 10.0, *) {
+            label.adjustsFontForContentSizeCategory = true
+        }
+
+        return label
+    }
+
     func configureHeaderView() {
         let font = UIFont.preferredFont(forTextStyle: .footnote)
         let labelWidth = view.frame.width - 2 * AcknowListViewController.LabelMargin()
 
         if let headerText = self.headerText {
             let labelHeight = heightForLabel(text: headerText as NSString, width: labelWidth)
-            let labelFrame = CGRect(
-                x: AcknowListViewController.LabelMargin(),
-                y: AcknowListViewController.LabelMargin(),
-                width: labelWidth,
-                height: labelHeight)
-
-            let label = UILabel(frame: labelFrame)
-            label.text = headerText
-            label.font = font
-            label.textColor = UIColor.gray
-            label.backgroundColor = UIColor.clear
-            label.numberOfLines = 0
-            label.textAlignment = .center
-            label.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin]
-            if #available(iOS 10.0, tvOS 10.0, *) {
-                label.adjustsFontForContentSizeCategory = true
-            }
-
-            let headerFrame = CGRect(
-                x: 0, y: 0,
-                width: view.frame.width,
-                height: label.frame.height + 2 * AcknowListViewController.LabelMargin())
+            let labelFrame = CGRect(x: AcknowListViewController.LabelMargin(), y: AcknowListViewController.LabelMargin(), width: labelWidth, height: labelHeight)
+            let label = headerFooterLabel(frame: labelFrame, font: font, text: headerText)
+            let headerFrame = CGRect(x: 0, y: 0, width: view.frame.width, height: label.frame.height + 2 * AcknowListViewController.LabelMargin())
             let headerView = UIView(frame: headerFrame)
             headerView.addSubview(label)
             tableView.tableHeaderView = headerView
@@ -356,19 +354,7 @@ open class AcknowListViewController: UITableViewController {
         if let footerText = self.footerText {
             let labelHeight = heightForLabel(text: footerText as NSString, width: labelWidth)
             let labelFrame = CGRect(x: AcknowListViewController.LabelMargin(), y: 0, width: labelWidth, height: labelHeight);
-
-            let label = UILabel(frame: labelFrame)
-            label.text = footerText
-            label.font = font
-            label.textColor = UIColor.gray
-            label.backgroundColor = UIColor.clear
-            label.numberOfLines = 0
-            label.textAlignment = .center
-            label.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin]
-            label.isUserInteractionEnabled = true
-            if #available(iOS 10.0, tvOS 10.0, *) {
-                label.adjustsFontForContentSizeCategory = true
-            }
+            let label = headerFooterLabel(frame: labelFrame, font: font, text: footerText)
 
             let CocoaPodsURL = URL(string: AcknowLocalization.CocoaPodsURLString())
             if let CocoaPodsURL = CocoaPodsURL,
@@ -376,6 +362,7 @@ open class AcknowListViewController: UITableViewController {
                     if footerText.range(of: CocoaPodsURLHost) != nil {
                         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AcknowListViewController.openCocoaPodsWebsite(_:)))
                         label.addGestureRecognizer(tapGestureRecognizer)
+                        label.isUserInteractionEnabled = true
                     }
             }
 

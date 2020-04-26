@@ -202,7 +202,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImageView {
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
         return setImage(
-            with: resource.map { .network($0) },
+            with: resource?.convertToSource(),
             placeholder: placeholder,
             options: options,
             progressBlock: progressBlock,
@@ -403,8 +403,8 @@ extension KingfisherWrapper where Base: KFCrossPlatformImageView {
 }
 
 
-@objc extension KFCrossPlatformImageView {
-    func shouldPreloadAllAnimation() -> Bool { return true }
+extension KFCrossPlatformImageView {
+    @objc func shouldPreloadAllAnimation() -> Bool { return true }
 }
 
 extension KingfisherWrapper where Base: KFCrossPlatformImageView {

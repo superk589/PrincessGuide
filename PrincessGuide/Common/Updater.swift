@@ -36,7 +36,7 @@ class Updater {
     
     func checkTruthVersion(completion: @escaping (_ version: String?, _ hash: String?, _ error: Error?) -> Void) {
         isUpdating = true
-        Alamofire.request(URL.check).validate(statusCode: 200..<300).responseData { [unowned self] (response) in
+        AF.request(URL.check).validate(statusCode: 200..<300).responseData { [unowned self] (response) in
             switch response.result {
             case .failure(let error):
                 print(error)
@@ -53,7 +53,7 @@ class Updater {
     
     func getMaster(hash: String, progressHandler: @escaping Request.ProgressHandler, completion: @escaping (_ master: Data?, _ error: Error?) -> Void) {
         isUpdating = true
-        Alamofire.request(URL.master(hash)).downloadProgress(closure: progressHandler).validate(statusCode: 200..<300).responseData { [unowned self] (response) in
+        AF.request(URL.master(hash)).downloadProgress(closure: progressHandler).validate(statusCode: 200..<300).responseData { [unowned self] (response) in
             switch response.result {
             case .failure(let error):
                 print(error)
@@ -78,7 +78,7 @@ class Updater {
     
     func getNotice(completion: @escaping (_ noticePayload: NoticePayload?) -> Void) {
         URLCache.shared.removeAllCachedResponses()
-        Alamofire.request(URL.notice).validate(statusCode: 200..<300).responseData { (response) in
+        AF.request(URL.notice).validate(statusCode: 200..<300).responseData { (response) in
             switch response.result {
             case .failure(let error):
                 print(error)

@@ -68,7 +68,7 @@ class VLTableViewController: UITableViewController {
             parameters["filter"] = filter?.rawValue
         }
         
-        Alamofire.request(URL.versionLog, method: .get, parameters: parameters).responseData { [weak self] (response) in
+        AF.request(URL.versionLog, method: .get, parameters: parameters).responseData { [weak self] (response) in
             switch response.result {
             case .failure(let error):
                 print(error)

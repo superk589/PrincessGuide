@@ -1,7 +1,6 @@
 PODS:
-  - AcknowList (1.9.2)
-  - Alamofire (4.9.1)
-  - AutoInsetter (1.8.0)
+  - AcknowList (1.9.4)
+  - Alamofire (5.1.0)
   - BrotliKit (1.0.2)
   - Cache (5.2.0)
   - DHSmartScreenshot (1.3.1)
@@ -12,40 +11,39 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - ImageViewer (5.0.0)
-  - Kingfisher (5.12.0):
-    - Kingfisher/Core (= 5.12.0)
-  - Kingfisher/Core (5.12.0)
+  - Kingfisher (5.13.4):
+    - Kingfisher/Core (= 5.13.4)
+  - Kingfisher/Core (5.13.4)
   - KingfisherWebP (0.7.0):
     - Kingfisher (~> 5.8)
     - libwebp (>= 0.5.0)
-  - libwebp (1.0.3):
-    - libwebp/demux (= 1.0.3)
-    - libwebp/mux (= 1.0.3)
-    - libwebp/webp (= 1.0.3)
-  - libwebp/demux (1.0.3):
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
     - libwebp/webp
-  - libwebp/mux (1.0.3):
+  - libwebp/mux (1.1.0):
     - libwebp/demux
-  - libwebp/webp (1.0.3)
+  - libwebp/webp (1.1.0)
   - lz4 (128)
-  - MJRefresh (3.3.1)
+  - MJRefresh (3.4.1)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
-  - Pageboy (3.5.0)
-  - R.swift (5.1.0):
-    - R.swift.Library (~> 5.1.0)
-  - R.swift.Library (5.1.0)
+  - Pageboy (3.5.1)
+  - R.swift (5.2.0):
+    - R.swift.Library (~> 5.2.0)
+  - R.swift.Library (5.2.0)
   - ReachabilitySwift (5.0.0)
-  - Reusable (4.1.0):
-    - Reusable/Storyboard (= 4.1.0)
-    - Reusable/View (= 4.1.0)
-  - Reusable/Storyboard (4.1.0)
-  - Reusable/View (4.1.0)
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
   - SnapKit (5.0.1)
   - SwiftyJSON (5.0.0)
-  - Tabman (2.6.3):
-    - AutoInsetter (~> 1.8.0)
-    - Pageboy (~> 3.5.0)
+  - Tabman (2.8.2):
+    - Pageboy (~> 3.5.1)
   - Timepiece (1.3.1)
   - TTGTagCollectionView (1.11.1)
 
@@ -74,10 +72,9 @@ DEPENDENCIES:
   - TTGTagCollectionView
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - AcknowList
     - Alamofire
-    - AutoInsetter
     - BrotliKit
     - DHSmartScreenshot
     - DynamicColor
@@ -117,9 +114,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/superk589/ImageViewer.git
 
 SPEC CHECKSUMS:
-  AcknowList: 164431f4c3da64b0c867f5fcda24558e6283cbcf
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AutoInsetter: 0b90ca74e36561c340129045a3722c51a0b15c58
+  AcknowList: a236060b8c33141d7756814fd21d5dab477fc193
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   BrotliKit: 7eb3640b2c206cd4410208696c27ef83e95f43d5
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   DHSmartScreenshot: ee749048bd7126c4826748f98df3a4adc6ad6c78
@@ -128,23 +124,23 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
-  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
+  Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   KingfisherWebP: 50d8389a48a9004c36e655470ccbff96de1ced9c
-  libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
-  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
-  Pageboy: 3794c578aae5fcce06e90b3ed4a0ad6b807d75bb
-  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
-  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  Pageboy: 288353d4cc848c24deec2f7542f325089247c136
+  R.swift: f58c441eb72a18702be4d13825c32f79c06fd6a0
+  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  Tabman: 63eae331ae7a9388ae389b1808f1939269fcdece
+  Tabman: 05f32e419b07411b5ec74516212ffbff2a9dfc0e
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: f3887a635c38abcf2d86db86477b82b8659d3ff2
+PODFILE CHECKSUM: 1363ee8193a6ef6f6e8af726090926569a1886ca
 
 COCOAPODS: 1.9.1

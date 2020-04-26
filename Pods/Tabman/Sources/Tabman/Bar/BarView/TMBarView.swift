@@ -200,10 +200,13 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
     open override func layoutSubviews() {
         super.layoutSubviews()
         
-        UIView.performWithoutAnimation {
-            reloadIndicatorPosition()
-            updateEdgeFades(for: scrollView)
-        }
+        updateIndicatorForCurrentLayout()
+    }
+    
+    open override func didMoveToWindow() {
+        super.didMoveToWindow()
+        
+        updateIndicatorForCurrentLayout()
     }
     
     private func layout(in view: UIView) {
@@ -305,9 +308,19 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
             }
             leftAlignmentInset = width - buttonWidth
             rightAlignmentInset = 0.0
+        case .centerDistributed:
+            var width = bounds.size.width / 2
+            if #available(iOS 11, *) {
+                width -= safeAreaInsets.left
+            }
+            leftAlignmentInset = max(0.0, width - layoutGrid.frame.width / 2)
+            rightAlignmentInset = 0.0
         }
         
-        let sanitizedContentInset = UIEdgeInsets(top: 0.0, left: leftAlignmentInset + contentInset.left, bottom: 0.0, right: rightAlignmentInset + contentInset.right)
+        let sanitizedContentInset = UIEdgeInsets(top: 0.0,
+                                                 left: leftAlignmentInset + contentInset.left,
+                                                 bottom: 0.0,
+                                                 right: rightAlignmentInset + contentInset.right)
         scrollView.contentInset = sanitizedContentInset
         scrollView.contentOffset.x -= sanitizedContentInset.left
         
@@ -327,7 +340,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
             button.populate(for: item)
-            self.reloadIndicatorPosition()
+            self.updateIndicatorPosition()
         }, completion: nil)
     }
 
@@ -394,10 +407,14 @@ extension TMBarView: TMBar {
         }
         
         self.items = items
+        updateIndicatorForCurrentLayout()
+    }
+    
+    private func updateIndicatorForCurrentLayout() {
         UIView.performWithoutAnimation {
             layoutIfNeeded()
             updateScrollViewContentInset()
-            reloadIndicatorPosition()
+            updateIndicatorPosition()
         }
     }
     
@@ -509,7 +526,7 @@ extension TMBarView {
         return container
     }
     
-    private func reloadIndicatorPosition() {
+    private func updateIndicatorPosition() {
         guard let indicatedPosition = self.indicatedPosition else {
             return
         }
@@ -587,7 +604,7 @@ private extension TMBarView {
             rootContentStack.insertArrangedSubview(view, at: rootContentStack.arrangedSubviews.count)
         }
         
-        reloadIndicatorPosition()
+        updateIndicatorPosition()
     }
 }
 

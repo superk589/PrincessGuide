@@ -62,7 +62,7 @@ extension Store {
     }
     
     private func requestVoiceData(from url: URL, completion: @escaping (Data?) -> Void) -> DataRequest {
-        return Alamofire.request(url).validate().responseData { (response) in
+        return AF.request(url).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
                 completion(data)

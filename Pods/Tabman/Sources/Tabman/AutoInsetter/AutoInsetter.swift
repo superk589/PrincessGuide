@@ -9,7 +9,7 @@
 import UIKit
 
 /// Engine that provides Auto Insetting to UIViewControllers.
-public final class AutoInsetter {
+internal final class AutoInsetter {
     
     // MARK: Properties
     
@@ -33,14 +33,14 @@ public final class AutoInsetter {
     
     // MARK: Init
     
-    public init() {}
+    init() {}
     
     // MARK: State
     
     /// Enable Auto Insetting for a view controller.
     ///
     /// - Parameter viewController: View controller that will provide insetting.
-    public func enable(for viewController: UIViewController?) {
+    func enable(for viewController: UIViewController?) {
         _enable(for: viewController)
     }
     
@@ -56,8 +56,8 @@ public final class AutoInsetter {
     /// - Parameters:
     ///   - viewController: view controller to inset.
     ///   - requiredInsetSpec: The required inset specification.
-    public func inset(_ viewController: UIViewController?,
-                      requiredInsetSpec: AutoInsetSpec) {
+    func inset(_ viewController: UIViewController?,
+               requiredInsetSpec: AutoInsetSpec) {
         guard let viewController = viewController, _isEnabled else {
             return
         }
@@ -66,24 +66,25 @@ public final class AutoInsetter {
             if requiredInsetSpec.additionalRequiredInsets != viewController.additionalSafeAreaInsets {
                 viewController.additionalSafeAreaInsets = requiredInsetSpec.additionalRequiredInsets
             }
-        }
-        
-        guard viewController.shouldEvaluateEmbeddedScrollViews() else {
-            return
-        }
-        viewController.forEachEmbeddedScrollView { (scrollView) in
-            let calculator = self.makeInsetCalculator(for: scrollView, viewController: viewController)
-            let executor = InsetExecutor(view: scrollView, calculator: calculator, spec: requiredInsetSpec)
-            
-            executor.execute(store: insetStore)
-            
-            viewController.view.setNeedsLayout()
+        } else { // manual insetting on older versions.
+            guard viewController.shouldEvaluateEmbeddedScrollViews() else {
+                return
+            }
+            viewController.forEachEmbeddedScrollView { (scrollView) in
+                let calculator = self.makeInsetCalculator(for: scrollView, viewController: viewController)
+                let executor = InsetExecutor(view: scrollView, calculator: calculator, spec: requiredInsetSpec)
+    
+                executor.execute(store: insetStore)
+    
+                viewController.view.setNeedsLayout()
+            }
         }
     }
 }
 
 extension AutoInsetter {
     
+    @available(iOS, deprecated: 11)
     private func makeInsetCalculator(for scrollView: UIScrollView, viewController: UIViewController) -> InsetCalculator {
         
         if let tableView = scrollView as? UITableView {

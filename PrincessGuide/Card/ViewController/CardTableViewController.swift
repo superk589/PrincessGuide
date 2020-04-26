@@ -405,7 +405,7 @@ extension Array where Element == Card {
                 $0[$1.base.isLimited == 1 ? NSLocalizedString("Limited Gacha", comment: "") : NSLocalizedString("Normal Gacha", comment: ""), default: [Card]()].append($1)
             }
             .map { Section(title: $0, cards: $1) }
-            .sorted { ($0.cards.first?.base.isLimited ?? 0) > ($1.cards.first?.base.isLimited ?? 0)}
+            .sorted { ($0.cards.first?.base.isLimited ?? 0) > ($1.cards.first?.base.isLimited ?? 0) }
         }
         
         return sections

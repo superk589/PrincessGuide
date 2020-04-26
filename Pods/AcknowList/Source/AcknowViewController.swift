@@ -1,7 +1,7 @@
 //
 // AcknowViewController.swift
 //
-// Copyright (c) 2015-2019 Vincent Tourraine (http://www.vtourraine.net)
+// Copyright (c) 2015-2020 Vincent Tourraine (https://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -74,8 +74,9 @@ open class AcknowViewController: UIViewController {
         #if os(iOS)
             textView.isEditable = false
             textView.dataDetectorTypes = .link
-            
-            view.backgroundColor = UIColor.white
+        #elseif os(tvOS)
+            textView.isUserInteractionEnabled = true
+            textView.panGestureRecognizer.allowedTouchTypes = [NSNumber(value: UITouch.TouchType.indirect.rawValue)]
         #endif
         textView.textContainerInset = UIEdgeInsets.init(top: TopBottomDefaultMargin, left: LeftRightDefaultMargin, bottom: TopBottomDefaultMargin, right: LeftRightDefaultMargin)
         view.addSubview(textView)
