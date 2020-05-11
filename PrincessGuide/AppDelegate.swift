@@ -23,8 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // prepare for preload master data
         Preload.default.syncLoad()
         
-        KingfisherManager.shared.defaultOptions = [.processor(WebPProcessor.default), .cacheSerializer(WebPSerializer.default)]
-
+        KingfisherManager.shared.defaultOptions = [
+            .processor(WebPProcessor.default),
+            .cacheSerializer(WebPSerializer.default)
+        ]
+        
         // set Kingfisher cache never expiring
         ImageCache.default.diskStorage.config.expiration = .never
         

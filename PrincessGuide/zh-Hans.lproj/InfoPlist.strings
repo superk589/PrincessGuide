@@ -2,7 +2,7 @@
 "CFBundleDisplayName" = "Hatsune's Notes";
 
 /* Bundle name */
-"CFBundleName" = "$(PRODUCT_NAME)";
+"CFBundleName" = "PrincessGuide";
 
 /* Privacy - Calendars Usage Description */
 "NSCalendarsUsageDescription" = "为了保存这些事件，我们需要日历的访问权限。";
