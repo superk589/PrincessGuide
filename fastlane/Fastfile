@@ -30,6 +30,6 @@ platform :ios do
     upload_to_testflight
   end
   lane :clean do
-    clean_testflight_testers(days_of_inactivity: 120)
+    clean_testflight_testers(days_of_inactivity: 95)
   end
 end
