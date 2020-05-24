@@ -13,9 +13,9 @@ import BrotliKit
 
 extension URL {
     static let versionLog = URL(string: "https://redive.estertion.win/ver_log_redive/")!
-    static let check = URL(string: "https://redive.estertion.win/last_version_jp.json")!
+    static let check = URL(string: "https://redive.estertion.win/last_version_cn.json")!
     static func master(_ hash: String) -> URL {
-        return URL(string: "https://redive.estertion.win/db/redive_jp.db.br")!
+        return URL(string: "https://redive.estertion.win/db/redive_cn.db.br")!
     }
     static let notice = URL(string: "https://estertion.github.io/hatsunes_notes_notice/hn_notice.json")!
 }
