@@ -20,7 +20,7 @@ class TargetParameter {
     weak var dependAction: Skill.Action?
     
     init(targetAssignment: Int, targetNth: Int, targetType: Int, targetRange: Int,
-         direction: Int, targetCount: Int ,dependAction: Skill.Action?) {
+         direction: Int, targetCount: Int, parent: Skill.Action?) {
         self.targetAssignment = TargetAssignment(rawValue: targetAssignment) ?? .none
         self.targetNth = TargetNth(rawValue: targetNth) ?? .other
         self.rawTargetType = targetType
@@ -28,7 +28,7 @@ class TargetParameter {
         self.targetRange = TargetRange(range: targetRange)
         self.direction = DirectionType(rawValue: direction) ?? .all
         self.targetCount = TargetCount(rawValue: targetCount) ?? .all
-        self.dependAction = dependAction
+        self.dependAction = parent
     }
     
     var hasRelationPhrase: Bool {

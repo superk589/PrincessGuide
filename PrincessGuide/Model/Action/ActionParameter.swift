@@ -141,6 +141,8 @@ class ActionParameter {
             return PassiveAction.self
         case 91:
             return PassiveInermittentAction.self
+        case 92:
+            return ChangeEnergyRatioAction.self
         default:
             return ActionParameter.self
         }
@@ -189,9 +191,12 @@ class ActionParameter {
         self.actionDetail3
     ]
     
+    let parent: Skill.Action?
+    let children: [Skill.Action]
+    
     required init(id: Int, targetAssignment: Int, targetNth: Int, actionType: Int, targetType: Int, targetRange: Int,
-                  direction: Int, targetCount: Int, actionValue1: Double, actionValue2: Double, actionValue3: Double, actionValue4: Double, actionValue5: Double, actionValue6: Double, actionValue7: Double, actionDetail1: Int, actionDetail2: Int, actionDetail3: Int, dependAction: Skill.Action?) {
-        self.targetParameter = TargetParameter(targetAssignment: targetAssignment, targetNth: targetNth, targetType: targetType, targetRange: targetRange, direction: direction, targetCount: targetCount, dependAction: dependAction)
+                  direction: Int, targetCount: Int, actionValue1: Double, actionValue2: Double, actionValue3: Double, actionValue4: Double, actionValue5: Double, actionValue6: Double, actionValue7: Double, actionDetail1: Int, actionDetail2: Int, actionDetail3: Int, parent: Skill.Action?, children: [Skill.Action]) {
+        self.targetParameter = TargetParameter(targetAssignment: targetAssignment, targetNth: targetNth, targetType: targetType, targetRange: targetRange, direction: direction, targetCount: targetCount, parent: parent)
         self.id = id
         self.rawActionType = actionType
         self.actionType = ActionType(rawValue: actionType) ?? .unknown
@@ -205,6 +210,8 @@ class ActionParameter {
         self.actionDetail1 = actionDetail1
         self.actionDetail2 = actionDetail2
         self.actionDetail3 = actionDetail3
+        self.parent = parent
+        self.children = children
     }
     
     func localizedDetail(of level: Int,
@@ -550,4 +557,5 @@ enum ActionType: Int {
     case logBarrier = 73
     case ex = 90
     case exPlus
+    case energyRatio
 }

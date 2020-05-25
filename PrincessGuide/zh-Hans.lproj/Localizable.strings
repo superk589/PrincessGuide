@@ -1091,6 +1091,9 @@
 "Move to %@ in front of %@ with velocity %@/s." = "移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。";
 
 /* No comment provided by engineer. */
+"Multiple the energy gained by %@ from effects [%@] with [%@]." = "使%1$@从效果 [%2$@] 中获取的 TP 乘以系数 [%3$@]。";
+
+/* No comment provided by engineer. */
 "name" = "名称";
 
 /* No comment provided by engineer. */

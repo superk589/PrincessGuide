@@ -32,4 +32,10 @@ platform :ios do
   lane :clean do
     clean_testflight_testers(days_of_inactivity: 95)
   end
+  lane :export_ipa do 
+    build_app(
+      workspace: "PrincessGuide.xcworkspace",
+      scheme: "PrincessGuide"
+    )
+  end
 end

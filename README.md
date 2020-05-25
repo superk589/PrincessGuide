@@ -4,8 +4,11 @@ An unofficial iOS app for **プリンセスコネクト！Re:Dive**.
 Looking for an Android app? Try this one [ShizuruNotes](https://github.com/MalitsPlus/ShizuruNotes)
 
 ## How to install
+### Install via TestFlight
 Open this link on your iPhone or iPad:  
 https://testflight.apple.com/join/e8Dc4f4U
+### Install via [AltStore](https://altstore.io)
+Download the newest ipa file from release.
 
 ## Why not release on App Store
 Cygames does not allow this app and it has been removed from App Store.  

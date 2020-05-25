@@ -793,9 +793,10 @@ class Master: FMDatabaseQueue {
                     }
                 }
                 
-                for action in actions.values {
+                for action in actions.values.sorted(by: { $0.parameter.id < $1.parameter.id }) {
                     if let id = dependActionIDs[action.base.actionId] {
-                        action.dependAction = actions[id]
+                        action.parent = actions[id]
+                        actions[id]?.children.append(action)
                     }
                 }
                 if let base = try? decoder.decode(Skill.Base.self, from: json.rawData()) {
