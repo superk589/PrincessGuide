@@ -35,7 +35,11 @@ platform :ios do
   lane :export_ipa do 
     build_app(
       workspace: "PrincessGuide.xcworkspace",
-      scheme: "PrincessGuide"
+      scheme: "PrincessGuide",
+      export_options: {
+          method: "development",
+          iCloudContainerEnvironment: "Production"
+      }
     )
   end
 end
