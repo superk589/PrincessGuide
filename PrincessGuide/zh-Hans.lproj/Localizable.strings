@@ -1484,6 +1484,9 @@
 "Still" = "剧情插图";
 
 /* No comment provided by engineer. */
+"Stop time on %@ for [%@]s." = "停止%1$@的时间，持续 [%2$@] 秒。";
+
+/* No comment provided by engineer. */
 "Story" = "剧情";
 
 /* No comment provided by engineer. */
@@ -1659,6 +1662,9 @@
 
 /* No comment provided by engineer. */
 "three" = "三个";
+
+/* No comment provided by engineer. */
+"Time Stop" = "时间停止";
 
 /* No comment provided by engineer. */
 "Time Zone" = "时区";

@@ -1454,6 +1454,9 @@
 "Still" = "絆ストーリー";
 
 /* No comment provided by engineer. */
+"Stop time on %@ for [%@]s." = "";
+
+/* No comment provided by engineer. */
 "Story" = "ストーリー";
 
 /* No comment provided by engineer. */
@@ -1629,6 +1632,9 @@
 
 /* No comment provided by engineer. */
 "three" = "３体";
+
+/* No comment provided by engineer. */
+"Time Stop" = "時間停止";
 
 /* No comment provided by engineer. */
 "Time Zone" = "タイムゾーン";

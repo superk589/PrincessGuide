@@ -17,7 +17,7 @@ class IfForAllAction: ActionParameter {
         }
         
         switch actionDetail1 {
-        case 710:
+        case 710, 100:
             if let ifType = IfType(rawValue: actionDetail1) {
                 let format = NSLocalizedString("use %d to %@ if %@", comment: "")
                 return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(anyOfModifier: true), ifType.description)

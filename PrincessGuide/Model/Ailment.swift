@@ -78,6 +78,7 @@ enum ActionDetail: Int, CustomStringConvertible {
     case petrify
     case detain
     case faint
+    case theWorld
     case unknown
     
     var description: String {
@@ -102,6 +103,8 @@ enum ActionDetail: Int, CustomStringConvertible {
             return NSLocalizedString("Detain", comment: "")
         case .faint:
             return NSLocalizedString("Faint", comment: "")
+        case .theWorld:
+            return NSLocalizedString("Time Stop", comment: "")
         case .unknown:
             return NSLocalizedString("Unknown", comment: "")
         }

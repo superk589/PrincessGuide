@@ -2149,6 +2149,11 @@
         <target>剧情插图</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Stop time on %@ for [%@]s." xml:space="preserve">
+        <source>Stop time on %1$@ for [%2$@]s.</source>
+        <target>停止%1$@的时间，持续 [%2$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Story" xml:space="preserve">
         <source>Story</source>
         <target>剧情</target>
@@ -2267,6 +2272,11 @@
       <trans-unit id="Third-Party Licenses" xml:space="preserve">
         <source>Third-Party Licenses</source>
         <target>第三方许可</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Time Stop" xml:space="preserve">
+        <source>Time Stop</source>
+        <target>时间停止</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Time Zone" xml:space="preserve">

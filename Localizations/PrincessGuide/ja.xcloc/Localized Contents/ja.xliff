@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.5" build-num="11E608c"/>
@@ -457,7 +456,7 @@
       </trans-unit>
       <trans-unit id="Box Cover" xml:space="preserve">
         <source>Box Cover</source>
-        <target/>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Box Detail" xml:space="preserve">
@@ -722,7 +721,7 @@
       </trans-unit>
       <trans-unit id="Choose Chara" xml:space="preserve">
         <source>Choose Chara</source>
-        <target/>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clan Battle" xml:space="preserve">
@@ -737,7 +736,7 @@
       </trans-unit>
       <trans-unit id="Clan Battle(Simple)" xml:space="preserve">
         <source>Clan Battle(Simple)</source>
-        <target/>
+        <target></target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%." xml:space="preserve">
@@ -2141,6 +2140,11 @@
         <target>絆ストーリー</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Stop time on %@ for [%@]s." xml:space="preserve">
+        <source>Stop time on %1$@ for [%2$@]s.</source>
+        <target></target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Story" xml:space="preserve">
         <source>Story</source>
         <target>ストーリー</target>
@@ -2258,6 +2262,11 @@
       <trans-unit id="Third-Party Licenses" xml:space="preserve">
         <source>Third-Party Licenses</source>
         <target>Third-Party Licenses</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Time Stop" xml:space="preserve">
+        <source>Time Stop</source>
+        <target>時間停止</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Time Zone" xml:space="preserve">

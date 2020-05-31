@@ -9,7 +9,7 @@
 import Foundation
 
 enum IfType: Int, CustomStringConvertible {
-    case controllered = 100
+    case controlled = 100
     case blind = 200
     case convert = 300
     case decoy = 400
@@ -22,7 +22,7 @@ enum IfType: Int, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .controllered:
+        case .controlled:
             return NSLocalizedString("controlled", comment: "")
         case .blind:
             return NSLocalizedString("blinded", comment: "")

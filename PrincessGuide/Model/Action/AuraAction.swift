@@ -36,10 +36,10 @@ class AuraAction: ActionParameter {
         case magicalCritical
         case energyRecoverRate
         case lifeSteal
-        case moveSpeed
+        case moveSpeed = 10
         case physicalCriticalDamage
         case magicalCriticalDamage
-        case num
+        case accuracy
         case none
         
         var description: String {
@@ -65,8 +65,8 @@ class AuraAction: ActionParameter {
                 result = PropertyKey.lifeSteal.description
             case .moveSpeed:
                 result = NSLocalizedString("Move Speed", comment: "")
-            case .num:
-                result = ""
+            case .accuracy:
+                result = PropertyKey.accuracy.description
             case .none:
                 result = ""
             case .physicalCriticalDamage:
