@@ -290,7 +290,7 @@
 "both sides" = "両側";
 
 /* No comment provided by engineer. */
-"Box Cover" = "";
+"Box Cover" = "Box Cover";
 
 /* No comment provided by engineer. */
 "Box Detail" = "ボックスの詳細";
@@ -458,7 +458,7 @@
 "Checking" = "更新確認中";
 
 /* No comment provided by engineer. */
-"Choose Chara" = "";
+"Choose Chara" = "Choose Chara";
 
 /* No comment provided by engineer. */
 "clan battle" = "クランバトル";
@@ -470,7 +470,7 @@
 "Clan Battle %d-%d" = "クランバトル %1$d 年 %2$d 月";
 
 /* No comment provided by engineer. */
-"Clan Battle(Simple)" = "";
+"Clan Battle(Simple)" = "Clan Battle(Simple)";
 
 /* No comment provided by engineer. */
 "Clear all %@ on %@ with chance [%@]%%." = "[%3$@%%]の確率で%2$@の%1$@をすべて解除する。";
@@ -509,6 +509,9 @@
 "Confuse %@ with [%@]%% chance for [%@]s." = "[%2$@%%]の確率で%1$@を混乱状態にする、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
+"Control" = "Control";
+
+/* No comment provided by engineer. */
 "controlled" = "制御された";
 
 /* No comment provided by engineer. */
@@ -531,6 +534,9 @@
 
 /* No comment provided by engineer. */
 "Create Team" = "チームを作成";
+
+/* No comment provided by engineer. */
+"Current Language" = "Current Language";
 
 /* No comment provided by engineer. */
 "Curse" = "呪い";
@@ -647,6 +653,9 @@
 "Effective Physical HP" = "Effective Physical HP";
 
 /* No comment provided by engineer. */
+"Effective Physical HP(No Dodge)" = "Effective Physical HP(No Dodge)";
+
+/* No comment provided by engineer. */
 "Email" = "メール";
 
 /* No comment provided by engineer. */
@@ -657,6 +666,9 @@
 
 /* No comment provided by engineer. */
 "Enable Notifications" = "通知を有効にする";
+
+/* No comment provided by engineer. */
+"Enable Tag Based Description" = "Enable Tag Based Description";
 
 /* target modifier */
 "enemy" = "敵";
@@ -779,6 +791,9 @@
 "Gacha" = "ガチャ";
 
 /* No comment provided by engineer. */
+"Gacha Type" = "Gacha Type";
+
+/* No comment provided by engineer. */
 "Game Event" = "ゲームイベント";
 
 /* No comment provided by engineer. */
@@ -789,6 +804,9 @@
 
 /* No comment provided by engineer. */
 "Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving." = "Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.";
+
+/* No comment provided by engineer. */
+"Grid" = "Grid";
 
 /* No comment provided by engineer. */
 "Group by" = "Group by";
@@ -879,6 +897,12 @@
 
 /* No comment provided by engineer. */
 "Life Steal" = "HP吸収";
+
+/* No comment provided by engineer. */
+"Limited Gacha" = "Limited Gacha";
+
+/* No comment provided by engineer. */
+"List Style" = "List Style";
 
 /* No comment provided by engineer. */
 "Loop end" = "ループ終了";
@@ -1073,6 +1097,12 @@
 "Move to %@ in front of %@ with velocity %@/s." = "[%3$@]の速度で%2$@の前[%1$@]の位置まで移動する。";
 
 /* No comment provided by engineer. */
+"Multiple the energy gained by %@ from effects [%@] with [%@]." = "Multiple the energy gained by %1$@ from effects [%2$@] with [%3$@].";
+
+/* No comment provided by engineer. */
+"name" = "name";
+
+/* No comment provided by engineer. */
 "New %@ Event: %@" = "New %1$@ Event: %2$@";
 
 /* No comment provided by engineer. */
@@ -1113,6 +1143,9 @@
 
 /* No comment provided by engineer. */
 "Normal and Hard" = "ノーマルとハード";
+
+/* No comment provided by engineer. */
+"Normal Gacha" = "Normal Gacha";
 
 /* No comment provided by engineer. */
 "normal type" = "通常タイプ";
@@ -1439,6 +1472,9 @@
 "SP %d" = "SP %d";
 
 /* No comment provided by engineer. */
+"Special Effect" = "Special Effect";
+
+/* No comment provided by engineer. */
 "Star Rank" = "★の数";
 
 /* No comment provided by engineer. */
@@ -1454,7 +1490,7 @@
 "Still" = "絆ストーリー";
 
 /* No comment provided by engineer. */
-"Stop time on %@ for [%@]s." = "";
+"Stop time on %@ for [%@]s." = "Stop time on %1$@ for [%2$@]s.";
 
 /* No comment provided by engineer. */
 "Story" = "ストーリー";
@@ -1494,6 +1530,9 @@
 
 /* No comment provided by engineer. */
 "Swing Time" = "通常攻撃間隔";
+
+/* No comment provided by engineer. */
+"Table" = "Table";
 
 /* No comment provided by engineer. */
 "Tag" = "タグ";
@@ -1655,6 +1694,9 @@
 "Tower" = "ルナの塔";
 
 /* No comment provided by engineer. */
+"TP" = "TP";
+
+/* No comment provided by engineer. */
 "Trigger: %d%% on all targets break." = "トリガー：すべての部位がBreakされた時[%1$d%%]の確率で発動。";
 
 /* No comment provided by engineer. */
@@ -1728,6 +1770,9 @@
 
 /* No comment provided by engineer. */
 "Unknown effect %d to %@ with details [%@], values [%@]." = "%2$@に不明な効果[%1$d]、内容%3$@、変数%4$@。";
+
+/* No comment provided by engineer. */
+"unknown property" = "unknown property";
 
 /* No comment provided by engineer. */
 "unknown side" = "unknown side";

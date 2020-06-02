@@ -1179,6 +1179,11 @@
         <target>通常，您可能只想批量修改角色等级和技能等级。如果打开这个选项，所有字段都会保存到所选角色上。在保存之前，请确认您已经正确理解了这个选项的含义。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Grid" xml:space="preserve">
+        <source>Grid</source>
+        <target>一行多个</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Group by" xml:space="preserve">
         <source>Group by</source>
         <target>分组方式</target>
@@ -1307,6 +1312,11 @@
       <trans-unit id="Limited Gacha" xml:space="preserve">
         <source>Limited Gacha</source>
         <target>限定角色</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="List Style" xml:space="preserve">
+        <source>List Style</source>
+        <target>列表风格</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Loop end" xml:space="preserve">
@@ -2224,6 +2234,11 @@
         <target>TP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Table" xml:space="preserve">
+        <source>Table</source>
+        <target>一行一个</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Tag" xml:space="preserve">
         <source>Tag</source>
         <target>标签</target>
@@ -3126,7 +3141,7 @@
       </trans-unit>
       <trans-unit id="use %d if %@ is alone" xml:space="preserve">
         <source>use %1$d if %2$@ is alone</source>
-        <target>如果%2$@是单独的则使用 %1$d。</target>
+        <target>如果%2$@是单独的则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is in state of ID: %d" xml:space="preserve">
@@ -3141,7 +3156,7 @@
       </trans-unit>
       <trans-unit id="use %d if %@ is not alone" xml:space="preserve">
         <source>use %1$d if %2$@ is not alone</source>
-        <target>如果%2$@不是单独的则使用 %1$d。</target>
+        <target>如果%2$@不是单独的则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is not in state of ID: %d" xml:space="preserve">

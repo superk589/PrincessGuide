@@ -456,7 +456,7 @@
       </trans-unit>
       <trans-unit id="Box Cover" xml:space="preserve">
         <source>Box Cover</source>
-        <target></target>
+        <target>Box Cover</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Box Detail" xml:space="preserve">
@@ -721,7 +721,7 @@
       </trans-unit>
       <trans-unit id="Choose Chara" xml:space="preserve">
         <source>Choose Chara</source>
-        <target></target>
+        <target>Choose Chara</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clan Battle" xml:space="preserve">
@@ -736,7 +736,7 @@
       </trans-unit>
       <trans-unit id="Clan Battle(Simple)" xml:space="preserve">
         <source>Clan Battle(Simple)</source>
-        <target></target>
+        <target>Clan Battle(Simple)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%." xml:space="preserve">
@@ -801,6 +801,7 @@
       </trans-unit>
       <trans-unit id="Control" xml:space="preserve">
         <source>Control</source>
+        <target>Control</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Copy" xml:space="preserve">
@@ -830,6 +831,7 @@
       </trans-unit>
       <trans-unit id="Current Language" xml:space="preserve">
         <source>Current Language</source>
+        <target>Current Language</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Curse" xml:space="preserve">
@@ -994,6 +996,7 @@
       </trans-unit>
       <trans-unit id="Effective Physical HP(No Dodge)" xml:space="preserve">
         <source>Effective Physical HP(No Dodge)</source>
+        <target>Effective Physical HP(No Dodge)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Email" xml:space="preserve">
@@ -1018,6 +1021,7 @@
       </trans-unit>
       <trans-unit id="Enable Tag Based Description" xml:space="preserve">
         <source>Enable Tag Based Description</source>
+        <target>Enable Tag Based Description</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Energy Recovery Rate" xml:space="preserve">
@@ -1152,6 +1156,7 @@
       </trans-unit>
       <trans-unit id="Gacha Type" xml:space="preserve">
         <source>Gacha Type</source>
+        <target>Gacha Type</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Game Event" xml:space="preserve">
@@ -1172,6 +1177,11 @@
       <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving." xml:space="preserve">
         <source>Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</source>
         <target>Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Grid" xml:space="preserve">
+        <source>Grid</source>
+        <target>Grid</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Group by" xml:space="preserve">
@@ -1301,6 +1311,12 @@
       </trans-unit>
       <trans-unit id="Limited Gacha" xml:space="preserve">
         <source>Limited Gacha</source>
+        <target>Limited Gacha</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="List Style" xml:space="preserve">
+        <source>List Style</source>
+        <target>List Style</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Loop end" xml:space="preserve">
@@ -1605,6 +1621,7 @@
       </trans-unit>
       <trans-unit id="Multiple the energy gained by %@ from effects [%@] with [%@]." xml:space="preserve">
         <source>Multiple the energy gained by %1$@ from effects [%2$@] with [%3$@].</source>
+        <target>Multiple the energy gained by %1$@ from effects [%2$@] with [%3$@].</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="New %@ Event: %@" xml:space="preserve">
@@ -1674,6 +1691,7 @@
       </trans-unit>
       <trans-unit id="Normal Gacha" xml:space="preserve">
         <source>Normal Gacha</source>
+        <target>Normal Gacha</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Normal and Hard" xml:space="preserve">
@@ -2113,6 +2131,7 @@
       </trans-unit>
       <trans-unit id="Special Effect" xml:space="preserve">
         <source>Special Effect</source>
+        <target>Special Effect</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Star Rank" xml:space="preserve">
@@ -2142,7 +2161,7 @@
       </trans-unit>
       <trans-unit id="Stop time on %@ for [%@]s." xml:space="preserve">
         <source>Stop time on %1$@ for [%2$@]s.</source>
-        <target></target>
+        <target>Stop time on %1$@ for [%2$@]s.</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Story" xml:space="preserve">
@@ -2212,6 +2231,12 @@
       </trans-unit>
       <trans-unit id="TP" xml:space="preserve">
         <source>TP</source>
+        <target>TP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Table" xml:space="preserve">
+        <source>Table</source>
+        <target>Table</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Tag" xml:space="preserve">
@@ -2776,6 +2801,7 @@
       </trans-unit>
       <trans-unit id="name" xml:space="preserve">
         <source>name</source>
+        <target>name</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="normal type" xml:space="preserve">
@@ -3080,6 +3106,7 @@
       </trans-unit>
       <trans-unit id="unknown property" xml:space="preserve">
         <source>unknown property</source>
+        <target>unknown property</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="unknown side" xml:space="preserve">

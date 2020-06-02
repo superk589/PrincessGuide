@@ -51,27 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().tintColor = Theme.dynamic.color.tint
         
         checkNotice()
-//        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-//            for purchase in purchases {
-//                switch purchase.transaction.transactionState {
-//                case .purchased, .restored:
-//                    if purchase.needsFinishTransaction {
-//                        // Deliver content from server, then:
-//                        SwiftyStoreKit.finishTransaction(purchase.transaction)
-//                    }
-//                    if Constant.iAPProductIDs.contains(purchase.productId) {
-//                        Defaults.proEdition = true
-//                        NotificationCenter.default.post(name: .proEditionPurchased, object: nil)
-//                    }
-//                case .failed, .purchasing, .deferred:
-//                    break // do nothing
-//                }
-//            }
-//        }
-//
-//        SwiftyStoreKit.shouldAddStorePaymentHandler = { payment, product in
-//            return true
-//        }
         
         return true
     }

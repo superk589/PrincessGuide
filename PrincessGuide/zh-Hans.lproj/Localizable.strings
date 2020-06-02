@@ -806,6 +806,9 @@
 "Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving." = "通常，您可能只想批量修改角色等级和技能等级。如果打开这个选项，所有字段都会保存到所选角色上。在保存之前，请确认您已经正确理解了这个选项的含义。";
 
 /* No comment provided by engineer. */
+"Grid" = "一行多个";
+
+/* No comment provided by engineer. */
 "Group by" = "分组方式";
 
 /* No comment provided by engineer. */
@@ -897,6 +900,9 @@
 
 /* No comment provided by engineer. */
 "Limited Gacha" = "限定角色";
+
+/* No comment provided by engineer. */
+"List Style" = "列表风格";
 
 /* No comment provided by engineer. */
 "Loop end" = "循环结束";
@@ -1526,6 +1532,9 @@
 "Swing Time" = "普通攻击间隔";
 
 /* No comment provided by engineer. */
+"Table" = "一行一个";
+
+/* No comment provided by engineer. */
 "Tag" = "标签";
 
 /* No comment provided by engineer. */
@@ -1790,7 +1799,7 @@
 "use %d if %@ has no dot debuff" = "如果%2$@没有持续伤害类减益则使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d if %@ is alone" = "如果%2$@是单独的则使用 %1$d。";
+"use %d if %@ is alone" = "如果%2$@是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d if %@ is in state of ID: %d" = "如果%2$@拥有标记（ID：%3$d）则使用 %1$d";
@@ -1799,7 +1808,7 @@
 "use %d if %@ is in state of ID: %d with stacks greater than or equal to %d" = "如果%2$@拥有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
-"use %d if %@ is not alone" = "如果%2$@不是单独的则使用 %1$d。";
+"use %d if %@ is not alone" = "如果%2$@不是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d if %@ is not in state of ID: %d" = "如果%2$@没有标记（ID：%3$d）则使用 %1$d";

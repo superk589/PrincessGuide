@@ -78,7 +78,7 @@ class SearchableCardTableViewController: CardTableViewController {
         case true:
             let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.description(), for: indexPath) as! CardTableViewCell
             let card = filteredCards[indexPath.row]
-            let (mode, text) = cardViewRightContent(card: card, settings: CardSortingViewController.Setting.default)
+            let (mode, text) = card.displayContent(for: CardSortingViewController.Setting.default)
             cell.configure(for: filteredCards[indexPath.row], value: text, mode: mode)
             return cell
         default:

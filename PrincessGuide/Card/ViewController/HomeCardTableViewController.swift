@@ -1,5 +1,5 @@
 //
-//  GeneralCardTableViewController.swift
+//  HomeCardTableViewController.swift
 //  PrincessGuide
 //
 //  Created by zzk on 2018/4/27.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class GeneralCardTableViewController: SearchableCardTableViewController {
-
+class HomeCardTableViewController: SearchableCardTableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(NSHomeDirectory())
@@ -18,5 +18,5 @@ class GeneralCardTableViewController: SearchableCardTableViewController {
             check()
         }
     }
-
+    
 }

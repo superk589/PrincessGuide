@@ -147,11 +147,27 @@ class CardSortingViewController: FormViewController {
             }
         }
         
+        enum ListStyle: String, Codable, CustomStringConvertible, CaseIterable {
+            case collection
+            case table
+            
+            var description: String {
+                switch self {
+                case .collection:
+                    return NSLocalizedString("Grid", comment: "")
+                case .table:
+                    return NSLocalizedString("Table", comment: "")
+                }
+            }
+        }
+        
         var isAscending: Bool = true
         
-        var sortingMethod: SortingMethod = .name
+        var sortingMethod: SortingMethod = .attackRange
         
         var groupingMethod: GroupingMethod = .none
+        
+        var listStyle: ListStyle = .collection
         
         var addsEx: Bool = true
         
@@ -371,6 +387,16 @@ class CardSortingViewController: FormViewController {
                 .onCellSelection(onCellSelection(cell:row:))
                 .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
         
+            <<< SegmentedRow<String>("list_style") {
+                $0.title = NSLocalizedString("List Style", comment: "")
+                $0.displayValueFor = { (rowValue: String?) in
+                    return rowValue.flatMap { Setting.ListStyle(rawValue: $0)?.description }
+                }
+                $0.options = Setting.ListStyle.allCases.map { $0.rawValue }
+                $0.value = Setting.default.listStyle.rawValue
+                }.cellSetup(cellSetup(cell:row:))
+                .cellUpdate(cellUpdate(cell:row:))
+            
             +++ Section()
             
             <<< ButtonRow("reset") { (row) in

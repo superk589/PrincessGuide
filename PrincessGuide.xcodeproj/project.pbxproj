@@ -33,6 +33,11 @@
 		12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124F4D208EC1A4001C1A6F /* Ailment.swift */; };
 		12125EEE2202C06600A5CEB9 /* IFExistsFieldForAllAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */; };
 		1213373A225113D000BB701B /* RaidBossTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12133739225113D000BB701B /* RaidBossTableViewController.swift */; };
+		1216503324863E8A001A4C7F /* HomeCardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1216503224863E8A001A4C7F /* HomeCardCollectionViewController.swift */; };
+		1216503524863FB3001A4C7F /* HomeCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1216503424863FB3001A4C7F /* HomeCardCollectionViewCell.swift */; };
+		1216503724864392001A4C7F /* HomeCardCollectionViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1216503624864392001A4C7F /* HomeCardCollectionViewSectionHeader.swift */; };
+		12165039248651DE001A4C7F /* SearchableHomeCardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12165038248651DE001A4C7F /* SearchableHomeCardCollectionViewController.swift */; };
+		1216503B248657C2001A4C7F /* CardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1216503A248657C2001A4C7F /* CardNavigationController.swift */; };
 		12184A7A22A1434C00C3FEA6 /* CountBlindAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12184A7922A1434C00C3FEA6 /* CountBlindAction.swift */; };
 		12184A7C22A14CD000C3FEA6 /* CountDownAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */; };
 		1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */; };
@@ -308,7 +313,7 @@
 		12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */; };
 		12F1263B20BC23F5005C9659 /* SearchableCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
-		12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */; };
+		12F7500820935F2500E11CC8 /* HomeCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* HomeCardTableViewController.swift */; };
 		12F7643523F7E0660080398B /* KnightGuardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7643423F7E0660080398B /* KnightGuardAction.swift */; };
 		12FD97CC239225D700430222 /* ToadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FD97CB239225D700430222 /* ToadAction.swift */; };
 		94018D168BCD58B74960DD7C /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */; };
@@ -351,6 +356,11 @@
 		12124F4D208EC1A4001C1A6F /* Ailment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ailment.swift; sourceTree = "<group>"; };
 		12125EED2202C06500A5CEB9 /* IFExistsFieldForAllAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExistsFieldForAllAction.swift; sourceTree = "<group>"; };
 		12133739225113D000BB701B /* RaidBossTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaidBossTableViewController.swift; sourceTree = "<group>"; };
+		1216503224863E8A001A4C7F /* HomeCardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewController.swift; sourceTree = "<group>"; };
+		1216503424863FB3001A4C7F /* HomeCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		1216503624864392001A4C7F /* HomeCardCollectionViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewSectionHeader.swift; sourceTree = "<group>"; };
+		12165038248651DE001A4C7F /* SearchableHomeCardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableHomeCardCollectionViewController.swift; sourceTree = "<group>"; };
+		1216503A248657C2001A4C7F /* CardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNavigationController.swift; sourceTree = "<group>"; };
 		12184A7922A1434C00C3FEA6 /* CountBlindAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountBlindAction.swift; sourceTree = "<group>"; };
 		12184A7B22A14CD000C3FEA6 /* CountDownAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownAction.swift; sourceTree = "<group>"; };
 		1218E61020A6C13700D68610 /* EDBasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDBasicTableViewCell.swift; sourceTree = "<group>"; };
@@ -640,7 +650,7 @@
 		12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveInermittentAction.swift; sourceTree = "<group>"; };
 		12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableCardTableViewController.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
-		12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCardTableViewController.swift; sourceTree = "<group>"; };
+		12F7500720935F2500E11CC8 /* HomeCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewController.swift; sourceTree = "<group>"; };
 		12F7643423F7E0660080398B /* KnightGuardAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightGuardAction.swift; sourceTree = "<group>"; };
 		12FD97CB239225D700430222 /* ToadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToadAction.swift; sourceTree = "<group>"; };
 		3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
@@ -848,10 +858,13 @@
 			isa = PBXGroup;
 			children = (
 				1221CDC1207B96FA008F30AA /* CardTableViewController.swift */,
+				1216503A248657C2001A4C7F /* CardNavigationController.swift */,
 				12E3324120F5EAE200844A6A /* CardCollectionViewController.swift */,
 				12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */,
-				12F7500720935F2500E11CC8 /* GeneralCardTableViewController.swift */,
+				12F7500720935F2500E11CC8 /* HomeCardTableViewController.swift */,
 				12901E9820BE859C00697053 /* CardSortingViewController.swift */,
+				1216503224863E8A001A4C7F /* HomeCardCollectionViewController.swift */,
+				12165038248651DE001A4C7F /* SearchableHomeCardCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -863,6 +876,8 @@
 				1221CDD5207C67E5008F30AA /* CardView.swift */,
 				1221CDD9207CC116008F30AA /* RarityView.swift */,
 				12E3324320F5ED7600844A6A /* CardCollectionViewCell.swift */,
+				1216503424863FB3001A4C7F /* HomeCardCollectionViewCell.swift */,
+				1216503624864392001A4C7F /* HomeCardCollectionViewSectionHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1743,6 +1758,7 @@
 				12F125DB20B92E79005C9659 /* MoveAction.swift in Sources */,
 				12BDDA85241FB30800E89D7B /* ShioriEventAreaTableViewController.swift in Sources */,
 				12C599302287DC4200875EE4 /* GameEventCenter.swift in Sources */,
+				1216503B248657C2001A4C7F /* CardNavigationController.swift in Sources */,
 				1223A8EC20F0B4EB00C98BB2 /* NotificationHandle.swift in Sources */,
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
@@ -1786,6 +1802,7 @@
 				120B71D52196DB6100B45A4A /* FixedTabBar.swift in Sources */,
 				12F1261520B954DB005C9659 /* SealAction.swift in Sources */,
 				12DC963720EDECFE008896D7 /* BoxTableViewController.swift in Sources */,
+				1216503724864392001A4C7F /* HomeCardCollectionViewSectionHeader.swift in Sources */,
 				12F125F920B950F9005C9659 /* NoDamageAction.swift in Sources */,
 				12ECB2C22128459500CDAA8E /* VersionLog.swift in Sources */,
 				1221CDD4207C4AA8008F30AA /* Card.swift in Sources */,
@@ -1803,6 +1820,7 @@
 				1202CE4522C8C4F100E9C146 /* InhibitHealAction.swift in Sources */,
 				12F1260520B95377005C9659 /* MultipleAction.swift in Sources */,
 				12124F4E208EC1A4001C1A6F /* Ailment.swift in Sources */,
+				1216503324863E8A001A4C7F /* HomeCardCollectionViewController.swift in Sources */,
 				12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */,
 				12623113240144C50091F7EA /* LogBarrierAction.swift in Sources */,
 				12184A7A22A1434C00C3FEA6 /* CountBlindAction.swift in Sources */,
@@ -1849,7 +1867,7 @@
 				1247127822278EC500A9C2E1 /* CharmAction.swift in Sources */,
 				12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */,
 				122071DC20F8E30800554030 /* SearchableTeamTableViewController.swift in Sources */,
-				12F7500820935F2500E11CC8 /* GeneralCardTableViewController.swift in Sources */,
+				12F7500820935F2500E11CC8 /* HomeCardTableViewController.swift in Sources */,
 				12D3D14120A587FF00034DD6 /* EDPropertyTableViewCell.swift in Sources */,
 				12F1260F20B9547B005C9659 /* EnchantLifeStealAction.swift in Sources */,
 				12F1262320B955A2005C9659 /* LoopTriggerAction.swift in Sources */,
@@ -1898,6 +1916,7 @@
 				129A7F8320A2815400D93996 /* CDSettingsViewController.swift in Sources */,
 				12F125E920B94370005C9659 /* AuraAction.swift in Sources */,
 				12F1260120B95345005C9659 /* ContinuousAttackAction.swift in Sources */,
+				12165039248651DE001A4C7F /* SearchableHomeCardCollectionViewController.swift in Sources */,
 				129A7F54209FE7A800D93996 /* CDProfileTableViewCell.swift in Sources */,
 				12973CEF20EBBAC500C83089 /* CharaView.swift in Sources */,
 				1218E61120A6C13700D68610 /* EDBasicTableViewCell.swift in Sources */,
@@ -1966,6 +1985,7 @@
 				128DA49321B26DEA00F7C006 /* MinionSkillViewController.swift in Sources */,
 				123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */,
 				126BFBD520F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift in Sources */,
+				1216503524863FB3001A4C7F /* HomeCardCollectionViewCell.swift in Sources */,
 				12E02BAF23B052A400652270 /* KaiserRaidViewController.swift in Sources */,
 				12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */,
 				12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */,
@@ -2167,7 +2187,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 162;
+				CURRENT_PROJECT_VERSION = 165;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2192,7 +2212,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 162;
+				CURRENT_PROJECT_VERSION = 165;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

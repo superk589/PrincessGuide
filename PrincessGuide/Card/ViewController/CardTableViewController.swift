@@ -164,7 +164,7 @@ class CardTableViewController: UIViewController, DataChecking, UITableViewDelega
         }
     }
     
-    @objc private func handleFilterChange(_ notification: Notification) {
+    @objc func handleFilterChange(_ notification: Notification) {
         LoadingHUDManager.default.show()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             if let strongSelf = self {
@@ -206,7 +206,7 @@ class CardTableViewController: UIViewController, DataChecking, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.description(), for: indexPath) as! CardTableViewCell
         
         let card = cardOf(indexPath: indexPath)
-        let (mode, text) = cardViewRightContent(card: card, settings: CardSortingViewController.Setting.default)
+        let (mode, text) = card.displayContent(for: CardSortingViewController.Setting.default)
         cell.configure(for: card, value: text, mode: mode)
         
         return cell
@@ -218,58 +218,6 @@ class CardTableViewController: UIViewController, DataChecking, UITableViewDelega
         print("card id: \(card.base.unitId)")
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func cardViewRightContent(card: Card, settings: CardSortingViewController.Setting) -> (mode: CardView.Mode, text: String?) {
-        let mode: CardView.Mode
-        let text: String?
-        switch settings.sortingMethod {
-        case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate, .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy:
-            let propertyKey = PropertyKey(rawValue: settings.sortingMethod.rawValue)!
-            mode = .text
-            text = String(Int(card.property().item(for: propertyKey).value))
-        case .rarity:
-            mode = .rarity
-            text = nil
-        case .effectivePhysicalHP:
-            mode = .text
-            text = String(Int(card.property().effectivePhysicalHP.rounded()))
-        case .effectivePhysicalHPNoDodge:
-            mode = .text
-            text = String(Int(card.property().effectivePhysicalHPNoDodge.rounded()))
-        case .effectiveMagicalHP:
-            mode = .text
-            text = String(Int(card.property().effectiveMagicalHP.rounded()))
-        case .swingTime:
-            mode = .text
-            text = String(card.base.normalAtkCastTime)
-        case .attackRange:
-            mode = .text
-            text = String(card.base.searchAreaWidth)
-        case .id:
-            mode = .text
-            text = String(card.base.unitId)
-        case .name:
-            mode = .rarity
-            text = card.base.unitName
-        case .age:
-            mode = .text
-            text = card.profile.age
-        case .height:
-            mode = .text
-            text = card.profile.height
-        case .weight:
-            mode = .text
-            text = card.profile.weight
-        case .combatEffectiveness:
-            mode = .text
-            text = String(card.combatEffectiveness())
-        case .birthday:
-            mode = .text
-            let format = NSLocalizedString("%@/%@", comment: "")
-            text = String(format: format, card.profile.birthMonth, card.profile.birthDay)
-        }
-        return (mode, text)
     }
     
     func createSections(settings: CardSortingViewController.Setting, cards: [Card]) -> [Section] {
