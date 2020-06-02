@@ -8,7 +8,7 @@ Looking for an Android app? Try this one [ShizuruNotes](https://github.com/Malit
 Open this link on your iPhone or iPad:  
 https://testflight.apple.com/join/e8Dc4f4U
 ### Install via [AltStore](https://altstore.io)
-Download the newest ipa file from release.
+Download the newest ipa file from [release](https://github.com/superk589/PrincessGuide/releases).
 
 ## Why not release on App Store
 Cygames does not allow this app and it has been removed from App Store.  
