@@ -1046,13 +1046,13 @@
 "Modifier: add [%@ * count of %@ behind self] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * 身后%2$@的数量]。";
 
 /* No comment provided by engineer. */
+"Modifier: add [%@ * count of %@] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * %2$@的个数]。";
+
+/* No comment provided by engineer. */
 "Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 击杀个数]。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * count of omemes] value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * オメメ个数] 。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of targets] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 目标个数]。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * HP] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * HP]。";
@@ -1827,6 +1827,12 @@
 
 /* No comment provided by engineer. */
 "use %d if the count of %@(except stealth units) is not %d" = "如果%2$@（潜行单位除外）的数量不等于 %3$d 则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d if this skill is critical" = "如果这个技能暴击则使用 %d";
+
+/* No comment provided by engineer. */
+"use %d if this skill is not critical" = "如果这个技能没有暴击则使用 %d";
 
 /* No comment provided by engineer. */
 "use %d to %@ if %@" = "如果%2$@处于%3$@状态，对其使用 %1$d";

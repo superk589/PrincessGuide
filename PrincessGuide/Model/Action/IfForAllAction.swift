@@ -48,6 +48,9 @@ class IfForAllAction: ActionParameter {
         case 1000:
             let format = NSLocalizedString("if target is defeated by the last effect then use %d", comment: "")
             return String(format: format, actionDetail2 % 10)
+        case 1001:
+            let format = NSLocalizedString("use %d if this skill is critical", comment: "")
+            return String(format: format, actionDetail2 % 10)
         case 1200..<1300:
             let format = NSLocalizedString("counter is greater than or equal to %d then use %d", comment: "")
             return String(format: format, actionDetail1 % 10, actionDetail2 % 10)
@@ -93,6 +96,9 @@ class IfForAllAction: ActionParameter {
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), Int(actionValue3))
         case 1000:
             let format = NSLocalizedString("if target is not defeated by last effect then use %d", comment: "")
+            return String(format: format, actionDetail3 % 10)
+        case 1001:
+            let format = NSLocalizedString("use %d if this skill is not critical", comment: "")
             return String(format: format, actionDetail3 % 10)
         case 1200..<1300:
             let format = NSLocalizedString("counter is less than %d then use %d", comment: "")

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.5" build-num="11E608c"/>
@@ -1539,6 +1540,10 @@
         <target>[アクション%4$d]の変数%3$dを[%1$@ * 後ろの%2$@の数]アップさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Modifier: add [%@ * count of %@] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * count of %2$@] to value %3$d of effect %4$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of defeated enemies] to value %2$d of effect %3$d.</source>
         <target>[アクション%3$d]の変数%2$dを[%1$@ * 倒した敵の数]アップさせる。</target>
@@ -1547,11 +1552,6 @@
       <trans-unit id="Modifier: add [%@ * count of omemes] value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of omemes] value %2$d of effect %3$d.</source>
         <target>[アクション%3$d]の変数%2$dを[%1$@ * オメメちゃんの数]アップさせる。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * count of targets] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * count of targets] to value %2$d of effect %3$d.</source>
-        <target>[アクション%3$d]の変数%2$dを[%1$@ * ターゲットの数]アップさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * lost HP] to value %d of effect %d." xml:space="preserve">
@@ -3187,6 +3187,14 @@
       <trans-unit id="use %d if the count of %@(except stealth units) is not %d" xml:space="preserve">
         <source>use %1$d if the count of %2$@(except stealth units) is not %3$d</source>
         <target>潜伏状態のユニットを除いて、%2$@の数が%3$dでない場合、[アクション%1$d]を使う</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if this skill is critical" xml:space="preserve">
+        <source>use %d if this skill is critical</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if this skill is not critical" xml:space="preserve">
+        <source>use %d if this skill is not critical</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to %@ if %@" xml:space="preserve">

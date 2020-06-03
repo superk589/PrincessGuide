@@ -1539,6 +1539,11 @@
         <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * 身后%2$@的数量]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Modifier: add [%@ * count of %@] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * count of %2$@] to value %3$d of effect %4$d.</source>
+        <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * %2$@的个数]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of defeated enemies] to value %2$d of effect %3$d.</source>
         <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 击杀个数]。</target>
@@ -1547,11 +1552,6 @@
       <trans-unit id="Modifier: add [%@ * count of omemes] value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of omemes] value %2$d of effect %3$d.</source>
         <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * オメメ个数] 。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * count of targets] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * count of targets] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 目标个数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * lost HP] to value %d of effect %d." xml:space="preserve">
@@ -3187,6 +3187,16 @@
       <trans-unit id="use %d if the count of %@(except stealth units) is not %d" xml:space="preserve">
         <source>use %1$d if the count of %2$@(except stealth units) is not %3$d</source>
         <target>如果%2$@（潜行单位除外）的数量不等于 %3$d 则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if this skill is critical" xml:space="preserve">
+        <source>use %d if this skill is critical</source>
+        <target>如果这个技能暴击则使用 %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if this skill is not critical" xml:space="preserve">
+        <source>use %d if this skill is not critical</source>
+        <target>如果这个技能没有暴击则使用 %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to %@ if %@" xml:space="preserve">

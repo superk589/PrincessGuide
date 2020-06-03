@@ -1052,9 +1052,6 @@
 "Modifier: add [%@ * count of omemes] value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * オメメちゃんの数]アップさせる。";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * count of targets] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * ターゲットの数]アップさせる。";
-
-/* No comment provided by engineer. */
 "Modifier: add [%@ * HP] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * HP]アップさせる。";
 
 /* No comment provided by engineer. */
