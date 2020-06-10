@@ -793,7 +793,7 @@ class Master: FMDatabaseQueue {
                     }
                 }
                 
-                for action in actions.values.sorted(by: { $0.parameter.id < $1.parameter.id }) {
+                for action in actions.values.sorted(by: { $0.base.actionId < $1.base.actionId }) {
                     if let id = dependActionIDs[action.base.actionId] {
                         action.parent = actions[id]
                         actions[id]?.children.append(action)

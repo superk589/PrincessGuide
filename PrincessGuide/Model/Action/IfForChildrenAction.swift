@@ -67,6 +67,9 @@ class IfForChildrenAction: ActionParameter {
             case 901..<1000:
                 let format = NSLocalizedString("use %d to %@ if HP is below %d%%", comment: "")
                 return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
+            case 1300:
+                let format = NSLocalizedString("use %d to %@ if it's physical unit", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
             default:
                 return nil
             }
@@ -91,6 +94,9 @@ class IfForChildrenAction: ActionParameter {
             case 901..<1000:
                 let format = NSLocalizedString("use %d to %@ if HP is not below %d%%", comment: "")
                 return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
+            case 1300:
+                let format = NSLocalizedString("use %d to %@ if it's magical unit", comment: "")
+                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
             default:
                 return nil
             }
@@ -100,7 +106,7 @@ class IfForChildrenAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         switch actionDetail1 {
-        case 100, 200, 300, 500, 501, 502, 503, 512, 600..<900, 901..<1000:
+        case 100, 200, 300, 500, 501, 502, 503, 512, 600..<900, 901..<1000, 1300:
             let format = NSLocalizedString("Condition: %@.", comment: "")
             return String(format: format, [trueClause, falseClause].compactMap { $0 }.joined(separator: NSLocalizedString(", ", comment: "clause separator")))
         case 0..<100:

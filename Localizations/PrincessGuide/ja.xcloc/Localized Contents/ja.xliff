@@ -3217,9 +3217,17 @@
         <target>%2$@が独りの場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d to %@ if it's magical unit" xml:space="preserve">
+        <source>use %1$d to %2$@ if it's magical unit</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d to %@ if it's not alone" xml:space="preserve">
         <source>use %1$d to %2$@ if it's not alone</source>
         <target>%2$@が独りでない場合、[アクション%1$d]を使う</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if it's physical unit" xml:space="preserve">
+        <source>use %1$d to %2$@ if it's physical unit</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to %@ if not %@" xml:space="preserve">

@@ -1847,7 +1847,13 @@
 "use %d to %@ if it's alone" = "如果%2$@是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d to %@ if it's magical unit" = "如果%2$@是魔法单位则使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d to %@ if it's not alone" = "如果%2$@不是单独的则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to %@ if it's physical unit" = "如果%2$@是物理单位则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d to %@ if not %@" = "如果%2$@未处于%3$@状态，对其使用 %1$d";

@@ -106,7 +106,7 @@ class Skill: Codable {
             return buildParameter()
         }()
         
-        func buildParameter(dependActionID: Int = 0) -> ActionParameter {
+        func buildParameter() -> ActionParameter {
             return ActionParameter.type(of: base.actionType).init(id: base.actionId, targetAssignment: base.targetAssignment, targetNth: base.targetNumber, actionType: base.actionType, targetType: base.targetType, targetRange: base.targetRange, direction: base.targetArea, targetCount: base.targetCount, actionValue1: base.actionValue1, actionValue2: base.actionValue2, actionValue3: base.actionValue3, actionValue4: base.actionValue4, actionValue5: base.actionValue5, actionValue6: base.actionValue6, actionValue7: base.actionValue7, actionDetail1: base.actionDetail1, actionDetail2: base.actionDetail2, actionDetail3: base.actionDetail3, parent: parent, children: children)
         }
     }
