@@ -34,9 +34,18 @@ extension PropertyKey {
             self = .waveEnergyRecovery
         case 10:
             self = .waveHpRecovery
+        case 12:
+            self = .physicalPenetrate
+        case 13:
+            self = .magicPenetrate
+        case 17:
+            self = .accuracy
+        case 16:
+            self = .energyReduceRate
         case 15:
-            // FIXME: 12 - 14 no charas have, 15 validation needed
             self = .hpRecoveryRate
+        case 14:
+            self = .energyRecoveryRate
         case 8:
             self = .dodge
         case 9:
