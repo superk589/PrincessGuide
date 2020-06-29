@@ -14,6 +14,7 @@ enum SkillCategory: String, Hashable, CustomStringConvertible {
     case ex
     case exEvolution
     case sp
+    case spEvolution
     
     case mainEvolution
     case unionBurstEvolution
@@ -30,6 +31,8 @@ enum SkillCategory: String, Hashable, CustomStringConvertible {
             return NSLocalizedString("EX+", comment: "")
         case .sp:
             return NSLocalizedString("SP", comment: "")
+        case .spEvolution:
+            return NSLocalizedString("SP+", comment: "")
         case .mainEvolution:
             return NSLocalizedString("Main+", comment: "")
         case .unionBurstEvolution:

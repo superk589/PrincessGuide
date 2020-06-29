@@ -82,7 +82,9 @@ class Master: FMDatabaseQueue {
                 b.sp_skill_2,
                 b.sp_skill_3,
                 b.sp_skill_4,
-                b.sp_skill_5
+                b.sp_skill_5,
+                b.sp_skill_evolution_1,
+                b.sp_skill_evolution_2
             FROM
                 unit_skill_data b,
                 unit_data a

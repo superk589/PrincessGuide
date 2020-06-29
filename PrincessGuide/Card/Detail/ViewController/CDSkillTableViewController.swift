@@ -101,8 +101,39 @@ class CDSkillTableViewController: CDTableViewController {
         }
         
         // setup sp skills
-        rows += card.spSkills.enumerated().map {
-            return Row.skill(skill: $0.element, category: .sp, property: property, index: $0.offset + 1)
+        if settings.skillStyle == .both {
+            rows += zip(card.spSkills, card.spEvolutionsSkills)
+                .enumerated()
+                .flatMap {
+                    [
+                        Row.skill(skill: $0.element.0, category: .sp, property: property, index: $0.offset + 1),
+                        Row.skill(skill: $0.element.1, category: .spEvolution, property: property, index: $0.offset + 1)
+                    ]
+            }
+            
+            if card.spSkills.count > card.spEvolutionsSkills.count {
+                rows += card.spSkills[card.spEvolutionsSkills.count..<card.spSkills.count]
+                    .enumerated()
+                    .map {
+                        return Row.skill(skill: $0.element, category: .sp, property: property, index: card.spEvolutionsSkills.count + $0.offset + 1)
+                }
+            }
+        } else {
+            rows.append(contentsOf:
+                zip(card.spEvolutionsSkills, card.spSkills)
+                    .enumerated()
+                    .map {
+                        return Row.skill(skill: $0.element.0, category: .spEvolution, property: property, index: $0.offset + 1)
+                }
+            )
+            
+            if card.spSkills.count > card.spEvolutionsSkills.count {
+                rows += card.spSkills[card.spEvolutionsSkills.count..<card.spSkills.count]
+                    .enumerated()
+                    .map {
+                        return Row.skill(skill: $0.element, category: .sp, property: property, index: card.spEvolutionsSkills.count + $0.offset + 1)
+                }
+            }
         }
         
         // setup ex skills
