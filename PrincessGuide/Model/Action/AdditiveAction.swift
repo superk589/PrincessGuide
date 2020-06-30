@@ -48,6 +48,9 @@ class AdditiveAction: ActionParameter {
         case 4:
             let format = NSLocalizedString("Modifier: add [%@ * count of %@] to value %d of effect %d.", comment: "")
             return String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), targetParameter.buildTargetClause(), actionDetail2, actionDetail1 % 10)
+        case 5:
+            let format = NSLocalizedString("Modifier: add [%@ * count of damaged] to value %d of effect %d.", comment: "")
+            return String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2, actionDetail1 % 10)
         case 6:
             let format = NSLocalizedString("Modifier: add [%@ * total damage] to value %d of effect %d.", comment: "")
             return String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2, actionDetail1 % 10)

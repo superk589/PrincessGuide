@@ -65,7 +65,7 @@ class IfForChildrenAction: ActionParameter {
                 let format = NSLocalizedString("use %d to %@ if it's alone", comment: "")
                 return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
             case 901..<1000:
-                let format = NSLocalizedString("use %d to %@ if HP is below %d%%", comment: "")
+                let format = NSLocalizedString("use %d if %@'s HP is below %d%%", comment: "")
                 return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
             case 1300:
                 let format = NSLocalizedString("use %d to %@ if it's physical unit", comment: "")
@@ -92,7 +92,7 @@ class IfForChildrenAction: ActionParameter {
                 let format = NSLocalizedString("use %d to %@ if it's not alone", comment: "")
                 return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
             case 901..<1000:
-                let format = NSLocalizedString("use %d to %@ if HP is not below %d%%", comment: "")
+                let format = NSLocalizedString("use %d if %@'s HP is not below %d%%", comment: "")
                 return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
             case 1300:
                 let format = NSLocalizedString("use %d to %@ if it's magical unit", comment: "")

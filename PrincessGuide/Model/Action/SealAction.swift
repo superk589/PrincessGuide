@@ -12,7 +12,7 @@ class SealAction: ActionParameter {
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
-        if actionValue4 > 0 {
+        if actionValue4 >= 0 {
             let format = NSLocalizedString("Add %@ mark stacks(max %@, ID: %@) on %@ for %@s.", comment: "")
             return String(format: format, actionValue4.roundedString(roundingRule: .down), actionValue1.roundedString(roundingRule: .down), actionValue2.roundedString(roundingRule: .down), targetParameter.buildTargetClause(), actionValue3.roundedString(roundingRule: nil))
         } else {

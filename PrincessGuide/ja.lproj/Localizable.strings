@@ -1829,12 +1829,6 @@
 "use %d to %@ if %@" = "%2$@が%3$@の場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
-"use %d to %@ if HP is below %d%%" = "%2$@のHPが%3$d%%以下の場合、[アクション%1$d]を使う";
-
-/* No comment provided by engineer. */
-"use %d to %@ if HP is not below %d%%" = "%2$@のHPが%3$d%%以下でない場合、[アクション%1$d]を使う";
-
-/* No comment provided by engineer. */
 "use %d to %@ if it's alone" = "%2$@が独りの場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */

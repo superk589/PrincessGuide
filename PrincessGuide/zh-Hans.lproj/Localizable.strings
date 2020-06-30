@@ -5,6 +5,9 @@
 ", " = "，";
 
 /* No comment provided by engineer. */
+"(except self)" = "（除自己外）";
+
+/* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ during break." = "在 Break 期间，%1$@%2$@ [%3$@]%4$@ %5$@。";
 
 /* No comment provided by engineer. */
@@ -101,6 +104,9 @@
 "%@ nearest" = "最近的%@";
 
 /* No comment provided by engineer. */
+"%@ nearest without owner" = "%@除自己外最近的";
+
+/* No comment provided by engineer. */
 "%@ physics" = "%@物理系";
 
 /* No comment provided by engineer. */
@@ -111,6 +117,9 @@
 
 /* No comment provided by engineer. */
 "%@ receives your blessing." = "%@收到了你的祝福。";
+
+/* No comment provided by engineer. */
+"%@ shadow" = "%@暗影";
 
 /* [enemy] targets in range [500] */
 "%@ targets in range %d" = "范围 %2$d 内%1$@目标";
@@ -851,6 +860,9 @@
 "if target is not defeated by last effect then use %d" = "上一个效果未能成功击杀目标则使用 %d。";
 
 /* No comment provided by engineer. */
+"Ignore the other units' taunt when attacking %@." = "当攻击%@时，忽略其他目标的嘲讽。";
+
+/* No comment provided by engineer. */
 "Image" = "图片";
 
 /* No comment provided by engineer. */
@@ -1047,6 +1059,9 @@
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * count of %@] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * %2$@的个数]。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 伤害到的个数]。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 击杀个数]。";
@@ -1414,6 +1429,9 @@
 /* No comment provided by engineer. */
 "Settings" = "设置";
 
+/* No comment provided by engineer. */
+"shadow" = "暗影";
+
 /* expression style */
 "short" = "简短";
 
@@ -1470,6 +1488,9 @@
 
 /* No comment provided by engineer. */
 "SP %d" = "SP %d";
+
+/* No comment provided by engineer. */
+"SP+" = "SP+";
 
 /* No comment provided by engineer. */
 "Special Effect" = "特殊效果";
@@ -1618,6 +1639,9 @@
 /* target type */
 "the %@ nearest" = "%@近的";
 
+/* No comment provided by engineer. */
+"the %@ nearest without owner" = "除自己外%@近的";
+
 /* target type */
 "the %@ unknown type" = "%@未知类型的";
 
@@ -1656,6 +1680,9 @@
 
 /* target type */
 "the nearest" = "最近的";
+
+/* No comment provided by engineer. */
+"the nearest without owner" = "除自己外最近的";
 
 /* No comment provided by engineer. */
 "There aren't any Mail accounts" = "未设置邮件账户";
@@ -1817,6 +1844,12 @@
 "use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" = "如果%2$@没有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d if %@'s HP is below %d%%" = "如果%2$@的 HP 低于 %3$d%%，使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d if %@'s HP is not below %d%%" = "如果%2$@的 HP 不低于 %3$d%%，使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d if among %@ does not exist unit(ID: %d)" = "如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
@@ -1836,12 +1869,6 @@
 
 /* No comment provided by engineer. */
 "use %d to %@ if %@" = "如果%2$@处于%3$@状态，对其使用 %1$d";
-
-/* No comment provided by engineer. */
-"use %d to %@ if HP is below %d%%" = "如果%2$@的 HP 低于 %3$d%%，对其使用 %1$d";
-
-/* No comment provided by engineer. */
-"use %d to %@ if HP is not below %d%%" = "如果%2$@的 HP 不低于 %3$d%%，对其使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d to %@ if it's alone" = "如果%2$@是单独的则使用 %1$d";

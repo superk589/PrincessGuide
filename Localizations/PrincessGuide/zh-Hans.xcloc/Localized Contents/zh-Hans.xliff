@@ -229,6 +229,11 @@
         <target>最近的%@</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="%@ nearest without owner" xml:space="preserve">
+        <source>%@ nearest without owner</source>
+        <target>%@除自己外最近的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ physics" xml:space="preserve">
         <source>%@ physics</source>
         <target>%@物理系</target>
@@ -247,6 +252,11 @@
       <trans-unit id="%@ receives your blessing." xml:space="preserve">
         <source>%@ receives your blessing.</source>
         <target>%@收到了你的祝福。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ shadow" xml:space="preserve">
+        <source>%@ shadow</source>
+        <target>%@暗影</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ targets in range %d" xml:space="preserve">
@@ -282,6 +292,11 @@
       <trans-unit id="%d%% chance use %d" xml:space="preserve">
         <source>%1$d%% chance use %2$d</source>
         <target>%1$d%% 几率使用 %2$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="(except self)" xml:space="preserve">
+        <source>(except self)</source>
+        <target>（除自己外）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=", " xml:space="preserve">
@@ -1239,6 +1254,11 @@
         <target>头像风格</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Ignore the other units' taunt when attacking %@." xml:space="preserve">
+        <source>Ignore the other units' taunt when attacking %@.</source>
+        <target>当攻击%@时，忽略其他目标的嘲讽。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Image" xml:space="preserve">
         <source>Image</source>
         <target>图片</target>
@@ -1542,6 +1562,11 @@
       <trans-unit id="Modifier: add [%@ * count of %@] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of %2$@] to value %3$d of effect %4$d.</source>
         <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * %2$@的个数]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * count of damaged] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * count of damaged] to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 伤害到的个数]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
@@ -2002,6 +2027,11 @@
       <trans-unit id="SP %d" xml:space="preserve">
         <source>SP %d</source>
         <target>SP %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="SP+" xml:space="preserve">
+        <source>SP+</source>
+        <target>SP+</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Save Box" xml:space="preserve">
@@ -2909,6 +2939,11 @@
         <target>自身</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="shadow" xml:space="preserve">
+        <source>shadow</source>
+        <target>暗影</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="short" xml:space="preserve">
         <source>short</source>
         <target>简短</target>
@@ -3019,6 +3054,11 @@
         <target>%@近的</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="the %@ nearest without owner" xml:space="preserve">
+        <source>the %@ nearest without owner</source>
+        <target>除自己外%@近的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the %@ unknown type" xml:space="preserve">
         <source>the %@ unknown type</source>
         <target>%@未知类型的</target>
@@ -3083,6 +3123,11 @@
         <source>the nearest</source>
         <target>最近的</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="the nearest without owner" xml:space="preserve">
+        <source>the nearest without owner</source>
+        <target>除自己外最近的</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="third" xml:space="preserve">
         <source>third</source>
@@ -3169,6 +3214,16 @@
         <target>如果%2$@没有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if %@'s HP is below %d%%" xml:space="preserve">
+        <source>use %1$d if %2$@'s HP is below %3$d%%</source>
+        <target>如果%2$@的 HP 低于 %3$d%%，使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@'s HP is not below %d%%" xml:space="preserve">
+        <source>use %1$d if %2$@'s HP is not below %3$d%%</source>
+        <target>如果%2$@的 HP 不低于 %3$d%%，使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if among %@ does not exist unit(ID: %d)" xml:space="preserve">
         <source>use %1$d if among %2$@ does not exist unit(ID: %3$d)</source>
         <target>如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d</target>
@@ -3202,16 +3257,6 @@
       <trans-unit id="use %d to %@ if %@" xml:space="preserve">
         <source>use %1$d to %2$@ if %3$@</source>
         <target>如果%2$@处于%3$@状态，对其使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to %@ if HP is below %d%%" xml:space="preserve">
-        <source>use %1$d to %2$@ if HP is below %3$d%%</source>
-        <target>如果%2$@的 HP 低于 %3$d%%，对其使用 %1$d</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to %@ if HP is not below %d%%" xml:space="preserve">
-        <source>use %1$d to %2$@ if HP is not below %3$d%%</source>
-        <target>如果%2$@的 HP 不低于 %3$d%%，对其使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to %@ if it's alone" xml:space="preserve">

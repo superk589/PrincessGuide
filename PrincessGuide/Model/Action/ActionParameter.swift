@@ -143,6 +143,8 @@ class ActionParameter {
             return PassiveInermittentAction.self
         case 92:
             return ChangeEnergyRatioAction.self
+        case 93:
+            return IgnoreDecoyAction.self
         default:
             return ActionParameter.self
         }
@@ -558,4 +560,5 @@ enum ActionType: Int {
     case ex = 90
     case exPlus
     case energyRatio
+    case ignoreDecoy
 }

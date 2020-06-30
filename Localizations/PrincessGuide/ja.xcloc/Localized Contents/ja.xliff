@@ -230,6 +230,10 @@
         <target>最も近い%@</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="%@ nearest without owner" xml:space="preserve">
+        <source>%@ nearest without owner</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ physics" xml:space="preserve">
         <source>%@ physics</source>
         <target>物理攻撃をする%@</target>
@@ -248,6 +252,10 @@
       <trans-unit id="%@ receives your blessing." xml:space="preserve">
         <source>%@ receives your blessing.</source>
         <target>%@はあなたの祝福を受けました。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ shadow" xml:space="preserve">
+        <source>%@ shadow</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ targets in range %d" xml:space="preserve">
@@ -283,6 +291,10 @@
       <trans-unit id="%d%% chance use %d" xml:space="preserve">
         <source>%1$d%% chance use %2$d</source>
         <target>[%1$d%%]の確率で[アクション%2$d]を使う。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="(except self)" xml:space="preserve">
+        <source>(except self)</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=", " xml:space="preserve">
@@ -1240,6 +1252,10 @@
         <target>アイコンスタイル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Ignore the other units' taunt when attacking %@." xml:space="preserve">
+        <source>Ignore the other units' taunt when attacking %@.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Image" xml:space="preserve">
         <source>Image</source>
         <target>画像</target>
@@ -1542,6 +1558,10 @@
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of %@] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of %2$@] to value %3$d of effect %4$d.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * count of damaged] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * count of damaged] to value %2$d of effect %3$d.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
@@ -2002,6 +2022,10 @@
       <trans-unit id="SP %d" xml:space="preserve">
         <source>SP %d</source>
         <target>SP %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="SP+" xml:space="preserve">
+        <source>SP+</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Save Box" xml:space="preserve">
@@ -2909,6 +2933,10 @@
         <target>自分</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="shadow" xml:space="preserve">
+        <source>shadow</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="short" xml:space="preserve">
         <source>short</source>
         <target>簡略</target>
@@ -3019,6 +3047,10 @@
         <target>%@近い</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="the %@ nearest without owner" xml:space="preserve">
+        <source>the %@ nearest without owner</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the %@ unknown type" xml:space="preserve">
         <source>the %@ unknown type</source>
         <target>%@未知種類</target>
@@ -3083,6 +3115,10 @@
         <source>the nearest</source>
         <target>最も近い</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="the nearest without owner" xml:space="preserve">
+        <source>the nearest without owner</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="third" xml:space="preserve">
         <source>third</source>
@@ -3169,6 +3205,14 @@
         <target>%2$@が持っているマーク[ID：%3$d]のスタック数が%4$d未満の場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if %@'s HP is below %d%%" xml:space="preserve">
+        <source>use %1$d if %2$@'s HP is below %3$d%%</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@'s HP is not below %d%%" xml:space="preserve">
+        <source>use %1$d if %2$@'s HP is not below %3$d%%</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if among %@ does not exist unit(ID: %d)" xml:space="preserve">
         <source>use %1$d if among %2$@ does not exist unit(ID: %3$d)</source>
         <target>潜伏状態のユニットを除いて、%2$@の中ユニット（ID：%3$d）が存在しない場合、[アクション%1$d]を使う</target>
@@ -3200,16 +3244,6 @@
       <trans-unit id="use %d to %@ if %@" xml:space="preserve">
         <source>use %1$d to %2$@ if %3$@</source>
         <target>%2$@が%3$@の場合、[アクション%1$d]を使う</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to %@ if HP is below %d%%" xml:space="preserve">
-        <source>use %1$d to %2$@ if HP is below %3$d%%</source>
-        <target>%2$@のHPが%3$d%%以下の場合、[アクション%1$d]を使う</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="use %d to %@ if HP is not below %d%%" xml:space="preserve">
-        <source>use %1$d to %2$@ if HP is not below %3$d%%</source>
-        <target>%2$@のHPが%3$d%%以下でない場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to %@ if it's alone" xml:space="preserve">

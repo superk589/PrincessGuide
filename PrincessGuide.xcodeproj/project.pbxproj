@@ -204,6 +204,7 @@
 		12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */; };
 		12B8F58B214A5B3600C039DE /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58A214A5B3600C039DE /* Tower.swift */; };
 		12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */; };
+		12BAABA124AAEF5000DA8AB7 /* IgnoreDecoyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BAABA024AAEF4F00DA8AB7 /* IgnoreDecoyAction.swift */; };
 		12BDDA7F241FAB2C00E89D7B /* ShioriEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */; };
 		12BDDA81241FAC1000E89D7B /* ShioriEventBossQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA80241FAC1000E89D7B /* ShioriEventBossQuest.swift */; };
 		12BDDA85241FB30800E89D7B /* ShioriEventAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA84241FB30800E89D7B /* ShioriEventAreaTableViewController.swift */; };
@@ -541,6 +542,7 @@
 		12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerTableViewController.swift; sourceTree = "<group>"; };
 		12B8F58A214A5B3600C039DE /* Tower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
 		12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerQuestTabViewController.swift; sourceTree = "<group>"; };
+		12BAABA024AAEF4F00DA8AB7 /* IgnoreDecoyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreDecoyAction.swift; sourceTree = "<group>"; };
 		12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEvent.swift; sourceTree = "<group>"; };
 		12BDDA80241FAC1000E89D7B /* ShioriEventBossQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEventBossQuest.swift; sourceTree = "<group>"; };
 		12BDDA84241FB30800E89D7B /* ShioriEventAreaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEventAreaTableViewController.swift; sourceTree = "<group>"; };
@@ -1402,6 +1404,7 @@
 				12CF02A4236AA9C4003CD3AD /* LoopMotionRepeatAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
 				12E6CCD4247BAB46009961B8 /* ChangeEnergyRatioAction.swift */,
+				12BAABA024AAEF4F00DA8AB7 /* IgnoreDecoyAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1852,6 +1855,7 @@
 				120BCAFD20F4E6C80029A083 /* MembersCell.swift in Sources */,
 				1225522A213397B300CB0D3E /* TimeStatusIndicator.swift in Sources */,
 				1281FA52209AE3E900F2D567 /* Craft.swift in Sources */,
+				12BAABA124AAEF5000DA8AB7 /* IgnoreDecoyAction.swift in Sources */,
 				12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */,
 				1280DE4520A5DED5008D9D72 /* ClanBattleTableViewController.swift in Sources */,
 				120F9B5720E4DEE9003632CA /* PrincessGuide.xcdatamodeld in Sources */,
@@ -2187,7 +2191,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 168;
+				CURRENT_PROJECT_VERSION = 169;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2212,7 +2216,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 168;
+				CURRENT_PROJECT_VERSION = 169;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
