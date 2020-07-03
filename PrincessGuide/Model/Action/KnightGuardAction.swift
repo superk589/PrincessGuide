@@ -6,7 +6,7 @@
 //  Copyright © 2020 zzk. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class KnightGuardAction: ActionParameter {
     

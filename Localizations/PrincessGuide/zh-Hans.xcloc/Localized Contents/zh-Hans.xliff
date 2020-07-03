@@ -299,6 +299,11 @@
         <target>（除自己外）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="(max %d times)" xml:space="preserve">
+        <source>(max %d times)</source>
+        <target>（最多 %d 次）</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id=", " xml:space="preserve">
         <source>, </source>
         <target>，</target>
@@ -2477,6 +2482,11 @@
       <trans-unit id="Upcoming Birthdays" xml:space="preserve">
         <source>Upcoming Birthdays</source>
         <target>即将到来的生日</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Use %d%@ every %@ hits in next [%@]s." xml:space="preserve">
+        <source>Use %1$d%2$@ every %3$@ hits in next [%4$@]s.</source>
+        <target>在 [%4$@] 秒内，每 %3$@ 次 Hit 就使用一次 %1$d%2$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Vanguard" xml:space="preserve">

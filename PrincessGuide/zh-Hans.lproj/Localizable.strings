@@ -8,6 +8,9 @@
 "(except self)" = "（除自己外）";
 
 /* No comment provided by engineer. */
+"(max %d times)" = "（最多 %d 次）";
+
+/* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ during break." = "在 Break 期间，%1$@%2$@ [%3$@]%4$@ %5$@。";
 
 /* No comment provided by engineer. */
@@ -1890,6 +1893,9 @@
 
 /* No comment provided by engineer. */
 "use %d to %@ in state of ID: %d" = "如果%2$@有标记（ID：%3$d），对其使用 %1$d";
+
+/* No comment provided by engineer. */
+"Use %d%@ every %@ hits in next [%@]s." = "在 [%4$@] 秒内，每 %3$@ 次 Hit 就使用一次 %1$d%2$@。";
 
 /* No comment provided by engineer. */
 "value %d" = "数值 %d";

@@ -137,6 +137,8 @@ class ActionParameter {
             return KnightGuardAction.self
         case 73:
             return LogBarrierAction.self
+        case 75:
+            return ActionByHitCountAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -557,6 +559,7 @@ enum ActionType: Int {
     case toad = 69
     case knightGuard = 71
     case logBarrier = 73
+    case actionByHitCount = 75
     case ex = 90
     case exPlus
     case energyRatio

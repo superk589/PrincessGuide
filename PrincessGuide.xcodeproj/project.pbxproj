@@ -205,6 +205,7 @@
 		12B8F58B214A5B3600C039DE /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58A214A5B3600C039DE /* Tower.swift */; };
 		12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */; };
 		12BAABA124AAEF5000DA8AB7 /* IgnoreDecoyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BAABA024AAEF4F00DA8AB7 /* IgnoreDecoyAction.swift */; };
+		12BAABB524AF3F8100DA8AB7 /* ActionByHitCountAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BAABB424AF3F8100DA8AB7 /* ActionByHitCountAction.swift */; };
 		12BDDA7F241FAB2C00E89D7B /* ShioriEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */; };
 		12BDDA81241FAC1000E89D7B /* ShioriEventBossQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA80241FAC1000E89D7B /* ShioriEventBossQuest.swift */; };
 		12BDDA85241FB30800E89D7B /* ShioriEventAreaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA84241FB30800E89D7B /* ShioriEventAreaTableViewController.swift */; };
@@ -543,6 +544,7 @@
 		12B8F58A214A5B3600C039DE /* Tower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
 		12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerQuestTabViewController.swift; sourceTree = "<group>"; };
 		12BAABA024AAEF4F00DA8AB7 /* IgnoreDecoyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreDecoyAction.swift; sourceTree = "<group>"; };
+		12BAABB424AF3F8100DA8AB7 /* ActionByHitCountAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionByHitCountAction.swift; sourceTree = "<group>"; };
 		12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEvent.swift; sourceTree = "<group>"; };
 		12BDDA80241FAC1000E89D7B /* ShioriEventBossQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEventBossQuest.swift; sourceTree = "<group>"; };
 		12BDDA84241FB30800E89D7B /* ShioriEventAreaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEventAreaTableViewController.swift; sourceTree = "<group>"; };
@@ -1400,6 +1402,7 @@
 				12FD97CB239225D700430222 /* ToadAction.swift */,
 				12F7643423F7E0660080398B /* KnightGuardAction.swift */,
 				12623112240144C50091F7EA /* LogBarrierAction.swift */,
+				12BAABB424AF3F8100DA8AB7 /* ActionByHitCountAction.swift */,
 				12F1263020B95684005C9659 /* PassiveAction.swift */,
 				12CF02A4236AA9C4003CD3AD /* LoopMotionRepeatAction.swift */,
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
@@ -1954,6 +1957,7 @@
 				126BFBD320F0FC420059B4ED /* BDEquipmentViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
 				12CF02A5236AA9C4003CD3AD /* LoopMotionRepeatAction.swift in Sources */,
+				12BAABB524AF3F8100DA8AB7 /* ActionByHitCountAction.swift in Sources */,
 				1281FA56209AEC9800F2D567 /* CraftSummaryCollectionViewCell.swift in Sources */,
 				12F125FF20B95315005C9659 /* RevivalAction.swift in Sources */,
 				120F9B8520E9F97E003632CA /* CharaTableViewCell.swift in Sources */,
@@ -2191,7 +2195,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 169;
+				CURRENT_PROJECT_VERSION = 170;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2216,7 +2220,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 169;
+				CURRENT_PROJECT_VERSION = 170;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
