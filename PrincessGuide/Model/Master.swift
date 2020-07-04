@@ -488,6 +488,10 @@ class Master: FMDatabaseQueue {
                 
                 var items = [Int]()
                 for i in 1...20 {
+                    // Cy's mistake, we should ignore 14 here
+                    if i == 14 {
+                        continue
+                    }
                     let pattern = json["atk_pattern_\(i)"].intValue
                     items.append(pattern)
                 }
