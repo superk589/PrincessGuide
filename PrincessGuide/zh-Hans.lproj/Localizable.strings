@@ -401,6 +401,9 @@
 "Change attack pattern to %d for %@s." = "改为使用攻击模式 %1$d，持续 %2$@ 秒。";
 
 /* No comment provided by engineer. */
+"Change attack pattern to %d." = "改为使用攻击模式 %1$d。";
+
+/* No comment provided by engineer. */
 "Change body width to %@." = "改变模型宽度至 %@。";
 
 /* No comment provided by engineer. */

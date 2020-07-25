@@ -124,7 +124,7 @@ class CDSkillTableViewCell: UITableViewCell, Reusable {
         if skill.actions.count > 0 {
             actionLabel.attributedText = skill.actions.map {
                 let parameter = $0.parameter
-                let attributedContent = parameter.localizedDetailWithTags(of: CDSettingsViewController.Setting.default.unitLevel, property: property, textColor: Theme.dynamic.color.reversedBody, tagBorderColor: Theme.dynamic.color.tint, tagBackgroundColor: Theme.dynamic.color.tint)
+                let attributedContent = parameter.localizedDetailWithTags(of: CDSettingsViewController.Setting.default.skillLevel, property: property, textColor: Theme.dynamic.color.reversedBody, tagBorderColor: Theme.dynamic.color.tint, tagBackgroundColor: Theme.dynamic.color.tint)
                 let tagAttachment = NSTextAttachment.makeAttachment(String(parameter.id % 100), textColor: actionLabel.textColor, backgroundColor: .clear, borderColor: actionLabel.textColor)
                 let attributedText = NSMutableAttributedString()
                 attributedText.append(NSAttributedString(attachment: tagAttachment))

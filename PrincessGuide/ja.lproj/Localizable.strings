@@ -389,6 +389,9 @@
 "Change attack pattern to %d for %@s." = "行動パターンを%1$dに変化する、効果時間[%2$@]秒。";
 
 /* No comment provided by engineer. */
+"Change attack pattern to %d." = "行動パターンを%1$dに変化する。";
+
+/* No comment provided by engineer. */
 "Change body width to %@." = "モデルの幅を%@にする。";
 
 /* No comment provided by engineer. */

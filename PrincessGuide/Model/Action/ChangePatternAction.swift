@@ -14,8 +14,13 @@ class ChangePatterAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch actionDetail1 {
         case 1:
-            let format = NSLocalizedString("Change attack pattern to %d for %@s.", comment: "")
-            return String(format: format, actionDetail2 % 10, actionValue1.roundedString(roundingRule: nil))
+            if actionValue1 > 0 {
+                let format = NSLocalizedString("Change attack pattern to %d for %@s.", comment: "")
+                return String(format: format, actionDetail2 % 10, actionValue1.roundedString(roundingRule: nil))
+            } else {
+                let format = NSLocalizedString("Change attack pattern to %d.", comment: "")
+                return String(format: format, actionDetail2 % 10, actionValue1.roundedString(roundingRule: nil))
+            }
         case 2:
             let format = NSLocalizedString("Change skill visual effect for %@s.", comment: "")
             return String(format: format, actionValue1.roundedString(roundingRule: nil))
