@@ -33,25 +33,32 @@ class AilmentAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch ailment.ailmentType {
         case .action:
+            var result = ""
             switch ailment.ailmentDetail {
             case .some(.action(.haste)):
                 let format = NSLocalizedString("Raise %@ %d%% attack speed for [%@]s.", comment: "")
-                return String(format: format, targetParameter.buildTargetClause(), Int(((actionValue1 - 1) * 100).rounded()), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+                result = String(format: format, targetParameter.buildTargetClause(), Int(((actionValue1 - 1) * 100).rounded()), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             case .some(.action(.slow)):
                 let format = NSLocalizedString("Reduce %@ %d%% attack speed for [%@]s.", comment: "")
-                return String(format: format, targetParameter.buildTargetClause(), Int(((1 - actionValue1) * 100).rounded()), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+                result = String(format: format, targetParameter.buildTargetClause(), Int(((1 - actionValue1) * 100).rounded()), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             case .some(.action(.sleep)):
                 let format = NSLocalizedString("Make %@ fall asleep for [%@]s.", comment: "")
-                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+                result = String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             case .some(.action(.faint)):
                 let format = NSLocalizedString("Make %@ fall into faint for [%@]s.", comment: "")
-                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+                result = String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             case .some(.action(.theWorld)):
                 let format = NSLocalizedString("Stop time on %@ for [%@]s.", comment: "")
-                return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+                result = String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
             default:
                 let format = NSLocalizedString("%@ %@ for [%@]s.", comment: "")
-                return String(format: format, ailment.description, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+                result = String(format: format, ailment.description, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+            }
+            if actionDetail2 == 1 {
+                let format = NSLocalizedString("%@ The effect will be released when taking damage.", comment: "")
+                return String(format: format, result)
+            } else {
+                return result
             }
         case .dot:
             switch ailment.ailmentDetail {

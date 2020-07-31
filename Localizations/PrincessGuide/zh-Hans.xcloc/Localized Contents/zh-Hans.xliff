@@ -137,6 +137,11 @@
         <target>%@ 反馈</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="%@ The effect will be released when taking damage." xml:space="preserve">
+        <source>%@ The effect will be released when taking damage.</source>
+        <target>%@受到伤害时将解除效果。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ boss" xml:space="preserve">
         <source>%@ boss</source>
         <target>%@首领级</target>

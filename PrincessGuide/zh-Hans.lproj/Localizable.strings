@@ -128,6 +128,9 @@
 "%@ targets in range %d" = "范围 %2$d 内%1$@目标";
 
 /* No comment provided by engineer. */
+"%@ The effect will be released when taking damage." = "%@受到伤害时将解除效果。";
+
+/* No comment provided by engineer. */
 "%@ to %@" = "%1$@至%2$@";
 
 /* target type */
