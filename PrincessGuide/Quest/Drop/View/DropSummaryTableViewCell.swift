@@ -14,6 +14,8 @@ class DropSummaryTableViewCell: UITableViewCell {
     let titleLabel = UILabel()
     
     let typeLabel = UILabel()
+    
+    let manaLabel = UILabel()
 
     let collectionView = TTGTagCollectionView()
     
@@ -39,10 +41,18 @@ class DropSummaryTableViewCell: UITableViewCell {
             make.right.equalTo(readableContentGuide)
         }
         
+        manaLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
+        manaLabel.textColor = Theme.dynamic.color.lightText
+        contentView.addSubview(manaLabel)
+        manaLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.left.equalTo(readableContentGuide)
+        }
+        
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.top.equalTo(manaLabel.snp.bottom).offset(10)
             make.right.equalTo(readableContentGuide)
             make.bottom.equalTo(-10)
         }
@@ -72,6 +82,7 @@ class DropSummaryTableViewCell: UITableViewCell {
         self.focusedID = focusedID
         titleLabel.text = quest.base.questName
         typeLabel.text = quest.areaType.description
+        manaLabel.text = NSLocalizedString("Mana", comment: "") + " \(quest.mana)"
         collectionView.reload()
     }
     

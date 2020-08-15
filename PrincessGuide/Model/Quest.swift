@@ -57,6 +57,10 @@ extension Quest {
         return waves.flatMap { $0.drops.flatMap { $0.rewards } }
     }
     
+    var mana: Int {
+        return waves.flatMap(\.enemies).reduce(0, { $0 + $1.dropGold })
+    }
+    
     var areaType: AreaType {
         switch base.areaId {
         case 11000..<12000:

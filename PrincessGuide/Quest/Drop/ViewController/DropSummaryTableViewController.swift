@@ -52,6 +52,7 @@ class DropSummaryTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.register(DropSummaryTableViewCell.self, forCellReuseIdentifier: DropSummaryTableViewCell.description())
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
