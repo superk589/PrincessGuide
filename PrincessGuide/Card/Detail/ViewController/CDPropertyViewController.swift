@@ -26,11 +26,18 @@ class CDPropertyViewController: CDTableViewController {
         
         let property: Property
         let combatEffectiveness: Int
-        
+        var effectivePhysicalHPDelta: Double?
+        var effectiveMagicalHPDelta: Double?
+        var effectivePhysicalHPNoDodgeDelta: Double?
+                
         if settings.statusComparison {
             let fromProperty = card.property(unitLevel: settings.unitLevel, unitRank: settings.rankFrom, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
             let toProperty = card.property(unitLevel: settings.unitLevel, unitRank: settings.rankTo, bondRank: settings.bondRank, unitRarity: settings.unitRarity, addsEx: settings.addsEx, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
             property = toProperty - fromProperty
+            
+            effectivePhysicalHPDelta = toProperty.effectivePhysicalHP - fromProperty.effectivePhysicalHP
+            effectiveMagicalHPDelta = toProperty.effectiveMagicalHP - fromProperty.effectiveMagicalHP
+            effectivePhysicalHPNoDodgeDelta = toProperty.effectivePhysicalHPNoDodge - fromProperty.effectivePhysicalHPNoDodge
             
             let fromCombatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.rankFrom, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
             let toCombatEffectiveness = card.combatEffectiveness(unitLevel: settings.unitLevel, unitRank: settings.rankTo, bondRank: settings.bondRank, unitRarity: settings.unitRarity, skillLevel: settings.skillLevel, hasUniqueEquipment: settings.equipsUniqueEquipment, uniqueEquipmentLevel: settings.uniqueEquipmentLevel)
@@ -71,12 +78,12 @@ class CDPropertyViewController: CDTableViewController {
                 ]),
             Row.textArray(
                 [
-                    TextItem(title: NSLocalizedString("Effective Physical HP", comment: ""), content: String(Int(property.effectivePhysicalHP.rounded())), deltaValue: settings.statusComparison ? property.effectivePhysicalHP.rounded() : 0),
-                    TextItem(title: NSLocalizedString("Effective Magical HP", comment: ""), content: String(Int(property.effectiveMagicalHP.rounded())), deltaValue: settings.statusComparison ? property.effectiveMagicalHP.rounded() : 0)
+                    TextItem(title: NSLocalizedString("Effective Physical HP", comment: ""), content: String(Int((effectivePhysicalHPDelta ?? property.effectivePhysicalHP).rounded())), deltaValue: effectivePhysicalHPDelta?.rounded() ?? 0),
+                    TextItem(title: NSLocalizedString("Effective Magical HP", comment: ""), content: String(Int((effectiveMagicalHPDelta ?? property.effectiveMagicalHP).rounded())), deltaValue: effectiveMagicalHPDelta?.rounded() ?? 0)
             ]),
             Row.textArray(
                 [
-                    TextItem(title: NSLocalizedString("Effective Physical HP(No Dodge)", comment: ""), content: String(Int(property.effectivePhysicalHPNoDodge.rounded())), deltaValue: settings.statusComparison ? property.effectivePhysicalHPNoDodge.rounded() : 0)
+                    TextItem(title: NSLocalizedString("Effective Physical HP(No Dodge)", comment: ""), content: String(Int((effectivePhysicalHPNoDodgeDelta ?? property.effectivePhysicalHPNoDodge).rounded())), deltaValue: effectivePhysicalHPNoDodgeDelta?.rounded() ?? 0)
             ]),
             Row.propertyItems(items: [
                 property.item(for: .hpRecoveryRate),
