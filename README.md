@@ -1,80 +1,35 @@
-# Removed from App Store
-Cygames does not allow this app and it has been removed from App Store.  
-Use this link to join TestFlight external test: https://redive.estertion.win/testflight/
+# 初音笔记 -- 公主连结 Re:Dive 简体字版
+这是一个非官方的数据解析 App，初音笔记是 App 名称，“PrincessGuide” 是项目名称。
 
-# Hatsune's Notes
-An unofficial iOS app for **プリンセスコネクト！Re:Dive**.  
-**Hatsune's Notes** is the app name and **PrincessGuide** is the project name.  
+## 这个分支和日服版本有什么区别 
+这个分支下的功能和日服版本基本相同。但是因为是直接从历史提交上建立的分支，这个分支上有相当一部分还未修复的 Bug，甚至还未适配 iOS 13。目前作者没有精力对这个分支做更多的维护，只能做到最低限度的能用的程度。暂时还没有计划发布测试版本到 TestFlight 上，因为简体字版人数比较多，一旦发布 10000 个名额大概是不够的。
 
-## Features
-
-1. Chara
-    * Skill Effect
-    * Attack Pattern
-    * Status
-    * Profile
-    * Equipment
-    * Image Viewer
-1. Equipment
-    * Drop Rate
-    * Status
-    * Raw Material
-1. Quest
-    * Normal
-    * Hard
-    * Clan Battle
-    * Story Event
-    * Dungeon
-    * Luna's Tower
- 1. Enemy and Boss   
-    * Status
-    * Skill Effect
-    * Attack Pattern
-    * Resistance
-1. Birthday Notification
-1. Chara Management
-1. Box Management
-    * Equipment Needed
-    * Mana Cost
-    * Experience Needed
-1. Team Management
-    * Recording Wins and Loses
-    * Searching with Tags
-1. Game Version Log and Schedule
-1. Game Data Auto Updating
-
-## How to localize
-By now, **Hatsune's Notes** provides Chinese and English localization fully, and Japanese partially.  
-If you want to localize the app, please goto `./Localizations/PrincessGuide/` and edit the .xliff files.  
-If you want to add a new language please tell me.  
-For developers only, if you have macOS and Xcode, please read `./Localizations/README.md` and use those scripts to export or import localization.
-
-## How to build
-### Requirements
+## 如何编译
+### 需求
 * iOS 10.0+
 * Xcode 10.2+
 * Swift 5.0+
 
-### Steps
-* Clone the repository
+### 步骤
+* Clone 代码
 ```
 $ git clone https://github.com/superk589/PrincessGuide.git
 ```
-* Install dependencies with [CocoaPods](https://cocoapods.org).
+* 使用 [CocoaPods](https://cocoapods.org) 安装依赖。
 ```
 $ pod install
 ```
-* Open the workspace in Xcode
+* 打开项目的 xcworkspace 文件
 ```
 $ open PrincessGuide.xcworkspace
 ```
 
-## Acknowledgement
+## 鸣谢
 * [esterTion](https://github.com/esterTion)
 * [CaiMiao](https://github.com/CaiMiao)
 * Axx
 * GSflky
 * izuna
 
-## Contact
-Follow and contact me on [Twitter](https://twitter.com/superk64). If you find an issue, just [open a ticket](https://github.com/superk589/PrincessGuide/issues/new). Pull requests are warmly welcome as well.
+## 联系作者
+QQ群：825152655
