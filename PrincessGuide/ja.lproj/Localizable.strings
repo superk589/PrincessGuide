@@ -5,6 +5,12 @@
 ", " = "、";
 
 /* No comment provided by engineer. */
+"(except self)" = "（自分以外）";
+
+/* No comment provided by engineer. */
+"(max %d times)" = "（上限は %s 回）";
+
+/* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ during break." = "Break期間中、%2$@の%5$@を[%3$@%4$@]%1$@。";
 
 /* No comment provided by engineer. */
@@ -101,6 +107,9 @@
 "%@ nearest" = "最も近い%@";
 
 /* No comment provided by engineer. */
+"%@ nearest except self" = "%@自分以外最も近い";
+
+/* No comment provided by engineer. */
 "%@ physics" = "物理攻撃をする%@";
 
 /* No comment provided by engineer. */
@@ -112,8 +121,14 @@
 /* No comment provided by engineer. */
 "%@ receives your blessing." = "%@はあなたの祝福を受けました。";
 
+/* No comment provided by engineer. */
+"%@ shadow" = "%@シャドー";
+
 /* [enemy] targets in range [500] */
 "%@ targets in range %d" = "%2$d範囲内%1$@全体";
+
+/* No comment provided by engineer. */
+"%@ The effect will be released when taking damage." = "%@この効果はダメージを受けた時に解除される。";
 
 /* No comment provided by engineer. */
 "%@ to %@" = "%@〜%@";
@@ -650,13 +665,13 @@
 "Edit Team" = "編集チーム";
 
 /* No comment provided by engineer. */
-"Effective Magical HP" = "Effective Magical HP";
+"Effective Magical HP" = "魔法有効HP";
 
 /* No comment provided by engineer. */
-"Effective Physical HP" = "Effective Physical HP";
+"Effective Physical HP" = "物理有効HP";
 
 /* No comment provided by engineer. */
-"Effective Physical HP(No Dodge)" = "Effective Physical HP(No Dodge)";
+"Effective Physical HP(No Dodge)" = "物理有効HP（回避なし）";
 
 /* No comment provided by engineer. */
 "Email" = "メール";
@@ -854,6 +869,9 @@
 "if target is not defeated by last effect then use %d" = "前のアクションがターゲットを倒してない場合、[アクション%d]を使う";
 
 /* No comment provided by engineer. */
+"Ignore the other units' taunt when attacking %@." = "%@を攻撃する時、他のターゲットの挑発効果を無視する。";
+
+/* No comment provided by engineer. */
 "Image" = "画像";
 
 /* No comment provided by engineer. */
@@ -1025,6 +1043,9 @@
 "Max Rank to %@" = "Max Rank to %@";
 
 /* No comment provided by engineer. */
+"Max. %@: %@" = "Max. %1$@: %2$@";
+
+/* No comment provided by engineer. */
 "Max. lv." = "最大レベル";
 
 /* No comment provided by engineer. */
@@ -1047,6 +1068,12 @@
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * count of %@ behind self] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * 後ろの%2$@の数]アップさせる。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * count of %@] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * %2$@の数]アップさせる。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "[アクション%3$d]の媒介変数%2$dを [%1$@ * ダメージを与えられたターゲットの数] アップさせる。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * 倒した敵の数]アップさせる。";
@@ -1097,7 +1124,7 @@
 "Move to %@ in front of %@ with velocity %@/s." = "[%3$@]の速度で%2$@の前[%1$@]の位置まで移動する。";
 
 /* No comment provided by engineer. */
-"Multiple the energy gained by %@ from effects [%@] with [%@]." = "Multiple the energy gained by %1$@ from effects [%2$@] with [%3$@].";
+"Multiple the energy gained by %@ from effects [%@] with [%@]." = "ダメージによるTP回復を含めて、%1$@が [アクション%2$@] を受けた時全てのTP回復効果を [本来の値 * %3$@] に変更させる。";
 
 /* No comment provided by engineer. */
 "name" = "name";
@@ -1414,6 +1441,9 @@
 /* No comment provided by engineer. */
 "Settings" = "設定";
 
+/* No comment provided by engineer. */
+"shadow" = "シャドー";
+
 /* expression style */
 "short" = "簡略";
 
@@ -1472,6 +1502,9 @@
 "SP %d" = "SP %d";
 
 /* No comment provided by engineer. */
+"SP+" = "SP+";
+
+/* No comment provided by engineer. */
 "Special Effect" = "Special Effect";
 
 /* No comment provided by engineer. */
@@ -1490,7 +1523,7 @@
 "Still" = "絆ストーリー";
 
 /* No comment provided by engineer. */
-"Stop time on %@ for [%@]s." = "Stop time on %1$@ for [%2$@]s.";
+"Stop time on %@ for [%@]s." = "%1$@を時間停止状態にする、効果時間 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
 "Story" = "ストーリー";
@@ -1548,9 +1581,6 @@
 
 /* No comment provided by engineer. */
 "targets of effect %d" = "[アクション%d]のターゲット";
-
-/* No comment provided by engineer. */
-"targets of effect %d and %@ targets in range %d" = "targets of effect %1$d and %2$@ targets in range %3$d";
 
 /* No comment provided by engineer. */
 "targets of last effect" = "同じ";
@@ -1618,6 +1648,9 @@
 /* target type */
 "the %@ nearest" = "%@近い";
 
+/* No comment provided by engineer. */
+"the %@ nearest except self" = "自分以外%@近い";
+
 /* target type */
 "the %@ unknown type" = "%@未知種類";
 
@@ -1656,6 +1689,9 @@
 
 /* target type */
 "the nearest" = "最も近い";
+
+/* No comment provided by engineer. */
+"the nearest except self" = "自分以外最も近い";
 
 /* No comment provided by engineer. */
 "There aren't any Mail accounts" = "メールアカウントを見つかりませんでした。";
@@ -1817,6 +1853,12 @@
 "use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" = "%2$@が持っているマーク[ID：%3$d]のスタック数が%4$d未満の場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
+"use %d if %@'s HP is below %d%%" = "%2$@のHPが [%3$d%%] 以下の場合、[アクション%1$d]を使う。";
+
+/* No comment provided by engineer. */
+"use %d if %@'s HP is not below %d%%" = "%2$@のHPが [%3$d%%] 以下でない場合、[アクション%1$d]を使う。";
+
+/* No comment provided by engineer. */
 "use %d if among %@ does not exist unit(ID: %d)" = "潜伏状態のユニットを除いて、%2$@の中ユニット（ID：%3$d）が存在しない場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
@@ -1829,13 +1871,25 @@
 "use %d if the count of %@(except stealth units) is not %d" = "潜伏状態のユニットを除いて、%2$@の数が%3$dでない場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
+"use %d if this skill is critical" = "このスキルがクリティカルした場合、[アクション%d]を使う。";
+
+/* No comment provided by engineer. */
+"use %d if this skill is not critical" = "このスキルがクリティカルしなかった場合、[アクション%d]を使う。";
+
+/* No comment provided by engineer. */
 "use %d to %@ if %@" = "%2$@が%3$@の場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
 "use %d to %@ if it's alone" = "%2$@が独りの場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
+"use %d to %@ if it's magical unit" = "%2$@が魔法攻撃を行う対象でない場合、[アクション%1$d] を使う。";
+
+/* No comment provided by engineer. */
 "use %d to %@ if it's not alone" = "%2$@が独りでない場合、[アクション%1$d]を使う";
+
+/* No comment provided by engineer. */
+"use %d to %@ if it's physical unit" = "%2$@が物理攻撃を行う対象でない場合、[アクション%1$d] を使う。";
 
 /* No comment provided by engineer. */
 "use %d to %@ if not %@" = "%2$@が%3$@でない場合、[アクション%1$d]を使う";
@@ -1845,6 +1899,9 @@
 
 /* No comment provided by engineer. */
 "use %d to %@ in state of ID: %d" = "%2$@がマーク[ID：%3$d]を持っている場合、[アクション%1$d]を使う";
+
+/* No comment provided by engineer. */
+"Use %d%@ every %@ hits in next [%@]s." = "[%4$@] 秒内、[%3$@] Hitするたびに[アクション%1$d]%2$@を使う。";
 
 /* No comment provided by engineer. */
 "value %d" = "変数%d";

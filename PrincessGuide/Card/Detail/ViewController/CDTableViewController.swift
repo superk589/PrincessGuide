@@ -131,8 +131,18 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             return cell
         case .promotion(let promotion):
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDPromotionTableViewCell.self)
+            var extraStrings = [String]()
+            if card?.maxEnergyRecoveryRateRank == promotion.promotionLevel {
+                let format = NSLocalizedString("Max. %@: %@", comment: "")
+                extraStrings.append(String(format: format, PropertyKey.energyRecoveryRate.description, card?.property(unitRank: promotion.promotionLevel).energyRecoveryRate.roundedString(roundingRule: nil) ?? ""))
+            }
+            if card?.maxEnergyReduceRank == promotion.promotionLevel {
+                let format = NSLocalizedString("Max. %@: %@", comment: "")
+                extraStrings.append(String(format: format, PropertyKey.energyReduceRate.description, card?.property(unitRank: promotion.promotionLevel).energyReduceRate.roundedString(roundingRule: nil) ?? ""))
+            }
+            let baseString = NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)"
             cell.configure(
-                title: NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)",
+                title: ([baseString] + extraStrings).joined(separator: "\n"),
                 imageURLs: promotion.equipSlots.map { URL.resource.appendingPathComponent("icon/equipment/\($0).webp") }
             )
             cell.delegate = self

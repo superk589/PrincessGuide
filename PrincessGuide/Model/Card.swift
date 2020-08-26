@@ -420,6 +420,26 @@ extension Card {
         return base.unitId / 100
     }
     
+    var maxEnergyReduceRank: Int? {
+        promotionStatuses.enumerated()
+            .max {
+                let a = $0.element.property.energyReduceRate * 2 - (promotionStatuses[safe: $0.offset - 1]?.property.energyReduceRate ?? 0)
+                let b = $1.element.property.energyReduceRate * 2 - (promotionStatuses[safe: $1.offset - 1]?.property.energyReduceRate ?? 0)
+                return a < b
+            }
+            .flatMap { $0.offset + 1 }
+    }
+    
+    var maxEnergyRecoveryRateRank: Int? {
+        promotionStatuses.enumerated()
+            .max {
+                let a = $0.element.property.energyRecoveryRate * 2 - (promotionStatuses[safe: $0.offset - 1]?.property.energyRecoveryRate ?? 0)
+                let b = $1.element.property.energyRecoveryRate * 2 - (promotionStatuses[safe: $1.offset - 1]?.property.energyRecoveryRate ?? 0)
+                return a < b
+            }
+            .flatMap { $0.offset + 1 }
+    }
+    
     func property(unitLevel: Int = Preload.default.maxPlayerLevel,
                   unitRank: Int = Preload.default.maxEquipmentRank,
                   bondRank: Int = Constant.presetMaxPossibleBondRank,

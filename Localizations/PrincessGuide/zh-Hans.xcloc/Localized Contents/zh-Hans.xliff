@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.6" build-num="11E708"/>
@@ -234,9 +235,9 @@
         <target>最近的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ nearest without owner" xml:space="preserve">
-        <source>%@ nearest without owner</source>
-        <target>%@除自己外最近的</target>
+      <trans-unit id="%@ nearest except self" xml:space="preserve">
+        <source>%@ nearest except self</source>
+        <target>@除自己外最近的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ physics" xml:space="preserve">
@@ -1532,6 +1533,11 @@
       <trans-unit id="Max Rank to %@" xml:space="preserve">
         <source>Max Rank to %@</source>
         <target>最大 Rank 提高至 %@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Max. %@: %@" xml:space="preserve">
+        <source>Max. %1$@: %2$@</source>
+        <target>最大 %1$@：%2$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Max. lv." xml:space="preserve">
@@ -2984,11 +2990,6 @@
         <target>效果 %d 的目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of effect %d and %@ targets in range %d" xml:space="preserve">
-        <source>targets of effect %1$d and %2$@ targets in range %3$d</source>
-        <target>效果 %1$d 的目标和范围 %3$d 内的%2$@目标</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="targets of last effect" xml:space="preserve">
         <source>targets of last effect</source>
         <target>上一个效果影响到的目标</target>
@@ -3074,8 +3075,8 @@
         <target>%@近的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ nearest without owner" xml:space="preserve">
-        <source>the %@ nearest without owner</source>
+      <trans-unit id="the %@ nearest except self" xml:space="preserve">
+        <source>the %@ nearest except self</source>
         <target>除自己外%@近的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
@@ -3144,8 +3145,8 @@
         <target>最近的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the nearest without owner" xml:space="preserve">
-        <source>the nearest without owner</source>
+      <trans-unit id="the nearest except self" xml:space="preserve">
+        <source>the nearest except self</source>
         <target>除自己外最近的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>

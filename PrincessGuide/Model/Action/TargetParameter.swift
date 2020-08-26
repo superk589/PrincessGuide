@@ -155,9 +155,6 @@ class TargetParameter {
         case false:
             var result: String
             switch (hasCountPhrase, hasNthModifier, hasRangePhrase, hasRelationPhrase, hasDirectionPhrase, hasDependAction) {
-                //        case (_, _, true, _, _, true) where targetCount == .all || targetCount == .zero:
-                //            let format = NSLocalizedString("targets of effect %d and %@ targets in range %d", comment: "")
-            //            return String(format: format, dependAction!.base.actionId % 100, targetAssignment.description, targetRange.rawRange)
             case (_, _, _, _, _, true):
                 if let actionType = dependAction?.parameter.actionType, [ActionType.damage, .gravity].contains(actionType) {
                     let format = NSLocalizedString("targets those damaged by effect %d", comment: "")
@@ -387,7 +384,7 @@ enum TargetType: Int, CustomStringConvertible {
     case magicSTRDescendingOrNear
     case magicSTRAscendingOrNear
     case shadow
-    case nearWithoutOwner
+    case nearExceptSelf
     
     enum ExclusiveAllType {
         case not
@@ -399,7 +396,7 @@ enum TargetType: Int, CustomStringConvertible {
         switch self {
         case .unknown, .magic, .physics, .summon, .boss:
             return .not
-        case .nearWithoutOwner:
+        case .nearExceptSelf:
             return .halfExclusive(NSLocalizedString("(except self)", comment: ""))
         default:
             return .exclusive
@@ -467,8 +464,8 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("boss", comment: "")
         case .shadow:
             return NSLocalizedString("shadow", comment: "")
-        case .nearWithoutOwner:
-            return NSLocalizedString("the nearest without owner", comment: "")
+        case .nearExceptSelf:
+            return NSLocalizedString("the nearest except self", comment: "")
         }
     }
     
@@ -538,8 +535,8 @@ enum TargetType: Int, CustomStringConvertible {
         case .shadow:
             let format = NSLocalizedString("%@ shadow", comment: "")
             return String(format: format, localizedModifier)
-        case .nearWithoutOwner:
-            let format = NSLocalizedString("%@ nearest without owner", comment: "")
+        case .nearExceptSelf:
+            let format = NSLocalizedString("%@ nearest except self", comment: "")
             return String(format: format, localizedModifier)
         default:
             return description
@@ -592,8 +589,8 @@ enum TargetType: Int, CustomStringConvertible {
             case .magicSTRAscending, .magicSTRAscendingOrNear:
                 let format = NSLocalizedString("the %@ lowest Magic STR", comment: "")
                 return String(format: format, localizedModifier)
-            case .nearWithoutOwner:
-                let format = NSLocalizedString("the %@ nearest without owner", comment: "")
+            case .nearExceptSelf:
+                let format = NSLocalizedString("the %@ nearest except self", comment: "")
                 return String(format: format, localizedModifier)
             default:
                 return description

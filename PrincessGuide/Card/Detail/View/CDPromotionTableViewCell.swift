@@ -34,6 +34,7 @@ class CDPromotionTableViewCell: UITableViewCell, Reusable {
             make.top.equalTo(10)
         }
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
+        titleLabel.numberOfLines = 0
         
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in

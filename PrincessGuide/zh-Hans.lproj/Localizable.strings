@@ -107,7 +107,7 @@
 "%@ nearest" = "最近的%@";
 
 /* No comment provided by engineer. */
-"%@ nearest without owner" = "%@除自己外最近的";
+"%@ nearest except self" = "@除自己外最近的";
 
 /* No comment provided by engineer. */
 "%@ physics" = "%@物理系";
@@ -1043,6 +1043,9 @@
 "Max Rank to %@" = "最大 Rank 提高至 %@";
 
 /* No comment provided by engineer. */
+"Max. %@: %@" = "最大 %1$@：%2$@";
+
+/* No comment provided by engineer. */
 "Max. lv." = "最大等级";
 
 /* No comment provided by engineer. */
@@ -1580,9 +1583,6 @@
 "targets of effect %d" = "效果 %d 的目标";
 
 /* No comment provided by engineer. */
-"targets of effect %d and %@ targets in range %d" = "效果 %1$d 的目标和范围 %3$d 内的%2$@目标";
-
-/* No comment provided by engineer. */
 "targets of last effect" = "上一个效果影响到的目标";
 
 /* target type */
@@ -1649,7 +1649,7 @@
 "the %@ nearest" = "%@近的";
 
 /* No comment provided by engineer. */
-"the %@ nearest without owner" = "除自己外%@近的";
+"the %@ nearest except self" = "除自己外%@近的";
 
 /* target type */
 "the %@ unknown type" = "%@未知类型的";
@@ -1691,7 +1691,7 @@
 "the nearest" = "最近的";
 
 /* No comment provided by engineer. */
-"the nearest without owner" = "除自己外最近的";
+"the nearest except self" = "除自己外最近的";
 
 /* No comment provided by engineer. */
 "There aren't any Mail accounts" = "未设置邮件账户";
