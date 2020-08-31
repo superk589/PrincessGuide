@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.6" build-num="11E708"/>
@@ -2235,9 +2234,9 @@
         <target>总结</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s." xml:space="preserve">
-        <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@] %5$@ for [%6$@]s.</source>
-        <target>在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@] %5$@，持续 [%6$@] 秒。</target>
+      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
+        <target>在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." xml:space="preserve">
@@ -2250,9 +2249,9 @@
         <target>在%2$@的位置展开一片半径为 %1$d 的区域，持续释放效果 %3$d，持续 [%4$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." xml:space="preserve">
-        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@] %5$@ for [%6$@]s.</source>
-        <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。</target>
+      <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
+        <target>展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." xml:space="preserve">
@@ -3158,6 +3157,11 @@
       <trans-unit id="three" xml:space="preserve">
         <source>three</source>
         <target>三个</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="transformed" xml:space="preserve">
+        <source>transformed</source>
+        <target>变形</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="two" xml:space="preserve">

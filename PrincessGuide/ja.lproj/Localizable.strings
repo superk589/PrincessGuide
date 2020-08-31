@@ -1538,7 +1538,7 @@
 "Summary" = "概要";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s." = "%2$@の位置で半径%1$dのフィールドを展開し、%5$@を[%4$@]%3$@させる、効果時間[%6$@]秒。";
+"Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s." = "%2$@の位置で半径%1$dのフィールドを展開し、%6$@を[%4$@]%5$@%3$@させる、効果時間[%7$@]秒。";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." = "%2$@の位置で半径%1$dのフィールドを展開し、毎秒[%3$@]の%4$@ダメージを与える、効果時間[%5$@]秒。";
@@ -1547,7 +1547,7 @@
 "Summon a field of radius %d on %@ to cast effect %d for [%@]s." = "%2$@の位置で半径%1$dのフィールドを展開し、[アクション%3$d]を継続的に放る、効果時間[%4$@]秒。";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." = "半径%1$dのフィールドを展開し、%3$@の%5$@を[%4$@]%2$@させる、効果時間[%6$@]秒。";
+"Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." = "半径%1$dのフィールドを展開し、%3$@の%6$@を[%4$@]%5$@%2$@させる、効果時間[%7$@]秒。";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." = "半径%1$dのフィールドを展開し、%5$@に毎秒[%2$@]の%3$@ダメージを与える、効果時間[%4$@]秒。";
@@ -1731,6 +1731,9 @@
 
 /* No comment provided by engineer. */
 "TP" = "TP";
+
+/* No comment provided by engineer. */
+"transformed" = "変貌";
 
 /* No comment provided by engineer. */
 "Trigger: %d%% on all targets break." = "トリガー：すべての部位がBreakされた時[%1$d%%]の確率で発動。";

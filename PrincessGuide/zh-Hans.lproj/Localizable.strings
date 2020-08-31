@@ -1538,7 +1538,7 @@
 "Summary" = "总结";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@] %5$@，持续 [%6$@] 秒。";
+"Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
@@ -1547,7 +1547,7 @@
 "Summon a field of radius %d on %@ to cast effect %d for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，持续释放效果 %3$d，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@] %5$@，持续 [%6$@] 秒。";
+"Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." = "展开一片半径为 %1$d 的区域，%2$@%3$@ [%4$@]%5$@ %6$@，持续 [%7$@] 秒。";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." = "展开一片半径为 %1$d 的区域，每秒对%5$@造成 [%2$@] %3$@伤害，持续 [%4$@] 秒。";
@@ -1731,6 +1731,9 @@
 
 /* No comment provided by engineer. */
 "TP" = "TP";
+
+/* No comment provided by engineer. */
+"transformed" = "变形";
 
 /* No comment provided by engineer. */
 "Trigger: %d%% on all targets break." = "触发条件：所有部位 Break 时 %d%% 触发。";

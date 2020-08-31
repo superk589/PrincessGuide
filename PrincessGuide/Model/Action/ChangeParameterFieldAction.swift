@@ -10,6 +10,10 @@ import Foundation
 
 class ChangeParameterFieldAction: AuraAction {
     
+    override var percentModifier: PercentModifier {
+        return PercentModifier(actionDetail2)
+    }
+    
     override var actionValues: [ActionValue] {
         return [
             ActionValue(initial: String(actionValue1), perLevel: String(actionValue2), key: nil, startIndex: 1),
@@ -24,24 +28,26 @@ class ChangeParameterFieldAction: AuraAction {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         if targetParameter.targetType == .absolute {
-            let format = NSLocalizedString("Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s.", comment: "")
+            let format = NSLocalizedString("Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s.", comment: "")
             return String(
                 format: format,
                 Int(actionValue5),
                 auraActionType.description.lowercased(),
                 targetParameter.buildTargetClause(),
                 buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property),
+                percentModifier.description,
                 auraType.description,
                 buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
             )
         } else {
-            let format = NSLocalizedString("Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s.", comment: "")
+            let format = NSLocalizedString("Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s.", comment: "")
             return String(
                 format: format,
                 Int(actionValue5),
                 targetParameter.buildTargetClause(),
                 auraActionType.description.lowercased(),
                 buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property),
+                percentModifier.description,
                 auraType.description,
                 buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
             )

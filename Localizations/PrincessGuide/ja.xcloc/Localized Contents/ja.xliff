@@ -2234,9 +2234,9 @@
         <target>概要</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@] %@ for [%@]s." xml:space="preserve">
-        <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@] %5$@ for [%6$@]s.</source>
-        <target>%2$@の位置で半径%1$dのフィールドを展開し、%5$@を[%4$@]%3$@させる、効果時間[%6$@]秒。</target>
+      <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
+        <target>%2$@の位置で半径%1$dのフィールドを展開し、%6$@を[%4$@]%5$@%3$@させる、効果時間[%7$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." xml:space="preserve">
@@ -2249,9 +2249,9 @@
         <target>%2$@の位置で半径%1$dのフィールドを展開し、[アクション%3$d]を継続的に放る、効果時間[%4$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Summon a field of radius %d to %@ %@ [%@] %@ for [%@]s." xml:space="preserve">
-        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@] %5$@ for [%6$@]s.</source>
-        <target>半径%1$dのフィールドを展開し、%3$@の%5$@を[%4$@]%2$@させる、効果時間[%6$@]秒。</target>
+      <trans-unit id="Summon a field of radius %d to %@ %@ [%@]%@ %@ for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d to %2$@ %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
+        <target>半径%1$dのフィールドを展開し、%3$@の%6$@を[%4$@]%5$@%2$@させる、効果時間[%7$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d to deal [%@] %@ damage per second for [%@]s to %@." xml:space="preserve">
@@ -3157,6 +3157,11 @@
       <trans-unit id="three" xml:space="preserve">
         <source>three</source>
         <target>３体</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="transformed" xml:space="preserve">
+        <source>transformed</source>
+        <target>変貌</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="two" xml:space="preserve">
