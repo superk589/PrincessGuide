@@ -12,20 +12,29 @@ class ChangePatterAction: ActionParameter {
     
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
+        
+        var result = ""
+        
         switch actionDetail1 {
         case 1:
             if actionValue1 > 0 {
                 let format = NSLocalizedString("Change attack pattern to %d for %@s.", comment: "")
-                return String(format: format, actionDetail2 % 10, actionValue1.roundedString(roundingRule: nil))
+                result = String(format: format, actionDetail2 % 10, actionValue1.roundedString(roundingRule: nil))
             } else {
                 let format = NSLocalizedString("Change attack pattern to %d.", comment: "")
-                return String(format: format, actionDetail2 % 10, actionValue1.roundedString(roundingRule: nil))
+                result = String(format: format, actionDetail2 % 10, actionValue1.roundedString(roundingRule: nil))
+            }
+            if actionDetail3 == 1 {
+                let clause = NSLocalizedString(" Can't use union burst when the new attack pattern is active.", comment: "")
+                result.append(clause)
             }
         case 2:
             let format = NSLocalizedString("Change skill visual effect for %@s.", comment: "")
-            return String(format: format, actionValue1.roundedString(roundingRule: nil))
+            result = String(format: format, actionValue1.roundedString(roundingRule: nil))
         default:
-            return super.localizedDetail(of: level, property: property, style: style)
+            result = super.localizedDetail(of: level, property: property, style: style)
         }
+        
+        return result
     }
 }

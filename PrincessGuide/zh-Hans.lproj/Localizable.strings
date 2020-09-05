@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+" Can't use union burst when the new attack pattern is active." = "新攻击模式生效期间，无法使用 UB。";
+
+/* No comment provided by engineer. */
 " Critical damage is %@ times as normal damage." = "暴击时将造成 %@ 倍伤害。";
 
 /* clause separator */
