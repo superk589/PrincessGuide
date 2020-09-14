@@ -936,12 +936,12 @@
       </trans-unit>
       <trans-unit id="Detain" xml:space="preserve">
         <source>Detain</source>
-        <target>拘留</target>
+        <target>禁锢</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Detain (Damage)" xml:space="preserve">
         <source>Detain (Damage)</source>
-        <target>拘留（伤害）</target>
+        <target>禁锢（伤害）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Do nothing." xml:space="preserve">
