@@ -385,6 +385,9 @@ enum TargetType: Int, CustomStringConvertible {
     case magicSTRAscendingOrNear
     case shadow
     case nearExceptSelf
+    case hpDescendingOrNearForward
+    case hpAscendingOrNearForward
+    case tpDescendingOrMaxForward
     
     enum ExclusiveAllType {
         case not
@@ -424,9 +427,9 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("the nearest", comment: "target type")
         case .far:
             return NSLocalizedString("the farthest", comment: "target type")
-        case .hpAscending, .hpAscendingOrNear:
+        case .hpAscending, .hpAscendingOrNear, .hpAscendingOrNearForward:
             return NSLocalizedString("the lowest HP ratio", comment: "target type")
-        case .hpDescending, .hpDescendingOrNear:
+        case .hpDescending, .hpDescendingOrNear, .hpDescendingOrNearForward:
             return NSLocalizedString("the highest HP ratio", comment: "target type")
         case .`self`:
             return NSLocalizedString("self", comment: "target type")
@@ -438,7 +441,7 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("the most forward", comment: "target type")
         case .absolute:
             return NSLocalizedString("targets within the scope", comment: "")
-        case .tpDescending, .tpDescendingOrNear:
+        case .tpDescending, .tpDescendingOrNear, .tpDescendingOrMaxForward:
             return NSLocalizedString("the highest TP", comment: "target type")
         case .tpAscending, .tpReducing, .tpAscendingOrNear:
             return NSLocalizedString("the lowest TP", comment: "target type")
