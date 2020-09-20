@@ -181,7 +181,7 @@
       </trans-unit>
       <trans-unit id="%@ highest HP" xml:space="preserve">
         <source>%@ highest HP</source>
-        <target>HP 最高的%@</target>
+        <target> HP 最高的%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ highest HP ratio" xml:space="preserve">
@@ -206,7 +206,7 @@
       </trans-unit>
       <trans-unit id="%@ lowest HP" xml:space="preserve">
         <source>%@ lowest HP</source>
-        <target>HP 最低的%@</target>
+        <target> HP 最低的%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ lowest HP ratio" xml:space="preserve">
@@ -3121,7 +3121,7 @@
       </trans-unit>
       <trans-unit id="the highest HP" xml:space="preserve">
         <source>the highest HP</source>
-        <target>HP 最高的</target>
+        <target> HP 最高的</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the highest HP ratio" xml:space="preserve">
@@ -3146,7 +3146,7 @@
       </trans-unit>
       <trans-unit id="the lowest HP" xml:space="preserve">
         <source>the lowest HP</source>
-        <target>HP 最低的</target>
+        <target> HP 最低的</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the lowest HP ratio" xml:space="preserve">
