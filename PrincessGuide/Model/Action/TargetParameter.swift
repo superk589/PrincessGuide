@@ -427,10 +427,14 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("the nearest", comment: "target type")
         case .far:
             return NSLocalizedString("the farthest", comment: "target type")
-        case .hpAscending, .hpAscendingOrNear, .hpAscendingOrNearForward:
+        case .hpAscending, .hpAscendingOrNear:
             return NSLocalizedString("the lowest HP ratio", comment: "target type")
-        case .hpDescending, .hpDescendingOrNear, .hpDescendingOrNearForward:
+        case .hpDescending, .hpDescendingOrNear:
             return NSLocalizedString("the highest HP ratio", comment: "target type")
+        case .hpAscendingOrNearForward:
+            return NSLocalizedString("the lowest HP", comment: "target type")
+        case .hpDescendingOrNearForward:
+            return NSLocalizedString("the highest HP", comment: "target type")
         case .`self`:
             return NSLocalizedString("self", comment: "target type")
 //        case .randomOnce:
@@ -487,11 +491,17 @@ enum TargetType: Int, CustomStringConvertible {
         case .far:
             let format = NSLocalizedString("%@ farthest", comment: "target type")
             return String(format: format, localizedModifier)
-        case .hpAscending:
+        case .hpAscending, .hpAscendingOrNear:
             let format = NSLocalizedString("%@ lowest HP ratio", comment: "target type")
             return String(format: format, localizedModifier)
-        case .hpDescending:
+        case .hpDescending, .hpDescendingOrNear:
             let format = NSLocalizedString("%@ highest HP ratio", comment: "target type")
+            return String(format: format, localizedModifier)
+        case .hpAscendingOrNearForward:
+            let format = NSLocalizedString("%@ lowest HP", comment: "target type")
+            return String(format: format, localizedModifier)
+        case .hpDescendingOrNearForward:
+            let format = NSLocalizedString("%@ highest HP", comment: "target type")
             return String(format: format, localizedModifier)
         case .forward:
             let format = NSLocalizedString("%@ most backward", comment: "target type")
@@ -567,6 +577,12 @@ enum TargetType: Int, CustomStringConvertible {
                 return String(format: format, localizedModifier)
             case .hpDescending, .hpDescendingOrNear:
                 let format = NSLocalizedString("the %@ highest HP ratio", comment: "target type")
+                return String(format: format, localizedModifier)
+            case .hpAscendingOrNearForward:
+                let format = NSLocalizedString("the %@ lowest HP", comment: "target type")
+                return String(format: format, localizedModifier)
+            case .hpDescendingOrNearForward:
+                let format = NSLocalizedString("the %@ highest HP", comment: "target type")
                 return String(format: format, localizedModifier)
             case .forward:
                 let format = NSLocalizedString("the %@ most backward", comment: "target type")

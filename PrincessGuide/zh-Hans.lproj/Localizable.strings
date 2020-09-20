@@ -74,6 +74,9 @@
 "%@ highest ATK" = "物理攻击力最高的%@";
 
 /* target type */
+"%@ highest HP" = "HP 最高的%@";
+
+/* target type */
 "%@ highest HP ratio" = " HP 比例最高的%@";
 
 /* No comment provided by engineer. */
@@ -84,6 +87,9 @@
 
 /* No comment provided by engineer. */
 "%@ lowest ATK" = "物理攻击力最低的%@";
+
+/* target type */
+"%@ lowest HP" = "HP 最低的%@";
 
 /* target type */
 "%@ lowest HP ratio" = " HP 比例最低的%@";
@@ -1622,6 +1628,9 @@
 "the %@ highest ATK" = "物理攻击力%@高的";
 
 /* target type */
+"the %@ highest HP" = " HP %@高的";
+
+/* target type */
 "the %@ highest HP ratio" = " HP 比例%@高的";
 
 /* No comment provided by engineer. */
@@ -1632,6 +1641,9 @@
 
 /* No comment provided by engineer. */
 "the %@ lowest ATK" = "物理攻击力%@低的";
+
+/* target type */
+"the %@ lowest HP" = " HP %@低的";
 
 /* target type */
 "the %@ lowest HP ratio" = " HP 比例%@低的";
@@ -1664,6 +1676,9 @@
 "the highest ATK" = "物理攻击力最高的";
 
 /* target type */
+"the highest HP" = "HP 最高的";
+
+/* target type */
 "the highest HP ratio" = " HP 比例最高的";
 
 /* No comment provided by engineer. */
@@ -1674,6 +1689,9 @@
 
 /* No comment provided by engineer. */
 "the lowest ATK" = "物理攻击力最低的";
+
+/* target type */
+"the lowest HP" = "HP 最低的";
 
 /* target type */
 "the lowest HP ratio" = " HP 比例最低的";

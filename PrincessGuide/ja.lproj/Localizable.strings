@@ -71,6 +71,9 @@
 "%@ highest ATK" = "物理攻撃力が高い%@";
 
 /* target type */
+"%@ highest HP" = "HPが高い%@";
+
+/* target type */
 "%@ highest HP ratio" = "HP割合が高い%@";
 
 /* No comment provided by engineer. */
@@ -81,6 +84,9 @@
 
 /* No comment provided by engineer. */
 "%@ lowest ATK" = "物理攻撃力が低い%@";
+
+/* target type */
+"%@ lowest HP" = "HPが低い%@";
 
 /* target type */
 "%@ lowest HP ratio" = "HP割合が低い%@";
@@ -1619,6 +1625,9 @@
 "the %@ highest ATK" = "物理攻撃力が%@高い";
 
 /* target type */
+"the %@ highest HP" = "HPが%@高い";
+
+/* target type */
 "the %@ highest HP ratio" = "HP割合が%@高い";
 
 /* No comment provided by engineer. */
@@ -1629,6 +1638,9 @@
 
 /* No comment provided by engineer. */
 "the %@ lowest ATK" = "物理攻撃力が%@低い";
+
+/* target type */
+"the %@ lowest HP" = "HPが%@低い";
 
 /* target type */
 "the %@ lowest HP ratio" = "HP割合が%@低い";
@@ -1661,6 +1673,9 @@
 "the highest ATK" = "物理攻撃力が一番高い";
 
 /* target type */
+"the highest HP" = "HPが一番高い";
+
+/* target type */
 "the highest HP ratio" = "HP割合が一番高い";
 
 /* No comment provided by engineer. */
@@ -1671,6 +1686,9 @@
 
 /* No comment provided by engineer. */
 "the lowest ATK" = "物理攻撃力が一番低い";
+
+/* target type */
+"the lowest HP" = "HPが一番低い";
 
 /* target type */
 "the lowest HP ratio" = "HP割合が一番低い";

@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.7" build-num="11E801a"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0" build-num="12A7209"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.7" build-num="11E801a"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0" build-num="12A7209"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.7" build-num="11E801a"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0" build-num="12A7209"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -179,6 +178,11 @@
         <target>物理攻撃力が高い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="%@ highest HP" xml:space="preserve">
+        <source>%@ highest HP</source>
+        <target>HPが高い%@</target>
+        <note>target type</note>
+      </trans-unit>
       <trans-unit id="%@ highest HP ratio" xml:space="preserve">
         <source>%@ highest HP ratio</source>
         <target>HP割合が高い%@</target>
@@ -198,6 +202,11 @@
         <source>%@ lowest ATK</source>
         <target>物理攻撃力が低い%@</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ lowest HP" xml:space="preserve">
+        <source>%@ lowest HP</source>
+        <target>HPが低い%@</target>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ lowest HP ratio" xml:space="preserve">
         <source>%@ lowest HP ratio</source>
@@ -3029,6 +3038,11 @@
         <target>物理攻撃力が%@高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the %@ highest HP" xml:space="preserve">
+        <source>the %@ highest HP</source>
+        <target>HPが%@高い</target>
+        <note>target type</note>
+      </trans-unit>
       <trans-unit id="the %@ highest HP ratio" xml:space="preserve">
         <source>the %@ highest HP ratio</source>
         <target>HP割合が%@高い</target>
@@ -3048,6 +3062,11 @@
         <source>the %@ lowest ATK</source>
         <target>物理攻撃力が%@低い</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the %@ lowest HP" xml:space="preserve">
+        <source>the %@ lowest HP</source>
+        <target>HPが%@低い</target>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="the %@ lowest HP ratio" xml:space="preserve">
         <source>the %@ lowest HP ratio</source>
@@ -3099,6 +3118,11 @@
         <target>物理攻撃力が一番高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the highest HP" xml:space="preserve">
+        <source>the highest HP</source>
+        <target>HPが一番高い</target>
+        <note>target type</note>
+      </trans-unit>
       <trans-unit id="the highest HP ratio" xml:space="preserve">
         <source>the highest HP ratio</source>
         <target>HP割合が一番高い</target>
@@ -3118,6 +3142,11 @@
         <source>the lowest ATK</source>
         <target>物理攻撃力が一番低い</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the lowest HP" xml:space="preserve">
+        <source>the lowest HP</source>
+        <target>HPが一番低い</target>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="the lowest HP ratio" xml:space="preserve">
         <source>the lowest HP ratio</source>
