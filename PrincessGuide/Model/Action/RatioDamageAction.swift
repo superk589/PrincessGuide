@@ -25,6 +25,9 @@ class RatioDamageAction: ActionParameter {
         case .current:
             let format = NSLocalizedString("Deal damage equal to [%@]%% of target's current HP to %@.", comment: "")
             return String(format: format, buildExpression(of: level, roundingRule: .none, style: style, property: property), targetParameter.buildTargetClause())
+        case .originalMax:
+            let format = NSLocalizedString("Deal damage equal to [%@]%% of target's original max HP to %@.", comment: "")
+            return String(format: format, buildExpression(of: level, roundingRule: .none, style: style, property: property), targetParameter.buildTargetClause())
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }
@@ -38,5 +41,6 @@ class RatioDamageAction: ActionParameter {
         case unknown = 0
         case max = 1
         case current
+        case originalMax
     }
 }

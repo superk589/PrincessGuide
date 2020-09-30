@@ -27,6 +27,7 @@ class AuraAction: ActionParameter {
     }
     
     enum AuraType: Int, CustomStringConvertible {
+        case none = -1
         case atk = 1
         case def
         case magicStr
@@ -40,7 +41,7 @@ class AuraAction: ActionParameter {
         case physicalCriticalDamage
         case magicalCriticalDamage
         case accuracy
-        case none
+        case maxHP = 100
         
         var description: String {
             let result: String
@@ -73,6 +74,8 @@ class AuraAction: ActionParameter {
                 result = NSLocalizedString("Physical Critical Damage", comment: "")
             case .magicalCriticalDamage:
                 result = NSLocalizedString("Magical Critical Damage", comment: "")
+            case .maxHP:
+                return NSLocalizedString("Max. HP", comment: "")
             }
             return result
         }
@@ -106,7 +109,11 @@ class AuraAction: ActionParameter {
     }
     
     var auraType: AuraType {
-        return AuraType(rawValue: actionDetail1 / 10) ?? .none
+        if actionDetail1 == 1 {
+            return .maxHP
+        } else {
+            return AuraType(rawValue: actionDetail1 / 10) ?? .none
+        }
     }
     
     enum BreakType: Int {

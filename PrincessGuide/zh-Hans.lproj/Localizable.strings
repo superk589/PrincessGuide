@@ -599,6 +599,9 @@
 "Deal damage equal to [%@]%% of target's max HP to %@." = "对%2$@造成其最大 HP [%1$@]%% 的伤害。";
 
 /* No comment provided by engineer. */
+"Deal damage equal to [%@]%% of target's original max HP to %@." = "对%2$@造成其原始最大 HP [%1$@]%% 的伤害。";
+
+/* No comment provided by engineer. */
 "debuffs" = "减益";
 
 /* No comment provided by engineer. */
@@ -1055,6 +1058,9 @@
 "Max. %@: %@" = "最大 %1$@：%2$@";
 
 /* No comment provided by engineer. */
+"Max. HP" = "最大 HP";
+
+/* No comment provided by engineer. */
 "Max. lv." = "最大等级";
 
 /* No comment provided by engineer. */
@@ -1131,6 +1137,9 @@
 
 /* No comment provided by engineer. */
 "Move to %@ in front of %@ with velocity %@/s." = "移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。";
+
+/* No comment provided by engineer. */
+"Multiple attack speed of %@ with [%@] for [%@]s." = "使%1$@的攻击速度变为原本的 [%2$@] 倍，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Multiple the energy gained by %@ from effects [%@] with [%@]." = "使%1$@从效果 [%2$@] 中获取的 TP 乘以系数 [%3$@]。";
@@ -1312,9 +1321,6 @@
 /* Raise [x] ATK. */
 "Raise [%@] %@." = "提高 [%1$@] %2$@。";
 
-/* No comment provided by engineer. */
-"Raise %@ %d%% attack speed for [%@]s." = "提高%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
-
 /* target type */
 "random" = "随机";
 
@@ -1362,9 +1368,6 @@
 
 /* No comment provided by engineer. */
 "Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." = "降低 [%1$@]%% %2$@释放的 UB 造成的伤害或直接治疗效果，持续 [%3$@] 秒。";
-
-/* No comment provided by engineer. */
-"Reduce %@ %d%% attack speed for [%@]s." = "降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Remove %@ mark stacks(ID: %@) on %@." = "移除%3$@ %1$@ 层标记（ID：%2$@）。";

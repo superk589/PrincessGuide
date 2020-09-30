@@ -1052,6 +1052,9 @@
 "Max. %@: %@" = "Max. %1$@: %2$@";
 
 /* No comment provided by engineer. */
+"Max. HP" = "最大HP";
+
+/* No comment provided by engineer. */
 "Max. lv." = "最大レベル";
 
 /* No comment provided by engineer. */
@@ -1128,6 +1131,9 @@
 
 /* No comment provided by engineer. */
 "Move to %@ in front of %@ with velocity %@/s." = "[%3$@]の速度で%2$@の前[%1$@]の位置まで移動する。";
+
+/* No comment provided by engineer. */
+"Multiple attack speed of %@ with [%@] for [%@]s." = "";
 
 /* No comment provided by engineer. */
 "Multiple the energy gained by %@ from effects [%@] with [%@]." = "ダメージによるTP回復を含めて、%1$@が [アクション%2$@] を受けた時全てのTP回復効果を [本来の値 * %3$@] に変更させる。";
@@ -1309,9 +1315,6 @@
 /* Raise [x] ATK. */
 "Raise [%@] %@." = "%2$@を[%1$@]アップ。";
 
-/* No comment provided by engineer. */
-"Raise %@ %d%% attack speed for [%@]s." = "%1$@の行動速度を%2$d%%アップ、[%3$@]秒継続する。";
-
 /* target type */
 "random" = "ランダム";
 
@@ -1359,9 +1362,6 @@
 
 /* No comment provided by engineer. */
 "Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." = "%2$@のユニオンバーストが任意のターゲットにダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。";
-
-/* No comment provided by engineer. */
-"Reduce %@ %d%% attack speed for [%@]s." = "%1$@の行動速度を%2$d%%ダウン、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
 "Remove %@ mark stacks(ID: %@) on %@." = "%3$@のマーク[ID：%2$@]を%1$@スタック減らせる。";

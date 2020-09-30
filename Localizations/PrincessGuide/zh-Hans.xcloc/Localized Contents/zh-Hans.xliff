@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0" build-num="12A7209"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0.1" build-num="12A7300"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0" build-num="12A7209"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0.1" build-num="12A7300"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0" build-num="12A7209"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0.1" build-num="12A7300"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -924,6 +924,11 @@
         <target>对%2$@造成其最大 HP [%1$@]%% 的伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Deal damage equal to [%@]%% of target's original max HP to %@." xml:space="preserve">
+        <source>Deal damage equal to [%1$@]%% of target's original max HP to %2$@.</source>
+        <target>对%2$@造成其原始最大 HP [%1$@]%% 的伤害。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Denied" xml:space="preserve">
         <source>Denied</source>
         <target>拒绝</target>
@@ -1554,6 +1559,11 @@
         <target>最大 %1$@：%2$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Max. HP" xml:space="preserve">
+        <source>Max. HP</source>
+        <target>最大 HP</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Max. lv." xml:space="preserve">
         <source>Max. lv.</source>
         <target>最大等级</target>
@@ -1677,6 +1687,11 @@
       <trans-unit id="Move to %@ in front of %@ with velocity %@/s." xml:space="preserve">
         <source>Move to %1$@ in front of %2$@ with velocity %3$@/s.</source>
         <target>移动到%2$@前 %1$@ 的位置，速度 %3$@/秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Multiple attack speed of %@ with [%@] for [%@]s." xml:space="preserve">
+        <source>Multiple attack speed of %1$@ with [%2$@] for [%3$@]s.</source>
+        <target>使%1$@的攻击速度变为原本的 [%2$@] 倍，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Multiple the energy gained by %@ from effects [%@] with [%@]." xml:space="preserve">
@@ -1899,11 +1914,6 @@
         <target>提高</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Raise %@ %d%% attack speed for [%@]s." xml:space="preserve">
-        <source>Raise %1$@ %2$d%% attack speed for [%3$@]s.</source>
-        <target>提高%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Raise [%@] %@." xml:space="preserve">
         <source>Raise [%1$@] %2$@.</source>
         <target>提高 [%1$@] %2$@。</target>
@@ -1952,11 +1962,6 @@
       <trans-unit id="Reduce" xml:space="preserve">
         <source>Reduce</source>
         <target>降低</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Reduce %@ %d%% attack speed for [%@]s." xml:space="preserve">
-        <source>Reduce %1$@ %2$d%% attack speed for [%3$@]s.</source>
-        <target>降低%1$@ %2$d%% 攻击速度，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." xml:space="preserve">

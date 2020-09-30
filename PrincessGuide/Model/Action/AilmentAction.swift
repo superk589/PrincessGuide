@@ -35,12 +35,22 @@ class AilmentAction: ActionParameter {
         case .action:
             var result = ""
             switch ailment.ailmentDetail {
-            case .some(.action(.haste)):
-                let format = NSLocalizedString("Raise %@ %d%% attack speed for [%@]s.", comment: "")
-                result = String(format: format, targetParameter.buildTargetClause(), Int(((actionValue1 - 1) * 100).rounded()), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
-            case .some(.action(.slow)):
-                let format = NSLocalizedString("Reduce %@ %d%% attack speed for [%@]s.", comment: "")
-                result = String(format: format, targetParameter.buildTargetClause(), Int(((1 - actionValue1) * 100).rounded()), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+            case .some(.action(.haste)), .some(.action(.slow)):
+                let format = NSLocalizedString("Multiple attack speed of %@ with [%@] for [%@]s.", comment: "")
+                result = String(
+                    format: format,
+                    targetParameter.buildTargetClause(),
+                    buildExpression(of: level, actionValues: actionValues, roundingRule: nil, style: style, property: property),
+                    buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+                )
+//            case .some(.action(.slow)):
+//                let format = NSLocalizedString("Multiple attack speed of %@ with [%@] for [%@]s.", comment: "")
+//                result = String(
+//                    format: format,
+//                    targetParameter.buildTargetClause(),
+//                    buildExpression(of: level, actionValues: actionValues, roundingRule: nil, style: style, property: property),
+//                    buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+//                )
             case .some(.action(.sleep)):
                 let format = NSLocalizedString("Make %@ fall asleep for [%@]s.", comment: "")
                 result = String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
