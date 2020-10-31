@@ -204,6 +204,7 @@
 		12B8F589214A5AEC00C039DE /* TowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */; };
 		12B8F58B214A5B3600C039DE /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58A214A5B3600C039DE /* Tower.swift */; };
 		12B8F58F214AAD7300C039DE /* TowerQuestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */; };
+		12B91122254D3DD100EE0FC0 /* HealDownAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B91121254D3DD000EE0FC0 /* HealDownAction.swift */; };
 		12BAABA124AAEF5000DA8AB7 /* IgnoreDecoyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BAABA024AAEF4F00DA8AB7 /* IgnoreDecoyAction.swift */; };
 		12BAABB524AF3F8100DA8AB7 /* ActionByHitCountAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BAABB424AF3F8100DA8AB7 /* ActionByHitCountAction.swift */; };
 		12BDDA7F241FAB2C00E89D7B /* ShioriEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */; };
@@ -543,6 +544,7 @@
 		12B8F588214A5AEC00C039DE /* TowerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerTableViewController.swift; sourceTree = "<group>"; };
 		12B8F58A214A5B3600C039DE /* Tower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
 		12B8F58E214AAD7300C039DE /* TowerQuestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerQuestTabViewController.swift; sourceTree = "<group>"; };
+		12B91121254D3DD000EE0FC0 /* HealDownAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealDownAction.swift; sourceTree = "<group>"; };
 		12BAABA024AAEF4F00DA8AB7 /* IgnoreDecoyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreDecoyAction.swift; sourceTree = "<group>"; };
 		12BAABB424AF3F8100DA8AB7 /* ActionByHitCountAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionByHitCountAction.swift; sourceTree = "<group>"; };
 		12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShioriEvent.swift; sourceTree = "<group>"; };
@@ -1408,6 +1410,7 @@
 				12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */,
 				12E6CCD4247BAB46009961B8 /* ChangeEnergyRatioAction.swift */,
 				12BAABA024AAEF4F00DA8AB7 /* IgnoreDecoyAction.swift */,
+				12B91121254D3DD000EE0FC0 /* HealDownAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1737,6 +1740,7 @@
 				12F1262B20B9561B005C9659 /* RatioDamageAction.swift in Sources */,
 				12125EEE2202C06600A5CEB9 /* IFExistsFieldForAllAction.swift in Sources */,
 				12F125F520B95037005C9659 /* ChargeAction.swift in Sources */,
+				12B91122254D3DD100EE0FC0 /* HealDownAction.swift in Sources */,
 				128DA48B21B26CC800F7C006 /* MinionTableViewController.swift in Sources */,
 				12A6A7D42163B09F00877074 /* DispelAction.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
@@ -2195,7 +2199,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2220,7 +2224,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

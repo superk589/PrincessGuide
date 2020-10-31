@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0.1" build-num="12A7300"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.1" build-num="12A7403"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0.1" build-num="12A7300"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.1" build-num="12A7403"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0.1" build-num="12A7300"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.1" build-num="12A7403"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -1689,7 +1690,11 @@
       </trans-unit>
       <trans-unit id="Multiple attack speed of %@ with [%@] for [%@]s." xml:space="preserve">
         <source>Multiple attack speed of %1$@ with [%2$@] for [%3$@]s.</source>
-        <target></target>
+        <target/>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Multiple heal effects from %@ with [%@] for [%@]s." xml:space="preserve">
+        <source>Multiple heal effects from %1$@ with [%2$@] for [%3$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Multiple the energy gained by %@ from effects [%@] with [%@]." xml:space="preserve">
@@ -2670,6 +2675,10 @@
       <trans-unit id="attack" xml:space="preserve">
         <source>attack</source>
         <target>攻</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="barriers" xml:space="preserve">
+        <source>barriers</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="blinded" xml:space="preserve">

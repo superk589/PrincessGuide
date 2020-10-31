@@ -14,14 +14,11 @@ class CDBasicTableViewCell: UITableViewCell, Reusable {
     
     let cardIcon = IconImageView()
     
-    let nameLabel = UILabel()
-    
     let commentLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        nameLabel.textColor = Theme.dynamic.color.title
         commentLabel.textColor = Theme.dynamic.color.body
         
         contentView.addSubview(cardIcon)
@@ -36,8 +33,8 @@ class CDBasicTableViewCell: UITableViewCell, Reusable {
         commentLabel.numberOfLines = 0
         contentView.addSubview(commentLabel)
         commentLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(10)
-            make.left.equalTo(cardIcon.snp.right).offset(10)
+            make.top.equalTo(cardIcon.snp.bottom).offset(10)
+            make.left.equalTo(readableContentGuide)
             make.right.equalTo(readableContentGuide)
             make.bottom.lessThanOrEqualTo(-10)
         }

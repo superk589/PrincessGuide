@@ -278,6 +278,9 @@
 "Back" = "后卫";
 
 /* No comment provided by engineer. */
+"barriers" = "护盾";
+
+/* No comment provided by engineer. */
 "Batch Edit" = "批量修改";
 
 /* No comment provided by engineer. */
@@ -1140,6 +1143,9 @@
 
 /* No comment provided by engineer. */
 "Multiple attack speed of %@ with [%@] for [%@]s." = "使%1$@的攻击速度变为原本的 [%2$@] 倍，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
+"Multiple heal effects from %@ with [%@] for [%@]s." = "来自%1$@的所有治疗效果变为原本的 [%2$@] 倍，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Multiple the energy gained by %@ from effects [%@] with [%@]." = "使%1$@从效果 [%2$@] 中获取的 TP 乘以系数 [%3$@]。";

@@ -13,6 +13,7 @@ class DispelAction: ActionParameter {
     enum DispelType: Int, CustomStringConvertible {
         case buff = 1
         case debuff
+        case `guard` = 10
         
         var description: String {
             switch self {
@@ -20,6 +21,8 @@ class DispelAction: ActionParameter {
                 return NSLocalizedString("buffs", comment: "")
             case .debuff:
                 return NSLocalizedString("debuffs", comment: "")
+            case .guard:
+                return NSLocalizedString("barriers", comment: "")
             }
         }
     }
