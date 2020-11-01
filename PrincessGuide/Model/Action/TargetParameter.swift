@@ -420,7 +420,7 @@ enum TargetType: Int, CustomStringConvertible {
         case .unknown:
             return NSLocalizedString("unknown", comment: "target type")
         case .none:
-            return NSLocalizedString("last effect affected or the nearest", comment: "")
+            return NSLocalizedString("the nearest", comment: "")
         case .random, .randomOnce:
             return NSLocalizedString("random", comment: "target type")
         case .zero, .near:
@@ -440,9 +440,9 @@ enum TargetType: Int, CustomStringConvertible {
 //        case .randomOnce:
 //            return NSLocalizedString("random(once)", comment: "target type")
         case .forward:
-            return NSLocalizedString("the most backward", comment: "target type")
-        case .backward:
             return NSLocalizedString("the most forward", comment: "target type")
+        case .backward:
+            return NSLocalizedString("the most backward", comment: "target type")
         case .absolute:
             return NSLocalizedString("targets within the scope", comment: "")
         case .tpDescending, .tpDescendingOrNear, .tpDescendingOrMaxForward:
@@ -483,7 +483,7 @@ enum TargetType: Int, CustomStringConvertible {
             let format = NSLocalizedString("%@ unknown type", comment: "target type")
             return String(format: format, localizedModifier)
         case .none:
-            let format = NSLocalizedString("targets of last effect or %@ nearest", comment: "target type")
+            let format = NSLocalizedString("%@ nearest", comment: "target type")
             return String(format: format, localizedModifier)
         case .zero, .near:
             let format = NSLocalizedString("%@ nearest", comment: "target type")
@@ -504,10 +504,10 @@ enum TargetType: Int, CustomStringConvertible {
             let format = NSLocalizedString("%@ highest HP", comment: "target type")
             return String(format: format, localizedModifier)
         case .forward:
-            let format = NSLocalizedString("%@ most backward", comment: "target type")
+            let format = NSLocalizedString("%@ most forward", comment: "target type")
             return String(format: format, localizedModifier)
         case .backward:
-            let format = NSLocalizedString("%@ most forward", comment: "target type")
+            let format = NSLocalizedString("%@ most backward", comment: "target type")
             return String(format: format, localizedModifier)
         case .tpDescending, .tpDescendingOrNear:
             let format = NSLocalizedString("%@ highest TP", comment: "target type")
@@ -564,7 +564,7 @@ enum TargetType: Int, CustomStringConvertible {
                 let format = NSLocalizedString("the %@ unknown type", comment: "target type")
                 return String(format: format, localizedModifier)
             case .none:
-                let format = NSLocalizedString("targets of last effect or the %@ nearest", comment: "target type")
+                let format = NSLocalizedString("the %@ nearest", comment: "target type")
                 return String(format: format, localizedModifier)
             case .zero, .near:
                 let format = NSLocalizedString("the %@ nearest", comment: "target type")
@@ -585,10 +585,10 @@ enum TargetType: Int, CustomStringConvertible {
                 let format = NSLocalizedString("the %@ highest HP", comment: "target type")
                 return String(format: format, localizedModifier)
             case .forward:
-                let format = NSLocalizedString("the %@ most backward", comment: "target type")
+                let format = NSLocalizedString("the %@ most forward", comment: "target type")
                 return String(format: format, localizedModifier)
             case .backward:
-                let format = NSLocalizedString("the %@ most forward", comment: "target type")
+                let format = NSLocalizedString("the %@ most backward", comment: "target type")
                 return String(format: format, localizedModifier)
             case .tpDescending, .tpDescendingOrNear:
                 let format = NSLocalizedString("the %@ highest TP", comment: "target type")
