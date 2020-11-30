@@ -48,10 +48,10 @@
 "%@ %@ x%@" = "%1$@ %2$@ x%3$@";
 
 /* No comment provided by engineer. */
-"%@ %@'s damage by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." = "%1$@%2$@的伤害 [%3$@ * debuff 数量] 倍（最大不超过原始伤害的 %4$@ 倍），这个效果持续 [%5$@] 秒。";
+"%@ boss" = "%@首领级";
 
 /* No comment provided by engineer. */
-"%@ boss" = "%@首领级";
+"%@ damage done to %@ by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." = "%1$@%2$@承受的伤害 [%3$@ * debuff 数量] 倍（最大不超过原始伤害的 %4$@ 倍），这个效果持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
 "%@ Damage is reduced on low level players." = "%@伤害对低等级玩家会减少。";

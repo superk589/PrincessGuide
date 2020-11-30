@@ -132,10 +132,6 @@
         <target>%1$@%2$@ x%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@'s damage by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." xml:space="preserve">
-        <source>%1$@ %2$@'s damage by [%3$@ * count of debuffs] times(up to %4$@ times of original damage), this effect lasts for [%5$@]s.</source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="%@ Damage is reduced on low level players." xml:space="preserve">
         <source>%@ Damage is reduced on low level players.</source>
         <target>%@低レベルのプレイヤーにダメージが軽減されます。</target>
@@ -154,6 +150,10 @@
       <trans-unit id="%@ boss" xml:space="preserve">
         <source>%@ boss</source>
         <target>%@首領</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ damage done to %@ by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." xml:space="preserve">
+        <source>%1$@ damage done to %2$@ by [%3$@ * count of debuffs] times(up to %4$@ times of original damage), this effect lasts for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ farthest" xml:space="preserve">

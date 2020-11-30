@@ -47,7 +47,7 @@ class PassiveDamageUpAction: ActionParameter {
         
         switch countType {
         case .debuff:
-            let format = NSLocalizedString("%@ %@'s damage by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s.", comment: "")
+            let format = NSLocalizedString("%@ damage done to %@ by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s.", comment: "")
             return String(
                 format: format,
                 effectType.description,

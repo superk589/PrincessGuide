@@ -132,11 +132,6 @@
         <target>%1$@ %2$@ x%3$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="%@ %@'s damage by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." xml:space="preserve">
-        <source>%1$@ %2$@'s damage by [%3$@ * count of debuffs] times(up to %4$@ times of original damage), this effect lasts for [%5$@]s.</source>
-        <target>%1$@%2$@的伤害 [%3$@ * debuff 数量] 倍（最大不超过原始伤害的 %4$@ 倍），这个效果持续 [%5$@] 秒。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="%@ Damage is reduced on low level players." xml:space="preserve">
         <source>%@ Damage is reduced on low level players.</source>
         <target>%@伤害对低等级玩家会减少。</target>
@@ -155,6 +150,11 @@
       <trans-unit id="%@ boss" xml:space="preserve">
         <source>%@ boss</source>
         <target>%@首领级</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ damage done to %@ by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." xml:space="preserve">
+        <source>%1$@ damage done to %2$@ by [%3$@ * count of debuffs] times(up to %4$@ times of original damage), this effect lasts for [%5$@]s.</source>
+        <target>%1$@%2$@承受的伤害 [%3$@ * debuff 数量] 倍（最大不超过原始伤害的 %4$@ 倍），这个效果持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ farthest" xml:space="preserve">
