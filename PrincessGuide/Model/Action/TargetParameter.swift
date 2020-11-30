@@ -61,7 +61,6 @@ class TargetParameter {
     var hasDependAction: Bool {
         if let dependAction = dependAction {
             return dependAction.base.actionId != 0 && targetType != .absolute
-                && [ActionType.ifForChildren, .ifForAll, .damage, .knock, .gravity].contains(dependAction.parameter.actionType)
         } else {
             return false
         }
