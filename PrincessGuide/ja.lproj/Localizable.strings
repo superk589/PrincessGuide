@@ -107,9 +107,6 @@
 "%@ most backward" = "最も後の%@";
 
 /* target type */
-"%@ most forward" = "最も前の%@";
-
-/* target type */
 "%@ nearest" = "最も近い%@";
 
 /* No comment provided by engineer. */
@@ -917,9 +914,6 @@
 "Knock Back" = "ノックバック";
 
 /* No comment provided by engineer. */
-"last effect affected or the nearest" = "前のアクションのターゲット";
-
-/* No comment provided by engineer. */
 "Level" = "レベル";
 
 /* No comment provided by engineer. */
@@ -1591,12 +1585,6 @@
 /* No comment provided by engineer. */
 "targets of last effect" = "同じ";
 
-/* target type */
-"targets of last effect or %@ nearest" = "同じか最も近い%@";
-
-/* target type */
-"targets of last effect or the %@ nearest" = "同じか%@近い";
-
 /* No comment provided by engineer. */
 "targets those damaged by effect %d" = "[アクション%d]にダメージを与えられたターゲット";
 
@@ -1655,9 +1643,6 @@
 "the %@ most backward" = "%@後の";
 
 /* target type */
-"the %@ most forward" = "%@前の";
-
-/* target type */
 "the %@ nearest" = "%@近い";
 
 /* No comment provided by engineer. */
@@ -1701,9 +1686,6 @@
 
 /* target type */
 "the most backward" = "最も後の";
-
-/* target type */
-"the most forward" = "最も前の";
 
 /* target type */
 "the nearest" = "最も近い";

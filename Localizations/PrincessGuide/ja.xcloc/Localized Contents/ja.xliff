@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.1" build-num="12A7403"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.2" build-num="12B45b"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.1" build-num="12A7403"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.2" build-num="12B45b"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.1" build-num="12A7403"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.2" build-num="12B45b"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -130,6 +130,10 @@
       <trans-unit id="%@ %@ x%@" xml:space="preserve">
         <source>%1$@ %2$@ x%3$@</source>
         <target>%1$@%2$@ x%3$@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@'s damage by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." xml:space="preserve">
+        <source>%1$@ %2$@'s damage by [%3$@ * count of debuffs] times(up to %4$@ times of original damage), this effect lasts for [%5$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ Damage is reduced on low level players." xml:space="preserve">
@@ -239,9 +243,8 @@
         <target>最も後の%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ most forward" xml:space="preserve">
-        <source>%@ most forward</source>
-        <target>最も前の%@</target>
+      <trans-unit id="%@ most frontward" xml:space="preserve">
+        <source>%@ most frontward</source>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ nearest" xml:space="preserve">
@@ -928,6 +931,10 @@
         <source>Deal damage equal to [%1$@]%% of target's original max HP to %2$@.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Decrease" xml:space="preserve">
+        <source>Decrease</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Denied" xml:space="preserve">
         <source>Denied</source>
         <target>拒否されました</target>
@@ -1311,6 +1318,10 @@
       <trans-unit id="In next [%@]s, %@'s physical attacks will miss." xml:space="preserve">
         <source>In next [%1$@]s, %2$@'s physical attacks will miss.</source>
         <target>%2$@の物理攻撃を必ずミスさせる、効果時間[%1$@]秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Increase" xml:space="preserve">
+        <source>Increase</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Inhibit Heal" xml:space="preserve">
@@ -2347,6 +2358,10 @@
         <target>神殿</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." xml:space="preserve">
+        <source>The caster gain a mark(ID: %1$@, max stacks %2$@, lasts for [%3$@]s) each time receives a buff, this effect lasts for [%4$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="There aren't any Mail accounts" xml:space="preserve">
         <source>There aren't any Mail accounts</source>
         <target>メールアカウントを見つかりませんでした。</target>
@@ -2856,11 +2871,6 @@
         <target>避けられない物理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="last effect affected or the nearest" xml:space="preserve">
-        <source>last effect affected or the nearest</source>
-        <target>前のアクションのターゲット</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="magic" xml:space="preserve">
         <source>magic</source>
         <target>魔法攻撃をするの</target>
@@ -3021,16 +3031,6 @@
         <target>同じ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of last effect or %@ nearest" xml:space="preserve">
-        <source>targets of last effect or %@ nearest</source>
-        <target>同じか最も近い%@</target>
-        <note>target type</note>
-      </trans-unit>
-      <trans-unit id="targets of last effect or the %@ nearest" xml:space="preserve">
-        <source>targets of last effect or the %@ nearest</source>
-        <target>同じか%@近い</target>
-        <note>target type</note>
-      </trans-unit>
       <trans-unit id="targets those damaged by effect %d" xml:space="preserve">
         <source>targets those damaged by effect %d</source>
         <target>[アクション%d]にダメージを与えられたターゲット</target>
@@ -3101,9 +3101,8 @@
         <target>%@後の</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ most forward" xml:space="preserve">
-        <source>the %@ most forward</source>
-        <target>%@前の</target>
+      <trans-unit id="the %@ most frontward" xml:space="preserve">
+        <source>the %@ most frontward</source>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the %@ nearest" xml:space="preserve">
@@ -3181,9 +3180,8 @@
         <target>最も後の</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the most forward" xml:space="preserve">
-        <source>the most forward</source>
-        <target>最も前の</target>
+      <trans-unit id="the most frontward" xml:space="preserve">
+        <source>the most frontward</source>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the nearest" xml:space="preserve">

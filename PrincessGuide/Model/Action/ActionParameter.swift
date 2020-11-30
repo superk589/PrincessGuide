@@ -141,6 +141,10 @@ class ActionParameter {
             return ActionByHitCountAction.self
         case 76:
             return HealDownAction.self
+        case 77:
+            return PassiveSealAction.self
+        case 78:
+            return PassiveDamageUpAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -563,6 +567,7 @@ enum ActionType: Int {
     case logBarrier = 73
     case actionByHitCount = 75
     case healDown
+    case passiveSeal = 77
     case ex = 90
     case exPlus
     case energyRatio

@@ -48,6 +48,9 @@
 "%@ %@ x%@" = "%1$@ %2$@ x%3$@";
 
 /* No comment provided by engineer. */
+"%@ %@'s damage by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." = "%1$@%2$@的伤害 [%3$@ * debuff 数量] 倍（最大不超过原始伤害的 %4$@ 倍），这个效果持续 [%5$@] 秒。";
+
+/* No comment provided by engineer. */
 "%@ boss" = "%@首领级";
 
 /* No comment provided by engineer. */
@@ -107,10 +110,10 @@
 "%@ minion" = "%@随从";
 
 /* target type */
-"%@ most backward" = "最靠后的%@";
+"%@ most backward" = "后方最远的%@";
 
 /* target type */
-"%@ most forward" = "最靠前的%@";
+"%@ most frontward" = "前方最远的%@";
 
 /* target type */
 "%@ nearest" = "最近的%@";
@@ -611,6 +614,9 @@
 "decoying" = "吸引其他目标攻击";
 
 /* No comment provided by engineer. */
+"Decrease" = "降低";
+
+/* No comment provided by engineer. */
 "DEF" = "物理防御力";
 
 /* icon style */
@@ -899,6 +905,9 @@
 "In next [%@]s, %@'s physical attacks will miss." = "使%2$@的攻击丢失，持续 [%1$@] 秒。";
 
 /* No comment provided by engineer. */
+"Increase" = "提高";
+
+/* No comment provided by engineer. */
 "inevitable physical" = "无法躲闪的物理";
 
 /* No comment provided by engineer. */
@@ -924,9 +933,6 @@
 
 /* No comment provided by engineer. */
 "Knock Back" = "击退";
-
-/* No comment provided by engineer. */
-"last effect affected or the nearest" = "上一个效果或最近的";
 
 /* No comment provided by engineer. */
 "Level" = "等级";
@@ -1603,12 +1609,6 @@
 /* No comment provided by engineer. */
 "targets of last effect" = "上一个效果影响到的目标";
 
-/* target type */
-"targets of last effect or %@ nearest" = "上一个效果或最近的%@";
-
-/* target type */
-"targets of last effect or the %@ nearest" = "上一个效果或%@近的";
-
 /* No comment provided by engineer. */
 "targets those damaged by effect %d" = "被效果 %d 伤害到的目标";
 
@@ -1664,10 +1664,10 @@
 "the %@ lowest TP" = " TP %@低的";
 
 /* target type */
-"the %@ most backward" = "%@靠后的";
+"the %@ most backward" = "后方%@远的";
 
 /* target type */
-"the %@ most forward" = "%@靠前的";
+"the %@ most frontward" = "前方%@远的";
 
 /* target type */
 "the %@ nearest" = "%@近的";
@@ -1677,6 +1677,9 @@
 
 /* target type */
 "the %@ unknown type" = "%@未知类型的";
+
+/* No comment provided by engineer. */
+"The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." = "施法者每次获得 buff 时就增加一层标记（ID：%1$@，最大层数 %2$@，持续 [%3$@] 秒），这个效果持续 [%4$@] 秒。";
 
 /* target type */
 "the farthest" = "最远的";
@@ -1712,10 +1715,10 @@
 "the lowest TP" = " TP 最少的";
 
 /* target type */
-"the most backward" = "最靠后的";
+"the most backward" = "后方最远的";
 
 /* target type */
-"the most forward" = "最靠前的";
+"the most frontward" = "前方最远的";
 
 /* target type */
 "the nearest" = "最近的";

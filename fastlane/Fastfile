@@ -30,7 +30,7 @@ platform :ios do
     upload_to_testflight
   end
   lane :clean do
-    clean_testflight_testers(days_of_inactivity: 95)
+    clean_testflight_testers(days_of_inactivity: 95, oldest_build_allowed: 173)
   end
   lane :export_ipa do 
     build_app(

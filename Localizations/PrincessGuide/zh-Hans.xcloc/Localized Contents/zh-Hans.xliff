@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.1" build-num="12A7403"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.2" build-num="12B45b"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.1" build-num="12A7403"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.2" build-num="12B45b"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.1" build-num="12A7403"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.2" build-num="12B45b"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -130,6 +130,11 @@
       <trans-unit id="%@ %@ x%@" xml:space="preserve">
         <source>%1$@ %2$@ x%3$@</source>
         <target>%1$@ %2$@ x%3$@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ %@'s damage by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." xml:space="preserve">
+        <source>%1$@ %2$@'s damage by [%3$@ * count of debuffs] times(up to %4$@ times of original damage), this effect lasts for [%5$@]s.</source>
+        <target>%1$@%2$@的伤害 [%3$@ * debuff 数量] 倍（最大不超过原始伤害的 %4$@ 倍），这个效果持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ Damage is reduced on low level players." xml:space="preserve">
@@ -236,12 +241,12 @@
       </trans-unit>
       <trans-unit id="%@ most backward" xml:space="preserve">
         <source>%@ most backward</source>
-        <target>最靠后的%@</target>
+        <target>后方最远的%@</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="%@ most forward" xml:space="preserve">
-        <source>%@ most forward</source>
-        <target>最靠前的%@</target>
+      <trans-unit id="%@ most frontward" xml:space="preserve">
+        <source>%@ most frontward</source>
+        <target>前方最远的%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ nearest" xml:space="preserve">
@@ -929,6 +934,11 @@
         <target>对%2$@造成其原始最大 HP [%1$@]%% 的伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Decrease" xml:space="preserve">
+        <source>Decrease</source>
+        <target>降低</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Denied" xml:space="preserve">
         <source>Denied</source>
         <target>拒绝</target>
@@ -1312,6 +1322,11 @@
       <trans-unit id="In next [%@]s, %@'s physical attacks will miss." xml:space="preserve">
         <source>In next [%1$@]s, %2$@'s physical attacks will miss.</source>
         <target>使%2$@的攻击丢失，持续 [%1$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Increase" xml:space="preserve">
+        <source>Increase</source>
+        <target>提高</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Inhibit Heal" xml:space="preserve">
@@ -2349,6 +2364,11 @@
         <target>神殿调查</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." xml:space="preserve">
+        <source>The caster gain a mark(ID: %1$@, max stacks %2$@, lasts for [%3$@]s) each time receives a buff, this effect lasts for [%4$@]s.</source>
+        <target>施法者每次获得 buff 时就增加一层标记（ID：%1$@，最大层数 %2$@，持续 [%3$@] 秒），这个效果持续 [%4$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="There aren't any Mail accounts" xml:space="preserve">
         <source>There aren't any Mail accounts</source>
         <target>未设置邮件账户</target>
@@ -2859,11 +2879,6 @@
         <target>无法躲闪的物理</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="last effect affected or the nearest" xml:space="preserve">
-        <source>last effect affected or the nearest</source>
-        <target>上一个效果或最近的</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="magic" xml:space="preserve">
         <source>magic</source>
         <target>法系</target>
@@ -3024,16 +3039,6 @@
         <target>上一个效果影响到的目标</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="targets of last effect or %@ nearest" xml:space="preserve">
-        <source>targets of last effect or %@ nearest</source>
-        <target>上一个效果或最近的%@</target>
-        <note>target type</note>
-      </trans-unit>
-      <trans-unit id="targets of last effect or the %@ nearest" xml:space="preserve">
-        <source>targets of last effect or the %@ nearest</source>
-        <target>上一个效果或%@近的</target>
-        <note>target type</note>
-      </trans-unit>
       <trans-unit id="targets those damaged by effect %d" xml:space="preserve">
         <source>targets those damaged by effect %d</source>
         <target>被效果 %d 伤害到的目标</target>
@@ -3101,12 +3106,12 @@
       </trans-unit>
       <trans-unit id="the %@ most backward" xml:space="preserve">
         <source>the %@ most backward</source>
-        <target>%@靠后的</target>
+        <target>后方%@远的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the %@ most forward" xml:space="preserve">
-        <source>the %@ most forward</source>
-        <target>%@靠前的</target>
+      <trans-unit id="the %@ most frontward" xml:space="preserve">
+        <source>the %@ most frontward</source>
+        <target>前方%@远的</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the %@ nearest" xml:space="preserve">
@@ -3181,12 +3186,12 @@
       </trans-unit>
       <trans-unit id="the most backward" xml:space="preserve">
         <source>the most backward</source>
-        <target>最靠后的</target>
+        <target>后方最远的</target>
         <note>target type</note>
       </trans-unit>
-      <trans-unit id="the most forward" xml:space="preserve">
-        <source>the most forward</source>
-        <target>最靠前的</target>
+      <trans-unit id="the most frontward" xml:space="preserve">
+        <source>the most frontward</source>
+        <target>前方最远的</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the nearest" xml:space="preserve">
