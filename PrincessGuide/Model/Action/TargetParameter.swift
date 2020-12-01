@@ -60,7 +60,7 @@ class TargetParameter {
     
     var hasDependAction: Bool {
         if let dependAction = dependAction {
-            return dependAction.base.actionId != 0 && targetType != .absolute
+            return dependAction.base.actionId != 0 && targetType != .absolute && ![ActionType.chooseArea].contains(dependAction.parameter.actionType)
         } else {
             return false
         }
