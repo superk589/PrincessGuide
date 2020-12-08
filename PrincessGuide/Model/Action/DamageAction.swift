@@ -14,10 +14,6 @@ class DamageAction: ActionParameter {
         return ClassModifier(rawValue: actionDetail1) ?? .unknown
     }
     
-    var criticalModifier: CriticalModifier {
-        return CriticalModifier(rawValue: Int(actionValue5)) ?? .normal
-    }
-    
     override var actionValues: [ActionValue] {
         switch damageClass {
         case .magical:
@@ -39,13 +35,21 @@ class DamageAction: ActionParameter {
         
         var string: String
         
-        switch criticalModifier {
-        case .normal:
+        switch actionValue5 {
+        case 0:
             let format = NSLocalizedString("Deal [%@] %@ damage to %@.", comment: "")
             string = String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
-        case .critical:
-            let format = NSLocalizedString("Deal [%@] %@ damage to %@, and this attack is ensured critical.", comment: "")
-            string = String(format: format, buildExpression(of: level, style: style, property: property), damageClass.description, targetParameter.buildTargetClause())
+        case let x where x > 0:
+            let format = NSLocalizedString("Deal [%@] %@ damage to %@, and the %@-th hit of this attack is ensured critical.", comment: "")
+            string = String(
+                format: format,
+                buildExpression(of: level, style: style, property: property),
+                damageClass.description,
+                targetParameter.buildTargetClause(),
+                x.roundedString(roundingRule: nil)
+            )
+        default:
+            return super.localizedDetail(of: level, property: property, style: style)
         }
         
         if actionValue6 != 0 {

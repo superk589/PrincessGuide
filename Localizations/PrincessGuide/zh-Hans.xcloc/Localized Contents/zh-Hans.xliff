@@ -909,9 +909,9 @@
         <target>数据版本</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deal [%@] %@ damage to %@, and this attack is ensured critical." xml:space="preserve">
-        <source>Deal [%1$@] %2$@ damage to %3$@, and this attack is ensured critical.</source>
-        <target>对%3$@造成 [%1$@] %2$@伤害，并且必定暴击。</target>
+      <trans-unit id="Deal [%@] %@ damage to %@, and the %@-th hit of this attack is ensured critical." xml:space="preserve">
+        <source>Deal [%1$@] %2$@ damage to %3$@, and the %4$@-th hit of this attack is ensured critical.</source>
+        <target>对%3$@造成 [%1$@] %2$@伤害，并且这次攻击的第 %4$@ Hit 必定暴击。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Deal [%@] %@ damage to %@." xml:space="preserve">

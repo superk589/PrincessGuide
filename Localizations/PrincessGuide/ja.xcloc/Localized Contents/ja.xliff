@@ -907,9 +907,8 @@
         <target>データバージョン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Deal [%@] %@ damage to %@, and this attack is ensured critical." xml:space="preserve">
-        <source>Deal [%1$@] %2$@ damage to %3$@, and this attack is ensured critical.</source>
-        <target>%3$@に[%1$@]の%2$@ダメージを与える。このアクションは必ずクリティカルする。</target>
+      <trans-unit id="Deal [%@] %@ damage to %@, and the %@-th hit of this attack is ensured critical." xml:space="preserve">
+        <source>Deal [%1$@] %2$@ damage to %3$@, and the %4$@-th hit of this attack is ensured critical.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Deal [%@] %@ damage to %@." xml:space="preserve">

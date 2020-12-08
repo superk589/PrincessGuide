@@ -581,9 +581,6 @@
 "Data Version" = "データバージョン";
 
 /* No comment provided by engineer. */
-"Deal [%@] %@ damage to %@, and this attack is ensured critical." = "%3$@に[%1$@]の%2$@ダメージを与える。このアクションは必ずクリティカルする。";
-
-/* No comment provided by engineer. */
 "Deal [%@] %@ damage to %@." = "%3$@に[%1$@]の%2$@ダメージを与える。";
 
 /* No comment provided by engineer. */
