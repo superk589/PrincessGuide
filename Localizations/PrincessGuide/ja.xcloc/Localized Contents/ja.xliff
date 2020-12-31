@@ -78,6 +78,10 @@
         <target>クリティカルダメージは通常のダメージ%@倍です。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id=" The upper limit of this effect is [%@]." xml:space="preserve">
+        <source> The upper limit of this effect is [%@].</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id=" This barrier takes effect for %@ times." xml:space="preserve">
         <source> This barrier takes effect for %@ times.</source>
         <note>No comment provided by engineer.</note>

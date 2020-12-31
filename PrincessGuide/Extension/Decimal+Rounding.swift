@@ -43,6 +43,8 @@ extension Decimal {
         if let roundingRule = roundingRule {
             formatter.maximumFractionDigits = 0
             formatter.roundingMode = NumberFormatter.RoundingMode(floatingPointRoundingRule: roundingRule)
+        } else {
+            formatter.maximumFractionDigits = .max
         }
         return formatter.string(from: self as NSDecimalNumber)!
     }

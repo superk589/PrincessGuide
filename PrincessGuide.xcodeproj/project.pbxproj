@@ -190,6 +190,8 @@
 		12A224482574BBC9001D68DC /* PassiveDamageUpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A224472574BBC9001D68DC /* PassiveDamageUpAction.swift */; };
 		12A6A7D42163B09F00877074 /* DispelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A6A7D32163B09F00877074 /* DispelAction.swift */; };
 		12A776902153E59E00972187 /* EDSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A7768F2153E59E00972187 /* EDSettingsViewController.swift */; };
+		12AC4539259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC4538259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift */; };
+		12AC453D2599677700A08817 /* ClanBattleEnemyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC453C2599677700A08817 /* ClanBattleEnemyView.swift */; };
 		12B00D2E231F4C9E0086B079 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2D231F4C9E0086B079 /* FilterType.swift */; };
 		12B00D30231F7EA40086B079 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2F231F7EA40086B079 /* Card+Filter.swift */; };
 		12B00D32231F911E0086B079 /* StrokedTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D31231F911E0086B079 /* StrokedTextLabel.swift */; };
@@ -532,6 +534,8 @@
 		12A224472574BBC9001D68DC /* PassiveDamageUpAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveDamageUpAction.swift; sourceTree = "<group>"; };
 		12A6A7D32163B09F00877074 /* DispelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispelAction.swift; sourceTree = "<group>"; };
 		12A7768F2153E59E00972187 /* EDSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSettingsViewController.swift; sourceTree = "<group>"; };
+		12AC4538259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBattleEnemyTableViewCell.swift; sourceTree = "<group>"; };
+		12AC453C2599677700A08817 /* ClanBattleEnemyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBattleEnemyView.swift; sourceTree = "<group>"; };
 		12B00D2D231F4C9E0086B079 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		12B00D2F231F7EA40086B079 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
 		12B00D31231F911E0086B079 /* StrokedTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedTextLabel.swift; sourceTree = "<group>"; };
@@ -1203,8 +1207,10 @@
 			isa = PBXGroup;
 			children = (
 				129A7F9020A3211900D93996 /* EnemyView.swift */,
+				12AC453C2599677700A08817 /* ClanBattleEnemyView.swift */,
 				129A7F8E20A31D1600D93996 /* QuestEnemyTableViewCell.swift */,
 				1280DE3E20A5C5A5008D9D72 /* QuestNameTableViewCell.swift */,
+				12AC4538259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift */,
 				12D3D14020A587FF00034DD6 /* EDPropertyTableViewCell.swift */,
 				12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */,
 				12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */,
@@ -1740,6 +1746,7 @@
 				122552282133977C00CB0D3E /* StatusIndicator.swift in Sources */,
 				1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */,
 				12F1260920B953BD005C9659 /* SearchAreaChangeAction.swift in Sources */,
+				12AC453D2599677700A08817 /* ClanBattleEnemyView.swift in Sources */,
 				12F1261920B95509005C9659 /* HealFieldAction.swift in Sources */,
 				126DECF6209EEEB4004EC56A /* CDTabViewController.swift in Sources */,
 				120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */,
@@ -1986,6 +1993,7 @@
 				121FAC262328FBF900A43976 /* UIApplication+KeyWindow.swift in Sources */,
 				1226532320AD626700BB3E56 /* Resist.swift in Sources */,
 				12B85D3E2089B1DB0088F5FB /* CDSkillTableViewController.swift in Sources */,
+				12AC4539259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift in Sources */,
 				129A7F8D20A3124600D93996 /* QuestEnemyTableViewController.swift in Sources */,
 				1221CDD8207C6BC8008F30AA /* Equipment.swift in Sources */,
 				12F125F120B94E2B005C9659 /* TriggerAction.swift in Sources */,
@@ -2207,7 +2215,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 186;
+				CURRENT_PROJECT_VERSION = 188;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2232,7 +2240,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 186;
+				CURRENT_PROJECT_VERSION = 188;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

@@ -46,7 +46,7 @@ class QuestEnemyTableViewController: UITableViewController {
             [Row(type: QuestNameTableViewCell.self, data: .quest($0.name))] +
                 $0.groups.enumerated().compactMap {
                     if let wave = $0.element.wave {
-                        return Row(type: QuestEnemyTableViewCell.self, data: .clanBattleWave(wave, $0.offset, $0.element.scoreCoefficient))
+                        return Row(type: ClanBattleEnemyTableViewCell.self, data: .clanBattleWave(wave, $0.offset, $0.element.scoreCoefficient))
                     } else {
                         return nil
                     }
@@ -116,6 +116,7 @@ class QuestEnemyTableViewController: UITableViewController {
         tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.register(QuestEnemyTableViewCell.self, forCellReuseIdentifier: QuestEnemyTableViewCell.description())
         tableView.register(QuestNameTableViewCell.self, forCellReuseIdentifier: QuestNameTableViewCell.description())
+        tableView.register(ClanBattleEnemyTableViewCell.self, forCellReuseIdentifier: ClanBattleEnemyTableViewCell.description())
         tableView.tableFooterView = UIView()
     }
     
@@ -151,7 +152,7 @@ class QuestEnemyTableViewController: UITableViewController {
             let title = String(format: format, index + 1)
             let enemies = wave.enemies.flatMap { [$0.enemy] + ($0.enemy?.parts ?? [])}.compactMap { $0 }
             cell.configure(for: enemies, title: title)
-        case (let cell as QuestEnemyTableViewCell, .clanBattleWave(let wave, let index, let coefficient)):
+        case (let cell as ClanBattleEnemyTableViewCell, .clanBattleWave(let wave, let index, let coefficient)):
             cell.delegate = self
             let format = NSLocalizedString("Wave %d (x%.2f)", comment: "")
             let title = String(format: format, index + 1, coefficient)
@@ -186,6 +187,13 @@ class QuestEnemyTableViewController: UITableViewController {
 extension QuestEnemyTableViewController: QuestEnemyTableViewCellDelegate {
     
     func questEnemyTableViewCell(_ questEnemyTableViewCell: QuestEnemyTableViewCell, didSelect enemy: Enemy) {
+        let vc = EDTabViewController(enemy: enemy)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension QuestEnemyTableViewController: ClanBattleEnemyTableViewCellDelegate {
+    func clantBattleEmetyTableViewCell(_ clanBattleEnemyTableViewCell: ClanBattleEnemyTableViewCell, didSelect enemy: Enemy) {
         let vc = EDTabViewController(enemy: enemy)
         navigationController?.pushViewController(vc, animated: true)
     }

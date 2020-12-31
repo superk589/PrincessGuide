@@ -5,6 +5,9 @@
 " Critical damage is %@ times as normal damage." = "暴击时将造成 %@ 倍伤害。";
 
 /* No comment provided by engineer. */
+" The upper limit of this effect is [%@]." = "这个效果的上限为 [%@]。";
+
+/* No comment provided by engineer. */
 " This barrier takes effect for %@ times." = "这个护盾可生效 %@ 次。";
 
 /* clause separator */

@@ -78,6 +78,11 @@
         <target>暴击时将造成 %@ 倍伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id=" The upper limit of this effect is [%@]." xml:space="preserve">
+        <source> The upper limit of this effect is [%@].</source>
+        <target>这个效果的上限为 [%@]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id=" This barrier takes effect for %@ times." xml:space="preserve">
         <source> This barrier takes effect for %@ times.</source>
         <target>这个护盾可生效 %@ 次。</target>
