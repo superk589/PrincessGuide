@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
@@ -946,7 +945,8 @@
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Decrease" xml:space="preserve">
-        <source>ダウン</source>
+        <source>Decrease</source>
+        <target>ダウン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Denied" xml:space="preserve">
@@ -1336,7 +1336,7 @@
       </trans-unit>
       <trans-unit id="Increase" xml:space="preserve">
         <source>Increase</source>
-        <source>アップ</source>
+        <target>アップ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Inhibit Heal" xml:space="preserve">
@@ -3201,7 +3201,7 @@
       </trans-unit>
       <trans-unit id="the most frontward" xml:space="preserve">
         <source>the most frontward</source>
-        <source>最も前の</source>
+        <target>最も前の</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the nearest" xml:space="preserve">

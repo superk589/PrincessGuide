@@ -2,10 +2,13 @@
 " Can't use union burst when the new attack pattern is active." = "新しい攻撃パターンにはユニオンバストが使用不可。";
 
 /* No comment provided by engineer. */
-" Critical damage is %@ times as normal damage." = "クリティカルダメージは通常のダメージ%@倍。";
+" Critical damage is %@ times as normal damage." = "クリティカルダメージは通常ダメージの%@倍。";
 
 /* No comment provided by engineer. */
 " The upper limit of this effect is [%@]." = "効果の上限は[%@]。";
+
+/* No comment provided by engineer. */
+" This barrier takes effect for %@ times." = "このバリアは%@回まで使用可能。";
 
 /* clause separator */
 ", " = "、";
@@ -54,7 +57,7 @@
 "%@ boss" = "%@ボス";
 
 /* No comment provided by engineer. */
-"%@ damage done to %@ by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." = "%2$@に与えたダメージを[%3$@ * デバフの数]倍%1$@する（最大元のダメージの%4$@倍）。効果時間[%5$@]秒。";
+"%@ damage done to %@ by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." = "%2$@に与えたダメージを[%3$@ * デバフの数]倍%1$@する（最大は元のダメージの%4$@倍）。効果時間[%5$@]秒。";
 
 /* No comment provided by engineer. */
 "%@ Damage is reduced on low level players." = "%@低レベルのプレイヤーにダメージが軽減されます。";
@@ -63,7 +66,7 @@
 "%@ farthest" = "最も遠い%@";
 
 /* No comment provided by engineer. */
-"%@ Feedback" = "%@ フィードバック";
+"%@ Feedback" = "%@フィードバック";
 
 /* [the second to fourth farthest] front [enemy] [targets] */
 "%@ front %@ %@" = "前方%1$@%2$@%3$@";
@@ -161,7 +164,7 @@
 "%@/%@" = "%1$@ 月 %2$@ 日";
 
 /* No comment provided by engineer. */
-"%d%% chance use %d" = "[%1$d%%]の確率で[アクション%2$d]を使う。";
+"%d%% chance use %d" = "[%1$d%%]の確率で[アクション%2$d]を使う";
 
 /* No comment provided by engineer. */
 "About" = "アプリについて";
@@ -326,7 +329,7 @@
 "Box Cover" = "ボックスカバー";
 
 /* No comment provided by engineer. */
-"Box Detail" = "ボックスの詳細";
+"Box Detail" = "ボックス詳細";
 
 /* No comment provided by engineer. */
 "Box Management" = "ボックス管理";
@@ -506,7 +509,7 @@
 "Clan Battle %d-%d" = "クランバトル %1$d 年 %2$d 月";
 
 /* No comment provided by engineer. */
-"Clan Battle(Simple)" = "クランバトル（簡易）";
+"Clan Battle(Simple)" = "クランバトル（簡単）";
 
 /* No comment provided by engineer. */
 "Clear all %@ on %@ with chance [%@]%%." = "[%3$@%%]の確率で%2$@の%1$@をすべて解除する。";
@@ -602,10 +605,10 @@
 "Deal [%@] %@ damage to %@." = "%3$@に[%1$@]の%2$@ダメージを与える。";
 
 /* No comment provided by engineer. */
-"Deal damage equal to [%@]%% of target's current HP to %@." = "%2$@に残りHP%1$@%%分のダメージを与える。";
+"Deal damage equal to [%@]%% of target's current HP to %@." = "%2$@に残りHPの%1$@%%分のダメージを与える。";
 
 /* No comment provided by engineer. */
-"Deal damage equal to [%@]%% of target's max HP to %@." = "%2$@に最大HP%1$@%%分のダメージを与える。";
+"Deal damage equal to [%@]%% of target's max HP to %@." = "%2$@に最大HPの%1$@%%分のダメージを与える。";
 
 /* No comment provided by engineer. */
 "Deal damage equal to [%@]%% of target's original max HP to %@." = "%2$@に元の最大HPの[%1$@]%%分のダメージに与える。";
@@ -615,6 +618,9 @@
 
 /* No comment provided by engineer. */
 "decoying" = "誘き寄せます";
+
+/* No comment provided by engineer. */
+"Decrease" = "ダウン";
 
 /* No comment provided by engineer. */
 "DEF" = "物理防御力";
@@ -638,10 +644,10 @@
 "Deselect All" = "全選択解除";
 
 /* No comment provided by engineer. */
-"Detain" = "拘留";
+"Detain" = "拘束";
 
 /* No comment provided by engineer. */
-"Detain (Damage)" = "拘留(ダメージ)";
+"Detain (Damage)" = "拘束(ダメージ)";
 
 /* No comment provided by engineer. */
 "Do nothing." = "何もしない。";
@@ -707,7 +713,7 @@
 "Enable Notifications" = "通知を有効にする";
 
 /* No comment provided by engineer. */
-"Enable Tag Based Description" = "タッグ式の説明を有効にする";
+"Enable Tag Based Description" = "タグ式の説明を有効にする";
 
 /* target modifier */
 "enemy" = "敵";
@@ -758,7 +764,7 @@
 "Exclusive condition: %@." = "全体的条件分岐：%@。";
 
 /* No comment provided by engineer. */
-"Exp." = "経験";
+"Exp." = "経験値";
 
 /* No comment provided by engineer. */
 "Exploration" = "探索";
@@ -842,7 +848,7 @@
 "General" = "全般";
 
 /* No comment provided by engineer. */
-"Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving." = "Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.";
+"Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving." = "通常には、キャラレベルとスキルレベルだけを一括編集することです。 このオプションをオンにすると、すべてのフィールドにすべての選択したキャラにが保存されます。 保存する前に、このオプションの意味を理解していることを確認してください。";
 
 /* No comment provided by engineer. */
 "Grid" = "グリッド";
@@ -905,6 +911,9 @@
 "In next [%@]s, %@'s physical attacks will miss." = "%2$@の物理攻撃を必ずミスさせる、効果時間[%1$@]秒。";
 
 /* No comment provided by engineer. */
+"Increase" = "アップ";
+
+/* No comment provided by engineer. */
 "inevitable physical" = "避けられない物理";
 
 /* No comment provided by engineer. */
@@ -926,7 +935,7 @@
 "Knock %@ away %d." = "%1$@をノックバックする、距離[%2$d]。";
 
 /* No comment provided by engineer. */
-"Knock %@ up %d." = "%1$@をノックアップする、高度[%2$d]。";
+"Knock %@ up %d." = "%1$@をノックバップする、高度[%2$d]。";
 
 /* No comment provided by engineer. */
 "Knock Back" = "ノックバック";
@@ -938,7 +947,7 @@
 "Life Steal" = "HP吸収";
 
 /* No comment provided by engineer. */
-"Limited Gacha" = "限定ガチャ";
+"Limited Gacha" = "限定";
 
 /* No comment provided by engineer. */
 "List Style" = "リストスタイル";
@@ -1019,7 +1028,7 @@
 "Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@がダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
 
 /* No comment provided by engineer. */
-"Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@が自分にヒットされるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
+"Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "自分が%1$@をヒットするたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
 
 /* No comment provided by engineer. */
 "Mana" = "マナ";
@@ -1034,10 +1043,10 @@
 "Mana Cost of Skill Training" = "スキル強化のマナコスト";
 
 /* No comment provided by engineer. */
-"Mana Cost of Unique Equipment Crafting" = "専用装備の作成のマナコスト";
+"Mana Cost of Unique Equipment Crafting" = "専用装備作成のマナコスト";
 
 /* No comment provided by engineer. */
-"Mana Cost of Unique Equipment Enhancing" = "専用装備の強化のマナコスト";
+"Mana Cost of Unique Equipment Enhancing" = "専用装備強化のマナコスト";
 
 /* No comment provided by engineer. */
 "Mark" = "マーク";
@@ -1094,7 +1103,7 @@
 "Modifier: add [%@ * count of %@] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * %2$@の数]アップさせる。";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "[アクション%3$d]の媒介変数%2$dを [%1$@ * ダメージを与えられたターゲットの数] アップさせる。";
+"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを [%1$@ * ダメージを与えられたターゲットの数] アップさせる。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * 倒した敵の数]アップさせる。";
@@ -1143,6 +1152,9 @@
 
 /* No comment provided by engineer. */
 "Move to %@ in front of %@ with velocity %@/s." = "[%3$@]の速度で%2$@の前[%1$@]の位置まで移動する。";
+
+/* No comment provided by engineer. */
+"Multiple attack speed of %@ with [%@] for [%@]s." = "%1$@の行動速度を[%2$@]に乗じる、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
 "Multiple heal effects from %@ with [%@] for [%@]s." = "%1$@の治療効果を[%2$@]に乗じる、効果時間[%3$@]秒。";
@@ -1196,7 +1208,7 @@
 "Normal and Hard" = "ノーマルとハード";
 
 /* No comment provided by engineer. */
-"Normal Gacha" = "ノーマルガチャ";
+"Normal Gacha" = "恒常";
 
 /* No comment provided by engineer. */
 "normal type" = "通常タイプ";
@@ -1217,7 +1229,7 @@
 "OK" = "はい";
 
 /* No comment provided by engineer. */
-"one" = "１体";
+"one" = "1体";
 
 /* No comment provided by engineer. */
 "Only shows the first chara's equipments, but will reflect on all selected charas." = "最初のキャラの装備のみを表示しますが、選択したすべてのキャラに反映されます。";
@@ -1346,7 +1358,7 @@
 "random(once)" = "ランダム（1回）";
 
 /* No comment provided by engineer. */
-"Rank" = "Rank";
+"Rank" = "ランク";
 
 /* No comment provided by engineer. */
 "Rank From" = "ランクから";
@@ -1382,7 +1394,7 @@
 "Remove field of skill %d (1 represents the first skill in this list) effect %d." = "[スキル%1$d]の[アクション%2$d]が展開したフィールドを解除する。";
 
 /* No comment provided by engineer. */
-"Repeat effect %d every %@s up to %@s, break if taken more than %@ damage" = "%2$@秒ごとに[アクション%1$d]を使い、最大[%3$@]秒まで続く。受けたダメージ量が[%4$@]を超えた時この効果を中断する。";
+"Repeat effect %d every %@s up to %@s, break if taken more than %@ damage" = "%2$@秒ごとに[アクション%1$d]を使い、最大[%3$@]秒まで続く。受けたダメージ量が[%4$@]を超えた時、この効果を中断する";
 
 /* No comment provided by engineer. */
 "Reset" = "リセット";
@@ -1583,7 +1595,7 @@
 "Swing Time" = "通常攻撃間隔";
 
 /* No comment provided by engineer. */
-"Table" = "Table";
+"Table" = "テーブル";
 
 /* No comment provided by engineer. */
 "Tag" = "タグ";
@@ -1673,7 +1685,7 @@
 "the %@ unknown type" = "%@不明な種類";
 
 /* No comment provided by engineer. */
-"The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." = "自分がバフを受けるたび、マーク(ID：%1$@)を1スタック増やせる、バフ時間[%3@]秒、効果時間[%4@]秒、この効果は最大[%2$@]までスタックする。";
+"The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." = "自分がバフを受けるたび、マーク[ID：%1$@]を1スタック増やせる、バフ時間[%3@]秒、効果時間[%4@]秒、この効果は最大[%2$@]までスタックする。";
 
 /* target type */
 "the farthest" = "最も遠い";
@@ -1712,6 +1724,9 @@
 "the most backward" = "最も後の";
 
 /* target type */
+"the most frontward" = "最も前の";
+
+/* target type */
 "the nearest" = "最も近い";
 
 /* No comment provided by engineer. */
@@ -1727,10 +1742,10 @@
 "third" = "3番目";
 
 /* No comment provided by engineer. */
-"Third-Party Licenses" = "Third-Party Licenses";
+"Third-Party Licenses" = "サードパーティライセンス";
 
 /* No comment provided by engineer. */
-"three" = "３体";
+"three" = "3体";
 
 /* No comment provided by engineer. */
 "Time Stop" = "時間停止";
@@ -1793,7 +1808,7 @@
 "Twitter" = "Twitter";
 
 /* No comment provided by engineer. */
-"two" = "２体";
+"two" = "2体";
 
 /* No comment provided by engineer. */
 "UB" = "UB";
@@ -1880,10 +1895,10 @@
 "use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" = "%2$@が持っているマーク[ID：%3$d]のスタック数が%4$d未満の場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
-"use %d if %@'s HP is below %d%%" = "%2$@のHPが [%3$d%%] 以下の場合、[アクション%1$d]を使う。";
+"use %d if %@'s HP is below %d%%" = "%2$@のHPが [%3$d%%] 以下の場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
-"use %d if %@'s HP is not below %d%%" = "%2$@のHPが [%3$d%%] 以下でない場合、[アクション%1$d]を使う。";
+"use %d if %@'s HP is not below %d%%" = "%2$@のHPが [%3$d%%] 以下でない場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
 "use %d if among %@ does not exist unit(ID: %d)" = "潜伏状態のユニットを除いて、%2$@の中ユニット（ID：%3$d）が存在しない場合、[アクション%1$d]を使う";
