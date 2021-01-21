@@ -80,6 +80,7 @@ $ open PrincessGuide.xcworkspace
 * [esterTion](https://github.com/esterTion)
 * [CaiMiao](https://github.com/CaiMiao)
 * [Vibbit](https://github.com/MalitsPlus)
+* [mfdsrax2](https://github.com/mfdsrax2)
 * Axx
 * GSflky
 * izuna
