@@ -49,7 +49,7 @@
       </trans-unit>
       <trans-unit id="NSCalendarsUsageDescription" xml:space="preserve">
         <source>In order to save the events we will need access to your calendar.</source>
-        <target>事件を保存するためにアルバムへのアクセスが必要です。</target>
+        <target>イベントを保存するためにカレンダーへのアクセスが必要です。</target>
         <note>Privacy - Calendars Usage Description</note>
       </trans-unit>
       <trans-unit id="NSPhotoLibraryAddUsageDescription" xml:space="preserve">
@@ -76,7 +76,7 @@
       </trans-unit>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
         <source> Critical damage is %@ times as normal damage.</source>
-        <target>クリティカルダメージは通常のダメージ%@倍。</target>
+        <target>クリティカルダメージは通常ダメージの%@倍。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=" The upper limit of this effect is [%@]." xml:space="preserve">
@@ -86,7 +86,7 @@
       </trans-unit>
       <trans-unit id=" This barrier takes effect for %@ times." xml:space="preserve">
         <source> This barrier takes effect for %@ times.</source>
-        <source>バリアは%@回使用可能。</source>
+        <target>このバリアは%@回まで使用可能。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ %@" xml:space="preserve">
@@ -150,7 +150,7 @@
       </trans-unit>
       <trans-unit id="%@ Feedback" xml:space="preserve">
         <source>%@ Feedback</source>
-        <target>%@ フィードバック</target>
+        <target>%@フィードバック</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ The effect will be released when taking damage." xml:space="preserve">
@@ -165,7 +165,7 @@
       </trans-unit>
       <trans-unit id="%@ damage done to %@ by [%@ * count of debuffs] times(up to %@ times of original damage), this effect lasts for [%@]s." xml:space="preserve">
         <source>%1$@ damage done to %2$@ by [%3$@ * count of debuffs] times(up to %4$@ times of original damage), this effect lasts for [%5$@]s.</source>
-        <target>%2$@に与えたダメージを[%3$@ * デバフの数]倍%1$@する（最大元のダメージの%4$@倍）。効果時間[%5$@]秒。</target>
+        <target>%2$@に与えたダメージを[%3$@ * デバフの数]倍%1$@する（最大は元のダメージの%4$@倍）。効果時間[%5$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ farthest" xml:space="preserve">
@@ -327,7 +327,7 @@
       </trans-unit>
       <trans-unit id="%d%% chance use %d" xml:space="preserve">
         <source>%1$d%% chance use %2$d</source>
-        <target>[%1$d%%]の確率で[アクション%2$d]を使う。</target>
+        <target>[%1$d%%]の確率で[アクション%2$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="(except self)" xml:space="preserve">
@@ -517,7 +517,7 @@
       </trans-unit>
       <trans-unit id="Box Detail" xml:space="preserve">
         <source>Box Detail</source>
-        <target>ボックスの詳細</target>
+        <target>ボックス詳細</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Box Management" xml:space="preserve">
@@ -797,7 +797,7 @@
       </trans-unit>
       <trans-unit id="Clan Battle(Simple)" xml:space="preserve">
         <source>Clan Battle(Simple)</source>
-        <target>クランバトル（簡易）</target>
+        <target>クランバトル（簡単）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%." xml:space="preserve">
@@ -932,12 +932,12 @@
       </trans-unit>
       <trans-unit id="Deal damage equal to [%@]%% of target's current HP to %@." xml:space="preserve">
         <source>Deal damage equal to [%1$@]%% of target's current HP to %2$@.</source>
-        <target>%2$@に残りHP%1$@%%分のダメージを与える。</target>
+        <target>%2$@に残りHPの%1$@%%分のダメージを与える。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Deal damage equal to [%@]%% of target's max HP to %@." xml:space="preserve">
         <source>Deal damage equal to [%1$@]%% of target's max HP to %2$@.</source>
-        <target>%2$@に最大HP%1$@%%分のダメージを与える。</target>
+        <target>%2$@に最大HPの%1$@%%分のダメージを与える。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Deal damage equal to [%@]%% of target's original max HP to %@." xml:space="preserve">
@@ -946,7 +946,7 @@
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Decrease" xml:space="preserve">
-        <source>下降</source>
+        <source>ダウン</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Denied" xml:space="preserve">
@@ -971,12 +971,12 @@
       </trans-unit>
       <trans-unit id="Detain" xml:space="preserve">
         <source>Detain</source>
-        <target>拘留</target>
+        <target>拘束</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Detain (Damage)" xml:space="preserve">
         <source>Detain (Damage)</source>
-        <target>拘留(ダメージ)</target>
+        <target>拘束(ダメージ)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Do nothing." xml:space="preserve">
@@ -1091,7 +1091,7 @@
       </trans-unit>
       <trans-unit id="Enable Tag Based Description" xml:space="preserve">
         <source>Enable Tag Based Description</source>
-        <target>タッグ式の説明を有効にする</target>
+        <target>タグ式の説明を有効にする</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Energy Recovery Rate" xml:space="preserve">
@@ -1156,7 +1156,7 @@
       </trans-unit>
       <trans-unit id="Exp." xml:space="preserve">
         <source>Exp.</source>
-        <target>経験</target>
+        <target>経験値</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Exploration" xml:space="preserve">
@@ -1246,7 +1246,7 @@
       </trans-unit>
       <trans-unit id="Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving." xml:space="preserve">
         <source>Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</source>
-        <target>Generally, you only want to batch edit unit level and skill level. If switch on this option, every field will be saved on all selected charas. Make sure you have understood what's the meaning of this option before saving.</target>
+        <target>通常には、キャラレベルとスキルレベルだけを一括編集することです。 このオプションをオンにすると、すべてのフィールドにすべての選択したキャラにが保存されます。 保存する前に、このオプションの意味を理解していることを確認してください。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Grid" xml:space="preserve">
@@ -1336,7 +1336,7 @@
       </trans-unit>
       <trans-unit id="Increase" xml:space="preserve">
         <source>Increase</source>
-        <source>上昇</source>
+        <source>アップ</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Inhibit Heal" xml:space="preserve">
@@ -1371,7 +1371,7 @@
       </trans-unit>
       <trans-unit id="Knock %@ up %d." xml:space="preserve">
         <source>Knock %1$@ up %2$d.</source>
-        <target>%1$@をノックアップする、高度[%2$d]。</target>
+        <target>%1$@をノックバップする、高度[%2$d]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Knock Back" xml:space="preserve">
@@ -1391,7 +1391,7 @@
       </trans-unit>
       <trans-unit id="Limited Gacha" xml:space="preserve">
         <source>Limited Gacha</source>
-        <target>限定ガチャ</target>
+        <target>限定</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="List Style" xml:space="preserve">
@@ -1516,7 +1516,7 @@
       </trans-unit>
       <trans-unit id="Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
         <source>Make %1$@ when get one hit by the caster, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
-        <target>%1$@が自分にヒットされるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。</target>
+        <target>自分が%1$@をヒットするたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Mana" xml:space="preserve">
@@ -1541,12 +1541,12 @@
       </trans-unit>
       <trans-unit id="Mana Cost of Unique Equipment Crafting" xml:space="preserve">
         <source>Mana Cost of Unique Equipment Crafting</source>
-        <target>専用装備の作成のマナコスト</target>
+        <target>専用装備作成のマナコスト</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Mana Cost of Unique Equipment Enhancing" xml:space="preserve">
         <source>Mana Cost of Unique Equipment Enhancing</source>
-        <target>専用装備の強化のマナコスト</target>
+        <target>専用装備強化のマナコスト</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Mark" xml:space="preserve">
@@ -1636,7 +1636,7 @@
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of damaged] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of damaged] to value %2$d of effect %3$d.</source>
-        <target>[アクション%3$d]の媒介変数%2$dを [%1$@ * ダメージを与えられたターゲットの数] アップさせる。</target>
+        <target>[アクション%3$d]の変数%2$dを [%1$@ * ダメージを与えられたターゲットの数] アップさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
@@ -1716,8 +1716,7 @@
       </trans-unit>
       <trans-unit id="Multiple attack speed of %@ with [%@] for [%@]s." xml:space="preserve">
         <source>Multiple attack speed of %1$@ with [%2$@] for [%3$@]s.</source>
-        <target>%1$@の攻撃速度を[%2$@]に乗じる、効果時間[%3$@]秒。</target>
-        <target/>
+        <target>%1$@の行動速度を[%2$@]に乗じる、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Multiple heal effects from %@ with [%@] for [%@]s." xml:space="preserve">
@@ -1797,7 +1796,7 @@
       </trans-unit>
       <trans-unit id="Normal Gacha" xml:space="preserve">
         <source>Normal Gacha</source>
-        <target>ノーマルガチャ</target>
+        <target>恒常</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Normal and Hard" xml:space="preserve">
@@ -1962,7 +1961,7 @@
       </trans-unit>
       <trans-unit id="Rank" xml:space="preserve">
         <source>Rank</source>
-        <target>Rank</target>
+        <target>ランク</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Rank From" xml:space="preserve">
@@ -2017,7 +2016,7 @@
       </trans-unit>
       <trans-unit id="Repeat effect %d every %@s up to %@s, break if taken more than %@ damage" xml:space="preserve">
         <source>Repeat effect %1$d every %2$@s up to %3$@s, break if taken more than %4$@ damage</source>
-        <target>%2$@秒ごとに[アクション%1$d]を使い、最大[%3$@]秒まで続く。受けたダメージ量が[%4$@]を超えた時この効果を中断する。</target>
+        <target>%2$@秒ごとに[アクション%1$d]を使い、最大[%3$@]秒まで続く。受けたダメージ量が[%4$@]を超えた時、この効果を中断する</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Reset" xml:space="preserve">
@@ -2337,7 +2336,7 @@
       </trans-unit>
       <trans-unit id="Table" xml:space="preserve">
         <source>Table</source>
-        <target>Table</target>
+        <target>テーブル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Tag" xml:space="preserve">
@@ -2377,7 +2376,7 @@
       </trans-unit>
       <trans-unit id="The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." xml:space="preserve">
         <source>The caster gain a mark(ID: %1$@, max stacks %2$@, lasts for [%3$@]s) each time receives a buff, this effect lasts for [%4$@]s.</source>
-        <target>自分がバフを受けるたび、マーク(ID：%1$@)を1スタック増やせる、バフ時間[%3@]秒、効果時間[%4@]秒、この効果は最大[%2$@]までスタックする。</target>
+        <target>自分がバフを受けるたび、マーク[ID：%1$@]を1スタック増やせる、バフ時間[%3@]秒、効果時間[%4@]秒、この効果は最大[%2$@]までスタックする。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="There aren't any Mail accounts" xml:space="preserve">
@@ -2392,7 +2391,7 @@
       </trans-unit>
       <trans-unit id="Third-Party Licenses" xml:space="preserve">
         <source>Third-Party Licenses</source>
-        <target>Third-Party Licenses</target>
+        <target>サードパーティライセンス</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Time Stop" xml:space="preserve">
@@ -2922,7 +2921,7 @@
       </trans-unit>
       <trans-unit id="one" xml:space="preserve">
         <source>one</source>
-        <target>１体</target>
+        <target>1体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="opposite" xml:space="preserve">
@@ -3222,7 +3221,7 @@
       </trans-unit>
       <trans-unit id="three" xml:space="preserve">
         <source>three</source>
-        <target>３体</target>
+        <target>3体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="transformed" xml:space="preserve">
@@ -3232,7 +3231,7 @@
       </trans-unit>
       <trans-unit id="two" xml:space="preserve">
         <source>two</source>
-        <target>２体</target>
+        <target>2体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="unknown" xml:space="preserve">
@@ -3307,12 +3306,12 @@
       </trans-unit>
       <trans-unit id="use %d if %@'s HP is below %d%%" xml:space="preserve">
         <source>use %1$d if %2$@'s HP is below %3$d%%</source>
-        <target>%2$@のHPが [%3$d%%] 以下の場合、[アクション%1$d]を使う。</target>
+        <target>%2$@のHPが [%3$d%%] 以下の場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@'s HP is not below %d%%" xml:space="preserve">
         <source>use %1$d if %2$@'s HP is not below %3$d%%</source>
-        <target>%2$@のHPが [%3$d%%] 以下でない場合、[アクション%1$d]を使う。</target>
+        <target>%2$@のHPが [%3$d%%] 以下でない場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if among %@ does not exist unit(ID: %d)" xml:space="preserve">
