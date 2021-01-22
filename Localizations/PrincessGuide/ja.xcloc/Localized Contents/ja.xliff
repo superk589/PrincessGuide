@@ -85,7 +85,7 @@
       </trans-unit>
       <trans-unit id=" This barrier takes effect for %@ times." xml:space="preserve">
         <source> This barrier takes effect for %@ times.</source>
-        <target>このバリアは%@回まで使用可能。</target>
+        <target>このシールドは%@回まで使用可能。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ %@" xml:space="preserve">
@@ -241,7 +241,7 @@
       </trans-unit>
       <trans-unit id="%@ magic" xml:space="preserve">
         <source>%@ magic</source>
-        <target>魔法攻撃をする%@</target>
+        <target>魔法攻撃を行う%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ minion" xml:space="preserve">
@@ -271,7 +271,7 @@
       </trans-unit>
       <trans-unit id="%@ physics" xml:space="preserve">
         <source>%@ physics</source>
-        <target>物理攻撃をする%@</target>
+        <target>物理攻撃を行う%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ random" xml:space="preserve">
@@ -371,7 +371,7 @@
       </trans-unit>
       <trans-unit id="Add [%d] to the counter." xml:space="preserve">
         <source>Add [%d] to the counter.</source>
-        <target>カウンターの数を%d増やせる。</target>
+        <target>カウンターの数を[%d]増やせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks." xml:space="preserve">
@@ -1371,7 +1371,7 @@
       </trans-unit>
       <trans-unit id="Knock %@ up %d." xml:space="preserve">
         <source>Knock %1$@ up %2$d.</source>
-        <target>%1$@をノックバップする、高度[%2$d]。</target>
+        <target>%1$@をノックアップする、高度[%2$d]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Knock Back" xml:space="preserve">
@@ -1561,7 +1561,7 @@
       </trans-unit>
       <trans-unit id="Max Level to %@" xml:space="preserve">
         <source>Max Level to %@</source>
-        <target>最大レベルは%@</target>
+        <target>最大レベル%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Max Possible Bond Rank" xml:space="preserve">
@@ -1721,7 +1721,7 @@
       </trans-unit>
       <trans-unit id="Multiple heal effects from %@ with [%@] for [%@]s." xml:space="preserve">
         <source>Multiple heal effects from %1$@ with [%2$@] for [%3$@]s.</source>
-        <target>%1$@の治療効果を[%2$@]に乗じる、効果時間[%3$@]秒。</target>
+        <target>%1$@の回復効果を[%2$@]に乗じる、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Multiple the energy gained by %@ from effects [%@] with [%@]." xml:space="preserve">
@@ -2376,7 +2376,7 @@
       </trans-unit>
       <trans-unit id="The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." xml:space="preserve">
         <source>The caster gain a mark(ID: %1$@, max stacks %2$@, lasts for [%3$@]s) each time receives a buff, this effect lasts for [%4$@]s.</source>
-        <target>自分がバフを受けるたび、マーク[ID：%1$@]を1スタック増やせる、バフ時間[%3@]秒、効果時間[%4@]秒、この効果は最大[%2$@]までスタックする。</target>
+        <target>自分がバフを受けるたび、マーク[ID：%1$@]を1スタック増やせる、バフ時間[%3$@]秒、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="There aren't any Mail accounts" xml:space="preserve">
@@ -2556,7 +2556,7 @@
       </trans-unit>
       <trans-unit id="Use %d%@ every %@ hits in next [%@]s." xml:space="preserve">
         <source>Use %1$d%2$@ every %3$@ hits in next [%4$@]s.</source>
-        <target>[%4$@] 秒内、[%3$@] ヒットするたびに[アクション%1$d]%2$@を使う。</target>
+        <target>[%4$@]秒内、[%3$@]ヒットするたびに[アクション%1$d]%2$@を使う。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Vanguard" xml:space="preserve">
@@ -2606,7 +2606,7 @@
       </trans-unit>
       <trans-unit id="When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." xml:space="preserve">
         <source>When %1$@ receive healing, deal [%2$@ * healing amount] damage instead, last for [%3$@]s or unlimited time if triggered by field.</source>
-        <target>%1$@が回復を受けた時、それを無効にし、[%2$@]分のダメージを与える、効果時間[%3$@]秒。この効果はフィールドでトリガーされた場合、効果時間は無限。</target>
+        <target>%1$@が回復を受けた時、代わりに[%2$@ * 回復値]分のダメージを与える、効果時間[%3$@]秒。この効果はフィールドでトリガーされた場合、効果時間は無限。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="When %@'s HP reaches 0, restore [%@] HP once in next [%@]s." xml:space="preserve">
@@ -2891,7 +2891,7 @@
       </trans-unit>
       <trans-unit id="magic" xml:space="preserve">
         <source>magic</source>
-        <target>魔法攻撃をする</target>
+        <target>魔法攻撃を行う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="magical" xml:space="preserve">
@@ -2951,7 +2951,7 @@
       </trans-unit>
       <trans-unit id="physics" xml:space="preserve">
         <source>physics</source>
-        <target>物理攻撃をする</target>
+        <target>物理攻撃を行う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="poisoned" xml:space="preserve">
