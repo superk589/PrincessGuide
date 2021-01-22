@@ -8,7 +8,7 @@
 " The upper limit of this effect is [%@]." = "効果の上限は[%@]。";
 
 /* No comment provided by engineer. */
-" This barrier takes effect for %@ times." = "このバリアは%@回まで使用可能。";
+" This barrier takes effect for %@ times." = "このシールドは%@回まで使用可能。";
 
 /* clause separator */
 ", " = "、";
@@ -110,7 +110,7 @@
 "%@ lowest TP" = "TPが一番低い%@";
 
 /* No comment provided by engineer. */
-"%@ magic" = "魔法攻撃をする%@";
+"%@ magic" = "魔法攻撃を行う%@";
 
 /* No comment provided by engineer. */
 "%@ minion" = "%@ミニオン";
@@ -128,7 +128,7 @@
 "%@ nearest except self" = "%@自分以外最も近い";
 
 /* No comment provided by engineer. */
-"%@ physics" = "物理攻撃をする%@";
+"%@ physics" = "物理攻撃を行う%@";
 
 /* No comment provided by engineer. */
 "%@ random" = "ランダム%@";
@@ -176,7 +176,7 @@
 "Action" = "行動";
 
 /* No comment provided by engineer. */
-"Add [%d] to the counter." = "カウンターの数を%d増やせる。";
+"Add [%d] to the counter." = "カウンターの数を[%d]増やせる。";
 
 /* No comment provided by engineer. */
 "Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "%4$@にマーク[ID：%3$@]を%1$@スタック追加する、効果時間[%5$@]秒、この効果は最大[%2$@]までスタックする。";
@@ -935,7 +935,7 @@
 "Knock %@ away %d." = "%1$@をノックバックする、距離[%2$d]。";
 
 /* No comment provided by engineer. */
-"Knock %@ up %d." = "%1$@をノックバップする、高度[%2$d]。";
+"Knock %@ up %d." = "%1$@をノックアップする、高度[%2$d]。";
 
 /* No comment provided by engineer. */
 "Knock Back" = "ノックバック";
@@ -968,7 +968,7 @@
 "Luna's Tower" = "ルナの塔";
 
 /* No comment provided by engineer. */
-"magic" = "魔法攻撃をする";
+"magic" = "魔法攻撃を行う";
 
 /* No comment provided by engineer. */
 "Magic" = "魔法系";
@@ -1058,7 +1058,7 @@
 "max 16 characters" = "最大16文字";
 
 /* No comment provided by engineer. */
-"Max Level to %@" = "最大レベルは%@";
+"Max Level to %@" = "最大レベル%@";
 
 /* No comment provided by engineer. */
 "Max Possible Bond Rank" = "最大可能絆ランク";
@@ -1157,7 +1157,7 @@
 "Multiple attack speed of %@ with [%@] for [%@]s." = "%1$@の行動速度を[%2$@]に乗じる、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"Multiple heal effects from %@ with [%@] for [%@]s." = "%1$@の治療効果を[%2$@]に乗じる、効果時間[%3$@]秒。";
+"Multiple heal effects from %@ with [%@] for [%@]s." = "%1$@の回復効果を[%2$@]に乗じる、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
 "Multiple the energy gained by %@ from effects [%@] with [%@]." = "ダメージによるTP回復を含めて、%1$@が [アクション%2$@] を受けた時全てのTP回復効果を [元の値 * %3$@] に変更させる。";
@@ -1274,7 +1274,7 @@
 "Physical Penetrate" = "物理貫通";
 
 /* No comment provided by engineer. */
-"physics" = "物理攻撃をする";
+"physics" = "物理攻撃を行う";
 
 /* No comment provided by engineer. */
 "Physics" = "物理系";
@@ -1685,7 +1685,7 @@
 "the %@ unknown type" = "%@不明な種類";
 
 /* No comment provided by engineer. */
-"The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." = "自分がバフを受けるたび、マーク[ID：%1$@]を1スタック増やせる、バフ時間[%3@]秒、効果時間[%4@]秒、この効果は最大[%2$@]までスタックする。";
+"The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." = "自分がバフを受けるたび、マーク[ID：%1$@]を1スタック増やせる、バフ時間[%3$@]秒、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
 
 /* target type */
 "the farthest" = "最も遠い";
@@ -1943,7 +1943,7 @@
 "use %d to %@ in state of ID: %d" = "%2$@がマーク[ID：%3$d]を持っている場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
-"Use %d%@ every %@ hits in next [%@]s." = "[%4$@] 秒内、[%3$@] ヒットするたびに[アクション%1$d]%2$@を使う。";
+"Use %d%@ every %@ hits in next [%@]s." = "[%4$@]秒内、[%3$@]ヒットするたびに[アクション%1$d]%2$@を使う。";
 
 /* No comment provided by engineer. */
 "value %d" = "変数%d";
@@ -1985,7 +1985,7 @@
 "Weight" = "体重";
 
 /* No comment provided by engineer. */
-"When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." = "%1$@が回復を受けた時、それを無効にし、[%2$@]分のダメージを与える、効果時間[%3$@]秒。この効果はフィールドでトリガーされた場合、効果時間は無限。";
+"When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." = "%1$@が回復を受けた時、代わりに[%2$@ * 回復値]分のダメージを与える、効果時間[%3$@]秒。この効果はフィールドでトリガーされた場合、効果時間は無限。";
 
 /* No comment provided by engineer. */
 "When %@'s HP reaches 0, restore [%@] HP once in next [%@]s." = "%1$@に「HPが0になる直前、HPを[%2$@]回復し、このバフを解除する」の効果を付与する、効果時間[%3$@]秒。";
