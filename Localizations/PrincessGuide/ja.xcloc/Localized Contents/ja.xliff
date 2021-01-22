@@ -241,7 +241,7 @@
       </trans-unit>
       <trans-unit id="%@ magic" xml:space="preserve">
         <source>%@ magic</source>
-        <target>魔法攻撃をする%@</target>
+        <target>魔法攻撃を行う%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ minion" xml:space="preserve">
@@ -271,7 +271,7 @@
       </trans-unit>
       <trans-unit id="%@ physics" xml:space="preserve">
         <source>%@ physics</source>
-        <target>物理攻撃をする%@</target>
+        <target>物理攻撃を行う%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ random" xml:space="preserve">
@@ -2891,7 +2891,7 @@
       </trans-unit>
       <trans-unit id="magic" xml:space="preserve">
         <source>magic</source>
-        <target>魔法攻撃をする</target>
+        <target>魔法攻撃を行う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="magical" xml:space="preserve">
@@ -2951,7 +2951,7 @@
       </trans-unit>
       <trans-unit id="physics" xml:space="preserve">
         <source>physics</source>
-        <target>物理攻撃をする</target>
+        <target>物理攻撃を行う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="poisoned" xml:space="preserve">
