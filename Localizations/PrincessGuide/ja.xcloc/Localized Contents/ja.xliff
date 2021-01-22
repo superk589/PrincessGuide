@@ -85,7 +85,7 @@
       </trans-unit>
       <trans-unit id=" This barrier takes effect for %@ times." xml:space="preserve">
         <source> This barrier takes effect for %@ times.</source>
-        <target>このバリアは%@回まで使用可能。</target>
+        <target>このシールドは%@回まで使用可能。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ %@" xml:space="preserve">
