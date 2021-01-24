@@ -70,7 +70,7 @@
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
         <source> Can't use union burst when the new attack pattern is active.</source>
-        <target>新しい攻撃パターンにはユニオンバストが使用不可。</target>
+        <target>新しい攻撃パターンにはユニオンバストを発動できない。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -1636,7 +1636,7 @@
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of damaged] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of damaged] to value %2$d of effect %3$d.</source>
-        <target>[アクション%3$d]の変数%2$dを [%1$@ * ダメージを与えられたターゲットの数] アップさせる。</target>
+        <target>[アクション%3$d]の変数%2$dを [%1$@ * ダメージを与えられた対象の数] アップさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
@@ -1716,12 +1716,12 @@
       </trans-unit>
       <trans-unit id="Multiple attack speed of %@ with [%@] for [%@]s." xml:space="preserve">
         <source>Multiple attack speed of %1$@ with [%2$@] for [%3$@]s.</source>
-        <target>%1$@の行動速度を[%2$@]に乗じる、効果時間[%3$@]秒。</target>
+        <target>%1$@の行動速度を[%2$@]倍にする、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Multiple heal effects from %@ with [%@] for [%@]s." xml:space="preserve">
         <source>Multiple heal effects from %1$@ with [%2$@] for [%3$@]s.</source>
-        <target>%1$@の回復効果を[%2$@]に乗じる、効果時間[%3$@]秒。</target>
+        <target>%1$@の回復効果を[%2$@]倍にする、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Multiple the energy gained by %@ from effects [%@] with [%@]." xml:space="preserve">
@@ -1731,7 +1731,7 @@
       </trans-unit>
       <trans-unit id="New %@ Event: %@" xml:space="preserve">
         <source>New %1$@ Event: %2$@</source>
-        <target>新しい %1$@ イベント：%2$@</target>
+        <target>新しい%1$@イベント：%2$@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="New Campaign: %@ %@ x%@" xml:space="preserve">
@@ -1996,12 +1996,12 @@
       </trans-unit>
       <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." xml:space="preserve">
         <source>Reduce [%1$@]%% damage or instant healing effect of union burst and main skills cast by %2$@ for [%3$@]s.</source>
-        <target>%2$@のユニオンバーストかスキルが任意のターゲットにダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。</target>
+        <target>%2$@のユニオンバーストかスキルが任意の対象にダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." xml:space="preserve">
         <source>Reduce [%1$@]%% damage or instant healing effect of union burst cast by %2$@ for [%3$@]s.</source>
-        <target>%2$@のユニオンバーストが任意のターゲットにダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。</target>
+        <target>%2$@のユニオンバーストが任意の対象にダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Remove %@ mark stacks(ID: %@) on %@." xml:space="preserve">
@@ -2261,7 +2261,7 @@
       </trans-unit>
       <trans-unit id="Stop time on %@ for [%@]s." xml:space="preserve">
         <source>Stop time on %1$@ for [%2$@]s.</source>
-        <target>%1$@を時間停止状態にする、効果時間 [%2$@] 秒。</target>
+        <target>%1$@を時間停止状態にする、効果時間[%2$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Story" xml:space="preserve">
@@ -2386,7 +2386,7 @@
       </trans-unit>
       <trans-unit id="These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix &quot;Hatsune's Notes&quot;.\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content." xml:space="preserve">
         <source>These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix "Hatsune's Notes".\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content.</source>
-        <target>These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix "Hatsune's Notes".\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content.</target>
+        <target>これらの設定は、このアプリ内でゲームデータが更新されるたびに、システムカレンダーにイベントを自動的に追加するために使用されます。 システムカレンダーのイベントは、接頭辞「Hatsune's Notes」が付いた個別のカレンダーにグループ化されます。\n**重要**：同じiCloudアカウントの複数のデバイスでこれらの設定を有効にすることはお勧めしません。これにより、複数のカレンダーグループに同じ内容が出現することがあります。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Third-Party Licenses" xml:space="preserve">
@@ -2546,7 +2546,7 @@
       </trans-unit>
       <trans-unit id="Up to date!" xml:space="preserve">
         <source>Up to date!</source>
-        <target>最新のバージョンです！</target>
+        <target>最新のバージョンです</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Upcoming Birthdays" xml:space="preserve">
@@ -2581,12 +2581,12 @@
       </trans-unit>
       <trans-unit id="Wave %d" xml:space="preserve">
         <source>Wave %d</source>
-        <target>Wave %d</target>
+        <target>ウェーブ %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave %d (x%.2f)" xml:space="preserve">
         <source>Wave %1$d (x%2$.2f)</source>
-        <target>Wave %1$d (x%2$.2f)</target>
+        <target>ウェーブ %1$d (x%2$.2f)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave Energy Recovery" xml:space="preserve">
@@ -2656,7 +2656,7 @@
       </trans-unit>
       <trans-unit id="all front %@ targets" xml:space="preserve">
         <source>all front %@ targets</source>
-        <target>前方%@すべてのターゲット</target>
+        <target>前方%@すべての対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all front enemy targets" xml:space="preserve">
@@ -2666,7 +2666,7 @@
       </trans-unit>
       <trans-unit id="all front targets" xml:space="preserve">
         <source>all front targets</source>
-        <target>前方すべてのターゲット</target>
+        <target>前方すべての対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all front(including self) %@ friendly targets" xml:space="preserve">
@@ -2691,12 +2691,12 @@
       </trans-unit>
       <trans-unit id="any of" xml:space="preserve">
         <source>any of</source>
-        <target>任意のターゲット</target>
+        <target>任意の対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="any of %@" xml:space="preserve">
         <source>any of %@</source>
-        <target>（ターゲット別）%@の中任意のターゲット</target>
+        <target>（対象別）%@の中任意の対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="arena" xml:space="preserve">
@@ -2746,7 +2746,7 @@
       </trans-unit>
       <trans-unit id="burned" xml:space="preserve">
         <source>burned</source>
-        <target>焼け</target>
+        <target>火傷</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="charmed or confused" xml:space="preserve">
@@ -2781,7 +2781,7 @@
       </trans-unit>
       <trans-unit id="damaged by effect %d" xml:space="preserve">
         <source>damaged by effect %d</source>
-        <target>[アクション%d]にダメージを与えられたターゲット</target>
+        <target>[アクション%d]にダメージを与えられた対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="debuffs" xml:space="preserve">
@@ -2791,7 +2791,7 @@
       </trans-unit>
       <trans-unit id="decoying" xml:space="preserve">
         <source>decoying</source>
-        <target>誘き寄せます</target>
+        <target>誘き寄せる</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="default" xml:space="preserve">
@@ -2826,7 +2826,7 @@
       </trans-unit>
       <trans-unit id="four" xml:space="preserve">
         <source>four</source>
-        <target>４体</target>
+        <target>4体</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="fourth" xml:space="preserve">
@@ -2876,12 +2876,12 @@
       </trans-unit>
       <trans-unit id="if target is defeated by the last effect then use %d" xml:space="preserve">
         <source>if target is defeated by the last effect then use %d</source>
-        <target>前のアクションがターゲットを倒した場合、[アクション%d]を使う</target>
+        <target>前のアクションが対象を倒した場合、[アクション%d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="if target is not defeated by last effect then use %d" xml:space="preserve">
         <source>if target is not defeated by last effect then use %d</source>
-        <target>前のアクションがターゲットを倒してない場合、[アクション%d]を使う</target>
+        <target>前のアクションが対象を倒してない場合、[アクション%d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="inevitable physical" xml:space="preserve">
@@ -2981,7 +2981,7 @@
       </trans-unit>
       <trans-unit id="radius %d" xml:space="preserve">
         <source>radius %d</source>
-        <target>半径%1$d</target>
+        <target>半径%d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="random" xml:space="preserve">
@@ -3031,17 +3031,17 @@
       </trans-unit>
       <trans-unit id="target" xml:space="preserve">
         <source>target</source>
-        <target>ターゲット</target>
+        <target>対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets" xml:space="preserve">
         <source>targets</source>
-        <target>ターゲット</target>
+        <target>対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets of effect %d" xml:space="preserve">
         <source>targets of effect %d</source>
-        <target>[アクション%d]のターゲット</target>
+        <target>[アクション%d]の対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets of last effect" xml:space="preserve">
@@ -3051,12 +3051,12 @@
       </trans-unit>
       <trans-unit id="targets those damaged by effect %d" xml:space="preserve">
         <source>targets those damaged by effect %d</source>
-        <target>[アクション%d]にダメージを与えられたターゲット</target>
+        <target>[アクション%d]にダメージを与えられた対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="targets within the scope" xml:space="preserve">
         <source>targets within the scope</source>
-        <target>範囲内のターゲット</target>
+        <target>範囲内の対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the %@ farthest" xml:space="preserve">
