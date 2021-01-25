@@ -1291,7 +1291,7 @@
       </trans-unit>
       <trans-unit id="Haste" xml:space="preserve">
         <source>Haste</source>
-        <target>ヘイスト</target>
+        <target>加速</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Height" xml:space="preserve">
@@ -1301,7 +1301,7 @@
       </trans-unit>
       <trans-unit id="Hex" xml:space="preserve">
         <source>Hex</source>
-        <target>呪詛</target>
+        <target>呪い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Icon Style" xml:space="preserve">
@@ -1321,7 +1321,7 @@
       </trans-unit>
       <trans-unit id="Import All Charas" xml:space="preserve">
         <source>Import All Charas</source>
-        <target>すべてのキャラを輸入する</target>
+        <target>すべてのキャラを輸入</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="In next [%@] attacks, %@'s physical attacks will miss." xml:space="preserve">
@@ -1561,7 +1561,7 @@
       </trans-unit>
       <trans-unit id="Max Level to %@" xml:space="preserve">
         <source>Max Level to %@</source>
-        <target>最大レベル%@</target>
+        <target>最大レベルは%@にアップ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Max Possible Bond Rank" xml:space="preserve">
@@ -2371,7 +2371,7 @@
       </trans-unit>
       <trans-unit id="Temple" xml:space="preserve">
         <source>Temple</source>
-        <target>神殿</target>
+        <target>神殿調査</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." xml:space="preserve">
@@ -2971,12 +2971,12 @@
       </trans-unit>
       <trans-unit id="pve" xml:space="preserve">
         <source>pve</source>
-        <target>pve</target>
+        <target>PVE</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="pvp" xml:space="preserve">
         <source>pvp</source>
-        <target>pvp</target>
+        <target>PVP</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="radius %d" xml:space="preserve">
