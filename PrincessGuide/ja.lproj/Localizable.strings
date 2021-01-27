@@ -1,5 +1,5 @@
 /* No comment provided by engineer. */
-" Can't use union burst when the new attack pattern is active." = "新しい攻撃パターンにはユニオンバストが使用不可。";
+" Can't use union burst when the new attack pattern is active." = "新しい攻撃パターンにはユニオンバストを発動できない。";
 
 /* No comment provided by engineer. */
 " Critical damage is %@ times as normal damage." = "クリティカルダメージは通常ダメージの%@倍。";
@@ -209,13 +209,13 @@
 "all front %@ enemy targets" = "前方%@すべての敵";
 
 /* No comment provided by engineer. */
-"all front %@ targets" = "前方%@すべてのターゲット";
+"all front %@ targets" = "前方%@すべての対象";
 
 /* No comment provided by engineer. */
 "all front enemy targets" = "前方すべての敵";
 
 /* No comment provided by engineer. */
-"all front targets" = "前方すべてのターゲット";
+"all front targets" = "前方すべての対象";
 
 /* No comment provided by engineer. */
 "all front(including self) %@ friendly targets" = "自分を含めて前方%@すべての味方";
@@ -230,10 +230,10 @@
 "always 3★" = "常に3★";
 
 /* No comment provided by engineer. */
-"any of" = "任意のターゲット";
+"any of" = "任意の対象";
 
 /* No comment provided by engineer. */
-"any of %@" = "（ターゲット別）%@の中任意のターゲット";
+"any of %@" = "（対象別）%@の中任意の対象";
 
 /* No comment provided by engineer. */
 "App Version" = "アプリバージョン";
@@ -350,7 +350,7 @@
 "Burn" = "火傷";
 
 /* No comment provided by engineer. */
-"burned" = "焼け";
+"burned" = "火傷";
 
 /* No comment provided by engineer. */
 "Calendar Permission" = "カレンダー許可";
@@ -593,7 +593,7 @@
 "Damage Over Time" = "継続ダメージ";
 
 /* No comment provided by engineer. */
-"damaged by effect %d" = "[アクション%d]にダメージを与えられたターゲット";
+"damaged by effect %d" = "[アクション%d]にダメージを与えられた対象";
 
 /* No comment provided by engineer. */
 "Data Version" = "データバージョン";
@@ -617,7 +617,7 @@
 "debuffs" = "デバフ";
 
 /* No comment provided by engineer. */
-"decoying" = "誘き寄せます";
+"decoying" = "誘き寄せる";
 
 /* No comment provided by engineer. */
 "Decrease" = "ダウン";
@@ -800,7 +800,7 @@
 "Finished" = "更新完了";
 
 /* No comment provided by engineer. */
-"four" = "４体";
+"four" = "4体";
 
 /* No comment provided by engineer. */
 "fourth" = "4番目";
@@ -869,13 +869,13 @@
 "Hard" = "HARD";
 
 /* No comment provided by engineer. */
-"Haste" = "ヘイスト";
+"Haste" = "加速";
 
 /* No comment provided by engineer. */
 "Height" = "身長";
 
 /* No comment provided by engineer. */
-"Hex" = "呪詛";
+"Hex" = "呪い";
 
 /* icon style */
 "highest rarity" = "最高のレアリティ";
@@ -890,10 +890,10 @@
 "Icon Style" = "アイコンスタイル";
 
 /* No comment provided by engineer. */
-"if target is defeated by the last effect then use %d" = "前のアクションがターゲットを倒した場合、[アクション%d]を使う";
+"if target is defeated by the last effect then use %d" = "前のアクションが対象を倒した場合、[アクション%d]を使う";
 
 /* No comment provided by engineer. */
-"if target is not defeated by last effect then use %d" = "前のアクションがターゲットを倒してない場合、[アクション%d]を使う";
+"if target is not defeated by last effect then use %d" = "前のアクションが対象を倒してない場合、[アクション%d]を使う";
 
 /* No comment provided by engineer. */
 "Ignore the other units' taunt when attacking %@." = "%@を攻撃する時、他の敵の挑発効果を無視する。";
@@ -902,7 +902,7 @@
 "Image" = "画像";
 
 /* No comment provided by engineer. */
-"Import All Charas" = "すべてのキャラを輸入する";
+"Import All Charas" = "すべてのキャラを輸入";
 
 /* No comment provided by engineer. */
 "In next [%@] attacks, %@'s physical attacks will miss." = "%2$@の次の[%1$@]回物理攻撃を必ずミスさせる。";
@@ -1058,7 +1058,7 @@
 "max 16 characters" = "最大16文字";
 
 /* No comment provided by engineer. */
-"Max Level to %@" = "最大レベル%@";
+"Max Level to %@" = "最大レベルは%@にアップ";
 
 /* No comment provided by engineer. */
 "Max Possible Bond Rank" = "最大可能絆ランク";
@@ -1103,7 +1103,7 @@
 "Modifier: add [%@ * count of %@] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * %2$@の数]アップさせる。";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを [%1$@ * ダメージを与えられたターゲットの数] アップさせる。";
+"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを [%1$@ * ダメージを与えられた対象の数] アップさせる。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * 倒した敵の数]アップさせる。";
@@ -1154,10 +1154,10 @@
 "Move to %@ in front of %@ with velocity %@/s." = "[%3$@]の速度で%2$@の前[%1$@]の位置まで移動する。";
 
 /* No comment provided by engineer. */
-"Multiple attack speed of %@ with [%@] for [%@]s." = "%1$@の行動速度を[%2$@]に乗じる、効果時間[%3$@]秒。";
+"Multiple attack speed of %@ with [%@] for [%@]s." = "%1$@の行動速度を[%2$@]倍にする、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"Multiple heal effects from %@ with [%@] for [%@]s." = "%1$@の回復効果を[%2$@]に乗じる、効果時間[%3$@]秒。";
+"Multiple heal effects from %@ with [%@] for [%@]s." = "%1$@の回復効果を[%2$@]倍にする、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
 "Multiple the energy gained by %@ from effects [%@] with [%@]." = "ダメージによるTP回復を含めて、%1$@が [アクション%2$@] を受けた時全てのTP回復効果を [元の値 * %3$@] に変更させる。";
@@ -1166,7 +1166,7 @@
 "name" = "名前";
 
 /* No comment provided by engineer. */
-"New %@ Event: %@" = "新しい %1$@ イベント：%2$@";
+"New %@ Event: %@" = "新しい%1$@イベント：%2$@";
 
 /* No comment provided by engineer. */
 "New Campaign: %@ %@ x%@" = "新しいキャンペーン：%1$@ %2$@ x%3$@";
@@ -1313,10 +1313,10 @@
 "Profile" = "プロファイル";
 
 /* No comment provided by engineer. */
-"pve" = "pve";
+"pve" = "PVE";
 
 /* No comment provided by engineer. */
-"pvp" = "pvp";
+"pvp" = "PVP";
 
 /* No comment provided by engineer. */
 "Quest Area" = "クエストエリア";
@@ -1328,7 +1328,7 @@
 "Race" = "種族";
 
 /* No comment provided by engineer. */
-"radius %d" = "半径%1$d";
+"radius %d" = "半径%d";
 
 /* No comment provided by engineer. */
 "Raid" = "レイド";
@@ -1382,10 +1382,10 @@
 "Reduce" = "ダウン";
 
 /* No comment provided by engineer. */
-"Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." = "%2$@のユニオンバーストかスキルが任意のターゲットにダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。";
+"Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." = "%2$@のユニオンバーストかスキルが任意の対象にダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." = "%2$@のユニオンバーストが任意のターゲットにダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。";
+"Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." = "%2$@のユニオンバーストが任意の対象にダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
 "Remove %@ mark stacks(ID: %@) on %@." = "%3$@のマーク[ID：%2$@]を%1$@スタック減らせる。";
@@ -1553,7 +1553,7 @@
 "Still" = "絆ストーリー";
 
 /* No comment provided by engineer. */
-"Stop time on %@ for [%@]s." = "%1$@を時間停止状態にする、効果時間 [%2$@] 秒。";
+"Stop time on %@ for [%@]s." = "%1$@を時間停止状態にする、効果時間[%2$@]秒。";
 
 /* No comment provided by engineer. */
 "Story" = "ストーリー";
@@ -1601,25 +1601,25 @@
 "Tag" = "タグ";
 
 /* No comment provided by engineer. */
-"target" = "ターゲット";
+"target" = "対象";
 
 /* No comment provided by engineer. */
 "Target Level" = "相手レベル";
 
 /* No comment provided by engineer. */
-"targets" = "ターゲット";
+"targets" = "対象";
 
 /* No comment provided by engineer. */
-"targets of effect %d" = "[アクション%d]のターゲット";
+"targets of effect %d" = "[アクション%d]の対象";
 
 /* No comment provided by engineer. */
 "targets of last effect" = "同じ";
 
 /* No comment provided by engineer. */
-"targets those damaged by effect %d" = "[アクション%d]にダメージを与えられたターゲット";
+"targets those damaged by effect %d" = "[アクション%d]にダメージを与えられた対象";
 
 /* No comment provided by engineer. */
-"targets within the scope" = "範囲内のターゲット";
+"targets within the scope" = "範囲内の対象";
 
 /* No comment provided by engineer. */
 "Team Detail" = "チーム詳細";
@@ -1634,7 +1634,7 @@
 "Teams" = "チーム";
 
 /* No comment provided by engineer. */
-"Temple" = "神殿";
+"Temple" = "神殿調査";
 
 /* target type */
 "the %@ farthest" = "%@遠い";
@@ -1736,7 +1736,7 @@
 "There aren't any Mail accounts" = "メールアカウントを見つかりませんでした。";
 
 /* No comment provided by engineer. */
-"These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\".\\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content." = "These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\".\\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content.";
+"These settings are used for automatically adding events to your system Calendar whenever game data is updated inside this app. The events in system Calendar will be grouped in separate calendars with prefix \"Hatsune's Notes\".\\n**IMPORTANT**: It's not recommended to enable these settings on multiple devices of the same iCloud account, which will result in multiple calendar groups with the same content." = "これらの設定は、このアプリ内でゲームデータが更新されるたびに、システムカレンダーにイベントを自動的に追加するために使用されます。 システムカレンダーのイベントは、接頭辞「Hatsune's Notes」が付いた個別のカレンダーにグループ化されます。\\n**重要**：同じiCloudアカウントの複数のデバイスでこれらの設定を有効にすることはお勧めしません。これにより、複数のカレンダーグループに同じ内容が出現することがあります。";
 
 /* No comment provided by engineer. */
 "third" = "3番目";
@@ -1859,7 +1859,7 @@
 "unknown type" = "不明な種類";
 
 /* No comment provided by engineer. */
-"Up to date!" = "最新のバージョンです！";
+"Up to date!" = "最新のバージョンです";
 
 /* No comment provided by engineer. */
 "Upcoming Birthdays" = "今後の誕生日";
@@ -1970,10 +1970,10 @@
 "Violent Poison" = "猛毒";
 
 /* No comment provided by engineer. */
-"Wave %d" = "Wave %d";
+"Wave %d" = "ウェーブ %d";
 
 /* No comment provided by engineer. */
-"Wave %d (x%.2f)" = "Wave %1$d (x%2$.2f)";
+"Wave %d (x%.2f)" = "ウェーブ %1$d (x%2$.2f)";
 
 /* No comment provided by engineer. */
 "Wave Energy Recovery" = "TP自動回復";
