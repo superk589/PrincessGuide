@@ -52,7 +52,18 @@ class EDStatusTableViewController: EDTableViewController {
                 [
                     TextItem(title: NSLocalizedString("Effective Physical HP", comment: ""), content: String(Int(property.effectivePhysicalHP.rounded())), colorMode: .normal),
                     TextItem(title: NSLocalizedString("Effective Magical HP", comment: ""), content: String(Int(property.effectiveMagicalHP.rounded())), colorMode: .normal)
-            ]),
+            ])
+        ]
+        
+        if let virtualHP = enemy.base.virtualHp, virtualHP != 0 {
+            rows.append(
+                Row.textArray([
+                    TextItem(title: NSLocalizedString("Virtual HP(max HP in TP formula)", comment: "the max HP used for tp recovering from damage"), content: String(virtualHP), colorMode: .normal)
+                ])
+            )
+        }
+        
+        rows += [
             Row.propertyItems([
                 property.item(for: .hp),
                 property.item(for: .physicalCritical)], unitLevel, targetLevel),

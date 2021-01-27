@@ -116,6 +116,8 @@ class Enemy: Codable {
         let childEnemyParameter5: Int?
 
         let uniqueEquipmentFlag1: Int?
+        let breakDurability: Int?
+        let virtualHp: Int?
         
         var property: Property {
             return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),

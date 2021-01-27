@@ -1969,6 +1969,9 @@
 /* No comment provided by engineer. */
 "Violent Poison" = "猛毒";
 
+/* the max HP used for tp recovering from damage */
+"Virtual HP(max HP in TP formula)" = "实质 HP（受击回能公式中的最大 HP）";
+
 /* No comment provided by engineer. */
 "Wave %d" = "第 %d 波";
 
