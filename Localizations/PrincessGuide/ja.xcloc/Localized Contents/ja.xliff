@@ -192,52 +192,52 @@
       </trans-unit>
       <trans-unit id="%@ highest ATK" xml:space="preserve">
         <source>%@ highest ATK</source>
-        <target>物理攻撃力が一番高い%@</target>
+        <target>物理攻撃力が最も高い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ highest HP" xml:space="preserve">
         <source>%@ highest HP</source>
-        <target>HPが一番高い%@</target>
+        <target>HPが最も高い%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ highest HP ratio" xml:space="preserve">
         <source>%@ highest HP ratio</source>
-        <target>HP割合が一番高い%@</target>
+        <target>HP割合が最も高い%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ highest Magic STR" xml:space="preserve">
         <source>%@ highest Magic STR</source>
-        <target>魔法攻撃力が一番高い%@</target>
+        <target>魔法攻撃力が最も高い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ highest TP" xml:space="preserve">
         <source>%@ highest TP</source>
-        <target>TPが一番高い%@</target>
+        <target>TPが最も高い%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ lowest ATK" xml:space="preserve">
         <source>%@ lowest ATK</source>
-        <target>物理攻撃力が一番低い%@</target>
+        <target>物理攻撃力が最も低い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ lowest HP" xml:space="preserve">
         <source>%@ lowest HP</source>
-        <target>HPが一番低い%@</target>
+        <target>HPが最も低い%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ lowest HP ratio" xml:space="preserve">
         <source>%@ lowest HP ratio</source>
-        <target>HP割合が一番低い%@</target>
+        <target>HP割合が最も低い%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ lowest Magic STR" xml:space="preserve">
         <source>%@ lowest Magic STR</source>
-        <target>魔法攻撃力が一番低い%@</target>
+        <target>魔法攻撃力が最も低い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ lowest TP" xml:space="preserve">
         <source>%@ lowest TP</source>
-        <target>TPが一番低い%@</target>
+        <target>TPが最も低い%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ magic" xml:space="preserve">
@@ -757,7 +757,7 @@
       </trans-unit>
       <trans-unit id="Charge for %@s and deal [%@ * damage taken] additional damage on the next effect." xml:space="preserve">
         <source>Charge for %1$@s and deal [%2$@ * damage taken] additional damage on the next effect.</source>
-        <target>%1$@秒チャージし、次のアクションの効果を[%2$@ * チャージ中受けたダメージ]アップ。</target>
+        <target>%1$@秒チャージし、次のアクションの効果を[%2$@ * チャージ中受けたダメージ]アップさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Charm" xml:space="preserve">
@@ -947,7 +947,7 @@
       </trans-unit>
       <trans-unit id="Decrease" xml:space="preserve">
         <source>Decrease</source>
-        <target>ダウン</target>
+        <target>ダウンさせ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Denied" xml:space="preserve">
@@ -1337,7 +1337,7 @@
       </trans-unit>
       <trans-unit id="Increase" xml:space="preserve">
         <source>Increase</source>
-        <target>アップ</target>
+        <target>アップさせ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Inhibit Heal" xml:space="preserve">
@@ -1942,12 +1942,12 @@
       </trans-unit>
       <trans-unit id="Raise" xml:space="preserve">
         <source>Raise</source>
-        <target>アップ</target>
+        <target>アップさせる</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Raise [%@] %@." xml:space="preserve">
         <source>Raise [%1$@] %2$@.</source>
-        <target>%2$@を[%1$@]アップ。</target>
+        <target>%2$@を[%1$@]アップさせる。</target>
         <note>Raise [x] ATK.</note>
       </trans-unit>
       <trans-unit id="Random event: %d%% chance use %d, otherwise %d." xml:space="preserve">
@@ -1992,7 +1992,7 @@
       </trans-unit>
       <trans-unit id="Reduce" xml:space="preserve">
         <source>Reduce</source>
-        <target>ダウン</target>
+        <target>ダウンさせる</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." xml:space="preserve">
@@ -2582,16 +2582,17 @@
       </trans-unit>
       <trans-unit id="Virtual HP(max HP in TP formula)" xml:space="preserve">
         <source>Virtual HP(max HP in TP formula)</source>
+        <target>仮想 HP(TP公式の最大 HP)</target>
         <note>the max HP used for tp recovering from damage</note>
       </trans-unit>
       <trans-unit id="Wave %d" xml:space="preserve">
         <source>Wave %d</source>
-        <target>ウェーブ %d</target>
+        <target>ボス %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave %d (x%.2f)" xml:space="preserve">
         <source>Wave %1$d (x%2$.2f)</source>
-        <target>ウェーブ %1$d (x%2$.2f)</target>
+        <target>ボス %1$d (x%2$.2f)</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wave Energy Recovery" xml:space="preserve">
@@ -3151,52 +3152,52 @@
       </trans-unit>
       <trans-unit id="the highest ATK" xml:space="preserve">
         <source>the highest ATK</source>
-        <target>物理攻撃力が一番高い</target>
+        <target>物理攻撃力が最も高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the highest HP" xml:space="preserve">
         <source>the highest HP</source>
-        <target>HPが一番高い</target>
+        <target>HPが最も高い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the highest HP ratio" xml:space="preserve">
         <source>the highest HP ratio</source>
-        <target>HP割合が一番高い</target>
+        <target>HP割合が最も高い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the highest Magic STR" xml:space="preserve">
         <source>the highest Magic STR</source>
-        <target>魔法攻撃力が一番高い</target>
+        <target>魔法攻撃力が最も高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the highest TP" xml:space="preserve">
         <source>the highest TP</source>
-        <target>TPが一番高い</target>
+        <target>TPが最も高い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the lowest ATK" xml:space="preserve">
         <source>the lowest ATK</source>
-        <target>物理攻撃力が一番低い</target>
+        <target>物理攻撃力が最も低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest HP" xml:space="preserve">
         <source>the lowest HP</source>
-        <target>HPが一番低い</target>
+        <target>HPが最も低い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the lowest HP ratio" xml:space="preserve">
         <source>the lowest HP ratio</source>
-        <target>HP割合が一番低い</target>
+        <target>HP割合が最も低い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the lowest Magic STR" xml:space="preserve">
         <source>the lowest Magic STR</source>
-        <target>魔法攻撃力が一番低い</target>
+        <target>魔法攻撃力が最も低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest TP" xml:space="preserve">
         <source>the lowest TP</source>
-        <target>TPが一番低い</target>
+        <target>TPが最も低い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the most backward" xml:space="preserve">
