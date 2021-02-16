@@ -74,8 +74,11 @@ class AdditiveAction: ActionParameter {
                 actionDetail1 % 10
             )
         case 102:
-            let format = NSLocalizedString("Modifier: add [%@ * count of omemes] value %d of effect %d.", comment: "")
+            let format = NSLocalizedString("Modifier: add [%@ * count of omemes] to value %d of effect %d.", comment: "")
             result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2, actionDetail1 % 10)
+        case 20..<30:
+            let format = NSLocalizedString("Modifier: add [%@ * number on counter %d] to value %d of effect %d.", comment: "")
+            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), Int(actionValue1) % 10, actionDetail2, actionDetail1 % 10)
         default:
             result = super.localizedDetail(of: level, property: property, style: style)
         }

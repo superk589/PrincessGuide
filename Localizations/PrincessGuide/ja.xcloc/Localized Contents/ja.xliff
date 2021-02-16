@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.4" build-num="12D4e"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.4" build-num="12D4e"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.4" build-num="12D4e"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -370,9 +369,9 @@
         <target>%4$@にマーク[ID：%3$@]を%1$@スタック追加する、効果時間[%5$@]秒、この効果は最大[%2$@]までスタックする。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%d] to the counter." xml:space="preserve">
-        <source>Add [%d] to the counter.</source>
-        <target>カウンターの数を[%d]増やせる。</target>
+      <trans-unit id="Add [%d] to the counter %d." xml:space="preserve">
+        <source>Add [%1$d] to the counter %2$d.</source>
+        <target>カウンター%2$dの数を[%1$d]増やせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks." xml:space="preserve">
@@ -1645,14 +1644,19 @@
         <target>[アクション%3$d]の変数%2$dを[%1$@ * 倒した敵の数]アップさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Modifier: add [%@ * count of omemes] value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * count of omemes] value %2$d of effect %3$d.</source>
+      <trans-unit id="Modifier: add [%@ * count of omemes] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * count of omemes] to value %2$d of effect %3$d.</source>
         <target>[アクション%3$d]の変数%2$dを[%1$@ * オメメちゃんの数]アップさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * lost HP] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * lost HP] to value %2$d of effect %3$d.</source>
         <target>[アクション%3$d]の変数%2$dを[%1$@ * 損失したHP]アップさせる。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Modifier: add [%@ * number on counter %d] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * number on counter %2$d] to value %3$d of effect %4$d.</source>
+        <target>[アクション%4$d]の変数%3$dを[%1$@ * カウンター%2$dの数]アップさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * stacks of mark(ID: %d)] to value %d of effect %d." xml:space="preserve">
@@ -2770,14 +2774,14 @@
         <target>制御された</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="counter is greater than or equal to %d then use %d" xml:space="preserve">
-        <source>counter is greater than or equal to %1$d then use %2$d</source>
-        <target>カウンターの数が%1$d以上の場合、[アクション%2$d]を使う</target>
+      <trans-unit id="counter %d is greater than or equal to %d then use %d" xml:space="preserve">
+        <source>counter %1$d is greater than or equal to %2$d then use %3$d</source>
+        <target>カウンター%1$dの数が%2$d以上の場合、[アクション%3$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="counter is less than %d then use %d" xml:space="preserve">
-        <source>counter is less than %1$d then use %2$d</source>
-        <target>カウンターの数が%1$d未満の場合、[アクション%2$d]を使う</target>
+      <trans-unit id="counter %d is less than %d then use %d" xml:space="preserve">
+        <source>counter %1$d is less than %2$d then use %3$d</source>
+        <target>カウンター%1$dの数が%2$d未満の場合、[アクション%3$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="cursed" xml:space="preserve">

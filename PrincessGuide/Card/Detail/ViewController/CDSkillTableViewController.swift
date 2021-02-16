@@ -63,7 +63,8 @@ class CDSkillTableViewController: CDTableViewController {
         }
         
         // setup main skills
-        if settings.skillStyle == .both {
+        let hasUniqueEquipments = card.uniqueEquipIDs.count > 0
+        if settings.skillStyle == .both && hasUniqueEquipments {
             rows += zip(card.mainSkills, card.mainSkillEvolutions)
                 .enumerated()
                 .flatMap {
@@ -81,7 +82,7 @@ class CDSkillTableViewController: CDTableViewController {
                         return Row.skill(skill: $0.element, category: .main, property: property, index: card.mainSkillEvolutions.count + $0.offset + 1)
                 }
             }
-        } else {
+        } else if hasUniqueEquipments {
             rows.append(contentsOf:
                 zip(card.mainSkillEvolutions, card.mainSkills)
                     .enumerated()
@@ -98,6 +99,14 @@ class CDSkillTableViewController: CDTableViewController {
                         return Row.skill(skill: $0.element, category: .main, property: property, index: card.mainSkillEvolutions.count + $0.offset + 1)
                 }
             }
+        } else {
+            rows.append(
+                contentsOf: card.mainSkills
+                    .enumerated()
+                    .map {
+                        return Row.skill(skill: $0.element, category: .main, property: property, index: $0.offset + 1)
+                    }
+            )
         }
         
         // setup sp skills

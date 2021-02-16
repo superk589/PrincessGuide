@@ -80,34 +80,34 @@
 "%@ front %@ target in range %d" = "前方%3$d範囲内%1$@%2$@";
 
 /* No comment provided by engineer. */
-"%@ highest ATK" = "物理攻撃力が一番高い%@";
+"%@ highest ATK" = "物理攻撃力が最も高い%@";
 
 /* target type */
-"%@ highest HP" = "HPが一番高い%@";
+"%@ highest HP" = "HPが最も高い%@";
 
 /* target type */
-"%@ highest HP ratio" = "HP割合が一番高い%@";
+"%@ highest HP ratio" = "HP割合が最も高い%@";
 
 /* No comment provided by engineer. */
-"%@ highest Magic STR" = "魔法攻撃力が一番高い%@";
+"%@ highest Magic STR" = "魔法攻撃力が最も高い%@";
 
 /* target type */
-"%@ highest TP" = "TPが一番高い%@";
+"%@ highest TP" = "TPが最も高い%@";
 
 /* No comment provided by engineer. */
-"%@ lowest ATK" = "物理攻撃力が一番低い%@";
+"%@ lowest ATK" = "物理攻撃力が最も低い%@";
 
 /* target type */
-"%@ lowest HP" = "HPが一番低い%@";
+"%@ lowest HP" = "HPが最も低い%@";
 
 /* target type */
-"%@ lowest HP ratio" = "HP割合が一番低い%@";
+"%@ lowest HP ratio" = "HP割合が最も低い%@";
 
 /* No comment provided by engineer. */
-"%@ lowest Magic STR" = "魔法攻撃力が一番低い%@";
+"%@ lowest Magic STR" = "魔法攻撃力が最も低い%@";
 
 /* target type */
-"%@ lowest TP" = "TPが一番低い%@";
+"%@ lowest TP" = "TPが最も低い%@";
 
 /* No comment provided by engineer. */
 "%@ magic" = "魔法攻撃を行う%@";
@@ -176,7 +176,7 @@
 "Action" = "行動";
 
 /* No comment provided by engineer. */
-"Add [%d] to the counter." = "カウンターの数を[%d]増やせる。";
+"Add [%d] to the counter %d." = "カウンター%2$dの数を[%1$d]増やせる。";
 
 /* No comment provided by engineer. */
 "Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "%4$@にマーク[ID：%3$@]を%1$@スタック追加する、効果時間[%5$@]秒、この効果は最大[%2$@]までスタックする。";
@@ -479,7 +479,7 @@
 "Charas Count" = "キャラ数";
 
 /* No comment provided by engineer. */
-"Charge for %@s and deal [%@ * damage taken] additional damage on the next effect." = "%1$@秒チャージし、次のアクションの効果を[%2$@ * チャージ中受けたダメージ]アップ。";
+"Charge for %@s and deal [%@ * damage taken] additional damage on the next effect." = "%1$@秒チャージし、次のアクションの効果を[%2$@ * チャージ中受けたダメージ]アップさせる。";
 
 /* No comment provided by engineer. */
 "Charm" = "魅了";
@@ -563,10 +563,10 @@
 "Count Blind" = "千里眼";
 
 /* No comment provided by engineer. */
-"counter is greater than or equal to %d then use %d" = "カウンターの数が%1$d以上の場合、[アクション%2$d]を使う";
+"counter %d is greater than or equal to %d then use %d" = "カウンター%1$dの数が%2$d以上の場合、[アクション%3$d]を使う";
 
 /* No comment provided by engineer. */
-"counter is less than %d then use %d" = "カウンターの数が%1$d未満の場合、[アクション%2$d]を使う";
+"counter %d is less than %d then use %d" = "カウンター%1$dの数が%2$d未満の場合、[アクション%3$d]を使う";
 
 /* No comment provided by engineer. */
 "Crafted" = "作成";
@@ -620,7 +620,7 @@
 "decoying" = "誘き寄せる";
 
 /* No comment provided by engineer. */
-"Decrease" = "ダウン";
+"Decrease" = "ダウンさせ";
 
 /* No comment provided by engineer. */
 "DEF" = "物理防御力";
@@ -911,7 +911,7 @@
 "In next [%@]s, %@'s physical attacks will miss." = "%2$@の物理攻撃を必ずミスさせる、効果時間[%1$@]秒。";
 
 /* No comment provided by engineer. */
-"Increase" = "アップ";
+"Increase" = "アップさせ";
 
 /* No comment provided by engineer. */
 "inevitable physical" = "避けられない物理";
@@ -1109,13 +1109,16 @@
 "Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * 倒した敵の数]アップさせる。";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * count of omemes] value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * オメメちゃんの数]アップさせる。";
+"Modifier: add [%@ * count of omemes] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * オメメちゃんの数]アップさせる。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * HP] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * HP]アップさせる。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * lost HP] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * 損失したHP]アップさせる。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * number on counter %d] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * カウンター%2$dの数]アップさせる。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * stacks of mark(ID: %d)] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * マーク[ID：%2$d]のスタック数]アップさせる。";
@@ -1334,10 +1337,10 @@
 "Raid" = "レイド";
 
 /* No comment provided by engineer. */
-"Raise" = "アップ";
+"Raise" = "アップさせる";
 
 /* Raise [x] ATK. */
-"Raise [%@] %@." = "%2$@を[%1$@]アップ。";
+"Raise [%@] %@." = "%2$@を[%1$@]アップさせる。";
 
 /* target type */
 "random" = "ランダム";
@@ -1379,7 +1382,7 @@
 "raw value id" = "変数ID";
 
 /* No comment provided by engineer. */
-"Reduce" = "ダウン";
+"Reduce" = "ダウンさせる";
 
 /* No comment provided by engineer. */
 "Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." = "%2$@のユニオンバーストかスキルが任意の対象にダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。";
@@ -1691,34 +1694,34 @@
 "the farthest" = "最も遠い";
 
 /* No comment provided by engineer. */
-"the highest ATK" = "物理攻撃力が一番高い";
+"the highest ATK" = "物理攻撃力が最も高い";
 
 /* target type */
-"the highest HP" = "HPが一番高い";
+"the highest HP" = "HPが最も高い";
 
 /* target type */
-"the highest HP ratio" = "HP割合が一番高い";
+"the highest HP ratio" = "HP割合が最も高い";
 
 /* No comment provided by engineer. */
-"the highest Magic STR" = "魔法攻撃力が一番高い";
+"the highest Magic STR" = "魔法攻撃力が最も高い";
 
 /* target type */
-"the highest TP" = "TPが一番高い";
+"the highest TP" = "TPが最も高い";
 
 /* No comment provided by engineer. */
-"the lowest ATK" = "物理攻撃力が一番低い";
+"the lowest ATK" = "物理攻撃力が最も低い";
 
 /* target type */
-"the lowest HP" = "HPが一番低い";
+"the lowest HP" = "HPが最も低い";
 
 /* target type */
-"the lowest HP ratio" = "HP割合が一番低い";
+"the lowest HP ratio" = "HP割合が最も低い";
 
 /* No comment provided by engineer. */
-"the lowest Magic STR" = "魔法攻撃力が一番低い";
+"the lowest Magic STR" = "魔法攻撃力が最も低い";
 
 /* target type */
-"the lowest TP" = "TPが一番低い";
+"the lowest TP" = "TPが最も低い";
 
 /* target type */
 "the most backward" = "最も後の";
@@ -1969,11 +1972,14 @@
 /* No comment provided by engineer. */
 "Violent Poison" = "猛毒";
 
-/* No comment provided by engineer. */
-"Wave %d" = "ウェーブ %d";
+/* the max HP used for tp recovering from damage */
+"Virtual HP(max HP in TP formula)" = "仮想 HP(TP公式の最大 HP)";
 
 /* No comment provided by engineer. */
-"Wave %d (x%.2f)" = "ウェーブ %1$d (x%2$.2f)";
+"Wave %d" = "ボス %d";
+
+/* No comment provided by engineer. */
+"Wave %d (x%.2f)" = "ボス %1$d (x%2$.2f)";
 
 /* No comment provided by engineer. */
 "Wave Energy Recovery" = "TP自動回復";

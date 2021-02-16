@@ -1,5 +1,5 @@
 app_identifier("com.zzk.PrincessGuide") # The bundle identifier of your app
-apple_id("superk521@foxmail.com") # Your Apple email address
+apple_id("superk589@gmail.com") # Your Apple email address
 
 itc_team_id("118308934") # App Store Connect Team ID
 team_id("MXJJEEMF3U") # Developer Portal Team ID

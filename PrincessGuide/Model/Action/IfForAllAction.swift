@@ -55,8 +55,8 @@ class IfForAllAction: ActionParameter {
             let format = NSLocalizedString("use %d if this skill is critical", comment: "")
             return String(format: format, actionDetail2 % 10)
         case 1200..<1300:
-            let format = NSLocalizedString("counter is greater than or equal to %d then use %d", comment: "")
-            return String(format: format, actionDetail1 % 10, actionDetail2 % 10)
+            let format = NSLocalizedString("counter %d is greater than or equal to %d then use %d", comment: "")
+            return String(format: format, actionDetail1 % 100 / 10, actionDetail1 % 10, actionDetail2 % 10)
         default:
             return nil
         }
@@ -107,8 +107,8 @@ class IfForAllAction: ActionParameter {
             let format = NSLocalizedString("use %d if this skill is not critical", comment: "")
             return String(format: format, actionDetail3 % 10)
         case 1200..<1300:
-            let format = NSLocalizedString("counter is less than %d then use %d", comment: "")
-            return String(format: format, actionDetail1 % 10, actionDetail3 % 10)
+            let format = NSLocalizedString("counter %d is less than %d then use %d", comment: "")
+            return String(format: format, actionDetail1 % 100 / 10, actionDetail1 % 10, actionDetail3 % 10)
         default:
             return nil
         }

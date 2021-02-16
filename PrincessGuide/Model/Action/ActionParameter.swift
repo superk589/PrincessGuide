@@ -304,7 +304,8 @@ class ActionParameter {
             
             let expression = (actionValues ?? self.actionValues).map { value in
                 var part = ""
-                if let initialValue = Decimal(string: value.initial), let perLevelValue = Decimal(string: value.perLevel) {
+                if let initialValue = Decimal(string: value.initial) {
+                    let perLevelValue = value.perLevel.flatMap { Decimal(string: $0) } ?? 0
                     let roundingRule = value.key == nil ? roundingRule : nil
                     switch (initialValue, perLevelValue) {
                     case (0, 0):
@@ -341,7 +342,8 @@ class ActionParameter {
             
             let expression = (actionValues ?? self.actionValues).map { value in
                 var part = ""
-                if let initialValue = Double(value.initial), let perLevelValue = Double(value.perLevel) {
+                if let initialValue = Double(value.initial) {
+                    let perLevelValue = value.perLevel.flatMap { Decimal(string: $0) } ?? 0
                     let roundingRule = value.key == nil ? roundingRule : nil
                     switch (initialValue, perLevelValue) {
                     case (0, 0):
@@ -379,10 +381,19 @@ class ActionParameter {
             
             let expression = (actionValues ?? self.actionValues).map { value in
                 var part = ""
-                let format = NSLocalizedString("value %d", comment: "")
+                let format: String
+                if value.negative {
+                    format = "-" + NSLocalizedString("value %d", comment: "")
+                } else {
+                    format = NSLocalizedString("value %d", comment: "")
+                }
                 let initialValue = String(format: format, value.startIndex)
-                let perLevelValue = String(format: format, value.startIndex + 1)
-                part = "\(initialValue) + \(perLevelValue) * \(NSLocalizedString("SLv.", comment: ""))"
+                if value.perLevel != nil {
+                    let perLevelValue = String(format: format, value.startIndex + 1)
+                    part = "\(initialValue) + \(perLevelValue) * \(NSLocalizedString("SLv.", comment: ""))"
+                } else {
+                    part = "\(initialValue)"
+                }
                 if let key = value.key {
                     part = "(\(part)) * \(key.description)"
                 }
@@ -402,7 +413,8 @@ class ActionParameter {
             
             for value in actionValues ?? self.actionValues {
                 var part: Decimal = 0.0
-                if let initialValue = Decimal(string: value.initial), let perLevelValue = Decimal(string: value.perLevel) {
+                if let initialValue = Decimal(string: value.initial) {
+                    let perLevelValue = value.perLevel.flatMap { Decimal(string: $0) } ?? 0
                     part = initialValue + perLevelValue * Decimal(level)
                 }
                 if let key = value.key {
@@ -419,7 +431,8 @@ class ActionParameter {
             
             for value in actionValues ?? self.actionValues {
                 var part: Decimal = 0.0
-                if let initialValue = Decimal(string: value.initial), let perLevelValue = Decimal(string: value.perLevel) {
+                if let initialValue = Decimal(string: value.initial) {
+                    let perLevelValue = value.perLevel.flatMap { Decimal(string: $0) } ?? 0
                     part = initialValue + perLevelValue * Decimal(level)
                 }
                 if let key = value.key {
@@ -445,9 +458,10 @@ class ActionParameter {
 
 struct ActionValue {
     let initial: String
-    let perLevel: String
+    let perLevel: String?
     let key: PropertyKey?
     let startIndex: Int
+    var negative: Bool = false
 }
 
 enum PercentModifier: CustomStringConvertible {

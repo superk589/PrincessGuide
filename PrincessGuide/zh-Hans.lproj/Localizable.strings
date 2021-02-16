@@ -176,7 +176,7 @@
 "Action" = "Action";
 
 /* No comment provided by engineer. */
-"Add [%d] to the counter." = "使计数器加 [%d]。";
+"Add [%d] to the counter %d." = "使计数器 %2$d 加 [%1$d]。";
 
 /* No comment provided by engineer. */
 "Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。";
@@ -563,10 +563,10 @@
 "Count Blind" = "千里眼";
 
 /* No comment provided by engineer. */
-"counter is greater than or equal to %d then use %d" = "计数器大于等于 %1$d 时使用 %2$d";
+"counter %d is greater than or equal to %d then use %d" = "计数器 %1$d 大于等于 %2$d 时使用 %3$d";
 
 /* No comment provided by engineer. */
-"counter is less than %d then use %d" = "计数器小于 %1$d 时使用 %2$d";
+"counter %d is less than %d then use %d" = "计数器 %1$d 小于 %2$d 时使用 %3$d";
 
 /* No comment provided by engineer. */
 "Crafted" = "制作";
@@ -1109,13 +1109,16 @@
 "Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 击杀个数]。";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * count of omemes] value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * オメメ个数] 。";
+"Modifier: add [%@ * count of omemes] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * オメメ个数] 。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * HP] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * HP]。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * lost HP] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 损失的 HP]。";
+
+/* No comment provided by engineer. */
+"Modifier: add [%@ * number on counter %d] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * 计数器 %2$d 的数值] 。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * stacks of mark(ID: %d)] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。";
