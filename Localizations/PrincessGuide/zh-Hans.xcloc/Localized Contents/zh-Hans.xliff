@@ -299,6 +299,16 @@
         <target>范围 %2$d 内%1$@目标</target>
         <note>[enemy] targets in range [500]</note>
       </trans-unit>
+      <trans-unit id="%@ the highest ATK or Magic STR" xml:space="preserve">
+        <source>%@ the highest ATK or Magic STR</source>
+        <target>物理或魔法攻击力最高的%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ the lowest ATK or Magic STR" xml:space="preserve">
+        <source>%@ the lowest ATK or Magic STR</source>
+        <target>物理或魔法攻击力最低的%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ to %@" xml:space="preserve">
         <source>%1$@ to %2$@</source>
         <target>%1$@至%2$@</target>
@@ -1994,6 +2004,11 @@
         <target>原始材料</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Received Critical Damage" xml:space="preserve">
+        <source>Received Critical Damage</source>
+        <target>承受的暴击伤害</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Reduce" xml:space="preserve">
         <source>Reduce</source>
         <target>降低</target>
@@ -3079,6 +3094,11 @@
         <target>物理攻击力%@高的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the %@ highest ATK or Magic STR" xml:space="preserve">
+        <source>the %@ highest ATK or Magic STR</source>
+        <target>物理或魔法攻击力%@高的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the %@ highest HP" xml:space="preserve">
         <source>the %@ highest HP</source>
         <target> HP %@高的</target>
@@ -3102,6 +3122,11 @@
       <trans-unit id="the %@ lowest ATK" xml:space="preserve">
         <source>the %@ lowest ATK</source>
         <target>物理攻击力%@低的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the %@ lowest ATK or Magic STR" xml:space="preserve">
+        <source>the %@ lowest ATK or Magic STR</source>
+        <target>物理或魔法攻击力%@低的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the %@ lowest HP" xml:space="preserve">
@@ -3159,6 +3184,11 @@
         <target>物理攻击力最高的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the highest ATK or Magic STR" xml:space="preserve">
+        <source>the highest ATK or Magic STR</source>
+        <target>物理或魔法攻击力最高的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the highest HP" xml:space="preserve">
         <source>the highest HP</source>
         <target> HP 最高的</target>
@@ -3182,6 +3212,11 @@
       <trans-unit id="the lowest ATK" xml:space="preserve">
         <source>the lowest ATK</source>
         <target>物理攻击力最低的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the lowest ATK or Magic STR" xml:space="preserve">
+        <source>the lowest ATK or Magic STR</source>
+        <target>物理或魔法攻击力最低的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest HP" xml:space="preserve">

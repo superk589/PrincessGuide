@@ -149,6 +149,12 @@
 "%@ The effect will be released when taking damage." = "%@受到伤害时将解除效果。";
 
 /* No comment provided by engineer. */
+"%@ the highest ATK or Magic STR" = "物理或魔法攻击力最高的%@";
+
+/* No comment provided by engineer. */
+"%@ the lowest ATK or Magic STR" = "物理或魔法攻击力最低的%@";
+
+/* No comment provided by engineer. */
 "%@ to %@" = "%1$@至%2$@";
 
 /* target type */
@@ -1382,6 +1388,9 @@
 "raw value id" = "原始数值 ID";
 
 /* No comment provided by engineer. */
+"Received Critical Damage" = "承受的暴击伤害";
+
+/* No comment provided by engineer. */
 "Reduce" = "降低";
 
 /* No comment provided by engineer. */
@@ -1645,6 +1654,9 @@
 /* No comment provided by engineer. */
 "the %@ highest ATK" = "物理攻击力%@高的";
 
+/* No comment provided by engineer. */
+"the %@ highest ATK or Magic STR" = "物理或魔法攻击力%@高的";
+
 /* target type */
 "the %@ highest HP" = " HP %@高的";
 
@@ -1659,6 +1671,9 @@
 
 /* No comment provided by engineer. */
 "the %@ lowest ATK" = "物理攻击力%@低的";
+
+/* No comment provided by engineer. */
+"the %@ lowest ATK or Magic STR" = "物理或魔法攻击力%@低的";
 
 /* target type */
 "the %@ lowest HP" = " HP %@低的";
@@ -1696,6 +1711,9 @@
 /* No comment provided by engineer. */
 "the highest ATK" = "物理攻击力最高的";
 
+/* No comment provided by engineer. */
+"the highest ATK or Magic STR" = "物理或魔法攻击力最高的";
+
 /* target type */
 "the highest HP" = " HP 最高的";
 
@@ -1710,6 +1728,9 @@
 
 /* No comment provided by engineer. */
 "the lowest ATK" = "物理攻击力最低的";
+
+/* No comment provided by engineer. */
+"the lowest ATK or Magic STR" = "物理或魔法攻击力最低的";
 
 /* target type */
 "the lowest HP" = " HP 最低的";

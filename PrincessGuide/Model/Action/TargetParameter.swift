@@ -395,6 +395,8 @@ enum TargetType: Int, CustomStringConvertible {
     case hpDescendingOrNearForward
     case hpAscendingOrNearForward
     case tpDescendingOrMaxForward
+    case bothAtkDescending
+    case bothAtkAscending
     
     enum ExclusiveAllType {
         case not
@@ -480,6 +482,10 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("shadow", comment: "")
         case .nearExceptSelf:
             return NSLocalizedString("the nearest except self", comment: "")
+        case .bothAtkAscending:
+            return NSLocalizedString("the lowest ATK or Magic STR", comment: "")
+        case .bothAtkDescending:
+            return NSLocalizedString("the highest ATK or Magic STR", comment: "")
         }
     }
     
@@ -558,6 +564,12 @@ enum TargetType: Int, CustomStringConvertible {
         case .nearExceptSelf:
             let format = NSLocalizedString("%@ nearest except self", comment: "")
             return String(format: format, localizedModifier)
+        case .bothAtkAscending:
+            let format = NSLocalizedString("%@ the lowest ATK or Magic STR", comment: "")
+            return String(format: format, localizedModifier)
+        case .bothAtkDescending:
+            let format = NSLocalizedString("%@ the highest ATK or Magic STR", comment: "")
+            return String(format: format, localizedModifier)
         default:
             return description
         }
@@ -617,6 +629,12 @@ enum TargetType: Int, CustomStringConvertible {
                 return String(format: format, localizedModifier)
             case .nearExceptSelf:
                 let format = NSLocalizedString("the %@ nearest except self", comment: "")
+                return String(format: format, localizedModifier)
+            case .bothAtkAscending:
+                let format = NSLocalizedString("the %@ lowest ATK or Magic STR", comment: "")
+                return String(format: format, localizedModifier)
+            case .bothAtkDescending:
+                let format = NSLocalizedString("the %@ highest ATK or Magic STR", comment: "")
                 return String(format: format, localizedModifier)
             default:
                 return description

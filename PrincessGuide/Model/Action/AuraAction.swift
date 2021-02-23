@@ -11,7 +11,12 @@ import Foundation
 class AuraAction: ActionParameter {
     
     var percentModifier: PercentModifier {
-        return PercentModifier(Int(actionValue1))
+        switch auraType {
+        case .receivedCriticalDamage:
+            return .percent
+        default:
+            return PercentModifier(Int(actionValue1))
+        }
     }
     
     override var actionValues: [ActionValue] {
@@ -41,6 +46,7 @@ class AuraAction: ActionParameter {
         case physicalCriticalDamage
         case magicalCriticalDamage
         case accuracy
+        case receivedCriticalDamage
         case maxHP = 100
         
         var description: String {
@@ -76,6 +82,8 @@ class AuraAction: ActionParameter {
                 result = NSLocalizedString("Magical Critical Damage", comment: "")
             case .maxHP:
                 return NSLocalizedString("Max. HP", comment: "")
+            case .receivedCriticalDamage:
+                return NSLocalizedString("Received Critical Damage", comment: "")
             }
             return result
         }
@@ -102,10 +110,23 @@ class AuraAction: ActionParameter {
                 self = .raise
             }
         }
+        
+        mutating func toggle() {
+            switch self {
+            case .raise:
+                self = .reduce
+            case .reduce:
+                self = .raise
+            }
+        }
     }
     
     var auraActionType: AuraActionType {
-        return AuraActionType(actionDetail1)
+        var type = AuraActionType(actionDetail1)
+        if auraType == .receivedCriticalDamage {
+            type.toggle()
+        }
+        return type
     }
     
     var auraType: AuraType {

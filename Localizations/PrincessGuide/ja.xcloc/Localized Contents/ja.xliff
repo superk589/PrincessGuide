@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.4" build-num="12D4e"/>
@@ -298,6 +299,14 @@
         <source>%1$@ targets in range %2$d</source>
         <target>%2$d範囲内%1$@全体</target>
         <note>[enemy] targets in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ the highest ATK or Magic STR" xml:space="preserve">
+        <source>%@ the highest ATK or Magic STR</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ the lowest ATK or Magic STR" xml:space="preserve">
+        <source>%@ the lowest ATK or Magic STR</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ to %@" xml:space="preserve">
         <source>%1$@ to %2$@</source>
@@ -1994,6 +2003,10 @@
         <target>作成必要素材</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Received Critical Damage" xml:space="preserve">
+        <source>Received Critical Damage</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Reduce" xml:space="preserve">
         <source>Reduce</source>
         <target>ダウンさせる</target>
@@ -3079,6 +3092,10 @@
         <target>物理攻撃力が%@高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the %@ highest ATK or Magic STR" xml:space="preserve">
+        <source>the %@ highest ATK or Magic STR</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the %@ highest HP" xml:space="preserve">
         <source>the %@ highest HP</source>
         <target>HPが%@高い</target>
@@ -3102,6 +3119,10 @@
       <trans-unit id="the %@ lowest ATK" xml:space="preserve">
         <source>the %@ lowest ATK</source>
         <target>物理攻撃力が%@低い</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the %@ lowest ATK or Magic STR" xml:space="preserve">
+        <source>the %@ lowest ATK or Magic STR</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the %@ lowest HP" xml:space="preserve">
@@ -3159,6 +3180,10 @@
         <target>物理攻撃力が最も高い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the highest ATK or Magic STR" xml:space="preserve">
+        <source>the highest ATK or Magic STR</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the highest HP" xml:space="preserve">
         <source>the highest HP</source>
         <target>HPが最も高い</target>
@@ -3182,6 +3207,10 @@
       <trans-unit id="the lowest ATK" xml:space="preserve">
         <source>the lowest ATK</source>
         <target>物理攻撃力が最も低い</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the lowest ATK or Magic STR" xml:space="preserve">
+        <source>the lowest ATK or Magic STR</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the lowest HP" xml:space="preserve">
