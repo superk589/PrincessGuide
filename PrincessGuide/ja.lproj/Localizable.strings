@@ -760,10 +760,10 @@
 /* No comment provided by engineer. */
 "Evolution Skill Style" = "進化スキルスタイル";
 
-/* No comment provided by engineer. */
+/* skill category */
 "EX" = "EX";
 
-/* No comment provided by engineer. */
+/* skill category */
 "EX+" = "EX+";
 
 /* No comment provided by engineer. */
@@ -997,13 +997,13 @@
 /* No comment provided by engineer. */
 "Magical Critical Damage" = "魔法クリティカルダメージ";
 
-/* No comment provided by engineer. */
+/* skill category */
 "Main" = "メイン";
 
 /* No comment provided by engineer. */
 "Main %d" = "メイン %d";
 
-/* No comment provided by engineer. */
+/* skill category */
 "Main+" = "メイン+";
 
 /* No comment provided by engineer. */
@@ -1537,13 +1537,13 @@
 /* No comment provided by engineer. */
 "Sorting" = "ソーティング";
 
-/* No comment provided by engineer. */
+/* skill category */
 "SP" = "SP";
 
 /* No comment provided by engineer. */
 "SP %d" = "SP %d";
 
-/* No comment provided by engineer. */
+/* skill category */
 "SP+" = "SP+";
 
 /* No comment provided by engineer. */
@@ -1834,10 +1834,10 @@
 /* No comment provided by engineer. */
 "two" = "2体";
 
-/* No comment provided by engineer. */
+/* skill category */
 "UB" = "UB";
 
-/* No comment provided by engineer. */
+/* skill category */
 "UB+" = "UB+";
 
 /* No comment provided by engineer. */

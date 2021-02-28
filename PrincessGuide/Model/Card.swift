@@ -97,6 +97,7 @@ class Card: Codable {
         let isLimited: Int
         let spSkillEvolution1: Int?
         let spSkillEvolution2: Int?
+        let spUnionBurst: Int
         
         var rawName: String {
             if let substring = unitName.split(separator: "（").first {
@@ -378,6 +379,10 @@ class Card: Codable {
     lazy var mainSkillEvolutions = DispatchSemaphore.sync { [unowned self] (closure) in
         Master.shared.getSkills(skillIDs: self.base.mainSkillEvolutionIDs, callback: closure)
     } ?? []
+    
+    lazy var spUnionBurst = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: [self.base.spUnionBurst], callback: closure)
+    }?.first
     
     lazy var spSkills = DispatchSemaphore.sync { [unowned self] (closure) in
         Master.shared.getSkills(skillIDs: self.base.spSkillIDs, callback: closure)

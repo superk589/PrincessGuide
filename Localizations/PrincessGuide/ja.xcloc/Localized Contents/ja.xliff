@@ -1038,12 +1038,12 @@
       <trans-unit id="EX" xml:space="preserve">
         <source>EX</source>
         <target>EX</target>
-        <note>No comment provided by engineer.</note>
+        <note>skill category</note>
       </trans-unit>
       <trans-unit id="EX+" xml:space="preserve">
         <source>EX+</source>
         <target>EX+</target>
-        <note>No comment provided by engineer.</note>
+        <note>skill category</note>
       </trans-unit>
       <trans-unit id="Edit" xml:space="preserve">
         <source>Edit</source>
@@ -1468,7 +1468,7 @@
       <trans-unit id="Main" xml:space="preserve">
         <source>Main</source>
         <target>メイン</target>
-        <note>No comment provided by engineer.</note>
+        <note>skill category</note>
       </trans-unit>
       <trans-unit id="Main %d" xml:space="preserve">
         <source>Main %d</source>
@@ -1478,7 +1478,7 @@
       <trans-unit id="Main+" xml:space="preserve">
         <source>Main+</source>
         <target>メイン+</target>
-        <note>No comment provided by engineer.</note>
+        <note>skill category</note>
       </trans-unit>
       <trans-unit id="Make %@ attract enemy attacks, last for [%@]s." xml:space="preserve">
         <source>Make %1$@ attract enemy attacks, last for [%2$@]s.</source>
@@ -2113,17 +2113,21 @@
       <trans-unit id="SP" xml:space="preserve">
         <source>SP</source>
         <target>SP</target>
-        <note>No comment provided by engineer.</note>
+        <note>skill category</note>
       </trans-unit>
       <trans-unit id="SP %d" xml:space="preserve">
         <source>SP %d</source>
         <target>SP %d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="SP UB" xml:space="preserve">
+        <source>SP UB</source>
+        <note>skill category</note>
+      </trans-unit>
       <trans-unit id="SP+" xml:space="preserve">
         <source>SP+</source>
         <target>SP+</target>
-        <note>No comment provided by engineer.</note>
+        <note>skill category</note>
       </trans-unit>
       <trans-unit id="Save Box" xml:space="preserve">
         <source>Save Box</source>
@@ -2508,12 +2512,12 @@
       <trans-unit id="UB" xml:space="preserve">
         <source>UB</source>
         <target>UB</target>
-        <note>No comment provided by engineer.</note>
+        <note>skill category</note>
       </trans-unit>
       <trans-unit id="UB+" xml:space="preserve">
         <source>UB+</source>
         <target>UB+</target>
-        <note>No comment provided by engineer.</note>
+        <note>skill category</note>
       </trans-unit>
       <trans-unit id="Unable to open Mail" xml:space="preserve">
         <source>Unable to open Mail</source>

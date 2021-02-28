@@ -62,6 +62,11 @@ class CDSkillTableViewController: CDTableViewController {
             }
         }
         
+        // sp union busrt
+        if let spUnionBurst = card.spUnionBurst {
+            rows.append(Row.skill(skill: spUnionBurst, category: .spUnionBurst, property: property, index: nil))
+        }
+        
         // setup main skills
         let hasUniqueEquipments = card.uniqueEquipIDs.count > 0
         if settings.skillStyle == .both && hasUniqueEquipments {

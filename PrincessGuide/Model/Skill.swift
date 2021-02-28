@@ -10,6 +10,7 @@ import Foundation
 
 enum SkillCategory: String, Hashable, CustomStringConvertible {
     case unionBurst
+    case spUnionBurst
     case main
     case ex
     case exEvolution
@@ -22,21 +23,23 @@ enum SkillCategory: String, Hashable, CustomStringConvertible {
     var description: String {
         switch self {
         case .unionBurst:
-            return NSLocalizedString("UB", comment: "")
+            return NSLocalizedString("UB", comment: "skill category")
         case .main:
-            return NSLocalizedString("Main", comment: "")
+            return NSLocalizedString("Main", comment: "skill category")
         case .ex:
-            return NSLocalizedString("EX", comment: "")
+            return NSLocalizedString("EX", comment: "skill category")
         case .exEvolution:
-            return NSLocalizedString("EX+", comment: "")
+            return NSLocalizedString("EX+", comment: "skill category")
         case .sp:
-            return NSLocalizedString("SP", comment: "")
+            return NSLocalizedString("SP", comment: "skill category")
         case .spEvolution:
-            return NSLocalizedString("SP+", comment: "")
+            return NSLocalizedString("SP+", comment: "skill category")
         case .mainEvolution:
-            return NSLocalizedString("Main+", comment: "")
+            return NSLocalizedString("Main+", comment: "skill category")
         case .unionBurstEvolution:
-            return NSLocalizedString("UB+", comment: "")
+            return NSLocalizedString("UB+", comment: "skill category")
+        case .spUnionBurst:
+            return NSLocalizedString("SP UB", comment: "skill category")
         }
     }
 }
