@@ -34,10 +34,10 @@
 "%@ %@ %@ in range %d" = "%4$d範囲内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
-"%@ %@ and deal [%@] damage per second for [%@]s." = "%2$@に%1$@状態付与、毎秒[%3$@]のダメージを与える、[%4$@]秒継続する。";
+"%@ %@ and deal [%@] damage per second for [%@]s." = "%2$@に%1$@状態を付与する、毎秒[%3$@]のダメージを与える、[%4$@]秒継続する。";
 
 /* No comment provided by engineer. */
-"%@ %@ for [%@]s." = "%2$@に%1$@状態付与、[%3$@]秒継続する。";
+"%@ %@ for [%@]s." = "%2$@に%1$@状態を付与する、[%3$@]秒継続する。";
 
 /* [the nearest] [enemy] target
    [the second nearest] [enemy] target */
@@ -69,45 +69,45 @@
 "%@ Feedback" = "%@フィードバック";
 
 /* [the second to fourth farthest] front [enemy] [targets] */
-"%@ front %@ %@" = "前方%1$@%2$@%3$@";
+"%@ front %@ %@" = "前部%1$@%2$@%3$@";
 
 /* [the farthest two] front [enemy] [targets] in range [500]
    [the second to fourth farthest] front [enemy] [targets] in range [500] */
-"%@ front %@ %@ in range %d" = "前方%4$d範囲内%1$@%2$@%3$@";
+"%@ front %@ %@ in range %d" = "前部%4$d範囲内%1$@%2$@%3$@";
 
 /* [the nearest] front [enemy] target in range [500]
    [the second nearest] front [enemy] target in range [500] */
-"%@ front %@ target in range %d" = "前方%3$d範囲内%1$@%2$@";
+"%@ front %@ target in range %d" = "前部%3$d範囲内%1$@%2$@";
 
 /* No comment provided by engineer. */
-"%@ highest ATK" = "物理攻撃力が最も高い%@";
+"%@ highest ATK" = "最も物理攻撃力が高い%@";
 
 /* target type */
-"%@ highest HP" = "HPが最も高い%@";
+"%@ highest HP" = "最もHPが高い%@";
 
 /* target type */
-"%@ highest HP ratio" = "HP割合が最も高い%@";
+"%@ highest HP ratio" = "最もHP割合が高い%@";
 
 /* No comment provided by engineer. */
-"%@ highest Magic STR" = "魔法攻撃力が最も高い%@";
+"%@ highest Magic STR" = "最も魔法攻撃力が高い%@";
 
 /* target type */
-"%@ highest TP" = "TPが最も高い%@";
+"%@ highest TP" = "最もTPが高い%@";
 
 /* No comment provided by engineer. */
-"%@ lowest ATK" = "物理攻撃力が最も低い%@";
+"%@ lowest ATK" = "最も物理攻撃力が低い%@";
 
 /* target type */
-"%@ lowest HP" = "HPが最も低い%@";
+"%@ lowest HP" = "最もHPが低い%@";
 
 /* target type */
-"%@ lowest HP ratio" = "HP割合が最も低い%@";
+"%@ lowest HP ratio" = "最もHP割合が低い%@";
 
 /* No comment provided by engineer. */
-"%@ lowest Magic STR" = "魔法攻撃力が最も低い%@";
+"%@ lowest Magic STR" = "最も魔法攻撃力が低い%@";
 
 /* target type */
-"%@ lowest TP" = "TPが最も低い%@";
+"%@ lowest TP" = "最もTPが低い%@";
 
 /* No comment provided by engineer. */
 "%@ magic" = "魔法攻撃を行う%@";
@@ -125,7 +125,7 @@
 "%@ nearest" = "最も近い%@";
 
 /* No comment provided by engineer. */
-"%@ nearest except self" = "%@自分以外最も近い";
+"%@ nearest except self" = "自分以外最も近い%@";
 
 /* No comment provided by engineer. */
 "%@ physics" = "物理攻撃を行う%@";
@@ -147,6 +147,12 @@
 
 /* No comment provided by engineer. */
 "%@ The effect will be released when taking damage." = "%@この効果はダメージを受けた時に解除される。";
+
+/* No comment provided by engineer. */
+"%@ the highest ATK or Magic STR" = "最も物理や魔法攻撃力が高い%@";
+
+/* No comment provided by engineer. */
+"%@ the lowest ATK or Magic STR" = "最も物理や魔法攻撃力が低い%@";
 
 /* No comment provided by engineer. */
 "%@ to %@" = "%@〜%@";
@@ -179,13 +185,13 @@
 "Add [%d] to the counter %d." = "カウンター%2$dの数を[%1$d]増やせる。";
 
 /* No comment provided by engineer. */
-"Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "%4$@にマーク[ID：%3$@]を%1$@スタック追加する、効果時間[%5$@]秒、この効果は最大[%2$@]までスタックする。";
+"Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "%4$@にマーク[ID：%3$@]を%1$@スタック追加する、効果時間[%5$@]秒、この効果は最大[%2$@]までスタックできる。";
 
 /* No comment provided by engineer. */
 "Add additional [%@] %@ to %@ for next [%@] attacks." = "%3$@の次の%4$@回攻撃に[%1$@]%2$@効果を付与する。";
 
 /* No comment provided by engineer. */
-"Add additional [%@] damage per attack with max [%@] stacks to current target." = "攻撃する度にダメージ[%1$@]増加、最大[%2$@]回まで累積する。";
+"Add additional [%@] damage per attack with max [%@] stacks to current target." = "攻撃する度にダメージ[%1$@]増加、最大[%2$@]回まで累積できる。";
 
 /* No comment provided by engineer. */
 "Adds Ex Bonus" = "Exスキルボーナスを追加";
@@ -200,28 +206,28 @@
 "All" = "すべて";
 
 /* all [enemy] [physics] targets */
-"all %@ %@ targets" = "%2$@%1$@全体";
+"all %@ %@ targets" = "全て%1$@%2$@の対象";
 
 /* all [enemy] targets */
-"all %@ targets" = "%@全体";
+"all %@ targets" = "全て%@の対象";
 
 /* No comment provided by engineer. */
-"all front %@ enemy targets" = "前方%@すべての敵";
+"all front %@ enemy targets" = "全て前部%@の敵対象";
 
 /* No comment provided by engineer. */
-"all front %@ targets" = "前方%@すべての対象";
+"all front %@ targets" = "全て前部%@の対象";
 
 /* No comment provided by engineer. */
-"all front enemy targets" = "前方すべての敵";
+"all front enemy targets" = "全て前部の敵対象";
 
 /* No comment provided by engineer. */
-"all front targets" = "前方すべての対象";
+"all front targets" = "全て前部の対象";
 
 /* No comment provided by engineer. */
-"all front(including self) %@ friendly targets" = "自分を含めて前方%@すべての味方";
+"all front(including self) %@ friendly targets" = "自分を含めて前部%@全ての味方";
 
 /* No comment provided by engineer. */
-"all front(including self) friendly targets" = "自分を含めて前方すべての味方";
+"all front(including self) friendly targets" = "自分を含めて前部全ての味方";
 
 /* icon style */
 "always 1★" = "常に1★";
@@ -233,7 +239,7 @@
 "any of" = "任意の対象";
 
 /* No comment provided by engineer. */
-"any of %@" = "（対象別）%@の中任意の対象";
+"any of %@" = "%@の中の任意の対象";
 
 /* No comment provided by engineer. */
 "App Version" = "アプリバージョン";
@@ -251,10 +257,10 @@
 "Ascending" = "昇順";
 
 /* No comment provided by engineer. */
-"At %d behind of %@, summon a minion(ID: %d)." = "%2$@の後方%1$dの位置で、召喚物（ID：%3$d）を召喚する。";
+"At %d behind of %@, summon a minion(ID: %d)." = "%2$@の後部%1$dの位置で、召喚物（ID：%3$d）を召喚する。";
 
 /* No comment provided by engineer. */
-"At %d in front of %@, summon a minion(ID: %d)." = "%2$@の前方%1$dの位置で、召喚物（ID：%3$d）を召喚する。";
+"At %d in front of %@, summon a minion(ID: %d)." = "%2$@の前部%1$dの位置で、召喚物（ID：%3$d）を召喚する。";
 
 /* No comment provided by engineer. */
 "At the position of %@, summon a minion(ID: %d)." = "%1$@の位置で、召喚物（ID：%2$d）を召喚する。";
@@ -419,13 +425,13 @@
 "Center" = "中衛";
 
 /* No comment provided by engineer. */
-"Change attack pattern back to %d after effect over." = "効果終了後、行動パターンを%dに戻る。";
+"Change attack pattern back to %d after effect over." = "効果終了後、行動パターン%dに戻る。";
 
 /* No comment provided by engineer. */
-"Change attack pattern to %d for %@s." = "行動パターンを%1$dに変化する、効果時間[%2$@]秒。";
+"Change attack pattern to %d for %@s." = "行動パターン%1$dに変化する、効果時間[%2$@]秒。";
 
 /* No comment provided by engineer. */
-"Change attack pattern to %d." = "行動パターンを%1$dに変化する。";
+"Change attack pattern to %d." = "行動パターン%1$dに変化する。";
 
 /* No comment provided by engineer. */
 "Change body width to %@." = "モデルの幅を%@にする。";
@@ -485,7 +491,7 @@
 "Charm" = "魅了";
 
 /* No comment provided by engineer. */
-"Charm %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に魅了状態付与、[%3$@]秒継続する。";
+"Charm %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に魅了状態を付与する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
 "charmed or confused" = "魅了や混乱";
@@ -812,19 +818,19 @@
 "friendly" = "味方";
 
 /* No comment provided by engineer. */
-"front" = "前方";
+"front" = "前部";
 
 /* front [friendly] [physics] targets in range [500] */
-"front %@ %@ targets in range %d" = "前方%3$d範囲内%2$@%1$@";
+"front %@ %@ targets in range %d" = "前部%3$d範囲内%2$@%1$@";
 
 /* front [enemy] targets in range [500] */
-"front %@ targets in range %d" = "前方範囲[%2$d]内の%1$@";
+"front %@ targets in range %d" = "前部範囲[%2$d]内の%1$@";
 
 /* No comment provided by engineer. */
-"front and back" = "前方と後方";
+"front and back" = "前部と後部";
 
 /* No comment provided by engineer. */
-"front(including self)" = "自分を含めて前方";
+"front(including self)" = "自分を含めて前部";
 
 /* expression style */
 "full" = "詳細";
@@ -866,7 +872,7 @@
 "Happy Birthday!!" = "お誕生日おめでとうございます！！";
 
 /* No comment provided by engineer. */
-"Hard" = "HARD";
+"Hard" = "Hard";
 
 /* No comment provided by engineer. */
 "Haste" = "加速";
@@ -893,7 +899,7 @@
 "if target is defeated by the last effect then use %d" = "前のアクションが対象を倒した場合、[アクション%d]を使う";
 
 /* No comment provided by engineer. */
-"if target is not defeated by last effect then use %d" = "前のアクションが対象を倒してない場合、[アクション%d]を使う";
+"if target is not defeated by last effect then use %d" = "前のアクションが対象を倒していない場合、[アクション%d]を使う";
 
 /* No comment provided by engineer. */
 "Ignore the other units' taunt when attacking %@." = "%@を攻撃する時、他の敵の挑発効果を無視する。";
@@ -902,7 +908,7 @@
 "Image" = "画像";
 
 /* No comment provided by engineer. */
-"Import All Charas" = "すべてのキャラを輸入";
+"Import All Charas" = "すべてのキャラをインポート";
 
 /* No comment provided by engineer. */
 "In next [%@] attacks, %@'s physical attacks will miss." = "%2$@の次の[%1$@]回物理攻撃を必ずミスさせる。";
@@ -1022,13 +1028,13 @@
 "Make %@ to be invulnerable to physical damage for [%@]s." = "%1$@に物理ダメージ無効状態にする、効果時間[%2$@]秒。";
 
 /* No comment provided by engineer. */
-"Make %@ when deal critical damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@がクリティカルダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
+"Make %@ when deal critical damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@がクリティカルダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。";
 
 /* No comment provided by engineer. */
-"Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@がダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
+"Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@がダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。";
 
 /* No comment provided by engineer. */
-"Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "自分が%1$@をヒットするたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
+"Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "自分が%1$@をヒットするたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。";
 
 /* No comment provided by engineer. */
 "Mana" = "マナ";
@@ -1196,7 +1202,7 @@
 "Next" = "次に";
 
 /* No comment provided by engineer. */
-"No" = "いいえ";
+"No" = "なし";
 
 /* No comment provided by engineer. */
 "No more data" = "これ以上のデータはありません";
@@ -1205,7 +1211,7 @@
 "None" = "なし";
 
 /* No comment provided by engineer. */
-"Normal" = "NORMAL";
+"Normal" = "Normal";
 
 /* No comment provided by engineer. */
 "Normal and Hard" = "ノーマルとハード";
@@ -1382,6 +1388,9 @@
 "raw value id" = "変数ID";
 
 /* No comment provided by engineer. */
+"Received Critical Damage" = "受けたクリティカルダメージの量";
+
+/* No comment provided by engineer. */
 "Reduce" = "ダウンさせる";
 
 /* No comment provided by engineer. */
@@ -1442,7 +1451,7 @@
 "Save Box" = "ボックス保存";
 
 /* No comment provided by engineer. */
-"Scout and change the perspective on %@." = "サーチし、自分の視点を%@に向ける。";
+"Scout and change the perspective on %@." = "スカウトし、自分の視点を%@に向ける。";
 
 /* No comment provided by engineer. */
 "Seal" = "刻印付与";
@@ -1460,10 +1469,10 @@
 "Select Charas" = "キャラを選択";
 
 /* No comment provided by engineer. */
-"Select Loses" = "失敗を選択";
+"Select Loses" = "失敗チームを選択";
 
 /* No comment provided by engineer. */
-"Select Wins" = "勝利を選択";
+"Select Wins" = "勝利チームを選択";
 
 /* target type */
 "self" = "自分";
@@ -1502,7 +1511,7 @@
 "Silence" = "沈黙";
 
 /* No comment provided by engineer. */
-"Silence %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に沈黙状態付与、[%3$@]秒継続する。";
+"Silence %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に沈黙状態を付与する、[%3$@]秒継続する。";
 
 /* No comment provided by engineer. */
 "Skill" = "スキル";
@@ -1645,6 +1654,9 @@
 /* No comment provided by engineer. */
 "the %@ highest ATK" = "物理攻撃力が%@高い";
 
+/* No comment provided by engineer. */
+"the %@ highest ATK or Magic STR" = "物理や魔法攻撃力が%@高い";
+
 /* target type */
 "the %@ highest HP" = "HPが%@高い";
 
@@ -1659,6 +1671,9 @@
 
 /* No comment provided by engineer. */
 "the %@ lowest ATK" = "物理攻撃力が%@低い";
+
+/* No comment provided by engineer. */
+"the %@ lowest ATK or Magic STR" = "物理や魔法攻撃力が%@低い";
 
 /* target type */
 "the %@ lowest HP" = "HPが%@低い";
@@ -1688,40 +1703,46 @@
 "the %@ unknown type" = "%@不明な種類";
 
 /* No comment provided by engineer. */
-"The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." = "自分がバフを受けるたび、マーク[ID：%1$@]を1スタック増やせる、バフ時間[%3$@]秒、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックする。";
+"The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." = "自分がバフを受けるたび、マーク[ID：%1$@]を1スタック増やせる、バフ時間[%3$@]秒、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。";
 
 /* target type */
 "the farthest" = "最も遠い";
 
 /* No comment provided by engineer. */
-"the highest ATK" = "物理攻撃力が最も高い";
-
-/* target type */
-"the highest HP" = "HPが最も高い";
-
-/* target type */
-"the highest HP ratio" = "HP割合が最も高い";
+"the highest ATK" = "最も物理攻撃力が高い";
 
 /* No comment provided by engineer. */
-"the highest Magic STR" = "魔法攻撃力が最も高い";
+"the highest ATK or Magic STR" = "最も物理や魔法攻撃力が高い";
 
 /* target type */
-"the highest TP" = "TPが最も高い";
+"the highest HP" = "最もHPが高い";
+
+/* target type */
+"the highest HP ratio" = "最もHP割合が高い";
 
 /* No comment provided by engineer. */
-"the lowest ATK" = "物理攻撃力が最も低い";
+"the highest Magic STR" = "最も魔法攻撃力が高い";
 
 /* target type */
-"the lowest HP" = "HPが最も低い";
-
-/* target type */
-"the lowest HP ratio" = "HP割合が最も低い";
+"the highest TP" = "最もTPが高い";
 
 /* No comment provided by engineer. */
-"the lowest Magic STR" = "魔法攻撃力が最も低い";
+"the lowest ATK" = "最も物理攻撃力が低い";
+
+/* No comment provided by engineer. */
+"the lowest ATK or Magic STR" = "最も物理や魔法攻撃力が高い";
 
 /* target type */
-"the lowest TP" = "TPが最も低い";
+"the lowest HP" = "最もHPが低い";
+
+/* target type */
+"the lowest HP ratio" = "最もHP割合が低い";
+
+/* No comment provided by engineer. */
+"the lowest Magic STR" = "最も魔法攻撃力が低い";
+
+/* target type */
+"the lowest TP" = "最もTPが低い";
 
 /* target type */
 "the most backward" = "最も後の";
@@ -1973,7 +1994,7 @@
 "Violent Poison" = "猛毒";
 
 /* the max HP used for tp recovering from damage */
-"Virtual HP(max HP in TP formula)" = "仮想 HP(TP公式の最大 HP)";
+"Virtual HP(max HP in TP formula)" = "仮想 HP(TP公式の最大HP)";
 
 /* No comment provided by engineer. */
 "Wave %d" = "ボス %d";
@@ -2003,7 +2024,7 @@
 "Wins" = "勝利";
 
 /* No comment provided by engineer. */
-"Yes" = "はい";
+"Yes" = "あり";
 
 /* No comment provided by engineer. */
 "You have not bought this product yet." = "この製品はまだ購入していません。";
