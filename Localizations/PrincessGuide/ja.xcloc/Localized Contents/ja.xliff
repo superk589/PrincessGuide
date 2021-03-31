@@ -1530,6 +1530,10 @@
         <target>自分が%1$@をヒットするたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ when hit once, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
+        <source>Make %1$@ when hit once, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Mana" xml:space="preserve">
         <source>Mana</source>
         <target>マナ</target>

@@ -40,8 +40,17 @@ class AttackSealAction: ActionParameter {
 
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         switch (condition, target) {
-        case (.hit, _):
+        case (.hit, .target):
             let format = NSLocalizedString("Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s.", comment: "")
+            return String(
+                format: format,
+                targetParameter.buildTargetClause(),
+                actionValue1.roundedString(roundingRule: .down),
+                actionValue2.roundedString(roundingRule: .down),
+                buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+            )
+        case (.hit, .owner):
+            let format = NSLocalizedString("Make %@ when hit once, gain one mark stack(max %@, ID: %@) for [%@]s.", comment: "")
             return String(
                 format: format,
                 targetParameter.buildTargetClause(),

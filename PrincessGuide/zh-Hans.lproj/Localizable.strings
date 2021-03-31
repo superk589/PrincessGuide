@@ -1037,6 +1037,9 @@
 "Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "使%1$@获得每受到一次来自施法者的 Hit 就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
+"Make %@ when hit once, gain one mark stack(max %@, ID: %@) for [%@]s." = "使%1$@获得每造成一次 Hit 就增加一层标记（最大 %2$@ 层，ID：%3$@）的效果，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
 "Mana" = "Mana";
 
 /* No comment provided by engineer. */
