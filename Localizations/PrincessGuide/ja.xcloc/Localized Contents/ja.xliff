@@ -76,7 +76,7 @@
       </trans-unit>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
         <source> Critical damage is %@ times as normal damage.</source>
-        <target>クリティカルダメージは通常ダメージの%@倍。</target>
+        <target>クリティカルダメージは通常の%@倍。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=" The upper limit of this effect is [%@]." xml:space="preserve">
@@ -175,18 +175,18 @@
       </trans-unit>
       <trans-unit id="%@ front %@ %@" xml:space="preserve">
         <source>%1$@ front %2$@ %3$@</source>
-        <target>前部%1$@%2$@%3$@</target>
+        <target>前方%1$@%2$@%3$@</target>
         <note>[the second to fourth farthest] front [enemy] [targets]</note>
       </trans-unit>
       <trans-unit id="%@ front %@ %@ in range %d" xml:space="preserve">
         <source>%1$@ front %2$@ %3$@ in range %4$d</source>
-        <target>前部%4$d範囲内%1$@%2$@%3$@</target>
+        <target>前方%4$d範囲内%1$@%2$@%3$@</target>
         <note>[the farthest two] front [enemy] [targets] in range [500]
    [the second to fourth farthest] front [enemy] [targets] in range [500]</note>
       </trans-unit>
       <trans-unit id="%@ front %@ target in range %d" xml:space="preserve">
         <source>%1$@ front %2$@ target in range %3$d</source>
-        <target>前部%3$d範囲内%1$@%2$@</target>
+        <target>前方%3$d範囲内%1$@%2$@</target>
         <note>[the nearest] front [enemy] target in range [500]
    [the second nearest] front [enemy] target in range [500]</note>
       </trans-unit>
@@ -347,7 +347,7 @@
       </trans-unit>
       <trans-unit id="(max %d times)" xml:space="preserve">
         <source>(max %d times)</source>
-        <target>（上限は %s 回）</target>
+        <target>（上限は %d 回）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=", " xml:space="preserve">
@@ -807,7 +807,7 @@
       </trans-unit>
       <trans-unit id="Clan Battle(Simple)" xml:space="preserve">
         <source>Clan Battle(Simple)</source>
-        <target>クランバトル（簡単）</target>
+        <target>クランバトル（簡略）</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Clear all %@ on %@ with chance [%@]%%." xml:space="preserve">
@@ -1527,11 +1527,12 @@
       </trans-unit>
       <trans-unit id="Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
         <source>Make %1$@ when get one hit by the caster, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
-        <target>自分が%1$@をヒットするたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。</target>
+        <target>%1$@が自分にヒットされるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Make %@ when hit once, gain one mark stack(max %@, ID: %@) for [%@]s." xml:space="preserve">
         <source>Make %1$@ when hit once, gain one mark stack(max %2$@, ID: %3$@) for [%4$@]s.</source>
+        <target>%1$@がヒットするたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Mana" xml:space="preserve">
@@ -2011,7 +2012,7 @@
       </trans-unit>
       <trans-unit id="Received Critical Damage" xml:space="preserve">
         <source>Received Critical Damage</source>
-        <target>受けたクリティカルダメージの量</target>
+        <target>受けたクリティカルダメージ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Reduce" xml:space="preserve">
@@ -2126,6 +2127,7 @@
       </trans-unit>
       <trans-unit id="SP UB" xml:space="preserve">
         <source>SP UB</source>
+        <target>SP UB</target>
         <note>skill category</note>
       </trans-unit>
       <trans-unit id="SP+" xml:space="preserve">
@@ -2685,32 +2687,32 @@
       </trans-unit>
       <trans-unit id="all front %@ enemy targets" xml:space="preserve">
         <source>all front %@ enemy targets</source>
-        <target>全て前部%@の敵対象</target>
+        <target>全て前方%@の敵対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all front %@ targets" xml:space="preserve">
         <source>all front %@ targets</source>
-        <target>全て前部%@の対象</target>
+        <target>全て前方%@の対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all front enemy targets" xml:space="preserve">
         <source>all front enemy targets</source>
-        <target>全て前部の敵対象</target>
+        <target>全て前方の敵対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all front targets" xml:space="preserve">
         <source>all front targets</source>
-        <target>全て前部の対象</target>
+        <target>全て前方の対象</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all front(including self) %@ friendly targets" xml:space="preserve">
         <source>all front(including self) %@ friendly targets</source>
-        <target>自分を含めて前部%@全ての味方</target>
+        <target>自分を含めて前方%@全ての味方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all front(including self) friendly targets" xml:space="preserve">
         <source>all front(including self) friendly targets</source>
-        <target>自分を含めて前部全ての味方</target>
+        <target>自分を含めて前方全ての味方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="always 1★" xml:space="preserve">
@@ -2875,27 +2877,27 @@
       </trans-unit>
       <trans-unit id="front" xml:space="preserve">
         <source>front</source>
-        <target>前部</target>
+        <target>前方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="front %@ %@ targets in range %d" xml:space="preserve">
         <source>front %1$@ %2$@ targets in range %3$d</source>
-        <target>前部%3$d範囲内%2$@%1$@</target>
+        <target>前方%3$d範囲内%2$@%1$@</target>
         <note>front [friendly] [physics] targets in range [500]</note>
       </trans-unit>
       <trans-unit id="front %@ targets in range %d" xml:space="preserve">
         <source>front %1$@ targets in range %2$d</source>
-        <target>前部範囲[%2$d]内の%1$@</target>
+        <target>前方範囲[%2$d]内の%1$@</target>
         <note>front [enemy] targets in range [500]</note>
       </trans-unit>
       <trans-unit id="front and back" xml:space="preserve">
         <source>front and back</source>
-        <target>前部と後部</target>
+        <target>前方と後方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="front(including self)" xml:space="preserve">
         <source>front(including self)</source>
-        <target>自分を含めて前部</target>
+        <target>自分を含めて前方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="full" xml:space="preserve">
