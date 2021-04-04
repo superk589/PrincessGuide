@@ -2,7 +2,7 @@
 " Can't use union burst when the new attack pattern is active." = "新しい攻撃パターンにはユニオンバストを発動できない。";
 
 /* No comment provided by engineer. */
-" Critical damage is %@ times as normal damage." = "クリティカルダメージは通常ダメージの%@倍。";
+" Critical damage is %@ times as normal damage." = "クリティカルダメージは通常の%@倍。";
 
 /* No comment provided by engineer. */
 " The upper limit of this effect is [%@]." = "効果の上限は[%@]。";
@@ -17,7 +17,7 @@
 "(except self)" = "（自分以外）";
 
 /* No comment provided by engineer. */
-"(max %d times)" = "（上限は %s 回）";
+"(max %d times)" = "（上限は %d 回）";
 
 /* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ during break." = "Break中、%2$@の%5$@を[%3$@%4$@]%1$@。";
@@ -69,15 +69,15 @@
 "%@ Feedback" = "%@フィードバック";
 
 /* [the second to fourth farthest] front [enemy] [targets] */
-"%@ front %@ %@" = "前部%1$@%2$@%3$@";
+"%@ front %@ %@" = "前方%1$@%2$@%3$@";
 
 /* [the farthest two] front [enemy] [targets] in range [500]
    [the second to fourth farthest] front [enemy] [targets] in range [500] */
-"%@ front %@ %@ in range %d" = "前部%4$d範囲内%1$@%2$@%3$@";
+"%@ front %@ %@ in range %d" = "前方%4$d範囲内%1$@%2$@%3$@";
 
 /* [the nearest] front [enemy] target in range [500]
    [the second nearest] front [enemy] target in range [500] */
-"%@ front %@ target in range %d" = "前部%3$d範囲内%1$@%2$@";
+"%@ front %@ target in range %d" = "前方%3$d範囲内%1$@%2$@";
 
 /* No comment provided by engineer. */
 "%@ highest ATK" = "最も物理攻撃力が高い%@";
@@ -212,22 +212,22 @@
 "all %@ targets" = "全て%@の対象";
 
 /* No comment provided by engineer. */
-"all front %@ enemy targets" = "全て前部%@の敵対象";
+"all front %@ enemy targets" = "全て前方%@の敵対象";
 
 /* No comment provided by engineer. */
-"all front %@ targets" = "全て前部%@の対象";
+"all front %@ targets" = "全て前方%@の対象";
 
 /* No comment provided by engineer. */
-"all front enemy targets" = "全て前部の敵対象";
+"all front enemy targets" = "全て前方の敵対象";
 
 /* No comment provided by engineer. */
-"all front targets" = "全て前部の対象";
+"all front targets" = "全て前方の対象";
 
 /* No comment provided by engineer. */
-"all front(including self) %@ friendly targets" = "自分を含めて前部%@全ての味方";
+"all front(including self) %@ friendly targets" = "自分を含めて前方%@全ての味方";
 
 /* No comment provided by engineer. */
-"all front(including self) friendly targets" = "自分を含めて前部全ての味方";
+"all front(including self) friendly targets" = "自分を含めて前方全ての味方";
 
 /* icon style */
 "always 1★" = "常に1★";
@@ -515,7 +515,7 @@
 "Clan Battle %d-%d" = "クランバトル %1$d 年 %2$d 月";
 
 /* No comment provided by engineer. */
-"Clan Battle(Simple)" = "クランバトル（簡単）";
+"Clan Battle(Simple)" = "クランバトル（簡略）";
 
 /* No comment provided by engineer. */
 "Clear all %@ on %@ with chance [%@]%%." = "[%3$@%%]の確率で%2$@の%1$@をすべて解除する。";
@@ -818,19 +818,19 @@
 "friendly" = "味方";
 
 /* No comment provided by engineer. */
-"front" = "前部";
+"front" = "前方";
 
 /* front [friendly] [physics] targets in range [500] */
-"front %@ %@ targets in range %d" = "前部%3$d範囲内%2$@%1$@";
+"front %@ %@ targets in range %d" = "前方%3$d範囲内%2$@%1$@";
 
 /* front [enemy] targets in range [500] */
-"front %@ targets in range %d" = "前部範囲[%2$d]内の%1$@";
+"front %@ targets in range %d" = "前方範囲[%2$d]内の%1$@";
 
 /* No comment provided by engineer. */
-"front and back" = "前部と後部";
+"front and back" = "前方と後方";
 
 /* No comment provided by engineer. */
-"front(including self)" = "自分を含めて前部";
+"front(including self)" = "自分を含めて前方";
 
 /* expression style */
 "full" = "詳細";
@@ -1034,7 +1034,10 @@
 "Make %@ when deal damage, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@がダメージを与えるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。";
 
 /* No comment provided by engineer. */
-"Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "自分が%1$@をヒットするたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。";
+"Make %@ when get one hit by the caster, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@が自分にヒットされるたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。";
+
+/* No comment provided by engineer. */
+"Make %@ when hit once, gain one mark stack(max %@, ID: %@) for [%@]s." = "%1$@がヒットするたび、マーク[ID：%3$@]を1スタック増やせる、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。";
 
 /* No comment provided by engineer. */
 "Mana" = "マナ";
@@ -1388,7 +1391,7 @@
 "raw value id" = "変数ID";
 
 /* No comment provided by engineer. */
-"Received Critical Damage" = "受けたクリティカルダメージの量";
+"Received Critical Damage" = "受けたクリティカルダメージ";
 
 /* No comment provided by engineer. */
 "Reduce" = "ダウンさせる";
@@ -1542,6 +1545,9 @@
 
 /* No comment provided by engineer. */
 "SP %d" = "SP %d";
+
+/* skill category */
+"SP UB" = "SP UB";
 
 /* skill category */
 "SP+" = "SP+";
