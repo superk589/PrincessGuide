@@ -902,6 +902,9 @@
 "if target is not defeated by last effect then use %d" = "上一个效果未能成功击杀目标则使用 %d。";
 
 /* No comment provided by engineer. */
+"If the data version is not synchronized with the data, reset it and then you can retrieve the newest version again." = "如果数据版本与数据不同步，重置后可以重新获取最新数据。";
+
+/* No comment provided by engineer. */
 "Ignore the other units' taunt when attacking %@." = "当攻击%@时，忽略其他目标的嘲讽。";
 
 /* No comment provided by engineer. */
@@ -1413,6 +1416,9 @@
 
 /* No comment provided by engineer. */
 "Reset" = "重置";
+
+/* No comment provided by engineer. */
+"Reset Data Version?" = "重置数据版本？";
 
 /* No comment provided by engineer. */
 "Resist" = "抗性";

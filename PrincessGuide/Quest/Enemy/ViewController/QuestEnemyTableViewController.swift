@@ -102,7 +102,7 @@ class QuestEnemyTableViewController: UITableViewController {
     
     init(waves: [Wave]) {
         self.rows = waves.map {
-            Row(type: QuestEnemyTableViewCell.self, data: .waveAndTitle($0, $0.enemies.last?.enemy?.base.name))
+            Row(type: QuestEnemyTableViewCell.self, data: .waveAndTitle($0, $0.enemies.first?.enemy?.base.name))
         }
         super.init(nibName: nil, bundle: nil)
     }

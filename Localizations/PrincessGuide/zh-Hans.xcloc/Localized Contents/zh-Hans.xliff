@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.4" build-num="12D4e"/>
@@ -1320,6 +1319,11 @@
         <target>头像风格</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="If the data version is not synchronized with the data, reset it and then you can retrieve the newest version again." xml:space="preserve">
+        <source>If the data version is not synchronized with the data, reset it and then you can retrieve the newest version again.</source>
+        <target>如果数据版本与数据不同步，重置后可以重新获取最新数据。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Ignore the other units' taunt when attacking %@." xml:space="preserve">
         <source>Ignore the other units' taunt when attacking %@.</source>
         <target>当攻击%@时，忽略其他目标的嘲讽。</target>
@@ -2048,6 +2052,11 @@
       <trans-unit id="Reset" xml:space="preserve">
         <source>Reset</source>
         <target>重置</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reset Data Version?" xml:space="preserve">
+        <source>Reset Data Version?</source>
+        <target>重置数据版本？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Resist" xml:space="preserve">

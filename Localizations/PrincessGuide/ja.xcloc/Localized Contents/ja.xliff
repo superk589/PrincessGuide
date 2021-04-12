@@ -1320,6 +1320,10 @@
         <target>アイコンスタイル</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="If the data version is not synchronized with the data, reset it and then you can retrieve the newest version again." xml:space="preserve">
+        <source>If the data version is not synchronized with the data, reset it and then you can retrieve the newest version again.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Ignore the other units' taunt when attacking %@." xml:space="preserve">
         <source>Ignore the other units' taunt when attacking %@.</source>
         <target>%@を攻撃する時、他の敵の挑発効果を無視する。</target>
@@ -2048,6 +2052,10 @@
       <trans-unit id="Reset" xml:space="preserve">
         <source>Reset</source>
         <target>リセット</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reset Data Version?" xml:space="preserve">
+        <source>Reset Data Version?</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Resist" xml:space="preserve">

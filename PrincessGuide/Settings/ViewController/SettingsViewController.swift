@@ -141,16 +141,30 @@ class SettingsViewController: FormViewController {
             }
             .cellSetup(cellSetup(cell:row:))
             .cellUpdate(cellUpdate(cell:row:))
+            .onCellSelection({ [weak self] (cell, row) in
+                let vc = UIAlertController(title: NSLocalizedString("Reset Data Version?", comment: ""), message: NSLocalizedString("If the data version is not synchronized with the data, reset it and then you can retrieve the newest version again.", comment: ""), preferredStyle: .alert)
+                vc.addAction(.init(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { [weak vc] _ in
+                    VersionManager.shared.truthVersion = "0"
+                    row.value = "0"
+                    cell.update()
+                    vc?.dismiss(animated: true, completion: nil)
+                }))
+                vc.addAction(.init(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: { [weak vc] _ in
+                    vc?.dismiss(animated: true, completion: nil)
+                }))
+                self?.present(vc, animated: true, completion: nil)
+            })
         
+    }
+    
+    @objc private func handleUpdateEnd(_ notification: Notification) {
+        let row = form.rowBy(tag: "data_version") as? LabelRow
+        row?.value = VersionManager.shared.truthVersion
+        row?.updateCell()
     }
     
     @objc private func handleDidBecameActive(_ notification: Notification) {
         let row = form.rowBy(tag: "current_language")
-        row?.updateCell()
-    }
-    
-    @objc private func handleUpdateEnd(_ notification: Notification) {
-        let row = form.rowBy(tag: "data_version")
         row?.updateCell()
     }
     
