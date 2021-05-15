@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-protocol CraftSummaryTableViewCellDelegate: class {
+protocol CraftSummaryTableViewCellDelegate: AnyObject {
     func craftSummaryTableViewCell(_ craftSummaryTableViewCell: CraftSummaryTableViewCell, didSelect index: Int)
 }
 

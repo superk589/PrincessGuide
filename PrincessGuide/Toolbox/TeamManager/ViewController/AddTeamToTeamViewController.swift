@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-protocol AddTeamToTeamViewControllerDelegate: class {
+protocol AddTeamToTeamViewControllerDelegate: AnyObject {
     func addTeamToTeamViewControllerDidSave(_ addTeamToTeamViewController: AddTeamToTeamViewController)
 }
 

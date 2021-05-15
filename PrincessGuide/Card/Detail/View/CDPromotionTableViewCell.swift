@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Reusable
 
-protocol CDPromotionTableViewCellDelegate: class {
+protocol CDPromotionTableViewCellDelegate: AnyObject {
     func cdPromotionTableViewCell(_ cdPromotionTableViewCell: CDPromotionTableViewCell, didSelect index: Int)
 }
 

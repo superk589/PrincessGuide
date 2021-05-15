@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BoxCoverSelectionViewControllerDelegate: class {
+protocol BoxCoverSelectionViewControllerDelegate: AnyObject {
     func boxCoverSelectionViewController(_ boxCoverSelectionViewController: BoxCoverSelectionViewController, didSelect url: URL)
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol EditCharaInBoxViewControllerDelegate: class {
+protocol EditCharaInBoxViewControllerDelegate: AnyObject {
     func editCharaInBoxViewController(_ editCharaInBoxViewController: EditCharaInBoxViewController, didSave chara: Chara)
 }
 

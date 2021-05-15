@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-protocol CDImageTableViewCellDelegate: class {
+protocol CDImageTableViewCellDelegate: AnyObject {
     func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL?)
 }
 

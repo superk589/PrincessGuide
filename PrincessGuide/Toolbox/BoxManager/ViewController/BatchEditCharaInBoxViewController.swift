@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BatchEditCharaInBoxViewControllerDelegate: class {
+protocol BatchEditCharaInBoxViewControllerDelegate: AnyObject {
     func batchEditCharaInBoxViewController(_ batchEditCharaInBoxViewController: BatchEditCharaInBoxViewController, didSave charas: [Chara])
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import TTGTagCollectionView
 
-protocol QuestEnemyTableViewCellDelegate: class {
+protocol QuestEnemyTableViewCellDelegate: AnyObject {
     func questEnemyTableViewCell(_ questEnemyTableViewCell: QuestEnemyTableViewCell, didSelect enemy: Enemy)
 }
 

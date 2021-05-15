@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-protocol CraftCharaTableViewCellDelegate: class {
+protocol CraftCharaTableViewCellDelegate: AnyObject {
     func craftCharaTableViewCell(_ craftCharaTableViewCell: CraftCharaTableViewCell, didSelect index: Int)
 }
 

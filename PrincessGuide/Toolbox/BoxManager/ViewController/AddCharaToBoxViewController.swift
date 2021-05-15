@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-protocol AddCharaToBoxViewControllerDelegate: class {
+protocol AddCharaToBoxViewControllerDelegate: AnyObject {
     func addCharaToBoxViewControllerDidSave(_ addCharaToBoxViewController: AddCharaToBoxViewController)
 }
 

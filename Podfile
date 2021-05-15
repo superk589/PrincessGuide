@@ -25,5 +25,14 @@ target 'PrincessGuide' do
   pod 'DHSmartScreenshot'
   pod 'Reusable'
   pod 'R.swift'
-  pod 'MLeaksFinder', :configurations => ['Debug']
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if Gem::Version.new('9.0') > Gem::Version.new(config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'])
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      end
+    end
+  end
 end

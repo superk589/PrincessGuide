@@ -9,7 +9,7 @@
 import UIKit
 import Eureka
 
-protocol CharasCellDelegate: class {
+protocol CharasCellDelegate: AnyObject {
     func charasCell(_ charasCell: CharasCell, didSelect chara: Chara)
     func charasCell(_ charasCell: CharasCell, move fromIndex: Int, to toIndex: Int)
 }

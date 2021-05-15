@@ -6,7 +6,6 @@ PODS:
   - DHSmartScreenshot (1.3.1)
   - DynamicColor (4.2.0)
   - Eureka (5.3.0)
-  - FBRetainCycleDetector (0.1.4)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
@@ -28,8 +27,6 @@ PODS:
   - libwebp/webp (1.1.0)
   - lz4 (128)
   - MJRefresh (3.4.1)
-  - MLeaksFinder (1.0.0):
-    - FBRetainCycleDetector
   - Pageboy (3.5.1)
   - R.swift (5.2.0):
     - R.swift.Library (~> 5.2.0)
@@ -61,7 +58,6 @@ DEPENDENCIES:
   - KingfisherWebP
   - lz4
   - MJRefresh
-  - MLeaksFinder
   - R.swift
   - ReachabilitySwift
   - Reusable
@@ -79,14 +75,12 @@ SPEC REPOS:
     - DHSmartScreenshot
     - DynamicColor
     - Eureka
-    - FBRetainCycleDetector
     - FMDB
     - Kingfisher
     - KingfisherWebP
     - libwebp
     - lz4
     - MJRefresh
-    - MLeaksFinder
     - Pageboy
     - R.swift
     - R.swift.Library
@@ -121,7 +115,6 @@ SPEC CHECKSUMS:
   DHSmartScreenshot: ee749048bd7126c4826748f98df3a4adc6ad6c78
   DynamicColor: c475f66bda1cabf602f2c54ac1171c0c07148a5a
   Eureka: 49239596c9d2eed9ab523990c34de62b6feac9f0
-  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   ImageViewer: 997018c2f4f7f9830602349bbcc3b2b776424942
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
@@ -129,7 +122,6 @@ SPEC CHECKSUMS:
   libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
-  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   Pageboy: 288353d4cc848c24deec2f7542f325089247c136
   R.swift: f58c441eb72a18702be4d13825c32f79c06fd6a0
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
@@ -141,6 +133,6 @@ SPEC CHECKSUMS:
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: 1363ee8193a6ef6f6e8af726090926569a1886ca
+PODFILE CHECKSUM: 384ca7f242436033e17d12326d6c53094ec923ea
 
 COCOAPODS: 1.9.3

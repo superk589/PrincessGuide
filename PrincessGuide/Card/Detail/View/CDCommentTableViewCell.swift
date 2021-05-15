@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-protocol CDCommentTableViewCellDelegate: class {
+protocol CDCommentTableViewCellDelegate: AnyObject {
     func doubleClick(on cdCommentTableViewCell: CDCommentTableViewCell)
 }
 

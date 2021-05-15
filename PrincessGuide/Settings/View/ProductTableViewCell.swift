@@ -9,7 +9,7 @@
 import UIKit
 import StoreKit
 
-protocol ProductTableViewCellDelegate: class {
+protocol ProductTableViewCellDelegate: AnyObject {
     func productTableViewCell(_ productTableViewCell: ProductTableViewCell, didSelect product: SKProduct)
 }
 

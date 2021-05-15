@@ -9,7 +9,7 @@
 import UIKit
 import Eureka
 
-protocol CardWithBirthdayCellDelegate: class {
+protocol CardWithBirthdayCellDelegate: AnyObject {
     func cardWithBirthdayCell(_ cardWithBirthdayCell: CardWithBirthdayCell, didSelect card: Card)
 }
 

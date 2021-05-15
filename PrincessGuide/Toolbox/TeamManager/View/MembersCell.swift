@@ -9,7 +9,7 @@
 import UIKit
 import Eureka
 
-protocol MembersCellDelegate: class {
+protocol MembersCellDelegate: AnyObject {
     func membersCell(_ membersCell: MembersCell, didSelect member: Member)
 }
 

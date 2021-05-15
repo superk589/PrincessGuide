@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CandidateCardsViewDelegate: class {
+protocol CandidateCardsViewDelegate: AnyObject {
     func candidateCardsView(_ candidateCardsView: CandidateCardsView, didSelect index: Int)
 }
 
