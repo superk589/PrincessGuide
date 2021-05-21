@@ -21,6 +21,9 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
     
     let castTimeLabel = UILabel()
     
+    lazy var cdTitleLabel = self.createSubTitleLabel(title: NSLocalizedString("CD", comment: ""))
+    let cdLabel = UILabel()
+    
     lazy var levelTitleLabel = self.createSubTitleLabel(title: NSLocalizedString("Skill Level", comment: ""))
     
     let skillLevelLabel = UILabel()
@@ -43,6 +46,8 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
         levelTitleLabel.textColor = Theme.dynamic.color.title
         skillLevelLabel.textColor = Theme.dynamic.color.body
         actionLabel.textColor = Theme.dynamic.color.body
+        cdTitleLabel.textColor = Theme.dynamic.color.title
+        cdLabel.textColor = Theme.dynamic.color.body
         
         contentView.addSubview(skillIcon)
         skillIcon.snp.makeConstraints { (make) in
@@ -89,10 +94,23 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
             make.top.equalTo(subtitleLabel.snp.bottom)
         }
         
+        contentView.addSubview(cdTitleLabel)
+        cdTitleLabel.snp.makeConstraints { make in
+            make.left.equalTo(readableContentGuide)
+            make.top.equalTo(castTimeLabel.snp.bottom).offset(5)
+        }
+        
+        cdLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
+        contentView.addSubview(cdLabel)
+        cdLabel.snp.makeConstraints { make in
+            make.left.equalTo(readableContentGuide)
+            make.top.equalTo(cdTitleLabel.snp.bottom)
+        }
+        
         contentView.addSubview(levelTitleLabel)
         levelTitleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
-            make.top.equalTo(castTimeLabel.snp.bottom).offset(5)
+            make.top.equalTo(cdLabel.snp.bottom).offset(5)
         }
         
         skillLevelLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
@@ -139,6 +157,7 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
         descLabel.text = skill.base.description
         skillLevelLabel.text = "\(level)"
         skillIcon.skillIconID = skill.base.iconType
+        cdLabel.text = "\(skill.base.bossUbCoolTime)s"
         
         if skill.actions.count > 0 {
             actionLabel.attributedText = skill.actions.map {

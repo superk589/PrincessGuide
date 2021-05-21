@@ -69,6 +69,7 @@ class Skill: Codable {
         let skillCastTime: Double
         let skillId: Int
         let skillType: Int
+        let bossUbCoolTime: Double
     }
     
     class Action: Codable {
@@ -95,7 +96,6 @@ class Skill: Codable {
             let targetNumber: Int
             let targetRange: Int
             let targetType: Int
-            
         }
         
         let base: Base
