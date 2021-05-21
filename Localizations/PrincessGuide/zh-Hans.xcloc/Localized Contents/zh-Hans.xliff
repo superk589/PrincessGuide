@@ -3419,6 +3419,26 @@
         <target>如果%2$@处于%3$@状态，对其使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d to %@ if attack speed is decreased" xml:space="preserve">
+        <source>use %1$d to %2$@ if attack speed is decreased</source>
+        <target>如果%2$@处于攻速降低状态则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if attack speed is increased" xml:space="preserve">
+        <source>use %1$d to %2$@ if attack speed is increased</source>
+        <target>如果%2$@处于攻速提高状态则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if attack speed is not decreased" xml:space="preserve">
+        <source>use %1$d to %2$@ if attack speed is not decreased</source>
+        <target>如果%2$@没有处于攻速降低状态则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if attack speed is not increased" xml:space="preserve">
+        <source>use %1$d to %2$@ if attack speed is not increased</source>
+        <target>如果%2$@没有处于攻速提高状态则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d to %@ if it's alone" xml:space="preserve">
         <source>use %1$d to %2$@ if it's alone</source>
         <target>如果%2$@是单独的则使用 %1$d</target>

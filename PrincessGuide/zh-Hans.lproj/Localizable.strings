@@ -1961,6 +1961,18 @@
 "use %d to %@ if %@" = "如果%2$@处于%3$@状态，对其使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d to %@ if attack speed is decreased" = "如果%2$@处于攻速降低状态则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to %@ if attack speed is increased" = "如果%2$@处于攻速提高状态则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to %@ if attack speed is not decreased" = "如果%2$@没有处于攻速降低状态则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to %@ if attack speed is not increased" = "如果%2$@没有处于攻速提高状态则使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d to %@ if it's alone" = "如果%2$@是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */

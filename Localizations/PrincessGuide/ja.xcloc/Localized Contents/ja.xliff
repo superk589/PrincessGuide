@@ -3417,6 +3417,22 @@
         <target>%2$@が%3$@の場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d to %@ if attack speed is decreased" xml:space="preserve">
+        <source>use %1$d to %2$@ if attack speed is decreased</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if attack speed is increased" xml:space="preserve">
+        <source>use %1$d to %2$@ if attack speed is increased</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if attack speed is not decreased" xml:space="preserve">
+        <source>use %1$d to %2$@ if attack speed is not decreased</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if attack speed is not increased" xml:space="preserve">
+        <source>use %1$d to %2$@ if attack speed is not increased</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d to %@ if it's alone" xml:space="preserve">
         <source>use %1$d to %2$@ if it's alone</source>
         <target>%2$@が独りの場合、[アクション%1$d]を使う</target>

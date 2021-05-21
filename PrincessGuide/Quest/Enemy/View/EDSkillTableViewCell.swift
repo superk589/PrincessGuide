@@ -8,6 +8,7 @@
 
 import UIKit
 import Reusable
+import SnapKit
 
 class EDSkillTableViewCell: UITableViewCell, Reusable {
     
@@ -24,8 +25,9 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
     lazy var cdTitleLabel = self.createSubTitleLabel(title: NSLocalizedString("CD", comment: ""))
     let cdLabel = UILabel()
     
+    var levelToCDSpacing: Constraint?
+    var levelToCastTimeSpacing: Constraint?
     lazy var levelTitleLabel = self.createSubTitleLabel(title: NSLocalizedString("Skill Level", comment: ""))
-    
     let skillLevelLabel = UILabel()
     
     let descLabel = UILabel()
@@ -110,7 +112,8 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
         contentView.addSubview(levelTitleLabel)
         levelTitleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
-            make.top.equalTo(cdLabel.snp.bottom).offset(5)
+            levelToCDSpacing = make.top.equalTo(cdLabel.snp.bottom).offset(5).priority(500).constraint
+            levelToCastTimeSpacing = make.top.equalTo(castTimeLabel.snp.bottom).offset(5).priority(990).constraint
         }
         
         skillLevelLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
@@ -158,6 +161,18 @@ class EDSkillTableViewCell: UITableViewCell, Reusable {
         skillLevelLabel.text = "\(level)"
         skillIcon.skillIconID = skill.base.iconType
         cdLabel.text = "\(skill.base.bossUbCoolTime)s"
+        
+        if category == .unionBurst || category == .unionBurstEvolution {
+            levelToCDSpacing?.update(priority: 990)
+            levelToCastTimeSpacing?.update(priority: 500)
+            cdLabel.isHidden = false
+            cdTitleLabel.isHidden = false
+        } else {
+            levelToCDSpacing?.update(priority: 500)
+            levelToCastTimeSpacing?.update(priority: 990)
+            cdLabel.isHidden = true
+            cdTitleLabel.isHidden = true
+        }
         
         if skill.actions.count > 0 {
             actionLabel.attributedText = skill.actions.map {
