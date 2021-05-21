@@ -432,12 +432,12 @@
       </trans-unit>
       <trans-unit id="At %d behind of %@, summon a minion(ID: %d)." xml:space="preserve">
         <source>At %1$d behind of %2$@, summon a minion(ID: %3$d).</source>
-        <target>%2$@の後部%1$dの位置で、召喚物（ID：%3$d）を召喚する。</target>
+        <target>%2$@の後方%1$dの位置で、召喚物（ID：%3$d）を召喚する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="At %d in front of %@, summon a minion(ID: %d)." xml:space="preserve">
         <source>At %1$d in front of %2$@, summon a minion(ID: %3$d).</source>
-        <target>%2$@の前部%1$dの位置で、召喚物（ID：%3$d）を召喚する。</target>
+        <target>%2$@の前方%1$dの位置で、召喚物（ID：%3$d）を召喚する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="At the position of %@, summon a minion(ID: %d)." xml:space="preserve">
