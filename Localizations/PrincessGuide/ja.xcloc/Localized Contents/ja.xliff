@@ -89,6 +89,10 @@
         <target>このシールドは%@回まで使用可能。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id=" This effect is not affected by any buffs or debuffs." xml:space="preserve">
+        <source> This effect is not affected by any buffs or debuffs.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ %@ %@" xml:space="preserve">
         <source>%1$@ %2$@ %3$@</source>
         <target>%1$@%2$@%3$@</target>

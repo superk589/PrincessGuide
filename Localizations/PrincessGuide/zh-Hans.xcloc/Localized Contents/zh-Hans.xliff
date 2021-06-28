@@ -88,6 +88,11 @@
         <target>这个护盾可生效 %@ 次。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id=" This effect is not affected by any buffs or debuffs." xml:space="preserve">
+        <source> This effect is not affected by any buffs or debuffs.</source>
+        <target>这个效果无法被其他增益或减益改变。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="%@ %@ %@" xml:space="preserve">
         <source>%1$@ %2$@ %3$@</source>
         <target>%1$@%2$@%3$@</target>

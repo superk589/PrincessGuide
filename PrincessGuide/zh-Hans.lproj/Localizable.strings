@@ -10,6 +10,9 @@
 /* No comment provided by engineer. */
 " This barrier takes effect for %@ times." = "这个护盾可生效 %@ 次。";
 
+/* No comment provided by engineer. */
+" This effect is not affected by any buffs or debuffs." = "这个效果无法被其他增益或减益改变。";
+
 /* clause separator */
 ", " = "，";
 

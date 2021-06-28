@@ -133,7 +133,7 @@ class AuraAction: ActionParameter {
         if actionDetail1 == 1 {
             return .maxHP
         } else {
-            return AuraType(rawValue: actionDetail1 / 10) ?? .none
+            return AuraType(rawValue: actionDetail1 % 1000 / 10) ?? .none
         }
     }
     
@@ -148,13 +148,19 @@ class AuraAction: ActionParameter {
     }
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
+        var result: String
         switch breakType {
         case .break:
             let format = NSLocalizedString("%@ %@ [%@]%@ %@ during break.", comment: "")
-            return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), percentModifier.description, auraType.description)
+            result = String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), percentModifier.description, auraType.description)
         default:
             let format = NSLocalizedString("%@ %@ [%@]%@ %@ for [%@]s.", comment: "")
-            return String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), percentModifier.description, auraType.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
+            result = String(format: format, auraActionType.description, targetParameter.buildTargetClause(), buildExpression(of: level, roundingRule: .awayFromZero, style: style, property: property), percentModifier.description, auraType.description, buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property))
         }
+        
+        if actionDetail1 > 1000 {
+            result += NSLocalizedString(" This effect is not affected by any buffs or debuffs.", comment: "")
+        }
+        return result
     }
 }

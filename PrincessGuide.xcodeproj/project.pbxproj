@@ -129,6 +129,7 @@
 		124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124EA0A120D26CA500F46029 /* Dungeon.swift */; };
 		1250190820AF0DBC00D2FBDC /* Still.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1250190720AF0DBC00D2FBDC /* Still.swift */; };
 		12512A712163D19A0071B0CC /* VLFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512A702163D19A0071B0CC /* VLFilterViewController.swift */; };
+		1256546B2664AD8A00B8930D /* DamageByBehaviorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256546A2664AD8A00B8930D /* DamageByBehaviorAction.swift */; };
 		125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */; };
 		125B663320EFB5D600D15E75 /* Chara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663220EFB5D600D15E75 /* Chara.swift */; };
 		12623113240144C50091F7EA /* LogBarrierAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12623112240144C50091F7EA /* LogBarrierAction.swift */; };
@@ -463,6 +464,7 @@
 		124EA0A120D26CA500F46029 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
 		1250190720AF0DBC00D2FBDC /* Still.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Still.swift; sourceTree = "<group>"; };
 		12512A702163D19A0071B0CC /* VLFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLFilterViewController.swift; sourceTree = "<group>"; };
+		1256546A2664AD8A00B8930D /* DamageByBehaviorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageByBehaviorAction.swift; sourceTree = "<group>"; };
 		125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaCollectionViewCell.swift; sourceTree = "<group>"; };
 		125B663220EFB5D600D15E75 /* Chara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chara.swift; sourceTree = "<group>"; };
 		12623112240144C50091F7EA /* LogBarrierAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBarrierAction.swift; sourceTree = "<group>"; };
@@ -1423,6 +1425,7 @@
 				12E6CCD4247BAB46009961B8 /* ChangeEnergyRatioAction.swift */,
 				12BAABA024AAEF4F00DA8AB7 /* IgnoreDecoyAction.swift */,
 				12B91121254D3DD000EE0FC0 /* HealDownAction.swift */,
+				1256546A2664AD8A00B8930D /* DamageByBehaviorAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1967,6 +1970,7 @@
 				1276D4BA20AD317E00805355 /* HatsuneEventAreaTableViewController.swift in Sources */,
 				12B00D30231F7EA40086B079 /* Card+Filter.swift in Sources */,
 				120F9B4C20E4DA98003632CA /* ToolboxTableViewCell.swift in Sources */,
+				1256546B2664AD8A00B8930D /* DamageByBehaviorAction.swift in Sources */,
 				12E6BEE1227800A6000BAADC /* StealthAction.swift in Sources */,
 				126BFBD320F0FC420059B4ED /* BDEquipmentViewController.swift in Sources */,
 				1221CDC2207B96FA008F30AA /* CardTableViewController.swift in Sources */,
@@ -2211,7 +2215,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 204;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2236,7 +2240,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 204;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
