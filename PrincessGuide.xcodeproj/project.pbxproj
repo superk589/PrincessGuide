@@ -323,6 +323,7 @@
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* HomeCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* HomeCardTableViewController.swift */; };
 		12F7643523F7E0660080398B /* KnightGuardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7643423F7E0660080398B /* KnightGuardAction.swift */; };
+		12FA75EA269C473600210B46 /* Card+PromotionBonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA75E9269C473500210B46 /* Card+PromotionBonus.swift */; };
 		12FD97CC239225D700430222 /* ToadAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FD97CB239225D700430222 /* ToadAction.swift */; };
 		94018D168BCD58B74960DD7C /* Pods_PrincessGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */; };
 /* End PBXBuildFile section */
@@ -668,6 +669,7 @@
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* HomeCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewController.swift; sourceTree = "<group>"; };
 		12F7643423F7E0660080398B /* KnightGuardAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightGuardAction.swift; sourceTree = "<group>"; };
+		12FA75E9269C473500210B46 /* Card+PromotionBonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+PromotionBonus.swift"; sourceTree = "<group>"; };
 		12FD97CB239225D700430222 /* ToadAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToadAction.swift; sourceTree = "<group>"; };
 		3D1D435696AB8B7DB41DC3C2 /* Pods-PrincessGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrincessGuide.release.xcconfig"; path = "Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide.release.xcconfig"; sourceTree = "<group>"; };
 		967E18A29BC0981FDB1BCEA2 /* Pods_PrincessGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrincessGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -798,6 +800,7 @@
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
 				1220423E231A9ECC00205C85 /* Card+Rarity6.swift */,
 				12B00D2F231F7EA40086B079 /* Card+Filter.swift */,
+				12FA75E9269C473500210B46 /* Card+PromotionBonus.swift */,
 				128DA48121B25E3900F7C006 /* Minion.swift */,
 				1250190720AF0DBC00D2FBDC /* Still.swift */,
 				12B85D2A2089840A0088F5FB /* Skill.swift */,
@@ -1937,6 +1940,7 @@
 				12973CED20EBA7DC00C83089 /* ImageCell.swift in Sources */,
 				12EBF70B20F7952600120C2A /* MemberView.swift in Sources */,
 				12EBF71120F7BC0500120C2A /* StrokedLabel.swift in Sources */,
+				12FA75EA269C473600210B46 /* Card+PromotionBonus.swift in Sources */,
 				129A7F8320A2815400D93996 /* CDSettingsViewController.swift in Sources */,
 				12F125E920B94370005C9659 /* AuraAction.swift in Sources */,
 				12F1260120B95345005C9659 /* ContinuousAttackAction.swift in Sources */,
@@ -2215,7 +2219,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 204;
+				CURRENT_PROJECT_VERSION = 205;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2240,7 +2244,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 204;
+				CURRENT_PROJECT_VERSION = 205;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

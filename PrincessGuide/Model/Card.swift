@@ -34,7 +34,9 @@ class Card: Codable {
     
     let rarity6s: [Rarity6]
     
-    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment], actualUnit: ActualUnit?, unitBackground: UnitBackground, uniqueEquipIDs: [Int], rarity6s: [Rarity6]) {
+    let promotionBonuses: [PromotionBonus]
+    
+    init(base: Base, promotions: [Promotion], rarities: [Rarity], promotionStatuses: [PromotionStatus], profile: Profile, comments: [Comment], actualUnit: ActualUnit?, unitBackground: UnitBackground, uniqueEquipIDs: [Int], rarity6s: [Rarity6], promotionBonuses: [PromotionBonus]) {
         self.base = base
         self.promotions = promotions
         self.promotionStatuses = promotionStatuses
@@ -45,6 +47,7 @@ class Card: Codable {
         self.unitBackground = unitBackground
         self.uniqueEquipIDs = uniqueEquipIDs
         self.rarity6s = rarity6s
+        self.promotionBonuses = promotionBonuses
     }
     
     struct Base: Codable {
@@ -493,6 +496,10 @@ extension Card {
                     .compactMap { ($0.parameter as? PassiveAction)?.propertyItem(of: unitLevel) }
                     .forEach { property += $0 }
             }
+        }
+        
+        if let promotionBonus = promotionBonuses.first(where: { $0.promotionLevel == unitRank }) {
+            property += promotionBonus.property
         }
         
         return property.rounded()

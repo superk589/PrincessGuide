@@ -32,6 +32,7 @@ class CDPromotionTableViewCell: UITableViewCell, Reusable {
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(readableContentGuide)
             make.top.equalTo(10)
+            make.right.equalTo(readableContentGuide)
         }
         titleLabel.font = UIFont.scaledFont(forTextStyle: .title3, ofSize: 16)
         titleLabel.numberOfLines = 0

@@ -163,6 +163,24 @@ class Master: FMDatabaseQueue {
                     }
                 }
                 
+                let promotionBonusSql = """
+                SELECT
+                    *
+                FROM
+                    promotion_bonus
+                WHERE
+                    unit_id = \(json["unit_id"])
+                """
+                let promotionBonusSet = try db.executeQuery(promotionBonusSql, values: nil)
+                
+                var promotionBonuses = [Card.PromotionBonus]()
+                while promotionBonusSet.next() {
+                    let json = JSON(promotionBonusSet.resultDictionary ?? [:])
+                    if let promotionBonus = try? decoder.decode(Card.PromotionBonus.self, from: json.rawData()) {
+                        promotionBonuses.append(promotionBonus)
+                    }
+                }
+                
                 let promotionStatusSql = """
                 SELECT
                     *
@@ -266,7 +284,7 @@ class Master: FMDatabaseQueue {
                 do {
                     let base = try decoder.decode(Card.Base.self, from: json.rawData())
                     if let profile = profile, let unitBackground = unitBackground {
-                        let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground, uniqueEquipIDs: uniqueEquipIDs, rarity6s: rarity6s)
+                        let card = Card(base: base, promotions: promotions, rarities: rarities, promotionStatuses: promotionStatuses, profile: profile, comments: comments, actualUnit: actualUnit, unitBackground: unitBackground, uniqueEquipIDs: uniqueEquipIDs, rarity6s: rarity6s, promotionBonuses: promotionBonuses)
                         cards.append(card)
                     }
                 } catch {
@@ -669,8 +687,11 @@ class Master: FMDatabaseQueue {
                 equipment_enhance_rate a,
                 ( SELECT promotion_level, max( equipment_enhance_level ) max_equipment_enhance_level FROM equipment_enhance_data GROUP BY promotion_level ) b
             WHERE
-                a.promotion_level = b.promotion_level
+                a.promotion_level >= b.promotion_level
                 AND a.equipment_id = \(equipmentID)
+            ORDER BY
+                max_equipment_enhance_level DESC
+            LIMIT 1
             """
             let set = try db.executeQuery(sql, values: nil)
             while set.next() {

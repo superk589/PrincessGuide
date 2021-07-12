@@ -140,6 +140,9 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
                 let format = NSLocalizedString("Max. %@: %@", comment: "")
                 extraStrings.append(String(format: format, PropertyKey.energyReduceRate.description, card?.property(unitRank: promotion.promotionLevel).energyReduceRate.roundedString(roundingRule: nil) ?? ""))
             }
+            if let promotionBonus = card?.promotionBonuses.first(where: { $0.promotionLevel == promotion.promotionLevel }) {
+                extraStrings.append(promotionBonus.property.noneZeroProperties().map { "\($0.key): +\(Int($0.value))" }.joined(separator: ", "))
+            }
             let baseString = NSLocalizedString("Rank", comment: "") + " \(promotion.promotionLevel)"
             cell.configure(
                 title: ([baseString] + extraStrings).joined(separator: "\n"),
