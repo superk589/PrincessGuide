@@ -1,5 +1,5 @@
 /* No comment provided by engineer. */
-" Can't use union burst when the new attack pattern is active." = "新しい攻撃パターンにはユニオンバストを発動できない。";
+" Can't use union burst when the new attack pattern is active." = "この攻撃パターンにはユニオンバストを発動できない。";
 
 /* No comment provided by engineer. */
 " Critical damage is %@ times as normal damage." = "クリティカルダメージは通常の%@倍。";
@@ -8,7 +8,7 @@
 " The upper limit of this effect is [%@]." = "効果の上限は[%@]。";
 
 /* No comment provided by engineer. */
-" This barrier takes effect for %@ times." = "このシールドは%@回まで使用可能。";
+" This barrier takes effect for %@ times." = "このシールドは%@回まで使用できる。";
 
 /* clause separator */
 ", " = "、";
@@ -23,7 +23,7 @@
 "%@ %@ [%@]%@ %@ during break." = "Break中、%2$@の%5$@を[%3$@%4$@]%1$@。";
 
 /* No comment provided by engineer. */
-"%@ %@ [%@]%@ %@ for [%@]s." = "%2$@に%5$@を[%3$@]%4$@%1$@、[%6$@]秒継続する。";
+"%@ %@ [%@]%@ %@ for [%@]s." = "%2$@に%5$@を[%3$@]%4$@%1$@、効果時間[%6$@]秒。";
 
 /* [the farthest two] [enemy] [targets]
    [the second to fourth farthest] [enemy] [targets] */
@@ -34,10 +34,10 @@
 "%@ %@ %@ in range %d" = "%4$d範囲内%1$@%2$@%3$@";
 
 /* No comment provided by engineer. */
-"%@ %@ and deal [%@] damage per second for [%@]s." = "%2$@に%1$@状態を付与する、毎秒[%3$@]のダメージを与える、[%4$@]秒継続する。";
+"%@ %@ and deal [%@] damage per second for [%@]s." = "%2$@に%1$@状態を付与する、毎秒[%3$@]のダメージを与える、効果時間[%4$@]秒。";
 
 /* No comment provided by engineer. */
-"%@ %@ for [%@]s." = "%2$@に%1$@状態を付与する、[%3$@]秒継続する。";
+"%@ %@ for [%@]s." = "%2$@に%1$@状態を付与する、効果時間[%3$@]秒。";
 
 /* [the nearest] [enemy] target
    [the second nearest] [enemy] target */
@@ -107,7 +107,7 @@
 "%@ lowest Magic STR" = "最も魔法攻撃力が低い%@";
 
 /* target type */
-"%@ lowest TP" = "最もTPが低い%@";
+"%@ lowest TP" = "最もTPが少ない%@";
 
 /* No comment provided by engineer. */
 "%@ magic" = "魔法攻撃を行う%@";
@@ -257,10 +257,10 @@
 "Ascending" = "昇順";
 
 /* No comment provided by engineer. */
-"At %d behind of %@, summon a minion(ID: %d)." = "%2$@の後部%1$dの位置で、召喚物（ID：%3$d）を召喚する。";
+"At %d behind of %@, summon a minion(ID: %d)." = "%2$@の後方%1$dの位置で、召喚物（ID：%3$d）を召喚する。";
 
 /* No comment provided by engineer. */
-"At %d in front of %@, summon a minion(ID: %d)." = "%2$@の前部%1$dの位置で、召喚物（ID：%3$d）を召喚する。";
+"At %d in front of %@, summon a minion(ID: %d)." = "%2$@の前方%1$dの位置で、召喚物（ID：%3$d）を召喚する。";
 
 /* No comment provided by engineer. */
 "At the position of %@, summon a minion(ID: %d)." = "%1$@の位置で、召喚物（ID：%2$d）を召喚する。";
@@ -374,22 +374,22 @@
 "Cards" = "キャラクター";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to absorb [%@] magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の魔法吸収バリアを展開する、[%3$@]秒継続する。";
+"Cast a barrier on %@ to absorb [%@] magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の魔法吸収バリアを展開する、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理・魔法吸収バリアを展開する、[%3$@]秒継続する。";
+"Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理・魔法吸収バリアを展開する、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to absorb [%@] physical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理吸収バリアを展開する、[%3$@]秒継続する。";
+"Cast a barrier on %@ to absorb [%@] physical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理吸収バリアを展開する、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の魔法無効にするバリアを展開する、[%3$@]秒継続する。";
+"Cast a barrier on %@ to nullify [%@] magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の魔法無効にするバリアを展開する、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理・魔法無効にするバリアを展開する、[%3$@]秒継続する。";
+"Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理・魔法無効にするバリアを展開する、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、[%3$@]秒継続する。";
+"Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." = "%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
 "Cast a barrier on %@ to reduce damage over %@ with coefficient [%@](the greater the less reduced amount) for [%@]s." = "%1$@にバリアを展開する、一回の行動で受けたダメージが[%2$@]を超えた場合、ダメージが減衰される、減衰係数[%3$@]（この値が小さいほど減衰されやすい）、効果時間[%4$@]秒。";
@@ -413,13 +413,16 @@
 "Cast a barrier on %@ to strike back [%@] damage when taking physical damage." = "%1$@にシールドを展開する、物理ダメージを受けた時[%2$@]分のダメージを反射する。";
 
 /* No comment provided by engineer. */
-"Cast an unknown barrier %d on %@ for [%@]s." = "%2$@に不明なバリア %1$d を展開する、[%3$@]秒継続する。";
+"Cast an unknown barrier %d on %@ for [%@]s." = "%2$@に不明なバリア %1$d を展開する、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
 "Cast Time" = "発動時間";
 
 /* No comment provided by engineer. */
 "Catch Copy" = "キャッチコピー";
+
+/* No comment provided by engineer. */
+"CD" = "クールダウン";
 
 /* No comment provided by engineer. */
 "Center" = "中衛";
@@ -488,13 +491,13 @@
 "Charge for %@s and deal [%@ * damage taken] additional damage on the next effect." = "%1$@秒チャージし、次のアクションの効果を[%2$@ * チャージ中受けたダメージ]アップさせる。";
 
 /* No comment provided by engineer. */
-"Charm" = "魅了";
+"Charm" = "魅了状態";
 
 /* No comment provided by engineer. */
-"Charm %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に魅了状態を付与する、[%3$@]秒継続する。";
+"Charm %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に魅了状態を付与する、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"charmed or confused" = "魅了や混乱";
+"charmed or confused" = "魅了や混乱状態";
 
 /* No comment provided by engineer. */
 "Check for Updates at Launch" = "起動時に更新を確認";
@@ -902,6 +905,9 @@
 "if target is not defeated by last effect then use %d" = "前のアクションが対象を倒していない場合、[アクション%d]を使う";
 
 /* No comment provided by engineer. */
+"If the data version is not synchronized with the data, reset it and then you can retrieve the newest version again." = "データバージョンがデータと同期されていない場合は、リセットすると、最新バージョンを再度取得できます。";
+
+/* No comment provided by engineer. */
 "Ignore the other units' taunt when attacking %@." = "%@を攻撃する時、他の敵の挑発効果を無視する。";
 
 /* No comment provided by engineer. */
@@ -968,7 +974,7 @@
 "Loop start" = "ループ開始";
 
 /* No comment provided by engineer. */
-"Loses" = "失敗";
+"Loses" = "敗者";
 
 /* No comment provided by engineer. */
 "Luna's Tower" = "ルナの塔";
@@ -1016,7 +1022,7 @@
 "Make %@ fall into faint for [%@]s." = "%1$@を気絶状態にする、効果時間[%2$@]秒。";
 
 /* No comment provided by engineer. */
-"Make %@ lose [%@] TP." = "%1$@のTPを[%2$@]失わせる。";
+"Make %@ lose [%@] TP." = "%1$@のTPを[%2$@]ダウンさせる。";
 
 /* No comment provided by engineer. */
 "Make %@ to be invulnerable for [%@]s." = "%1$@に無敵状態にする、効果時間[%2$@]秒。";
@@ -1112,7 +1118,7 @@
 "Modifier: add [%@ * count of %@] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * %2$@の数]アップさせる。";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを [%1$@ * ダメージを与えられた対象の数] アップさせる。";
+"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * ダメージを与えられた対象の数]アップさせる。";
 
 /* No comment provided by engineer. */
 "Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * 倒した敵の数]アップさせる。";
@@ -1172,7 +1178,7 @@
 "Multiple heal effects from %@ with [%@] for [%@]s." = "%1$@の回復効果を[%2$@]倍にする、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
-"Multiple the energy gained by %@ from effects [%@] with [%@]." = "ダメージによるTP回復を含めて、%1$@が [アクション%2$@] を受けた時全てのTP回復効果を [元の値 * %3$@] に変更させる。";
+"Multiple the energy gained by %@ from effects [%@] with [%@]." = "ダメージによるTP回復を含めて、%1$@が[アクション%2$@]を受けた時全てのTP回復効果を[元の値 * %3$@]に変更させる。";
 
 /* No comment provided by engineer. */
 "name" = "名前";
@@ -1307,7 +1313,7 @@
 "poisoned" = "中毒";
 
 /* No comment provided by engineer. */
-"poisoned or venomed" = "毒や猛毒";
+"poisoned or venomed" = "毒や猛毒状態";
 
 /* No comment provided by engineer. */
 "Polymorph" = "トナカイ化";
@@ -1415,6 +1421,9 @@
 "Reset" = "リセット";
 
 /* No comment provided by engineer. */
+"Reset Data Version?" = "データバージョンをリセット？";
+
+/* No comment provided by engineer. */
 "Resist" = "抵抗";
 
 /* No comment provided by engineer. */
@@ -1424,10 +1433,10 @@
 "Restore %@ [%@] %@ per second for [%@]s." = "%1$@の%3$@を毎秒[%2$@]回復させる、効果時間[%4$@]秒。";
 
 /* No comment provided by engineer. */
-"Restore %@ [%@] TP." = "%1$@のTPを[%2$@]回復。";
+"Restore %@ [%@] TP." = "%1$@のTPを[%2$@]回復させる。";
 
 /* No comment provided by engineer. */
-"Restore %@ [%@]%@ HP." = "%1$@のHPを[%2$@]%3$@回復。";
+"Restore %@ [%@]%@ HP." = "%1$@のHPを[%2$@]%3$@回復させる。";
 
 /* No comment provided by engineer. */
 "Review at App Store" = "App Storeに評価する";
@@ -1514,7 +1523,7 @@
 "Silence" = "沈黙";
 
 /* No comment provided by engineer. */
-"Silence %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に沈黙状態を付与する、[%3$@]秒継続する。";
+"Silence %@ with [%@]%% chance for [%@]s." = "[%2$@]%%の確率で%1$@に沈黙状態を付与する、効果時間[%3$@]秒。";
 
 /* No comment provided by engineer. */
 "Skill" = "スキル";
@@ -1586,7 +1595,7 @@
 "Summary" = "概要";
 
 /* No comment provided by engineer. */
-"Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s." = "%2$@の位置で半径%1$dのフィールドを展開し、%6$@を[%4$@]%5$@%3$@させる、効果時間[%7$@]秒。";
+"Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s." = "%2$@の位置で半径%1$dのフィールドを展開し、%6$@を[%4$@]%5$@%3$@、効果時間[%7$@]秒。";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." = "%2$@の位置で半径%1$dのフィールドを展開し、毎秒[%3$@]の%4$@ダメージを与える、効果時間[%5$@]秒。";
@@ -1664,7 +1673,7 @@
 "the %@ highest ATK or Magic STR" = "物理や魔法攻撃力が%@高い";
 
 /* target type */
-"the %@ highest HP" = "HPが%@高い";
+"the %@ highest HP" = "HPが%@多い";
 
 /* target type */
 "the %@ highest HP ratio" = "HP割合が%@高い";
@@ -1673,7 +1682,7 @@
 "the %@ highest Magic STR" = "魔法攻撃力が%@高い";
 
 /* target type */
-"the %@ highest TP" = "TPが%@高い";
+"the %@ highest TP" = "TPが%@多い";
 
 /* No comment provided by engineer. */
 "the %@ lowest ATK" = "物理攻撃力が%@低い";
@@ -1691,7 +1700,7 @@
 "the %@ lowest Magic STR" = "魔法攻撃力が%@低い";
 
 /* target type */
-"the %@ lowest TP" = "TPが%@低い";
+"the %@ lowest TP" = "TPが%@少ない";
 
 /* target type */
 "the %@ most backward" = "%@後の";
@@ -1721,7 +1730,7 @@
 "the highest ATK or Magic STR" = "最も物理や魔法攻撃力が高い";
 
 /* target type */
-"the highest HP" = "最もHPが高い";
+"the highest HP" = "最もHPが多い";
 
 /* target type */
 "the highest HP ratio" = "最もHP割合が高い";
@@ -1730,7 +1739,7 @@
 "the highest Magic STR" = "最も魔法攻撃力が高い";
 
 /* target type */
-"the highest TP" = "最もTPが高い";
+"the highest TP" = "最もTPが多い";
 
 /* No comment provided by engineer. */
 "the lowest ATK" = "最も物理攻撃力が低い";
@@ -1748,7 +1757,7 @@
 "the lowest Magic STR" = "最も魔法攻撃力が低い";
 
 /* target type */
-"the lowest TP" = "最もTPが低い";
+"the lowest TP" = "最もTPが少ない";
 
 /* target type */
 "the most backward" = "最も後の";
@@ -1910,7 +1919,7 @@
 "use %d if %@ is alone" = "%2$@が独りの場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
-"use %d if %@ is in state of ID: %d" = "%2$@がマーク[ID：%3$d]を持っているの場合、[アクション%1$d]を使う";
+"use %d if %@ is in state of ID: %d" = "%2$@がマーク[ID：%3$d]を持っている場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
 "use %d if %@ is in state of ID: %d with stacks greater than or equal to %d" = "%2$@が持っているマーク[ID：%3$d]のスタック数が%4$d以上の場合、[アクション%1$d]を使う";
@@ -1919,16 +1928,16 @@
 "use %d if %@ is not alone" = "%2$@が独りでない場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
-"use %d if %@ is not in state of ID: %d" = "%2$@がマーク[ID：%3$d]を持っていないの場合、[アクション%1$d]を使う";
+"use %d if %@ is not in state of ID: %d" = "%2$@がマーク[ID：%3$d]を持っていない場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
 "use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" = "%2$@が持っているマーク[ID：%3$d]のスタック数が%4$d未満の場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
-"use %d if %@'s HP is below %d%%" = "%2$@のHPが [%3$d%%] 以下の場合、[アクション%1$d]を使う";
+"use %d if %@'s HP is below %d%%" = "%2$@のHPが[%3$d%%]以下の場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
-"use %d if %@'s HP is not below %d%%" = "%2$@のHPが [%3$d%%] 以下でない場合、[アクション%1$d]を使う";
+"use %d if %@'s HP is not below %d%%" = "%2$@のHPが[%3$d%%]以下でない場合、[アクション%1$d]を使う";
 
 /* No comment provided by engineer. */
 "use %d if among %@ does not exist unit(ID: %d)" = "潜伏状態のユニットを除いて、%2$@の中ユニット（ID：%3$d）が存在しない場合、[アクション%1$d]を使う";
@@ -2027,7 +2036,7 @@
 "Who Needs" = "装備可能なキャラ";
 
 /* No comment provided by engineer. */
-"Wins" = "勝利";
+"Wins" = "勝者";
 
 /* No comment provided by engineer. */
 "Yes" = "あり";
