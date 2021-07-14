@@ -71,7 +71,7 @@
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
         <source> Can't use union burst when the new attack pattern is active.</source>
-        <target>新しい攻撃パターンにはユニオンバストを発動できない。</target>
+        <target>この攻撃パターンにはユニオンバストを発動できない。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
@@ -86,7 +86,7 @@
       </trans-unit>
       <trans-unit id=" This barrier takes effect for %@ times." xml:space="preserve">
         <source> This barrier takes effect for %@ times.</source>
-        <target>このシールドは%@回まで使用可能。</target>
+        <target>このシールドは%@回まで使用できる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=" This effect is not affected by any buffs or debuffs." xml:space="preserve">
@@ -112,17 +112,17 @@
       </trans-unit>
       <trans-unit id="%@ %@ [%@]%@ %@ for [%@]s." xml:space="preserve">
         <source>%1$@ %2$@ [%3$@]%4$@ %5$@ for [%6$@]s.</source>
-        <target>%2$@に%5$@を[%3$@]%4$@%1$@、[%6$@]秒継続する。</target>
+        <target>%2$@に%5$@を[%3$@]%4$@%1$@、効果時間[%6$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ and deal [%@] damage per second for [%@]s." xml:space="preserve">
         <source>%1$@ %2$@ and deal [%3$@] damage per second for [%4$@]s.</source>
-        <target>%2$@に%1$@状態を付与する、毎秒[%3$@]のダメージを与える、[%4$@]秒継続する。</target>
+        <target>%2$@に%1$@状態を付与する、毎秒[%3$@]のダメージを与える、効果時間[%4$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ for [%@]s." xml:space="preserve">
         <source>%1$@ %2$@ for [%3$@]s.</source>
-        <target>%2$@に%1$@状態を付与する、[%3$@]秒継続する。</target>
+        <target>%2$@に%1$@状態を付与する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ %@ target" xml:space="preserve">
@@ -241,7 +241,7 @@
       </trans-unit>
       <trans-unit id="%@ lowest TP" xml:space="preserve">
         <source>%@ lowest TP</source>
-        <target>最もTPが低い%@</target>
+        <target>最もTPが少ない%@</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ magic" xml:space="preserve">
@@ -436,12 +436,12 @@
       </trans-unit>
       <trans-unit id="At %d behind of %@, summon a minion(ID: %d)." xml:space="preserve">
         <source>At %1$d behind of %2$@, summon a minion(ID: %3$d).</source>
-        <target>%2$@の後部%1$dの位置で、召喚物（ID：%3$d）を召喚する。</target>
+        <target>%2$@の後方%1$dの位置で、召喚物（ID：%3$d）を召喚する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="At %d in front of %@, summon a minion(ID: %d)." xml:space="preserve">
         <source>At %1$d in front of %2$@, summon a minion(ID: %3$d).</source>
-        <target>%2$@の前部%1$dの位置で、召喚物（ID：%3$d）を召喚する。</target>
+        <target>%2$@の前方%1$dの位置で、召喚物（ID：%3$d）を召喚する。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="At the position of %@, summon a minion(ID: %d)." xml:space="preserve">
@@ -556,6 +556,7 @@
       </trans-unit>
       <trans-unit id="CD" xml:space="preserve">
         <source>CD</source>
+        <target>クールダウン</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="CV" xml:space="preserve">
@@ -595,32 +596,32 @@
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to absorb [%@] magical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to absorb [%2$@] magical damage for [%3$@]s.</source>
-        <target>%1$@に[%2$@]ダメージ分の魔法吸収バリアを展開する、[%3$@]秒継続する。</target>
+        <target>%1$@に[%2$@]ダメージ分の魔法吸収バリアを展開する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to absorb [%@] physical and magical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to absorb [%2$@] physical and magical damage for [%3$@]s.</source>
-        <target>%1$@に[%2$@]ダメージ分の物理・魔法吸収バリアを展開する、[%3$@]秒継続する。</target>
+        <target>%1$@に[%2$@]ダメージ分の物理・魔法吸収バリアを展開する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to absorb [%@] physical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to absorb [%2$@] physical damage for [%3$@]s.</source>
-        <target>%1$@に[%2$@]ダメージ分の物理吸収バリアを展開する、[%3$@]秒継続する。</target>
+        <target>%1$@に[%2$@]ダメージ分の物理吸収バリアを展開する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to nullify [%@] magical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to nullify [%2$@] magical damage for [%3$@]s.</source>
-        <target>%1$@に[%2$@]ダメージ分の魔法無効にするバリアを展開する、[%3$@]秒継続する。</target>
+        <target>%1$@に[%2$@]ダメージ分の魔法無効にするバリアを展開する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to nullify [%@] physical and magical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to nullify [%2$@] physical and magical damage for [%3$@]s.</source>
-        <target>%1$@に[%2$@]ダメージ分の物理・魔法無効にするバリアを展開する、[%3$@]秒継続する。</target>
+        <target>%1$@に[%2$@]ダメージ分の物理・魔法無効にするバリアを展開する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to nullify [%@] physical damage for [%@]s." xml:space="preserve">
         <source>Cast a barrier on %1$@ to nullify [%2$@] physical damage for [%3$@]s.</source>
-        <target>%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、[%3$@]秒継続する。</target>
+        <target>%1$@に[%2$@]ダメージ分の物理無効にするバリアを展開する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast a barrier on %@ to reduce damage over %@ with coefficient [%@](the greater the less reduced amount) for [%@]s." xml:space="preserve">
@@ -660,7 +661,7 @@
       </trans-unit>
       <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s." xml:space="preserve">
         <source>Cast an unknown barrier %1$d on %2$@ for [%3$@]s.</source>
-        <target>%2$@に不明なバリア %1$d を展開する、[%3$@]秒継続する。</target>
+        <target>%2$@に不明なバリア %1$d を展開する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Catch Copy" xml:space="preserve">
@@ -780,12 +781,12 @@
       </trans-unit>
       <trans-unit id="Charm" xml:space="preserve">
         <source>Charm</source>
-        <target>魅了</target>
+        <target>魅了状態</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Charm %@ with [%@]%% chance for [%@]s." xml:space="preserve">
         <source>Charm %1$@ with [%2$@]%% chance for [%3$@]s.</source>
-        <target>[%2$@]%%の確率で%1$@に魅了状態を付与する、[%3$@]秒継続する。</target>
+        <target>[%2$@]%%の確率で%1$@に魅了状態を付与する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Check for Updates at Launch" xml:space="preserve">
@@ -1330,6 +1331,7 @@
       </trans-unit>
       <trans-unit id="If the data version is not synchronized with the data, reset it and then you can retrieve the newest version again." xml:space="preserve">
         <source>If the data version is not synchronized with the data, reset it and then you can retrieve the newest version again.</source>
+        <target>データバージョンがデータと同期されていない場合は、リセットすると、最新バージョンを再度取得できます。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Ignore the other units' taunt when attacking %@." xml:space="preserve">
@@ -1439,7 +1441,7 @@
       </trans-unit>
       <trans-unit id="Loses" xml:space="preserve">
         <source>Loses</source>
-        <target>失敗</target>
+        <target>敗者</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Luna's Tower" xml:space="preserve">
@@ -1509,7 +1511,7 @@
       </trans-unit>
       <trans-unit id="Make %@ lose [%@] TP." xml:space="preserve">
         <source>Make %1$@ lose [%2$@] TP.</source>
-        <target>%1$@のTPを[%2$@]失わせる。</target>
+        <target>%1$@のTPを[%2$@]ダウンさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Make %@ to be invulnerable for [%@]s." xml:space="preserve">
@@ -1664,7 +1666,7 @@
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of damaged] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * count of damaged] to value %2$d of effect %3$d.</source>
-        <target>[アクション%3$d]の変数%2$dを [%1$@ * ダメージを与えられた対象の数] アップさせる。</target>
+        <target>[アクション%3$d]の変数%2$dを[%1$@ * ダメージを与えられた対象の数]アップさせる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
@@ -1759,7 +1761,7 @@
       </trans-unit>
       <trans-unit id="Multiple the energy gained by %@ from effects [%@] with [%@]." xml:space="preserve">
         <source>Multiple the energy gained by %1$@ from effects [%2$@] with [%3$@].</source>
-        <target>ダメージによるTP回復を含めて、%1$@が [アクション%2$@] を受けた時全てのTP回復効果を [元の値 * %3$@] に変更させる。</target>
+        <target>ダメージによるTP回復を含めて、%1$@が[アクション%2$@]を受けた時全てのTP回復効果を[元の値 * %3$@]に変更させる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="New %@ Event: %@" xml:space="preserve">
@@ -2064,6 +2066,7 @@
       </trans-unit>
       <trans-unit id="Reset Data Version?" xml:space="preserve">
         <source>Reset Data Version?</source>
+        <target>データバージョンをリセット？</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Resist" xml:space="preserve">
@@ -2083,12 +2086,12 @@
       </trans-unit>
       <trans-unit id="Restore %@ [%@] TP." xml:space="preserve">
         <source>Restore %1$@ [%2$@] TP.</source>
-        <target>%1$@のTPを[%2$@]回復。</target>
+        <target>%1$@のTPを[%2$@]回復させる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Restore %@ [%@]%@ HP." xml:space="preserve">
         <source>Restore %1$@ [%2$@]%3$@ HP.</source>
-        <target>%1$@のHPを[%2$@]%3$@回復。</target>
+        <target>%1$@のHPを[%2$@]%3$@回復させる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Review at App Store" xml:space="preserve">
@@ -2238,7 +2241,7 @@
       </trans-unit>
       <trans-unit id="Silence %@ with [%@]%% chance for [%@]s." xml:space="preserve">
         <source>Silence %1$@ with [%2$@]%% chance for [%3$@]s.</source>
-        <target>[%2$@]%%の確率で%1$@に沈黙状態を付与する、[%3$@]秒継続する。</target>
+        <target>[%2$@]%%の確率で%1$@に沈黙状態を付与する、効果時間[%3$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Skill" xml:space="preserve">
@@ -2333,7 +2336,7 @@
       </trans-unit>
       <trans-unit id="Summon a field of radius %d at position of %@ to %@ [%@]%@ %@ for [%@]s." xml:space="preserve">
         <source>Summon a field of radius %1$d at position of %2$@ to %3$@ [%4$@]%5$@ %6$@ for [%7$@]s.</source>
-        <target>%2$@の位置で半径%1$dのフィールドを展開し、%6$@を[%4$@]%5$@%3$@させる、効果時間[%7$@]秒。</target>
+        <target>%2$@の位置で半径%1$dのフィールドを展開し、%6$@を[%4$@]%5$@%3$@、効果時間[%7$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." xml:space="preserve">
@@ -2673,7 +2676,7 @@
       </trans-unit>
       <trans-unit id="Wins" xml:space="preserve">
         <source>Wins</source>
-        <target>勝利</target>
+        <target>勝者</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Yes" xml:space="preserve">
@@ -2803,7 +2806,7 @@
       </trans-unit>
       <trans-unit id="charmed or confused" xml:space="preserve">
         <source>charmed or confused</source>
-        <target>魅了や混乱</target>
+        <target>魅了や混乱状態</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="clan battle" xml:space="preserve">
@@ -3013,7 +3016,7 @@
       </trans-unit>
       <trans-unit id="poisoned or venomed" xml:space="preserve">
         <source>poisoned or venomed</source>
-        <target>毒や猛毒</target>
+        <target>毒や猛毒状態</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="princess arena" xml:space="preserve">
@@ -3128,7 +3131,7 @@
       </trans-unit>
       <trans-unit id="the %@ highest HP" xml:space="preserve">
         <source>the %@ highest HP</source>
-        <target>HPが%@高い</target>
+        <target>HPが%@多い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the %@ highest HP ratio" xml:space="preserve">
@@ -3143,7 +3146,7 @@
       </trans-unit>
       <trans-unit id="the %@ highest TP" xml:space="preserve">
         <source>the %@ highest TP</source>
-        <target>TPが%@高い</target>
+        <target>TPが%@多い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the %@ lowest ATK" xml:space="preserve">
@@ -3173,7 +3176,7 @@
       </trans-unit>
       <trans-unit id="the %@ lowest TP" xml:space="preserve">
         <source>the %@ lowest TP</source>
-        <target>TPが%@低い</target>
+        <target>TPが%@少ない</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the %@ most backward" xml:space="preserve">
@@ -3218,7 +3221,7 @@
       </trans-unit>
       <trans-unit id="the highest HP" xml:space="preserve">
         <source>the highest HP</source>
-        <target>最もHPが高い</target>
+        <target>最もHPが多い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the highest HP ratio" xml:space="preserve">
@@ -3233,7 +3236,7 @@
       </trans-unit>
       <trans-unit id="the highest TP" xml:space="preserve">
         <source>the highest TP</source>
-        <target>最もTPが高い</target>
+        <target>最もTPが多い</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the lowest ATK" xml:space="preserve">
@@ -3263,7 +3266,7 @@
       </trans-unit>
       <trans-unit id="the lowest TP" xml:space="preserve">
         <source>the lowest TP</source>
-        <target>最もTPが低い</target>
+        <target>最もTPが少ない</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the most backward" xml:space="preserve">
@@ -3353,7 +3356,7 @@
       </trans-unit>
       <trans-unit id="use %d if %@ is in state of ID: %d" xml:space="preserve">
         <source>use %1$d if %2$@ is in state of ID: %3$d</source>
-        <target>%2$@がマーク[ID：%3$d]を持っているの場合、[アクション%1$d]を使う</target>
+        <target>%2$@がマーク[ID：%3$d]を持っている場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is in state of ID: %d with stacks greater than or equal to %d" xml:space="preserve">
@@ -3368,7 +3371,7 @@
       </trans-unit>
       <trans-unit id="use %d if %@ is not in state of ID: %d" xml:space="preserve">
         <source>use %1$d if %2$@ is not in state of ID: %3$d</source>
-        <target>%2$@がマーク[ID：%3$d]を持っていないの場合、[アクション%1$d]を使う</target>
+        <target>%2$@がマーク[ID：%3$d]を持っていない場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" xml:space="preserve">
@@ -3378,12 +3381,12 @@
       </trans-unit>
       <trans-unit id="use %d if %@'s HP is below %d%%" xml:space="preserve">
         <source>use %1$d if %2$@'s HP is below %3$d%%</source>
-        <target>%2$@のHPが [%3$d%%] 以下の場合、[アクション%1$d]を使う</target>
+        <target>%2$@のHPが[%3$d%%]以下の場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@'s HP is not below %d%%" xml:space="preserve">
         <source>use %1$d if %2$@'s HP is not below %3$d%%</source>
-        <target>%2$@のHPが [%3$d%%] 以下でない場合、[アクション%1$d]を使う</target>
+        <target>%2$@のHPが[%3$d%%]以下でない場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if among %@ does not exist unit(ID: %d)" xml:space="preserve">
