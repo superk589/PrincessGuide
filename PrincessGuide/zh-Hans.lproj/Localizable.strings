@@ -671,6 +671,9 @@
 "Dot" = "Dot";
 
 /* No comment provided by engineer. */
+"Draw %@ to %d in front of self." = "将%1$@拉至自身前方 %2$d。";
+
+/* No comment provided by engineer. */
 "Draw %@ toward self %d." = "拉近%1$@，距离 %2$d。";
 
 /* No comment provided by engineer. */

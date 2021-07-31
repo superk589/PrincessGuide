@@ -18,6 +18,7 @@ class KnockAction: ActionParameter {
         case moveTarget
         case moveTargetParaboric
         case backLimited
+        case pullOwner = 8
     }
     
     var knockType: KnockType {
@@ -38,6 +39,9 @@ class KnockAction: ActionParameter {
                 format = NSLocalizedString("Draw %@ toward self %d.", comment: "")
                 return String(format: format, targetParameter.buildTargetClause(), Int(-actionValue1))
             }
+        case .pullOwner where actionValue2 == -1:
+            let format = NSLocalizedString("Draw %@ to %d in front of self.", comment: "")
+            return String(format: format, targetParameter.buildTargetClause(), Int(actionValue1))
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }

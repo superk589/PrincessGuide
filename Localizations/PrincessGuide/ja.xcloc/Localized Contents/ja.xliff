@@ -1014,6 +1014,10 @@
         <target>継続ダメージ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Draw %@ to %d in front of self." xml:space="preserve">
+        <source>Draw %1$@ to %2$d in front of self.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Draw %@ toward self %d." xml:space="preserve">
         <source>Draw %1$@ toward self %2$d.</source>
         <target>%1$@を引き寄せる、距離[%2$d]。</target>
