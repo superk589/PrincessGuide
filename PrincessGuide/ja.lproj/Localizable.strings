@@ -182,9 +182,6 @@
 "Action" = "行動";
 
 /* No comment provided by engineer. */
-"Add [%d] to the counter %d." = "カウンター%2$dの数を[%1$d]増やせる。";
-
-/* No comment provided by engineer. */
 "Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "%4$@にマーク[ID：%3$@]を%1$@スタック追加する、効果時間[%5$@]秒、この効果は最大[%2$@]までスタックできる。";
 
 /* No comment provided by engineer. */

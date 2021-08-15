@@ -185,10 +185,10 @@
 "Action" = "Action";
 
 /* No comment provided by engineer. */
-"Add [%d] to the counter %d." = "使计数器 %2$d 加 [%1$d]。";
+"Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。";
 
 /* No comment provided by engineer. */
-"Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。";
+"Add 1 to the counter %d(max. %d)." = "使计数器 %1$d 的数值加 1（最大 %2$d）。";
 
 /* No comment provided by engineer. */
 "Add additional [%@] %@ to %@ for next [%@] attacks." = "使%3$@的下 [%4$@] 次攻击附加 [%1$@] %2$@。";

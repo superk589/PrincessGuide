@@ -384,9 +384,8 @@
         <target>%4$@にマーク[ID：%3$@]を%1$@スタック追加する、効果時間[%5$@]秒、この効果は最大[%2$@]までスタックできる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%d] to the counter %d." xml:space="preserve">
-        <source>Add [%1$d] to the counter %2$d.</source>
-        <target>カウンター%2$dの数を[%1$d]増やせる。</target>
+      <trans-unit id="Add 1 to the counter %d(max. %d)." xml:space="preserve">
+        <source>Add 1 to the counter %1$d(max. %2$d).</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks." xml:space="preserve">

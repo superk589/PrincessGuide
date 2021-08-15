@@ -384,9 +384,9 @@
         <target>对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Add [%d] to the counter %d." xml:space="preserve">
-        <source>Add [%1$d] to the counter %2$d.</source>
-        <target>使计数器 %2$d 加 [%1$d]。</target>
+      <trans-unit id="Add 1 to the counter %d(max. %d)." xml:space="preserve">
+        <source>Add 1 to the counter %1$d(max. %2$d).</source>
+        <target>使计数器 %1$d 的数值加 1（最大 %2$d）。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add additional [%@] %@ to %@ for next [%@] attacks." xml:space="preserve">

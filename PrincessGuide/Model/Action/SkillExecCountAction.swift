@@ -11,7 +11,7 @@ import Foundation
 class SkillExecCountAction: ActionParameter {
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("Add [%d] to the counter %d.", comment: "")
-        return String(format: format, Int(actionValue1), actionDetail1)
+        let format = NSLocalizedString("Add 1 to the counter %d(max. %d).", comment: "")
+        return String(format: format, actionDetail1, Int(actionValue1))
     }
 }
