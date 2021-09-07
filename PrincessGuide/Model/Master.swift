@@ -48,7 +48,7 @@ class Master: FMDatabaseQueue {
         return false
     }
     
-    func getCards(cardID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Card]>) {
+    func getCards(cardID: Int? = nil, originalID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Card]>) {
         var cards = [Card]()
         execute({ (db) in
             var selectSql = """
@@ -85,10 +85,12 @@ class Master: FMDatabaseQueue {
                 b.sp_skill_5,
                 b.sp_skill_evolution_1,
                 b.sp_skill_evolution_2,
-                b.sp_union_burst
+                b.sp_union_burst,
+                c.unit_id conversion_id
             FROM
                 unit_skill_data b,
                 unit_data a
+                LEFT JOIN unit_conversion c ON c.original_unit_id = a.unit_id
             WHERE
                 a.unit_id = b.unit_id
             """
@@ -222,7 +224,7 @@ class Master: FMDatabaseQueue {
                 FROM
                     unit_profile
                 WHERE
-                    unit_id = \(json["unit_id"])
+                    unit_id = \(originalID ?? json["unit_id"].intValue)
                 """
                 let profileSet = try db.executeQuery(profileSql, values: nil)
                 var profile: Card.Profile?
@@ -252,7 +254,7 @@ class Master: FMDatabaseQueue {
                 FROM
                     unit_background
                 WHERE
-                    unit_id = \(json["unit_id"])
+                    unit_id = \(originalID ?? json["unit_id"].intValue)
                 """
                 let unitBackgroundSet = try db.executeQuery(unitBackgroundSql, values: nil)
                 var unitBackground: Card.UnitBackground?

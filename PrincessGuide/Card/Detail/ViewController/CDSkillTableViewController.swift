@@ -22,6 +22,14 @@ class CDSkillTableViewController: CDTableViewController {
     
     override func prepareRows(for card: Card) {
         
+        var card = card
+        let originalCard = card
+        if card.base.conversionId != nil {
+            if let conversionUnit = card.conversionUnit {
+                card = conversionUnit
+            }
+        }
+        
         let property: Property
         let settings = CDSettingsViewController.Setting.default
         if CDSettingsViewController.Setting.default.expressionStyle == .valueOnly {
@@ -68,7 +76,7 @@ class CDSkillTableViewController: CDTableViewController {
         }
         
         // setup main skills
-        let hasUniqueEquipments = card.uniqueEquipIDs.count > 0
+        let hasUniqueEquipments = originalCard.uniqueEquipIDs.count > 0
         if settings.skillStyle == .both && hasUniqueEquipments {
             rows += zip(card.mainSkills, card.mainSkillEvolutions)
                 .enumerated()

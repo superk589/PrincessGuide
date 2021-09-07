@@ -101,6 +101,7 @@ class Card: Codable {
         let spSkillEvolution1: Int?
         let spSkillEvolution2: Int?
         let spUnionBurst: Int
+        let conversionId: Int?
         
         var rawName: String {
             if let substring = unitName.split(separator: "（").first {
@@ -133,6 +134,7 @@ class Card: Codable {
         var spSkillEvolutionIDs: [Int] {
             return Array([spSkillEvolution1, spSkillEvolution2].prefix { $0 != 0 }.compactMap { $0 })
         }
+    
     }
     
     struct Profile: Codable {
@@ -420,6 +422,12 @@ class Card: Codable {
     lazy var comics = DispatchSemaphore.sync { (closure) in
         Master.shared.getComics(unitID: base.unitId, callback: closure)
     } ?? []
+    
+    lazy var conversionUnit: Card? = self.base.conversionId.flatMap { id in
+        DispatchSemaphore.sync { closure in
+            Master.shared.getCards(cardID: id, originalID: base.unitId, callback: closure)
+        }?.first
+    }
 }
 
 extension Card {
