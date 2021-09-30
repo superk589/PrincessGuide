@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.5.1" build-num="12E507"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.5.1" build-num="12E507"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.5.1" build-num="12E507"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -1659,6 +1659,11 @@
         <target>使效果 %5$d 的数值 %4$d 提高 [%1$@ * %3$@的%2$@]。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Modifier: add [%@ * (lost HP / total HP) of %@] to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add [%1$@ * (lost HP / total HP) of %2$@] to value %3$d of effect %4$d.</source>
+        <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * %2$@损失的 HP / 最大 HP]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Modifier: add [%@ * HP] to value %d of effect %d." xml:space="preserve">
         <source>Modifier: add [%1$@ * HP] to value %2$d of effect %3$d.</source>
         <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * HP]。</target>
@@ -2972,11 +2977,6 @@
       <trans-unit id="minion" xml:space="preserve">
         <source>minion</source>
         <target>随从</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="name" xml:space="preserve">
-        <source>name</source>
-        <target>名称</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="normal type" xml:space="preserve">

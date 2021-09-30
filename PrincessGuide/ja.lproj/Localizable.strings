@@ -1178,9 +1178,6 @@
 "Multiple the energy gained by %@ from effects [%@] with [%@]." = "ダメージによるTP回復を含めて、%1$@が[アクション%2$@]を受けた時全てのTP回復効果を[元の値 * %3$@]に変更させる。";
 
 /* No comment provided by engineer. */
-"name" = "名前";
-
-/* No comment provided by engineer. */
 "New %@ Event: %@" = "新しい%1$@イベント：%2$@";
 
 /* No comment provided by engineer. */
