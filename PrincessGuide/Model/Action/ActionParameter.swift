@@ -147,6 +147,8 @@ class ActionParameter {
             return PassiveDamageUpAction.self
         case 79:
             return DamageByBehaviorAction.self
+        case 83:
+            return ChangeSpeedOverlapAction.self
         case 90:
             return PassiveAction.self
         case 91:
@@ -586,6 +588,7 @@ enum ActionType: Int {
     case passiveSeal = 77
     case passiveDamageUp
     case damageByBehavior = 79
+    case changeSpeedOverlap = 83
     case ex = 90
     case exPlus
     case energyRatio

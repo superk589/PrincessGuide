@@ -972,6 +972,10 @@
         <target>ダウンさせ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Decrease %@ attack speed by [%@] times(stackable) for [%@]s." xml:space="preserve">
+        <source>Decrease %1$@ attack speed by [%2$@] times(stackable) for [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Denied" xml:space="preserve">
         <source>Denied</source>
         <target>拒否されました</target>
@@ -1369,6 +1373,10 @@
       <trans-unit id="Increase" xml:space="preserve">
         <source>Increase</source>
         <target>アップさせ</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Increase %@ attack speed by [%@] times(stackable) for [%@]s." xml:space="preserve">
+        <source>Increase %1$@ attack speed by [%2$@] times(stackable) for [%3$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Inhibit Heal" xml:space="preserve">

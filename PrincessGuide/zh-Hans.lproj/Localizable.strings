@@ -638,6 +638,9 @@
 "Decrease" = "降低";
 
 /* No comment provided by engineer. */
+"Decrease %@ attack speed by [%@] times(stackable) for [%@]s." = "使%1$@的攻击速度降低 [%2$@] 倍（可叠加），持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
 "DEF" = "物理防御力";
 
 /* icon style */
@@ -933,6 +936,9 @@
 
 /* No comment provided by engineer. */
 "Increase" = "提高";
+
+/* No comment provided by engineer. */
+"Increase %@ attack speed by [%@] times(stackable) for [%@]s." = "使%1$@的攻击速度提高 [%2$@] 倍（可叠加），持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "inevitable physical" = "无法躲闪的物理";
