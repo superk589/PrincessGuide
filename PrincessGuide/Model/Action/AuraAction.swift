@@ -12,7 +12,11 @@ class AuraAction: ActionParameter {
     
     var percentModifier: PercentModifier {
         switch auraType {
-        case .receivedCriticalDamage:
+        case .receivedCriticalDamage,
+                .receivedDamage,
+                .receivedMagicalDamage,
+                .receivedPhysicalDamage
+            :
             return .percent
         default:
             return PercentModifier(Int(actionValue1))
@@ -47,6 +51,9 @@ class AuraAction: ActionParameter {
         case magicalCriticalDamage
         case accuracy
         case receivedCriticalDamage
+        case receivedDamage
+        case receivedPhysicalDamage
+        case receivedMagicalDamage = 17
         case maxHP = 100
         
         var description: String {
@@ -84,6 +91,12 @@ class AuraAction: ActionParameter {
                 return NSLocalizedString("Max. HP", comment: "")
             case .receivedCriticalDamage:
                 return NSLocalizedString("Received Critical Damage", comment: "")
+            case .receivedDamage:
+                return NSLocalizedString("Received Damage", comment: "")
+            case .receivedPhysicalDamage:
+                return NSLocalizedString("Received Physical Damage", comment: "")
+            case .receivedMagicalDamage:
+                return NSLocalizedString("Received Magical Damage", comment: "")
             }
             return result
         }
@@ -123,8 +136,15 @@ class AuraAction: ActionParameter {
     
     var auraActionType: AuraActionType {
         var type = AuraActionType(actionDetail1)
-        if auraType == .receivedCriticalDamage {
+        switch auraType {
+        case .receivedDamage,
+                .receivedMagicalDamage,
+                .receivedPhysicalDamage,
+                .receivedCriticalDamage
+            :
             type.toggle()
+        default:
+            break
         }
         return type
     }

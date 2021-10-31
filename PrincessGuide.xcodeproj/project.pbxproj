@@ -384,7 +384,6 @@
 		121FAC272328FD5500A43976 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		121FAC2B2329265600A43976 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		121FAC2D232928A400A43976 /* PropertyWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrappers.swift; sourceTree = "<group>"; };
-		121FAC2F23293CCA00A43976 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		1220423C231A909400205C85 /* MiscQuestAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscQuestAreaViewController.swift; sourceTree = "<group>"; };
 		1220423E231A9ECC00205C85 /* Card+Rarity6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Rarity6.swift"; sourceTree = "<group>"; };
 		12204240231AABF700205C85 /* FearAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FearAction.swift; sourceTree = "<group>"; };
@@ -773,14 +772,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		121FAC3123293CD000A43976 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				121FAC2F23293CCA00A43976 /* TabViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		122071F120F9F5CA00554030 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1024,7 +1015,6 @@
 				1221CDDD207CC3A3008F30AA /* Common */,
 				1221CDBA207B9310008F30AA /* Model */,
 				1221CDBC207B9373008F30AA /* View */,
-				121FAC3123293CD000A43976 /* ViewController */,
 				1221CDBB207B9342008F30AA /* Protocol */,
 				1221CDC3207B96FF008F30AA /* Card */,
 				12398E7D209158EA006AC352 /* Quest */,
@@ -2223,7 +2213,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 212;
+				CURRENT_PROJECT_VERSION = 213;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2248,7 +2238,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 212;
+				CURRENT_PROJECT_VERSION = 213;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

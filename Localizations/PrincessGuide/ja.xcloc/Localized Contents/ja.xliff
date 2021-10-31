@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.1" build-num="13A1030d"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.1" build-num="13A1030d"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.1" build-num="13A1030d"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -2046,6 +2046,18 @@
       <trans-unit id="Received Critical Damage" xml:space="preserve">
         <source>Received Critical Damage</source>
         <target>受けたクリティカルダメージ</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Received Damage" xml:space="preserve">
+        <source>Received Damage</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Received Magical Damage" xml:space="preserve">
+        <source>Received Magical Damage</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Received Physical Damage" xml:space="preserve">
+        <source>Received Physical Damage</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Reduce" xml:space="preserve">

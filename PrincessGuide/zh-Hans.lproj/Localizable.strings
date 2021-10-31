@@ -1415,6 +1415,15 @@
 "Received Critical Damage" = "承受的暴击伤害";
 
 /* No comment provided by engineer. */
+"Received Damage" = "承受的伤害";
+
+/* No comment provided by engineer. */
+"Received Magical Damage" = "承受的魔法伤害";
+
+/* No comment provided by engineer. */
+"Received Physical Damage" = "承受的物理伤害";
+
+/* No comment provided by engineer. */
 "Reduce" = "降低";
 
 /* No comment provided by engineer. */

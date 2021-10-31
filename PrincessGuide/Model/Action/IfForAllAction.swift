@@ -45,6 +45,9 @@ class IfForAllAction: ActionParameter {
         case 720:
             let format = NSLocalizedString("use %d if among %@ exists unit(ID: %d)", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(), Int(actionValue3))
+        case 721:
+            let format = NSLocalizedString("use %d if %@ is in state of ID: %d", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), Int(actionValue3))
         case 901..<1000:
             let format = NSLocalizedString("use %d if %@'s HP is below %d%%", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
@@ -97,6 +100,9 @@ class IfForAllAction: ActionParameter {
         case 720:
             let format = NSLocalizedString("use %d if among %@ does not exist unit(ID: %d)", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(), Int(actionValue3))
+        case 721:
+            let format = NSLocalizedString("use %d if %@ is not in state of ID: %d", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), Int(actionValue3))
         case 901..<1000:
             let format = NSLocalizedString("use %d if %@'s HP is not below %d%%", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
