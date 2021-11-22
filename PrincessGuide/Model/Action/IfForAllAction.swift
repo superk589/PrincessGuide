@@ -60,6 +60,9 @@ class IfForAllAction: ActionParameter {
         case 1200..<1300:
             let format = NSLocalizedString("counter %d is greater than or equal to %d then use %d", comment: "")
             return String(format: format, actionDetail1 % 100 / 10, actionDetail1 % 10, actionDetail2 % 10)
+        case 6000..<7000:
+            let format = NSLocalizedString("use %d to %@ in state of ID: %d", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
         default:
             return nil
         }
@@ -115,6 +118,9 @@ class IfForAllAction: ActionParameter {
         case 1200..<1300:
             let format = NSLocalizedString("counter %d is less than %d then use %d", comment: "")
             return String(format: format, actionDetail1 % 100 / 10, actionDetail1 % 10, actionDetail3 % 10)
+        case 6000..<7000:
+            let format = NSLocalizedString("use %d to %@ if not in state of ID: %d", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
         default:
             return nil
         }
