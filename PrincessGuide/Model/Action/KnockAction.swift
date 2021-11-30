@@ -19,10 +19,15 @@ class KnockAction: ActionParameter {
         case moveTargetParaboric
         case backLimited
         case pullOwner = 8
+        case knockBackGiveValue
     }
     
     var knockType: KnockType {
         return KnockType(rawValue: actionDetail1) ?? .unknown
+    }
+    
+    override var actionValues: [ActionValue] {
+        return [ActionValue(initial: String(actionValue1), perLevel: nil, key: nil, startIndex: 1)]
     }
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
@@ -42,6 +47,9 @@ class KnockAction: ActionParameter {
         case .pullOwner where actionValue2 == -1:
             let format = NSLocalizedString("Draw %@ to %d in front of self.", comment: "")
             return String(format: format, targetParameter.buildTargetClause(), Int(actionValue1))
+        case .knockBackGiveValue:
+            let format = NSLocalizedString("Knock %@ away [%@].", comment: "")
+            return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property))
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }

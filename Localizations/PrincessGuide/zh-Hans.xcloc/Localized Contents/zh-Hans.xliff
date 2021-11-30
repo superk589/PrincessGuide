@@ -1414,6 +1414,11 @@
         <target>击退%1$@，距离 %2$d。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Knock %@ away [%@]." xml:space="preserve">
+        <source>Knock %1$@ away [%2$@].</source>
+        <target>击退%1$@，距离 [%2$@]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Knock %@ up %d." xml:space="preserve">
         <source>Knock %1$@ up %2$d.</source>
         <target>击飞%1$@，高度 %2$d。</target>
@@ -1664,84 +1669,19 @@
         <target>杂项</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Modifier: add [%@ * %@ of %@] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * %2$@ of %3$@] to value %4$d of effect %5$d.</source>
-        <target>使效果 %5$d 的数值 %4$d 提高 [%1$@ * %3$@的%2$@]。</target>
+      <trans-unit id="Modifier: add %@ to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: add %1$@ to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 提高 %1$@。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Modifier: add [%@ * (lost HP / total HP) of %@] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * (lost HP / total HP) of %2$@] to value %3$d of effect %4$d.</source>
-        <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * %2$@损失的 HP / 最大 HP]。</target>
+      <trans-unit id="Modifier: divide %@ to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: divide %1$@ to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 除以 %1$@。 </target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Modifier: add [%@ * HP] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * HP] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * HP]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * count of %@ behind self] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * count of %2$@ behind self] to value %3$d of effect %4$d.</source>
-        <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * 身后%2$@的数量]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * count of %@] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * count of %2$@] to value %3$d of effect %4$d.</source>
-        <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * %2$@的个数]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * count of damaged] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * count of damaged] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 伤害到的个数]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * count of defeated enemies] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 击杀个数]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * count of omemes] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * count of omemes] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * オメメ个数] 。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * lost HP] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * lost HP] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 损失的 HP]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * number on counter %d] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * number on counter %2$d] to value %3$d of effect %4$d.</source>
-        <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * 计数器 %2$d 的数值] 。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * stacks of mark(ID: %d)] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * stacks of mark(ID: %2$d)] to value %3$d of effect %4$d.</source>
-        <target>使效果 %4$d 的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: add [%@ * total damage] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: add [%1$@ * total damage] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 的数值 %2$d 提高 [%1$@ * 总伤害]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: multiple [%@ * HP / max HP] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: multiple [%1$@ * HP / max HP] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: multiple [%@ * count of defeated enemies] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: multiple [%1$@ * count of defeated enemies] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 的数值 %2$d 乘以 [%1$@ * 击杀个数]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: multiple [%@ * lost HP / max HP] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: multiple [%1$@ * lost HP / max HP] to value %2$d of effect %3$d.</source>
-        <target>使效果 %3$d 数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
-      <trans-unit id="Modifier: multiple [%@ * stacks of mark(ID: %d)] to value %d of effect %d." xml:space="preserve">
-        <source>Modifier: multiple [%1$@ * stacks of mark(ID: %2$d)] to value %3$d of effect %4$d.</source>
-        <target>使效果 %4$d 的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。</target>
+      <trans-unit id="Modifier: multiple %@ to value %d of effect %d." xml:space="preserve">
+        <source>Modifier: multiple %1$@ to value %2$d of effect %3$d.</source>
+        <target>使效果 %3$d 的数值 %2$d 乘以 %1$@。 </target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Move Part %d, %d forward then return." xml:space="preserve">
@@ -2727,6 +2667,66 @@
       <trans-unit id="You have not bought this product yet." xml:space="preserve">
         <source>You have not bought this product yet.</source>
         <target>您未曾买过本产品。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * %@ of %@]" xml:space="preserve">
+        <source>[%1$@ * %2$@ of %3$@]</source>
+        <target>[%1$@ * %3$@的%2$@]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * (lost HP / total HP) of %@]" xml:space="preserve">
+        <source>[%1$@ * (lost HP / total HP) of %2$@]</source>
+        <target>[%1$@ * %2$@损失的 HP / 最大 HP]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * HP]" xml:space="preserve">
+        <source>[%@ * HP]</source>
+        <target>[%1$@ * HP]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * count of %@ behind self]" xml:space="preserve">
+        <source>[%1$@ * count of %2$@ behind self]</source>
+        <target>[%1$@ * 身后%2$@的数量]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * count of %@]" xml:space="preserve">
+        <source>[%1$@ * count of %2$@]</source>
+        <target>[%1$@ * %2$@的个数]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * count of damaged]" xml:space="preserve">
+        <source>[%@ * count of damaged]</source>
+        <target>[%1$@ * 伤害到的个数]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * count of defeated enemies]" xml:space="preserve">
+        <source>[%@ * count of defeated enemies]</source>
+        <target>[%1$@ * 击杀个数]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * count of omemes]" xml:space="preserve">
+        <source>[%@ * count of omemes]</source>
+        <target>[%1$@ * オメメ个数]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * lost HP]" xml:space="preserve">
+        <source>[%@ * lost HP]</source>
+        <target>[%1$@ * 损失的 HP]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * number on counter %d]" xml:space="preserve">
+        <source>[%1$@ * number on counter %2$d]</source>
+        <target>[%1$@ * 计数器 %2$d 的数值]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * stacks of mark(ID: %d)]" xml:space="preserve">
+        <source>[%1$@ * stacks of mark(ID: %2$d)]</source>
+        <target>[%1$@ * 标记（ID：%2$d）的层数]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="[%@ * total damage]" xml:space="preserve">
+        <source>[%@ * total damage]</source>
+        <target>[%1$@ * 总伤害]</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="all" xml:space="preserve">

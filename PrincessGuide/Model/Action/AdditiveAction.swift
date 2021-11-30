@@ -8,92 +8,9 @@
 
 import Foundation
 
-class AdditiveAction: ActionParameter {
+class AdditiveAction: GiveValueAction {
     
-    override var actionValues: [ActionValue] {
-        return [
-            ActionValue(initial: String(actionValue2), perLevel: String(actionValue3), key: nil, startIndex: 2)
-        ]
+    override var format: String {
+        return NSLocalizedString("Modifier: add %@ to value %d of effect %d.", comment: "")
     }
-    
-    var limitValues: [ActionValue] {
-        return [
-            ActionValue(initial: String(actionValue4), perLevel: String(actionValue5), key: nil, startIndex: 4)
-        ]
-    }
-    
-    var keyType: PropertyKey? {
-        switch actionValue1 {
-        case 7:
-            return .atk
-        case 8:
-            return .magicStr
-        case 9:
-            return .def
-        case 10:
-            return .magicDef
-        default:
-            return nil
-        }
-    }
-    
-    override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        var result = ""
-        switch actionValue1 {
-        case 0:
-            let format = NSLocalizedString("Modifier: add [%@ * HP] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2, actionDetail1 % 10)
-        case 1:
-            let format = NSLocalizedString("Modifier: add [%@ * lost HP] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2, actionDetail1 % 10)
-        case 2:
-            let format = NSLocalizedString("Modifier: add [%@ * count of defeated enemies] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2, actionDetail1 % 10)
-        case 200..<300:
-            let format = NSLocalizedString("Modifier: add [%@ * stacks of mark(ID: %d)] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), Int(actionValue1) % 200, actionDetail2, actionDetail1 % 10)
-        case 4:
-            let format = NSLocalizedString("Modifier: add [%@ * count of %@] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), targetParameter.buildTargetClause(), actionDetail2, actionDetail1 % 10)
-        case 5:
-            let format = NSLocalizedString("Modifier: add [%@ * count of damaged] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2, actionDetail1 % 10)
-        case 6:
-            let format = NSLocalizedString("Modifier: add [%@ * total damage] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2, actionDetail1 % 10)
-        case 7...10:
-            let format = NSLocalizedString("Modifier: add [%@ * %@ of %@] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), keyType?.description ?? NSLocalizedString("unknown property", comment: ""), targetParameter.buildTargetClause(), actionDetail2, actionDetail1 % 10)
-        case 12:
-            let format = NSLocalizedString("Modifier: add [%@ * count of %@ behind self] to value %d of effect %d.", comment: "")
-            result = String(
-                format: format,
-                buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true),
-                targetParameter.buildTargetClause(),
-                actionDetail2,
-                actionDetail1 % 10
-            )
-        case 13:
-            let format = NSLocalizedString("Modifier: add [%@ * (lost HP / total HP) of %@] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), targetParameter.buildTargetClause(), actionDetail2, actionDetail1 % 10)
-        case 102:
-            let format = NSLocalizedString("Modifier: add [%@ * count of omemes] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), actionDetail2, actionDetail1 % 10)
-        case 20..<30:
-            let format = NSLocalizedString("Modifier: add [%@ * number on counter %d] to value %d of effect %d.", comment: "")
-            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), Int(actionValue1) % 10, actionDetail2, actionDetail1 % 10)
-        default:
-            result = super.localizedDetail(of: level, property: property, style: style)
-        }
-        
-        if actionValue4 != 0 || actionValue5 != 0 {
-            let format = NSLocalizedString(" The upper limit of this effect is [%@].", comment: "")
-            result += String(
-                format: format,
-                buildExpression(of: level, actionValues: limitValues, roundingRule: nil, style: style, property: property)
-            )
-        }
-        return result
-    }
-    
 }

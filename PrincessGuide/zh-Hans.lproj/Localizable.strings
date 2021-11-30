@@ -26,6 +26,42 @@
 "(max %d times)" = "（最多 %d 次）";
 
 /* No comment provided by engineer. */
+"[%@ * (lost HP / total HP) of %@]" = "[%1$@ * %2$@损失的 HP / 最大 HP]";
+
+/* No comment provided by engineer. */
+"[%@ * %@ of %@]" = "[%1$@ * %3$@的%2$@]";
+
+/* No comment provided by engineer. */
+"[%@ * count of %@ behind self]" = "[%1$@ * 身后%2$@的数量]";
+
+/* No comment provided by engineer. */
+"[%@ * count of %@]" = "[%1$@ * %2$@的个数]";
+
+/* No comment provided by engineer. */
+"[%@ * count of damaged]" = "[%1$@ * 伤害到的个数]";
+
+/* No comment provided by engineer. */
+"[%@ * count of defeated enemies]" = "[%1$@ * 击杀个数]";
+
+/* No comment provided by engineer. */
+"[%@ * count of omemes]" = "[%1$@ * オメメ个数]";
+
+/* No comment provided by engineer. */
+"[%@ * HP]" = "[%1$@ * HP]";
+
+/* No comment provided by engineer. */
+"[%@ * lost HP]" = "[%1$@ * 损失的 HP]";
+
+/* No comment provided by engineer. */
+"[%@ * number on counter %d]" = "[%1$@ * 计数器 %2$d 的数值]";
+
+/* No comment provided by engineer. */
+"[%@ * stacks of mark(ID: %d)]" = "[%1$@ * 标记（ID：%2$d）的层数]";
+
+/* No comment provided by engineer. */
+"[%@ * total damage]" = "[%1$@ * 总伤害]";
+
+/* No comment provided by engineer. */
 "%@ %@ [%@]%@ %@ during break." = "在 Break 期间，%1$@%2$@ [%3$@]%4$@ %5$@。";
 
 /* No comment provided by engineer. */
@@ -959,6 +995,9 @@
 "Kill %@ instantly." = "对%@释放即死效果。";
 
 /* No comment provided by engineer. */
+"Knock %@ away [%@]." = "击退%1$@，距离 [%2$@]。";
+
+/* No comment provided by engineer. */
 "Knock %@ away %d." = "击退%1$@，距离 %2$d。";
 
 /* No comment provided by engineer. */
@@ -1124,52 +1163,13 @@
 "Misc" = "杂项";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * (lost HP / total HP) of %@] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * %2$@损失的 HP / 最大 HP]。";
+"Modifier: add %@ to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 %1$@。";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * %@ of %@] to value %d of effect %d." = "使效果 %5$d 的数值 %4$d 提高 [%1$@ * %3$@的%2$@]。";
+"Modifier: divide %@ to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 除以 %1$@。 ";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * count of %@ behind self] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * 身后%2$@的数量]。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of %@] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * %2$@的个数]。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 伤害到的个数]。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 击杀个数]。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of omemes] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * オメメ个数] 。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * HP] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * HP]。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * lost HP] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 损失的 HP]。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * number on counter %d] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * 计数器 %2$d 的数值] 。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * stacks of mark(ID: %d)] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 提高 [%1$@ * 标记（ID：%2$d）的层数]。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * total damage] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 提高 [%1$@ * 总伤害]。";
-
-/* No comment provided by engineer. */
-"Modifier: multiple [%@ * count of defeated enemies] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 乘以 [%1$@ * 击杀个数]。";
-
-/* No comment provided by engineer. */
-"Modifier: multiple [%@ * HP / max HP] to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 乘以 [%1$@ * HP / 最大 HP]。";
-
-/* No comment provided by engineer. */
-"Modifier: multiple [%@ * lost HP / max HP] to value %d of effect %d." = "使效果 %3$d 数值 %2$d 乘以 [%1$@ * 损失的 HP / 最大 HP]。";
-
-/* No comment provided by engineer. */
-"Modifier: multiple [%@ * stacks of mark(ID: %d)] to value %d of effect %d." = "使效果 %4$d 的数值 %3$d 乘以 [%1$@ * 标记（ID：%2$d）的层数]。";
+"Modifier: multiple %@ to value %d of effect %d." = "使效果 %3$d 的数值 %2$d 乘以 %1$@。 ";
 
 /* No comment provided by engineer. */
 "Move backward %@ with velocity %@/s." = "向后移动 %1$@，速度 %2$@/秒。";

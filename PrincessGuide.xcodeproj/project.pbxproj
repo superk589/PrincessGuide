@@ -192,6 +192,8 @@
 		12A224482574BBC9001D68DC /* PassiveDamageUpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A224472574BBC9001D68DC /* PassiveDamageUpAction.swift */; };
 		12A6A7D42163B09F00877074 /* DispelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A6A7D32163B09F00877074 /* DispelAction.swift */; };
 		12A776902153E59E00972187 /* EDSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A7768F2153E59E00972187 /* EDSettingsViewController.swift */; };
+		12AB06382755EF3F003C367F /* GiveValueAsDivideAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB06372755EF3F003C367F /* GiveValueAsDivideAction.swift */; };
+		12AB063A2755F08C003C367F /* GiveValueAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB06392755F08C003C367F /* GiveValueAction.swift */; };
 		12AC4539259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC4538259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift */; };
 		12AC453D2599677700A08817 /* ClanBattleEnemyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC453C2599677700A08817 /* ClanBattleEnemyView.swift */; };
 		12B00D2E231F4C9E0086B079 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2D231F4C9E0086B079 /* FilterType.swift */; };
@@ -538,6 +540,8 @@
 		12A224472574BBC9001D68DC /* PassiveDamageUpAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveDamageUpAction.swift; sourceTree = "<group>"; };
 		12A6A7D32163B09F00877074 /* DispelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispelAction.swift; sourceTree = "<group>"; };
 		12A7768F2153E59E00972187 /* EDSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSettingsViewController.swift; sourceTree = "<group>"; };
+		12AB06372755EF3F003C367F /* GiveValueAsDivideAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveValueAsDivideAction.swift; sourceTree = "<group>"; };
+		12AB06392755F08C003C367F /* GiveValueAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveValueAction.swift; sourceTree = "<group>"; };
 		12AC4538259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBattleEnemyTableViewCell.swift; sourceTree = "<group>"; };
 		12AC453C2599677700A08817 /* ClanBattleEnemyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBattleEnemyView.swift; sourceTree = "<group>"; };
 		12B00D2D231F4C9E0086B079 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
@@ -1372,6 +1376,7 @@
 				12F125FC20B952EB005C9659 /* IfForChildrenAction.swift */,
 				12F125FE20B95315005C9659 /* RevivalAction.swift */,
 				12F1260020B95345005C9659 /* ContinuousAttackAction.swift */,
+				12AB06392755F08C003C367F /* GiveValueAction.swift */,
 				12F1260220B9536C005C9659 /* AdditiveAction.swift */,
 				12F1260420B95377005C9659 /* MultipleAction.swift */,
 				12F1260620B9539D005C9659 /* IfForAllAction.swift */,
@@ -1422,6 +1427,7 @@
 				12B91121254D3DD000EE0FC0 /* HealDownAction.swift */,
 				1256546A2664AD8A00B8930D /* DamageByBehaviorAction.swift */,
 				12450C1B271E8E080083C27A /* ChangeSpeedOverlapAction.swift */,
+				12AB06372755EF3F003C367F /* GiveValueAsDivideAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1717,6 +1723,7 @@
 				129A7F56209FE8D400D93996 /* ProfileItemView.swift in Sources */,
 				129A7F5820A0249600D93996 /* Property.swift in Sources */,
 				1280DE3F20A5C5A5008D9D72 /* QuestNameTableViewCell.swift in Sources */,
+				12AB063A2755F08C003C367F /* GiveValueAction.swift in Sources */,
 				129A7F8F20A31D1600D93996 /* QuestEnemyTableViewCell.swift in Sources */,
 				120E487922FED13700035566 /* UIImage+Background.swift in Sources */,
 				125B663320EFB5D600D15E75 /* Chara.swift in Sources */,
@@ -1792,6 +1799,7 @@
 				123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */,
 				120F9B8320E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				123608E7209322EB003E7D11 /* DataChecking.swift in Sources */,
+				12AB06382755EF3F003C367F /* GiveValueAsDivideAction.swift in Sources */,
 				126DECF2209EDC0E004EC56A /* QuestAreaTabViewController.swift in Sources */,
 				12DC963520EDC366008896D7 /* BatchEditViewController.swift in Sources */,
 				12F1260720B9539D005C9659 /* IfForAllAction.swift in Sources */,
@@ -2213,7 +2221,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 214;
+				CURRENT_PROJECT_VERSION = 215;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2238,7 +2246,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 214;
+				CURRENT_PROJECT_VERSION = 215;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

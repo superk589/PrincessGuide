@@ -1106,51 +1106,6 @@
 "Misc" = "その他";
 
 /* No comment provided by engineer. */
-"Modifier: add [%@ * %@ of %@] to value %d of effect %d." = "[アクション%5$d]の変数%4$dを[%1$@ * %3$@の%2$@]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of %@ behind self] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * 後ろの%2$@の数]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of %@] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * %2$@の数]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of damaged] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * ダメージを与えられた対象の数]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of defeated enemies] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * 倒した敵の数]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * count of omemes] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * オメメちゃんの数]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * HP] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * HP]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * lost HP] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * 損失したHP]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * number on counter %d] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * カウンター%2$dの数]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * stacks of mark(ID: %d)] to value %d of effect %d." = "[アクション%4$d]の変数%3$dを[%1$@ * マーク[ID：%2$d]のスタック数]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: add [%@ * total damage] to value %d of effect %d." = "[アクション%3$d]の変数%2$dを[%1$@ * ダメージ量]アップさせる。";
-
-/* No comment provided by engineer. */
-"Modifier: multiple [%@ * count of defeated enemies] to value %d of effect %d." = "[アクション%3$d]の変数%2$dに[%1$@ * 倒した敵の数]を乗じる。";
-
-/* No comment provided by engineer. */
-"Modifier: multiple [%@ * HP / max HP] to value %d of effect %d." = "[アクション%3$d]の変数%2$dに[%1$@ * HP / MaxHP]を乗じる。";
-
-/* No comment provided by engineer. */
-"Modifier: multiple [%@ * lost HP / max HP] to value %d of effect %d." = "[アクション%3$d]の変数%2$dに[%1$@ * 損失したHP / MaxHP]を乗じる。";
-
-/* No comment provided by engineer. */
-"Modifier: multiple [%@ * stacks of mark(ID: %d)] to value %d of effect %d." = "[アクション%4$d]の変数%3$dに[%1$@ * マーク[ID：%2$d]のスタック数]を乗じる。";
-
-/* No comment provided by engineer. */
 "Move backward %@ with velocity %@/s." = "[%2$@]の速度で後ろへ[%1$@]移動する。";
 
 /* No comment provided by engineer. */
