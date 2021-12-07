@@ -635,6 +635,9 @@
 "cursed" = "诅咒";
 
 /* No comment provided by engineer. */
+"cursed or hexed" = "诅咒或恶咒";
+
+/* No comment provided by engineer. */
 "Custom Tag" = "自定义标签";
 
 /* No comment provided by engineer. */
@@ -933,6 +936,9 @@
 
 /* No comment provided by engineer. */
 "Hex" = "恶咒";
+
+/* No comment provided by engineer. */
+"hexed" = "恶咒";
 
 /* icon style */
 "highest rarity" = "最高稀有度";

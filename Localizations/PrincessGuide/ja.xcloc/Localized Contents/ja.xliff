@@ -2850,6 +2850,10 @@
         <target>呪われた</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="cursed or hexed" xml:space="preserve">
+        <source>cursed or hexed</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="damaged by effect %d" xml:space="preserve">
         <source>damaged by effect %d</source>
         <target>[アクション%d]にダメージを与えられた対象</target>
@@ -2939,6 +2943,10 @@
         <source>full</source>
         <target>詳細</target>
         <note>expression style</note>
+      </trans-unit>
+      <trans-unit id="hexed" xml:space="preserve">
+        <source>hexed</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="highest rarity" xml:space="preserve">
         <source>highest rarity</source>

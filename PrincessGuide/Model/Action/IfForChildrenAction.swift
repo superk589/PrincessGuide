@@ -17,6 +17,8 @@ enum IfType: Int, CustomStringConvertible {
     case curse
     case poison
     case venom
+    case hex
+    case curseOrHex = 511
     case poisonOrVenon = 512
     case `break` = 710
     case polymorph = 1400
@@ -45,6 +47,10 @@ enum IfType: Int, CustomStringConvertible {
             return NSLocalizedString("transformed", comment: "")
         case .break:
             return NSLocalizedString("breaking", comment: "")
+        case .hex:
+            return NSLocalizedString("hexed", comment: "")
+        case .curseOrHex:
+            return NSLocalizedString("cursed or hexed", comment: "")
         }
     }
 }
@@ -127,7 +133,7 @@ class IfForChildrenAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         switch actionDetail1 {
-        case 100, 101, 102, 200, 300, 500, 501, 502, 503, 512, 600..<900, 901..<1000, 1300, 1400, 6000..<7000:
+        case 100, 101, 102, 200, 300, 500, 501, 502, 503, 504, 511, 512, 600..<900, 901..<1000, 1300, 1400, 6000..<7000:
             let format = NSLocalizedString("Condition: %@.", comment: "")
             return String(format: format, [trueClause, falseClause].compactMap { $0 }.joined(separator: NSLocalizedString(", ", comment: "clause separator")))
         case 0..<100:

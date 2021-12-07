@@ -2874,6 +2874,11 @@
         <target>诅咒</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="cursed or hexed" xml:space="preserve">
+        <source>cursed or hexed</source>
+        <target>诅咒或恶咒</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="damaged by effect %d" xml:space="preserve">
         <source>damaged by effect %d</source>
         <target>被效果 %d 伤害到的</target>
@@ -2963,6 +2968,11 @@
         <source>full</source>
         <target>完整</target>
         <note>expression style</note>
+      </trans-unit>
+      <trans-unit id="hexed" xml:space="preserve">
+        <source>hexed</source>
+        <target>恶咒</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="highest rarity" xml:space="preserve">
         <source>highest rarity</source>
