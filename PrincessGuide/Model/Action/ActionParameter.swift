@@ -159,6 +159,8 @@ class ActionParameter {
             return ChangeEnergyRatioAction.self
         case 93:
             return IgnoreDecoyAction.self
+        case 94:
+            return EffectAction.self
         default:
             return ActionParameter.self
         }
@@ -596,4 +598,5 @@ enum ActionType: Int {
     case exPlus
     case energyRatio
     case ignoreDecoy
+    case effect
 }

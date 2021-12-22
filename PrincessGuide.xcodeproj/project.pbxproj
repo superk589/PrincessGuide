@@ -174,6 +174,7 @@
 		128DA49721B4D54A00F7C006 /* CraftCharaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128DA49621B4D54A00F7C006 /* CraftCharaTableViewCell.swift */; };
 		12901E9920BE859C00697053 /* CardSortingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12901E9820BE859C00697053 /* CardSortingViewController.swift */; };
 		12936B312176CEA000B9531F /* EurekaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12936B302176CEA000B9531F /* EurekaHelper.swift */; };
+		12950C8A2772EE2100FDDC3C /* EffectAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12950C892772EE2100FDDC3C /* EffectAction.swift */; };
 		12973CED20EBA7DC00C83089 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12973CEC20EBA7DC00C83089 /* ImageCell.swift */; };
 		12973CEF20EBBAC500C83089 /* CharaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12973CEE20EBBAC500C83089 /* CharaView.swift */; };
 		129A7F54209FE7A800D93996 /* CDProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */; };
@@ -520,6 +521,7 @@
 		128DA49621B4D54A00F7C006 /* CraftCharaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftCharaTableViewCell.swift; sourceTree = "<group>"; };
 		12901E9820BE859C00697053 /* CardSortingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortingViewController.swift; sourceTree = "<group>"; };
 		12936B302176CEA000B9531F /* EurekaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaHelper.swift; sourceTree = "<group>"; };
+		12950C892772EE2100FDDC3C /* EffectAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectAction.swift; sourceTree = "<group>"; };
 		12973CEC20EBA7DC00C83089 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		12973CEE20EBBAC500C83089 /* CharaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaView.swift; sourceTree = "<group>"; };
 		129A7F53209FE7A800D93996 /* CDProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -1428,6 +1430,7 @@
 				1256546A2664AD8A00B8930D /* DamageByBehaviorAction.swift */,
 				12450C1B271E8E080083C27A /* ChangeSpeedOverlapAction.swift */,
 				12AB06372755EF3F003C367F /* GiveValueAsDivideAction.swift */,
+				12950C892772EE2100FDDC3C /* EffectAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1750,6 +1753,7 @@
 				12F1260920B953BD005C9659 /* SearchAreaChangeAction.swift in Sources */,
 				12AC453D2599677700A08817 /* ClanBattleEnemyView.swift in Sources */,
 				12F1261920B95509005C9659 /* HealFieldAction.swift in Sources */,
+				12950C8A2772EE2100FDDC3C /* EffectAction.swift in Sources */,
 				126DECF6209EEEB4004EC56A /* CDTabViewController.swift in Sources */,
 				120BCAF420F2564B0029A083 /* ArrayExtension.swift in Sources */,
 				12F1262B20B9561B005C9659 /* RatioDamageAction.swift in Sources */,
