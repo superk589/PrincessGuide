@@ -14,6 +14,11 @@ class DamageAction: ActionParameter {
         return ClassModifier(rawValue: actionDetail1) ?? .unknown
     }
     
+    enum DecideTargetAtkType: Int {
+        case bySource
+        case lowerDef
+    }
+    
     override var actionValues: [ActionValue] {
         switch damageClass {
         case .magical:
@@ -55,6 +60,16 @@ class DamageAction: ActionParameter {
         if actionValue6 != 0 {
             let format = NSLocalizedString(" Critical damage is %@ times as normal damage.", comment: "")
             string.append(String(format: format, (2 * actionValue6).roundedString(roundingRule: nil)))
+        }
+        
+        if let type = DecideTargetAtkType(rawValue: actionDetail2) {
+            switch type {
+            case .lowerDef:
+                let format = NSLocalizedString(" This damage is calculated by selecting the lower DEF type of the target.", comment: "")
+                string.append(String(format: format, (2 * actionValue6).roundedString(roundingRule: nil)))
+            default:
+                break
+            }
         }
         
         return string

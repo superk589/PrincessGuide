@@ -53,6 +53,9 @@ class GiveValueAction: ActionParameter {
         case 2:
             let format = NSLocalizedString("[%@ * count of defeated enemies]", comment: "")
             result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true))
+        case 2000..<3000:
+            let format = NSLocalizedString("[%@ * stacks of mark(ID: %d)]", comment: "")
+            result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), Int(actionValue1) % 2000)
         case 200..<300:
             let format = NSLocalizedString("[%@ * stacks of mark(ID: %d)]", comment: "")
             result = String(format: format, buildExpression(of: level, roundingRule: nil, style: style, property: property, hasBracesIfNeeded: true), Int(actionValue1) % 200)

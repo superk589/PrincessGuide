@@ -89,6 +89,10 @@
         <target>このシールドは%@回まで使用できる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id=" This damage is calculated by selecting the lower DEF type of the target." xml:space="preserve">
+        <source> This damage is calculated by selecting the lower DEF type of the target.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id=" This effect increases [%@]%% of base damage each tick." xml:space="preserve">
         <source> This effect increases [%@]%% of base damage each tick.</source>
         <note>No comment provided by engineer.</note>

@@ -11,6 +11,9 @@
 " This barrier takes effect for %@ times." = "这个护盾可生效 %@ 次。";
 
 /* No comment provided by engineer. */
+" This damage is calculated by selecting the lower DEF type of the target." = "这个伤害会选取目标数值较低的防御类型进行结算。";
+
+/* No comment provided by engineer. */
 " This effect increases [%@]%% of base damage each tick." = "这个效果每跳提高基础伤害的 [%@]%%。";
 
 /* No comment provided by engineer. */
