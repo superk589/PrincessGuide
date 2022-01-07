@@ -169,7 +169,7 @@ class SettingsViewController: FormViewController {
     }
     
     @objc private func showAckListViewController() {
-        let vc = ThirdPartyLibrariesViewController()
+        let vc = AcknowListViewController()
         vc.navigationItem.title = NSLocalizedString("Third-Party Licenses", comment: "")
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)

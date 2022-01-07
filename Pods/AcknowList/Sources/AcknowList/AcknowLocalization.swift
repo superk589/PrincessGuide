@@ -1,7 +1,7 @@
 //
 // AcknowLocalization.swift
 //
-// Copyright (c) 2015-2020 Vincent Tourraine (https://www.vtourraine.net)
+// Copyright (c) 2015-2021 Vincent Tourraine (https://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -37,12 +37,26 @@ open class AcknowLocalization {
     }
 
     /**
-     Returns the user’s preferred language.
+     Returns the resources bundle (for localizations).
 
-     - returns: The preferred language ID.
+     - returns: The resources bundle.
      */
-    class func preferredLanguageCode() -> String? {
-        return Locale.preferredLanguages.first
+    class func resourcesBundle() -> Bundle? {
+        #if SWIFT_PACKAGE
+        // Preprocessor definition documented here:
+        // https://github.com/apple/swift-package-manager/blob/main/Documentation/Usage.md#packaging-legacy-code
+        return Bundle.module
+        #else
+        let rootBundle = Bundle(for: AcknowLocalization.self)
+
+        let CocoaPodsBundleName = "AcknowListBundle"
+        if let bundlePath = rootBundle.path(forResource: CocoaPodsBundleName, ofType: "bundle") {
+            return Bundle(path: bundlePath)
+        }
+        else {
+            return rootBundle
+        }
+        #endif
     }
 
     /**
@@ -54,44 +68,12 @@ open class AcknowLocalization {
      - returns: The localized string.
      */
     class func localizedString(forKey key: String, defaultString: String) -> String {
-        var bundlePath = Bundle(for: AcknowListViewController.self).path(forResource: "AcknowList", ofType: "bundle")
-        let languageBundle: Bundle
-
-        if let currentBundlePath = bundlePath {
-            let bundle = Bundle(path: currentBundlePath)
-            var language = "en"
-
-            if let firstLanguage = preferredLanguageCode() {
-                language = firstLanguage
-            }
-
-            if let bundle = bundle {
-                let localizations = bundle.localizations
-                if localizations.contains(language) == false {
-                    language = language.components(separatedBy: "-").first!
-                }
-
-                if localizations.contains(language) {
-                    bundlePath = bundle.path(forResource: language, ofType: "lproj")
-                }
-            }
-        }
-
-        if let bundlePath = bundlePath {
-            let bundleWithPath = Bundle(path: bundlePath)
-            if let bundleWithPath = bundleWithPath {
-                languageBundle = bundleWithPath
-            }
-            else {
-                languageBundle = Bundle.main
-            }
+        if let bundle = resourcesBundle() {
+            return bundle.localizedString(forKey: key, value: defaultString, table: nil)
         }
         else {
-            languageBundle = Bundle.main
+            return defaultString
         }
-
-        let localizedDefaultString = languageBundle.localizedString(forKey: key, value:defaultString, table:nil)
-        return Bundle.main.localizedString(forKey: key, value:localizedDefaultString, table:nil)
     }
 
     /**

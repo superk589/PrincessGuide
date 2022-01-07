@@ -141,7 +141,6 @@
 		126BFBD320F0FC420059B4ED /* BDEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126BFBD220F0FC420059B4ED /* BDEquipmentViewController.swift */; };
 		126BFBD520F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126BFBD420F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift */; };
 		126DECDC209DD78E004EC56A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECDB209DD78D004EC56A /* Theme.swift */; };
-		126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECDE209E0733004EC56A /* ThirdPartyLibrariesViewController.swift */; };
 		126DECE1209E0B2C004EC56A /* CustomAcknowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECE0209E0B2C004EC56A /* CustomAcknowViewController.swift */; };
 		126DECF2209EDC0E004EC56A /* QuestAreaTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECF1209EDC0E004EC56A /* QuestAreaTabViewController.swift */; };
 		126DECF6209EEEB4004EC56A /* CDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126DECF5209EEEB4004EC56A /* CDTabViewController.swift */; };
@@ -482,7 +481,6 @@
 		126BFBD220F0FC420059B4ED /* BDEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDEquipmentViewController.swift; sourceTree = "<group>"; };
 		126BFBD420F11AFB0059B4ED /* BatchEditCharaInBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchEditCharaInBoxViewController.swift; sourceTree = "<group>"; };
 		126DECDB209DD78D004EC56A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		126DECDE209E0733004EC56A /* ThirdPartyLibrariesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyLibrariesViewController.swift; sourceTree = "<group>"; };
 		126DECE0209E0B2C004EC56A /* CustomAcknowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAcknowViewController.swift; sourceTree = "<group>"; };
 		126DECF1209EDC0E004EC56A /* QuestAreaTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAreaTabViewController.swift; sourceTree = "<group>"; };
 		126DECF5209EEEB4004EC56A /* CDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTabViewController.swift; sourceTree = "<group>"; };
@@ -986,7 +984,6 @@
 			isa = PBXGroup;
 			children = (
 				12398E9020917EC2006AC352 /* SettingsViewController.swift */,
-				126DECDE209E0733004EC56A /* ThirdPartyLibrariesViewController.swift */,
 				126DECE0209E0B2C004EC56A /* CustomAcknowViewController.swift */,
 				122071ED20F9F57000554030 /* BuyProEditionViewController.swift */,
 			);
@@ -1780,7 +1777,6 @@
 				128DA48021B24D7B00F7C006 /* ChannelAction.swift in Sources */,
 				128DA48221B25E3900F7C006 /* Minion.swift in Sources */,
 				125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */,
-				126DECDF209E0733004EC56A /* ThirdPartyLibrariesViewController.swift in Sources */,
 				123AA276232A40B900226AFF /* BoxCoverSelectionViewController.swift in Sources */,
 				120F9B7C20E62592003632CA /* EditCharaViewController.swift in Sources */,
 				12F1262520B955BC005C9659 /* IfHasTargetAction.swift in Sources */,

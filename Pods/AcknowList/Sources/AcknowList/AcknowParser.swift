@@ -1,7 +1,7 @@
 //
 // AcknowParser.swift
 //
-// Copyright (c) 2015-2020 Vincent Tourraine (https://www.vtourraine.net)
+// Copyright (c) 2015-2021 Vincent Tourraine (https://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -128,5 +128,23 @@ open class AcknowParser {
         //    (?=.)   Positive lookahead matching any non-newline character (matches but does not capture)
         let singleNewLineFinder = try! NSRegularExpression(pattern: "(?<=.)(\\h)*(\\R)(\\h)*(?=.)")
         return singleNewLineFinder.stringByReplacingMatches(in: text, range: NSRange(0..<text.count), withTemplate: " ")
+    }
+
+    /**
+     Finds the first link (URL) in a given string.
+
+     @param text The string to parse.
+
+     @return The first link found, or `nil` if no link can be found.
+     */
+    class func firstLink(in text: String) -> URL? {
+        let types: NSTextCheckingResult.CheckingType = [.link]
+
+        guard let linkDetector = try? NSDataDetector(types: types.rawValue),
+            let firstLink = linkDetector.firstMatch(in: text, options: [], range: NSMakeRange(0, text.count)) else {
+                return nil
+        }
+
+        return firstLink.url
     }
 }

@@ -1,7 +1,7 @@
 //
 // AcknowViewController.swift
 //
-// Copyright (c) 2015-2020 Vincent Tourraine (https://www.vtourraine.net)
+// Copyright (c) 2015-2021 Vincent Tourraine (https://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -55,21 +55,20 @@ open class AcknowViewController: UIViewController {
      */
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.acknowledgement = Acknow(title: "", text: "", license: nil)
     }
 
     // MARK: - View lifecycle
 
-    let TopBottomDefaultMargin: CGFloat = 20
-    let LeftRightDefaultMargin: CGFloat = 10
+    let DefaultMarginTopBottom: CGFloat = 20
+    let DefaultMarginLeftRight: CGFloat = 10
 
-    /// Called after the controller's view is loaded into memory.
+    /// Called after the controller's view is loaded into memory.
     open override func viewDidLoad() {
         super.viewDidLoad()
 
         let textView = UITextView(frame: view.bounds)
         textView.alwaysBounceVertical = true
-        textView.font = UIFont.preferredFont(forTextStyle: .body)
+        textView.font = .preferredFont(forTextStyle: .body)
         textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         #if os(iOS)
             textView.isEditable = false
@@ -78,7 +77,7 @@ open class AcknowViewController: UIViewController {
             textView.isUserInteractionEnabled = true
             textView.panGestureRecognizer.allowedTouchTypes = [NSNumber(value: UITouch.TouchType.indirect.rawValue)]
         #endif
-        textView.textContainerInset = UIEdgeInsets.init(top: TopBottomDefaultMargin, left: LeftRightDefaultMargin, bottom: TopBottomDefaultMargin, right: LeftRightDefaultMargin)
+        textView.textContainerInset = UIEdgeInsets(top: DefaultMarginTopBottom, left: DefaultMarginLeftRight, bottom: DefaultMarginTopBottom, right: DefaultMarginLeftRight)
         view.addSubview(textView)
 
         self.textView = textView
@@ -93,7 +92,7 @@ open class AcknowViewController: UIViewController {
         }
 
         // Need to set the textView text after the layout is completed, so that the content inset and offset properties can be adjusted automatically.
-        if let acknowledgement = self.acknowledgement {
+        if let acknowledgement = acknowledgement {
             textView?.text = acknowledgement.text
         }
     }
@@ -107,6 +106,6 @@ open class AcknowViewController: UIViewController {
     }
 
     func updateTextViewInsets(_ textView: UITextView) {
-        textView.textContainerInset = UIEdgeInsets.init(top: TopBottomDefaultMargin, left: view.layoutMargins.left, bottom: TopBottomDefaultMargin, right: view.layoutMargins.right);
+        textView.textContainerInset = UIEdgeInsets(top: DefaultMarginTopBottom, left: view.layoutMargins.left, bottom: DefaultMarginTopBottom, right: view.layoutMargins.right)
     }
 }
