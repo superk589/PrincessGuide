@@ -366,9 +366,11 @@ class Master: FMDatabaseQueue {
                     }
                 }
                 
-                if let base = try? decoder.decode(Card.Base.self, from: json.rawData()) {
+                do {
+                    let base = try decoder.decode(Card.Base.self, from: json.rawData())
                     minion = Minion(base: base, rarities: rarities)
-                    break
+                } catch {
+                    print(error)
                 }
             }
         }) {
