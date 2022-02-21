@@ -2929,6 +2929,11 @@
         <target>只显示进化后</target>
         <note>skill style</note>
       </trans-unit>
+      <trans-unit id="feared" xml:space="preserve">
+        <source>feared</source>
+        <target>恐慌</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="fifth" xml:space="preserve">
         <source>fifth</source>
         <target>第五</target>

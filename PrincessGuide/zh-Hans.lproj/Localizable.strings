@@ -851,6 +851,9 @@
 "Fear %@ with [%@]%% chance for [%@]s." = "[%2$@]%% 几率使%1$@恐慌，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
+"feared" = "恐慌";
+
+/* No comment provided by engineer. */
 "Feedback" = "反馈";
 
 /* No comment provided by engineer. */

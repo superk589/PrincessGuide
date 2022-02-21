@@ -27,7 +27,8 @@ struct Constant {
         4: 200,
         5: 200,
         6: 200,
-        7: 200
+        7: 200,
+        8: 200
     ]
     static let presetNeededToLevelUpSkillCount = 4
 }

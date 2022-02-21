@@ -2902,6 +2902,10 @@
         <target>進化のみ</target>
         <note>skill style</note>
       </trans-unit>
+      <trans-unit id="feared" xml:space="preserve">
+        <source>feared</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="fifth" xml:space="preserve">
         <source>fifth</source>
         <target>5番目</target>
