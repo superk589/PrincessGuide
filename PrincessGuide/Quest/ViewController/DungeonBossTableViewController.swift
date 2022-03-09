@@ -86,7 +86,7 @@ class DungeonBossTableViewController: UITableViewController, DataChecking {
          */
         
         if let enemy = dungeon.waves.first?.enemies.first?.enemy {
-            if enemy.parts.count > 0 {
+            if enemy.parts.count > 0 || dungeon.waves.count > 0 {
                 let vc = QuestEnemyTableViewController(waves: dungeon.waves)
                 vc.hidesBottomBarWhenPushed = true
                 vc.navigationItem.title = enemy.unit.unitName
