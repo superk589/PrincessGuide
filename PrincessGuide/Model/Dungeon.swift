@@ -8,7 +8,13 @@
 
 import Foundation
 
-class Dungeon: Codable {
+protocol Dungeon {
+    var dungeonAreaId: Int { get }
+    var dungeonName: String { get }
+    var waves: [Wave] { get }
+}
+
+class NormalDungeon: Dungeon, Codable {
     let waveGroupId: Int
     let dungeonAreaId: Int
     let dungeonName: String
@@ -22,4 +28,26 @@ class Dungeon: Codable {
     lazy var wave: Wave? = DispatchSemaphore.sync { (closure) in
         Master.shared.getWaves(waveIDs: [waveGroupId], callback: closure)
     }?.first
+    
+    var waves: [Wave] {
+        [wave].compactMap { $0 }
+    }
+}
+
+class SpecialDungeon: Dungeon, Codable {
+    
+    let waveGroupIds: String
+    let dungeonAreaId: Int
+    let dungeonName: String
+    
+    init(waveGroupIds: String, dungeonAreaId: Int, dungeonName: String) {
+        self.waveGroupIds = waveGroupIds
+        self.dungeonAreaId = dungeonAreaId
+        self.dungeonName = dungeonName
+    }
+    
+    lazy var waves: [Wave] = DispatchSemaphore.sync { (closure) in
+        Master.shared.getWaves(waveIDs: Array(waveGroupIds.split(separator: ",")).compactMap { Int($0) }, callback: closure)
+    } ?? []
+    
 }

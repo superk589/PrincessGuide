@@ -2405,6 +2405,10 @@
         <target>自分がバフを受けるたび、マーク[ID：%1$@]を1スタック増やせる、バフ時間[%3$@]秒、効果時間[%4$@]秒、この効果は最大[%2$@]までスタックできる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a hit, this effect lasts for [%@]s." xml:space="preserve">
+        <source>The caster gain a mark(ID: %1$@, max stacks %2$@, lasts for [%3$@]s) each time receives a hit, this effect lasts for [%4$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="There aren't any Mail accounts" xml:space="preserve">
         <source>There aren't any Mail accounts</source>
         <target>メールアカウントを見つかりませんでした。</target>
@@ -2887,6 +2891,10 @@
         <target>守</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="down" xml:space="preserve">
+        <source>down</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="dungeon" xml:space="preserve">
         <source>dungeon</source>
         <target>ダンジョン</target>
@@ -3360,6 +3368,10 @@
         <target>不明な種類</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="up" xml:space="preserve">
+        <source>up</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d after break" xml:space="preserve">
         <source>use %d after break</source>
         <target>効果が中断された後、[アクション%d]を使う</target>
@@ -3385,6 +3397,10 @@
         <target>%2$@が独りの場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if %@ is in state of %@ %@" xml:space="preserve">
+        <source>use %1$d if %2$@ is in state of %3$@ %4$@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if %@ is in state of ID: %d" xml:space="preserve">
         <source>use %1$d if %2$@ is in state of ID: %3$d</source>
         <target>%2$@がマーク[ID：%3$d]を持っている場合、[アクション%1$d]を使う</target>
@@ -3398,6 +3414,10 @@
       <trans-unit id="use %d if %@ is not alone" xml:space="preserve">
         <source>use %1$d if %2$@ is not alone</source>
         <target>%2$@が独りでない場合、[アクション%1$d]を使う</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is not in state of %@ %@" xml:space="preserve">
+        <source>use %1$d if %2$@ is not in state of %3$@ %4$@</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is not in state of ID: %d" xml:space="preserve">

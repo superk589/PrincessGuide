@@ -722,6 +722,9 @@
 "Dot" = "Dot";
 
 /* No comment provided by engineer. */
+"down" = "下降";
+
+/* No comment provided by engineer. */
 "Draw %@ to %d in front of self." = "将%1$@拉至自身前方 %2$d。";
 
 /* No comment provided by engineer. */
@@ -1759,6 +1762,9 @@
 /* No comment provided by engineer. */
 "The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s." = "施法者每次获得 buff 时就增加一层标记（ID：%1$@，最大层数 %2$@，持续 [%3$@] 秒），这个效果持续 [%4$@] 秒。";
 
+/* No comment provided by engineer. */
+"The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a hit, this effect lasts for [%@]s." = "施法者每次受到 Hit 时就增加一层标记（ID：%1$@，最大层数 %2$@，持续 [%3$@] 秒），这个效果持续 [%4$@] 秒。";
+
 /* target type */
 "the farthest" = "最远的";
 
@@ -1937,6 +1943,9 @@
 "unknown type" = "未知";
 
 /* No comment provided by engineer. */
+"up" = "上升";
+
+/* No comment provided by engineer. */
 "Up to date!" = "已经是最新版本";
 
 /* No comment provided by engineer. */
@@ -1958,6 +1967,9 @@
 "use %d if %@ is alone" = "如果%2$@是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d if %@ is in state of %@ %@" = "如果%2$@处于%3$@%4$@状态则使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d if %@ is in state of ID: %d" = "如果%2$@拥有标记（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
@@ -1965,6 +1977,9 @@
 
 /* No comment provided by engineer. */
 "use %d if %@ is not alone" = "如果%2$@不是单独的则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d if %@ is not in state of %@ %@" = "如果%2$@未处于%3$@%4$@状态则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d if %@ is not in state of ID: %d" = "如果%2$@没有标记（ID：%3$d）则使用 %1$d";

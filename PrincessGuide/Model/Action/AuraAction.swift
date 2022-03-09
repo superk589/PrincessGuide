@@ -116,6 +116,15 @@ class AuraAction: ActionParameter {
             }
         }
         
+        var passiveDescription: String {
+            switch self {
+            case .raise:
+                return NSLocalizedString("up", comment: "")
+            case .reduce:
+                return NSLocalizedString("down", comment: "")
+            }
+        }
+        
         init(_ value: Int) {
             if value % 10 == 1 {
                 self = .reduce

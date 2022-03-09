@@ -1387,7 +1387,27 @@ class Master: FMDatabaseQueue {
                 let json = JSON(set.resultDictionary ?? [:])
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let dungeon = try decoder.decode(Dungeon.self, from: json.rawData())
+                let dungeon = try decoder.decode(NormalDungeon.self, from: json.rawData())
+                dungeons.append(dungeon)
+            }
+            
+            let sql2 = """
+            SELECT
+                a.dungeon_area_id,
+                group_concat(b.wave_group_id) as wave_group_ids,
+                a.dungeon_name
+            FROM
+                dungeon_special_battle b
+            LEFT JOIN dungeon_area a ON b.quest_id LIKE a.dungeon_area_id || "%"
+            GROUP BY
+                dungeon_area_id
+            """
+            let set2 = try db.executeQuery(sql2, values: nil)
+            while set2.next() {
+                let json = JSON(set2.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let dungeon = try decoder.decode(SpecialDungeon.self, from: json.rawData())
                 dungeons.append(dungeon)
             }
         }) {

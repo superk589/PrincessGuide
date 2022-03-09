@@ -42,7 +42,7 @@ class DungeonBossTableViewController: UITableViewController, DataChecking {
             Master.shared.getDungeons { (dungeons) in
                 // preload
                 DispatchQueue.global(qos: .userInitiated).async {
-                    dungeons.forEach { _ = $0.wave?.enemies.first?.enemy }
+                    dungeons.forEach { $0.waves.forEach { _ = $0.enemies.first?.enemy } }
                     DispatchQueue.main.async {
                         LoadingHUDManager.default.hide()
                         self?.dungeons = dungeons.sorted { $0.dungeonAreaId > $1.dungeonAreaId }
@@ -64,7 +64,7 @@ class DungeonBossTableViewController: UITableViewController, DataChecking {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let dungeon = dungeons[indexPath.row]
-        let unit = dungeon.wave?.enemies.first?.enemy?.unit
+        let unit = dungeon.waves.first?.enemies.first?.enemy?.unit
         cell.configure(for: "\(unit?.unitName ?? "")", subtitle: dungeon.dungeonName, unitID: unit?.prefabId)
         return cell
     }
@@ -85,9 +85,9 @@ class DungeonBossTableViewController: UITableViewController, DataChecking {
         }
          */
         
-        if let enemy = dungeon.wave?.enemies.first?.enemy {
+        if let enemy = dungeon.waves.first?.enemies.first?.enemy {
             if enemy.parts.count > 0 {
-                let vc = QuestEnemyTableViewController(waves: [dungeon.wave!])
+                let vc = QuestEnemyTableViewController(waves: dungeon.waves)
                 vc.hidesBottomBarWhenPushed = true
                 vc.navigationItem.title = enemy.unit.unitName
                 navigationController?.pushViewController(vc, animated: true)

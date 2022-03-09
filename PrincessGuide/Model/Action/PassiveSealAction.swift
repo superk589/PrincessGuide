@@ -13,6 +13,7 @@ class PassiveSealAction: ActionParameter {
     enum Timing: Int {
         case unknown = 0
         case buff = 1
+        case damaged
     }
     
     enum TargetType: Int {
@@ -45,6 +46,15 @@ class PassiveSealAction: ActionParameter {
         switch (timing, targetType) {
         case (.buff, .source):
             let format = NSLocalizedString("The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a buff, this effect lasts for [%@]s.", comment: "")
+            return String(
+                format: format,
+                actionValue2.roundedString(roundingRule: nil),
+                actionValue1.roundedString(roundingRule: nil),
+                buildExpression(of: level, actionValues: markDurationValues, roundingRule: nil, style: style, property: property),
+                buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+            )
+        case (.damaged, .source):
+            let format = NSLocalizedString("The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a hit, this effect lasts for [%@]s.", comment: "")
             return String(
                 format: format,
                 actionValue2.roundedString(roundingRule: nil),

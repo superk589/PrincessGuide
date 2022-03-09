@@ -2419,6 +2419,11 @@
         <target>施法者每次获得 buff 时就增加一层标记（ID：%1$@，最大层数 %2$@，持续 [%3$@] 秒），这个效果持续 [%4$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="The caster gain a mark(ID: %@, max stacks %@, lasts for [%@]s) each time receives a hit, this effect lasts for [%@]s." xml:space="preserve">
+        <source>The caster gain a mark(ID: %1$@, max stacks %2$@, lasts for [%3$@]s) each time receives a hit, this effect lasts for [%4$@]s.</source>
+        <target>施法者每次受到 Hit 时就增加一层标记（ID：%1$@，最大层数 %2$@，持续 [%3$@] 秒），这个效果持续 [%4$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="There aren't any Mail accounts" xml:space="preserve">
         <source>There aren't any Mail accounts</source>
         <target>未设置邮件账户</target>
@@ -2914,6 +2919,11 @@
         <target>防守</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="down" xml:space="preserve">
+        <source>down</source>
+        <target>下降</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="dungeon" xml:space="preserve">
         <source>dungeon</source>
         <target>地下城</target>
@@ -3389,6 +3399,11 @@
         <target>未知</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="up" xml:space="preserve">
+        <source>up</source>
+        <target>上升</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d after break" xml:space="preserve">
         <source>use %d after break</source>
         <target>被打断后使用 %d</target>
@@ -3414,6 +3429,11 @@
         <target>如果%2$@是单独的则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if %@ is in state of %@ %@" xml:space="preserve">
+        <source>use %1$d if %2$@ is in state of %3$@ %4$@</source>
+        <target>如果%2$@处于%3$@%4$@状态则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if %@ is in state of ID: %d" xml:space="preserve">
         <source>use %1$d if %2$@ is in state of ID: %3$d</source>
         <target>如果%2$@拥有标记（ID：%3$d）则使用 %1$d</target>
@@ -3427,6 +3447,11 @@
       <trans-unit id="use %d if %@ is not alone" xml:space="preserve">
         <source>use %1$d if %2$@ is not alone</source>
         <target>如果%2$@不是单独的则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is not in state of %@ %@" xml:space="preserve">
+        <source>use %1$d if %2$@ is not in state of %3$@ %4$@</source>
+        <target>如果%2$@未处于%3$@%4$@状态则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is not in state of ID: %d" xml:space="preserve">

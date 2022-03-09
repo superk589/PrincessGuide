@@ -10,6 +10,29 @@ import Foundation
 
 class IfForAllAction: ActionParameter {
     
+    var auraActionType: AuraAction.AuraActionType {
+        var type = AuraAction.AuraActionType(Int(actionValue3))
+        switch auraType {
+        case .receivedDamage,
+                .receivedMagicalDamage,
+                .receivedPhysicalDamage,
+                .receivedCriticalDamage
+            :
+            type.toggle()
+        default:
+            break
+        }
+        return type
+    }
+    
+    var auraType: AuraAction.AuraType {
+        if actionDetail1 == 1 {
+            return .maxHP
+        } else {
+            return AuraAction.AuraType(rawValue: Int(actionValue3) % 1000 / 10) ?? .none
+        }
+    }
+    
     var trueClause: String? {
         
         guard actionDetail2 != 0 else {
@@ -66,6 +89,9 @@ class IfForAllAction: ActionParameter {
         case 6000..<7000:
             let format = NSLocalizedString("use %d if %@ is in state of ID: %d with stacks greater than or equal to %d", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000, Int(actionValue3))
+        case 1700:
+            let format = NSLocalizedString("use %d if %@ is in state of %@ %@", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), auraType.description, auraActionType.passiveDescription)
         default:
             return nil
         }
@@ -127,6 +153,9 @@ class IfForAllAction: ActionParameter {
         case 6000..<7000:
             let format = NSLocalizedString("use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000, Int(actionValue3))
+        case 1700:
+            let format = NSLocalizedString("use %d if %@ is not in state of %@ %@", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), auraType.description, auraActionType.passiveDescription)
         default:
             return nil
         }
