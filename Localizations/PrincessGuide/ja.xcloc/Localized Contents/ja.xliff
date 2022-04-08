@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.2.1" build-num="13C100"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E113"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.2.1" build-num="13C100"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E113"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.2.1" build-num="13C100"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3" build-num="13E113"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -1536,6 +1536,10 @@
         <target>%1$@を気絶状態にする、効果時間[%2$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ invisible for [%@]s, cancels on taking damage." xml:space="preserve">
+        <source>Make %1$@ invisible for [%2$@]s, cancels on taking damage.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Make %@ lose [%@] TP." xml:space="preserve">
         <source>Make %1$@ lose [%2$@] TP.</source>
         <target>%1$@のTPを[%2$@]ダウンさせる。</target>
@@ -2010,6 +2014,10 @@
         <target>ダウンさせる</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Reduce [%@]%% all damage taken by %@ for [%@]s." xml:space="preserve">
+        <source>Reduce [%1$@]%% all damage taken by %2$@ for [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." xml:space="preserve">
         <source>Reduce [%1$@]%% damage or instant healing effect of union burst and main skills cast by %2$@ for [%3$@]s.</source>
         <target>%2$@のユニオンバーストかスキルが任意の対象にダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。</target>
@@ -2018,6 +2026,14 @@
       <trans-unit id="Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." xml:space="preserve">
         <source>Reduce [%1$@]%% damage or instant healing effect of union burst cast by %2$@ for [%3$@]s.</source>
         <target>%2$@のユニオンバーストが任意の対象にダメージか直接回復を与えるたび、その値を[%1$@%%]ダウンさせる、効果時間[%3$@]秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reduce [%@]%% magical damage taken by %@ for [%@]s." xml:space="preserve">
+        <source>Reduce [%1$@]%% magical damage taken by %2$@ for [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Reduce [%@]%% phisical damage taken by %@ for [%@]s." xml:space="preserve">
+        <source>Reduce [%1$@]%% phisical damage taken by %2$@ for [%3$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Remove %@ mark stacks(ID: %@) on %@." xml:space="preserve">

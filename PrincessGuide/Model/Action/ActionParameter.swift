@@ -135,6 +135,8 @@ class ActionParameter {
             return ToadAction.self
         case 71:
             return KnightGuardAction.self
+        case 72:
+            return DamageCutAction.self
         case 73:
             return LogBarrierAction.self
         case 74:
@@ -161,6 +163,8 @@ class ActionParameter {
             return IgnoreDecoyAction.self
         case 94:
             return EffectAction.self
+        case 95:
+            return SpyAction.self
         default:
             return ActionParameter.self
         }
@@ -586,6 +590,7 @@ enum ActionType: Int {
     case loop
     case toad = 69
     case knightGuard = 71
+    case damageCut = 72
     case logBarrier = 73
     case giveValueAsDivide = 74
     case actionByHitCount = 75
@@ -599,4 +604,5 @@ enum ActionType: Int {
     case energyRatio
     case ignoreDecoy
     case effect
+    case spy
 }

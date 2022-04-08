@@ -1094,6 +1094,9 @@
 "Make %@ fall into faint for [%@]s." = "使%1$@气绝，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
+"Make %@ invisible for [%@]s, cancels on taking damage." = "使%1$@隐身 [%2$@] 秒，受到伤害时取消。";
+
+/* No comment provided by engineer. */
 "Make %@ lose [%@] TP." = "使%1$@失去 [%2$@] TP。";
 
 /* No comment provided by engineer. */
@@ -1445,10 +1448,19 @@
 "Reduce" = "降低";
 
 /* No comment provided by engineer. */
+"Reduce [%@]%% all damage taken by %@ for [%@]s." = "降低%2$@受到的伤害 [%1$@]%%，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
 "Reduce [%@]%% damage or instant healing effect of union burst and main skills cast by %@ for [%@]s." = "降低 [%1$@]%% %2$@释放的 UB 和其他技能造成的伤害或直接治疗效果，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Reduce [%@]%% damage or instant healing effect of union burst cast by %@ for [%@]s." = "降低 [%1$@]%% %2$@释放的 UB 造成的伤害或直接治疗效果，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
+"Reduce [%@]%% magical damage taken by %@ for [%@]s." = "降低%2$@受到的魔法伤害 [%1$@]%%，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
+"Reduce [%@]%% phisical damage taken by %@ for [%@]s." = "降低%2$@受到的物理伤害 [%1$@]%%，持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */
 "Remove %@ mark stacks(ID: %@) on %@." = "移除%3$@ %1$@ 层标记（ID：%2$@）。";

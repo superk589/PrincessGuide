@@ -231,6 +231,8 @@
 		12C5D26F21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */; };
 		12C9508023504CAE000318C5 /* AweAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9507F23504CAE000318C5 /* AweAction.swift */; };
 		12CF02A5236AA9C4003CD3AD /* LoopMotionRepeatAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CF02A4236AA9C4003CD3AD /* LoopMotionRepeatAction.swift */; };
+		12D2FD4727FFC7DC00D7C0EA /* SpyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2FD4627FFC7DC00D7C0EA /* SpyAction.swift */; };
+		12D2FD4927FFCBBF00D7C0EA /* DamageCutAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D2FD4827FFCBBF00D7C0EA /* DamageCutAction.swift */; };
 		12D3D13520A5736100034DD6 /* EDTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13420A5736100034DD6 /* EDTabViewController.swift */; };
 		12D3D13720A573A000034DD6 /* EDStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */; };
 		12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D13820A573B800034DD6 /* EDSkillTableViewController.swift */; };
@@ -579,6 +581,8 @@
 		12C5D26E21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatsuneEventSpecialBattle.swift; sourceTree = "<group>"; };
 		12C9507F23504CAE000318C5 /* AweAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AweAction.swift; sourceTree = "<group>"; };
 		12CF02A4236AA9C4003CD3AD /* LoopMotionRepeatAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopMotionRepeatAction.swift; sourceTree = "<group>"; };
+		12D2FD4627FFC7DC00D7C0EA /* SpyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAction.swift; sourceTree = "<group>"; };
+		12D2FD4827FFCBBF00D7C0EA /* DamageCutAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageCutAction.swift; sourceTree = "<group>"; };
 		12D3D13420A5736100034DD6 /* EDTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTabViewController.swift; sourceTree = "<group>"; };
 		12D3D13620A573A000034DD6 /* EDStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDStatusTableViewController.swift; sourceTree = "<group>"; };
 		12D3D13820A573B800034DD6 /* EDSkillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewController.swift; sourceTree = "<group>"; };
@@ -1428,6 +1432,8 @@
 				12450C1B271E8E080083C27A /* ChangeSpeedOverlapAction.swift */,
 				12AB06372755EF3F003C367F /* GiveValueAsDivideAction.swift */,
 				12950C892772EE2100FDDC3C /* EffectAction.swift */,
+				12D2FD4627FFC7DC00D7C0EA /* SpyAction.swift */,
+				12D2FD4827FFCBBF00D7C0EA /* DamageCutAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1798,6 +1804,7 @@
 				12F125B320AECD1B005C9659 /* CDImageTableViewController.swift in Sources */,
 				123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */,
 				120F9B8320E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
+				12D2FD4927FFCBBF00D7C0EA /* DamageCutAction.swift in Sources */,
 				123608E7209322EB003E7D11 /* DataChecking.swift in Sources */,
 				12AB06382755EF3F003C367F /* GiveValueAsDivideAction.swift in Sources */,
 				126DECF2209EDC0E004EC56A /* QuestAreaTabViewController.swift in Sources */,
@@ -2009,6 +2016,7 @@
 				128DA49721B4D54A00F7C006 /* CraftCharaTableViewCell.swift in Sources */,
 				120BCAF820F4DEEC0029A083 /* Team.swift in Sources */,
 				12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */,
+				12D2FD4727FFC7DC00D7C0EA /* SpyAction.swift in Sources */,
 				12F1261120B95498005C9659 /* EnchantStrikeBackAction.swift in Sources */,
 				124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */,
 				1276D4B820AD2D4100805355 /* HatsuneEvent.swift in Sources */,
@@ -2221,7 +2229,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 220;
+				CURRENT_PROJECT_VERSION = 221;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2246,7 +2254,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 220;
+				CURRENT_PROJECT_VERSION = 221;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
