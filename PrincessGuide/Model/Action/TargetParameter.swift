@@ -32,12 +32,12 @@ class TargetParameter {
     }
     
     var hasRelationPhrase: Bool {
-        return targetType != .`self` &&
+        return targetType != .selfTarget &&
             targetType != .absolute
     }
     
     var hasCountPhrase: Bool {
-        return targetType != .`self` &&
+        return targetType != .selfTarget &&
             !(targetType == .none && targetCount == .zero)
     }
     
@@ -360,7 +360,7 @@ enum TargetType: Int, CustomStringConvertible {
     case far
     case hpAscending
     case hpDescending
-    case `self`
+    case selfTarget
     case randomOnce
     
     // the leftmost in the screen for us and the rightmost in the screen for the enemy
@@ -444,7 +444,7 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("the lowest HP", comment: "target type")
         case .hpDescendingOrNearForward:
             return NSLocalizedString("the highest HP", comment: "target type")
-        case .`self`:
+        case .selfTarget:
             return NSLocalizedString("self", comment: "target type")
 //        case .randomOnce:
 //            return NSLocalizedString("random(once)", comment: "target type")
