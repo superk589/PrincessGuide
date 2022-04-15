@@ -40,7 +40,7 @@ class IfForAllAction: ActionParameter {
         }
         
         switch actionDetail1 {
-        case 710, 100:
+        case 710, 100, 1601:
             if let ifType = IfType(rawValue: actionDetail1) {
                 let format = NSLocalizedString("use %d to %@ if %@", comment: "")
                 return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(anyOfModifier: true), ifType.description)
@@ -89,6 +89,9 @@ class IfForAllAction: ActionParameter {
         case 6000..<7000:
             let format = NSLocalizedString("use %d if %@ is in state of ID: %d with stacks greater than or equal to %d", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000, Int(actionValue3))
+        case 1601:
+            let format = NSLocalizedString("use %d if %@ is in state of ID: %d with stacks greater than or equal to %d", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000, Int(actionValue3))
         case 1700:
             let format = NSLocalizedString("use %d if %@ is in state of %@ %@", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), auraType.description, auraActionType.passiveDescription)
@@ -104,7 +107,7 @@ class IfForAllAction: ActionParameter {
         }
         
         switch actionDetail1 {
-        case 710:
+        case 710, 100, 1601:
             if let ifType = IfType(rawValue: actionDetail1) {
                 let format = NSLocalizedString("use %d to %@ if not %@", comment: "")
                 return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause(anyOfModifier: true), ifType.description)

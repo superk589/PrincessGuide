@@ -1010,6 +1010,9 @@
 "Internal ID" = "内部 ID";
 
 /* No comment provided by engineer. */
+"invisible" = "隐身";
+
+/* No comment provided by engineer. */
 "Kill %@ instantly." = "对%@释放即死效果。";
 
 /* No comment provided by engineer. */

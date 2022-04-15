@@ -23,6 +23,7 @@ enum IfType: Int, CustomStringConvertible {
     case `break` = 710
     case polymorph = 1400
     case fear = 1600
+    case spy
     
     var description: String {
         switch self {
@@ -54,6 +55,8 @@ enum IfType: Int, CustomStringConvertible {
             return NSLocalizedString("cursed or hexed", comment: "")
         case .fear:
             return NSLocalizedString("feared", comment: "")
+        case .spy:
+            return NSLocalizedString("invisible", comment: "")
         }
     }
 }
