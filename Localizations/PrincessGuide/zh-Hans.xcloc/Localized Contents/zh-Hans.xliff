@@ -2354,6 +2354,16 @@
         <target>在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Summon a field of radius %d at position of %@ to lose [%@] TP per second for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d at position of %2$@ to lose [%3$@] TP per second for [%4$@]s.</source>
+        <target>在%2$@的位置展开一片半径为 %1$d 的区域，每秒损失 [%3$@] TP，持续 [%4$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon a field of radius %d at position of %@ to restore [%@] TP per second for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d at position of %2$@ to restore [%3$@] TP per second for [%4$@]s.</source>
+        <target>在%2$@的位置展开一片半径为 %1$d 的区域，每秒恢复 [%3$@] TP，持续 [%4$@] 秒。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Summon a field of radius %d on %@ to cast effect %d for [%@]s." xml:space="preserve">
         <source>Summon a field of radius %1$d on %2$@ to cast effect %3$d for [%4$@]s.</source>
         <target>在%2$@的位置展开一片半径为 %1$d 的区域，持续释放效果 %3$d，持续 [%4$@] 秒。</target>

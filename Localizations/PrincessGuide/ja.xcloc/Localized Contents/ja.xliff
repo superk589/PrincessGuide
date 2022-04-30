@@ -2336,6 +2336,14 @@
         <target>%2$@の位置で半径%1$dのフィールドを展開し、毎秒[%3$@]の%4$@ダメージを与える、効果時間[%5$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Summon a field of radius %d at position of %@ to lose [%@] TP per second for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d at position of %2$@ to lose [%3$@] TP per second for [%4$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon a field of radius %d at position of %@ to restore [%@] TP per second for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d at position of %2$@ to restore [%3$@] TP per second for [%4$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Summon a field of radius %d on %@ to cast effect %d for [%@]s." xml:space="preserve">
         <source>Summon a field of radius %1$d on %2$@ to cast effect %3$d for [%4$@]s.</source>
         <target>%2$@の位置で半径%1$dのフィールドを展開し、[アクション%3$d]を継続的に放る、効果時間[%4$@]秒。</target>

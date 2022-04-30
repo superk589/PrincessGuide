@@ -254,6 +254,7 @@
 		12DC964520EDFA9D008896D7 /* EditBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */; };
 		12DC964720EDFF34008896D7 /* AddCharaToBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */; };
 		12DC964A20EE1BC1008896D7 /* CharasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC964920EE1BC1008896D7 /* CharasCell.swift */; };
+		12DFBA51281CEEB70083DAE2 /* ChangeEnergyFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DFBA50281CEEB70083DAE2 /* ChangeEnergyFieldAction.swift */; };
 		12E02BAF23B052A400652270 /* KaiserRaidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E02BAE23B052A400652270 /* KaiserRaidViewController.swift */; };
 		12E3324220F5EAE200844A6A /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324120F5EAE200844A6A /* CardCollectionViewController.swift */; };
 		12E3324420F5ED7600844A6A /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E3324320F5ED7600844A6A /* CardCollectionViewCell.swift */; };
@@ -604,6 +605,7 @@
 		12DC964420EDFA9D008896D7 /* EditBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBoxViewController.swift; sourceTree = "<group>"; };
 		12DC964620EDFF34008896D7 /* AddCharaToBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCharaToBoxViewController.swift; sourceTree = "<group>"; };
 		12DC964920EE1BC1008896D7 /* CharasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharasCell.swift; sourceTree = "<group>"; };
+		12DFBA50281CEEB70083DAE2 /* ChangeEnergyFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEnergyFieldAction.swift; sourceTree = "<group>"; };
 		12E02BAE23B052A400652270 /* KaiserRaidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaiserRaidViewController.swift; sourceTree = "<group>"; };
 		12E3324120F5EAE200844A6A /* CardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewController.swift; sourceTree = "<group>"; };
 		12E3324320F5ED7600844A6A /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1434,6 +1436,7 @@
 				12950C892772EE2100FDDC3C /* EffectAction.swift */,
 				12D2FD4627FFC7DC00D7C0EA /* SpyAction.swift */,
 				12D2FD4827FFCBBF00D7C0EA /* DamageCutAction.swift */,
+				12DFBA50281CEEB70083DAE2 /* ChangeEnergyFieldAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -2014,6 +2017,7 @@
 				1223A8E420F091DD00C98BB2 /* SettingProtocol.swift in Sources */,
 				12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */,
 				128DA49721B4D54A00F7C006 /* CraftCharaTableViewCell.swift in Sources */,
+				12DFBA51281CEEB70083DAE2 /* ChangeEnergyFieldAction.swift in Sources */,
 				120BCAF820F4DEEC0029A083 /* Team.swift in Sources */,
 				12F125EB20B94AEE005C9659 /* ModeChangeAction.swift in Sources */,
 				12D2FD4727FFC7DC00D7C0EA /* SpyAction.swift in Sources */,
@@ -2229,7 +2233,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 223;
+				CURRENT_PROJECT_VERSION = 224;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2254,7 +2258,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 223;
+				CURRENT_PROJECT_VERSION = 224;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

@@ -1658,6 +1658,12 @@
 "Summon a field of radius %d at position of %@ to deal [%@] %@ damage per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒造成 [%3$@] %4$@伤害，持续 [%5$@] 秒。";
 
 /* No comment provided by engineer. */
+"Summon a field of radius %d at position of %@ to lose [%@] TP per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒损失 [%3$@] TP，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
+"Summon a field of radius %d at position of %@ to restore [%@] TP per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒恢复 [%3$@] TP，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
 "Summon a field of radius %d on %@ to cast effect %d for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，持续释放效果 %3$d，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */

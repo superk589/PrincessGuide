@@ -89,9 +89,6 @@ class IfForAllAction: ActionParameter {
         case 6000..<7000:
             let format = NSLocalizedString("use %d if %@ is in state of ID: %d with stacks greater than or equal to %d", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000, Int(actionValue3))
-        case 1601:
-            let format = NSLocalizedString("use %d if %@ is in state of ID: %d with stacks greater than or equal to %d", comment: "")
-            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000, Int(actionValue3))
         case 1700:
             let format = NSLocalizedString("use %d if %@ is in state of %@ %@", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), auraType.description, auraActionType.passiveDescription)
