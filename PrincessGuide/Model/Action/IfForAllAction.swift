@@ -50,6 +50,12 @@ class IfForAllAction: ActionParameter {
         case 0..<100:
             let format = NSLocalizedString("%d%% chance use %d", comment: "")
             return String(format: format, actionDetail1, actionDetail2 % 10)
+        case 101:
+            let format = NSLocalizedString("use %d to %@ if attack speed is increased", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+        case 102:
+            let format = NSLocalizedString("use %d to %@ if attack speed is decreased", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
         case 599:
             let format = NSLocalizedString("use %d if %@ has any dot debuff", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
@@ -114,6 +120,12 @@ class IfForAllAction: ActionParameter {
         case 0..<100:
             let format = NSLocalizedString("%d%% chance use %d", comment: "")
             return String(format: format, (100 - actionDetail1), actionDetail3 % 10)
+        case 101:
+            let format = NSLocalizedString("use %d to %@ if attack speed is not increased", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+        case 102:
+            let format = NSLocalizedString("use %d to %@ if attack speed is not decreased", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
         case 599:
             let format = NSLocalizedString("use %d if %@ has no dot debuff", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
