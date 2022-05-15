@@ -1415,6 +1415,55 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getSecretDungeons(callback: @escaping FMDBCallbackClosure<[SecretDungeon]>) {
+        var dungeons = [SecretDungeon]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*,
+                b.start_time
+            FROM
+                dungeon_area a,
+                secret_dungeon_schedule b
+            WHERE
+                a.dungeon_area_id LIKE "32%"
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let startTime = json["start_time"].stringValue.toDate(format: "yyyy/MM/dd HH:mm:ss")
+                let dungeon = SecretDungeon(dungeonAreaId: json["dungeon_area_id"].intValue, startTime: startTime)
+                dungeons.append(dungeon)
+            }
+        }) {
+            callback(dungeons)
+        }
+    }
+    
+    func getSecretFloors(dungeonID: Int, callback: @escaping FMDBCallbackClosure<[SecretFloor]>) {
+        var floors = [SecretFloor]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                secret_dungeon_quest_data a
+            WHERE
+                a.dungeon_area_id = \(dungeonID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let floor = try decoder.decode(SecretFloor.self, from: json.rawData())
+                floors.append(floor)
+            }
+        }) {
+            callback(floors)
+        }
+    }
+    
     func getEnemies(enemyID: Int? = nil, isBossPart: Bool = false, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
         var enemies = [Enemy]()
         execute({ (db) in

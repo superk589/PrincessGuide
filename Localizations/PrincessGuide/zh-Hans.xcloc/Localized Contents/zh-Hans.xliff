@@ -939,6 +939,11 @@
         <target>自定义标签</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="D%d" xml:space="preserve">
+        <source>D%d</source>
+        <target>难度 %d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="DEF" xml:space="preserve">
         <source>DEF</source>
         <target>物理防御力</target>
@@ -2177,6 +2182,16 @@
       <trans-unit id="Seal" xml:space="preserve">
         <source>Seal</source>
         <target>刻印赋予</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Secret Dungeon" xml:space="preserve">
+        <source>Secret Dungeon</source>
+        <target>特殊地下城</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Secret Dungeon %d-%d" xml:space="preserve">
+        <source>Secret Dungeon %1$d-%2$d</source>
+        <target>特殊地下城 %1$d 年 %2$d 月</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Select All" xml:space="preserve">

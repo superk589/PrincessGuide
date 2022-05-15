@@ -106,6 +106,15 @@ class QuestEnemyTableViewController: UITableViewController {
         }
         super.init(nibName: nil, bundle: nil)
     }
+    
+    init(floors: [SecretFloor]) {
+        self.rows = floors.compactMap { floor in
+            floor.wave.flatMap { wave in
+                Row(type: QuestEnemyTableViewCell.self, data: .waveAndTitle(wave, String(floor.floorNum)))
+            }
+        }
+        super.init(nibName: nil, bundle: nil)
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()

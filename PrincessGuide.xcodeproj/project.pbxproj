@@ -196,6 +196,9 @@
 		12AB063A2755F08C003C367F /* GiveValueAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB06392755F08C003C367F /* GiveValueAction.swift */; };
 		12AC4539259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC4538259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift */; };
 		12AC453D2599677700A08817 /* ClanBattleEnemyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC453C2599677700A08817 /* ClanBattleEnemyView.swift */; };
+		12AEF2AA28311F1200673342 /* SecretDungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEF2A928311F1200673342 /* SecretDungeon.swift */; };
+		12AEF2AC283121BE00673342 /* SecretDungeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEF2AB283121BE00673342 /* SecretDungeonViewController.swift */; };
+		12AEF2AE2831299800673342 /* SecretDungeonFloorTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEF2AD2831299800673342 /* SecretDungeonFloorTabViewController.swift */; };
 		12B00D2E231F4C9E0086B079 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2D231F4C9E0086B079 /* FilterType.swift */; };
 		12B00D30231F7EA40086B079 /* Card+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D2F231F7EA40086B079 /* Card+Filter.swift */; };
 		12B00D32231F911E0086B079 /* StrokedTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B00D31231F911E0086B079 /* StrokedTextLabel.swift */; };
@@ -547,6 +550,9 @@
 		12AB06392755F08C003C367F /* GiveValueAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveValueAction.swift; sourceTree = "<group>"; };
 		12AC4538259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBattleEnemyTableViewCell.swift; sourceTree = "<group>"; };
 		12AC453C2599677700A08817 /* ClanBattleEnemyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBattleEnemyView.swift; sourceTree = "<group>"; };
+		12AEF2A928311F1200673342 /* SecretDungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretDungeon.swift; sourceTree = "<group>"; };
+		12AEF2AB283121BE00673342 /* SecretDungeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretDungeonViewController.swift; sourceTree = "<group>"; };
+		12AEF2AD2831299800673342 /* SecretDungeonFloorTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretDungeonFloorTabViewController.swift; sourceTree = "<group>"; };
 		12B00D2D231F4C9E0086B079 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		12B00D2F231F7EA40086B079 /* Card+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Filter.swift"; sourceTree = "<group>"; };
 		12B00D31231F911E0086B079 /* StrokedTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedTextLabel.swift; sourceTree = "<group>"; };
@@ -832,6 +838,7 @@
 				12C599312287DE4400875EE4 /* GameEvent.swift */,
 				12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */,
 				12BDDA80241FAC1000E89D7B /* ShioriEventBossQuest.swift */,
+				12AEF2A928311F1200673342 /* SecretDungeon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -973,6 +980,8 @@
 				12204246231B765800205C85 /* Rarity6UnlockQuestViewController.swift */,
 				12133739225113D000BB701B /* RaidBossTableViewController.swift */,
 				12E02BAE23B052A400652270 /* KaiserRaidViewController.swift */,
+				12AEF2AB283121BE00673342 /* SecretDungeonViewController.swift */,
+				12AEF2AD2831299800673342 /* SecretDungeonFloorTabViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1808,6 +1817,7 @@
 				123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */,
 				120F9B8320E9F79B003632CA /* UITableViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				12D2FD4927FFCBBF00D7C0EA /* DamageCutAction.swift in Sources */,
+				12AEF2AE2831299800673342 /* SecretDungeonFloorTabViewController.swift in Sources */,
 				123608E7209322EB003E7D11 /* DataChecking.swift in Sources */,
 				12AB06382755EF3F003C367F /* GiveValueAsDivideAction.swift in Sources */,
 				126DECF2209EDC0E004EC56A /* QuestAreaTabViewController.swift in Sources */,
@@ -2005,6 +2015,7 @@
 				12A2244025749F31001D68DC /* PassiveSealAction.swift in Sources */,
 				12F125DD20B92FA7005C9659 /* KnockAction.swift in Sources */,
 				12204247231B765800205C85 /* Rarity6UnlockQuestViewController.swift in Sources */,
+				12AEF2AC283121BE00673342 /* SecretDungeonViewController.swift in Sources */,
 				12F125F320B9501F005C9659 /* DamageChargeAction.swift in Sources */,
 				121FAC262328FBF900A43976 /* UIApplication+KeyWindow.swift in Sources */,
 				1226532320AD626700BB3E56 /* Resist.swift in Sources */,
@@ -2034,6 +2045,7 @@
 				1216503524863FB3001A4C7F /* HomeCardCollectionViewCell.swift in Sources */,
 				12E02BAF23B052A400652270 /* KaiserRaidViewController.swift in Sources */,
 				12EE352A20D2942100DDC04B /* DungeonBossTableViewController.swift in Sources */,
+				12AEF2AA28311F1200673342 /* SecretDungeon.swift in Sources */,
 				12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */,
 				12C1131D229578680078BC22 /* MovePartsAction.swift in Sources */,
 				12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */,
@@ -2233,7 +2245,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 225;
+				CURRENT_PROJECT_VERSION = 226;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2258,7 +2270,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 225;
+				CURRENT_PROJECT_VERSION = 226;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

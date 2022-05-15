@@ -935,6 +935,10 @@
         <target>カスタムタグ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="D%d" xml:space="preserve">
+        <source>D%d</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="DEF" xml:space="preserve">
         <source>DEF</source>
         <target>物理防御力</target>
@@ -2159,6 +2163,14 @@
       <trans-unit id="Seal" xml:space="preserve">
         <source>Seal</source>
         <target>刻印付与</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Secret Dungeon" xml:space="preserve">
+        <source>Secret Dungeon</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Secret Dungeon %d-%d" xml:space="preserve">
+        <source>Secret Dungeon %1$d-%2$d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Select All" xml:space="preserve">

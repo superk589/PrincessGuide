@@ -20,10 +20,11 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Quests", comment: "")
         viewControllers = [
-            DungeonBossTableViewController(),
             HatsuneEventAreaTableViewController(),
+            DungeonBossTableViewController(),
 //            KaiserRaidViewController(),
             ClanBattleTableViewController(mode: .normal),
+            SecretDungeonViewController(),
             TowerTableViewController(),
             QuestAreaTableViewController(areaType: .normal),
             QuestAreaTableViewController(areaType: .hard),
@@ -40,6 +41,7 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
             TMBarItem(title: NSLocalizedString("Event", comment: "")),
 //            TMBarItem(title: NSLocalizedString("Raid", comment: "")),
             TMBarItem(title: NSLocalizedString("Clan Battle", comment: "")),
+            TMBarItem(title: NSLocalizedString("Secret Dungeon", comment: "")),
             TMBarItem(title: NSLocalizedString("Tower", comment: ""))
             ]
             + [AreaType.normal, .hard, .veryHard].map { TMBarItem(title: $0.description) }

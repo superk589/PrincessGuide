@@ -650,6 +650,9 @@
 "CV" = "声优";
 
 /* No comment provided by engineer. */
+"D%d" = "难度 %d";
+
+/* No comment provided by engineer. */
 "Damage Over Time" = "持续伤害";
 
 /* No comment provided by engineer. */
@@ -1527,6 +1530,12 @@
 
 /* No comment provided by engineer. */
 "second" = "第二";
+
+/* No comment provided by engineer. */
+"Secret Dungeon" = "特殊地下城";
+
+/* No comment provided by engineer. */
+"Secret Dungeon %d-%d" = "特殊地下城 %1$d 年 %2$d 月";
 
 /* No comment provided by engineer. */
 "Select All" = "全选";
