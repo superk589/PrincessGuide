@@ -37,8 +37,8 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
         dataSource = self
         
         self.items = [
-            TMBarItem(title: NSLocalizedString("Dungeon", comment: "")),
             TMBarItem(title: NSLocalizedString("Event", comment: "")),
+            TMBarItem(title: NSLocalizedString("Dungeon", comment: "")),
 //            TMBarItem(title: NSLocalizedString("Raid", comment: "")),
             TMBarItem(title: NSLocalizedString("Clan Battle", comment: "")),
             TMBarItem(title: NSLocalizedString("Secret Dungeon", comment: "")),
