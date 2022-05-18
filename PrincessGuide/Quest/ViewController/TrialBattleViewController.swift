@@ -65,7 +65,7 @@ class TrialBattleViewController: UITableViewController, DataChecking {
         let cell = tableView.dequeueReusableCell(withIdentifier: HatsuneEventTableViewCell.description(), for: indexPath) as! HatsuneEventTableViewCell
         let quest = quests[indexPath.row]
         let unit = quest.battles.last?.wave?.enemies.first?.enemy?.unit
-        cell.configure(for: "\(unit?.unitName ?? "")", subtitle: quest.categoryName, unitID: unit?.prefabId)
+        cell.configure(for: "\(unit?.unitName ?? "")", subtitle: quest.description, unitID: unit?.prefabId)
         return cell
     }
     
