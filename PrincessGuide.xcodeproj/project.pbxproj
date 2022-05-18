@@ -245,6 +245,8 @@
 		12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */; };
 		12D3D14520A58A3C00034DD6 /* EDPatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */; };
 		12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */; };
+		12D4C2362834B7D80034C912 /* TrialBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4C2352834B7D80034C912 /* TrialBattleViewController.swift */; };
+		12D4C2382834B81D0034C912 /* TrialBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4C2372834B81D0034C912 /* TrialBattle.swift */; };
 		12D7A91C21AAC3BB004E22C6 /* UniqueEquipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D7A91B21AAC3BB004E22C6 /* UniqueEquipment.swift */; };
 		12D7A91E21AAC76F004E22C6 /* UniqueCraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D7A91D21AAC76F004E22C6 /* UniqueCraft.swift */; };
 		12D7A92421AACB64004E22C6 /* UniqueEquipmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D7A92321AACB64004E22C6 /* UniqueEquipmentTableViewController.swift */; };
@@ -599,6 +601,8 @@
 		12D3D14220A5883400034DD6 /* CDPropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPropertyTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14420A58A3C00034DD6 /* EDPatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDPatternTableViewCell.swift; sourceTree = "<group>"; };
 		12D3D14620A58F5A00034DD6 /* EDSkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSkillTableViewCell.swift; sourceTree = "<group>"; };
+		12D4C2352834B7D80034C912 /* TrialBattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialBattleViewController.swift; sourceTree = "<group>"; };
+		12D4C2372834B81D0034C912 /* TrialBattle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialBattle.swift; sourceTree = "<group>"; };
 		12D7A91B21AAC3BB004E22C6 /* UniqueEquipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueEquipment.swift; sourceTree = "<group>"; };
 		12D7A91D21AAC76F004E22C6 /* UniqueCraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueCraft.swift; sourceTree = "<group>"; };
 		12D7A92321AACB64004E22C6 /* UniqueEquipmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueEquipmentTableViewController.swift; sourceTree = "<group>"; };
@@ -839,6 +843,7 @@
 				12BDDA7E241FAB2C00E89D7B /* ShioriEvent.swift */,
 				12BDDA80241FAC1000E89D7B /* ShioriEventBossQuest.swift */,
 				12AEF2A928311F1200673342 /* SecretDungeon.swift */,
+				12D4C2372834B81D0034C912 /* TrialBattle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -982,6 +987,7 @@
 				12E02BAE23B052A400652270 /* KaiserRaidViewController.swift */,
 				12AEF2AB283121BE00673342 /* SecretDungeonViewController.swift */,
 				12AEF2AD2831299800673342 /* SecretDungeonFloorTabViewController.swift */,
+				12D4C2352834B7D80034C912 /* TrialBattleViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1899,6 +1905,7 @@
 				120BCAFD20F4E6C80029A083 /* MembersCell.swift in Sources */,
 				1225522A213397B300CB0D3E /* TimeStatusIndicator.swift in Sources */,
 				1281FA52209AE3E900F2D567 /* Craft.swift in Sources */,
+				12D4C2382834B81D0034C912 /* TrialBattle.swift in Sources */,
 				12A224482574BBC9001D68DC /* PassiveDamageUpAction.swift in Sources */,
 				12BAABA124AAEF5000DA8AB7 /* IgnoreDecoyAction.swift in Sources */,
 				12D3D13920A573B800034DD6 /* EDSkillTableViewController.swift in Sources */,
@@ -1941,6 +1948,7 @@
 				12B85D3B2089B1DB0088F5FB /* CDBasicTableViewCell.swift in Sources */,
 				12F1261D20B95547005C9659 /* AbnormalStateFieldAction.swift in Sources */,
 				1213373A225113D000BB701B /* RaidBossTableViewController.swift in Sources */,
+				12D4C2362834B7D80034C912 /* TrialBattleViewController.swift in Sources */,
 				12DA21EC20EFB932005FD705 /* Box.swift in Sources */,
 				12E6CCD5247BAB46009961B8 /* ChangeEnergyRatioAction.swift in Sources */,
 				12398E742091573D006AC352 /* Area.swift in Sources */,
@@ -2245,7 +2253,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 226;
+				CURRENT_PROJECT_VERSION = 227;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2270,7 +2278,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 226;
+				CURRENT_PROJECT_VERSION = 227;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

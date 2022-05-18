@@ -20,11 +20,12 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("Quests", comment: "")
         viewControllers = [
-            HatsuneEventAreaTableViewController(),
-            DungeonBossTableViewController(),
 //            KaiserRaidViewController(),
             ClanBattleTableViewController(mode: .normal),
             SecretDungeonViewController(),
+            HatsuneEventAreaTableViewController(),
+            DungeonBossTableViewController(),
+            TrialBattleViewController(),
             TowerTableViewController(),
             QuestAreaTableViewController(areaType: .normal),
             QuestAreaTableViewController(areaType: .hard),
@@ -37,11 +38,12 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
         dataSource = self
         
         self.items = [
-            TMBarItem(title: NSLocalizedString("Event", comment: "")),
-            TMBarItem(title: NSLocalizedString("Dungeon", comment: "")),
 //            TMBarItem(title: NSLocalizedString("Raid", comment: "")),
             TMBarItem(title: NSLocalizedString("Clan Battle", comment: "")),
             TMBarItem(title: NSLocalizedString("Secret Dungeon", comment: "")),
+            TMBarItem(title: NSLocalizedString("Event", comment: "")),
+            TMBarItem(title: NSLocalizedString("Dungeon", comment: "")),
+            TMBarItem(title: NSLocalizedString("Trial", comment: "")),
             TMBarItem(title: NSLocalizedString("Tower", comment: ""))
             ]
             + [AreaType.normal, .hard, .veryHard].map { TMBarItem(title: $0.description) }
@@ -74,7 +76,7 @@ class QuestAreaTabViewController: TabmanViewController, PageboyViewControllerDat
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: 2)
+        return .at(index: 0)
     }
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {

@@ -115,6 +115,15 @@ class QuestEnemyTableViewController: UITableViewController {
         }
         super.init(nibName: nil, bundle: nil)
     }
+    
+    init(trialBattles: [TrialBattle]) {
+        self.rows = trialBattles.compactMap { battle in
+            battle.wave.flatMap { wave in
+                Row(type: QuestEnemyTableViewCell.self, data: .waveAndTitle(wave, battle.battleName))
+            }
+        }
+        super.init(nibName: nil, bundle: nil)
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1464,6 +1464,52 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getTrialQeusts(callback: @escaping FMDBCallbackClosure<[TrialQuest]>) {
+        var quests = [TrialQuest]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                a.*
+            FROM
+                trial_battle_category a
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let quest = try decoder.decode(TrialQuest.self, from: json.rawData())
+                quests.append(quest)
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
+    func getTrialBattles(categoryID: Int, callback: @escaping FMDBCallbackClosure<[TrialBattle]>) {
+        var battles = [TrialBattle]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                b.*
+            FROM
+                trial_battle_data b
+            WHERE
+                b.category_id = \(categoryID)
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let battle = try decoder.decode(TrialBattle.self, from: json.rawData())
+                battles.append(battle)
+            }
+        }) {
+            callback(battles)
+        }
+    }
+    
     func getEnemies(enemyID: Int? = nil, isBossPart: Bool = false, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
         var enemies = [Enemy]()
         execute({ (db) in

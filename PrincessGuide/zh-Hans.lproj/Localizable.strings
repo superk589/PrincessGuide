@@ -1889,6 +1889,9 @@
 "transformed" = "变形";
 
 /* No comment provided by engineer. */
+"Trial" = "木桩";
+
+/* No comment provided by engineer. */
 "Trigger: %d%% on all targets break." = "触发条件：所有部位 Break 时 %d%% 触发。";
 
 /* No comment provided by engineer. */
