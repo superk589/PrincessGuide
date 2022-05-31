@@ -397,6 +397,7 @@ enum TargetType: Int, CustomStringConvertible {
     case tpDescendingOrMaxForward
     case bothAtkDescending
     case bothAtkAscending
+    case energyAscBackWithoutOwner = 41
     
     enum ExclusiveAllType {
         case not
@@ -486,6 +487,8 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("the lowest ATK or Magic STR", comment: "")
         case .bothAtkDescending:
             return NSLocalizedString("the highest ATK or Magic STR", comment: "")
+        case .energyAscBackWithoutOwner:
+            return NSLocalizedString("the lowest TP except self", comment: "")
         }
     }
     
@@ -570,6 +573,9 @@ enum TargetType: Int, CustomStringConvertible {
         case .bothAtkDescending:
             let format = NSLocalizedString("%@ the highest ATK or Magic STR", comment: "")
             return String(format: format, localizedModifier)
+        case .energyAscBackWithoutOwner:
+            let format = NSLocalizedString("%@ the lowest TP except self", comment: "")
+            return String(format: format, localizedModifier)
         default:
             return description
         }
@@ -635,6 +641,9 @@ enum TargetType: Int, CustomStringConvertible {
                 return String(format: format, localizedModifier)
             case .bothAtkDescending:
                 let format = NSLocalizedString("the %@ highest ATK or Magic STR", comment: "")
+                return String(format: format, localizedModifier)
+            case .energyAscBackWithoutOwner:
+                let format = NSLocalizedString("the %@ lowest TP except self", comment: "")
                 return String(format: format, localizedModifier)
             default:
                 return description

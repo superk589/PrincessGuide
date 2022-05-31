@@ -2,7 +2,7 @@
 " Can't use union burst when the new attack pattern is active." = "新攻击模式生效期间，无法使用 UB。";
 
 /* No comment provided by engineer. */
-" Critical damage is %@ times as normal damage." = "暴击时将造成 %@ 倍伤害。";
+" Critical damage is [2 * %@] times as normal damage." = "暴击时将造成 [2 * %@] 倍伤害。";
 
 /* No comment provided by engineer. */
 " The upper limit of this effect is [%@]." = "这个效果的上限为 [%@]。";
@@ -198,6 +198,9 @@
 
 /* No comment provided by engineer. */
 "%@ the lowest ATK or Magic STR" = "物理或魔法攻击力最低的%@";
+
+/* No comment provided by engineer. */
+"%@ the lowest TP except self" = "除自己外 TP 最低的%@";
 
 /* No comment provided by engineer. */
 "%@ to %@" = "%1$@至%2$@";
@@ -1774,6 +1777,9 @@
 /* target type */
 "the %@ lowest TP" = " TP %@低的";
 
+/* No comment provided by engineer. */
+"the %@ lowest TP except self" = "除自己外 TP %@低的";
+
 /* target type */
 "the %@ most backward" = "后方%@远的";
 
@@ -1833,6 +1839,9 @@
 
 /* target type */
 "the lowest TP" = " TP 最少的";
+
+/* No comment provided by engineer. */
+"the lowest TP except self" = "除自己外 TP 最低的";
 
 /* target type */
 "the most backward" = "后方最远的";

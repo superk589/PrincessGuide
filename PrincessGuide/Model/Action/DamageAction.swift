@@ -36,6 +36,10 @@ class DamageAction: ActionParameter {
         }
     }
     
+    var criticalDamageValues: [ActionValue] {
+        return [ActionValue(initial: String(actionValue6), perLevel: nil, key: nil, startIndex: 6)]
+    }
+    
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         var string: String
@@ -58,8 +62,17 @@ class DamageAction: ActionParameter {
         }
         
         if actionValue6 != 0 {
-            let format = NSLocalizedString(" Critical damage is %@ times as normal damage.", comment: "")
-            string.append(String(format: format, (2 * actionValue6).roundedString(roundingRule: nil)))
+            let format = NSLocalizedString(" Critical damage is [2 * %@] times as normal damage.", comment: "")
+            string.append(String(
+                format: format,
+                buildExpression(
+                    of: level,
+                    actionValues: criticalDamageValues,
+                    roundingRule: nil,
+                    style: style,
+                    property: property
+                )
+            ))
         }
         
         if let type = DecideTargetAtkType(rawValue: actionDetail2) {

@@ -2,9 +2,6 @@
 " Can't use union burst when the new attack pattern is active." = "この攻撃パターンにはユニオンバストを発動できない。";
 
 /* No comment provided by engineer. */
-" Critical damage is %@ times as normal damage." = "クリティカルダメージは通常の%@倍。";
-
-/* No comment provided by engineer. */
 " The upper limit of this effect is [%@]." = "効果の上限は[%@]。";
 
 /* No comment provided by engineer. */

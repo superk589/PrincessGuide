@@ -73,9 +73,9 @@
         <target>新攻击模式生效期间，无法使用 UB。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
-        <source> Critical damage is %@ times as normal damage.</source>
-        <target>暴击时将造成 %@ 倍伤害。</target>
+      <trans-unit id=" Critical damage is [2 * %@] times as normal damage." xml:space="preserve">
+        <source> Critical damage is [2 * %@] times as normal damage.</source>
+        <target>暴击时将造成 [2 * %@] 倍伤害。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=" The upper limit of this effect is [%@]." xml:space="preserve">
@@ -322,6 +322,11 @@
       <trans-unit id="%@ the lowest ATK or Magic STR" xml:space="preserve">
         <source>%@ the lowest ATK or Magic STR</source>
         <target>物理或魔法攻击力最低的%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ the lowest TP except self" xml:space="preserve">
+        <source>%@ the lowest TP except self</source>
+        <target>除自己外 TP 最低的%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ to %@" xml:space="preserve">
@@ -3304,6 +3309,11 @@
         <target> TP %@低的</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="the %@ lowest TP except self" xml:space="preserve">
+        <source>the %@ lowest TP except self</source>
+        <target>除自己外 TP %@低的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the %@ most backward" xml:space="preserve">
         <source>the %@ most backward</source>
         <target>后方%@远的</target>
@@ -3393,6 +3403,11 @@
         <source>the lowest TP</source>
         <target> TP 最少的</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="the lowest TP except self" xml:space="preserve">
+        <source>the lowest TP except self</source>
+        <target>除自己外 TP 最低的</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the most backward" xml:space="preserve">
         <source>the most backward</source>

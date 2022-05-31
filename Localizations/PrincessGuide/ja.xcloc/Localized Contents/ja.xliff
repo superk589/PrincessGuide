@@ -74,9 +74,8 @@
         <target>この攻撃パターンにはユニオンバストを発動できない。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id=" Critical damage is %@ times as normal damage." xml:space="preserve">
-        <source> Critical damage is %@ times as normal damage.</source>
-        <target>クリティカルダメージは通常の%@倍。</target>
+      <trans-unit id=" Critical damage is [2 * %@] times as normal damage." xml:space="preserve">
+        <source> Critical damage is [2 * %@] times as normal damage.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=" The upper limit of this effect is [%@]." xml:space="preserve">
@@ -320,6 +319,10 @@
       <trans-unit id="%@ the lowest ATK or Magic STR" xml:space="preserve">
         <source>%@ the lowest ATK or Magic STR</source>
         <target>最も物理や魔法攻撃力が低い%@</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ the lowest TP except self" xml:space="preserve">
+        <source>%@ the lowest TP except self</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ to %@" xml:space="preserve">
@@ -3262,6 +3265,10 @@
         <target>TPが%@少ない</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="the %@ lowest TP except self" xml:space="preserve">
+        <source>the %@ lowest TP except self</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the %@ most backward" xml:space="preserve">
         <source>the %@ most backward</source>
         <target>%@後の</target>
@@ -3351,6 +3358,10 @@
         <source>the lowest TP</source>
         <target>最もTPが少ない</target>
         <note>target type</note>
+      </trans-unit>
+      <trans-unit id="the lowest TP except self" xml:space="preserve">
+        <source>the lowest TP except self</source>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the most backward" xml:space="preserve">
         <source>the most backward</source>
