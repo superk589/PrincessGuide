@@ -15,7 +15,9 @@ class AuraAction: ActionParameter {
         case .receivedCriticalDamage,
                 .receivedDamage,
                 .receivedMagicalDamage,
-                .receivedPhysicalDamage
+                .receivedPhysicalDamage,
+                .physicalCriticalDamage,
+                .magicalCriticalDamage
             :
             return .percent
         default:
