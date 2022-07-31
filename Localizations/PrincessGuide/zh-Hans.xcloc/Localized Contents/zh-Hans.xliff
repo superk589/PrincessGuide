@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.4" build-num="13F17a"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.4.1" build-num="13F100"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.4" build-num="13F17a"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.4.1" build-num="13F100"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.4" build-num="13F17a"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.4.1" build-num="13F100"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -3514,6 +3514,11 @@
         <target>如果%2$@拥有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if %@ is multi-target unit" xml:space="preserve">
+        <source>use %1$d if %2$@ is multi-target unit</source>
+        <target>如果%2$@是多目标单位则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if %@ is not alone" xml:space="preserve">
         <source>use %1$d if %2$@ is not alone</source>
         <target>如果%2$@不是单独的则使用 %1$d</target>
@@ -3532,6 +3537,11 @@
       <trans-unit id="use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" xml:space="preserve">
         <source>use %1$d if %2$@ is not in state of ID: %3$d with stacks greater than or equal to %4$d</source>
         <target>如果%2$@没有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is not multi-target unit" xml:space="preserve">
+        <source>use %1$d if %2$@ is not multi-target unit</source>
+        <target>如果%2$@不是多目标单位则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@'s HP is below %d%%" xml:space="preserve">
@@ -3609,9 +3619,19 @@
         <target>如果%2$@是魔法单位则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d to %@ if it's multi-target unit" xml:space="preserve">
+        <source>use %1$d to %2$@ if it's multi-target unit</source>
+        <target>如果%2$@是多目标单位则对其使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d to %@ if it's not alone" xml:space="preserve">
         <source>use %1$d to %2$@ if it's not alone</source>
         <target>如果%2$@不是单独的则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if it's not multi-target unit" xml:space="preserve">
+        <source>use %1$d to %2$@ if it's not multi-target unit</source>
+        <target>如果%2$@不是多目标单位则对其使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to %@ if it's physical unit" xml:space="preserve">

@@ -836,9 +836,6 @@
 "EX+" = "EX+";
 
 /* No comment provided by engineer. */
-"Exclusive condition: %@." = "排他条件分支：%@。";
-
-/* No comment provided by engineer. */
 "Exp." = "经验值";
 
 /* No comment provided by engineer. */
@@ -2018,6 +2015,9 @@
 "use %d if %@ is in state of ID: %d with stacks greater than or equal to %d" = "如果%2$@拥有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d if %@ is multi-target unit" = "如果%2$@是多目标单位则使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d if %@ is not alone" = "如果%2$@不是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
@@ -2028,6 +2028,9 @@
 
 /* No comment provided by engineer. */
 "use %d if %@ is not in state of ID: %d with stacks greater than or equal to %d" = "如果%2$@没有大于等于 %4$d 的标记层数（ID：%3$d）则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d if %@ is not multi-target unit" = "如果%2$@不是多目标单位则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d if %@'s HP is below %d%%" = "如果%2$@的 HP 低于 %3$d%%，使用 %1$d";
@@ -2075,7 +2078,13 @@
 "use %d to %@ if it's magical unit" = "如果%2$@是魔法单位则使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d to %@ if it's multi-target unit" = "如果%2$@是多目标单位则对其使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d to %@ if it's not alone" = "如果%2$@不是单独的则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to %@ if it's not multi-target unit" = "如果%2$@不是多目标单位则对其使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d to %@ if it's physical unit" = "如果%2$@是物理单位则使用 %1$d";

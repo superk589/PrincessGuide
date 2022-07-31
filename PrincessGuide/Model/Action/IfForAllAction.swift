@@ -89,6 +89,9 @@ class IfForAllAction: ActionParameter {
         case 1200..<1300:
             let format = NSLocalizedString("counter %d is greater than or equal to %d then use %d", comment: "")
             return String(format: format, actionDetail1 % 100 / 10, actionDetail1 % 10, actionDetail2 % 10)
+        case 1800:
+            let format = NSLocalizedString("use %d if %@ is multi-target unit", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
         case 6000..<7000 where actionValue3 == 0:
             let format = NSLocalizedString("use %d if %@ is in state of ID: %d", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
@@ -159,6 +162,9 @@ class IfForAllAction: ActionParameter {
         case 1200..<1300:
             let format = NSLocalizedString("counter %d is less than %d then use %d", comment: "")
             return String(format: format, actionDetail1 % 100 / 10, actionDetail1 % 10, actionDetail3 % 10)
+        case 1800:
+            let format = NSLocalizedString("use %d if %@ is not multi-target unit", comment: "")
+            return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
         case 6000..<7000 where actionValue3 == 0:
             let format = NSLocalizedString("use %d if %@ is not in state of ID: %d", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
@@ -175,7 +181,7 @@ class IfForAllAction: ActionParameter {
         
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
 
-        let format = NSLocalizedString("Exclusive condition: %@.", comment: "")
+        let format = NSLocalizedString("Condition: %@.", comment: "")
         if trueClause == nil && falseClause == nil {
             return super.localizedDetail(of: level, property: property, style: style)
         } else {
