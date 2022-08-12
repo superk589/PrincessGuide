@@ -127,12 +127,10 @@ class UniqueEquipment: Codable {
     struct Enhance: Codable {
         let atk: Double
         let def: Double
-        let description: String
         let dodge: Double
         let energyRecoveryRate: Double
         let energyReduceRate: Double
         let equipmentId: Int
-        let equipmentName: String
         let hp: Double
         let hpRecoveryRate: Double
         let lifeSteal: Double
@@ -143,7 +141,6 @@ class UniqueEquipment: Codable {
         let maxEquipmentEnhanceLevel: Int
         let physicalCritical: Double
         let physicalPenetrate: Double
-        let promotionLevel: Int
         let waveEnergyRecovery: Double
         let waveHpRecovery: Double
         let accuracy: Double

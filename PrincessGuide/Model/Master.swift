@@ -721,7 +721,7 @@ class Master: FMDatabaseQueue {
                 a.*,
                 b.max_equipment_enhance_level
             FROM
-                unique_equipment_enhance_rate a,
+                unique_equip_enhance_rate a,
                 ( SELECT max( enhance_level ) max_equipment_enhance_level FROM unique_equipment_enhance_data) b
             WHERE
                 a.equipment_id = \(equipmentID)
@@ -732,9 +732,11 @@ class Master: FMDatabaseQueue {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
-                if let enhance = try? decoder.decode(UniqueEquipment.Enhance.self, from: json.rawData()) {
+                do {
+                    let enhance = try decoder.decode(UniqueEquipment.Enhance.self, from: json.rawData())
                     result = enhance
-                    break
+                } catch {
+                    print(error)
                 }
             }
         }) {
