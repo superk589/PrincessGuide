@@ -2072,6 +2072,12 @@
 "use %d to %@ if attack speed is not increased" = "如果%2$@没有处于攻速提高状态则使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d to %@ if it has a barrier" = "如果%2$@有护盾则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d to %@ if it has no barrier" = "如果%2$@没有护盾则使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d to %@ if it's alone" = "如果%2$@是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */

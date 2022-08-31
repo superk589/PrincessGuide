@@ -1204,11 +1204,6 @@
         <target>进化技能显示风格</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Exclusive condition: %@." xml:space="preserve">
-        <source>Exclusive condition: %@.</source>
-        <target>排他条件分支：%@。</target>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Exp." xml:space="preserve">
         <source>Exp.</source>
         <target>经验值</target>
@@ -3607,6 +3602,16 @@
       <trans-unit id="use %d to %@ if attack speed is not increased" xml:space="preserve">
         <source>use %1$d to %2$@ if attack speed is not increased</source>
         <target>如果%2$@没有处于攻速提高状态则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if it has a barrier" xml:space="preserve">
+        <source>use %1$d to %2$@ if it has a barrier</source>
+        <target>如果%2$@有护盾则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d to %@ if it has no barrier" xml:space="preserve">
+        <source>use %1$d to %2$@ if it has no barrier</source>
+        <target>如果%2$@没有护盾则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d to %@ if it's alone" xml:space="preserve">

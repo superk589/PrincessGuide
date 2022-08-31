@@ -94,6 +94,9 @@ class IfForChildrenAction: ActionParameter {
             case 1800:
                 let format = NSLocalizedString("use %d to %@ if it's multi-target unit", comment: "")
                 return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+            case 1900:
+                let format = NSLocalizedString("use %d to %@ if it has a barrier", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true))
             case 6000..<7000:
                 let format = NSLocalizedString("use %d to %@ in state of ID: %d", comment: "")
                 return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
@@ -133,6 +136,9 @@ class IfForChildrenAction: ActionParameter {
             case 1800:
                 let format = NSLocalizedString("use %d to %@ if it's not multi-target unit", comment: "")
                 return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+            case 1900:
+                let format = NSLocalizedString("use %d to %@ if it has no barrier", comment: "")
+                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true))
             case 6000..<7000:
                 let format = NSLocalizedString("use %d to %@ if not in state of ID: %d", comment: "")
                 return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
@@ -145,7 +151,7 @@ class IfForChildrenAction: ActionParameter {
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         switch actionDetail1 {
-        case 100, 101, 102, 200, 300, 500, 501, 502, 503, 504, 511, 512, 600..<900, 901..<1000, 1300, 1400, 1600, 1800, 6000..<7000:
+        case 100, 101, 102, 200, 300, 500, 501, 502, 503, 504, 511, 512, 600..<900, 901..<1000, 1300, 1400, 1600, 1800, 1900, 6000..<7000:
             let format = NSLocalizedString("Condition: %@.", comment: "")
             return String(format: format, [trueClause, falseClause].compactMap { $0 }.joined(separator: NSLocalizedString(", ", comment: "clause separator")))
         case 0..<100:
