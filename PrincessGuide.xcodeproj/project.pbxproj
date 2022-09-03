@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12019A1E28C3602E004DE34A /* ChangeEnergyByDamageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12019A1D28C3602E004DE34A /* ChangeEnergyByDamageAction.swift */; };
 		1202CE4322C8C4DC00E9C146 /* StopFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */; };
 		1202CE4522C8C4F100E9C146 /* InhibitHealAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */; };
 		120AC25D2303DD7400062062 /* ActionTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120AC25C2303DD7400062062 /* ActionTag.swift */; };
@@ -350,6 +351,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12019A1D28C3602E004DE34A /* ChangeEnergyByDamageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEnergyByDamageAction.swift; sourceTree = "<group>"; };
 		1202CE4222C8C4DC00E9C146 /* StopFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopFieldAction.swift; sourceTree = "<group>"; };
 		1202CE4422C8C4F100E9C146 /* InhibitHealAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InhibitHealAction.swift; sourceTree = "<group>"; };
 		120AC25C2303DD7400062062 /* ActionTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTag.swift; sourceTree = "<group>"; };
@@ -1452,6 +1454,7 @@
 				12D2FD4627FFC7DC00D7C0EA /* SpyAction.swift */,
 				12D2FD4827FFCBBF00D7C0EA /* DamageCutAction.swift */,
 				12DFBA50281CEEB70083DAE2 /* ChangeEnergyFieldAction.swift */,
+				12019A1D28C3602E004DE34A /* ChangeEnergyByDamageAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1814,6 +1817,7 @@
 				12F1262D20B95636005C9659 /* UpperLimitAttackAction.swift in Sources */,
 				1225522E2133E22300CB0D3E /* VLNoScheduleTableViewCell.swift in Sources */,
 				122071F420FA371500554030 /* ProductTableViewCell.swift in Sources */,
+				12019A1E28C3602E004DE34A /* ChangeEnergyByDamageAction.swift in Sources */,
 				12398E7820915771006AC352 /* CDPatternTableViewCell.swift in Sources */,
 				12C5D26D21D9FFEE00C99425 /* HatsuneEventQuest.swift in Sources */,
 				12512A712163D19A0071B0CC /* VLFilterViewController.swift in Sources */,
@@ -2253,7 +2257,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 232;
+				CURRENT_PROJECT_VERSION = 233;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2278,7 +2282,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 232;
+				CURRENT_PROJECT_VERSION = 233;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

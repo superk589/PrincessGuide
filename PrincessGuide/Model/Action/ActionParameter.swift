@@ -167,6 +167,8 @@ class ActionParameter {
             return SpyAction.self
         case 96:
             return ChangeEnergyFieldAction.self
+        case 97:
+            return ChangeEnergyByDamageAction.self
         default:
             return ActionParameter.self
         }
@@ -608,4 +610,5 @@ enum ActionType: Int {
     case effect
     case spy
     case changeEnergyField
+    case changeEnergyByDamage
 }

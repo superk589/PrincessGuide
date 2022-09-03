@@ -395,6 +395,10 @@
         <target>%4$@にマーク[ID：%3$@]を%1$@スタック追加する、効果時間[%5$@]秒、この効果は最大[%2$@]までスタックできる。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Add %@ mark stacks(max %@, ID: %d, lasts for [%@]s) to %@, restore [%@] TP and remove one stack when taking damage." xml:space="preserve">
+        <source>Add %1$@ mark stacks(max %2$@, ID: %3$d, lasts for [%4$@]s) to %5$@, restore [%6$@] TP and remove one stack when taking damage.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Add 1 to the counter %d(max. %d)." xml:space="preserve">
         <source>Add 1 to the counter %1$d(max. %2$d).</source>
         <note>No comment provided by engineer.</note>

@@ -233,6 +233,9 @@
 "Add %@ mark stacks(max %@, ID: %@) on %@ for %@s." = "对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。";
 
 /* No comment provided by engineer. */
+"Add %@ mark stacks(max %@, ID: %d, lasts for [%@]s) to %@, restore [%@] TP and remove one stack when taking damage." = "对%5$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$d，持续 [%4$@] 秒），受到伤害时移除 1 层标记并恢复 [%6$@] TP。";
+
+/* No comment provided by engineer. */
 "Add 1 to the counter %d(max. %d)." = "使计数器 %1$d 的数值加 1（最大 %2$d）。";
 
 /* No comment provided by engineer. */

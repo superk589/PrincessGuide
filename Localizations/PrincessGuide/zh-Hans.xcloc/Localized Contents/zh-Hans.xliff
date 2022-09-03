@@ -399,6 +399,11 @@
         <target>对%4$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$@），持续 %5$@ 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Add %@ mark stacks(max %@, ID: %d, lasts for [%@]s) to %@, restore [%@] TP and remove one stack when taking damage." xml:space="preserve">
+        <source>Add %1$@ mark stacks(max %2$@, ID: %3$d, lasts for [%4$@]s) to %5$@, restore [%6$@] TP and remove one stack when taking damage.</source>
+        <target>对%5$@施加 %1$@ 层标记（最大 %2$@ 层，ID：%3$d，持续 [%4$@] 秒），受到伤害时移除 1 层标记并恢复 [%6$@] TP。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Add 1 to the counter %d(max. %d)." xml:space="preserve">
         <source>Add 1 to the counter %1$d(max. %2$d).</source>
         <target>使计数器 %1$d 的数值加 1（最大 %2$d）。</target>
