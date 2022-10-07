@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.4.1" build-num="13F100"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.0.1" build-num="14A400"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.4.1" build-num="13F100"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.0.1" build-num="14A400"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.4.1" build-num="13F100"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.0.1" build-num="14A400"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -313,6 +313,11 @@
         <source>%1$@ targets in range %2$d</source>
         <target>范围 %2$d 内%1$@目标</target>
         <note>[enemy] targets in range [500]</note>
+      </trans-unit>
+      <trans-unit id="%@ the highest ATK except self" xml:space="preserve">
+        <source>%@ the highest ATK except self</source>
+        <target>除自己外物理攻击最高的%@</target>
+        <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="%@ the highest ATK or Magic STR" xml:space="preserve">
         <source>%@ the highest ATK or Magic STR</source>
@@ -3124,6 +3129,11 @@
         <target>己方</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="parts" xml:space="preserve">
+        <source>parts</source>
+        <target>部位</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="phantom type" xml:space="preserve">
         <source>phantom type</source>
         <target>幽灵类型</target>
@@ -3254,6 +3264,11 @@
         <target>物理攻击力%@高的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the %@ highest ATK except self" xml:space="preserve">
+        <source>the %@ highest ATK except self</source>
+        <target>除自己外物理攻击%@高的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="the %@ highest ATK or Magic STR" xml:space="preserve">
         <source>the %@ highest ATK or Magic STR</source>
         <target>物理或魔法攻击力%@高的</target>
@@ -3347,6 +3362,11 @@
       <trans-unit id="the highest ATK" xml:space="preserve">
         <source>the highest ATK</source>
         <target>物理攻击力最高的</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the highest ATK except self" xml:space="preserve">
+        <source>the highest ATK except self</source>
+        <target>除自己外物理攻击最高的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="the highest ATK or Magic STR" xml:space="preserve">

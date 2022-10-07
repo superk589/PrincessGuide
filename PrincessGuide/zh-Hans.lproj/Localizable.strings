@@ -194,6 +194,9 @@
 "%@ The effect will be released when taking damage." = "%@受到伤害时将解除效果。";
 
 /* No comment provided by engineer. */
+"%@ the highest ATK except self" = "除自己外物理攻击最高的%@";
+
+/* No comment provided by engineer. */
 "%@ the highest ATK or Magic STR" = "物理或魔法攻击力最高的%@";
 
 /* No comment provided by engineer. */
@@ -1319,6 +1322,9 @@
 "Paralyse" = "麻痹";
 
 /* No comment provided by engineer. */
+"parts" = "部位";
+
+/* No comment provided by engineer. */
 "Petrify" = "石化";
 
 /* No comment provided by engineer. */
@@ -1745,6 +1751,9 @@
 "the %@ highest ATK" = "物理攻击力%@高的";
 
 /* No comment provided by engineer. */
+"the %@ highest ATK except self" = "除自己外物理攻击%@高的";
+
+/* No comment provided by engineer. */
 "the %@ highest ATK or Magic STR" = "物理或魔法攻击力%@高的";
 
 /* target type */
@@ -1806,6 +1815,9 @@
 
 /* No comment provided by engineer. */
 "the highest ATK" = "物理攻击力最高的";
+
+/* No comment provided by engineer. */
+"the highest ATK except self" = "除自己外物理攻击最高的";
 
 /* No comment provided by engineer. */
 "the highest ATK or Magic STR" = "物理或魔法攻击力最高的";
