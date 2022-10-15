@@ -125,8 +125,8 @@ extension AttackPattern {
                     iconType = .physicalSwing
                 }
                 text = NSLocalizedString("Swing", comment: "")
-            case let x where x > 1000:
-                let index = x - 1001
+            case 1000..<2000:
+                let index = item - 1001
                 let skillID = enemy.base.mainSkillIDs[index]
                 
                 if let (offset, element) = enemy.mainSkills.enumerated().first (where: {
@@ -140,7 +140,18 @@ extension AttackPattern {
                     iconType = .unknown
                     text = ""
                 }
-                
+            case 2000..<3000:
+                let index = item - 2001
+                let skillID = enemy.base.spSkillIDs[index]
+                if let iconID = enemy.spSkills.first (where: {
+                    $0.base.skillId == skillID
+                })?.base.iconType {
+                    iconType = .skill(iconID)
+                } else {
+                    iconType = .unknown
+                }
+                let format = NSLocalizedString("SP %d", comment: "")
+                text = String(format: format, index + 1)
             default:
                 iconType = .unknown
                 text = NSLocalizedString("Unknown", comment: "")

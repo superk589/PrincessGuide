@@ -104,6 +104,11 @@ class Enemy: Codable {
         let mainSkill7: Int
         let mainSkill8: Int
         let mainSkill9: Int
+        let spSkill1: Int
+        let spSkill2: Int
+        let spSkill3: Int
+        let spSkill4: Int
+        let spSkill5: Int
         let unionBurst: Int
         let unionBurstEvolution: Int
         let mainSkillEvolution1: Int
@@ -139,6 +144,10 @@ class Enemy: Codable {
             return Array([mainSkill1, mainSkill2, mainSkill3, mainSkill4, mainSkill5, mainSkill6, mainSkill7, mainSkill8, mainSkill9, mainSkill10]
                 //.prefix { $0 != 0 }
             )
+        }
+        
+        var spSkillIDs: [Int] {
+            return Array([spSkill1, spSkill2, spSkill3, spSkill4, spSkill5].prefix { $0 != 0 })
         }
         
         var exSkillLevels: [Int] {
@@ -249,6 +258,10 @@ class Enemy: Codable {
     lazy var unionBurstEvolution = DispatchSemaphore.sync { [unowned self] (closure) in
         Master.shared.getSkills(skillIDs: [self.base.unionBurstEvolution], callback: closure)
     }?.first
+    
+    lazy var spSkills = DispatchSemaphore.sync { [unowned self] (closure) in
+        Master.shared.getSkills(skillIDs: self.base.spSkillIDs, callback: closure)
+    } ?? []
 }
 
 extension Enemy {
