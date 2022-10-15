@@ -999,6 +999,10 @@
         <source>Decrease %1$@ attack speed by [%2$@] times(stackable) for [%3$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Decrease [%@]%% healing received by %@, last for [%@]s or unlimited time if triggered by field." xml:space="preserve">
+        <source>Decrease [%1$@]%% healing received by %2$@, last for [%3$@]s or unlimited time if triggered by field.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Denied" xml:space="preserve">
         <source>Denied</source>
         <target>拒否されました</target>

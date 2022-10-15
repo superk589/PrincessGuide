@@ -695,6 +695,9 @@
 "Decrease" = "降低";
 
 /* No comment provided by engineer. */
+"Decrease [%@]%% healing received by %@, last for [%@]s or unlimited time if triggered by field." = "当%2$@受到治疗时，治疗效果降低 [%1$@]%%，持续 [%3$@] 秒，如果是场地效果触发的，持续时间无限。";
+
+/* No comment provided by engineer. */
 "Decrease %@ attack speed by [%@] times(stackable) for [%@]s." = "使%1$@的攻击速度降低 [%2$@] 倍（可叠加），持续 [%3$@] 秒。";
 
 /* No comment provided by engineer. */

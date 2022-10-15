@@ -16,13 +16,39 @@ class InhibitHealAction: ActionParameter {
         ]
     }
     
+    override var actionValues: [ActionValue] {
+        return [
+            ActionValue(initial: String(actionValue1), perLevel: String(actionValue4), key: nil, startIndex: 1)
+        ]
+    }
+    
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
-        let format = NSLocalizedString("When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field.", comment: "")
-        return String(
-            format: format,
-            targetParameter.buildTargetClause(),
-            actionValue1.description,
-            buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
-        )
+        switch inhibitType {
+        case .inhibit:
+            let format = NSLocalizedString("When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field.", comment: "")
+            return String(
+                format: format,
+                targetParameter.buildTargetClause(),
+                actionValue1.description,
+                buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+            )
+        case .decrease:
+            let format = NSLocalizedString("Decrease [%@]%% healing received by %@, last for [%@]s or unlimited time if triggered by field.", comment: "")
+            return String(
+                format: format,
+                (actionValue1 * 100).roundedString(roundingRule: nil),
+                targetParameter.buildTargetClause(),
+                buildExpression(of: level, actionValues: durationValues, roundingRule: nil, style: style, property: property)
+            )
+        }
+    }
+    
+    var inhibitType: InhibitType {
+        return InhibitType(rawValue: actionDetail1) ?? .inhibit
+    }
+    
+    enum InhibitType: Int {
+        case inhibit
+        case decrease
     }
 }
