@@ -3,10 +3,10 @@
   "project" : "PrincessGuide.xcodeproj",
   "targetLocale" : "zh-Hans",
   "toolInfo" : {
-    "toolBuildNumber" : "14A400",
+    "toolBuildNumber" : "14B47b",
     "toolID" : "com.apple.dt.xcode",
     "toolName" : "Xcode",
-    "toolVersion" : "14.0.1"
+    "toolVersion" : "14.1"
   },
   "version" : "1.0"
 }

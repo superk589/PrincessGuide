@@ -49,6 +49,14 @@ class Skill: Codable {
     var actions: [Action]
     let base: Base
     
+    lazy var rfSkillID: Int? = DispatchSemaphore.sync { closure in
+        Master.shared.getRfSkillID(skillID: self.base.skillId, callback: closure)
+    }
+    
+    lazy var rfSkill: Skill? = DispatchSemaphore.sync { closure in
+        Master.shared.getSkills(skillIDs: [rfSkillID].compactMap { $0 }, callback: closure)
+    }?.first
+    
     init(actions: [Action], base: Base) {
         self.actions = actions
         self.base = base

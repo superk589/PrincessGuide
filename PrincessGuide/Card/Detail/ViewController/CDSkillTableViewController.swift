@@ -198,7 +198,7 @@ class CDSkillTableViewController: CDTableViewController {
         
         // insert minions
         let newRows: [Row] = rows.flatMap { row -> [Row] in
-            guard case .skill(let skill, _, _, _) = row else {
+            guard case .skill(let skill, _, _, _, _) = row else {
                 return [row]
             }
             let actions = skill.actions
@@ -215,7 +215,21 @@ class CDSkillTableViewController: CDTableViewController {
             return [row] + rows
         }
         
-        self.rows = newRows
+        // insert rf skills
+        if settings.skillLevel > 260 {
+            let new: [Row] = newRows.flatMap { row -> [Row] in
+                guard case .skill(let skill, let category, let property, let index, _) = row else {
+                    return [row]
+                }
+                if let rfSkill = skill.rfSkill {
+                    return [.skill(skill: rfSkill, category: category, property: property, index: index, isRF: true)]
+                }
+                return [row]
+            }
+            self.rows = new
+        } else {
+            self.rows = newRows
+        }
     }
     
 }

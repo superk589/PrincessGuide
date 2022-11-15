@@ -14,7 +14,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
     
     enum Row {
         case card(Card)
-        case skill(skill: Skill, category: SkillCategory, property: Property, index: Int?)
+        case skill(skill: Skill, category: SkillCategory, property: Property, index: Int?, isRF: Bool = false)
         case minion(Minion)
         case pattern(pattern: AttackPattern, card: Card, index: Int?)
         case promotion(Card.Promotion)
@@ -170,9 +170,9 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
                 )
             })
             return cell
-        case .skill(let skill, let category, let property, let index):
+        case .skill(let skill, let category, let property, let index, let isRF):
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDSkillTableViewCell.self)
-            cell.configure(for: skill, category: category, property: property, index: index)
+            cell.configure(for: skill, category: category, property: property, index: index, isRF: isRF)
             return cell
         case .textArray(let items):
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDProfileTableViewCell.self)

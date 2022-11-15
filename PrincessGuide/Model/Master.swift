@@ -298,6 +298,30 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getRfSkillID(skillID: Int, callback: @escaping FMDBCallbackClosure<Int?>) {
+        var rfSkillID: Int?
+        execute({ (db) in
+            let sql = """
+            SELECT
+                rf_skill_id
+            FROM
+                unit_skill_data_rf
+            WHERE
+                skill_id = \(skillID)
+            """
+            
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                if let id = json["rf_skill_id"].int, rfSkillID != 0 {
+                    rfSkillID = id
+                }
+            }
+        }) {
+            callback(rfSkillID)
+        }
+    }
+    
     
     func getUnitMinion(minionID: Int, callback: @escaping FMDBCallbackClosure<Minion?>) {
         var minion: Minion?

@@ -110,12 +110,15 @@ class CDSkillTableViewCell: UITableViewCell, Reusable {
         return label
     }
     
-    func configure(for skill: Skill, category: SkillCategory, property: Property, index: Int? = nil) {
+    func configure(for skill: Skill, category: SkillCategory, property: Property, index: Int? = nil, isRF: Bool = false) {
         nameLabel.text = skill.base.name
         if let index = index {
             categoryLabel.text = "\(category.description) \(index)"
         } else {
             categoryLabel.text = "\(category.description)"
+        }
+        if isRF {
+            categoryLabel.text = (categoryLabel.text ?? "") + "↑"
         }
         castTimeLabel.text = "\(skill.base.skillCastTime)s"
         descLabel.text = skill.base.description
