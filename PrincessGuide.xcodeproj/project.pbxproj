@@ -270,6 +270,7 @@
 		12E64A5B213143330075BE01 /* VLTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E64A5A213143330075BE01 /* VLTableViewHeaderFooterView.swift */; };
 		12E6BEE1227800A6000BAADC /* StealthAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6BEE0227800A6000BAADC /* StealthAction.swift */; };
 		12E6CCD5247BAB46009961B8 /* ChangeEnergyRatioAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6CCD4247BAB46009961B8 /* ChangeEnergyRatioAction.swift */; };
+		12E9FBE02933A64E006BDCA0 /* EnergyDamageReduceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E9FBDF2933A64E006BDCA0 /* EnergyDamageReduceAction.swift */; };
 		12EBF70B20F7952600120C2A /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70A20F7952600120C2A /* MemberView.swift */; };
 		12EBF70F20F7B62900120C2A /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */; };
 		12EBF71120F7BC0500120C2A /* StrokedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EBF71020F7BC0500120C2A /* StrokedLabel.swift */; };
@@ -627,6 +628,7 @@
 		12E64A5A213143330075BE01 /* VLTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		12E6BEE0227800A6000BAADC /* StealthAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StealthAction.swift; sourceTree = "<group>"; };
 		12E6CCD4247BAB46009961B8 /* ChangeEnergyRatioAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEnergyRatioAction.swift; sourceTree = "<group>"; };
+		12E9FBDF2933A64E006BDCA0 /* EnergyDamageReduceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyDamageReduceAction.swift; sourceTree = "<group>"; };
 		12EBF70A20F7952600120C2A /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 		12EBF70E20F7B62900120C2A /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		12EBF71020F7BC0500120C2A /* StrokedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokedLabel.swift; sourceTree = "<group>"; };
@@ -1455,6 +1457,7 @@
 				12D2FD4827FFCBBF00D7C0EA /* DamageCutAction.swift */,
 				12DFBA50281CEEB70083DAE2 /* ChangeEnergyFieldAction.swift */,
 				12019A1D28C3602E004DE34A /* ChangeEnergyByDamageAction.swift */,
+				12E9FBDF2933A64E006BDCA0 /* EnergyDamageReduceAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1798,6 +1801,7 @@
 				12F1261F20B9556A005C9659 /* ChangeSpeedFieldAction.swift in Sources */,
 				12DC964A20EE1BC1008896D7 /* CharasCell.swift in Sources */,
 				121B14D820EB23D10012ADA4 /* SelectableIconImageView.swift in Sources */,
+				12E9FBE02933A64E006BDCA0 /* EnergyDamageReduceAction.swift in Sources */,
 				122071DE20F9D61D00554030 /* TDTabViewController.swift in Sources */,
 				1281FA4C209AE23D00F2D567 /* CraftTableViewController.swift in Sources */,
 				1231EB4023541D3300525170 /* TowerCloister.swift in Sources */,
@@ -2257,7 +2261,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 236;
+				CURRENT_PROJECT_VERSION = 237;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2282,7 +2286,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 236;
+				CURRENT_PROJECT_VERSION = 237;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

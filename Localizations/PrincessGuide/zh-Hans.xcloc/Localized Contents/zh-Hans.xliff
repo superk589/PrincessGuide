@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.1" build-num="14B47b"/>
@@ -2718,6 +2717,11 @@
       <trans-unit id="Weight" xml:space="preserve">
         <source>Weight</source>
         <target>体重</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="When %@ affected by TP loss effect, multiple the effect value by [%@], lasts for [%@]s." xml:space="preserve">
+        <source>When %1$@ affected by TP loss effect, multiple the effect value by [%2$@], lasts for [%3$@]s.</source>
+        <target>当%1$@受到TP损失效果影响时，使效果数值乘以 [%2$@]，持续 [%3$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." xml:space="preserve">

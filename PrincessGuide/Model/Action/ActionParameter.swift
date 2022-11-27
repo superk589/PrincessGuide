@@ -169,6 +169,8 @@ class ActionParameter {
             return ChangeEnergyFieldAction.self
         case 97:
             return ChangeEnergyByDamageAction.self
+        case 98:
+            return EnergyDamageReduceAction.self
         default:
             return ActionParameter.self
         }
@@ -608,7 +610,8 @@ enum ActionType: Int {
     case energyRatio
     case ignoreDecoy
     case effect
-    case spy
+    case spy = 95
     case changeEnergyField
     case changeEnergyByDamage
+    case energyDamageReduce
 }

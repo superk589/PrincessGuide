@@ -2689,6 +2689,10 @@
         <target>体重</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="When %@ affected by TP loss effect, multiple the effect value by [%@], lasts for [%@]s." xml:space="preserve">
+        <source>When %1$@ affected by TP loss effect, multiple the effect value by [%2$@], lasts for [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." xml:space="preserve">
         <source>When %1$@ receive healing, deal [%2$@ * healing amount] damage instead, last for [%3$@]s or unlimited time if triggered by field.</source>
         <target>%1$@が回復を受けた時、代わりに[%2$@ * 回復値]分のダメージを与える、効果時間[%3$@]秒。この効果はフィールドでトリガーされた場合、効果時間は無限。</target>

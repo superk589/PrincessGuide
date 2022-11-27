@@ -2168,6 +2168,9 @@
 "Weight" = "体重";
 
 /* No comment provided by engineer. */
+"When %@ affected by TP loss effect, multiple the effect value by [%@], lasts for [%@]s." = "当%1$@受到TP损失效果影响时，使效果数值乘以 [%2$@]，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
 "When %@ receive healing, deal [%@ * healing amount] damage instead, last for [%@]s or unlimited time if triggered by field." = "当%1$@受到治疗时，治疗效果无效并造成 [%2$@ * 治疗量] 的伤害，持续 [%3$@] 秒，如果是场地效果触发的，持续时间无限。";
 
 /* No comment provided by engineer. */
