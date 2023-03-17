@@ -737,8 +737,8 @@ class Master: FMDatabaseQueue {
         }
     }
     
-    func getUniqueEnhance(equipmentID: Int, callback: @escaping FMDBCallbackClosure<UniqueEquipment.Enhance?>) {
-        var result: UniqueEquipment.Enhance?
+    func getUniqueEnhance(equipmentID: Int, callback: @escaping FMDBCallbackClosure<[UniqueEquipment.Enhance]>) {
+        var result = [UniqueEquipment.Enhance]()
         execute({ (db) in
             let sql = """
             SELECT
@@ -758,7 +758,7 @@ class Master: FMDatabaseQueue {
                 
                 do {
                     let enhance = try decoder.decode(UniqueEquipment.Enhance.self, from: json.rawData())
-                    result = enhance
+                    result.append(enhance)
                 } catch {
                     print(error)
                 }
@@ -1436,6 +1436,26 @@ class Master: FMDatabaseQueue {
                 let dungeon = try decoder.decode(SpecialDungeon.self, from: json.rawData())
                 dungeons.append(dungeon)
             }
+            
+            let sql3 = """
+            SELECT
+                a.dungeon_area_id,
+                group_concat(b.wave_group_id) as wave_group_ids,
+                a.dungeon_name
+            FROM
+                dungeon_pattern_battle b
+            LEFT JOIN dungeon_area a ON b.quest_id LIKE a.dungeon_area_id || "%"
+            GROUP BY
+                dungeon_area_id
+            """
+            let set3 = try db.executeQuery(sql3, values: nil)
+            while set3.next() {
+                let json = JSON(set3.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let dungeon = try decoder.decode(SpecialDungeon.self, from: json.rawData())
+                dungeons.append(dungeon)
+            }
         }) {
             callback(dungeons)
         }
@@ -1651,6 +1671,11 @@ class Master: FMDatabaseQueue {
                 b.ex_skill_evolution_3,
                 b.ex_skill_evolution_4,
                 b.ex_skill_evolution_5,
+                b.sp_skill_1,
+                b.sp_skill_2,
+                b.sp_skill_3,
+                b.sp_skill_4,
+                b.sp_skill_5,
                 c.child_enemy_parameter_1,
                 c.child_enemy_parameter_2,
                 c.child_enemy_parameter_3,

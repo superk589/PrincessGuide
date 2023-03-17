@@ -1558,6 +1558,10 @@
         <target>%1$@を気絶状態にする、効果時間[%2$@]秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Make %@ immune to control effects up to [%@] times, lasts for [%@]s." xml:space="preserve">
+        <source>Make %1$@ immune to control effects up to [%2$@] times, lasts for [%3$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Make %@ invisible for [%@]s, cancels on taking damage." xml:space="preserve">
         <source>Make %1$@ invisible for [%2$@]s, cancels on taking damage.</source>
         <note>No comment provided by engineer.</note>
@@ -2368,6 +2372,10 @@
       </trans-unit>
       <trans-unit id="Summon a field of radius %d at position of %@ to lose [%@] TP per second for [%@]s." xml:space="preserve">
         <source>Summon a field of radius %1$d at position of %2$@ to lose [%3$@] TP per second for [%4$@]s.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Summon a field of radius %d at position of %@ to multiple attack speed by [%@] for [%@]s." xml:space="preserve">
+        <source>Summon a field of radius %1$d at position of %2$@ to multiple attack speed by [%3$@] for [%4$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Summon a field of radius %d at position of %@ to restore [%@] TP per second for [%@]s." xml:space="preserve">

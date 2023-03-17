@@ -193,6 +193,8 @@
 		12A224482574BBC9001D68DC /* PassiveDamageUpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A224472574BBC9001D68DC /* PassiveDamageUpAction.swift */; };
 		12A6A7D42163B09F00877074 /* DispelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A6A7D32163B09F00877074 /* DispelAction.swift */; };
 		12A776902153E59E00972187 /* EDSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A7768F2153E59E00972187 /* EDSettingsViewController.swift */; };
+		12A7A69829C453B400984577 /* ChangeSpeedOverrideFieldAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A7A69729C453B400984577 /* ChangeSpeedOverrideFieldAction.swift */; };
+		12A7A69A29C453CB00984577 /* UnableStateGuardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A7A69929C453CB00984577 /* UnableStateGuardAction.swift */; };
 		12AB06382755EF3F003C367F /* GiveValueAsDivideAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB06372755EF3F003C367F /* GiveValueAsDivideAction.swift */; };
 		12AB063A2755F08C003C367F /* GiveValueAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB06392755F08C003C367F /* GiveValueAction.swift */; };
 		12AC4539259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC4538259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift */; };
@@ -551,6 +553,8 @@
 		12A224472574BBC9001D68DC /* PassiveDamageUpAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveDamageUpAction.swift; sourceTree = "<group>"; };
 		12A6A7D32163B09F00877074 /* DispelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispelAction.swift; sourceTree = "<group>"; };
 		12A7768F2153E59E00972187 /* EDSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSettingsViewController.swift; sourceTree = "<group>"; };
+		12A7A69729C453B400984577 /* ChangeSpeedOverrideFieldAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSpeedOverrideFieldAction.swift; sourceTree = "<group>"; };
+		12A7A69929C453CB00984577 /* UnableStateGuardAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnableStateGuardAction.swift; sourceTree = "<group>"; };
 		12AB06372755EF3F003C367F /* GiveValueAsDivideAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveValueAsDivideAction.swift; sourceTree = "<group>"; };
 		12AB06392755F08C003C367F /* GiveValueAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveValueAction.swift; sourceTree = "<group>"; };
 		12AC4538259966CC00A08817 /* ClanBattleEnemyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanBattleEnemyTableViewCell.swift; sourceTree = "<group>"; };
@@ -1458,6 +1462,8 @@
 				12DFBA50281CEEB70083DAE2 /* ChangeEnergyFieldAction.swift */,
 				12019A1D28C3602E004DE34A /* ChangeEnergyByDamageAction.swift */,
 				12E9FBDF2933A64E006BDCA0 /* EnergyDamageReduceAction.swift */,
+				12A7A69729C453B400984577 /* ChangeSpeedOverrideFieldAction.swift */,
+				12A7A69929C453CB00984577 /* UnableStateGuardAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1930,6 +1936,7 @@
 				12F1260B20B953DD005C9659 /* DestroyAction.swift in Sources */,
 				1247127822278EC500A9C2E1 /* CharmAction.swift in Sources */,
 				12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */,
+				12A7A69829C453B400984577 /* ChangeSpeedOverrideFieldAction.swift in Sources */,
 				122071DC20F8E30800554030 /* SearchableTeamTableViewController.swift in Sources */,
 				12F7500820935F2500E11CC8 /* HomeCardTableViewController.swift in Sources */,
 				12D3D14120A587FF00034DD6 /* EDPropertyTableViewCell.swift in Sources */,
@@ -1970,6 +1977,7 @@
 				126DECE1209E0B2C004EC56A /* CustomAcknowViewController.swift in Sources */,
 				12C5D26F21DA0E6C00C99425 /* HatsuneEventSpecialBattle.swift in Sources */,
 				12D3D14320A5883400034DD6 /* CDPropertyTableViewCell.swift in Sources */,
+				12A7A69A29C453CB00984577 /* UnableStateGuardAction.swift in Sources */,
 				12A776902153E59E00972187 /* EDSettingsViewController.swift in Sources */,
 				12F1261B20B95528005C9659 /* ChangeParameterFieldAction.swift in Sources */,
 				128DA49121B26DDF00F7C006 /* MinionPropertyViewController.swift in Sources */,
@@ -2261,7 +2269,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 238;
+				CURRENT_PROJECT_VERSION = 241;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2286,7 +2294,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 238;
+				CURRENT_PROJECT_VERSION = 241;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

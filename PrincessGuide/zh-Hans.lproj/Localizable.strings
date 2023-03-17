@@ -1115,6 +1115,9 @@
 "Make %@ fall into faint for [%@]s." = "使%1$@气绝，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
+"Make %@ immune to control effects up to [%@] times, lasts for [%@]s." = "使%1$@免疫控制效果至多 [%2$@] 次，持续 [%3$@] 秒。";
+
+/* No comment provided by engineer. */
 "Make %@ invisible for [%@]s, cancels on taking damage." = "使%1$@隐身 [%2$@] 秒，受到伤害时取消。";
 
 /* No comment provided by engineer. */
@@ -1686,6 +1689,9 @@
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d at position of %@ to lose [%@] TP per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒损失 [%3$@] TP，持续 [%4$@] 秒。";
+
+/* No comment provided by engineer. */
+"Summon a field of radius %d at position of %@ to multiple attack speed by [%@] for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，使攻击速度变为原本的 [%3$@] 倍，持续 [%4$@] 秒。";
 
 /* No comment provided by engineer. */
 "Summon a field of radius %d at position of %@ to restore [%@] TP per second for [%@]s." = "在%2$@的位置展开一片半径为 %1$d 的区域，每秒恢复 [%3$@] TP，持续 [%4$@] 秒。";

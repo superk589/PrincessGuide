@@ -106,9 +106,9 @@ class UniqueEquipment: Codable {
 //        return crafts
 //    }()
 //
-    lazy var enhance: Enhance? = DispatchSemaphore.sync { (closure) in
+    lazy var enhances: [Enhance] = DispatchSemaphore.sync { (closure) in
         Master.shared.getUniqueEnhance(equipmentID: equipmentId, callback: closure)
-    }
+    } ?? []
 
     func property(enhanceLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Property {
         var result = Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
@@ -118,8 +118,14 @@ class UniqueEquipment: Codable {
                               magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
                               physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
                               waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery), accuracy: Double(accuracy))
-        if let enhance = enhance {
-            result += enhance.property * (enhanceLevel - 1)
+        for enhance in enhances {
+            let min = enhance.minLv
+            let max = enhance.maxLv == -1 ? Int.max : enhance.maxLv
+            if min...max ~= enhanceLevel {
+                result += enhance.property * (enhanceLevel - enhance.minLv + 1)
+            } else {
+                result += enhance.property * (enhance.maxLv - 1)
+            }
         }
         return result
     }
@@ -144,6 +150,8 @@ class UniqueEquipment: Codable {
         let waveEnergyRecovery: Double
         let waveHpRecovery: Double
         let accuracy: Double
+        let minLv: Int
+        let maxLv: Int
 
         var property: Property {
             return Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),

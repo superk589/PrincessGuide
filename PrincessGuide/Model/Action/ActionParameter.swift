@@ -171,6 +171,10 @@ class ActionParameter {
             return ChangeEnergyByDamageAction.self
         case 98:
             return EnergyDamageReduceAction.self
+        case 99:
+            return ChangeSpeedOverrideFieldAction.self
+        case 100:
+            return UnableStateGuardAction.self
         default:
             return ActionParameter.self
         }
@@ -614,4 +618,6 @@ enum ActionType: Int {
     case changeEnergyField
     case changeEnergyByDamage
     case energyDamageReduce
+    case changeSpeedOverrideField
+    case unableStateGuard = 100
 }
