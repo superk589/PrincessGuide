@@ -8,6 +8,9 @@
 " The upper limit of this effect is [%@]." = "这个效果的上限为 [%@]。";
 
 /* No comment provided by engineer. */
+" This attack ignores [%@] DEF." = "这次攻击忽略目标 [%@] 防御。";
+
+/* No comment provided by engineer. */
 " This barrier takes effect for %@ times." = "这个护盾可生效 %@ 次。";
 
 /* No comment provided by engineer. */
@@ -672,6 +675,9 @@
 
 /* No comment provided by engineer. */
 "Deal [%@] %@ damage to %@, and the %@-th hit of this attack is ensured critical." = "对%3$@造成 [%1$@] %2$@伤害，并且这次攻击的第 %4$@ Hit 必定暴击。";
+
+/* No comment provided by engineer. */
+"Deal [%@] %@ damage to %@, and this attack is ensured critical." = "对%3$@造成 [%1$@] %2$@伤害，并且这次攻击必定暴击。";
 
 /* No comment provided by engineer. */
 "Deal [%@] %@ damage to %@." = "对%3$@造成 [%1$@] %2$@伤害。";

@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.1" build-num="14B47b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.2" build-num="14C18"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.1" build-num="14B47b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.2" build-num="14C18"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.1" build-num="14B47b"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.2" build-num="14C18"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -81,6 +81,10 @@
       <trans-unit id=" The upper limit of this effect is [%@]." xml:space="preserve">
         <source> The upper limit of this effect is [%@].</source>
         <target>効果の上限は[%@]。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id=" This attack ignores [%@] DEF." xml:space="preserve">
+        <source> This attack ignores [%@] DEF.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id=" This barrier takes effect for %@ times." xml:space="preserve">
@@ -968,6 +972,10 @@
       <trans-unit id="Deal [%@] %@ damage to %@, and the %@-th hit of this attack is ensured critical." xml:space="preserve">
         <source>Deal [%1$@] %2$@ damage to %3$@, and the %4$@-th hit of this attack is ensured critical.</source>
         <target>%3$@に[%1$@]の%2$@ダメージを与える、%4$@つ目の攻撃は必ずクリティカルする。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Deal [%@] %@ damage to %@, and this attack is ensured critical." xml:space="preserve">
+        <source>Deal [%1$@] %2$@ damage to %3$@, and this attack is ensured critical.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Deal [%@] %@ damage to %@." xml:space="preserve">

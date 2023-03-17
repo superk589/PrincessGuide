@@ -39,7 +39,7 @@ class DamageAction: ActionParameter {
     var criticalDamageValues: [ActionValue] {
         return [ActionValue(initial: String(actionValue6), perLevel: nil, key: nil, startIndex: 6)]
     }
-    
+        
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         
         var string: String
@@ -57,6 +57,14 @@ class DamageAction: ActionParameter {
                 targetParameter.buildTargetClause(),
                 x.roundedString(roundingRule: nil)
             )
+        case let x where x < 0:
+            let format = NSLocalizedString("Deal [%@] %@ damage to %@, and this attack is ensured critical.", comment: "")
+            string = String(
+                format: format,
+                buildExpression(of: level, style: style, property: property),
+                damageClass.description,
+                targetParameter.buildTargetClause()
+            )
         default:
             return super.localizedDetail(of: level, property: property, style: style)
         }
@@ -72,6 +80,14 @@ class DamageAction: ActionParameter {
                     style: style,
                     property: property
                 )
+            ))
+        }
+        
+        if actionValue7 != 0 {
+            let format = NSLocalizedString(" This attack ignores [%@] DEF.", comment: "")
+            string.append(String(
+                format: format,
+                actionValue7.roundedString(roundingRule: nil)
             ))
         }
         
