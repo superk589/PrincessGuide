@@ -205,6 +205,9 @@
 /* No comment provided by engineer. */
 "%@ the lowest ATK or Magic STR" = "物理或魔法攻击力最低的%@";
 
+/* target type */
+"%@ the lowest HP ratio except self" = "除自己外 HP 比例最低的%@";
+
 /* No comment provided by engineer. */
 "%@ the lowest TP except self" = "除自己外 TP 最低的%@";
 
@@ -1795,6 +1798,9 @@
 /* target type */
 "the %@ lowest HP ratio" = " HP 比例%@低的";
 
+/* target type */
+"the %@ lowest HP ratio except self" = "除自己外 HP 比例%@低的";
+
 /* No comment provided by engineer. */
 "the %@ lowest Magic STR" = "魔法攻击力%@低的";
 
@@ -1860,6 +1866,9 @@
 
 /* target type */
 "the lowest HP ratio" = " HP 比例最低的";
+
+/* target type */
+"the lowest HP ratio except self" = "除自己外 HP 比例最低的";
 
 /* No comment provided by engineer. */
 "the lowest Magic STR" = "魔法攻击力最低的";

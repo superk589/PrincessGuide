@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.2" build-num="14C18"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.2" build-num="14C18"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.2" build-num="14C18"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -333,6 +333,11 @@
         <source>%@ the lowest ATK or Magic STR</source>
         <target>物理或魔法攻击力最低的%@</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="%@ the lowest HP ratio except self" xml:space="preserve">
+        <source>%@ the lowest HP ratio except self</source>
+        <target>除自己外 HP 比例最低的%@</target>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="%@ the lowest TP except self" xml:space="preserve">
         <source>%@ the lowest TP except self</source>
@@ -3344,6 +3349,11 @@
         <target> HP 比例%@低的</target>
         <note>target type</note>
       </trans-unit>
+      <trans-unit id="the %@ lowest HP ratio except self" xml:space="preserve">
+        <source>the %@ lowest HP ratio except self</source>
+        <target>除自己外 HP 比例%@低的</target>
+        <note>target type</note>
+      </trans-unit>
       <trans-unit id="the %@ lowest Magic STR" xml:space="preserve">
         <source>the %@ lowest Magic STR</source>
         <target>魔法攻击力%@低的</target>
@@ -3442,6 +3452,11 @@
       <trans-unit id="the lowest HP ratio" xml:space="preserve">
         <source>the lowest HP ratio</source>
         <target> HP 比例最低的</target>
+        <note>target type</note>
+      </trans-unit>
+      <trans-unit id="the lowest HP ratio except self" xml:space="preserve">
+        <source>the lowest HP ratio except self</source>
+        <target>除自己外 HP 比例最低的</target>
         <note>target type</note>
       </trans-unit>
       <trans-unit id="the lowest Magic STR" xml:space="preserve">

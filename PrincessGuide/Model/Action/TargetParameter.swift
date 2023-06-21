@@ -400,6 +400,7 @@ enum TargetType: Int, CustomStringConvertible {
     case energyAscBackWithoutOwner = 41
     case parentTargetParts
     case atkDecForwardWithoutOwner
+    case hpAscendingWithoutOnwer = 44
     
     enum ExclusiveAllType {
         case not
@@ -495,6 +496,8 @@ enum TargetType: Int, CustomStringConvertible {
             return NSLocalizedString("parts", comment: "")
         case .atkDecForwardWithoutOwner:
             return NSLocalizedString("the highest ATK except self", comment: "")
+        case .hpAscendingWithoutOnwer:
+            return NSLocalizedString("the lowest HP ratio except self", comment: "target type")
         }
     }
     
@@ -584,6 +587,8 @@ enum TargetType: Int, CustomStringConvertible {
             return String(format: format, localizedModifier)
         case .atkDecForwardWithoutOwner:
             return NSLocalizedString("%@ the highest ATK except self", comment: "")
+        case .hpAscendingWithoutOnwer:
+            return NSLocalizedString("%@ the lowest HP ratio except self", comment: "target type")
         default:
             return description
         }
@@ -655,6 +660,8 @@ enum TargetType: Int, CustomStringConvertible {
                 return String(format: format, localizedModifier)
             case .atkDecForwardWithoutOwner:
                 return NSLocalizedString("the %@ highest ATK except self", comment: "")
+            case .hpAscendingWithoutOnwer:
+                return NSLocalizedString("the %@ lowest HP ratio except self", comment: "target type")
             default:
                 return description
             }
