@@ -110,7 +110,7 @@ class UniqueEquipment: Codable {
         Master.shared.getUniqueEnhance(equipmentID: equipmentId, callback: closure)
     } ?? []
 
-    func property(enhanceLevel: Int = Preload.default.maxUniqueEquipmentLevel) -> Property {
+    func property(enhanceLevel: Int = Preload.default.maxUniqueEquipmentLevel, enhanceStar: Int = Preload.default.maxUniqueEquipmentStar) -> Property {
         var result = Property(atk: Double(atk), def: Double(def), dodge: Double(dodge),
                               energyRecoveryRate: Double(energyRecoveryRate), energyReduceRate: Double(energyReduceRate),
                               hp: Double(hp), hpRecoveryRate: Double(hpRecoveryRate), lifeSteal: Double(lifeSteal),
@@ -118,16 +118,29 @@ class UniqueEquipment: Codable {
                               magicPenetrate: Double(magicPenetrate), magicStr: Double(magicStr),
                               physicalCritical: Double(physicalCritical), physicalPenetrate: Double(physicalPenetrate),
                               waveEnergyRecovery: Double(waveEnergyRecovery), waveHpRecovery: Double(waveHpRecovery), accuracy: Double(accuracy))
-        for enhance in enhances {
-            let min = enhance.minLv
-            let max = enhance.maxLv == -1 ? Int.max : enhance.maxLv
-            if min...max ~= enhanceLevel {
-                result += enhance.property * (enhanceLevel - enhance.minLv + 1)
-            } else {
-                result += enhance.property * (enhance.maxLv - 1)
+        if equipmentId % 10 == 2 {
+            for enhance in enhances {
+                let min = enhance.minLv
+                let max = enhance.maxLv == -1 ? Int.max : enhance.maxLv
+                if min...max ~= enhanceStar {
+                    result += enhance.property * (enhanceStar - enhance.minLv + 1)
+                } else {
+                    result += enhance.property * (enhance.maxLv - 1)
+                }
             }
+            return result
+        } else {
+            for enhance in enhances {
+                let min = enhance.minLv
+                let max = enhance.maxLv == -1 ? Int.max : enhance.maxLv
+                if min...max ~= enhanceLevel {
+                    result += enhance.property * (enhanceLevel - enhance.minLv + 1)
+                } else {
+                    result += enhance.property * (enhance.maxLv - 1)
+                }
+            }
+            return result
         }
-        return result
     }
 
     struct Enhance: Codable {

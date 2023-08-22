@@ -2081,6 +2081,12 @@
 "use %d if among %@ does not exist unit(ID: %d)" = "如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d if among %@ does not exists magic unit" = "如果%2$@中不存在魔法单位则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d if among %@ exists magic unit" = "如果%2$@中存在魔法单位则使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d if among %@ exists unit(ID: %d)" = "如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d";
 
 /* No comment provided by engineer. */

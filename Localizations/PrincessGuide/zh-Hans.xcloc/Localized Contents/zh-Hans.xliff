@@ -3624,6 +3624,16 @@
         <target>如果%2$@（潜行单位除外）中不存在单位（ID：%3$d）则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if among %@ does not exists magic unit" xml:space="preserve">
+        <source>use %1$d if among %2$@ does not exists magic unit</source>
+        <target>如果%2$@中不存在魔法单位则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if among %@ exists magic unit" xml:space="preserve">
+        <source>use %1$d if among %2$@ exists magic unit</source>
+        <target>如果%2$@中存在魔法单位则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if among %@ exists unit(ID: %d)" xml:space="preserve">
         <source>use %1$d if among %2$@ exists unit(ID: %3$d)</source>
         <target>如果%2$@（潜行单位除外）中存在单位（ID：%3$d）则使用 %1$d</target>

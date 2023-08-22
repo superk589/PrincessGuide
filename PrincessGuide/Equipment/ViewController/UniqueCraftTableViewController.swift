@@ -30,12 +30,14 @@ class UniqueCraftTableViewController: UITableViewController {
     
     private func prepareRows() {
         rows.removeAll()
-        guard let equipment = equipment, let craft = equipment.craft else {
+        guard let equipment = equipment else {
             return
         }
         rows = [Row.summary(equipment)]
         
-        rows += craft.consumes.map { Row.consume($0) }
+        if let craft = equipment.craft {
+            rows += craft.consumes.map { Row.consume($0) }
+        }
         rows += equipment.property().ceiled().noneZeroProperties().map { Row.properties([$0]) }
         
         rows.append(Row.textArray([

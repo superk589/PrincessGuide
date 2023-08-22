@@ -3559,6 +3559,14 @@
         <target>潜伏状態のユニットを除いて、%2$@の中ユニット（ID：%3$d）が存在しない場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if among %@ does not exists magic unit" xml:space="preserve">
+        <source>use %1$d if among %2$@ does not exists magic unit</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if among %@ exists magic unit" xml:space="preserve">
+        <source>use %1$d if among %2$@ exists magic unit</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if among %@ exists unit(ID: %d)" xml:space="preserve">
         <source>use %1$d if among %2$@ exists unit(ID: %3$d)</source>
         <target>潜伏状態のユニットを除いて、%2$@の中ユニット（ID：%3$d）が存在する場合、[アクション%1$d]を使う</target>

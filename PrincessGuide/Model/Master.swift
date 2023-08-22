@@ -135,7 +135,7 @@ class Master: FMDatabaseQueue {
                 SELECT
                     *
                 FROM
-                    unit_unique_equip
+                    unit_unique_equipment
                 WHERE
                     unit_id = \(json["unit_id"])
                 """

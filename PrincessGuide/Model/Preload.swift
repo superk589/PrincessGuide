@@ -32,6 +32,8 @@ class Preload {
     
     var maxUniqueEquipmentLevel = Constant.presetMaxUniqueEquipmentLevel
     
+    var maxUniqueEquipmentStar = Constant.presetMaxUniqueEquipmentStar
+    
     var uniqueEquipmentEnhanceCost = [Int: Int]()
     
     var events = [GameEvent]()

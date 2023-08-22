@@ -92,6 +92,9 @@ class IfForAllAction: ActionParameter {
         case 1800:
             let format = NSLocalizedString("use %d if %@ is multi-target unit", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+        case 2001:
+            let format = NSLocalizedString("use %d if among %@ exists magic unit", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
         case 6000..<7000 where actionValue3 == 0:
             let format = NSLocalizedString("use %d if %@ is in state of ID: %d", comment: "")
             return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
@@ -165,6 +168,9 @@ class IfForAllAction: ActionParameter {
         case 1800:
             let format = NSLocalizedString("use %d if %@ is not multi-target unit", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+        case 2001:
+            let format = NSLocalizedString("use %d if among %@ does not exists magic unit", comment: "")
+            return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
         case 6000..<7000 where actionValue3 == 0:
             let format = NSLocalizedString("use %d if %@ is not in state of ID: %d", comment: "")
             return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
