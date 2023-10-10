@@ -28,9 +28,7 @@ PODS:
   - lz4 (128)
   - MJRefresh (3.4.1)
   - Pageboy (3.5.1)
-  - R.swift (5.2.0):
-    - R.swift.Library (~> 5.2.0)
-  - R.swift.Library (5.2.0)
+  - R.swift (7.3.2)
   - ReachabilitySwift (5.0.0)
   - Reusable (4.1.1):
     - Reusable/Storyboard (= 4.1.1)
@@ -83,7 +81,6 @@ SPEC REPOS:
     - MJRefresh
     - Pageboy
     - R.swift
-    - R.swift.Library
     - ReachabilitySwift
     - Reusable
     - SnapKit
@@ -123,8 +120,7 @@ SPEC CHECKSUMS:
   lz4: 5e066195ca751d552becaa026f8fe213ff738adf
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   Pageboy: 288353d4cc848c24deec2f7542f325089247c136
-  R.swift: f58c441eb72a18702be4d13825c32f79c06fd6a0
-  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
+  R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb

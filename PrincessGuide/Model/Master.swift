@@ -815,7 +815,7 @@ class Master: FMDatabaseQueue {
                 
                 var actionIDs = [Int]()
                 var dependActionIDs = [Int: Int]()
-                for i in 1...7 {
+                for i in 1...10 {
                     let field = "action_\(i)"
                     let id = json[field].intValue
                     actionIDs.append(id)

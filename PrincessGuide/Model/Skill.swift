@@ -70,6 +70,9 @@ class Skill: Codable {
         let dependAction5: Int
         let dependAction6: Int
         let dependAction7: Int
+        let dependAction8: Int
+        let dependAction9: Int
+        let dependAction10: Int
         let description: String
         let iconType: Int
         let name: String
