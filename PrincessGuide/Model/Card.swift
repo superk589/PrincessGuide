@@ -102,6 +102,7 @@ class Card: Codable {
         let spSkillEvolution2: Int?
         let spUnionBurst: Int?
         let conversionId: Int?
+        let talentId: Int?
         
         var rawName: String {
             if let substring = unitName.split(separator: "（").first {

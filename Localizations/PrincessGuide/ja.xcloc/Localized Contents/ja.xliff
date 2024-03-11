@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.3" build-num="15E204a"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -34,7 +34,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.3" build-num="15E204a"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -66,7 +66,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="ja" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.3" build-num="15E204a"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -968,6 +968,10 @@
         <target>継続ダメージ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Dark" xml:space="preserve">
+        <source>Dark</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Data Version" xml:space="preserve">
         <source>Data Version</source>
         <target>データバージョン</target>
@@ -1274,6 +1278,10 @@
         <target>更新完了</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Fire" xml:space="preserve">
+        <source>Fire</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Freeze" xml:space="preserve">
         <source>Freeze</source>
         <target>凍結</target>
@@ -1465,6 +1473,10 @@
       <trans-unit id="Life Steal" xml:space="preserve">
         <source>Life Steal</source>
         <target>HP吸収</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Light" xml:space="preserve">
+        <source>Light</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Limited Gacha" xml:space="preserve">
@@ -2436,6 +2448,10 @@
         <target>タグ</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Talent" xml:space="preserve">
+        <source>Talent</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Target Level" xml:space="preserve">
         <source>Target Level</source>
         <target>相手レベル</target>
@@ -2684,6 +2700,10 @@
         <target>仮想 HP(TP公式の最大HP)</target>
         <note>the max HP used for tp recovering from damage</note>
       </trans-unit>
+      <trans-unit id="Water" xml:space="preserve">
+        <source>Water</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Wave %d" xml:space="preserve">
         <source>Wave %d</source>
         <target>ボス %d</target>
@@ -2726,6 +2746,10 @@
       <trans-unit id="Who Needs" xml:space="preserve">
         <source>Who Needs</source>
         <target>装備可能なキャラ</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Wind" xml:space="preserve">
+        <source>Wind</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wins" xml:space="preserve">

@@ -16,6 +16,7 @@ class CardView: UIView {
     let nameLabel = UILabel()
     let rarityView = RarityView()
     let rightLabel = UILabel()
+    let talentView = UIImageView()
     
     enum Mode {
         case rarity
@@ -29,6 +30,7 @@ class CardView: UIView {
         addSubview(rarityView)
         addSubview(icon)
         addSubview(rightLabel)
+        addSubview(talentView)
         
         icon.snp.makeConstraints { (make) in
             make.height.equalTo(64)
@@ -57,6 +59,11 @@ class CardView: UIView {
         
         nameLabel.textColor = Theme.dynamic.color.title
         rightLabel.textColor = Theme.dynamic.color.body
+        
+        talentView.snp.makeConstraints { make in
+            make.bottom.right.equalTo(icon)
+            make.size.equalTo(17)
+        }
     }
     
     func configure(for card: Card, value: String?, mode: Mode = .rarity) {
@@ -66,6 +73,7 @@ class CardView: UIView {
         rightLabel.text = value
         rightLabel.isHidden = mode == .rarity
         rarityView.isHidden = mode == .text
+        talentView.image = card.base.talentId.flatMap { CardTalent(rawValue: $0) }?.image
     }
     
     override var intrinsicContentSize: CGSize {

@@ -86,11 +86,13 @@ class Master: FMDatabaseQueue {
                 b.sp_skill_evolution_1,
                 b.sp_skill_evolution_2,
                 b.sp_union_burst,
-                c.unit_id conversion_id
+                c.unit_id conversion_id,
+                d.talent_id
             FROM
                 unit_skill_data b,
                 unit_data a
                 LEFT JOIN unit_conversion c ON c.original_unit_id = a.unit_id
+                LEFT JOIN unit_talent d ON d.unit_id = a.unit_id
             WHERE
                 a.unit_id = b.unit_id
             """

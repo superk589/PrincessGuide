@@ -12,6 +12,7 @@ import Reusable
 class HomeCardCollectionViewCell: UICollectionViewCell, Reusable {
 
     let icon = IconImageView()
+    let talentView = UIImageView()
     let rarityView = RarityView()
     let bottomLabel = UILabel()
     
@@ -27,6 +28,12 @@ class HomeCardCollectionViewCell: UICollectionViewCell, Reusable {
         icon.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
             make.size.equalTo(64)
+        }
+        
+        contentView.addSubview(talentView)
+        talentView.snp.makeConstraints { make in
+            make.bottom.right.equalTo(icon)
+            make.size.equalTo(17)
         }
                 
         rarityView.snp.makeConstraints { (make) in
@@ -54,6 +61,7 @@ class HomeCardCollectionViewCell: UICollectionViewCell, Reusable {
         bottomLabel.text = value
         bottomLabel.isHidden = mode == .rarity
         rarityView.isHidden = mode == .text
+        talentView.image = card.base.talentId.flatMap { CardTalent(rawValue: $0) }?.image
     }
     
     override var intrinsicContentSize: CGSize {

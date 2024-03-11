@@ -116,4 +116,39 @@ extension Card {
             }
         }
     }
+    
+    enum TalentFilter: Int, Codable, CustomStringConvertible, CaseIterable, FilterType {
+        case all = 0
+        case fire = 1
+        case water
+        case wind
+        case light
+        case dark
+        
+        var description: String {
+            switch self {
+            case .all:
+                return NSLocalizedString("All", comment: "")
+            case .fire:
+                return NSLocalizedString("Fire", comment: "")
+            case .water:
+                return NSLocalizedString("Water", comment: "")
+            case .wind:
+                return NSLocalizedString("Wind", comment: "")
+            case .light:
+                return NSLocalizedString("Light", comment: "")
+            case .dark:
+                return NSLocalizedString("Dark", comment: "")
+            }
+        }
+        
+        func filter<S>(_ s: S) -> [Card] where S: Sequence, S.Element == Card {
+            switch self {
+            case .all:
+                return Array(s)
+            default:
+                return s.filter { $0.base.talentId == self.rawValue }
+            }
+        }
+    }
 }

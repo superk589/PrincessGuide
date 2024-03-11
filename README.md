@@ -1,7 +1,8 @@
 # Hatsune's Notes
 An unofficial iOS app for **プリンセスコネクト！Re:Dive**.  
 **Hatsune's Notes** is the app name and **PrincessGuide** is the project name.  
-Looking for an Android app? Try this one [ShizuruNotes](https://github.com/MalitsPlus/ShizuruNotes)
+Looking for an Android app? Try this one [ShizuruNotes](https://github.com/MalitsPlus/ShizuruNotes)  
+DB file [pcr-tool-sql-diff](https://github.com/wthee/pcr-tool-sql-diff)
 
 ## How to install
 ### Install via TestFlight

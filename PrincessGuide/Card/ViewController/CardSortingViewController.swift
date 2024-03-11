@@ -17,7 +17,7 @@ extension Notification.Name {
 }
 
 class CardSortingViewController: FormViewController {
-
+    
     struct Setting: Codable, Equatable {
         
         enum GroupingMethod: String, Codable, CustomStringConvertible, CaseIterable {
@@ -29,6 +29,7 @@ class CardSortingViewController: FormViewController {
             case cv
             case rarity6
             case gachaType
+            case talent
             case none
             
             var description: String {
@@ -49,6 +50,8 @@ class CardSortingViewController: FormViewController {
                     return NSLocalizedString("Rarity 6", comment: "")
                 case .gachaType:
                     return NSLocalizedString("Gacha Type", comment: "")
+                case .talent:
+                    return NSLocalizedString("Talent", comment: "")
                 default:
                     return NSLocalizedString("None", comment: "")
                 }
@@ -93,7 +96,7 @@ class CardSortingViewController: FormViewController {
             var description: String {
                 switch self {
                 case .atk, .def, .dodge, .energyRecoveryRate, .energyReduceRate, .hp, .hpRecoveryRate,
-                     .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy:
+                        .lifeSteal, .magicCritical, .magicDef, .magicStr, .physicalCritical, .waveEnergyRecovery, .waveHpRecovery, .accuracy:
                     return PropertyKey(rawValue: rawValue)!.description
                 case .rarity:
                     return NSLocalizedString("Rarity", comment: "")
@@ -165,14 +168,14 @@ class CardSortingViewController: FormViewController {
         
         var sortingMethod: SortingMethod = .attackRange
         
-        var groupingMethod: GroupingMethod = .none
+        var groupingMethod: GroupingMethod = .talent
         
         var listStyle: ListStyle = .collection
         
         var addsEx: Bool = true
         
         var equipsUniqueEquipment: Bool = true
-                
+        
         var iconStyle: IconStyle = .default
         
         var positionFilter: Card.PositionFilter = .all
@@ -184,6 +187,8 @@ class CardSortingViewController: FormViewController {
         var hasUniqueEquipmentFilter: Card.HasUniqueEquipmentFilter = .all
         
         var sourceFilter: Card.SourceFilter = .all
+        
+        var talentFilter: Card.TalentFilter = .all
         
         func save() {
             let encoder = JSONEncoder()
@@ -214,12 +219,12 @@ class CardSortingViewController: FormViewController {
             }
         }
     }
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleNavigationRightItem(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleNavigationLeftItem(_:)))
-      
+        
         view.tintColor = Theme.dynamic.color.tint
         
         func cellUpdate<T: RowType, U>(cell: T.Cell, row: T) where T.Cell.Value == U {
@@ -241,175 +246,175 @@ class CardSortingViewController: FormViewController {
         form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
         
         form
-            +++ Section(NSLocalizedString("Grouping", comment: ""))
-            <<< PickerInlineRow<String>("grouping_method") { (row : PickerInlineRow<String>) -> Void in
-                row.title = NSLocalizedString("Group by", comment: "")
-                row.displayValueFor = { (rowValue: String?) in
-                    return rowValue.flatMap { Setting.GroupingMethod(rawValue: $0)?.description }
-                }
-                row.options = Setting.GroupingMethod.allCases.map { $0.rawValue }
-                row.value = Setting.default.groupingMethod.rawValue
-                
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-                .onCellSelection(onCellSelection(cell:row:))
-                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+        +++ Section(NSLocalizedString("Grouping", comment: ""))
+        <<< PickerInlineRow<String>("grouping_method") { (row : PickerInlineRow<String>) -> Void in
+            row.title = NSLocalizedString("Group by", comment: "")
+            row.displayValueFor = { (rowValue: String?) in
+                return rowValue.flatMap { Setting.GroupingMethod(rawValue: $0)?.description }
+            }
+            row.options = Setting.GroupingMethod.allCases.map { $0.rawValue }
+            row.value = Setting.default.groupingMethod.rawValue
+            
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+            .onCellSelection(onCellSelection(cell:row:))
+            .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
         
-            +++ Section(NSLocalizedString("Sorting", comment: ""))
-            
-            <<< SegmentedRow<Bool>("is_ascending"){
-                $0.title = NSLocalizedString("Order", comment: "")
-                $0.displayValueFor = { (rowValue: Bool?) in
-                    if let rowValue = rowValue, rowValue {
-                        return NSLocalizedString("Ascending", comment: "")
-                    } else {
-                        return NSLocalizedString("Descending", comment: "")
-                    }
-                }
-                $0.options = [true, false]
-                $0.value = Setting.default.isAscending
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-            
-            <<< PickerInlineRow<String>("sorting_method") { (row : PickerInlineRow<String>) -> Void in
-                row.title = NSLocalizedString("Sort by", comment: "")
-                row.displayValueFor = { (rowValue: String?) in
-                    return rowValue.flatMap { Setting.SortingMethod(rawValue: $0)?.description }
-                }
-                row.options = Setting.SortingMethod.allCases.map { $0.rawValue }
-                row.value = Setting.default.sortingMethod.rawValue
-                
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-                .onCellSelection(onCellSelection(cell:row:))
-                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
-            
-            <<< SwitchRow("adds_ex") { (row : SwitchRow) -> Void in
-                row.title = NSLocalizedString("Adds Ex Bonus", comment: "")
-                
-                row.value = Setting.default.addsEx
-                
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-            
-            <<< SwitchRow("equips_unique_equipment") { (row : SwitchRow) -> Void in
-                row.title = NSLocalizedString("Unique Equipment", comment: "")
-                
-                row.value = Setting.default.equipsUniqueEquipment
-                
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-            
-            +++ Section(NSLocalizedString("Filter", comment: ""))
-            
-            <<< SegmentedRow<String>("position_filter"){
-                $0.title = NSLocalizedString("Position", comment: "")
-                $0.displayValueFor = { (rowValue: String?) in
-                    if let rowValue = rowValue {
-                        return Card.PositionFilter(rawValue: rowValue)?.description ?? nil
-                    } else {
-                        return nil
-                    }
-                }
-                $0.options = Card.PositionFilter.allCases.map { $0.rawValue }
-                $0.value = Setting.default.positionFilter.rawValue
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-            
-            <<< SegmentedRow<String>("attack_type_filter"){
-                $0.title = NSLocalizedString("Attack Type", comment: "")
-                $0.displayValueFor = { (rowValue: String?) in
-                    if let rowValue = rowValue {
-                        return Card.AttackTypeFilter(rawValue: rowValue)?.description ?? nil
-                    } else {
-                        return nil
-                    }
-                }
-                $0.options = Card.AttackTypeFilter.allCases.map { $0.rawValue }
-                $0.value = Setting.default.attackTypeFilter.rawValue
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-            
-            <<< SegmentedRow<String>("has_rarity6_filter"){
-                $0.title = NSLocalizedString("Rarity 6", comment: "")
-                $0.displayValueFor = { (rowValue: String?) in
-                    if let rowValue = rowValue {
-                        return Card.HasRarity6Filter(rawValue: rowValue)?.description ?? nil
-                    } else {
-                        return nil
-                    }
-                }
-                $0.options = Card.HasRarity6Filter.allCases.map { $0.rawValue }
-                $0.value = Setting.default.hasRarity6Filter.rawValue
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-            
-            <<< SegmentedRow<String>("has_unique_equipment_filter"){
-                $0.title = NSLocalizedString("Unique Equipment", comment: "")
-                $0.displayValueFor = { (rowValue: String?) in
-                    if let rowValue = rowValue {
-                        return Card.HasUniqueEquipmentFilter(rawValue: rowValue)?.description ?? nil
-                    } else {
-                        return nil
-                    }
-                }
-                $0.options = Card.HasUniqueEquipmentFilter.allCases.map { $0.rawValue }
-                $0.value = Setting.default.hasUniqueEquipmentFilter.rawValue
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-            
-            <<< SegmentedRow<String>("source_filter"){
-                $0.title = NSLocalizedString("Gacha Type", comment: "")
-                $0.displayValueFor = { (rowValue: String?) in
-                    if let rowValue = rowValue {
-                        return Card.SourceFilter(rawValue: rowValue)?.description ?? nil
-                    } else {
-                        return nil
-                    }
-                }
-                $0.options = Card.SourceFilter.allCases.map { $0.rawValue }
-                $0.value = Setting.default.sourceFilter.rawValue
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
+        +++ Section(NSLocalizedString("Sorting", comment: ""))
         
-            +++ Section(NSLocalizedString("Misc", comment: ""))
-            
-            <<< PickerInlineRow<String>("icon_style") { (row : PickerInlineRow<String>) -> Void in
-                row.title = NSLocalizedString("Icon Style", comment: "")
-                row.displayValueFor = { (rowValue: String?) in
-                    return rowValue.flatMap { Setting.IconStyle(rawValue: $0)?.description }
+        <<< SegmentedRow<Bool>("is_ascending"){
+            $0.title = NSLocalizedString("Order", comment: "")
+            $0.displayValueFor = { (rowValue: Bool?) in
+                if let rowValue = rowValue, rowValue {
+                    return NSLocalizedString("Ascending", comment: "")
+                } else {
+                    return NSLocalizedString("Descending", comment: "")
                 }
-                row.options = Setting.IconStyle.allCases.map { $0.rawValue }
-                row.value = Setting.default.iconStyle.rawValue
-                
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
-                .onCellSelection(onCellSelection(cell:row:))
-                .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+            }
+            $0.options = [true, false]
+            $0.value = Setting.default.isAscending
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
         
-            <<< SegmentedRow<String>("list_style") {
-                $0.title = NSLocalizedString("List Style", comment: "")
-                $0.displayValueFor = { (rowValue: String?) in
-                    return rowValue.flatMap { Setting.ListStyle(rawValue: $0)?.description }
-                }
-                $0.options = Setting.ListStyle.allCases.map { $0.rawValue }
-                $0.value = Setting.default.listStyle.rawValue
-                }.cellSetup(cellSetup(cell:row:))
-                .cellUpdate(cellUpdate(cell:row:))
+        <<< PickerInlineRow<String>("sorting_method") { (row : PickerInlineRow<String>) -> Void in
+            row.title = NSLocalizedString("Sort by", comment: "")
+            row.displayValueFor = { (rowValue: String?) in
+                return rowValue.flatMap { Setting.SortingMethod(rawValue: $0)?.description }
+            }
+            row.options = Setting.SortingMethod.allCases.map { $0.rawValue }
+            row.value = Setting.default.sortingMethod.rawValue
             
-            +++ Section()
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+            .onCellSelection(onCellSelection(cell:row:))
+            .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+        
+        <<< SwitchRow("adds_ex") { (row : SwitchRow) -> Void in
+            row.title = NSLocalizedString("Adds Ex Bonus", comment: "")
             
-            <<< ButtonRow("reset") { (row) in
-                row.title = NSLocalizedString("Reset", comment: "")
+            row.value = Setting.default.addsEx
+            
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
+        <<< SwitchRow("equips_unique_equipment") { (row : SwitchRow) -> Void in
+            row.title = NSLocalizedString("Unique Equipment", comment: "")
+            
+            row.value = Setting.default.equipsUniqueEquipment
+            
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
+        +++ Section(NSLocalizedString("Filter", comment: ""))
+        
+        <<< SegmentedRow<String>("position_filter"){
+            $0.title = NSLocalizedString("Position", comment: "")
+            $0.displayValueFor = { (rowValue: String?) in
+                if let rowValue = rowValue {
+                    return Card.PositionFilter(rawValue: rowValue)?.description ?? nil
+                } else {
+                    return nil
                 }
-                .cellSetup(cellSetup(cell:row:))
-                .onCellSelection { [unowned self] (cell, row) in
-                    let encoder = JSONEncoder()
-                    encoder.keyEncodingStrategy = .convertToSnakeCase
-                    let data = try! encoder.encode(Setting())
-                    let json = try! JSON(data: data)
-                    self.form.setValues(json.dictionaryObject ?? [:])
-                    self.tableView.reloadData()
+            }
+            $0.options = Card.PositionFilter.allCases.map { $0.rawValue }
+            $0.value = Setting.default.positionFilter.rawValue
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
+        <<< SegmentedRow<String>("attack_type_filter"){
+            $0.title = NSLocalizedString("Attack Type", comment: "")
+            $0.displayValueFor = { (rowValue: String?) in
+                if let rowValue = rowValue {
+                    return Card.AttackTypeFilter(rawValue: rowValue)?.description ?? nil
+                } else {
+                    return nil
+                }
+            }
+            $0.options = Card.AttackTypeFilter.allCases.map { $0.rawValue }
+            $0.value = Setting.default.attackTypeFilter.rawValue
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
+        <<< SegmentedRow<String>("has_rarity6_filter"){
+            $0.title = NSLocalizedString("Rarity 6", comment: "")
+            $0.displayValueFor = { (rowValue: String?) in
+                if let rowValue = rowValue {
+                    return Card.HasRarity6Filter(rawValue: rowValue)?.description ?? nil
+                } else {
+                    return nil
+                }
+            }
+            $0.options = Card.HasRarity6Filter.allCases.map { $0.rawValue }
+            $0.value = Setting.default.hasRarity6Filter.rawValue
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
+        <<< SegmentedRow<String>("has_unique_equipment_filter"){
+            $0.title = NSLocalizedString("Unique Equipment", comment: "")
+            $0.displayValueFor = { (rowValue: String?) in
+                if let rowValue = rowValue {
+                    return Card.HasUniqueEquipmentFilter(rawValue: rowValue)?.description ?? nil
+                } else {
+                    return nil
+                }
+            }
+            $0.options = Card.HasUniqueEquipmentFilter.allCases.map { $0.rawValue }
+            $0.value = Setting.default.hasUniqueEquipmentFilter.rawValue
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
+        <<< SegmentedRow<String>("source_filter"){
+            $0.title = NSLocalizedString("Gacha Type", comment: "")
+            $0.displayValueFor = { (rowValue: String?) in
+                if let rowValue = rowValue {
+                    return Card.SourceFilter(rawValue: rowValue)?.description ?? nil
+                } else {
+                    return nil
+                }
+            }
+            $0.options = Card.SourceFilter.allCases.map { $0.rawValue }
+            $0.value = Setting.default.sourceFilter.rawValue
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
+        +++ Section(NSLocalizedString("Misc", comment: ""))
+        
+        <<< PickerInlineRow<String>("icon_style") { (row : PickerInlineRow<String>) -> Void in
+            row.title = NSLocalizedString("Icon Style", comment: "")
+            row.displayValueFor = { (rowValue: String?) in
+                return rowValue.flatMap { Setting.IconStyle(rawValue: $0)?.description }
+            }
+            row.options = Setting.IconStyle.allCases.map { $0.rawValue }
+            row.value = Setting.default.iconStyle.rawValue
+            
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+            .onCellSelection(onCellSelection(cell:row:))
+            .onExpandInlineRow(onExpandInlineRow(cell:row:pickerRow:))
+        
+        <<< SegmentedRow<String>("list_style") {
+            $0.title = NSLocalizedString("List Style", comment: "")
+            $0.displayValueFor = { (rowValue: String?) in
+                return rowValue.flatMap { Setting.ListStyle(rawValue: $0)?.description }
+            }
+            $0.options = Setting.ListStyle.allCases.map { $0.rawValue }
+            $0.value = Setting.default.listStyle.rawValue
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
+        +++ Section()
+        
+        <<< ButtonRow("reset") { (row) in
+            row.title = NSLocalizedString("Reset", comment: "")
+        }
+        .cellSetup(cellSetup(cell:row:))
+        .onCellSelection { [unowned self] (cell, row) in
+            let encoder = JSONEncoder()
+            encoder.keyEncodingStrategy = .convertToSnakeCase
+            let data = try! encoder.encode(Setting())
+            let json = try! JSON(data: data)
+            self.form.setValues(json.dictionaryObject ?? [:])
+            self.tableView.reloadData()
         }
     }
     
@@ -426,5 +431,5 @@ class CardSortingViewController: FormViewController {
     @objc private func handleNavigationLeftItem(_ item: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-
+    
 }

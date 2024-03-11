@@ -674,6 +674,9 @@
 "damaged by effect %d" = "被效果 %d 伤害到的";
 
 /* No comment provided by engineer. */
+"Dark" = "暗";
+
+/* No comment provided by engineer. */
 "Data Version" = "数据版本";
 
 /* No comment provided by engineer. */
@@ -893,6 +896,9 @@
 "Finished" = "更新完成";
 
 /* No comment provided by engineer. */
+"Fire" = "火";
+
+/* No comment provided by engineer. */
 "four" = "四个";
 
 /* No comment provided by engineer. */
@@ -1053,6 +1059,9 @@
 
 /* No comment provided by engineer. */
 "Life Steal" = "HP 吸收";
+
+/* No comment provided by engineer. */
+"Light" = "光";
 
 /* No comment provided by engineer. */
 "Limited Gacha" = "限定角色";
@@ -1727,6 +1736,9 @@
 "Tag" = "标签";
 
 /* No comment provided by engineer. */
+"Talent" = "属性";
+
+/* No comment provided by engineer. */
 "target" = "目标";
 
 /* No comment provided by engineer. */
@@ -2180,6 +2192,9 @@
 "Virtual HP(max HP in TP formula)" = "实质 HP（受击回能公式中的最大 HP）";
 
 /* No comment provided by engineer. */
+"Water" = "水";
+
+/* No comment provided by engineer. */
 "Wave %d" = "第 %d 波";
 
 /* No comment provided by engineer. */
@@ -2205,6 +2220,9 @@
 
 /* No comment provided by engineer. */
 "Who Needs" = "可装备的角色";
+
+/* No comment provided by engineer. */
+"Wind" = "风";
 
 /* No comment provided by engineer. */
 "Wins" = "胜利";

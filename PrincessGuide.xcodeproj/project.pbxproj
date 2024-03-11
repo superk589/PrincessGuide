@@ -100,6 +100,7 @@
 		123608ED20932590003E7D11 /* UpdatingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608EC20932590003E7D11 /* UpdatingHUD.swift */; };
 		12360921209940B2003E7D11 /* Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12360920209940B2003E7D11 /* Binary.swift */; };
 		123609232099410E003E7D11 /* UnityFSUnpacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123609222099410E003E7D11 /* UnityFSUnpacker.swift */; };
+		123928192B9EF58400DC8F0F /* Card+Talent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123928182B9EF58400DC8F0F /* Card+Talent.swift */; };
 		12398E7220915737006AC352 /* AttackPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7120915737006AC352 /* AttackPattern.swift */; };
 		12398E742091573D006AC352 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E732091573C006AC352 /* Area.swift */; };
 		12398E7620915765006AC352 /* PatternCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12398E7520915765006AC352 /* PatternCollectionViewCell.swift */; };
@@ -450,6 +451,7 @@
 		123608EC20932590003E7D11 /* UpdatingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatingHUD.swift; sourceTree = "<group>"; };
 		12360920209940B2003E7D11 /* Binary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binary.swift; sourceTree = "<group>"; };
 		123609222099410E003E7D11 /* UnityFSUnpacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnityFSUnpacker.swift; sourceTree = "<group>"; };
+		123928182B9EF58400DC8F0F /* Card+Talent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Talent.swift"; sourceTree = "<group>"; };
 		12398E7120915737006AC352 /* AttackPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackPattern.swift; sourceTree = "<group>"; };
 		12398E732091573C006AC352 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		12398E7520915765006AC352 /* PatternCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -819,6 +821,7 @@
 				1281FA51209AE3E900F2D567 /* Craft.swift */,
 				12D7A91D21AAC76F004E22C6 /* UniqueCraft.swift */,
 				1221CDD3207C4AA8008F30AA /* Card.swift */,
+				123928182B9EF58400DC8F0F /* Card+Talent.swift */,
 				1220423E231A9ECC00205C85 /* Card+Rarity6.swift */,
 				12B00D2F231F7EA40086B079 /* Card+Filter.swift */,
 				12FA75E9269C473500210B46 /* Card+PromotionBonus.swift */,
@@ -1656,7 +1659,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1795,6 +1798,7 @@
 				12B91122254D3DD100EE0FC0 /* HealDownAction.swift in Sources */,
 				128DA48B21B26CC800F7C006 /* MinionTableViewController.swift in Sources */,
 				12A6A7D42163B09F00877074 /* DispelAction.swift in Sources */,
+				123928192B9EF58400DC8F0F /* Card+Talent.swift in Sources */,
 				1221CDE3207DB076008F30AA /* LoadingHUD.swift in Sources */,
 				127EEBA120ECDAD300A6B3D4 /* CharaItemView.swift in Sources */,
 				129A7F6220A0465800D93996 /* CharaStory.swift in Sources */,
@@ -2269,7 +2273,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 244;
+				CURRENT_PROJECT_VERSION = 247;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2294,7 +2298,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 244;
+				CURRENT_PROJECT_VERSION = 247;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

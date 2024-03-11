@@ -13,9 +13,9 @@ import BrotliKit
 
 extension URL {
     static let versionLog = URL(string: "https://redive.estertion.win/ver_log_redive/")!
-    static let check = URL(string: "https://redive.estertion.win/last_version_jp.json")!
+    static let check = URL(string: "https://wthee.xyz/pcr/api/v1/db/info/v2")!
     static func master(_ hash: String) -> URL {
-        return URL(string: "https://redive.estertion.win/db/redive_jp.db.br")!
+        return URL(string: "https://wthee.xyz/db/redive_jp.db.br")!
     }
     static let notice = URL(string: "https://estertion.github.io/hatsunes_notes_notice/hn_notice.json")!
 }
@@ -36,14 +36,14 @@ class Updater {
     
     func checkTruthVersion(completion: @escaping (_ version: String?, _ hash: String?, _ error: Error?) -> Void) {
         isUpdating = true
-        AF.request(URL.check).validate(statusCode: 200..<300).responseData { [unowned self] (response) in
+        AF.request(URL.check, method: .post, parameters: ["regionCode": "jp"], encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseData { [unowned self] (response) in
             switch response.result {
             case .failure(let error):
                 print(error)
                 completion(nil, nil, error)
             case .success(let data):
                 let json = JSON(data)
-                if let truthVersion = json["TruthVersion"].string, let hash = json["hash"].string {
+                if let truthVersion = json["data"]["truthVersion"].string, let hash = json["data"]["hash"].string {
                     completion(truthVersion, hash, nil)
                 }
             }

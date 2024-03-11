@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="PrincessGuide/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.3" build-num="15E204a"/>
     </header>
     <body>
       <trans-unit id="0Fw-sz-yKe.title" xml:space="preserve">
@@ -33,7 +33,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/InfoPlist.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.3" build-num="15E204a"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName" xml:space="preserve">
@@ -65,7 +65,7 @@
   </file>
   <file original="PrincessGuide/en.lproj/Localizable.strings" source-language="en" target-language="zh-Hans" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3.1" build-num="14E300c"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.3" build-num="15E204a"/>
     </header>
     <body>
       <trans-unit id=" Can't use union burst when the new attack pattern is active." xml:space="preserve">
@@ -979,6 +979,11 @@
         <target>持续伤害</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Dark" xml:space="preserve">
+        <source>Dark</source>
+        <target>暗</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Data Version" xml:space="preserve">
         <source>Data Version</source>
         <target>数据版本</target>
@@ -1289,6 +1294,11 @@
         <target>更新完成</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Fire" xml:space="preserve">
+        <source>Fire</source>
+        <target>火</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Freeze" xml:space="preserve">
         <source>Freeze</source>
         <target>冻结</target>
@@ -1482,6 +1492,11 @@
       <trans-unit id="Life Steal" xml:space="preserve">
         <source>Life Steal</source>
         <target>HP 吸收</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Light" xml:space="preserve">
+        <source>Light</source>
+        <target>光</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Limited Gacha" xml:space="preserve">
@@ -2469,6 +2484,11 @@
         <target>标签</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Talent" xml:space="preserve">
+        <source>Talent</source>
+        <target>属性</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Target Level" xml:space="preserve">
         <source>Target Level</source>
         <target>目标等级</target>
@@ -2719,6 +2739,11 @@
         <target>实质 HP（受击回能公式中的最大 HP）</target>
         <note>the max HP used for tp recovering from damage</note>
       </trans-unit>
+      <trans-unit id="Water" xml:space="preserve">
+        <source>Water</source>
+        <target>水</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Wave %d" xml:space="preserve">
         <source>Wave %d</source>
         <target>第 %d 波</target>
@@ -2762,6 +2787,11 @@
       <trans-unit id="Who Needs" xml:space="preserve">
         <source>Who Needs</source>
         <target>可装备的角色</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Wind" xml:space="preserve">
+        <source>Wind</source>
+        <target>风</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Wins" xml:space="preserve">

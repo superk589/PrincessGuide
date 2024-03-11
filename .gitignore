@@ -21,3 +21,5 @@ xcuserdata/
 # *.xcworkspacedata
 *.DS_Store
 *.generated.swift
+*.mobileprovision
+*.p8

@@ -21,6 +21,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     let icon = IconImageView()
+    let talentView = UIImageView()
     
     let foregroundView = UIView()
     
@@ -34,16 +35,24 @@ class CardCollectionViewCell: UICollectionViewCell {
             make.edges.equalToSuperview()
         }
         
+        contentView.addSubview(talentView)
+        talentView.snp.makeConstraints { make in
+            make.bottom.right.equalTo(icon)
+            make.size.equalTo(17)
+        }
+        
         contentView.addSubview(foregroundView)
         foregroundView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         foregroundView.alpha = 0
         foregroundView.isUserInteractionEnabled = false
+        
     }
     
     func configure(for card: Card, isEnable: Bool) {
         icon.configure(iconURL: card.iconURL(), placeholderStyle: .blank)
+        talentView.image = card.base.talentId.flatMap { CardTalent(rawValue: $0) }?.image
         self.isEnable = isEnable
     }
     

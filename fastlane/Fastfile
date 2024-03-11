@@ -19,8 +19,16 @@ default_platform(:ios)
 xcode_select "/Applications/Xcode.app"
 # match(type: "appstore", readonly: is_ci)
 platform :ios do
+  before_all do
+    app_store_connect_api_key(
+      key_id: "J626K5WZF9", 
+      issuer_id: "69a6de8d-3de7-47e3-e053-5b8c7c11a4d1",
+      key_filepath: "./fastlane/AuthKey_J626K5WZF9.p8",
+    )
+  end
   desc "Push a new beta build to TestFlight"
   lane :beta do
+    sigh(app_identifier: "com.zzk.PrincessGuide")
     increment_build_number(
       build_number: latest_testflight_build_number + 1,
       xcodeproj: "PrincessGuide.xcodeproj"

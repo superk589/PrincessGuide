@@ -354,6 +354,12 @@ extension Array where Element == Card {
             }
             .map { Section(title: $0, cards: $1) }
             .sorted { ($0.cards.first?.base.isLimited ?? 0) > ($1.cards.first?.base.isLimited ?? 0) }
+        case .talent:
+            sections = reduce(into: [String: [Card]]()) {
+                $0[CardTalent(rawValue: $1.base.talentId ?? 0)?.description ?? "", default: [Card]()].append($1)
+            }
+            .map { Section(title: $0, cards: $1) }
+            .sorted { ($0.cards.first?.base.talentId ?? 0) < ($1.cards.first?.base.talentId ?? 0) }
         }
         
         return sections
