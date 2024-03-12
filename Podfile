@@ -25,6 +25,7 @@ target 'PrincessGuide' do
   pod 'DHSmartScreenshot'
   pod 'Reusable'
   pod 'R.swift'
+  pod 'AlignedCollectionViewFlowLayout'
 end
 
 post_install do |installer|

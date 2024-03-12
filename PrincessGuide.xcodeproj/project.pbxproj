@@ -132,6 +132,10 @@
 		124EA0A220D26CA500F46029 /* Dungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124EA0A120D26CA500F46029 /* Dungeon.swift */; };
 		1250190820AF0DBC00D2FBDC /* Still.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1250190720AF0DBC00D2FBDC /* Still.swift */; };
 		12512A712163D19A0071B0CC /* VLFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12512A702163D19A0071B0CC /* VLFilterViewController.swift */; };
+		1255448C2BA021C40072A3B9 /* CDSameUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255448B2BA021C40072A3B9 /* CDSameUnitCell.swift */; };
+		1255448E2BA02EAE0072A3B9 /* TalentArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255448D2BA02EAE0072A3B9 /* TalentArea.swift */; };
+		125544902BA02FE90072A3B9 /* TalentQuestAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255448F2BA02FE90072A3B9 /* TalentQuestAreaViewController.swift */; };
+		125544922BA030EC0072A3B9 /* TalentQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125544912BA030EC0072A3B9 /* TalentQuest.swift */; };
 		1256546B2664AD8A00B8930D /* DamageByBehaviorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256546A2664AD8A00B8930D /* DamageByBehaviorAction.swift */; };
 		125B663120EE637E00D15E75 /* CharaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */; };
 		125B663320EFB5D600D15E75 /* Chara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B663220EFB5D600D15E75 /* Chara.swift */; };
@@ -483,6 +487,10 @@
 		124EA0A120D26CA500F46029 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
 		1250190720AF0DBC00D2FBDC /* Still.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Still.swift; sourceTree = "<group>"; };
 		12512A702163D19A0071B0CC /* VLFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLFilterViewController.swift; sourceTree = "<group>"; };
+		1255448B2BA021C40072A3B9 /* CDSameUnitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSameUnitCell.swift; sourceTree = "<group>"; };
+		1255448D2BA02EAE0072A3B9 /* TalentArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentArea.swift; sourceTree = "<group>"; };
+		1255448F2BA02FE90072A3B9 /* TalentQuestAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentQuestAreaViewController.swift; sourceTree = "<group>"; };
+		125544912BA030EC0072A3B9 /* TalentQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentQuest.swift; sourceTree = "<group>"; };
 		1256546A2664AD8A00B8930D /* DamageByBehaviorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageByBehaviorAction.swift; sourceTree = "<group>"; };
 		125B663020EE637E00D15E75 /* CharaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaCollectionViewCell.swift; sourceTree = "<group>"; };
 		125B663220EFB5D600D15E75 /* Chara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chara.swift; sourceTree = "<group>"; };
@@ -834,7 +842,9 @@
 				12124F4D208EC1A4001C1A6F /* Ailment.swift */,
 				12398E7120915737006AC352 /* AttackPattern.swift */,
 				12398E732091573C006AC352 /* Area.swift */,
+				1255448D2BA02EAE0072A3B9 /* TalentArea.swift */,
 				12398E84209164AC006AC352 /* Quest.swift */,
+				125544912BA030EC0072A3B9 /* TalentQuest.swift */,
 				12398E88209168A2006AC352 /* Wave.swift */,
 				12398E8620916876006AC352 /* Drop.swift */,
 				129A7F6120A0465800D93996 /* CharaStory.swift */,
@@ -999,6 +1009,7 @@
 				12AEF2AB283121BE00673342 /* SecretDungeonViewController.swift */,
 				12AEF2AD2831299800673342 /* SecretDungeonFloorTabViewController.swift */,
 				12D4C2352834B7D80034C912 /* TrialBattleViewController.swift */,
+				1255448F2BA02FE90072A3B9 /* TalentQuestAreaViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1174,6 +1185,7 @@
 				129A7F5B20A02E5400D93996 /* CDCommentTableViewCell.swift */,
 				12F125AC20AEB3C6005C9659 /* CDImageTableViewCell.swift */,
 				12F125B020AEC069005C9659 /* CDImageView.swift */,
+				1255448B2BA021C40072A3B9 /* CDSameUnitCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1674,6 +1686,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-PrincessGuide/Pods-PrincessGuide-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlignedCollectionViewFlowLayout/AlignedCollectionViewFlowLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/BrotliKit/BrotliKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/DHSmartScreenshot/DHSmartScreenshot.framework",
@@ -1700,6 +1713,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlignedCollectionViewFlowLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrotliKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DHSmartScreenshot.framework",
@@ -1784,6 +1798,7 @@
 				127FB85920F44BE1009B53CC /* Preload.swift in Sources */,
 				12F1261320B954C1005C9659 /* AccumulativeDamageAction.swift in Sources */,
 				122071E620F9DF7D00554030 /* AddTeamToTeamViewController.swift in Sources */,
+				125544902BA02FE90072A3B9 /* TalentQuestAreaViewController.swift in Sources */,
 				122552282133977C00CB0D3E /* StatusIndicator.swift in Sources */,
 				1226531D20AD4D1900BB3E56 /* HatsuneEventTableViewCell.swift in Sources */,
 				12F1260920B953BD005C9659 /* SearchAreaChangeAction.swift in Sources */,
@@ -1825,6 +1840,7 @@
 				12BDDA85241FB30800E89D7B /* ShioriEventAreaTableViewController.swift in Sources */,
 				12C599302287DC4200875EE4 /* GameEventCenter.swift in Sources */,
 				1216503B248657C2001A4C7F /* CardNavigationController.swift in Sources */,
+				125544922BA030EC0072A3B9 /* TalentQuest.swift in Sources */,
 				1223A8EC20F0B4EB00C98BB2 /* NotificationHandle.swift in Sources */,
 				123608E12093105D003E7D11 /* LZ4Decompressor.swift in Sources */,
 				129A7F5C20A02E5400D93996 /* CDCommentTableViewCell.swift in Sources */,
@@ -1869,6 +1885,7 @@
 				124BADDD21AD43C6001041F2 /* UniqueCraftTableViewController.swift in Sources */,
 				1221CDC8207B973B008F30AA /* CardTableViewCell.swift in Sources */,
 				1221CDDA207CC116008F30AA /* RarityView.swift in Sources */,
+				1255448E2BA02EAE0072A3B9 /* TalentArea.swift in Sources */,
 				122071F020F9F5C500554030 /* FAQTableViewCell.swift in Sources */,
 				120B71D52196DB6100B45A4A /* FixedTabBar.swift in Sources */,
 				12F1261520B954DB005C9659 /* SealAction.swift in Sources */,
@@ -1942,6 +1959,7 @@
 				12D3D14720A58F5A00034DD6 /* EDSkillTableViewCell.swift in Sources */,
 				12A7A69829C453B400984577 /* ChangeSpeedOverrideFieldAction.swift in Sources */,
 				122071DC20F8E30800554030 /* SearchableTeamTableViewController.swift in Sources */,
+				1255448C2BA021C40072A3B9 /* CDSameUnitCell.swift in Sources */,
 				12F7500820935F2500E11CC8 /* HomeCardTableViewController.swift in Sources */,
 				12D3D14120A587FF00034DD6 /* EDPropertyTableViewCell.swift in Sources */,
 				12F1260F20B9547B005C9659 /* EnchantLifeStealAction.swift in Sources */,
@@ -2273,7 +2291,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 247;
+				CURRENT_PROJECT_VERSION = 248;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2298,7 +2316,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 247;
+				CURRENT_PROJECT_VERSION = 248;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

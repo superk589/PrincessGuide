@@ -48,7 +48,7 @@ class Master: FMDatabaseQueue {
         return false
     }
     
-    func getCards(cardID: Int? = nil, originalID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Card]>) {
+    func getCards(cardID: Int? = nil, originalID: Int? = nil, kana: String? = nil, callback: @escaping FMDBCallbackClosure<[Card]>) {
         var cards = [Card]()
         execute({ (db) in
             var selectSql = """
@@ -99,6 +99,10 @@ class Master: FMDatabaseQueue {
             
             if let id = cardID {
                 selectSql.append(" AND a.unit_id = \(id)")
+            }
+            
+            if let kana = kana {
+                selectSql.append(" AND a.kana = '\(kana)'")
             }
             
             let set = try db.executeQuery(selectSql, values: nil)
@@ -910,6 +914,29 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getTalentAreas(callback: @escaping FMDBCallbackClosure<[TalentArea]>) {
+        var areas = [TalentArea]()
+        execute({ (db) in
+            var sql = """
+            SELECT
+                *
+            FROM
+                talent_quest_area_data
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let area = try? decoder.decode(TalentArea.self, from: json.rawData()) {
+                    areas.append(area)
+                }
+            }
+        }) {
+            callback(areas)
+        }
+    }
+    
     private func getWaves(from db: FMDatabase, waveIDs: [Int]) throws -> [Wave] {
         let waveSql = """
         SELECT
@@ -1130,6 +1157,35 @@ class Master: FMDatabaseQueue {
             callback(waves)
         }
     }
+    
+    func getTalentWaves(waveIDs: [Int], callback: @escaping FMDBCallbackClosure<[TalentQuest.Wave]>) {
+        var waves = [TalentQuest.Wave]()
+        execute({ (db) in
+            let sql = """
+            SELECT
+                *
+            FROM
+                talent_quest_wave_group_data
+            WHERE
+                wave_group_id in (\(waveIDs.map(String.init).joined(separator: ",")))
+            """
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                do {
+                    let quest = try decoder.decode(TalentQuest.Wave.self, from: json.rawData())
+                    waves.append(quest)
+                } catch let error {
+                    print(error)
+                }
+            }
+        }) {
+            callback(waves)
+        }
+    }
+    
     func getTowerQuests(towerID: Int, callback: @escaping FMDBCallbackClosure<[Tower.Quest]>) {
         var quests = [Tower.Quest]()
         execute({ (db) in
@@ -1732,6 +1788,95 @@ class Master: FMDatabaseQueue {
         }
     }
     
+    func getTalentEnemies(enemyID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Enemy]>) {
+        var enemies = [Enemy]()
+        execute({ (db) in
+            var sql = """
+            SELECT
+                a.*,
+                b.union_burst,
+                b.main_skill_1,
+                b.main_skill_2,
+                b.main_skill_3,
+                b.main_skill_4,
+                b.main_skill_5,
+                b.main_skill_6,
+                b.main_skill_7,
+                b.main_skill_8,
+                b.main_skill_9,
+                b.main_skill_10,
+                b.ex_skill_1,
+                b.ex_skill_2,
+                b.ex_skill_3,
+                b.ex_skill_4,
+                b.ex_skill_5,
+                b.union_burst_evolution,
+                b.main_skill_evolution_1,
+                b.main_skill_evolution_2,
+                b.ex_skill_evolution_1,
+                b.ex_skill_evolution_2,
+                b.ex_skill_evolution_3,
+                b.ex_skill_evolution_4,
+                b.ex_skill_evolution_5,
+                b.sp_skill_1,
+                b.sp_skill_2,
+                b.sp_skill_3,
+                b.sp_skill_4,
+                b.sp_skill_5,
+                c.child_enemy_parameter_1,
+                c.child_enemy_parameter_2,
+                c.child_enemy_parameter_3,
+                c.child_enemy_parameter_4,
+                c.child_enemy_parameter_5
+            FROM
+                unit_skill_data b,
+                talent_quest_enemy_parameter a
+                LEFT JOIN enemy_m_parts c
+                ON a.enemy_id = c.enemy_id
+            WHERE
+                a.unit_id = b.unit_id
+            """
+            if let id = enemyID {
+                sql.append(" AND a.enemy_id = \(id)")
+            }
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                let unitID = json["unit_id"].intValue
+                let unitSql = """
+                SELECT
+                    *
+                FROM
+                    unit_enemy_data
+                WHERE
+                    unit_id = \(unitID)
+                """
+                do {
+                    var unit: Enemy.Unit?
+                    let unitSet = try db.executeQuery(unitSql, values: nil)
+                    while unitSet.next() {
+                        let json = JSON(unitSet.resultDictionary ?? [:])
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        unit = try decoder.decode(Enemy.Unit.self, from: json.rawData())
+                    }
+                    
+                    let base = try decoder.decode(Enemy.Base.self, from: json.rawData())
+                    if let unit = unit {
+                        enemies.append(Enemy(base: base, unit: unit))
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }) {
+            callback(enemies)
+        }
+    }
+    
     func getQuests(areaID: Int? = nil, containsEquipment equipmentID: Int? = nil, callback: @escaping FMDBCallbackClosure<[Quest]>) {
         var quests = [Quest]()
         execute({ [unowned self] (db) in
@@ -1765,6 +1910,32 @@ class Master: FMDatabaseQueue {
                     } else if quest.allRewards.contains(where: { $0.rewardID == equipmentID! }) {
                         quests.append(quest)
                     }
+                }
+            }
+        }) {
+            callback(quests)
+        }
+    }
+    
+    func getTalentQuests(areaID: Int? = nil, callback: @escaping FMDBCallbackClosure<[TalentQuest]>) {
+        var quests = [TalentQuest]()
+        execute({ (db) in
+            var sql = """
+            SELECT
+                *
+            FROM
+                talent_quest_data
+            """
+            if let areaID = areaID {
+                sql.append(" WHERE area_id = \(areaID)")
+            }
+            let set = try db.executeQuery(sql, values: nil)
+            while set.next() {
+                let json = JSON(set.resultDictionary ?? [:])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                if let quest = try? decoder.decode(TalentQuest.self, from: json.rawData()) {
+                    quests.append(quest)
                 }
             }
         }) {

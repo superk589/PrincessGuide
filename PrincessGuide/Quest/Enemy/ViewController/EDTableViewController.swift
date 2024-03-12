@@ -121,7 +121,8 @@ class EDTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EDBasicTableViewCell.self)
             cell.configure(
                 comment: unit.comment.replacingOccurrences(of: "\\n", with: "\n"),
-                iconURL: unit.iconURL
+                iconURL: unit.iconURL,
+                talentId: nil
             )
             return cell
         }

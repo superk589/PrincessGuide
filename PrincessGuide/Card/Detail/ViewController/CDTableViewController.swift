@@ -25,6 +25,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         case album(title: String, urls: [URL], thumbnailURLs: [URL])
         case commentText(String)
         case uniqueEquipments([Int])
+        case sameUnit([Card])
     }
     
     var card: Card? {
@@ -68,6 +69,7 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
         tableView.register(cellType: CDMinionTableViewCell.self)
         tableView.register(cellType: CDCommentTableViewCell.self)
         tableView.register(cellType: CDImageTableViewCell.self)
+        tableView.register(cellType: CDSameUnitCell.self)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -98,7 +100,8 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDBasicTableViewCell.self)
             cell.configure(
                 comment: card.base.comment.replacingOccurrences(of: "\\n", with: "\n"),
-                iconURL: card.iconURL()
+                iconURL: card.iconURL(),
+                talentId: card.base.talentId
             )
             return cell
         case .comment(let comment):
@@ -185,6 +188,11 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
                 imageURLs: ids.map { URL.resource.appendingPathComponent("icon/equipment/\($0).webp") })
             cell.delegate = self
             return cell
+        case .sameUnit(let cards):
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: CDSameUnitCell.self)
+            cell.configure(items: cards)
+            cell.delegate = self
+            return cell
         }
     }
     
@@ -201,6 +209,14 @@ class CDTableViewController: UITableViewController, CDImageTableViewCellDelegate
     
     func cdImageTableViewCell(_ cdImageTableViewCell: CDImageTableViewCell, didSelect imageView: UIImageView, url: URL?) {
         
+    }
+}
+
+extension CDTableViewController: CDSameUnitCellDelegate {
+    func cdSameUnitCell(_ cdSameUnitCell: CDSameUnitCell, didSelect index: Int) {
+        guard let card = card?.sameUnits[safe: index] else { return }
+        let vc = CDTabViewController(card: card)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

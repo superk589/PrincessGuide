@@ -226,7 +226,7 @@ class CardTableViewController: UIViewController, DataChecking, UITableViewDelega
             groups[index].cards.filter(settings: settings)
             groups[index].cards.sort(settings: settings)
         }
-        return groups
+        return groups.filter { $0.cards.count > 0 }
     }
 }
 
@@ -372,6 +372,7 @@ extension Array where Element == Card {
             .filtered(by: settings.hasRarity6Filter)
             .filtered(by: settings.hasUniqueEquipmentFilter)
             .filtered(by: settings.sourceFilter)
+            .filtered(by: settings.talentFilter)
     }
 }
 

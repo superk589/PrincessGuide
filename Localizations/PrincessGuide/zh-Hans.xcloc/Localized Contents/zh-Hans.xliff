@@ -2219,6 +2219,11 @@
         <target>SP+</target>
         <note>skill category</note>
       </trans-unit>
+      <trans-unit id="Same Unit" xml:space="preserve">
+        <source>Same Unit</source>
+        <target>相同角色</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Save Box" xml:space="preserve">
         <source>Save Box</source>
         <target>保存 Box</target>

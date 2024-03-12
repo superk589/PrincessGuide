@@ -22,6 +22,7 @@ class QuestEnemyTableViewController: UITableViewController {
             case hatsuneEvent(Wave, String)
             case cloister(TowerCloister.Wave, Int)
             case waveAndTitle(Wave, String?)
+            case talentWave(TalentQuest.Wave, String?)
         }
     }
 
@@ -124,6 +125,17 @@ class QuestEnemyTableViewController: UITableViewController {
         }
         super.init(nibName: nil, bundle: nil)
     }
+    
+    init(talentQuests: [TalentQuest]) {
+        self.rows = talentQuests.compactMap { quest in
+            if let wave = quest.wave {
+                return Row(type: QuestEnemyTableViewCell.self, data: .talentWave(wave, quest.questName))
+            } else {
+                return nil
+            }
+        }
+        super.init(nibName: nil, bundle: nil)
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -193,6 +205,9 @@ class QuestEnemyTableViewController: UITableViewController {
             cell.delegate = self
         case (let cell as QuestEnemyTableViewCell, .waveAndTitle(let wave, let title)):
             cell.configure(for: wave.enemies.flatMap { [$0.enemy] + ($0.enemy?.parts ?? [])}.compactMap { $0 }, title: title ?? "")
+            cell.delegate = self
+        case (let cell as QuestEnemyTableViewCell, .talentWave(let wave, let title)):
+            cell.configure(for: wave.enemies.flatMap { [$0] + ($0.parts)}.compactMap { $0 }, title: title ?? "")
             cell.delegate = self
         default:
             break

@@ -150,7 +150,7 @@ class HomeCardCollectionViewController: UIViewController, DataChecking, UICollec
             groups[index].cards.filter(settings: settings)
             groups[index].cards.sort(settings: settings)
         }
-        return groups
+        return groups.filter { $0.cards.count > 0 }
     }
 }
 

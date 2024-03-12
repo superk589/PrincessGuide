@@ -1,6 +1,7 @@
 PODS:
   - AcknowList (2.0.3)
   - Alamofire (5.1.0)
+  - AlignedCollectionViewFlowLayout (1.1.2)
   - BrotliKit (1.0.2)
   - Cache (5.2.0)
   - DHSmartScreenshot (1.3.1)
@@ -45,6 +46,7 @@ PODS:
 DEPENDENCIES:
   - AcknowList
   - Alamofire
+  - AlignedCollectionViewFlowLayout
   - BrotliKit
   - Cache (from `https://github.com/Igor-Palaguta/Cache`, branch `Update-MD5`)
   - DHSmartScreenshot
@@ -69,6 +71,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AcknowList
     - Alamofire
+    - AlignedCollectionViewFlowLayout
     - BrotliKit
     - DHSmartScreenshot
     - DynamicColor
@@ -107,6 +110,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AcknowList: 6d4faca4c3e0173377fe5649e086d627cd60b003
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   BrotliKit: 7eb3640b2c206cd4410208696c27ef83e95f43d5
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   DHSmartScreenshot: ee749048bd7126c4826748f98df3a4adc6ad6c78
@@ -129,6 +133,6 @@ SPEC CHECKSUMS:
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: 384ca7f242436033e17d12326d6c53094ec923ea
+PODFILE CHECKSUM: 66a912d743e0fba59c18ef278297ec1b919310a3
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.3

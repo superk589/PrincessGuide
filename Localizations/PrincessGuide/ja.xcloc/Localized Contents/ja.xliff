@@ -2188,6 +2188,10 @@
         <target>SP+</target>
         <note>skill category</note>
       </trans-unit>
+      <trans-unit id="Same Unit" xml:space="preserve">
+        <source>Same Unit</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Save Box" xml:space="preserve">
         <source>Save Box</source>
         <target>ボックス保存</target>

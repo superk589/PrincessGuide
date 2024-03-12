@@ -431,6 +431,10 @@ class Card: Codable {
             Master.shared.getCards(cardID: id, originalID: base.unitId, callback: closure)
         }?.first
     }
+    
+    lazy var sameUnits: [Card] = DispatchSemaphore.sync { closure in
+        Master.shared.getCards(kana: base.kana, callback: closure)
+    } ?? []
 }
 
 extension Card {

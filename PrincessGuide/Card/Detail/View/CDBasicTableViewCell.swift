@@ -13,6 +13,7 @@ import Reusable
 class CDBasicTableViewCell: UITableViewCell, Reusable {
     
     let cardIcon = IconImageView()
+    let talentView = UIImageView()
     
     let commentLabel = UILabel()
     
@@ -27,6 +28,12 @@ class CDBasicTableViewCell: UITableViewCell, Reusable {
             make.top.equalTo(10)
             make.height.width.equalTo(64)
             make.bottom.lessThanOrEqualTo(-10)
+        }
+        
+        contentView.addSubview(talentView)
+        talentView.snp.makeConstraints { make in
+            make.right.bottom.equalTo(cardIcon)
+            make.size.equalTo(17)
         }
         
         commentLabel.font = UIFont.scaledFont(forTextStyle: .body, ofSize: 14)
@@ -45,8 +52,9 @@ class CDBasicTableViewCell: UITableViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(comment: String, iconURL: URL) {
+    func configure(comment: String, iconURL: URL, talentId: Int?) {
         commentLabel.text = comment
         cardIcon.configure(iconURL: iconURL, placeholderStyle: .blank)
+        talentView.image = talentId.flatMap { CardTalent(rawValue: $0) }?.image
     }
 }

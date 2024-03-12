@@ -14,6 +14,7 @@ class CDProfileTableViewController: CDTableViewController {
         rows.removeAll()
         rows += [
             Row.card(card),
+            Row.sameUnit(card.sameUnits),
             Row.textArray([
                 TextItem(title: NSLocalizedString("True Name", comment: ""), content: card.actualUnit?.unitName ?? NSLocalizedString("None", comment: ""), colorMode: .normal)
             ]),

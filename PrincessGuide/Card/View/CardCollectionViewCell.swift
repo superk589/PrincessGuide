@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Reusable
 
-class CardCollectionViewCell: UICollectionViewCell {
+class CardCollectionViewCell: UICollectionViewCell, Reusable {
     
     var isEnable = true {
         didSet {

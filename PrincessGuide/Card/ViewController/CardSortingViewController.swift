@@ -307,6 +307,19 @@ class CardSortingViewController: FormViewController {
         
         +++ Section(NSLocalizedString("Filter", comment: ""))
         
+        <<< SegmentedRow<Int>("talent_filter"){
+            $0.displayValueFor = { (rowValue: Int?) in
+                if let rowValue = rowValue {
+                    return Card.TalentFilter(rawValue: rowValue)?.description ?? nil
+                } else {
+                    return nil
+                }
+            }
+            $0.options = Card.TalentFilter.allCases.map { $0.rawValue }
+            $0.value = Setting.default.talentFilter.rawValue
+        }.cellSetup(cellSetup(cell:row:))
+            .cellUpdate(cellUpdate(cell:row:))
+        
         <<< SegmentedRow<String>("position_filter"){
             $0.title = NSLocalizedString("Position", comment: "")
             $0.displayValueFor = { (rowValue: String?) in

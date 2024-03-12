@@ -42,6 +42,6 @@ class KnightGuardAction: ActionParameter {
     
     override func localizedDetail(of level: Int, property: Property = .zero, style: CDSettingsViewController.Setting.ExpressionStyle = CDSettingsViewController.Setting.default.expressionStyle) -> String {
         let format = NSLocalizedString("When %@'s HP reaches 0, restore [%@] HP once in next [%@]s.", comment: "")
-        return String(format: format, targetParameter.buildTargetClause(), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, style: style))
+        return String(format: format, targetParameter.buildTargetClause(anyOfModifier: true), buildExpression(of: level, style: style, property: property), buildExpression(of: level, actionValues: durationValues, style: style))
     }
 }
