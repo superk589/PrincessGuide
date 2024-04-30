@@ -1108,6 +1108,9 @@
 /* No comment provided by engineer. */
 "Magical Critical Damage" = "魔法暴击伤害";
 
+/* No comment provided by engineer. */
+"Magical Damage" = "魔法伤害";
+
 /* skill category */
 "Main" = "Main";
 
@@ -1362,6 +1365,9 @@
 
 /* No comment provided by engineer. */
 "Physical Critical Damage" = "物理暴击伤害";
+
+/* No comment provided by engineer. */
+"Physical Damage" = "物理伤害";
 
 /* No comment provided by engineer. */
 "Physical Penetrate" = "物理穿透";

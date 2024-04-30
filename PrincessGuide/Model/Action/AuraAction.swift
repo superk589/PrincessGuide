@@ -17,7 +17,9 @@ class AuraAction: ActionParameter {
                 .receivedMagicalDamage,
                 .receivedPhysicalDamage,
                 .physicalCriticalDamage,
-                .magicalCriticalDamage
+                .magicalCriticalDamage,
+                .physicalDamage,
+                .magicalDamage
             :
             return .percent
         default:
@@ -56,7 +58,10 @@ class AuraAction: ActionParameter {
         case receivedDamage
         case receivedPhysicalDamage
         case receivedMagicalDamage = 17
+        case physicalDamage
+        case magicalDamage
         case maxHP = 100
+        
         
         var description: String {
             let result: String
@@ -99,6 +104,10 @@ class AuraAction: ActionParameter {
                 return NSLocalizedString("Received Physical Damage", comment: "")
             case .receivedMagicalDamage:
                 return NSLocalizedString("Received Magical Damage", comment: "")
+            case .physicalDamage:
+                return NSLocalizedString("Physical Damage", comment: "")
+            case .magicalDamage:
+                return NSLocalizedString("Magical Damage", comment: "")
             }
             return result
         }
