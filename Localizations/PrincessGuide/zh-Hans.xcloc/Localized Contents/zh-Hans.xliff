@@ -334,6 +334,11 @@
         <target>物理或魔法攻击力最低的%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="%@ the lowest DEF" xml:space="preserve">
+        <source>%@ the lowest DEF</source>
+        <target>物理防御力最低的%@</target>
+        <note>target type</note>
+      </trans-unit>
       <trans-unit id="%@ the lowest HP ratio except self" xml:space="preserve">
         <source>%@ the lowest HP ratio except self</source>
         <target>除自己外 HP 比例最低的%@</target>
@@ -697,6 +702,11 @@
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking physical damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking physical damage.</source>
         <target>对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast an environment effect of ID: %d for [%@]s." xml:space="preserve">
+        <source>Cast an environment effect of ID: %1$d for [%2$@]s.</source>
+        <target>释放一个环境效果 ID：%1$d，持续 [%2$@] 秒。</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s." xml:space="preserve">
@@ -3384,6 +3394,11 @@
         <target>物理或魔法攻击力%@低的</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the %@ lowest DEF" xml:space="preserve">
+        <source>the %@ lowest DEF</source>
+        <target>物理防御力%@低的</target>
+        <note>target type</note>
+      </trans-unit>
       <trans-unit id="the %@ lowest HP" xml:space="preserve">
         <source>the %@ lowest HP</source>
         <target> HP %@低的</target>
@@ -3488,6 +3503,11 @@
         <source>the lowest ATK or Magic STR</source>
         <target>物理或魔法攻击力最低的</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the lowest DEF" xml:space="preserve">
+        <source>the lowest DEF</source>
+        <target>物理防御力最低的</target>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="the lowest HP" xml:space="preserve">
         <source>the lowest HP</source>
@@ -3609,6 +3629,11 @@
         <target>如果%2$@是单独的则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if %@ is in environment effect of ID: %d" xml:space="preserve">
+        <source>use %1$d if %2$@ is in environment effect of ID: %3$d</source>
+        <target>如果%2$@处于环境效果 ID：%3$d 中则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if %@ is in state of %@ %@" xml:space="preserve">
         <source>use %1$d if %2$@ is in state of %3$@ %4$@</source>
         <target>如果%2$@处于%3$@%4$@状态则使用 %1$d</target>
@@ -3632,6 +3657,11 @@
       <trans-unit id="use %d if %@ is not alone" xml:space="preserve">
         <source>use %1$d if %2$@ is not alone</source>
         <target>如果%2$@不是单独的则使用 %1$d</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is not in environment effect of ID: %d" xml:space="preserve">
+        <source>use %1$d if %2$@ is not in environment effect of ID: %3$d</source>
+        <target>如果%2$@未处于环境效果 ID：%3$d 中则使用 %1$d</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is not in state of %@ %@" xml:space="preserve">

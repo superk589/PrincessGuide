@@ -75,31 +75,31 @@ class IfForChildrenAction: ActionParameter {
             switch actionDetail1 {
             case 101:
                 let format = NSLocalizedString("use %d to %@ if attack speed is increased", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause())
             case 102:
                 let format = NSLocalizedString("use %d to %@ if attack speed is decreased", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause())
             case 600..<700, 710:
                 let format = NSLocalizedString("use %d to %@ in state of ID: %d", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 600)
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 600)
             case 700:
                 let format = NSLocalizedString("use %d to %@ if it's alone", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause())
             case 901..<1000:
                 let format = NSLocalizedString("use %d if %@'s HP is below %d%%", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
             case 1300:
                 let format = NSLocalizedString("use %d to %@ if it's physical unit", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause())
             case 1800:
                 let format = NSLocalizedString("use %d to %@ if it's multi-target unit", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause())
             case 1900:
                 let format = NSLocalizedString("use %d to %@ if it has a barrier", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true))
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(anyOfModifier: true))
             case 6000..<7000:
                 let format = NSLocalizedString("use %d to %@ in state of ID: %d", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
             default:
                 return nil
             }
@@ -117,31 +117,31 @@ class IfForChildrenAction: ActionParameter {
             switch actionDetail1 {
             case 101:
                 let format = NSLocalizedString("use %d to %@ if attack speed is not increased", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause())
             case 102:
                 let format = NSLocalizedString("use %d to %@ if attack speed is not decreased", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause())
             case 600..<700, 710:
                 let format = NSLocalizedString("use %d to %@ if not in state of ID: %d", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 600)
+                return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 600)
             case 700:
                 let format = NSLocalizedString("use %d to %@ if it's not alone", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause())
             case 901..<1000:
                 let format = NSLocalizedString("use %d if %@'s HP is not below %d%%", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
+                return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 900)
             case 1300:
                 let format = NSLocalizedString("use %d to %@ if it's magical unit", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause())
             case 1800:
                 let format = NSLocalizedString("use %d to %@ if it's not multi-target unit", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause())
+                return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause())
             case 1900:
                 let format = NSLocalizedString("use %d to %@ if it has no barrier", comment: "")
-                return String(format: format, actionDetail2 % 10, targetParameter.buildTargetClause(anyOfModifier: true))
+                return String(format: format, actionDetail2 % 100, targetParameter.buildTargetClause(anyOfModifier: true))
             case 6000..<7000:
                 let format = NSLocalizedString("use %d to %@ if not in state of ID: %d", comment: "")
-                return String(format: format, actionDetail3 % 10, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
+                return String(format: format, actionDetail3 % 100, targetParameter.buildTargetClause(anyOfModifier: true), actionDetail1 - 6000)
             default:
                 return nil
             }
@@ -157,13 +157,13 @@ class IfForChildrenAction: ActionParameter {
         case 0..<100:
             if actionDetail2 != 0 && actionDetail3 != 0 {
                 let format = NSLocalizedString("Random event: %d%% chance use %d, otherwise %d.", comment: "")
-                return String(format: format, actionDetail1, actionDetail2 % 10, actionDetail3 % 10)
+                return String(format: format, actionDetail1, actionDetail2 % 100, actionDetail3 % 100)
             } else if actionDetail2 != 0 {
                 let format = NSLocalizedString("Random event: %d%% chance use %d.", comment: "")
-                return String(format: format, actionDetail1, actionDetail2 % 10)
+                return String(format: format, actionDetail1, actionDetail2 % 100)
             } else if actionDetail3 != 0 {
                 let format = NSLocalizedString("Random event: %d%% chance use %d.", comment: "")
-                return String(format: format, 100 - actionDetail1, actionDetail3 % 10)
+                return String(format: format, 100 - actionDetail1, actionDetail3 % 100)
             } else {
                 return super.localizedDetail(of: level, property: property, style: style)
             }

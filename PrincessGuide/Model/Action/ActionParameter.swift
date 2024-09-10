@@ -175,6 +175,8 @@ class ActionParameter {
             return ChangeSpeedOverrideFieldAction.self
         case 100:
             return UnableStateGuardAction.self
+        case 105:
+            return EnvironmentEffectAction.self
         default:
             return ActionParameter.self
         }
@@ -620,4 +622,5 @@ enum ActionType: Int {
     case energyDamageReduce
     case changeSpeedOverrideField
     case unableStateGuard = 100
+    case environmentEffect = 105
 }

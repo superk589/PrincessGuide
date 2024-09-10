@@ -340,6 +340,7 @@
 		12F1263120B95684005C9659 /* PassiveAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263020B95684005C9659 /* PassiveAction.swift */; };
 		12F1263320B956C0005C9659 /* PassiveInermittentAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */; };
 		12F1263B20BC23F5005C9659 /* SearchableCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */; };
+		12F5DFD42C33E47E0054E0ED /* EnvironmentEffectAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F5DFD32C33E47E0054E0ED /* EnvironmentEffectAction.swift */; };
 		12F7500120921D7A00E11CC8 /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */; };
 		12F7500820935F2500E11CC8 /* HomeCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7500720935F2500E11CC8 /* HomeCardTableViewController.swift */; };
 		12F7643523F7E0660080398B /* KnightGuardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7643423F7E0660080398B /* KnightGuardAction.swift */; };
@@ -705,6 +706,7 @@
 		12F1263020B95684005C9659 /* PassiveAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveAction.swift; sourceTree = "<group>"; };
 		12F1263220B956C0005C9659 /* PassiveInermittentAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveInermittentAction.swift; sourceTree = "<group>"; };
 		12F1263A20BC23F5005C9659 /* SearchableCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableCardTableViewController.swift; sourceTree = "<group>"; };
+		12F5DFD32C33E47E0054E0ED /* EnvironmentEffectAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentEffectAction.swift; sourceTree = "<group>"; };
 		12F7500020921D7A00E11CC8 /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		12F7500720935F2500E11CC8 /* HomeCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardTableViewController.swift; sourceTree = "<group>"; };
 		12F7643423F7E0660080398B /* KnightGuardAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightGuardAction.swift; sourceTree = "<group>"; };
@@ -1479,6 +1481,7 @@
 				12E9FBDF2933A64E006BDCA0 /* EnergyDamageReduceAction.swift */,
 				12A7A69729C453B400984577 /* ChangeSpeedOverrideFieldAction.swift */,
 				12A7A69929C453CB00984577 /* UnableStateGuardAction.swift */,
+				12F5DFD32C33E47E0054E0ED /* EnvironmentEffectAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -1874,6 +1877,7 @@
 				12D7A92421AACB64004E22C6 /* UniqueEquipmentTableViewController.swift in Sources */,
 				12F125E520B93D99005C9659 /* ReflexiveAction.swift in Sources */,
 				12F125D720B92686005C9659 /* DamageAction.swift in Sources */,
+				12F5DFD42C33E47E0054E0ED /* EnvironmentEffectAction.swift in Sources */,
 				1280DE3320A09278008D9D72 /* CDPropertyViewController.swift in Sources */,
 				12F1263120B95684005C9659 /* PassiveAction.swift in Sources */,
 				1223A8EA20F0A41900C98BB2 /* CardWithBirthdayCollectionViewCell.swift in Sources */,
@@ -2291,7 +2295,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 249;
+				CURRENT_PROJECT_VERSION = 250;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;
@@ -2316,7 +2320,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrincessGuide/PrincessGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 249;
+				CURRENT_PROJECT_VERSION = 250;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
 				INFOPLIST_FILE = PrincessGuide/Info.plist;

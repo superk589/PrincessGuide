@@ -206,6 +206,9 @@
 "%@ the lowest ATK or Magic STR" = "物理或魔法攻击力最低的%@";
 
 /* target type */
+"%@ the lowest DEF" = "物理防御力最低的%@";
+
+/* target type */
 "%@ the lowest HP ratio except self" = "除自己外 HP 比例最低的%@";
 
 /* No comment provided by engineer. */
@@ -474,6 +477,9 @@
 
 /* No comment provided by engineer. */
 "Cast a barrier on %@ to strike back [%@] damage when taking physical damage." = "对%1$@释放一个护盾，受到物理伤害时反击 [%2$@] 伤害。";
+
+/* No comment provided by engineer. */
+"Cast an environment effect of ID: %d for [%@]s." = "释放一个环境效果 ID：%1$d，持续 [%2$@] 秒。";
 
 /* No comment provided by engineer. */
 "Cast an unknown barrier %d on %@ for [%@]s." = "对%2$@释放一个护盾，类型 %1$d，持续 [%3$@] 秒。";
@@ -1814,6 +1820,9 @@
 "the %@ lowest ATK or Magic STR" = "物理或魔法攻击力%@低的";
 
 /* target type */
+"the %@ lowest DEF" = "物理防御力%@低的";
+
+/* target type */
 "the %@ lowest HP" = " HP %@低的";
 
 /* target type */
@@ -1881,6 +1890,9 @@
 
 /* No comment provided by engineer. */
 "the lowest ATK or Magic STR" = "物理或魔法攻击力最低的";
+
+/* target type */
+"the lowest DEF" = "物理防御力最低的";
 
 /* target type */
 "the lowest HP" = " HP 最低的";
@@ -2066,6 +2078,9 @@
 "use %d if %@ is alone" = "如果%2$@是单独的则使用 %1$d";
 
 /* No comment provided by engineer. */
+"use %d if %@ is in environment effect of ID: %d" = "如果%2$@处于环境效果 ID：%3$d 中则使用 %1$d";
+
+/* No comment provided by engineer. */
 "use %d if %@ is in state of %@ %@" = "如果%2$@处于%3$@%4$@状态则使用 %1$d";
 
 /* No comment provided by engineer. */
@@ -2079,6 +2094,9 @@
 
 /* No comment provided by engineer. */
 "use %d if %@ is not alone" = "如果%2$@不是单独的则使用 %1$d";
+
+/* No comment provided by engineer. */
+"use %d if %@ is not in environment effect of ID: %d" = "如果%2$@未处于环境效果 ID：%3$d 中则使用 %1$d";
 
 /* No comment provided by engineer. */
 "use %d if %@ is not in state of %@ %@" = "如果%2$@未处于%3$@%4$@状态则使用 %1$d";

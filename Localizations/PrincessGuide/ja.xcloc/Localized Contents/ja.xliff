@@ -329,6 +329,10 @@
         <target>最も物理や魔法攻撃力が低い%@</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="%@ the lowest DEF" xml:space="preserve">
+        <source>%@ the lowest DEF</source>
+        <note>target type</note>
+      </trans-unit>
       <trans-unit id="%@ the lowest HP ratio except self" xml:space="preserve">
         <source>%@ the lowest HP ratio except self</source>
         <note>target type</note>
@@ -687,6 +691,10 @@
       <trans-unit id="Cast a barrier on %@ to strike back [%@] damage when taking physical damage." xml:space="preserve">
         <source>Cast a barrier on %1$@ to strike back [%2$@] damage when taking physical damage.</source>
         <target>%1$@にシールドを展開する、物理ダメージを受けた時[%2$@]分のダメージを反射する。</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cast an environment effect of ID: %d for [%@]s." xml:space="preserve">
+        <source>Cast an environment effect of ID: %1$d for [%2$@]s.</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Cast an unknown barrier %d on %@ for [%@]s." xml:space="preserve">
@@ -3320,6 +3328,10 @@
         <target>物理や魔法攻撃力が%@低い</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="the %@ lowest DEF" xml:space="preserve">
+        <source>the %@ lowest DEF</source>
+        <note>target type</note>
+      </trans-unit>
       <trans-unit id="the %@ lowest HP" xml:space="preserve">
         <source>the %@ lowest HP</source>
         <target>HPが%@低い</target>
@@ -3421,6 +3433,10 @@
         <source>the lowest ATK or Magic STR</source>
         <target>最も物理や魔法攻撃力が高い</target>
         <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="the lowest DEF" xml:space="preserve">
+        <source>the lowest DEF</source>
+        <note>target type</note>
       </trans-unit>
       <trans-unit id="the lowest HP" xml:space="preserve">
         <source>the lowest HP</source>
@@ -3539,6 +3555,10 @@
         <target>%2$@が独りの場合、[アクション%1$d]を使う</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="use %d if %@ is in environment effect of ID: %d" xml:space="preserve">
+        <source>use %1$d if %2$@ is in environment effect of ID: %3$d</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="use %d if %@ is in state of %@ %@" xml:space="preserve">
         <source>use %1$d if %2$@ is in state of %3$@ %4$@</source>
         <note>No comment provided by engineer.</note>
@@ -3560,6 +3580,10 @@
       <trans-unit id="use %d if %@ is not alone" xml:space="preserve">
         <source>use %1$d if %2$@ is not alone</source>
         <target>%2$@が独りでない場合、[アクション%1$d]を使う</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="use %d if %@ is not in environment effect of ID: %d" xml:space="preserve">
+        <source>use %1$d if %2$@ is not in environment effect of ID: %3$d</source>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="use %d if %@ is not in state of %@ %@" xml:space="preserve">

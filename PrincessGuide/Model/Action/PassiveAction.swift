@@ -22,6 +22,10 @@ class PassiveAction: ActionParameter {
             return .magicStr
         case 5:
             return .magicDef
+        case 6:
+            return .physicalCritical
+        case 7:
+            return .magicCritical
         default:
             return .unknown
         }
